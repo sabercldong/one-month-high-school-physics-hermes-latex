@@ -53,15 +53,9 @@
 \textbf{严格定义：} 矢量是满足平行四边形定则（或三角形定则）的物理量，具有大小和方向。标量只具有大小，只遵循代数加减法则。
 
 \begin{center}
-\begin{tikzpicture}[scale=1,>=Latex]
-  % 矢量加法示意图：东3北4
-  \draw[->,thick] (0,0) -- (3,0) node[midway,below] {$3\ \mathrm{m}$};
-  \draw[->,thick] (3,0) -- (3,4) node[midway,right] {$4\ \mathrm{m}$};
-  \draw[->,ultra thick,red] (0,0) -- (3,4) node[midway,above left] {$5\ \mathrm{m}$};
-  \node at (0,-0.5) {起点};
-  \node at (0.5,0.3) {东};
-  \node at (3.3,2) {北};
-\end{tikzpicture}
+\input{figures/tikz/vector-addition}
+
+\textbf{图 1：}矢量加法示例：向东 $3\ \mathrm{m}$ 再向北 $4\ \mathrm{m}$，合位移大小为 $5\ \mathrm{m}$（标记为红色）
 \end{center}
 
 \vspace{0.3em}
@@ -119,8 +113,8 @@
 \textbf{举例：} 判断公式 $x = v_0 t + \frac{1}{2} a t^2$ 是否正确：
 \begin{itemize}
   \item 左边位移 $x$ 的量纲是 $[L]$
-  \item 右边 $v_0 t$ 的量纲：$[L][T]^{-1} \times [T] = [L]$ ✔
-  \item 右边 $\frac{1}{2} a t^2$ 的量纲：$[L][T]^{-2} \times [T]^2 = [L]$ ✔
+  \item 右边 $v_0 t$ 的量纲：$[L][T]^{-1} \times [T] = [L]$ \quad (量纲一致)
+  \item 右边 $\frac{1}{2} a t^2$ 的量纲：$[L][T]^{-2} \times [T]^2 = [L]$ \quad (量纲一致)
   \item 左右量纲一致，公式合理
 \end{itemize}
 
@@ -148,6 +142,7 @@
 \end{itemize}
 \end{conceptbox}
 
+\nopagebreak[4]
 \section*{六、例题精讲}
 
 \begin{examplebox}{判断物体能否视为质点}

@@ -1,0 +1,20 @@
+% TikZ 图：一维直线运动坐标轴
+% Day 02：质点、参考系、位移与速度
+% 使用：\input{figures/tikz/1d-coordinate.tex}
+\begin{tikzpicture}[scale=1,>=Latex]
+  % 一维坐标轴
+  \draw[->,thick] (-0.5,0) -- (7,0) node[right] {$x$};
+  % 原点
+  \node at (0,-0.3) {$O$};
+  % 标记点
+  \foreach \x/\label in {1/$x_1$,3/$x_2$,5/$x_3$} {
+    \draw (\x,0.1) -- (\x,-0.1);
+    \node at (\x,-0.3) {\label};
+  }
+  % 正方向箭头
+  \node[above] at (6,0.15) {正方向 $\to$};
+  % 位移箭头 x1->x2（正）
+  \draw[->,red,thick] (1,0.3) -- (3,0.3) node[midway,above] {$\Delta x > 0$};
+  % 位移箭头 x2->x3（正）
+  \draw[->,red,thick] (3,0.6) -- (5,0.6) node[midway,above] {$\Delta x > 0$};
+\end{tikzpicture}

@@ -1,0 +1,17 @@
+% TikZ 图：位移与路程的对比
+% Day 02：质点、参考系、位移与速度
+% 使用：\input{figures/tikz/displacement-path.tex}
+\begin{tikzpicture}[scale=1,>=Latex]
+  % 坐标轴
+  \draw[->] (-0.5,0) -- (6,0) node[right] {$x$};
+  \draw[->] (0,-0.5) -- (0,2) node[above] {$y$};
+  % 起点终点
+  \filldraw[black] (1,0.8) circle (2pt) node[below] {$A(x_1,y_1)$};
+  \filldraw[black] (4.5,1.2) circle (2pt) node[below] {$B(x_2,y_2)$};
+  % 位移矢量
+  \draw[->,thick,red] (1,0.8) -- (4.5,1.2) node[midway,above] {$\Delta \vect{r}$};
+  % 轨迹虚线（路程）
+  \draw[dashed] (1,0.8) .. controls (2,1.8) and (3.5,0.2) .. (4.5,1.2);
+  \node[above] at (3,2.2) {实际路径（路程 $s$）};
+  \node[red,below] at (2.8,0.4) {位移 $\Delta\vect{r}$};
+\end{tikzpicture}

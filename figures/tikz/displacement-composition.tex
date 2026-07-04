@@ -1,0 +1,23 @@
+% TikZ 图：位移合成示例（东300m北400m）
+% Day 02：质点、参考系、位移与速度
+% 使用：\input{figures/tikz/displacement-composition.tex}
+\begin{tikzpicture}[scale=0.8,>=Latex]
+  % 坐标
+  \draw[->] (-0.5,0) -- (5,0) node[right] {东};
+  \draw[->] (0,-0.5) -- (0,5) node[above] {北};
+  % A点
+  \filldraw[black] (0,0) circle (2pt) node[below left] {$A$};
+  % B点（东300→scale 0.8, 300→3）
+  \filldraw[black] (3,0) circle (2pt) node[below right] {$B$};
+  % C点（北400→4）
+  \filldraw[black] (3,4) circle (2pt) node[above right] {$C$};
+  % AB
+  \draw[->,thick] (0,0) -- (3,0) node[midway,below] {$300\ \mathrm{m}$};
+  % BC
+  \draw[->,thick] (3,0) -- (3,4) node[midway,right] {$400\ \mathrm{m}$};
+  % AC（位移）
+  \draw[->,ultra thick,red] (0,0) -- (3,4) node[midway,above left] {$500\ \mathrm{m}$};
+  % 角度
+  \draw (0.8,0) arc (0:53:0.8);
+  \node[above right] at (0.8,0.3) {$\theta$};
+\end{tikzpicture}

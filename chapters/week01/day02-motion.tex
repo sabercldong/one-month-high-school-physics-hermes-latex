@@ -51,20 +51,9 @@
 研究一个物体从 A 到 B 的运动时，我们只关心它的\textbf{位置变化}，不关心它自身如何旋转、是否变形。这时物体可以抽象为一个质点，用一条有向线段表示它的运动。
 
 \begin{center}
-\begin{tikzpicture}[scale=1,>=Latex]
-  % 坐标轴
-  \draw[->] (-0.5,0) -- (6,0) node[right] {$x$};
-  \draw[->] (0,-0.5) -- (0,2) node[above] {$y$};
-  % 起点终点
-  \filldraw[black] (1,0.8) circle (2pt) node[below] {$A(x_1,y_1)$};
-  \filldraw[black] (4.5,1.2) circle (2pt) node[below] {$B(x_2,y_2)$};
-  % 位移矢量
-  \draw[->,thick,red] (1,0.8) -- (4.5,1.2) node[midway,above] {$\Delta \vect{r}$};
-  % 轨迹虚线（路程）
-  \draw[dashed] (1,0.8) .. controls (2,1.8) and (3.5,0.2) .. (4.5,1.2);
-  \node at (3,2.2) {实际路径（路程 $s$）};
-  \node[red] at (2.8,0.5) {位移 $\Delta\vect{r}$};
-\end{tikzpicture}
+\input{figures/tikz/displacement-path}
+
+\textbf{图 2：}位移与路程的对比：位移是从 $A$ 指向 $B$ 的有向线段，路程是实际路径长度
 \end{center}
 
 \end{conceptbox}
@@ -89,7 +78,7 @@
 性质 & 矢量 & 标量 \\
 方向 & 有方向（初位置$\to$末位置） & 无方向 \\
 大小 & 初末位置的直线距离 & 实际路径总长度 \\
-关系 & $\leq$ 路程（直线不回头时相等） & $\geq$ 位移大小 \\
+关系 & $|\Delta\vect{x}| \leq$ 路程（直线不回头时相等） & $\geq$ 位移大小 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -124,7 +113,7 @@
 
 \textbf{常见误用：}
 \begin{enumerate}
-  \item 平均速度 $\neq$ 速度的平均值。例如：前 $10\ \mathrm{s}$ 速度 $5\ \mathrm{m/s}$，后 $10\ \mathrm{s}$ 速度 $15\ \mathrm{m/s}$，平均速度不是 $(5+15)/2 = 10\ \mathrm{m/s}$，而要用 $\Delta x / \Delta t$ 计算。
+  \item 平均速度 $\neq$ 速度的平均值。例如：一辆车先以 $5\ \mathrm{m/s}$ 向东行驶 $10\ \mathrm{s}$（位移 $+50\ \mathrm{m}$），然后立即掉头以 $15\ \mathrm{m/s}$ 向西行驶 $10\ \mathrm{s}$（位移 $-150\ \mathrm{m}$）。两个速度的算术平均是 $(5+15)/2 = 10\ \mathrm{m/s}$，但全程平均速度 $\bar{v} = \dfrac{50-150}{20} = -5\ \mathrm{m/s}$（向西），两者完全不同。即使用数值取平均，$\dfrac{|5|+|15|}{2}=10$ 也与 $-5$ 不符。只有\textbf{两段时间相等且方向相同}时，算术平均才等于平均速度——但这不是通用方法，用定义式 $\bar{v}=\Delta x/\Delta t$ 永远正确。
   \item 平均速率 $\neq$ 平均速度的大小。走弯路时平均速率大于平均速度的大小（因为路程 $\geq$ 位移）。
 \end{enumerate}
 
@@ -150,9 +139,10 @@
   v = \frac{x}{t}
   \]
   \begin{itemize}
-    \item 适用条件：物体做匀速直线运动（速度大小方向都不变）。
+    \item 适用条件：物体做匀速直线运动（速度大小方向都不变），且计时起点 $t=0$ 时位置在原点 $x=0$。
     \item 物理意义：单位时间内的位移。
-    \item 常见误用：不能把匀加速运动的平均速度公式 $v = (v_0+v)/2$ 和这个搞混。
+    \item 注意：这里的 $x$ 是从原点算起的位置坐标（即位移的数值），不是物体经过的路程。如果 $t=0$ 时物体不在原点，要用 $x - x_0 = vt$。
+    \item 常见误用：不能把匀加速运动的平均速度公式 $\bar{v} = (v_0+v)/2$ 和这个搞混。
   \end{itemize}
 
   \item \textbf{瞬时速度的极限定义：}
@@ -172,27 +162,14 @@
 在一维直线运动中，位移、速度的方向用\textbf{正负号}表示——设定一个正方向，与正方向同向为正，反向为负。
 
 \begin{center}
-\begin{tikzpicture}[scale=1,>=Latex]
-  % 一维坐标轴
-  \draw[->,thick] (-0.5,0) -- (7,0) node[right] {$x$};
-  % 原点
-  \node at (0,-0.3) {$O$};
-  % 标记点
-  \foreach \x/\label in {1/$x_1$,3/$x_2$,5/$x_3$} {
-    \draw (\x,0.1) -- (\x,-0.1);
-    \node at (\x,-0.3) {\label};
-  }
-  % 正方向箭头
-  \node[above] at (6,0) {正方向 $\to$};
-  % 位移箭头 x1->x2（正）
-  \draw[->,red,thick] (1,0.3) -- (3,0.3) node[midway,above] {$\Delta x > 0$};
-  % 位移箭头 x2->x3（正）
-  \draw[->,red,thick] (3,0.6) -- (5,0.6) node[midway,above] {$\Delta x > 0$};
-\end{tikzpicture}
+\input{figures/tikz/1d-coordinate}
+
+\textbf{图 2：}一维直线运动的坐标轴与位移表示（正方向向右，$\Delta x > 0$ 表示位移向右）
 \end{center}
 
 在这个坐标系中，正方向向右。位移 $\Delta x > 0$ 表示物体向右运动，$\Delta x < 0$ 表示向左运动。
 
+\nopagebreak[4]
 \section*{六、例题精讲}
 
 \begin{examplebox}{位移与路程的计算}
@@ -223,26 +200,9 @@
 \end{enumerate}
 
 \begin{center}
-\begin{tikzpicture}[scale=0.8,>=Latex]
-  % 坐标
-  \draw[->] (-0.5,0) -- (5,0) node[right] {东};
-  \draw[->] (0,-0.5) -- (0,5) node[above] {北};
-  % A点
-  \filldraw[black] (0,0) circle (2pt) node[below left] {$A$};
-  % B点（东300）
-  \filldraw[black] (3,0) circle (2pt) node[below right] {$B$};
-  % C点（北400）
-  \filldraw[black] (3,4) circle (2pt) node[above right] {$C$};
-  % AB
-  \draw[->,thick] (0,0) -- (3,0) node[midway,below] {$300\ \mathrm{m}$};
-  % BC
-  \draw[->,thick] (3,0) -- (3,4) node[midway,right] {$400\ \mathrm{m}$};
-  % AC（位移）
-  \draw[->,ultra thick,red] (0,0) -- (3,4) node[midway,above left] {$500\ \mathrm{m}$};
-  % 角度
-  \draw (0.8,0) arc (0:53:0.8);
-  \node at (1,0.5) {$\theta$};
-\end{tikzpicture}
+\input{figures/tikz/displacement-composition}
+
+\textbf{图 3：}位移合成示例：$A\to B\to C$，合位移 $500\ \mathrm{m}$，方向东偏北 $\theta\approx 53^\circ$
 \end{center}
 
 \textbf{方法总结：}
