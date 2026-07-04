@@ -11,3 +11,10 @@
   \chapter*{Day #1：#2}
   \addcontentsline{toc}{chapter}{Day #1：#2}
 }
+
+% 图注命令（在 box 内或非浮动环境使用，自动使用 figure 计数器）
+\newcommand{\figcaption}[1]{%
+  \refstepcounter{figure}%
+  \textbf{图 \thefigure：}#1%
+  \addcontentsline{lof}{figure}{\protect\numberline{\thefigure}#1}%
+}

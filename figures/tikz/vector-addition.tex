@@ -1,13 +1,13 @@
 % TikZ 图：矢量加法示意（东3北4得5）
 % Day 01：初高中物理的区别与学习方法
 % 使用：\input{figures/tikz/vector-addition.tex}
-\begin{tikzpicture}[scale=1.2,>=Latex]
+\begin{tikzpicture}[scale=1.3,>=Latex]
   % 矢量加法示意图：东3北4
-  \draw[->,thick] (0,0) -- (3,0) node[midway,below,yshift=-2pt] {$3\ \mathrm{m}$};
-  \draw[->,thick] (3,0) -- (3,4) node[midway,right,xshift=4pt] {$4\ \mathrm{m}$};
-  \draw[->,ultra thick,red] (0,0) -- (3,4) node[midway,above left,xshift=-3pt,yshift=3pt] {$5\ \mathrm{m}$};
-  % 方向标注移到外边
-  \node[below] at (1.5,-0.6) {东};
-  \node[right] at (3.6,2) {北};
+  \draw[->,thick] (0,0) -- (3,0) node[midway,below,yshift=-4pt] {$3\ \mathrm{m}$};
+  \draw[->,thick] (3,0) -- (3,4) node[midway,right,xshift=6pt] {$4\ \mathrm{m}$};
+  \draw[->,ultra thick,red] (0,0) -- (3,4) node[midway,above left,xshift=-4pt,yshift=4pt] {$5\ \mathrm{m}$};
+  % 方向标注移得更远
+  \node[below,yshift=-6pt] at (1.5,0) {东};
+  \node[right,xshift=8pt] at (3,2) {北};
   \node[below left] at (0,0) {起点};
 \end{tikzpicture}
