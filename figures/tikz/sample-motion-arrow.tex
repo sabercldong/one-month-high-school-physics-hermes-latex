@@ -1,0 +1,13 @@
+% 示例 TikZ 图：小车做直线运动
+% 使用方法：在 figure 环境中 \input{figures/tikz/sample-motion-arrow}
+\begin{tikzpicture}[scale=1,>=Latex]
+  % ground
+  \draw[thick] (-0.5,0) -- (5.5,0);
+  % car body
+  \draw[thick,rounded corners=2pt] (1,0.25) rectangle (2.8,0.9);
+  \draw[thick] (1.35,0.25) circle (0.18);
+  \draw[thick] (2.45,0.25) circle (0.18);
+  % velocity arrow
+  \draw[->,thick] (3.1,0.65) -- (4.6,0.65) node[right] {$v$};
+  \node[below] at (1.9,-0.15) {小车};
+\end{tikzpicture}

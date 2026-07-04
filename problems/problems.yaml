@@ -1,0 +1,11 @@
+# 题库文件
+# 后续可由 Hermes 或 Codex 按如下结构添加题目
+
+- id: mechanics-001
+  day: 2
+  topic: 质点、参考系、位移与速度
+  difficulty: 基础
+  tags: [运动学, 位移, 速度]
+  stem: TODO
+  solution: TODO
+  common_mistake: TODO
