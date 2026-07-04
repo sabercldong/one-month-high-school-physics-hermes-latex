@@ -1,54 +1,363 @@
 \daytitle{2}{质点、参考系、位移与速度}
 
 \begin{learningbox}{本讲义大致内容}
-讲质点模型、参考系、路程和位移、平均速度和瞬时速度，建立描述运动的基本语言。
+从初中"路程"的概念进入高中"位移"的概念；讲清楚参考系为什么重要；区分平均速度和瞬时速度；建立描述运动的基本语言——位置、位移、速度，为下一节加速度做准备。
 \end{learningbox}
 
 \section*{一、学习目标}
+
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 理解参考系的概念，知道同一个物体的运动在不同参考系下描述不同。
+  \item 严格区分位移和路程：位移是矢量，路程是标量。
+  \item 掌握平均速度和瞬时速度的区别与联系。
+  \item 会用公式 $v = \dfrac{\Delta x}{\Delta t}$ 和 $v = \dfrac{x}{t}$（匀速直线运动）进行简单计算。
+  \item 理解"速度"在高中物理中默认指瞬时速度，速率指速度大小。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中你学过"速度 = 路程 $\div$ 时间"，这个公式在初中够用，但在高中有一个重要缺陷：\textbf{它分不清方向}。
+
+看一个例子：
+\begin{itemize}
+  \item 小明从家向东走 $100\ \mathrm{m}$ 到学校，用了 $50\ \mathrm{s}$。初中的算法：$v = 100 / 50 = 2\ \mathrm{m/s}$。
+  \item 放学后，小明从学校向西走 $100\ \mathrm{m}$ 回到家，也用了 $50\ \mathrm{s}$。初中的算法：还是 $2\ \mathrm{m/s}$。
+\end{itemize}
+两个过程速度数值相同，但方向相反！初中不区分方向，高中必须区分。这就是为什么高中要引入\textbf{位移}代替路程，用\textbf{矢量}代替标量。
+
+另外，初中通常默认"大地是静止的"，高中你要意识到：\textbf{静止是相对的}——这就是\textbf{参考系}。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{参考系}
+
+\textbf{直观理解：} 描述一个物体是运动还是静止，先得选一个"参照物"。你坐在火车上看窗外，感觉树在向后跑——树相对于地面是静止的，但相对于你（火车）是向后运动的。这个被选作标准的物体就是\textbf{参考系}。
+
+\textbf{严格定义：} 在描述一个物体的运动时，被选作参考标准的另一个物体（或物体系），称为参考系。
+
+\textbf{关键点：}
+\begin{itemize}
+  \item 同一个物体的运动，在不同参考系下描述不同。这叫\textbf{运动的相对性}。
+  \item 高中物理中，如果不特别说明，默认以\textbf{地面}为参考系。
+  \item 选择参考系的原则：使问题描述最简单。比如研究火车运动，选地面比选太阳方便得多。
+\end{itemize}
+
+\end{conceptbox}
+
+\begin{conceptbox}{质点（回顾）}
+
+上节课讲过，质点是有质量但忽略大小形状的点。今天我们就正式开始用质点模型来描述运动。
+
+研究一个物体从 A 到 B 的运动时，我们只关心它的\textbf{位置变化}，不关心它自身如何旋转、是否变形。这时物体可以抽象为一个质点，用一条有向线段表示它的运动。
+
+\begin{center}
+\begin{tikzpicture}[scale=1,>=Latex]
+  % 坐标轴
+  \draw[->] (-0.5,0) -- (6,0) node[right] {$x$};
+  \draw[->] (0,-0.5) -- (0,2) node[above] {$y$};
+  % 起点终点
+  \filldraw[black] (1,0.8) circle (2pt) node[below] {$A(x_1,y_1)$};
+  \filldraw[black] (4.5,1.2) circle (2pt) node[below] {$B(x_2,y_2)$};
+  % 位移矢量
+  \draw[->,thick,red] (1,0.8) -- (4.5,1.2) node[midway,above] {$\Delta \vect{r}$};
+  % 轨迹虚线（路程）
+  \draw[dashed] (1,0.8) .. controls (2,1.8) and (3.5,0.2) .. (4.5,1.2);
+  \node at (3,2.2) {实际路径（路程 $s$）};
+  \node[red] at (2.8,0.5) {位移 $\Delta\vect{r}$};
+\end{tikzpicture}
+\end{center}
+
+\end{conceptbox}
+
+\begin{conceptbox}{位移}
+
+\textbf{直观理解：} 位移就是"从起点指向终点的有向线段"。它只关心\textbf{起点和终点的位置差}，不关心中间走过什么路线。
+
+\textbf{严格定义：} 位移 $\Delta \vect{x}$ 是描述物体位置变化（即位置矢量的变化）的物理量，是矢量。
+\[
+\Delta \vect{x} = \vect{x}_2 - \vect{x}_1
+\]
+其中 $\vect{x}_1$ 是初位置矢量，$\vect{x}_2$ 是末位置矢量。
+
+\textbf{位移 vs 路程：}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+ & 位移 $\Delta\vect{x}$ & 路程 $s$ \\
+\midrule
+性质 & 矢量 & 标量 \\
+方向 & 有方向（初位置$\to$末位置） & 无方向 \\
+大小 & 初末位置的直线距离 & 实际路径总长度 \\
+关系 & $\leq$ 路程（直线不回头时相等） & $\geq$ 位移大小 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{经典例子：} 绕操场跑一圈 $400\ \mathrm{m}$，位移 $= 0$（回到起点），路程 $= 400\ \mathrm{m}$。位移为零，路程不为零。
+
+\end{conceptbox}
+
+\begin{conceptbox}{速度}
+
+\textbf{直观理解：} 速度描述物体运动快慢和方向。初中只讲"快慢"，高中还要讲"往哪走"。
+
+\textbf{平均速度：}
+\[
+\vect{\bar{v}} = \frac{\Delta \vect{x}}{\Delta t}
+\]
+\begin{itemize}
+  \item 矢量，方向与位移 $\Delta \vect{x}$ 相同。
+  \item 它描述的是\textbf{一段时间内}整体的运动快慢和方向。
+  \item 注意是位移 $\div$ 时间，不是路程 $\div$ 时间！后者叫\textbf{平均速率}（标量）。
+\end{itemize}
+
+\textbf{瞬时速度：}
+\[
+\vect{v} = \lim_{\Delta t \to 0} \frac{\Delta \vect{x}}{\Delta t}
+\]
+\begin{itemize}
+  \item 矢量，描述物体在\textbf{某一时刻（或某一位置）}的运动快慢和方向。
+  \item 高中物理中说"速度"，\textbf{默认指瞬时速度}。
+  \item 瞬时速度的大小叫做\textbf{速率}（标量）。
+\end{itemize}
+
+\textbf{常见误用：}
+\begin{enumerate}
+  \item 平均速度 $\neq$ 速度的平均值。例如：前 $10\ \mathrm{s}$ 速度 $5\ \mathrm{m/s}$，后 $10\ \mathrm{s}$ 速度 $15\ \mathrm{m/s}$，平均速度不是 $(5+15)/2 = 10\ \mathrm{m/s}$，而要用 $\Delta x / \Delta t$ 计算。
+  \item 平均速率 $\neq$ 平均速度的大小。走弯路时平均速率大于平均速度的大小（因为路程 $\geq$ 位移）。
+\end{enumerate}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\textbf{核心公式：}
+
+\begin{enumerate}
+  \item \textbf{平均速度定义式：}
+  \[
+  \bar{v} = \frac{\Delta x}{\Delta t}
+  \]
+  \begin{itemize}
+    \item 适用条件：任何运动都成立（匀变速、非匀变速都行）。
+    \item 物理意义：一段时间内位置变化的平均快慢。
+    \item 注意：这是\textbf{定义式}，不是决定式。它永远成立，但不是用来求瞬时速度的。
+  \end{itemize}
+
+  \item \textbf{匀速直线运动的速度公式：}
+  \[
+  v = \frac{x}{t}
+  \]
+  \begin{itemize}
+    \item 适用条件：物体做匀速直线运动（速度大小方向都不变）。
+    \item 物理意义：单位时间内的位移。
+    \item 常见误用：不能把匀加速运动的平均速度公式 $v = (v_0+v)/2$ 和这个搞混。
+  \end{itemize}
+
+  \item \textbf{瞬时速度的极限定义：}
+  \[
+  v = \lim_{\Delta t \to 0} \frac{\Delta x}{\Delta t}
+  \]
+  \begin{itemize}
+    \item 理解方式：把 $\Delta t$ 取得越来越小，趋近于零，平均速度就趋近于瞬时速度。
+    \item 高中阶段不需要真的求极限，会用平均速度近似计算即可。
+  \end{itemize}
+\end{enumerate}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\textbf{直线运动模型：} 物体沿一条直线运动。这是高中物理最常见的模型，也是初学者最先掌握的。
+
+在一维直线运动中，位移、速度的方向用\textbf{正负号}表示——设定一个正方向，与正方向同向为正，反向为负。
+
+\begin{center}
+\begin{tikzpicture}[scale=1,>=Latex]
+  % 一维坐标轴
+  \draw[->,thick] (-0.5,0) -- (7,0) node[right] {$x$};
+  % 原点
+  \node at (0,-0.3) {$O$};
+  % 标记点
+  \foreach \x/\label in {1/$x_1$,3/$x_2$,5/$x_3$} {
+    \draw (\x,0.1) -- (\x,-0.1);
+    \node at (\x,-0.3) {\label};
+  }
+  % 正方向箭头
+  \node[above] at (6,0) {正方向 $\to$};
+  % 位移箭头 x1->x2（正）
+  \draw[->,red,thick] (1,0.3) -- (3,0.3) node[midway,above] {$\Delta x > 0$};
+  % 位移箭头 x2->x3（正）
+  \draw[->,red,thick] (3,0.6) -- (5,0.6) node[midway,above] {$\Delta x > 0$};
+\end{tikzpicture}
+\end{center}
+
+在这个坐标系中，正方向向右。位移 $\Delta x > 0$ 表示物体向右运动，$\Delta x < 0$ 表示向左运动。
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{位移与路程的计算}
 
-\textbf{解题过程：} TODO。
+\textbf{题意分析：} 一个同学从校门口 $A$ 点出发，先向东走了 $300\ \mathrm{m}$ 到达 $B$ 点，然后向北走了 $400\ \mathrm{m}$ 到达 $C$ 点。
+\begin{enumerate}
+  \item 求该同学的总路程。
+  \item 求该同学的位移大小和方向。
+  \item 如果整个过程用时 $250\ \mathrm{s}$，求平均速度的大小和平均速率。
+\end{enumerate}
 
-\textbf{方法总结：} TODO。
+\textbf{物理模型：} 质点在一维和二维平面上的运动模型。A$\to$B 是一维直线运动，再 A$\to$B$\to$C 是二维运动。
+
+\textbf{解题过程：}
+
+\begin{enumerate}
+  \item 总路程 $s = AB + BC = 300 + 400 = 700\ \mathrm{m}$。
+  
+  \item 位移是从起点 $A$ 指向终点 $C$ 的有向线段。
+  \[
+  |\Delta\vect{x}| = \sqrt{AB^2 + BC^2} = \sqrt{300^2 + 400^2} = 500\ \mathrm{m}
+  \]
+  方向：东偏北 $\theta$ 角，其中 $\tan\theta = \dfrac{400}{300} = \dfrac{4}{3}$，$\theta \approx 53^\circ$。
+  
+  \item 平均速度：$\bar{v} = \dfrac{|\Delta\vect{x}|}{\Delta t} = \dfrac{500}{250} = 2.0\ \mathrm{m/s}$，方向东偏北 $53^\circ$。
+  
+  平均速率：$\bar{v}_{\text{速率}} = \dfrac{s}{\Delta t} = \dfrac{700}{250} = 2.8\ \mathrm{m/s}$。
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8,>=Latex]
+  % 坐标
+  \draw[->] (-0.5,0) -- (5,0) node[right] {东};
+  \draw[->] (0,-0.5) -- (0,5) node[above] {北};
+  % A点
+  \filldraw[black] (0,0) circle (2pt) node[below left] {$A$};
+  % B点（东300）
+  \filldraw[black] (3,0) circle (2pt) node[below right] {$B$};
+  % C点（北400）
+  \filldraw[black] (3,4) circle (2pt) node[above right] {$C$};
+  % AB
+  \draw[->,thick] (0,0) -- (3,0) node[midway,below] {$300\ \mathrm{m}$};
+  % BC
+  \draw[->,thick] (3,0) -- (3,4) node[midway,right] {$400\ \mathrm{m}$};
+  % AC（位移）
+  \draw[->,ultra thick,red] (0,0) -- (3,4) node[midway,above left] {$500\ \mathrm{m}$};
+  % 角度
+  \draw (0.8,0) arc (0:53:0.8);
+  \node at (1,0.5) {$\theta$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{方法总结：}
+\begin{enumerate}
+  \item 路程就是实际路径长度之和，把每一段长度加起来即可。
+  \item 位移用起点指向终点的直线段表示，二维情况下用勾股定理或矢量合成。
+  \item 平均速度 = 位移 $\div$ 时间，平均速率 = 路程 $\div$ 时间。两者不是同一概念。
+  \item 画图辅助分析是解决运动学问题的基本功。
+\end{enumerate}
+
+\end{examplebox}
+
+\begin{examplebox}{平均速度与速度的平均值}
+
+\textbf{题意分析：} 某物体沿直线运动，前一半位移的平均速度为 $v_1 = 4\ \mathrm{m/s}$，后一半位移的平均速度为 $v_2 = 6\ \mathrm{m/s}$。求全程的平均速度。
+
+\textbf{物理模型：} 直线运动，两段位移相等。
+
+\textbf{解题过程：}
+
+设总位移为 $2x$，前一半位移用时 $t_1$，后一半位移用时 $t_2$。
+\[
+t_1 = \frac{x}{v_1},\qquad t_2 = \frac{x}{v_2}
+\]
+全程平均速度：
+\[
+\bar{v} = \frac{2x}{t_1 + t_2} = \frac{2x}{\frac{x}{v_1} + \frac{x}{v_2}} = \frac{2}{\frac{1}{v_1} + \frac{1}{v_2}} = \frac{2v_1 v_2}{v_1 + v_2}
+\]
+代入 $v_1 = 4$，$v_2 = 6$：
+\[
+\bar{v} = \frac{2 \times 4 \times 6}{4 + 6} = \frac{48}{10} = 4.8\ \mathrm{m/s}
+\]
+
+\textbf{错解检查：} 有人会算 $(4 + 6)/2 = 5\ \mathrm{m/s}$，这是错的！因为两段位移相等但速度不同，时间不相等，不能直接对速度取算术平均。
+
+\textbf{方法总结：} 
+\begin{itemize}
+  \item 平均速度只能用定义 $\bar{v} = \Delta x / \Delta t$ 计算。
+  \item 等位移段的平均速度公式 $\bar{v} = \dfrac{2v_1v_2}{v_1+v_2}$ 是调和平均数。
+  \item 类似地，等时间段的平均速度是算术平均数 $\bar{v} = \dfrac{v_1+v_2}{2}$。两种情形不要混淆。
+\end{itemize}
+
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 某人骑自行车沿直线从 $A$ 到 $B$，前 $1/3$ 路程的速度为 $4\ \mathrm{m/s}$，中间 $1/3$ 路程的速度为 $6\ \mathrm{m/s}$，最后 $1/3$ 路程的速度为 $12\ \mathrm{m/s}$。求全程的平均速度。（提示：不是三段速度取平均！）
+  
+  \item 一质点沿半径为 $R = 10\ \mathrm{m}$ 的圆形轨道运动了半圈，用时 $5\ \mathrm{s}$。求：
+  \begin{enumerate}
+    \item 位移大小和路程。
+    \item 平均速度大小和平均速率。
+  \end{enumerate}
+  
+  \item 汽车从静止开始沿直线行驶，第 $1\ \mathrm{s}$ 内位移 $2\ \mathrm{m}$，第 $2\ \mathrm{s}$ 内位移 $4\ \mathrm{m}$，第 $3\ \mathrm{s}$ 内位移 $6\ \mathrm{m}$。求：
+  \begin{enumerate}
+    \item 前 $2\ \mathrm{s}$ 的平均速度。
+    \item 第 $3\ \mathrm{s}$ 内的平均速度。
+    \item 全程 $3\ \mathrm{s}$ 的平均速度。
+  \end{enumerate}
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{把路程当位移代入速度公式：} 高中速度公式 $v = \Delta x / \Delta t$ 中的分子是位移不是路程。题目问"速度"时必须先判断是平均速度还是平均速率。
+  
+  \item \textbf{平均速度和"速度的平均"混为一谈：} 平均速度是总位移 ÷ 总时间，不是各段速度的算术平均。等位移和等时间两种情况的公式不同，要会区分。
+  
+  \item \textbf{忽略参考系的选择：} 所有运动的描述都要基于某个参考系。题目不说明则以地面为参考系。但像"人在匀速行驶的船甲板上走"这类问题，人相对于船和相对于地的速度不同，必须明确参考系。
+  
+  \item \textbf{正负号只表示方向：} 在一维直线运动中，速度的正负只表示方向，不表示大小。$v = -10\ \mathrm{m/s}$ 和 $v = 5\ \mathrm{m/s}$ 相比，$|-10| > |5|$，前者更快。
+  
+  \item \textbf{位移和路程搞混：} 位移 $\leq$ 路程。单向直线运动时两者大小相等，但只要折返或走曲线，位移就小于路程。特别要注意"回到原点"时位移为零但路程不为零。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{相对运动的概念}
+
+在竞赛中，参考系的选取可以大大简化计算。一个经典技巧是：选择运动的物体作为参考系，把多个物体的运动转化为单个物体的运动。
+
+\textbf{例题：} 一辆汽车以 $v_1 = 20\ \mathrm{m/s}$ 向东行驶，一辆摩托车以 $v_2 = 30\ \mathrm{m/s}$ 向东行驶。求摩托车相对于汽车的速度。
+
+\textbf{解：} 取汽车为参考系。在汽车看来，地面以 $20\ \mathrm{m/s}$ 向西运动，摩托车相对于地面的速度是 $30\ \mathrm{m/s}$ 向东。因此摩托车相对于汽车的速度：
+\[
+\vect{v}_{2\text{对}1} = \vect{v}_2 - \vect{v}_1 = 30 - 20 = 10\ \mathrm{m/s}\ (\text{向东})
+\]
+
+更一般地，相对速度公式为：
+\[
+\vect{v}_{AB} = \vect{v}_A - \vect{v}_B
+\]
+其中 $\vect{v}_{AB}$ 表示 $A$ 相对于 $B$ 的速度。
+
+\textbf{推广到二维：}
+如果两辆车速度不共线，比如汽车向东 $20\ \mathrm{m/s}$，摩托车向北 $30\ \mathrm{m/s}$，则摩托车相对于汽车的速度：
+\[
+\vect{v}_{m\text{对}c} = \vect{v}_m - \vect{v}_c
+\]
+矢量减法用三角形法则计算，大小 $|\vect{v}_{m\text{对}c}| = \sqrt{20^2 + 30^2} \approx 36.1\ \mathrm{m/s}$，方向北偏西约 $33.7^\circ$。
+
+这个思想在后续的追及相遇问题、抛体运动问题中会反复用到。
 \end{competitionbox}
 
 \section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
 
+\begin{enumerate}
+  \item 参考系是描述运动的前提。运动是相对的，选择不同的参考系对同一运动的描述不同。
+  \item 位移是矢量，从起点指向终点；路程是标量，是实际路径总长度。位移 $\leq$ 路程。
+  \item 平均速度 $\bar{v} = \dfrac{\Delta x}{\Delta t}$，是矢量；平均速率 $= \dfrac{s}{\Delta t}$，是标量。
+  \item 瞬时速度是 $\Delta t \to 0$ 时的极限，高中物理说"速度"默认指瞬时速度。
+  \item 平均速度不是速度的平均值，必须用总位移 ÷ 总时间计算。
+\end{enumerate}
