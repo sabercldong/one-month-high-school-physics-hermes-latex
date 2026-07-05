@@ -1,25 +1,26 @@
 % TikZ 图：自由落体等时间间隔位移示意
 % Day 03：加速度
 % 使用：\input{figures/tikz/freefall-proportion.tex}
-\begin{tikzpicture}[scale=0.9,>=Latex]
+% 第1/2/3秒内位移精确按 1:3:5 比例绘制（取 g=10，总高45m）
+\begin{tikzpicture}[scale=0.85,>=Latex]
   % 顶部释放点
   \draw[thick] (-0.5,0) -- (0.5,0);
   \filldraw[black] (0,0) circle (2pt) node[above] {释放点};
-  % 第1秒末 (s = 5)
-  \draw[dashed] (0,0) -- (0,-1);
-  \filldraw[black] (0,-1) circle (2pt);
-  \node[right] at (0.2,-0.5) {第$1\ \mathrm{s}$内：$5\ \mathrm{m}$};
-  % 第2秒末 (s = 20, 第2s内位移 15)
-  \draw[dashed] (0,-1) -- (0,-2.73);
-  \filldraw[black] (0,-2.73) circle (2pt);
-  \node[right] at (0.2,-1.87) {第$2\ \mathrm{s}$内：$15\ \mathrm{m}$};
-  % 第3秒末 (s = 45, 第3s内位移 25)
-  \draw[dashed] (0,-2.73) -- (0,-4.47);
-  \filldraw[black] (0,-4.47) circle (2pt);
-  \node[right] at (0.2,-3.60) {第$3\ \mathrm{s}$内：$25\ \mathrm{m}$};
-  % g 箭头
-  \draw[->,thick] (0.8,0) -- (0.8,-4.5) node[midway,right] {$g$};
-  % 地面
-  \draw[pattern=north west lines,thick] (-0.6,-4.7) -- (0.6,-4.7);
-  \node[below] at (0,-4.7) {地面};
+  % 第1秒末位移 = 5（取比例1）
+  \draw[dashed] (0,0) -- (0,-1.2);
+  \filldraw[black] (0,-1.2) circle (2pt);
+  \node[right,xshift=2pt] at (0,-0.6) {第$1\ \mathrm{s}$内：$5\ \mathrm{m}$};
+  % 第2秒末位移累计 5+15=20（比例 1+3=4）
+  \draw[dashed] (0,-1.2) -- (0,-2.4);
+  \filldraw[black] (0,-2.4) circle (2pt);
+  \node[right,xshift=2pt] at (0,-1.8) {第$2\ \mathrm{s}$内：$15\ \mathrm{m}$};
+  % 第3秒末位移累计 5+15+25=45（比例 1+3+5=9）
+  \draw[dashed] (0,-2.4) -- (0,-3.6);
+  \filldraw[black] (0,-3.6) circle (2pt);
+  \node[right,xshift=2pt] at (0,-3.0) {第$3\ \mathrm{s}$内：$25\ \mathrm{m}$};
+  % g 箭头移远
+  \draw[->,thick] (1.2,0) -- (1.2,-3.6) node[midway,right,xshift=2pt] {$g$};
+  % 地面（虚线替代，避免误导总高度恰好45m）
+  \draw[dashed,thick] (-0.6,-3.8) -- (0.6,-3.8);
+  \node[below] at (0,-3.8) {地面（以 $g=10\ \mathrm{m/s^2}$ 为例）};
 \end{tikzpicture}
