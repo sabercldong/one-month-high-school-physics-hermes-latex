@@ -2,18 +2,24 @@
 % Day 03：加速度
 % 使用：\input{figures/tikz/freefall-proportion.tex}
 \begin{tikzpicture}[scale=0.9,>=Latex]
-  % 画一个自由落体示意图
+  % 顶部释放点
   \draw[thick] (-0.5,0) -- (0.5,0);
   \filldraw[black] (0,0) circle (2pt) node[above] {释放点};
-  \draw[dashed] (0,0) -- (0,-2);
-  \filldraw[black] (0,-2) circle (2pt);
-  \node[right] at (0.2,-1) {第$1\ \mathrm{s}$内：$5\ \mathrm{m}$};
-  \draw[dashed] (0,-2) -- (0,-3.46);
-  \filldraw[black] (0,-3.46) circle (2pt);
-  \node[right] at (0.2,-2.73) {第$2\ \mathrm{s}$内：$15\ \mathrm{m}$};
-  \draw[dashed] (0,-3.46) -- (0,-4.47);
+  % 第1秒末 (s = 5)
+  \draw[dashed] (0,0) -- (0,-1);
+  \filldraw[black] (0,-1) circle (2pt);
+  \node[right] at (0.2,-0.5) {第$1\ \mathrm{s}$内：$5\ \mathrm{m}$};
+  % 第2秒末 (s = 20, 第2s内位移 15)
+  \draw[dashed] (0,-1) -- (0,-2.73);
+  \filldraw[black] (0,-2.73) circle (2pt);
+  \node[right] at (0.2,-1.87) {第$2\ \mathrm{s}$内：$15\ \mathrm{m}$};
+  % 第3秒末 (s = 45, 第3s内位移 25)
+  \draw[dashed] (0,-2.73) -- (0,-4.47);
   \filldraw[black] (0,-4.47) circle (2pt);
-  \node[right] at (0.2,-3.97) {第$3\ \mathrm{s}$内：$25\ \mathrm{m}$};
-  \draw[->,thick] (0.5,0) -- (0.5,-4.5) node[midway,right] {$g$};
+  \node[right] at (0.2,-3.60) {第$3\ \mathrm{s}$内：$25\ \mathrm{m}$};
+  % g 箭头
+  \draw[->,thick] (0.8,0) -- (0.8,-4.5) node[midway,right] {$g$};
+  % 地面
+  \draw[pattern=north west lines,thick] (-0.6,-4.7) -- (0.6,-4.7);
   \node[below] at (0,-4.7) {地面};
 \end{tikzpicture}

@@ -30,7 +30,7 @@
 
 \begin{conceptbox}{加速度}
 
-\textbf{直观理解：} 加速度就是"每秒速度的变化量"。$a = 2\ \mathrm{m/s^2}$ 意味着每过 $1\ \mathrm{s}$，速度增加 $2\ \mathrm{m/s}$。
+\textbf{直观理解：} 在选定的正方向上，加速度 $a = 2\ \mathrm{m/s^2}$ 意味着每过 $1\ \mathrm{s}$，速度沿正方向增加 $2\ \mathrm{m/s}$（如果 $a$ 与正方向同向）。若 $a$ 与正方向反向，则速度沿正方向每秒减少 $2\ \mathrm{m/s}$。
 
 \textbf{定义式：}
 \[
@@ -123,17 +123,17 @@ $a = 0$ & 匀速或静止 \\
 \begin{center}
 \begin{tabular}{lll}
 \toprule
-缺少什么量 & 已知条件 & 选用公式 \\
+题中不涉及的量 & 已知条件 & 选用公式 \\
 \midrule
-缺 $x$ & $v_0, a, t$ & $v = v_0 + at$ \\
-缺 $v$ & $v_0, a, t$ & $x = v_0 t + \frac12 a t^2$ \\
-缺 $t$ & $v_0, v, a$ & $v^2 - v_0^2 = 2ax$ \\
-缺 $a$ & $v_0, v, t$ & $x = \frac{v_0+v}{2} t$ \\
+缺 $t$（不含时间） & $v_0, v, a$ & $v^2 - v_0^2 = 2ax$ \\
+缺 $v$（不含末速） & $v_0, a, t$ & $x = v_0 t + \frac12 a t^2$ \\
+缺 $a$（不含加速度） & $v_0, v, t$ & $x = \frac{v_0+v}{2} t$ \\
+缺 $x$（不含位移） & $v_0, a, t$ & $v = v_0 + at$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-口诀：\textbf{缺什么不求什么}——不含时间用速位公式，不含末速用位移公式。
+口诀：\textbf{题目不涉及哪个量，就选不含它的公式}——不含时间用速位公式，不含末速用位移公式。
 
 \section*{五、典型模型}
 
@@ -313,12 +313,14 @@ t_{\text{停}} = \frac{0 - v_0}{a} = \frac{0 - 20}{-5} = 4\ \mathrm{s}
   
   \item \textbf{自由落体 $g$ 的符号乱用：} $g$ 方向始终向下。取向下为正则 $g=+10$，取向上为正则 $g=-10$。正方向一旦选定，全程保持一致。
   
-  \item \textbf{套错公式：} 三个公式分别缺 $t$、$v$、$x$。题目问什么、缺什么，就选不涉及那个量的公式。
+  \item \textbf{选错公式：} 三个公式分别缺 $t$、$v$、$x$。题目给了哪些条件、不涉及哪个量，就选不含它的公式。例如已知 $v_0, a, t$ 但没给 $v$，就选 $x = v_0 t + \frac12 at^2$（不含 $v$）。
 \end{enumerate}
 \end{mistakebox}
 
+\pagebreak[3]
 \section*{九、竞赛入门补充}
 
+\nopagebreak
 \begin{competitionbox}
 \textbf{初速度为零的匀加速比例关系}
 
@@ -333,6 +335,7 @@ t_{\text{停}} = \frac{0 - v_0}{a} = \frac{0 - 20}{-5} = 4\ \mathrm{s}
 \textbf{小提示：} 在处理打点计时器纸带时，相邻相等时间内的位移差 $\Delta s = aT^2$ 是一个常用工具。这个公式在高中实验专题中会重点讲，这里先了解即可。
 \end{competitionbox}
 
+\enlargethispage{-3\baselineskip}
 \section*{十、今日小结}
 
 \begin{enumerate}

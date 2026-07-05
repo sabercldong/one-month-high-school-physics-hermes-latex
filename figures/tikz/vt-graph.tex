@@ -7,17 +7,21 @@
   \draw[->] (0,-0.3) -- (0,4.5) node[above] {$v$};
   % 标注原点
   \node[below left] at (0,0) {$O$};
-  % 画 v-t 线
-  \draw[thick,red] (0,1) -- (4,4);
+  % 画 v-t 线（黑色粗实线）
+  \draw[very thick] (0,1) -- (4,4);
   % 标注 v0
   \draw[->,thick] (0,0) -- (0,1);
   \node[left] at (0,0.5) {$v_0$};
   % 标注某时刻 t
-  \draw[dashed] (4,0) -- (4,4) node[pos=0.5,right] {$v$};
+  \draw[dashed] (4,0) -- (4,4);
   \node[below] at (4,0) {$t$};
+  % v 标注
+  \node[right] at (4.2,2.5) {$v = v_0 + at$};
   % 梯形面积标注
   \fill[black!15] (0,0) -- (0,1) -- (4,4) -- (4,0) -- cycle;
-  \node at (3,1.2) {面积 $= x$};
-  % 斜率标注
-  \draw[<->] (2,2.5) -- (3.5,3.25) node[midway,above,sloped] {$a = \frac{\Delta v}{\Delta t}$};
+  \node at (2.8,0.8) {$x = \frac{v_0+v}{2}t$};
+  % 斜率标注：用与图线平行的虚线
+  \draw[dashed] (1.5,2.125) -- (2.5,2.125);
+  \draw[dashed] (2.5,2.125) -- (2.5,3.25);
+  \node[above right] at (1.5,2.125) {$a = \frac{v-v_0}{t}$};
 \end{tikzpicture}
