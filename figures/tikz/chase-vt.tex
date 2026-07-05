@@ -1,23 +1,26 @@
 % TikZ 图：追及问题的 v-t 图像
 % Day 04：运动图像与追及相遇
-% A 匀速 v=3, B 匀加速从静止开始，t0 时追上
+% A 匀速 v=3, B 匀加速从静止开始，t0 时面积差 = s0 则追上
 \begin{tikzpicture}[scale=1,>=Latex]
   \draw[->] (-0.3,0) -- (5.5,0) node[right] {$t$};
   \draw[->] (0,-0.3) -- (0,4.5) node[above] {$v$};
   \node[below left] at (0,0) {$O$};
   % A 匀速（红色）
-  \draw[very thick,red] (0,3) -- (5,3);
-  \node[above right,red] at (5,3) {$A$};
-  % B 匀加速从静止（蓝色）
-  \draw[very thick,blue] (0,0) -- (5,4);
-  \node[above right,blue] at (5,4) {$B$};
-  % 追上时刻 t0（面积相等时）
+  \draw[very thick,red] (0,2.5) -- (5,2.5);
+  \node[above right,red] at (5,2.5) {$A$};
+  % B 匀加速从静止
+  \draw[very thick,blue] (0,0) -- (4.5,4);
+  \node[above right,blue] at (4.5,4) {$B$};
+  % 追上时刻 t0
   \draw[dashed] (3.2,0) -- (3.2,3.2);
   \node[below] at (3.2,0) {$t_0$};
-  % A 的面积矩形
-  \fill[red!15] (0,0) -- (0,3) -- (3.2,3) -- (3.2,0) -- cycle;
-  \node[red] at (1.6,1.5) {$x_A$};
-  % B 的面积三角形
+  % A 面积（矩形）
+  \fill[red!15] (0,0) -- (0,2.5) -- (3.2,2.5) -- (3.2,0) -- cycle;
+  \node[red] at (1.6,1.25) {$x_A$};
+  % B 面积（三角形）
   \fill[blue!15] (0,0) -- (3.2,3.2) -- (3.2,0) -- cycle;
-  \node[blue] at (2.2,1.8) {$x_B$};
+  \node[blue] at (2.0,2.0) {$x_B$};
+  % 面积差 = s0
+  \draw[<->,thick] (3.6,1.6) -- (3.6,2.5);
+  \node[right] at (3.6,2.05) {$s_0$};
 \end{tikzpicture}

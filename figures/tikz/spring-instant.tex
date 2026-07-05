@@ -1,0 +1,27 @@
+% TikZ 图：弹簧瞬时性问题
+% Day 06：牛顿运动定律
+% A球用细绳悬挂在顶，A和B用弹簧连接，剪断细绳瞬间
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  % 天花板
+  \draw[thick] (-2,0) -- (2,0);
+  % 细绳悬挂A
+  \draw[thick] (0,0) -- (0,-1.2);
+  \draw[thick] (-0.5,-1.2) rectangle (0.5,-2.0);
+  \node at (0,-1.6) {$A$};
+  \node[left] at (0,-0.6) {细绳};
+  % 弹簧连接A和B
+  \draw[decorate,decoration={coil,aspect=0.3,segment length=3pt,amplitude=2pt}] (0,-2.0) -- (0,-3.3);
+  \node[right] at (0,-2.65) {弹簧};
+  % B球
+  \draw[thick] (-0.5,-3.3) rectangle (0.5,-4.1);
+  \node at (0,-3.7) {$B$};
+  % 剪断示意
+  \draw[red,thick] (0.6,-0.8) -- (-0.6,-1.0);
+  \node[red,right] at (0.6,-0.9) {剪断};
+  % 剪断后A受力
+  \draw[->,thick,blue] (-1.2,-1.6) -- (-1.2,-2.4) node[left] {$G$};
+  \draw[->,thick,red] (-1.2,-1.6) -- (-1.2,-0.8) node[left] {$T$（弹簧弹力不变）};
+  % 剪断后B受力
+  \draw[->,thick,blue] (1.2,-3.7) -- (1.2,-4.5) node[right] {$G$};
+  \draw[->,thick,red] (1.2,-3.7) -- (1.2,-2.9) node[right] {$T$};
+\end{tikzpicture}

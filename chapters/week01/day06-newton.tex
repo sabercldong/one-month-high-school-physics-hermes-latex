@@ -289,8 +289,6 @@ a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
     \item 物体上滑的加速度大小和方向。
     \item 物体上滑的最大距离。
   \end{enumerate}
-  
-  \item $m_A = 4\ \mathrm{kg}$、$m_B = 1\ \mathrm{kg}$ 用轻绳连接放在粗糙水平面上，$\mu = 0.2$，在 $A$ 上施加 $F = 15\ \mathrm{N}$ 的水平拉力。求加速度和绳中张力。
 \end{enumerate}
 
 \section*{八、易错点}
@@ -318,17 +316,25 @@ a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
 
 \textbf{关键：} 弹簧弹力不能突变（形变需要时间），而绳的拉力可以突变。
 
-\textbf{例题：} 如图所示，$A$、$B$ 两球用轻弹簧连接，$A$ 球用细绳悬挂在天花板上。剪断细绳的瞬间，$A$、$B$ 两球的加速度各是多少？
+\textbf{例题：} $A$、$B$ 两球用轻弹簧连接，$A$ 球用细绳悬挂在天花板上，如图。
 
-\textbf{分析：} 
+\begin{center}
+\input{figures/tikz/spring-instant}
+
+\figcaption{剪断细绳瞬间：弹簧弹力 $T$ 保持不变，绳拉力 $F$ 立即消失}\label{fig:spring-instant}
+\end{center}
+
+剪断细绳的瞬间，$A$、$B$ 两球的加速度各是多少？
+
+\textbf{解答：} 
 \begin{itemize}
-  \item 剪断前：$A$ 受重力 $m_A g$、弹簧拉力 $T$、绳拉力 $F$；$B$ 受重力 $m_B g$、弹簧拉力 $T$。
-  \item 剪断瞬间：绳拉力 $F$ 立即消失，但弹簧形变未变，$T$ 保持不变。
-  \item 对 $A$：$m_A g + T = m_A a_A$（$T$ 方向向下）。
-  \item 对 $B$：$m_B g - T = m_B a_B$（$T$ 方向向上）。
+  \item 剪断前：$A$ 受重力 $m_A g$、弹簧拉力 $T$（向下）、绳拉力 $F$（向上），平衡 $F = m_A g + T$；$B$ 受重力 $m_B g$、弹簧拉力 $T$（向上），平衡 $T = m_B g$。
+  \item 剪断瞬间：绳拉力 $F$ 立即消失，但弹簧形变未变，$T$ 保持不变（$T = m_B g$）。
+  \item 对 $A$：$m_A g + T = m_A a_A$，$a_A = \dfrac{m_A + m_B}{m_A} g$（向下）。
+  \item 对 $B$：$m_B g - T = m_B a_B$，$a_B = 0$（弹力与重力仍平衡）。
 \end{itemize}
 
-\textbf{结论：} 弹簧弹力在瞬间保持不变，绳子拉力可以突变。
+\textbf{结论：} 弹簧弹力在瞬间保持不变，绳子拉力可以突变。若 $m_A = m_B = m$，则剪断瞬间 $a_A = 2g$（向下），$a_B = 0$。
 \end{competitionbox}
 
 \section*{十、今日小结}
@@ -338,5 +344,5 @@ a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
   \item 牛顿第二定律 $F_{\text{合}} = ma$：受力分析 $\to$ 求合力 $\to$ 算加速度 $\to$ 运动学求解。
   \item 牛顿第三定律：作用力与反作用力等大反向、同生同灭，但作用在不同物体上。
   \item 正交分解法：取加速度方向为 $x$ 轴，$y$ 方向合力为零。
-  \item 连接体问题：整体法求加速度，隔离法求内力。
+  \item 连接体思路：整体法求加速度，隔离法求内力（Day 07 专题深入）。
 \end{enumerate}
