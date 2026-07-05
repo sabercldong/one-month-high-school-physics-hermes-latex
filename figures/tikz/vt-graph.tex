@@ -1,0 +1,23 @@
+% TikZ 图：匀变速直线运动的 v-t 图像
+% Day 03：加速度
+% 使用：\input{figures/tikz/vt-graph.tex}
+\begin{tikzpicture}[scale=1,>=Latex]
+  % 坐标轴
+  \draw[->] (-0.3,0) -- (5.5,0) node[right] {$t$};
+  \draw[->] (0,-0.3) -- (0,4.5) node[above] {$v$};
+  % 标注原点
+  \node[below left] at (0,0) {$O$};
+  % 画 v-t 线
+  \draw[thick,red] (0,1) -- (4,4);
+  % 标注 v0
+  \draw[->,thick] (0,0) -- (0,1);
+  \node[left] at (0,0.5) {$v_0$};
+  % 标注某时刻 t
+  \draw[dashed] (4,0) -- (4,4) node[pos=0.5,right] {$v$};
+  \node[below] at (4,0) {$t$};
+  % 梯形面积标注
+  \fill[black!15] (0,0) -- (0,1) -- (4,4) -- (4,0) -- cycle;
+  \node at (3,1.2) {面积 $= x$};
+  % 斜率标注
+  \draw[<->] (2,2.5) -- (3.5,3.25) node[midway,above,sloped] {$a = \frac{\Delta v}{\Delta t}$};
+\end{tikzpicture}
