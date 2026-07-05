@@ -1,0 +1,20 @@
+% TikZ 图：弹簧与胡克定律
+% Day 05：力、重力、弹力、摩擦力
+\begin{tikzpicture}[scale=1,>=Latex]
+  % 天花板
+  \draw[thick] (-1,0) -- (3,0);
+  % 弹簧原长位置
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=4pt,amplitude=3pt}] (1,0) -- (1,-1.5);
+  \node at (1,-0.75) {$l_0$};
+  % 弹簧悬挂砝码
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=4pt,amplitude=3pt}] (3,0) -- (3,-2.5);
+  \draw[thick] (2.5,-2.5) rectangle (3.5,-3.0);
+  \node at (3,-2.75) {$m$};
+  % 伸长量标注
+  \draw[<->] (3.8,0) -- (3.8,-2.5) node[midway,right] {$l_0 + x$};
+  \draw[<->,red] (4.2,-1.5) -- (4.2,-2.5) node[midway,right] {$x$};
+  % 弹力箭头
+  \draw[->,thick,red] (3,-2.5) -- (3,-1.2) node[right] {$F = kx$};
+  % 重力箭头
+  \draw[->,thick,blue] (3,-3.0) -- (3,-4.0) node[right] {$G = mg$};
+\end{tikzpicture}

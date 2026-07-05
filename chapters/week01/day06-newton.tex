@@ -1,54 +1,332 @@
 \daytitle{6}{牛顿运动定律}
 
 \begin{learningbox}{本讲义大致内容}
-讲牛顿三大定律，重点是牛顿第二定律、合力、加速度、正交分解和列方程。
+牛顿三大定律是整个经典力学的基石。今天重点掌握牛顿第二定律 $F = ma$——它把力和运动联系起来了。学会用正交分解法列方程，解决各种动力学问题。
 \end{learningbox}
 
 \section*{一、学习目标}
+
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 理解牛顿第一定律（惯性定律）的含义：力不是维持运动的原因，而是改变运动状态的原因。
+  \item 掌握牛顿第二定律 $F_{\text{合}} = ma$，知道 $F_{\text{合}}$ 是物体所受的合力。
+  \item 理解牛顿第三定律：作用力与反作用力等大反向、同生同灭。
+  \item 会用正交分解法列动力学方程。
+  \item 能解决水平面、斜面上的动力学问题。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中对牛顿定律的学习停留在定性层面：牛顿第一定律叫"惯性定律"，牛顿第三定律叫"力的作用是相互的"。
+
+高中在以下方面深化：
+\begin{enumerate}
+  \item \textbf{牛顿第二定律定量化：} $F_{\text{合}} = ma$，已知力可以算加速度，已知加速度可以反推力。
+  \item \textbf{力学与运动学打通：} 牛顿定律是"桥梁"——受力分析 $\to$ 合力 $\to$ 加速度 $\to$ 运动学公式。
+  \item \textbf{多物体系统：} 整体法和隔离法分析连接体问题。
+\end{enumerate}
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{牛顿第一定律（惯性定律）}
+
+\textbf{内容：} 一切物体在不受外力作用（或合力为零）时，总保持匀速直线运动状态或静止状态。
+
+\textbf{惯性：} 物体保持原有运动状态不变的性质。
+\begin{itemize}
+  \item 惯性是物体的固有属性，与是否受力、是否运动无关。
+  \item 质量是惯性大小的量度——质量越大，惯性越大，运动状态越难改变。
+\end{itemize}
+
+\textbf{伽利略的理想实验：} 斜面实验表明，如果没有摩擦力，小球将沿另一斜面上升到相同高度。若另一斜面倾角为零（水平），小球将一直运动下去——推翻了亚里士多德"力是维持运动的原因"的错误观点。
+
+\textbf{注意：} 牛顿第一定律不能直接用实验验证（无法完全消除外力），它是由实验和推理得出的。
+
+\end{conceptbox}
+
+\begin{conceptbox}{牛顿第二定律}
+
+\textbf{内容：} 物体的加速度与所受合力成正比，与质量成反比，加速度方向与合力方向相同。
+
+\[
+\boxed{F_{\text{合}} = ma}
+\]
+
+\begin{itemize}
+  \item \textbf{矢量性：} $F_{\text{合}}$ 和 $a$ 方向相同。
+  \item \textbf{瞬时性：} 力一旦产生，加速度立即产生（同时性）。
+  \item \textbf{独立性：} 每个力都独立产生加速度，合加速度是各力加速度的矢量和。
+\end{itemize}
+
+\textbf{解题关键：} 用牛顿第二定律建立方程，把受力分析的结果代入。
+\[
+\text{受力分析} \;\to\; \text{求合力}\; F_{\text{合}} \;\to\; F_{\text{合}} = ma \;\to\; \text{求加速度或某个力}
+\]
+
+\begin{center}
+\input{figures/tikz/newton-second}
+
+\figcaption{水平面上 $F_{\text{合}} = F - f = ma$}\label{fig:newton-second}
+\end{center}
+
+\end{conceptbox}
+
+\begin{conceptbox}{牛顿第三定律}
+
+\textbf{内容：} 两个物体之间的作用力和反作用力总是大小相等、方向相反、作用在同一条直线上。
+
+\[
+\vect{F}_{AB} = -\vect{F}_{BA}
+\]
+
+\textbf{四个特征：}
+\begin{enumerate}
+  \item \textbf{等大：} $|F_{AB}| = |F_{BA}|$。
+  \item \textbf{反向：} 方向相反。
+  \item \textbf{共线：} 作用在同一直线上。
+  \item \textbf{同时：} 同生同灭，没有先后。
+\end{enumerate}
+
+\textbf{关键区别：} 作用力与反作用力（牛顿第三定律）$\neq$ 平衡力（牛顿第一定律）。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+ & 作用力与反作用力 & 平衡力 \\
+\midrule
+对象 & 两个不同物体 & 同一个物体 \\
+性质 & 一定相同 & 可以不同 \\
+时间 & 同生同灭 & 无此要求 \\
+效果 & 各自产生效果 & 合力为零 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\subsection*{核心公式}
+
+\[
+\boxed{F_{\text{合}} = ma}
+\]
+
+\begin{itemize}
+  \item 适用条件：宏观、低速（远小于光速）、惯性参考系。
+  \item $F_{\text{合}}$ 是物体所受所有力的矢量和，不是某个力。
+  \item $a$ 与 $F_{\text{合}}$ 瞬时对应。
+\end{itemize}
+
+\subsection*{正交分解法}
+
+当物体受力不在同一直线上时，把力分解到两个互相垂直的方向上。
+
+\begin{center}
+\input{figures/tikz/orthogonal-decomp}
+
+\figcaption{正交分解：$F_x = F\cos\theta$，$F_y = F\sin\theta$}\label{fig:orthogonal-decomp}
+\end{center}
+
+\noindent 列方程标准形式：
+\[
+\begin{cases}
+F_{x\text{合}} = ma_x \\
+F_{y\text{合}} = ma_y
+\end{cases}
+\]
+
+通常取加速度方向为 $x$ 轴正方向，则 $a_y = 0$，$y$ 方向合力为零（平衡）。
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：水平面上的动力学}
+
+物体在水平拉力 $F$ 和摩擦力 $f$ 作用下运动：
+\[
+F - f = ma,\qquad N = mg
+\]
+若 $F$ 与水平方向成 $\theta$ 角，则：
+\[
+F\cos\theta - \mu (mg - F\sin\theta) = ma
+\]
+
+\subsection*{模型 2：斜面上的动力学}
+
+物体沿斜面下滑（或上滑）：
+\[
+mg\sin\theta - f = ma,\qquad N = mg\cos\theta,\qquad f = \mu N = \mu mg\cos\theta
+\]
+\[
+a = g\sin\theta - \mu g\cos\theta
+\]
+
+\begin{center}
+\input{figures/tikz/newton-incline}
+
+\figcaption{斜面上物体的受力与分解}\label{fig:newton-incline}
+\end{center}
+
+\subsection*{模型 3：连接体问题（基础）}
+
+两个物体用轻绳连接，在拉力下一起运动。先用整体法求加速度：
+\[
+F - f_{\text{总}} = (m_1 + m_2) a
+\]
+再用隔离法求绳中张力。
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{水平面上的牛顿第二定律}
 
-\textbf{解题过程：} TODO。
+\textbf{题意分析：} 一个 $m = 4\ \mathrm{kg}$ 的物体在水平面上，受水平拉力 $F = 20\ \mathrm{N}$，物体与地面间的动摩擦因数 $\mu = 0.3$，$g = 10\ \mathrm{m/s^2}$。求物体的加速度。
 
-\textbf{方法总结：} TODO。
+\textbf{物理模型：} 水平面动力学，受拉力 $F$ 和摩擦力 $f$。
+
+\textbf{解题过程：}
+
+正压力 $N = mg = 4 \times 10 = 40\ \mathrm{N}$
+滑动摩擦力 $f = \mu N = 0.3 \times 40 = 12\ \mathrm{N}$
+
+水平方向合力：$F_{\text{合}} = F - f = 20 - 12 = 8\ \mathrm{N}$
+
+由牛顿第二定律：
+\[
+a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
+\]
+
+\textbf{方法总结：} 水平面上先算 $N = mg$，再算 $f = \mu N$，然后用 $F - f = ma$。
+
+\end{examplebox}
+
+\begin{examplebox}{斜面上的牛顿第二定律}
+
+\textbf{题意分析：} 质量为 $m = 2\ \mathrm{kg}$ 的物体从倾角 $\theta = 37^\circ$（$\sin37^\circ = 0.6$，$\cos37^\circ = 0.8$）的斜面顶端由静止下滑，物体与斜面间的动摩擦因数 $\mu = 0.25$，$g = 10\ \mathrm{m/s^2}$。求：
+\begin{enumerate}
+  \item 物体下滑的加速度。
+  \item 若斜面长 $L = 5\ \mathrm{m}$，物体滑到底端所需时间和末速度。
+\end{enumerate}
+
+\textbf{物理模型：} 斜面动力学 $\to$ 匀加速直线运动。
+
+\textbf{解题过程：}
+
+\begin{enumerate}
+  \item 沿斜面方向合力：
+  \[
+  mg\sin\theta - \mu mg\cos\theta = ma
+  \]
+  \[
+  a = g(\sin\theta - \mu\cos\theta) = 10 \times (0.6 - 0.25 \times 0.8) = 10 \times 0.4 = 4\ \mathrm{m/s^2}
+  \]
+  
+  \item 由运动学公式（$v_0 = 0$）：
+  \[
+  L = \frac12 a t^2,\qquad 5 = \frac12 \times 4 \times t^2,\qquad t^2 = 2.5,\qquad t \approx 1.58\ \mathrm{s}
+  \]
+  \[
+  v = a t = 4 \times 1.58 \approx 6.32\ \mathrm{m/s}
+  \]
+\end{enumerate}
+
+\textbf{方法总结：} 斜面动力学的关键是把重力分解为沿斜面方向（$mg\sin\theta$，产生加速度）和垂直斜面方向（$mg\cos\theta$，决定支持力）。
+
+\end{examplebox}
+
+\begin{examplebox}{连接体问题}
+
+\textbf{题意分析：} 质量 $m_A = 3\ \mathrm{kg}$、$m_B = 2\ \mathrm{kg}$ 的两个物体用轻绳连接，放在光滑水平面上。在 $A$ 上施加水平拉力 $F = 10\ \mathrm{N}$。求：
+\begin{enumerate}
+  \item 整体的加速度。
+  \item 绳中张力 $T$。
+\end{enumerate}
+
+\textbf{物理模型：} 连接体，光滑无摩擦。
+
+\textbf{解题过程：}
+
+\begin{enumerate}
+  \item 整体法（把 $A$、$B$ 看作一个整体）：
+  \[
+  F = (m_A + m_B) a,\qquad 10 = 5a,\qquad a = 2\ \mathrm{m/s^2}
+  \]
+  
+  \item 隔离 $B$（只分析 $B$ 受的力）：
+  
+  $B$ 只受绳的拉力 $T$，由牛顿第二定律：
+  \[
+  T = m_B a = 2 \times 2 = 4\ \mathrm{N}
+  \]
+  
+  验证（隔离 $A$）：$F - T = m_A a$，$10 - 4 = 6 = 3 \times 2$，正确。
+\end{enumerate}
+
+\textbf{方法总结：}
+\begin{enumerate}
+  \item 连接体问题先用整体法求加速度，再用隔离法求内力（张力）。
+  \item 整体法只考虑整体受的外力，不考虑内部相互作用力。
+  \item 光滑表面摩擦可忽略，粗糙表面需要加上整体摩擦力。
+\end{enumerate}
+
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 质量为 $m = 5\ \mathrm{kg}$ 的物体在水平面上，受水平拉力 $F = 25\ \mathrm{N}$，$\mu = 0.4$，$g = 10\ \mathrm{m/s^2}$。求加速度。
+  
+  \item 一个物体以 $v_0 = 10\ \mathrm{m/s}$ 的初速度沿倾角 $\theta = 30^\circ$ 的粗糙斜面向上滑行，$\mu = 0.2$，$g = 10\ \mathrm{m/s^2}$。求：
+  \begin{enumerate}
+    \item 物体上滑的加速度大小和方向。
+    \item 物体上滑的最大距离。
+  \end{enumerate}
+  
+  \item $m_A = 4\ \mathrm{kg}$、$m_B = 1\ \mathrm{kg}$ 用轻绳连接放在粗糙水平面上，$\mu = 0.2$，在 $A$ 上施加 $F = 15\ \mathrm{N}$ 的水平拉力。求加速度和绳中张力。
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{把 $F = ma$ 中的 $F$ 理解为某个力而不是合力：} 物体在斜面上受重力、支持力、摩擦力，加速度 $a = g\sin\theta - \mu g\cos\theta$ 是由合力产生的，不是单由重力产生的。
+  
+  \item \textbf{混淆作用力与反作用力和平衡力：} 平衡力作用在同一物体上，作用力与反作用力作用在两个不同物体上。分析物体受力时只画平衡力。
+  
+  \item \textbf{正交分解时坐标方向不对：} 一般取加速度方向为 $x$ 轴正方向，这样 $y$ 方向合力为零，方程最简单。
+  
+  \item \textbf{牛顿第二定律的瞬时性：} 某个力消失，加速度立即改变。常见陷阱是绳断瞬间的受力突变。
+  
+  \item \textbf{连接体问题中内力不等于外力：} 很多人误以为绳中张力等于外部拉力，这是错的。张力需要通过隔离法求出。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{牛顿第二定律的瞬时性问题}
+
+竞赛中常见"剪断绳子"、"撤去支持物"等瞬时变化问题。
+
+\textbf{关键：} 弹簧弹力不能突变（形变需要时间），而绳的拉力可以突变。
+
+\textbf{例题：} 如图所示，$A$、$B$ 两球用轻弹簧连接，$A$ 球用细绳悬挂在天花板上。剪断细绳的瞬间，$A$、$B$ 两球的加速度各是多少？
+
+\textbf{分析：} 
+\begin{itemize}
+  \item 剪断前：$A$ 受重力 $m_A g$、弹簧拉力 $T$、绳拉力 $F$；$B$ 受重力 $m_B g$、弹簧拉力 $T$。
+  \item 剪断瞬间：绳拉力 $F$ 立即消失，但弹簧形变未变，$T$ 保持不变。
+  \item 对 $A$：$m_A g + T = m_A a_A$（$T$ 方向向下）。
+  \item 对 $B$：$m_B g - T = m_B a_B$（$T$ 方向向上）。
+\end{itemize}
+
+\textbf{结论：} 弹簧弹力在瞬间保持不变，绳子拉力可以突变。
 \end{competitionbox}
 
 \section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
 
+\begin{enumerate}
+  \item 牛顿第一定律：力是改变运动状态的原因（不是维持运动的原因）。
+  \item 牛顿第二定律 $F_{\text{合}} = ma$：受力分析 $\to$ 求合力 $\to$ 算加速度 $\to$ 运动学求解。
+  \item 牛顿第三定律：作用力与反作用力等大反向、同生同灭，但作用在不同物体上。
+  \item 正交分解法：取加速度方向为 $x$ 轴，$y$ 方向合力为零。
+  \item 连接体问题：整体法求加速度，隔离法求内力。
+\end{enumerate}

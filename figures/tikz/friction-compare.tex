@@ -1,0 +1,19 @@
+% TikZ 图：静摩擦 vs 滑动摩擦对比
+% Day 05：力、重力、弹力、摩擦力
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  % 左图：静摩擦
+  \draw[thick] (-2,0) -- (2,0);
+  \draw[thick] (-0.8,0) rectangle (0.8,1.2);
+  \node at (0,0.6) {$m$};
+  \draw[->,thick,red] (0.8,0.6) -- (2.2,0.6) node[above] {$F$};
+  \draw[->,thick,red] (-0.8,0.6) -- (-2.2,0.6) node[above] {$f_{\text{静}}$};
+  \node[below] at (0,-0.3) {未拉动：$f_{\text{静}} = F$};
+  
+  % 右图：滑动摩擦
+  \draw[thick] (4,0) -- (8,0);
+  \draw[thick] (4.8,0) rectangle (6.4,1.2);
+  \node at (5.6,0.6) {$m$};
+  \draw[->,thick,red] (6.4,0.6) -- (8,0.6) node[above] {$F$};
+  \draw[->,thick,red] (4.8,0.6) -- (3.2,0.6) node[above] {$f_{\text{滑}}$};
+  \node[below] at (5.6,-0.3) {已滑动：$f_{\text{滑}} = \mu N$};
+\end{tikzpicture}

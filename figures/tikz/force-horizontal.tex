@@ -1,0 +1,17 @@
+% TikZ 图：水平面上物体受力分析
+% Day 05：力、重力、弹力、摩擦力
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  % 地面
+  \draw[thick] (-1,0) -- (4,0);
+  % 物体（方块）
+  \draw[thick] (0.5,0) rectangle (2.5,1.5);
+  \node at (1.5,0.75) {$m$};
+  % 拉力 F
+  \draw[->,thick,red] (2.5,0.75) -- (4,0.75) node[above] {$F$};
+  % 重力 G
+  \draw[->,thick,blue] (1.5,0) -- (1.5,-1.2) node[right] {$G$};
+  % 支持力 N
+  \draw[->,thick,blue] (1.5,1.5) -- (1.5,2.7) node[right] {$N$};
+  % 摩擦力 f（未滑动时静摩擦）
+  \draw[->,thick,red] (0.5,0.75) -- (-0.8,0.75) node[above] {$f$};
+\end{tikzpicture}

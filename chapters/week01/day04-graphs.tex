@@ -1,54 +1,279 @@
 \daytitle{4}{运动图像与追及相遇}
 
 \begin{learningbox}{本讲义大致内容}
-讲 x-t 图像、v-t 图像、斜率和面积的物理意义，解决追及、相遇、最大距离等问题。
+$x$-$t$ 图和 $v$-$t$ 图是运动学的"可视化语言"。今天学会读图、画图，并用图像法解决追及相遇和最大距离问题。
 \end{learningbox}
 
 \section*{一、学习目标}
+
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 能读懂 $x$-$t$ 图像，知道斜率、截距、拐点的物理意义。
+  \item 能读懂 $v$-$t$ 图像，会用面积求位移、用斜率求加速度。
+  \item 会区分匀速、匀加速、匀减速、静止四种运动在不同图像中的形态。
+  \item 会用图像法和公式法解决追及相遇问题。
+  \item 会求追及过程中的最大/最小距离。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中物理讲过"匀速直线运动的路程-时间图像"，是一条过原点的直线。高中在这个基础上增加三个维度：
+
+\begin{enumerate}
+  \item 不仅有 $x$-$t$ 图，还有 $v$-$t$ 图——多了面积表示位移。
+  \item 不只有匀速，还有匀加速、匀减速、静止、折返等多种运动形态。
+  \item 用图像法解追及相遇题，比纯公式法更直观。
+\end{enumerate}
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{$x$-$t$ 图像（位移-时间图）}
+
+\textbf{直观理解：} $x$-$t$ 图像描述的是物体"位置随时间怎么变"。
+
+\begin{center}
+\input{figures/tikz/xt-graph}
+
+\figcaption{匀速直线运动的 $x$-$t$ 图像：斜率 $=v$}\label{fig:xt-graph}
+\end{center}
+
+\textbf{关键读图方法：}
+\begin{itemize}
+  \item \textbf{斜率} = 速度 $v$。直线越陡，速度越大。斜率为负表示反向运动。
+  \item \textbf{截距} = 初始位置 $x_0$。图线与 $x$ 轴的交点。
+  \item \textbf{交点} = 两物体在该时刻位置相同（相遇）。
+  \item \textbf{水平线} = 物体静止。
+  \item \textbf{曲线} = 变速运动（切线斜率为瞬时速度）。
+\end{itemize}
+
+\end{conceptbox}
+
+\begin{conceptbox}{$v$-$t$ 图像（速度-时间图）}
+
+\textbf{直观理解：} $v$-$t$ 图像描述的是"速度随时间怎么变"。
+
+\textbf{关键读图方法（回顾 Day 03）：}
+\begin{itemize}
+  \item \textbf{斜率} = 加速度 $a$。
+  \item \textbf{面积} = 位移 $x$（$t$ 轴上方面积为正，下方面积为负）。
+  \item \textbf{纵坐标} = 瞬时速度。
+  \item \textbf{横线} = 匀速运动。
+  \item \textbf{倾斜直线} = 匀变速运动。
+  \item \textbf{交点} = 两物体在该时刻速度相等（不一定相遇）。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/vt-comparison}
+
+\figcaption{三种典型运动的 $v$-$t$ 图像对比}\label{fig:vt-comparison}
+\end{center}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\subsection*{两种图像的核心对比}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+ & $x$-$t$ 图 & $v$-$t$ 图 \\
+\midrule
+纵轴 & 位置 $x$ & 速度 $v$ \\
+斜率 & 速度 $v$ & 加速度 $a$ \\
+面积 & 无物理意义 & 位移 $x$（上正下负） \\
+水平线 & 静止 & 匀速 \\
+交点 & 相遇 & 速度相等 \\
+截距 & 初始位置 & 初速度 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{追及问题的核心关系}
+
+设物体 $A$（速度 $v_A$）追物体 $B$（速度 $v_B$），初始相距 $\Delta x$。
+\begin{itemize}
+  \item \textbf{追上条件：} $x_A = x_B + \Delta x$（位移关系）。
+  \item \textbf{相距最远/最近条件：} $v_A = v_B$（速度相等时距离取极值）。
+\end{itemize}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：匀速追匀速}
+
+若 $v_A > v_B$，$A$ 一定能追上 $B$。追上时间由 $v_A t = v_B t + \Delta x$ 解得。
+
+\subsection*{模型 2：匀加速追匀速}
+
+$A$ 从静止开始匀加速追前方匀速运动的 $B$。在 $v_A = v_B$ 时距离最大，之后 $A$ 开始缩短距离，最终追上。
+
+\subsection*{模型 3：匀速追匀减速}
+
+$B$ 在前方做匀减速，$A$ 匀速追赶。要分两种情况：
+\begin{itemize}
+  \item 在 $B$ 停下之前追上。
+  \item $B$ 停下时还没追上——之后 $B$ 静止，$A$ 匀速接近。
+\end{itemize}
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{读 $x$-$t$ 图}
 
-\textbf{解题过程：} TODO。
+\textbf{题意分析：} 某物体沿直线运动的 $x$-$t$ 图像如图所示。$OA$ 段为过原点的直线，$AB$ 段为水平线，$BC$ 段为倾斜直线（斜率为负）。分析各段的运动情况。
 
-\textbf{方法总结：} TODO。
+\textbf{物理模型：} $x$-$t$ 图分析。
+
+\textbf{解题过程：}
+\begin{itemize}
+  \item $OA$ 段：物体从原点出发做匀速直线运动，速度 $v = \dfrac{x_A}{t_A}$。
+  \item $AB$ 段：物体静止（$x$ 不变），速度为零。
+  \item $BC$ 段：物体沿原路返回，速度为负，大小 $v = \dfrac{|x_B - x_C|}{t_C - t_B}$。
+  \item $C$ 点：回到原点，位移为零。
+\end{itemize}
+
+\textbf{方法总结：} 读 $x$-$t$ 图的要点：一看斜率（正负和大小），二看截距（起点位置），三看拐点（运动状态变化）。
+
+\end{examplebox}
+
+\begin{examplebox}{追及问题——公式法}
+
+\textbf{题意分析：} 一辆汽车以 $v_A = 20\ \mathrm{m/s}$ 匀速行驶，司机发现前方 $d = 60\ \mathrm{m}$ 处有一辆摩托车以 $v_B = 10\ \mathrm{m/s}$ 同向匀速行驶。汽车立即以 $a = 2\ \mathrm{m/s^2}$ 匀减速。问两车是否相撞？
+
+\textbf{物理模型：} 匀速追匀减速，判断是否追尾。当汽车速度减到与摩托车速度相等时，若汽车位移 $\leq$ 摩托车位移 $+ d$，则不会相撞。
+
+\textbf{解题过程：}
+
+速度相等时：
+\[
+v_A - a t = v_B,\qquad 20 - 2t = 10,\qquad t = 5\ \mathrm{s}
+\]
+
+此时汽车位移：
+\[
+x_A = v_A t - \frac12 a t^2 = 20 \times 5 - \frac12 \times 2 \times 25 = 100 - 25 = 75\ \mathrm{m}
+\]
+
+摩托车位移：
+\[
+x_B = v_B t = 10 \times 5 = 50\ \mathrm{m}
+\]
+
+比较：$x_A - x_B = 25\ \mathrm{m} < d = 60\ \mathrm{m}$，所以不会相撞，最小距离为 $60 - 25 = 35\ \mathrm{m}$。
+
+\textbf{方法总结：} 
+\begin{enumerate}
+  \item 追及问题中，速度相等时距离取极值（最大或最小）。
+  \item 判断是否追尾，关键是比较速度相等时的相对位移与初始距离。
+\end{enumerate}
+
+\end{examplebox}
+
+\begin{examplebox}{追及问题——图像法}
+
+\textbf{题意分析：} 物体 $A$ 以 $v_A = 4\ \mathrm{m/s}$ 匀速运动，物体 $B$ 在 $A$ 前方 $s_0 = 8\ \mathrm{m}$ 处从静止开始以 $a = 2\ \mathrm{m/s^2}$ 匀加速追赶 $A$。求：
+\begin{enumerate}
+  \item $B$ 追上 $A$ 所需时间。
+  \item 追上之前 $AB$ 间的最大距离。
+\end{enumerate}
+
+\textbf{物理模型：} 匀加速追匀速，$v_B < v_A$ 时距离增大，$v_B = v_A$ 时距离最大，之后 $B$ 开始缩短差距。
+
+\textbf{解题过程：}
+
+\begin{enumerate}
+  \item 追上时 $x_B = x_A + s_0$：
+  \[
+  \frac12 a t^2 = v_A t + s_0,\qquad
+  \frac12 \times 2 \times t^2 = 4t + 8
+  \]
+  \[
+  t^2 - 4t - 8 = 0,\qquad
+  t = \frac{4 \pm \sqrt{16 + 32}}{2} = \frac{4 \pm \sqrt{48}}{2}
+  \]
+  $t = 2 + 2\sqrt{3} \approx 5.46\ \mathrm{s}$（舍去负根）。
+  
+  \item 速度相等时距离最大：$v_B = a t = 4$，$t = 2\ \mathrm{s}$。
+  
+  $A$ 的位移：$x_A = 4 \times 2 = 8\ \mathrm{m}$
+  
+  $B$ 的位移：$x_B = \frac12 \times 2 \times 2^2 = 4\ \mathrm{m}$
+  
+  最大距离：$s_{\max} = s_0 + x_A - x_B = 8 + 8 - 4 = 12\ \mathrm{m}$
+\end{enumerate}
+
+\begin{center}
+\input{figures/tikz/chase-vt}
+
+\figcaption{追及问题的 $v$-$t$ 图：$A$ 匀速、$B$ 匀加速，$x_A$ 和 $x_B$ 分别为到 $t_0$ 时的位移}\label{fig:chase-vt}
+\end{center}
+
+\textbf{方法总结：}
+\begin{enumerate}
+  \item 速度相等是追及问题的关键节点——要么距离最大，要么最小，要么能否追上的临界点。
+  \item $v$-$t$ 图中两图线围成的面积差就是相对位移，非常直观。
+\end{enumerate}
+
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 甲车以 $v_{甲} = 15\ \mathrm{m/s}$ 匀速行驶，发现前方 $L = 40\ \mathrm{m}$ 处乙车以 $v_{乙} = 10\ \mathrm{m/s}$ 匀速行驶，甲立即以 $a = 1\ \mathrm{m/s^2}$ 匀减速。通过计算判断是否相撞。
+  
+  \item 在平直公路上，$A$ 车在前以 $v_A = 8\ \mathrm{m/s}$ 匀速行驶，$B$ 车在后以 $v_B = 20\ \mathrm{m/s}$ 匀速行驶。当两车相距 $d = 100\ \mathrm{m}$ 时，$B$ 开始以 $a = 2\ \mathrm{m/s^2}$ 匀减速。求：
+  \begin{enumerate}
+    \item $B$ 车能否追上 $A$？
+    \item 若能，何时追上？若不能，最近距离是多少？
+  \end{enumerate}
+  
+  \item 一质点沿 $x$ 轴运动，其 $v$-$t$ 图线为：$0-2\ \mathrm{s}$ 内 $v = 4\ \mathrm{m/s}$（匀速），$2-4\ \mathrm{s}$ 内 $v = 4 - 2t$（匀减速到零），$4-6\ \mathrm{s}$ 内 $v = -2t + 8$（反向加速）。求全程的位移和路程。
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{把 $x$-$t$ 图和 $v$-$t$ 图搞混：} $x$-$t$ 图的斜率是速度，$v$-$t$ 图的斜率是加速度。一个是位置随时间的变化，一个是速度随时间的变化。
+  
+  \item \textbf{误以为 $v$-$t$ 图交点就是相遇：} $v$-$t$ 图的交点只表示速度相等，不表示位置相同。判断相遇要用 $x$-$t$ 图或位移公式。
+  
+  \item \textbf{忽略面积的正负：} $v$-$t$ 图中 $t$ 轴下方的面积为负（反向运动的位移），总面积是位移不是路程。
+  
+  \item \textbf{追及问题忘记初始距离：} 公式 $x_A = x_B + \Delta x$ 中 $\Delta x$ 容易被忽略。画图时把两车的位置关系画清楚可以避免。
+  
+  \item \textbf{匀减速追及忘记停车时间：} 前方车做匀减速时，要先判断它在停下之前是否已被追上。如果没追上，之后它静止，后方车匀速接近。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{多段 $v$-$t$ 图像的综合分析}
+
+竞赛题常给出一个复杂的 $v$-$t$ 图，要求计算全程的位移、路程或平均速度。
+
+\textbf{关键技巧：}
+\begin{itemize}
+  \item 将图像分解为若干直线段，每段单独计算。
+  \item 记住 $v$-$t$ 图中的拐点对应运动状态的突变（如加速度方向改变）。
+  \item 有时需要补全 $v$-$t$ 图来简化追及问题。
+\end{itemize}
+
+\textbf{例题：} 一质点从静止开始做匀加速直线运动，第 $1\ \mathrm{s}$ 末的速度为 $2\ \mathrm{m/s}$，之后以该速度匀速运动了 $2\ \mathrm{s}$，最后 $2\ \mathrm{s}$ 做匀减速到停止。求质点的总位移。
+
+\textbf{解：} 画出 $v$-$t$ 图（$0-1\ \mathrm{s}$ 斜坡，$1-3\ \mathrm{s}$ 水平，$3-5\ \mathrm{s}$ 下坡），总位移就是梯形面积：
+\[
+x = \frac{(3+5) \times 2}{2} = 8\ \mathrm{m}
+\]
+
+\textbf{竞赛小贴士：} 遇到过程复杂的运动问题，先画 $v$-$t$ 图再算面积，往往比列方程快得多。
 \end{competitionbox}
 
 \section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
 
+\begin{enumerate}
+  \item $x$-$t$ 图的斜率 $=$ 速度，$v$-$t$ 图的斜率 $=$ 加速度、面积 $=$ 位移。
+  \item 两种图像的"水平线"含义不同：$x$-$t$ 水平 $\to$ 静止，$v$-$t$ 水平 $\to$ 匀速。
+  \item 追及问题的核心：速度相等时距离取极值。
+  \item 判断是否追尾：比较速度相等时的相对位移与初始距离。
+  \item 图像法比代数法更直观——遇到复杂问题先画图。
+\end{enumerate}

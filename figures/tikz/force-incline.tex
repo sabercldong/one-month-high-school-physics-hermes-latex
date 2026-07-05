@@ -1,0 +1,19 @@
+% TikZ 图：斜面上物体受力分析
+% Day 05：力、重力、弹力、摩擦力
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  % 斜面
+  \draw[thick] (0,0) -- (5,0) -- (5,-2) -- cycle;
+  \draw[thick] (0,0) -- (5,-2);
+  \node at (4.5,-1.5) {$\theta$};
+  % 角度弧
+  \draw (0.8,0) arc (0:-21.8:0.8);
+  % 物体（方块）
+  \draw[thick,rotate around={-21.8:(2.2,-0.8)}] (1.5,-0.3) rectangle (2.9,0.9);
+  \node[rotate=-21.8] at (2.2,0.3) {$m$};
+  % 重力 G（竖直向下）
+  \draw[->,thick,blue] (2.2,-1.05) -- (2.2,-2.2) node[below] {$G$};
+  % 支持力 N（垂直斜面向上）
+  \draw[->,thick,blue,rotate around={-21.8:(2.2,-0.8)}] (2.2,0.9) -- (2.2,2.0) node[above] {$N$};
+  % 摩擦力 f（沿斜面向上）
+  \draw[->,thick,red,rotate around={-21.8:(2.2,-0.8)}] (1.5,0.3) -- (0.7,0.3) node[above] {$f$};
+\end{tikzpicture}

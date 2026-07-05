@@ -1,0 +1,16 @@
+% TikZ 图：x-t 图像示例（匀速直线）
+% Day 04：运动图像与追及相遇
+\begin{tikzpicture}[scale=1,>=Latex]
+  \draw[->] (-0.3,0) -- (5.5,0) node[right] {$t$};
+  \draw[->] (0,-0.3) -- (0,4.5) node[above] {$x$};
+  \node[below left] at (0,0) {$O$};
+  % 匀速直线：x = 0.8t
+  \draw[very thick] (0,0) -- (5,4);
+  \node[above left] at (2.5,2) {$x = vt$};
+  % 标注斜率
+  \draw[dashed] (3,0) -- (3,2.4);
+  \draw[dashed,thick] (0,0) -- (3,2.4);
+  \node[below] at (1.5,0) {$t$};
+  \node[left] at (0,1.2) {$x$};
+  \node[above right] at (0.5,0.8) {斜率 $= v$};
+\end{tikzpicture}

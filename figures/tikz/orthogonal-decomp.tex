@@ -1,0 +1,17 @@
+% TikZ 图：正交分解
+% Day 06：牛顿运动定律
+\begin{tikzpicture}[scale=1,>=Latex]
+  \draw[->,thick] (0,0) -- (3,0) node[right] {$x$};
+  \draw[->,thick] (0,0) -- (0,3) node[above] {$y$};
+  % 力 F（斜向上）
+  \draw[->,ultra thick,red] (0,0) -- (2.5,1.5) node[above right] {$F$};
+  % 分力
+  \draw[dashed,thick,red] (0,0) -- (2.5,0);
+  \draw[dashed,thick,red] (2.5,0) -- (2.5,1.5);
+  % 角度
+  \draw (0.8,0) arc (0:31:0.8);
+  \node at (1.1,0.2) {$\theta$};
+  % 标注分量
+  \node[red,below] at (1.25,0) {$F_x = F\cos\theta$};
+  \node[red,right] at (2.5,0.75) {$F_y = F\sin\theta$};
+\end{tikzpicture}

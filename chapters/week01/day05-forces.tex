@@ -1,54 +1,330 @@
 \daytitle{5}{力、重力、弹力、摩擦力}
 
 \begin{learningbox}{本讲义大致内容}
-讲力的三要素，重力、弹力、静摩擦力、滑动摩擦力，重点训练受力分析图。
+力的本质是物体间的相互作用。今天系统学习三种常见力——重力、弹力、摩擦力，并掌握受力分析的基本方法。"一重二弹三摩擦"是受力分析的核心顺序。
 \end{learningbox}
 
 \section*{一、学习目标}
+
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 理解力的概念和力的三要素，会画力的示意图。
+  \item 掌握重力 $G = mg$，理解重心的概念。
+  \item 掌握弹力的产生条件和胡克定律 $F = kx$，能判断弹力方向。
+  \item 区分静摩擦力和滑动摩擦力，会用 $f = \mu N$ 计算。
+  \item 掌握受力分析的核心流程："一重二弹三摩擦"。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中已经学过力的初步概念：力是物体对物体的作用。初中主要关注的是"有没有力""力朝哪"的定性判断。
+
+高中在此基础上加了三个新维度：
+\begin{enumerate}
+  \item \textbf{力的计算：} 弹力有 $F = kx$，滑动摩擦力有 $f = \mu N$，不再只是"画箭头"。
+  \item \textbf{受力分析的完整性：} 必须列出物体受到的所有力，不能漏，也不能多。
+  \item \textbf{矢量合成：} 多个力作用的合力要用平行四边形定则计算。
+\end{enumerate}
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{力的概念}
+
+\textbf{力的定义：} 力是物体间的相互作用。力不能脱离物体而存在——一定有施力物体和受力物体。
+
+\textbf{力的三要素：} 大小、方向、作用点。
+
+\textbf{力的作用效果：}
+\begin{itemize}
+  \item 改变物体的运动状态（产生加速度）。
+  \item 使物体发生形变。
+\end{itemize}
+
+\textbf{分类：}
+\begin{itemize}
+  \item \textbf{按性质分：} 重力、弹力、摩擦力、电场力、磁场力等。
+  \item \textbf{按效果分：} 拉力、压力、支持力、动力、阻力等。
+\end{itemize}
+
+\textbf{注意：} 效果力是按作用效果命名的（如"向心力""回复力"），本质上是性质力的合力或分力。
+
+\end{conceptbox}
+
+\begin{conceptbox}{重力}
+
+\textbf{定义：} 地球表面附近的物体由于地球吸引而受到的力。
+
+\[
+G = mg
+\]
+
+\begin{itemize}
+  \item $g \approx 9.8\ \mathrm{N/kg}$（高中常取 $10\ \mathrm{N/kg}$）。
+  \item \textbf{方向：} 竖直向下（不是"指向地心"，只有在赤道和两极才严格指向地心）。
+  \item \textbf{重心：} 重力在物体上的等效作用点。质量均匀、形状规则的物体重心在几何中心。不规则物体可用悬挂法找重心。
+\end{itemize}
+
+\textbf{常见误区：}
+\begin{enumerate}
+  \item 重力不是"地球对物体的引力"，实际上是引力的一个分力（另一个分力提供向心力）。高中阶段可以近似认为 $G = F_{\text{引}}$。
+  \item 物体在赤道上的重力比在两极小（因为赤道处自转向心力更大）。
+\end{enumerate}
+
+\end{conceptbox}
+
+\begin{conceptbox}{弹力}
+
+\textbf{定义：} 发生弹性形变的物体，由于要恢复原状，对与之接触的物体产生的力。
+
+\textbf{产生条件：} 接触 $+$ 发生弹性形变。
+
+\textbf{常见弹力及方向：}
+\begin{itemize}
+  \item 支持力/压力：垂直接触面，指向被支持的物体。
+  \item 拉力（绳子张力）：沿绳收缩方向。
+  \item 杆的弹力：方向不一定沿杆，需要根据平衡条件判断。
+\end{itemize}
+
+\textbf{胡克定律（弹簧弹力）：}
+\[
+F = kx
+\]
+\begin{itemize}
+  \item $k$：劲度系数（$\mathrm{N/m}$），由弹簧本身决定。
+  \item $x$：形变量（伸长量或压缩量），不是弹簧总长。
+  \item 适用条件：弹性限度内。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/spring-hooke}
+
+\figcaption{弹簧悬挂砝码：$F = kx$ 与 $G = mg$ 平衡}\label{fig:spring-hooke}
+\end{center}
+
+\end{conceptbox}
+
+\begin{conceptbox}{摩擦力}
+
+\textbf{定义：} 两个相互接触的物体有相对运动或相对运动趋势时，在接触面上产生的阻碍相对运动（或趋势）的力。
+
+\vspace{0.5em}
+\textbf{滑动摩擦力：}
+\[
+f = \mu N
+\]
+\begin{itemize}
+  \item $\mu$：动摩擦因数（与材料和粗糙程度有关，与接触面积无关）。
+  \item $N$：正压力（垂直接触面的支持力大小）。
+  \item 方向：与相对运动方向相反。
+\end{itemize}
+
+\textbf{静摩擦力：}
+\begin{itemize}
+  \item 大小：$0 \leq f_{\text{静}} \leq f_{\max}$（最大静摩擦力略大于滑动摩擦力，高中近似取相等）。
+  \item 方向：与相对运动趋势方向相反。
+  \item 特点：静摩擦力是被动力，大小由外部受力情况决定——物体不动则 $f_{\text{静}} = F_{\text{外}}$（沿接触面方向）。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/friction-compare}
+
+\figcaption{静摩擦与滑动摩擦的对比}\label{fig:friction-compare}
+\end{center}
+
+\textbf{常见误区：}
+\begin{enumerate}
+  \item 摩擦力不一定是阻力——人走路时鞋底受到的静摩擦力是动力。
+  \item $f = \mu N$ 只适用于滑动摩擦力，不适用于静摩擦力。
+  \item $\mu$ 与接触面积无关——同样材料，面积大一倍，$N$ 不变，$f$ 也不变。
+\end{enumerate}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+公式 & 物理意义 & 适用条件 \\
+\midrule
+$G = mg$ & 重力 & 地球表面附近，$g$ 取 $9.8$ 或 $10$ \\
+$F = kx$ & 弹簧弹力 & 弹性限度内，$x$ 是形变量 \\
+$f = \mu N$ & 滑动摩擦力 & 有相对滑动，$N$ 是正压力 \\
+$0 \leq f_{\text{静}} \leq f_{\max}$ & 静摩擦力 & 有相对运动趋势，$f_{\max} \approx \mu N$ \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{受力分析标准流程："一重二弹三摩擦"}
+
+\begin{enumerate}
+  \item \textbf{确定研究对象}（隔离法：只分析被研究物体受的力）。
+  \item \textbf{一重：} 画重力 $G$（竖直向下）。
+  \item \textbf{二弹：} 找所有接触面/点，画弹力（支持力/拉力/压力），方向垂直接触面或沿绳。
+  \item \textbf{三摩擦：} 判断是否有相对运动或趋势，画摩擦力（沿接触面）。
+  \item \textbf{检查：} 是否漏了力？是否多画了施力物体不在研究对象上的力？
+\end{enumerate}
+
+\begin{center}
+\input{figures/tikz/force-horizontal}
+
+\figcaption{水平面上物体的受力分析}\label{fig:force-horizontal}
+\end{center}
+
+\begin{center}
+\input{figures/tikz/force-incline}
+
+\figcaption{斜面上物体的受力分析}\label{fig:force-incline}
+\end{center}
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{弹力方向判断}
 
-\textbf{解题过程：} TODO。
+\textbf{题意分析：} 判断以下情况下弹力的方向：
+\begin{enumerate}
+  \item 书静止在水平桌面上，桌面对书的支持力。
+  \item 用绳子悬挂一盏灯，绳子对灯的拉力。
+  \item 物体靠在竖直墙壁上，墙对物体的弹力。
+\end{enumerate}
 
-\textbf{方法总结：} TODO。
+\textbf{物理模型：} 弹力方向判断。
+
+\textbf{解题过程：}
+\begin{enumerate}
+  \item 桌面对书的支持力垂直于桌面向上——因为书对桌面有向下的压力，使桌面产生微小形变，桌面要恢复原状，所以对书产生向上的支持力。
+  \item 绳子对灯的拉力沿绳子收缩方向（竖直向上）——因为灯的重力使绳子张紧，绳子要恢复原长，所以对灯产生向上的拉力。
+  \item 墙对物体的弹力垂直于墙面向外——因为物体有向右运动的趋势，挤压墙壁。
+\end{enumerate}
+
+\textbf{方法总结：} 弹力方向总是垂直于接触面（点接触时垂直于公切面），或沿绳收缩方向。杆的弹力方向不沿杆，需要根据受力平衡分析。
+
+\end{examplebox}
+
+\begin{examplebox}{摩擦力计算}
+
+\textbf{题意分析：} 一个质量为 $m = 5\ \mathrm{kg}$ 的物体放在水平地面上，动摩擦因数 $\mu = 0.3$，$g = 10\ \mathrm{m/s^2}$。
+\begin{enumerate}
+  \item 用 $F_1 = 10\ \mathrm{N}$ 的水平拉力拉物体，求摩擦力。
+  \item 用 $F_2 = 20\ \mathrm{N}$ 的水平拉力拉物体，求摩擦力。
+\end{enumerate}
+
+\textbf{物理模型：} 水平面上物体受拉力，地面提供摩擦力。
+
+\textbf{解题过程：}
+
+正压力 $N = mg = 5 \times 10 = 50\ \mathrm{N}$。
+最大静摩擦力 $f_{\max} \approx \mu N = 0.3 \times 50 = 15\ \mathrm{N}$。
+
+\begin{enumerate}
+  \item $F_1 = 10\ \mathrm{N} < 15\ \mathrm{N}$，物体未滑动，静摩擦力 $f_{\text{静}} = F_1 = 10\ \mathrm{N}$。
+  \item $F_2 = 20\ \mathrm{N} > 15\ \mathrm{N}$，物体已滑动，滑动摩擦力 $f_{\text{滑}} = \mu N = 15\ \mathrm{N}$。
+\end{enumerate}
+
+\textbf{方法总结：} 先判断是静摩擦还是滑动摩擦。静摩擦力等于外部拉力（直到达最大值），滑动摩擦力固定为 $\mu N$。
+
+\end{examplebox}
+
+\begin{examplebox}{综合受力分析}
+
+\textbf{题意分析：} 质量为 $m = 2\ \mathrm{kg}$ 的物体放在倾角 $\theta = 30^\circ$ 的粗糙斜面上，$\mu = 0.5$，$g = 10\ \mathrm{m/s^2}$。求物体受到的摩擦力和支持力大小。
+
+\textbf{物理模型：} 斜面上的物体，重力分解为沿斜面方向和垂直斜面方向的两个分力。
+
+\textbf{解题过程：}
+
+沿斜面方向建立坐标系：
+\[
+G_{\parallel} = mg\sin\theta = 2 \times 10 \times \frac12 = 10\ \mathrm{N}
+\]
+\[
+G_{\perp} = mg\cos\theta = 2 \times 10 \times \frac{\sqrt{3}}{2} \approx 17.3\ \mathrm{N}
+\]
+
+垂直斜面方向平衡：$N = G_{\perp} = 17.3\ \mathrm{N}$
+
+判断物体是否下滑：最大静摩擦力 $f_{\max} = \mu N = 0.5 \times 17.3 \approx 8.7\ \mathrm{N}$。
+$G_{\parallel} = 10\ \mathrm{N} > 8.7\ \mathrm{N}$，所以物体沿斜面下滑，摩擦力为滑动摩擦力：
+\[
+f = \mu N = 8.7\ \mathrm{N}
+\]
+方向沿斜面向上。
+
+物体沿斜面向下的合力：$F_{\text{合}} = G_{\parallel} - f = 10 - 8.7 = 1.3\ \mathrm{N}$。
+
+\textbf{方法总结：}
+\begin{enumerate}
+  \item 斜面上要把重力分解为沿斜面和垂直斜面两个方向。
+  \item 先判断是否滑动（比较 $mg\sin\theta$ 和 $\mu mg\cos\theta$），再确定摩擦力类型。
+  \item 斜面倾角增大到 $\tan\theta > \mu$ 时物体开始下滑。
+\end{enumerate}
+
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 一根弹簧原长 $l_0 = 20\ \mathrm{cm}$，劲度系数 $k = 200\ \mathrm{N/m}$，下端悬挂 $m = 1\ \mathrm{kg}$ 的砝码。求弹簧长度。
+  
+  \item 一个 $m = 10\ \mathrm{kg}$ 的箱子放在水平地面上，$\mu = 0.4$，$g = 10\ \mathrm{m/s^2}$。用水平力 $F$ 拉箱子：
+  \begin{enumerate}
+    \item $F = 30\ \mathrm{N}$ 时，摩擦力多大？
+    \item $F = 50\ \mathrm{N}$ 时，摩擦力多大？
+  \end{enumerate}
+  
+  \item 质量为 $m$ 的物体放在倾角 $\theta = 37^\circ$（$\sin37^\circ = 0.6$，$\cos37^\circ = 0.8$）的斜面上，$\mu = 0.8$。物体是否下滑？并求出摩擦力大小。
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{漏画重力：} 任何在地球表面附近的物体都受到重力。不要只看"它在空中"就忘记重力。
+  
+  \item \textbf{多画了"物体对外界的力"：} 受力分析只分析别的物体对研究对象的力。研究对象对外界的力不画在本研究对象的受力图上。
+  
+  \item \textbf{误用 $f = \mu N$ 算静摩擦力：} $f = \mu N$ 只适用于滑动摩擦力。静摩擦力的大小需要根据平衡条件或牛顿定律来确定。
+  
+  \item \textbf{认为摩擦力总是阻力：} 静摩擦力可以是动力（人走路、传送带上的物体）。判断标准是摩擦力与运动方向的关系，不是直觉。
+  
+  \item \textbf{弹力方向搞错：} 支持力的方向是垂直接触面"向上"（指向被支持物体），不是"竖直向上"。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{弹簧的串联与并联}
+
+\textbf{串联：} 两个劲度系数分别为 $k_1$、$k_2$ 的弹簧串联，等效劲度系数 $k$：
+\[
+\frac{1}{k} = \frac{1}{k_1} + \frac{1}{k_2}
+\]
+串联后弹簧"更软"，等效劲度系数小于任何一个。
+
+\textbf{并联：} 两个弹簧并联，等效劲度系数：
+\[
+k = k_1 + k_2
+\]
+并联后弹簧"更硬"，等效劲度系数大于任何一个。
+
+\textbf{例题：} 两根劲度系数均为 $k = 100\ \mathrm{N/m}$ 的弹簧串联，悬挂 $m = 0.5\ \mathrm{kg}$ 的砝码，求总伸长量。
+
+\textbf{解：} 串联等效劲度系数 $\frac{1}{k_{\text{等}}} = \frac{1}{100} + \frac{1}{100}$，$k_{\text{等}} = 50\ \mathrm{N/m}$。
+伸长量 $x = \dfrac{mg}{k_{\text{等}}} = \dfrac{5}{50} = 0.1\ \mathrm{m} = 10\ \mathrm{cm}$。
+
+如果是并联，$k_{\text{等}} = 100 + 100 = 200\ \mathrm{N/m}$，$x = \dfrac{5}{200} = 2.5\ \mathrm{cm}$。
+
+\textbf{竞赛小贴士：} 弹簧连接问题中，串联各弹簧受力相等，并联各弹簧形变量相等——这是解题的关键。
 \end{competitionbox}
 
 \section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
 
+\begin{enumerate}
+  \item 重力 $G = mg$，方向竖直向下；弹力由形变产生，方向垂直接触面或沿绳。
+  \item 胡克定律 $F = kx$ 中的 $x$ 是形变量，不是弹簧总长。
+  \item 滑动摩擦力 $f = \mu N$，静摩擦力 $0 \leq f_{\text{静}} \leq f_{\max}$。
+  \item 受力分析顺序："一重二弹三摩擦"，只分析外界对研究对象的力。
+  \item 斜面上的物体要把重力分解为沿斜面和垂直斜面两个方向。
+\end{enumerate}

@@ -1,0 +1,14 @@
+% TikZ 图：牛顿第二定律示意（水平面上）
+% Day 06：牛顿运动定律
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[thick] (-1,0) -- (5,0);
+  % 物体
+  \draw[thick] (0.5,0) rectangle (2.5,1.5);
+  \node at (1.5,0.75) {$m$};
+  % 拉力
+  \draw[->,thick,red] (2.5,0.75) -- (4.5,0.75) node[above] {$F$};
+  % 摩擦力
+  \draw[->,thick,red] (0.5,0.75) -- (-1,0.75) node[above] {$f$};
+  % 加速度箭头在上方
+  \draw[->,ultra thick,blue] (1.5,2.5) -- (3.5,2.5) node[above] {$a = \dfrac{F-f}{m}$};
+\end{tikzpicture}

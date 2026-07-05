@@ -1,0 +1,16 @@
+% TikZ 图：常见运动的 v-t 图像对比
+% Day 04：运动图像与追及相遇
+\begin{tikzpicture}[scale=1,>=Latex]
+  \draw[->] (-0.3,0) -- (5.5,0) node[right] {$t$};
+  \draw[->] (0,-0.3) -- (0,4.5) node[above] {$v$};
+  \node[below left] at (0,0) {$O$};
+  % 匀速
+  \draw[very thick] (0,2) -- (5,2);
+  \node[above] at (2.5,2) {匀速};
+  % 匀加速
+  \draw[very thick,red] (0,0.5) -- (5,4);
+  \node[above right,red] at (5,4) {匀加速};
+  % 匀减速
+  \draw[very thick,blue] (0,4) -- (5,1);
+  \node[above left,blue] at (0,4) {匀减速};
+\end{tikzpicture}
