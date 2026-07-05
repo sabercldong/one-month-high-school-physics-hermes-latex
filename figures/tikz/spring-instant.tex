@@ -9,19 +9,20 @@
   \draw[thick] (-0.5,-1.2) rectangle (0.5,-2.0);
   \node at (0,-1.6) {$A$};
   \node[left] at (0,-0.6) {细绳};
-  % 弹簧连接A和B
+  % 弹簧连接A和B（被拉伸，对A向下拉，对B向上拉）
   \draw[decorate,decoration={coil,aspect=0.3,segment length=3pt,amplitude=2pt}] (0,-2.0) -- (0,-3.3);
   \node[right] at (0,-2.65) {弹簧};
   % B球
   \draw[thick] (-0.5,-3.3) rectangle (0.5,-4.1);
   \node at (0,-3.7) {$B$};
-  % 剪断示意
-  \draw[red,thick] (0.6,-0.8) -- (-0.6,-1.0);
-  \node[red,right] at (0.6,-0.9) {剪断};
-  % 剪断后A受力
-  \draw[->,thick,blue] (-1.2,-1.6) -- (-1.2,-2.4) node[left] {$G$};
-  \draw[->,thick,red] (-1.2,-1.6) -- (-1.2,-0.8) node[left] {$T$（弹簧弹力不变）};
-  % 剪断后B受力
-  \draw[->,thick,blue] (1.2,-3.7) -- (1.2,-4.5) node[right] {$G$};
-  \draw[->,thick,red] (1.2,-3.7) -- (1.2,-2.9) node[right] {$T$};
+  % 剪断示意（红叉）
+  \draw[red,thick] (-0.5,-0.8) -- (0.5,-1.0);
+  \draw[red,thick] (-0.5,-1.0) -- (0.5,-0.8);
+  \node[red,right] at (0.5,-0.9) {剪断};
+  % A的受力（剪断瞬间）：重力G向下 + 弹簧弹力T向下
+  \draw[->,thick,blue] (-1.5,-1.6) -- (-1.5,-2.4) node[left] {$m_A g$};
+  \draw[->,thick,red] (-1.5,-1.6) -- (-1.5,-0.8) node[left] {$T$（弹簧拉A向下）};
+  % B的受力（剪断瞬间）：重力G向下 + 弹簧弹力T向上（平衡）
+  \draw[->,thick,blue] (1.5,-3.7) -- (1.5,-4.5) node[right] {$m_B g$};
+  \draw[->,thick,red] (1.5,-3.7) -- (1.5,-2.9) node[right] {$T$（弹簧拉B向上）};
 \end{tikzpicture}

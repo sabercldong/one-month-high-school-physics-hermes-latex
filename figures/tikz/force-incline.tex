@@ -1,4 +1,4 @@
-% TikZ 图：斜面上物体受力分析
+% TikZ 图：斜面上物体受力分析（有下滑趋势时）
 % Day 05：力、重力、弹力、摩擦力
 \begin{tikzpicture}[scale=0.9,>=Latex]
   % 斜面
@@ -14,6 +14,7 @@
   \draw[->,thick,blue] (2.2,-1.05) -- (2.2,-2.2) node[below] {$G$};
   % 支持力 N（垂直斜面向上）
   \draw[->,thick,blue,rotate around={-21.8:(2.2,-0.8)}] (2.2,0.9) -- (2.2,2.0) node[above] {$N$};
-  % 摩擦力 f（沿斜面向上）
+  % 摩擦力 f（有下滑趋势时沿斜面向上）
   \draw[->,thick,red,rotate around={-21.8:(2.2,-0.8)}] (1.5,0.3) -- (0.7,0.3) node[above] {$f$};
+  \node[below,rotate=-21.8,font=\footnotesize] at (2.2,-0.15) {（有下滑趋势时 $f$ 沿斜面向上）};
 \end{tikzpicture}

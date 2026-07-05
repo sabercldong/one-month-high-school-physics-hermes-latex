@@ -1,4 +1,4 @@
-% TikZ 图：斜面上牛顿第二定律
+% TikZ 图：斜面上牛顿第二定律（下滑时）
 % Day 06：牛顿运动定律
 \begin{tikzpicture}[scale=0.9,>=Latex]
   % 斜面
@@ -17,8 +17,10 @@
   \draw[->,thick,blue,rotate around={-21.8:(2.2,-0.8)}] (2.2,0) -- (2.2,-1.2) node[below] {$G\cos\theta$};
   % 支持力 N
   \draw[->,thick,blue,rotate around={-21.8:(2.2,-0.8)}] (2.2,0.9) -- (2.2,1.8) node[above] {$N$};
-  % 摩擦力 f（沿斜面向上）
+  % 摩擦力 f（下滑时沿斜面向上）
   \draw[->,thick,red,rotate around={-21.8:(2.2,-0.8)}] (1.5,0.3) -- (0.5,0.3) node[below] {$f$};
   % 加速度 a 方向
   \draw[->,ultra thick,red,rotate around={-21.8:(2.2,-0.8)}] (2.2,1.2) -- (4,1.2) node[above] {$a$};
+  % 标注条件
+  \node[below,rotate=-21.8,font=\footnotesize] at (2.2,-0.15) {（下滑时 $f$ 沿斜面向上）};
 \end{tikzpicture}

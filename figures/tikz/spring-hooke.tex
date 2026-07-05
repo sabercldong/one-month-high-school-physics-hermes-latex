@@ -1,13 +1,14 @@
 % TikZ 图：弹簧与胡克定律
 % Day 05：力、重力、弹力、摩擦力
-% 左：原长，右：悬挂砝码
+% 左：原长（用双箭头标l0在右侧），右：悬挂砝码
 \begin{tikzpicture}[scale=1,>=Latex]
   % 天花板
   \draw[thick] (-2.5,0) -- (4.5,0);
   
   % 左：原长弹簧
   \draw[decorate,decoration={coil,aspect=0.4,segment length=4pt,amplitude=3pt}] (-1,0) -- (-1,-1.8);
-  \node at (-1,-0.9) {$l_0$};
+  % l0 用双箭头标在弹簧右侧
+  \draw[<->] (-0.5,0) -- (-0.5,-1.8) node[midway,right,xshift=2pt] {$l_0$};
   \node[below] at (-1,-2.2) {原长};
   
   % 右：悬挂砝码
@@ -15,10 +16,10 @@
   \draw[thick] (2.0,-2.8) rectangle (3.0,-3.3);
   \node at (2.5,-3.05) {$m$};
   
-  % 总长标注
+  % 总长标注（双箭头在右侧）
   \draw[<->] (3.5,0) -- (3.5,-2.8) node[midway,right,xshift=2pt] {$l$};
-  % 伸长量标注（弹性限度范围内额外标出）
-  \draw[<->,red] (4.0,-1.8) -- (4.0,-2.8) node[midway,right,xshift=2pt] {$x$};
+  % 伸长量标注（双箭头在更右侧，颜色区分）
+  \draw[<->,red] (4.2,-1.8) -- (4.2,-2.8) node[midway,right,xshift=2pt] {$x$};
   
   % 弹力箭头（红，向上）
   \draw[->,thick,red] (2.5,-2.8) -- (2.5,-1.2) node[above right,xshift=2pt] {$F = kx$};

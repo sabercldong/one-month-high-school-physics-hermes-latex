@@ -1,16 +1,17 @@
 % TikZ 图：常见运动的 v-t 图像对比
 % Day 04：运动图像与追及相遇
+% 用线型区分：匀速（粗实线），匀加速（虚线），匀减速（点划线）
 \begin{tikzpicture}[scale=1,>=Latex]
   \draw[->] (-0.3,0) -- (5.5,0) node[right] {$t$};
   \draw[->] (0,-0.3) -- (0,4.5) node[above] {$v$};
   \node[below left] at (0,0) {$O$};
-  % 匀速
-  \draw[very thick] (0,2) -- (5,2);
-  \node[above] at (2.5,2) {匀速};
-  % 匀加速
-  \draw[very thick,red] (0,0.5) -- (5,4);
-  \node[above right,red] at (5,4) {匀加速};
-  % 匀减速
-  \draw[very thick,blue] (0,4) -- (5,1);
-  \node[above left,blue] at (0,4) {匀减速};
+  % 匀速（粗实线，标签放在末端上方）
+  \draw[very thick] (0,2.5) -- (5,2.5);
+  \node[above] at (5,2.5) {匀速};
+  % 匀加速（虚线）
+  \draw[very thick,dashed] (0,0.5) -- (5,4);
+  \node[above right] at (5,4) {匀加速};
+  % 匀减速（点划线）
+  \draw[very thick,dash dot dot] (0,4) -- (5,1);
+  \node[above left] at (0,4) {匀减速};
 \end{tikzpicture}
