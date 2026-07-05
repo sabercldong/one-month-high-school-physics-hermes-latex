@@ -13,6 +13,7 @@
 }
 
 % 图注命令（在 box 内或非浮动环境使用，自动使用 figure 计数器）
+% 用法：\figcaption{说明文字}\label{fig:name}
 \newcommand{\figcaption}[1]{%
   \refstepcounter{figure}%
   \textbf{图 \thefigure：}#1%
