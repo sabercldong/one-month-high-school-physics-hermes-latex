@@ -1,35 +1,29 @@
 % TikZ 图：匀变速直线运动的 v-t 图像
 % Day 03：加速度
 % 使用：\input{figures/tikz/vt-graph.tex}
-% 直线 v = 1 + (3/4)t，点 (1,1.75) 和 (4,4) 均在直线上
-\begin{tikzpicture}[scale=1,>=Latex]
+% 直线从 (0,v0=1) 到 (t=4,v=4)
+\begin{tikzpicture}[scale=1.1,>=Latex]
   % 坐标轴
   \draw[->] (-0.3,0) -- (5.5,0) node[right] {$t$};
   \draw[->] (0,-0.3) -- (0,4.8) node[above] {$v$};
   \node[below left] at (0,0) {$O$};
-  % 画 v-t 线（黑色粗实线）
+  % v-t 直线：从 (0,v0) 到 (t,v)
   \draw[very thick] (0,1) -- (4,4);
-  % v0 箭头
-  \draw[->,thick] (0,0) -- (0,1);
-  \node[left] at (0,0.5) {$v_0$};
-  % t 时刻虚线到顶点，标 v
+  % v0 标注
+  \node[left] at (0,1) {$v_0$};
+  % t 时刻虚线 + v 标注在顶点
   \draw[dashed] (4,0) -- (4,4);
-  \draw[->,thick] (4,0) -- (4,4);
-  \node[right] at (4,2) {$v$};
   \node[below] at (4,0) {$t$};
-  % 梯形面积标注
+  \node[right] at (4,4) {$v$};
+  % 梯形面积
   \fill[black!15] (0,0) -- (0,1) -- (4,4) -- (4,0) -- cycle;
-  \node at (2.5,0.8) {$x = \frac{v_0+v}{2}t$};
-  % Δv / Δt 完整直角三角形：
-  % 水平边从 (1,1.75) 到 (4,1.75) —— 对应 Δt
-  % 竖直边从 (4,1.75) 到 (4,4)   —— 对应 Δv
-  % 斜边从 (1,1.75) 到 (4,4)     —— 在 v-t 直线上
-  \draw[dashed,thick] (1,1.75) -- (4,1.75);   % Δt 水平边
-  \draw[dashed,thick] (4,1.75) -- (4,4);       % Δv 竖直边
-  \draw[dashed,thick] (1,1.75) -- (4,4);       % 斜边（完整对齐直线）
-  % 标注 Δt 和 Δv
-  \node[below] at (2.5,1.75) {$\Delta t$};
-  \node[right] at (4,2.87) {$\Delta v$};
-  % 斜率公式标注
-  \node[above right] at (1,1.75) {$a = \frac{\Delta v}{\Delta t}$};
+  \node at (2.5,0.8) {$x$};
+  % 完整斜率三角形：从 (0,v0) 到 (t,v)
+  \draw[dashed,thick] (0,1) -- (4,1);   % 水平边 = t
+  \draw[dashed,thick] (4,1) -- (4,4);   % 竖直边 = v - v0
+  \node[below] at (2,1) {$t$};
+  \node[right] at (4,2.5) {$v - v_0$};
+  % 斜边就是 v-t 直线本身（不重复画）
+  % 斜率标注
+  \node[above right] at (0.5,1.5) {$a = \dfrac{v-v_0}{t}$};
 \end{tikzpicture}

@@ -66,57 +66,79 @@ $a = 0$ & 匀速或静止 \\
 
 \section*{四、公式与适用条件}
 
-\subsection*{从 v-t 图理解匀变速运动}
+\subsection*{为什么 v-t 图的面积等于位移？}
 
-匀变速直线运动的 $v$-$t$ 图像是一条倾斜的直线，斜率就是加速度 $a$。
+先看一个简单情况：如果物体以速度 $v$ 匀速运动了时间 $t$，位移 $x = vt$。在 $v$-$t$ 图上，这是一条水平线，与 $t$ 轴围成一个矩形，矩形面积正好是 $v \times t = x$。
+
+如果速度在变化呢？我们把时间 $t$ 切成很多极短的小段 $\Delta t$，在每个 $\Delta t$ 内速度近似不变（匀速），位移 $\approx v_i \Delta t$（小矩形面积）。把所有小矩形面积加起来，总和 $\approx \sum v_i \Delta t = x$。当 $\Delta t \to 0$ 时，这些小矩形的总面积就等于 $v$-$t$ 图线与 $t$ 轴围成的面积。
+
+所以结论是：\textbf{$v$-$t$ 图线下方的面积等于位移}。这个结论对任何运动都成立，不限于匀变速。
+
+\subsection*{从 v-t 图推导三大公式}
+
+匀变速直线运动的 $v$-$t$ 图像是一条倾斜的直线。
 
 \begin{center}
 \input{figures/tikz/vt-graph}
-\figcaption{匀加速直线运动的 $v$-$t$ 图像：斜率 $=a$，图线与 $t$ 轴围成的面积 $=$ 位移}\label{fig:vt-graph}
+\figcaption{匀变速直线运动的 $v$-$t$ 图像：斜率 $=a$，图线下的梯形面积 $=$ 位移}\label{fig:vt-graph}
 \end{center}
 
-从这张图上可以直接读出两个重要结论：
+图中可以读出两个核心关系：
 
 \begin{enumerate}
-  \item \textbf{速度公式：} 直线上任意一点满足 $v = v_0 + at$（斜率定义）。
-  \item \textbf{位移公式：} 图线与 $t$ 轴围成的梯形面积就是位移：
+  \item \textbf{斜率 $=$ 加速度：} $a = \dfrac{v - v_0}{t}$。
+  移项即得速度公式。
+  \item \textbf{面积 $=$ 位移：} 图线与 $t$ 轴围成一个梯形，面积
   \[
-  x = \frac{(v_0 + v)}{2} \cdot t = v_0 t + \frac12 a t^2
+  x = \frac{v_0 + v}{2} \cdot t
   \]
+  将 $v = v_0 + at$ 代入，得到位移公式 $x = v_0 t + \frac12 a t^2$。
 \end{enumerate}
-
-\textbf{直观理解位移公式：} 如果物体以 $v_0$ 匀速运动，位移是 $v_0 t$（矩形面积）。多出来的 $\frac12 a t^2$ 是因为速度在均匀增加，相当于多走了三角形面积部分的位移。
 
 \subsection*{三大核心公式}
 
-\textbf{1. 速度公式}（从加速度定义直接得到）：
+\textbf{1. 速度公式：}
 \[
 \boxed{v = v_0 + at}
 \]
 \begin{itemize}
+  \item 来源：加速度定义 $a = \frac{v-v_0}{t}$ 的变形。
   \item 适用：匀变速直线运动。
   \item 用途：已知 $v_0, a, t$ 求末速度。
 \end{itemize}
 
-\textbf{2. 位移公式}（从 v-t 图面积得到）：
+\textbf{2. 位移公式：}
 \[
 \boxed{x = v_0 t + \frac12 a t^2}
 \]
 \begin{itemize}
+  \item 来源：$v$-$t$ 图梯形面积 $x = \frac{v_0+v}{2}t$，代入 $v = v_0+at$。
   \item 适用：匀变速直线运动。
-  \item 用途：已知 $v_0, a, t$ 求位移。
-  \item 注意：$x$ 是位移，不是路程。
+  \item 直观理解：$v_0 t$ 是匀速运动的部分（矩形），$\frac12 a t^2$ 是加速带来的额外部分（三角形）。
 \end{itemize}
 
-\textbf{3. 速位公式}（消去时间 $t$ 得到）：
+\textbf{3. 速位公式（不含时间）：}
 \[
 \boxed{v^2 - v_0^2 = 2 a x}
 \]
 \begin{itemize}
-  \item 适用：匀变速直线运动（不含 $t$ 时使用）。
-  \item 推导：由 $v = v_0 + at$ 得 $t = \frac{v-v_0}{a}$，代入位移公式。
-  \item 用途：已知 $v_0, v, a$ 或 $v_0, v, x$ 时非常方便。
+  \item 适用：匀变速直线运动，题目不涉及时间 $t$ 时使用。
+  \item 用途：已知 $v_0, v, a$ 求 $x$，或已知 $v_0, v, x$ 求 $a$。
 \end{itemize}
+
+\textbf{完整推导（了解，不需要背）：}
+\[
+v = v_0 + at \quad\Rightarrow\quad t = \frac{v - v_0}{a}
+\]
+代入 $x = \frac{v_0 + v}{2} t$：
+\[
+x = \frac{v_0 + v}{2} \cdot \frac{v - v_0}{a}
+    = \frac{v^2 - v_0^2}{2a}
+\]
+两边乘以 $2a$：
+\[
+v^2 - v_0^2 = 2 a x
+\]
 
 \subsection*{怎么选公式？}
 
