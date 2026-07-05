@@ -1,54 +1,314 @@
-\daytitle{3}{加速度与匀变速直线运动}
+\daytitle{3}{加速度}
 
 \begin{learningbox}{本讲义大致内容}
-讲加速度的物理意义、匀变速直线运动公式、自由落体、竖直上抛和刹车问题。
+速度描述的是"运动快慢"，加速度描述的是"速度变化的快慢"。这一节我们从生活直觉出发，建立加速度的概念，然后导出匀变速直线运动的三大核心公式，并学会用它们解题。
 \end{learningbox}
 
 \section*{一、学习目标}
+
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 理解加速度的物理意义：它不是"速度"也不是"速度变化量"，而是"速度变化的快慢"。
+  \item 掌握加速度的定义式 $a = \dfrac{\Delta v}{\Delta t}$，能进行一维直线运动中的矢量计算。
+  \item 理解匀变速直线运动的特点：加速度恒定。
+  \item 掌握匀变速直线运动的三个核心公式及其适用条件。
+  \item 能根据已知条件选择合适的公式解题。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中没有加速度的概念，只讲过"加速"和"减速"这样的定性描述。高中物理把"速度变化快慢"用一个精确的物理量来描述——加速度。
+
+想想这些场景：
+\begin{itemize}
+  \item 赛车从 $0$ 加速到 $100\ \mathrm{km/h}$ 只需要 $2.5\ \mathrm{s}$——加速度大。
+  \item 家用车从 $0$ 加速到 $100\ \mathrm{km/h}$ 需要 $10\ \mathrm{s}$——加速度小。
+  \item 高速列车进站时从 $300\ \mathrm{km/h}$ 到停下来用了 $120\ \mathrm{s}$——加速度也很小（不过是减速）。
+\end{itemize}
+
+这三种情况速度都在变化，但变化快慢不同。我们需要的物理量就是\textbf{加速度}。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{加速度}
+
+\textbf{直观理解：} 加速度就是"每秒速度的变化量"。如果一辆车的加速度是 $2\ \mathrm{m/s^2}$，意思就是每过 $1\ \mathrm{s}$，它的速度增加 $2\ \mathrm{m/s}$。
+
+\textbf{严格定义：} 加速度 $\vect{a}$ 是速度变化量 $\Delta\vect{v}$ 与所用时间 $\Delta t$ 的比值，是矢量。
+\[
+\vect{a} = \frac{\Delta \vect{v}}{\Delta t} = \frac{\vect{v} - \vect{v}_0}{\Delta t}
+\]
+
+\begin{itemize}
+  \item \textbf{单位：} $\mathrm{m/s^2}$（读作"米每二次方秒"）。
+  \item \textbf{矢量性：} 加速度的方向与速度变化量 $\Delta\vect{v}$ 的方向相同，与速度 $\vect{v}$ 的方向无关。
+  \item \textbf{加速与减速的判断：}
+    \begin{itemize}
+      \item $a$ 与 $v$ 同向（同号）$\to$ 加速运动。
+      \item $a$ 与 $v$ 反向（异号）$\to$ 减速运动。
+      \item $a = 0$ $\to$ 速度不变（匀速或静止）。
+    \end{itemize}
+\end{itemize}
+
+\textbf{常见误区：}
+\begin{enumerate}
+  \item 加速度大不代表速度快。火箭点火瞬间加速度极大，但速度几乎为零。
+  \item 加速度减小不代表速度减小。只要加速度与速度同向，即使加速度在减小，速度仍在增加（只是增加得越来越慢）。
+  \item 速度为零时加速度不一定为零。竖直上抛的最高点，速度为零但加速度为 $g$。
+\end{enumerate}
+
+\end{conceptbox}
+
+\begin{conceptbox}{匀变速直线运动}
+
+\textbf{直观理解：} 物体沿直线运动，且加速度保持不变——每秒钟速度的增加量相同。
+
+\textbf{严格定义：} 加速度 $\vect{a}$ 的大小和方向都保持不变的直线运动。
+
+\begin{itemize}
+  \item 匀加速直线运动：$a$ 与 $v_0$ 同向，速度均匀增大。
+  \item 匀减速直线运动：$a$ 与 $v_0$ 反向，速度均匀减小。
+  \item 自由落体运动：初速度为零、加速度为 $g$ 的匀加速直线运动。
+\end{itemize}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\subsection*{核心公式}
+
+\textbf{1. 速度-时间关系（速度公式）：}
+\[
+v = v_0 + at
+\]
+\begin{itemize}
+  \item 适用条件：匀变速直线运动（$a$ 恒定）。
+  \item 物理意义：末速度等于初速度加上加速度作用 $t$ 时间后的增量。
+  \item 常见误用：自由落体中 $v = gt$（此时 $v_0 = 0$），但要注意 $g$ 的方向向下，取正方向后符号要一致。
+\end{itemize}
+
+\textbf{2. 位移-时间关系（位移公式）：}
+\[
+x = v_0 t + \frac{1}{2} a t^2
+\]
+\begin{itemize}
+  \item 适用条件：匀变速直线运动。
+  \item 物理意义：位移由初速度贡献的部分 $v_0 t$ 和加速度贡献的部分 $\frac{1}{2} a t^2$ 叠加而成。
+  \item 注意：若计时起点物体不在原点，则公式为 $x - x_0 = v_0 t + \frac{1}{2} a t^2$。
+\end{itemize}
+
+\textbf{3. 速度-位移关系（速位公式）：}
+\[
+v^2 - v_0^2 = 2 a x
+\]
+\begin{itemize}
+  \item 适用条件：匀变速直线运动（不涉及时间 $t$ 时使用）。
+  \item 物理意义：末速度的平方减去初速度的平方等于两倍加速度乘位移。
+  \item 常见误用：$x$ 是位移不是路程。如果物体折返，这个公式不能用全程的路程直接代。
+\end{itemize}
+
+\subsection*{公式选择策略}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+已知条件 & 求 & 首选公式 \\
+\midrule
+$v_0, a, t$ & $v$ & $v = v_0 + at$ \\
+$v_0, a, t$ & $x$ & $x = v_0 t + \frac12 at^2$ \\
+$v_0, v, a$ & $x$ & $v^2 - v_0^2 = 2ax$ \\
+$v_0, v, t$ & $x$ & $x = \frac{v_0+v}{2} t$ \\
+$v_0, v, t$ & $a$ & $a = \frac{v-v_0}{t}$ \\
+$v_0, a, x$ & $v$ & $v^2 - v_0^2 = 2ax$ \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\textbf{自由落体运动：} 初速度 $v_0 = 0$、加速度 $a = g$（方向竖直向下）的匀加速直线运动。
+
+\[
+v = gt, \qquad h = \frac12 gt^2, \qquad v^2 = 2gh
+\]
+
+其中 $g \approx 9.8\ \mathrm{m/s^2}$（高中题目常取 $g = 10\ \mathrm{m/s^2}$ 以简化计算）。
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{加速度的计算}
 
-\textbf{解题过程：} TODO。
+\textbf{题意分析：} 一辆汽车在平直公路上以 $v_0 = 20\ \mathrm{m/s}$ 的速度行驶。司机看到红灯后刹车，经过 $t = 5\ \mathrm{s}$ 停下来。求：
+\begin{enumerate}
+  \item 汽车的加速度。
+  \item 刹车后第 $3\ \mathrm{s}$ 末的速度。
+  \item 汽车刹车后 $6\ \mathrm{s}$ 内的位移。
+\end{enumerate}
 
-\textbf{方法总结：} TODO。
+\textbf{物理模型：} 匀减速直线运动，加速度恒定。取初速度方向为正方向。
+
+\textbf{解题过程：}
+
+\begin{enumerate}
+  \item 由速度公式 $v = v_0 + at$：
+  \[
+  0 = 20 + a \times 5,\qquad \therefore a = -4\ \mathrm{m/s^2}
+  \]
+  负号表示加速度方向与初速度方向相反，即汽车在做匀减速运动。
+  
+  \item 第 $3\ \mathrm{s}$ 末的速度：
+  \[
+  v_3 = v_0 + a t_3 = 20 + (-4) \times 3 = 8\ \mathrm{m/s}
+  \]
+  
+  \item 刹车后 $5\ \mathrm{s}$ 已经停下来，$6\ \mathrm{s}$ 时车已静止。所以只能用实际运动时间 $t_{\text{实际}} = 5\ \mathrm{s}$ 计算位移：
+  \[
+  x = v_0 t_{\text{实际}} + \frac12 a t_{\text{实际}}^2 = 20 \times 5 + \frac12 \times (-4) \times 5^2 = 100 - 50 = 50\ \mathrm{m}
+  \]
+  也可以用速位公式：
+  \[
+  v^2 - v_0^2 = 2ax,\qquad 0 - 20^2 = 2 \times (-4) \times x,\qquad x = \frac{400}{8} = 50\ \mathrm{m}
+  \]
+\end{enumerate}
+
+\textbf{方法总结：}
+\begin{enumerate}
+  \item 刹车问题要先计算实际停车时间 $t_{\text{停}} = \dfrac{0 - v_0}{a}$，超过这个时间的位移不再增加。
+  \item 加速度为负只表示方向与正方向相反，不代表"变小"。
+  \item 能用多种方法验证结果，速位公式不涉及时间，在某些情况下更简洁。
+\end{enumerate}
+
+\end{examplebox}
+
+\begin{examplebox}{自由落体运动}
+
+\textbf{题意分析：} 一个物体从 $45\ \mathrm{m}$ 高的楼顶自由下落，$g$ 取 $10\ \mathrm{m/s^2}$。求：
+\begin{enumerate}
+  \item 落地所需时间。
+  \item 落地时的速度。
+  \item 最后 $1\ \mathrm{s}$ 内下落的位移。
+\end{enumerate}
+
+\textbf{物理模型：} 自由落体（$v_0 = 0$，$a = g$ 向下）。取向下为正方向。
+
+\textbf{解题过程：}
+
+\begin{enumerate}
+  \item 由位移公式 $h = \frac12 g t^2$：
+  \[
+  45 = \frac12 \times 10 \times t^2,\qquad t^2 = 9,\qquad t = 3\ \mathrm{s}
+  \]
+  
+  \item 由速度公式 $v = gt$：
+  \[
+  v = 10 \times 3 = 30\ \mathrm{m/s}
+  \]
+  或用速位公式 $v^2 = 2gh$：$v = \sqrt{2 \times 10 \times 45} = \sqrt{900} = 30\ \mathrm{m/s}$。
+  
+  \item 最后 $1\ \mathrm{s}$ 的位移等于总位移减去前 $2\ \mathrm{s}$ 的位移：
+  \[
+  h_3 = \frac12 g \times 3^2 = 45\ \mathrm{m},\qquad
+  h_2 = \frac12 g \times 2^2 = 20\ \mathrm{m}
+  \]
+  \[
+  \Delta h = h_3 - h_2 = 45 - 20 = 25\ \mathrm{m}
+  \]
+  也可以直接用第 $3\ \mathrm{s}$ 内的位移公式：前 $n\ \mathrm{s}$ 内位移 $h_n \propto n^2$，第 $N\ \mathrm{s}$ 内位移与 $2N-1$ 成正比。
+\end{enumerate}
+
+\textbf{方法总结：}
+\begin{enumerate}
+  \item 自由落体是匀变速的特例，三个核心公式都适用。
+  \item 求某一段的位移，常用"总位移减去前一段位移"的方法。
+  \item 比例关系：自由落体第 $1\ \mathrm{s}$、第 $2\ \mathrm{s}$、第 $3\ \mathrm{s}$ 内的位移之比为 $1:3:5:\cdots:(2N-1)$。
+  \begin{center}
+  \input{figures/tikz/freefall-proportion}
+  \figcaption{自由落体中第 $1$、$2$、$3\ \mathrm{s}$ 内的位移之比为 $1:3:5$}\label{fig:freefall-proportion}
+  \end{center}
+\end{enumerate}
+
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 一辆汽车以 $v_0 = 15\ \mathrm{m/s}$ 的速度行驶，突然以 $a = -3\ \mathrm{m/s^2}$ 的加速度刹车。求：
+  \begin{enumerate}
+    \item 刹车后 $3\ \mathrm{s}$ 末的速度。
+    \item 刹车后 $6\ \mathrm{s}$ 内的位移。
+  \end{enumerate}
+
+  \item 一个物体从 $80\ \mathrm{m}$ 高处自由下落，$g = 10\ \mathrm{m/s^2}$。求：
+  \begin{enumerate}
+    \item 落地时间。
+    \item 落地速度。
+    \item 落地前最后 $2\ \mathrm{s}$ 内的位移。
+  \end{enumerate}
+
+  \item 一个质点做匀加速直线运动，第 $3\ \mathrm{s}$ 内的位移为 $5\ \mathrm{m}$，第 $5\ \mathrm{s}$ 内的位移为 $9\ \mathrm{m}$。求质点的初速度和加速度。（提示：利用 $\Delta x = a T^2$ 或逐差法。）
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{把加速度的方向和速度的方向混淆：} 加速度的方向由 $\Delta v$ 决定，与 $v$ 的方向无关。物体向东减速时，加速度向西。
+  
+  \item \textbf{认为"加速度减小则速度减小"：} 只要 $a$ 与 $v$ 同向，即使 $a$ 在减小，速度也在增大。例如汽车逐渐松开油门，加速度从 $2\ \mathrm{m/s^2}$ 减小到 $0$，但速度仍在增加（只是增加得慢了）。
+  
+  \item \textbf{刹车问题忘记考虑停车时间：} 题目给出 $t = 6\ \mathrm{s}$，但车可能在 $t = 4\ \mathrm{s}$ 已经停了。直接代入 $t = 6\ \mathrm{s}$ 计算会得到荒谬的负位移。
+  
+  \item \textbf{自由落体中 $g$ 的正负号：} 取向下为正时 $g = +10\ \mathrm{m/s^2}$，取向上为正时 $g = -10\ \mathrm{m/s^2}$。正方向的选取决定符号，但 $g$ 的方向始终竖直向下。
+  
+  \item \textbf{混淆 $v_0$ 和 $v$：} 公式中的 $v_0$ 是计时起点的初速度，$v$ 是经过时间 $t$ 后的末速度。不要顺序搞反。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{逐差法求加速度}
+
+在实验题中，我们常常用打点计时器得到一系列等时间间隔的位移数据。逐差法是处理这类数据最精确的方法。
+
+\textbf{原理：} 对于匀变速直线运动，相邻相等时间 $T$ 内的位移差是恒定的：
+\[
+\Delta x = x_2 - x_1 = x_3 - x_2 = \cdots = a T^2
+\]
+
+如果有 $6$ 段位移 $x_1, x_2, \cdots, x_6$，用逐差法求加速度的公式为：
+\[
+a = \frac{(x_4 + x_5 + x_6) - (x_1 + x_2 + x_3)}{9 T^2}
+\]
+
+\textbf{例题：} 用打点计时器研究匀加速直线运动，纸带上每两点间的时间间隔 $T = 0.02\ \mathrm{s}$，测得六段位移分别为：$x_1 = 2.80\ \mathrm{cm}$，$x_2 = 4.40\ \mathrm{cm}$，$x_3 = 5.95\ \mathrm{cm}$，$x_4 = 7.55\ \mathrm{cm}$，$x_5 = 9.10\ \mathrm{cm}$，$x_6 = 10.70\ \mathrm{cm}$。求加速度。
+
+\textbf{解：}
+\[
+a = \frac{(7.55 + 9.10 + 10.70) - (2.80 + 4.40 + 5.95)}{9 \times 0.02^2} \times 10^{-2}
+\]
+\[
+= \frac{27.35 - 13.15}{9 \times 0.0004} \times 10^{-2}
+= \frac{14.20}{0.0036} \times 10^{-2}
+\approx 39.4\ \mathrm{m/s^2}
+\]
+
+\textbf{为什么要用逐差法而不是两两相减取平均？} 因为逐差法利用了全部数据，能减小偶然误差；两两相减只有一半数据有效。
+
+\textbf{比例法在竞赛中的应用：} 初速度为零的匀加速直线运动还有一个重要的比例关系：
+\begin{itemize}
+  \item $1T$ 内、$2T$ 内、$3T$ 内$\cdots$位移之比：$1:4:9:\cdots$
+  \item 第 $1T$ 内、第 $2T$ 内、第 $3T$ 内$\cdots$位移之比：$1:3:5:\cdots$
+  \item 连续相等位移所用时间之比：$1:(\sqrt{2}-1):(\sqrt{3}-\sqrt{2}):\cdots$
+\end{itemize}
+这些比例关系在竞赛选择填空题中非常高效。
 \end{competitionbox}
 
 \section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
 
+\begin{enumerate}
+  \item 加速度 $a = \dfrac{\Delta v}{\Delta t}$，是矢量，方向与 $\Delta v$ 相同。
+  \item $a$ 与 $v$ 同向则加速，反向则减速，$a=0$ 则匀速。
+  \item 匀变速直线运动三大公式：$v = v_0 + at$，$x = v_0 t + \frac12 at^2$，$v^2 - v_0^2 = 2ax$。
+  \item 刹车问题先求停车时间，自由落体是 $v_0=0$、$a=g$ 的特例。
+  \item 公式选择策略：缺啥不求啥——不含时间用速位公式，不含末速用位移公式。
+\end{enumerate}
