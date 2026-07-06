@@ -1,0 +1,22 @@
+% TikZ 图：碰撞模型
+% Day 10：冲量、动量与动量守恒
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  % 碰撞前
+  \draw[thick] (-3,0) rectangle (-1.5,1.2);
+  \node at (-2.25,0.6) {$m_1$};
+  \draw[->,thick,red] (-1.5,0.6) -- (-0.3,0.6) node[above] {$v_1$};
+  \draw[thick] (0,0) rectangle (1.5,1.2);
+  \node at (0.75,0.6) {$m_2$};
+  \draw[->,thick,red] (2.5,0.6) -- (3.5,0.6) node[above] {$v_2$};
+  \node[above] at (-0.75,1.5) {碰撞前};
+  % 碰撞后
+  \draw[thick] (-1.5,-2.5) rectangle (0,-1.3);
+  \node at (-0.75,-1.9) {$m_1$};
+  \draw[->,thick,blue] (0,-1.9) -- (1.2,-1.9) node[above] {$v_1'$};
+  \draw[thick] (1,-2.5) rectangle (2.5,-1.3);
+  \node at (1.75,-1.9) {$m_2$};
+  \draw[->,thick,blue] (2.5,-1.9) -- (3.5,-1.9) node[above] {$v_2'$};
+  \node[above] at (0.75,-1.0) {碰撞后};
+  % 动量守恒
+  \node[red] at (0,-0.2) {$m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'$};
+\end{tikzpicture}

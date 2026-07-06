@@ -1,54 +1,325 @@
 \daytitle{9}{机械能守恒与功能关系}
 
 \begin{learningbox}{本讲义大致内容}
-讲动能、重力势能、弹性势能、机械能守恒条件、非保守力做功和功能关系。
+动能、重力势能、弹性势能统称为机械能。今天学习机械能守恒的条件，以及当机械能不守恒时如何用功能关系处理。能量方法是高中物理最重要的思想之一。
 \end{learningbox}
 
 \section*{一、学习目标}
+
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 掌握重力势能 $E_p = mgh$，理解重力做功与路径无关。
+  \item 掌握弹性势能 $E_p = \frac12 kx^2$。
+  \item 理解机械能守恒的条件：只有重力（或弹簧弹力）做功。
+  \item 会用机械能守恒定律解决多过程问题。
+  \item 掌握功能关系：除重力/弹力外其他力做功等于机械能变化量。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中已经学过"动能和势能可以相互转化"，如自由落体中重力势能转化为动能。但初中只讲定性，没有定量公式。
+
+高中把这两个量定量化：
+\begin{itemize}
+  \item $E_k = \frac12 mv^2$（动能）——Day 08 已学。
+  \item $E_p = mgh$（重力势能）——今天学。
+  \item $E_p = \frac12 kx^2$（弹性势能）——今天学。
+\end{itemize}
+
+更关键的是，高中要判断\textbf{什么时候机械能守恒、什么时候不守恒}，以及不守恒时能量去哪了。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{重力势能}
+
+\[
+\boxed{E_p = mgh}
+\]
+
+\begin{itemize}
+  \item $h$ 是物体相对参考平面的高度。
+  \item 重力势能是相对的——参考平面不同，数值不同。
+  \item 重力势能的变化是绝对的——$\Delta E_p = mg\Delta h$ 与参考面选择无关。
+\end{itemize}
+
+\textbf{重力做功与重力势能的关系：}
+\[
+W_G = -\Delta E_p = -(E_{p2} - E_{p1}) = E_{p1} - E_{p2}
+\]
+
+\begin{itemize}
+  \item 重力做正功 $\to$ 重力势能减少。
+  \item 重力做负功 $\to$ 重力势能增加。
+  \item 重力做功与路径无关，只与初末高度差有关。
+\end{itemize}
+
+\end{conceptbox}
+
+\begin{conceptbox}{弹性势能}
+
+\[
+\boxed{E_p = \frac12 k x^2}
+\]
+
+\begin{itemize}
+  \item $k$：劲度系数（$\mathrm{N/m}$）。
+  \item $x$：形变量（伸长或压缩的长度）。
+  \item 弹力做功等于弹性势能变化的负值：$W_{\text{弹}} = -\Delta E_p$。
+\end{itemize}
+
+\textbf{注意：} 弹性势能永远是正值（因为平方）。弹簧被压缩和拉长相同距离时，弹性势能相同。
+
+\end{conceptbox}
+
+\begin{conceptbox}{机械能守恒定律}
+
+\textbf{机械能：} 动能、重力势能、弹性势能的总和。
+\[
+E = E_k + E_p = \frac12 mv^2 + mgh + \frac12 kx^2
+\]
+
+\textbf{守恒条件：} 系统内只有重力（或弹簧弹力）做功，没有其他外力（如摩擦力、阻力）做功。
+
+\textbf{守恒定律：}
+\[
+\boxed{E_1 = E_2}
+\]
+即：
+\[
+\frac12 mv_1^2 + mgh_1 + \frac12 kx_1^2 = \frac12 mv_2^2 + mgh_2 + \frac12 kx_2^2
+\]
+
+\begin{center}
+\input{figures/tikz/energy-conservation}
+
+\figcaption{摆球：最高点势能 $\to$ 最低点动能，机械能守恒}\label{fig:energy-conservation}
+\end{center}
+
+\textbf{常见判断：}
+\begin{itemize}
+  \item 自由落体、抛体运动（不计空气阻力）$\to$ 机械能守恒。
+  \item 光滑斜面上滑动 $\to$ 机械能守恒。
+  \item 粗糙面上滑动 $\to$ 机械能不守恒（摩擦生热）。
+  \item 有外力做功 $\to$ 机械能不守恒。
+\end{itemize}
+
+\end{conceptbox}
+
+\begin{conceptbox}{功能关系}
+
+当机械能不守恒时，其他力做的功等于机械能的变化量：
+\[
+\boxed{W_{\text{其他}} = \Delta E = E_2 - E_1}
+\]
+
+\begin{itemize}
+  \item $W_{\text{其他}}$ 是除重力和弹簧弹力以外的力做的总功。
+  \item 摩擦力做负功 $\to$ 机械能减少，转化为内能。
+  \item 外力做正功 $\to$ 机械能增加。
+
+\end{itemize}
+
+\textbf{常见模型：}
+\begin{itemize}
+  \item 粗糙斜面下滑：$mgh - \mu mg\cos\theta \cdot s = \frac12 mv^2$（动能定理）
+  \item 或从功能关系看：$-\mu mg\cos\theta \cdot s = \Delta E$（机械能减少）
+\end{itemize}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+公式 & 意义 & 适用条件 \\
+\midrule
+$E_p = mgh$ & 重力势能 & $h$ 相对参考平面 \\
+$E_p = \frac12 kx^2$ & 弹性势能 & 弹性限度内 \\
+$E_1 = E_2$ & 机械能守恒 & 只有重力/弹力做功 \\
+$W_{\text{其他}} = \Delta E$ & 功能关系 & 任何情况 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：自由落体/抛体}
+
+只有重力做功，机械能守恒。$\frac12 mv_1^2 + mgh_1 = \frac12 mv_2^2 + mgh_2$。
+
+\subsection*{模型 2：弹簧-物体系统}
+
+物体与弹簧组成的系统，只有重力和弹力做功，机械能守恒。
+\[
+\frac12 mv^2 + mgh + \frac12 kx^2 = \text{常量}
+\]
+
+\subsection*{模型 3：粗糙斜面（功能关系）}
+
+物体沿粗糙斜面下滑，摩擦力做负功，机械能减少：
+\[
+mgh - \mu mg\cos\theta \cdot s = \frac12 mv^2
+\]
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{机械能守恒——摆球}
 
-\textbf{解题过程：} TODO。
+\textbf{题意分析：} 摆长为 $l$ 的单摆，将摆球拉到与竖直方向成 $60^\circ$ 角的位置由静止释放，$g = 10\ \mathrm{m/s^2}$。求摆球经过最低点时的速度。
 
-\textbf{方法总结：} TODO。
+\textbf{物理模型：} 单摆，只有重力做功，机械能守恒。
+
+\textbf{解题过程：}
+
+取最低点为参考平面（$h=0$）。
+
+初始高度：$h = l - l\cos 60^\circ = l(1 - 0.5) = 0.5l$
+
+初态：$E_{p1} = mgh = 0.5 mgl$，$E_{k1} = 0$。
+
+末态（最低点）：$E_{p2} = 0$，$E_{k2} = \frac12 mv^2$。
+
+机械能守恒：
+\[
+0.5 mgl = \frac12 mv^2
+\]
+\[
+v = \sqrt{gl}
+\]
+
+若 $l = 1.6\ \mathrm{m}$，则 $v = \sqrt{10 \times 1.6} = 4\ \mathrm{m/s}$。
+
+\textbf{方法总结：}
+\begin{enumerate}
+  \item 机械能守恒的关键是选好参考平面（通常选最低点或最容易算的位置）。
+  \item 摆球问题中高度差通过几何关系求出。
+\end{enumerate}
+
+\end{examplebox}
+
+\begin{examplebox}{机械能守恒——弹簧+物体}
+
+\textbf{题意分析：} 劲度系数 $k = 100\ \mathrm{N/m}$ 的轻弹簧竖直放置，下端固定。在弹簧上端放一个 $m = 0.5\ \mathrm{kg}$ 的物体（不拴接），从原长位置由静止释放，$g = 10\ \mathrm{m/s^2}$。求弹簧的最大压缩量。
+
+\textbf{物理模型：} 物体+弹簧系统，只有重力和弹力做功，机械能守恒。
+
+\textbf{解题过程：}
+
+取弹簧原长位置为重力势能零点，此时弹簧无形变。
+
+初态：$E_{k1}=0$，$E_{pG1}=0$，$E_{p\text{弹}1}=0$。
+
+末态（最大压缩量 $x$ 时，速度为零）：$E_{k2}=0$，$E_{pG2} = -mgx$（物体下降了 $x$），$E_{p\text{弹}2} = \frac12 kx^2$。
+
+机械能守恒：
+\[
+0 = -mgx + \frac12 kx^2
+\]
+\[
+x( \frac12 kx - mg) = 0
+\]
+舍去 $x=0$，得：
+\[
+x = \frac{2mg}{k} = \frac{2 \times 0.5 \times 10}{100} = 0.1\ \mathrm{m} = 10\ \mathrm{cm}
+\]
+
+\textbf{方法总结：}
+\begin{enumerate}
+  \item 弹簧问题中重力势能和弹性势能都要考虑。
+  \item 注意重力势能的正负——物体下降时 $h$ 为负，$E_p$ 为负。
+\end{enumerate}
+
+\end{examplebox}
+
+\begin{examplebox}{功能关系——粗糙斜面}
+
+\textbf{题意分析：} 质量为 $m = 2\ \mathrm{kg}$ 的物体从 $h = 3\ \mathrm{m}$ 高处沿粗糙斜面由静止滑下，斜面倾角 $\theta = 30^\circ$，$\mu = 0.3$，$g = 10\ \mathrm{m/s^2}$。求物体滑到底端时的速度。
+
+\textbf{物理模型：} 粗糙斜面，摩擦力做负功，机械能不守恒。用动能定理或功能关系。
+
+\textbf{解题过程：}
+
+斜面长度 $s = \dfrac{h}{\sin\theta} = \dfrac{3}{0.5} = 6\ \mathrm{m}$。
+
+重力做功：$W_G = mgh = 2 \times 10 \times 3 = 60\ \mathrm{J}$
+
+摩擦力做功：$f = \mu mg\cos\theta = 0.3 \times 20 \times \frac{\sqrt{3}}{2} \approx 5.2\ \mathrm{N}$，$W_f = -f s \approx -31.2\ \mathrm{J}$
+
+由动能定理：
+\[
+W_G + W_f = \frac12 mv^2
+\]
+\[
+60 - 31.2 = \frac12 \times 2 \times v^2
+\]
+\[
+v^2 = 28.8,\qquad v \approx 5.37\ \mathrm{m/s}
+\]
+
+从功能关系看：摩擦力做功 $-31.2\ \mathrm{J}$ 使机械能减少了 $31.2\ \mathrm{J}$，这些能量转化为内能。
+
+\textbf{方法总结：}
+\begin{enumerate}
+  \item 机械能不守恒时，用动能定理（功能关系）仍然成立。
+  \item 摩擦力做的功等于机械能的减少量，等于产生的热量。
+\end{enumerate}
+
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 质量为 $m = 0.2\ \mathrm{kg}$ 的小球从 $h = 0.8\ \mathrm{m}$ 高处自由下落到竖直放置的弹簧上，弹簧劲度系数 $k = 100\ \mathrm{N/m}$。求弹簧的最大压缩量。
+  
+  \item 一个物体从光滑斜面顶端由静止滑下，斜面高 $h = 1.8\ \mathrm{m}$，底端接粗糙水平面，$\mu = 0.3$，$g = 10\ \mathrm{m/s^2}$。求物体在水平面上滑行的距离。
+  
+  \item 质量为 $m$ 的小球用长为 $l$ 的细绳悬挂，将小球拉到水平位置由静止释放。求小球经过最低点时绳子的拉力。（提示：最低点时 $T - mg = m\frac{v^2}{l}$。）
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{误以为只要物体运动就机械能守恒：} 判断条件不是"运动"而是"只有重力/弹力做功"。有摩擦力就一定不守恒。
+  
+  \item \textbf{重力势能的参考平面选错：} 同一个问题中，全程只能用同一个参考平面。换参考面会导致计算错误。
+  
+  \item \textbf{忽略弹性势能：} 有弹簧时，必须把弹性势能计入机械能的总和中。
+  
+  \item \textbf{把动能的 $v^2$ 写成 $v$：} $E_k = \frac12 mv^2$，不是 $\frac12 mv$。这是最常见的计算错误。
+  
+  \item \textbf{机械能守恒方程中符号搞反：} $\Delta E_k = -\Delta E_p$，动能的增加等于势能的减少，不是增加。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{系统的机械能守恒}
+
+竞赛中经常通过绳、杆连接两个物体。虽然单个物体的机械能不守恒，但\textbf{系统的机械能守恒}（如果系统内只有重力/弹力做功）。
+
+\textbf{例题：} 质量 $m_A$ 和 $m_B$ 通过跨过定滑轮的轻绳连接，$A$ 在光滑水平面上，$B$ 从 $h$ 高处由静止释放。求 $B$ 落地时的速度。
+
+\textbf{解：} 系统机械能守恒（$A$ 和 $B$ 整体只有重力做功）：
+\[
+m_B g h = \frac12 m_A v^2 + \frac12 m_B v^2
+\]
+\[
+v = \sqrt{\frac{2 m_B g h}{m_A + m_B}}
+\]
+
+注意两物体速度大小相等（绳不伸长），所以动能为两项之和。
+
+\textbf{竞赛小贴士：} 连接体问题中，如果系统内除了重力和弹力没有其他力做功，优先用系统机械能守恒，比用牛顿定律简单得多。
 \end{competitionbox}
 
 \section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
 
+\begin{enumerate}
+  \item 重力势能 $E_p = mgh$，弹性势能 $E_p = \frac12 kx^2$。
+  \item 机械能守恒条件：只有重力/弹力做功。
+  \item 机械能守恒方程：$E_{k1} + E_{p1} = E_{k2} + E_{p2}$。
+  \item 功能关系：$W_{\text{其他}} = \Delta E$，其他力做功等于机械能变化。
+  \item 系统机械能守恒：连接体问题中优先考虑。
+\end{enumerate}
