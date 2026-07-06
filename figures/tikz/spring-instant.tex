@@ -19,10 +19,10 @@
   \draw[red,thick] (-0.5,-0.8) -- (0.5,-1.0);
   \draw[red,thick] (-0.5,-1.0) -- (0.5,-0.8);
   \node[red,right] at (0.5,-0.9) {剪断};
-  % A的受力（剪断瞬间）：重力G向下 + 弹簧弹力T向下
-  \draw[->,thick,blue] (-1.5,-1.6) -- (-1.5,-2.4) node[left] {$m_A g$};
-  \draw[->,thick,red] (-1.5,-1.6) -- (-1.5,-0.8) node[left] {$T$（弹簧拉A向下）};
-  % B的受力（剪断瞬间）：重力G向下 + 弹簧弹力T向上（平衡）
-  \draw[->,thick,blue] (1.5,-3.7) -- (1.5,-4.5) node[right] {$m_B g$};
-  \draw[->,thick,red] (1.5,-3.7) -- (1.5,-2.9) node[right] {$T$（弹簧拉B向上）};
+  % A的受力（剪断瞬间）：重力向下，弹簧弹力仍向下。
+  \draw[->,thick,blue] (-1.25,-1.6) -- (-1.25,-2.4) node[pos=0.58,left] {$m_A g$};
+  \draw[->,thick,red] (1.05,-1.6) -- (1.05,-2.4) node[pos=0.58,right] {$T$};
+  % B的受力（剪断瞬间）：重力向下，弹簧弹力仍向上。
+  \draw[->,thick,blue] (-1.25,-3.7) -- (-1.25,-4.5) node[pos=0.6,left] {$m_B g$};
+  \draw[->,thick,red] (1.05,-3.7) -- (1.05,-2.9) node[pos=0.55,right] {$T$};
 \end{tikzpicture}

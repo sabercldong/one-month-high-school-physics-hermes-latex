@@ -26,14 +26,14 @@ $x$-$t$ 图和 $v$-$t$ 图是运动学的"可视化语言"。今天学会读图�
 
 \section*{三、核心概念}
 
-\begin{conceptbox}{$x$-$t$ 图像（位移-时间图）}
+\begin{conceptbox}{$x$-$t$ 图像（位置-时间图）}
 
 \textbf{直观理解：} $x$-$t$ 图像描述的是物体"位置随时间怎么变"。
 
 \begin{center}
 \input{figures/tikz/xt-graph}
 
-\figcaption{匀速直线运动的 $x$-$t$ 图像：斜率 $=v$}\label{fig:xt-graph}
+\figcaption{匀速直线运动的 $x$-$t$ 图像：位置随时间均匀变化，斜率 $=v$}\label{fig:xt-graph}
 \end{center}
 
 \textbf{关键读图方法：}
@@ -99,21 +99,30 @@ $x$-$t$ 图和 $v$-$t$ 图是运动学的"可视化语言"。今天学会读图�
 
 \section*{五、典型模型}
 
-\subsection*{模型 1：匀速追匀速}
+追及问题不要一上来套公式，先画清四个节点：初始距离、速度相等时刻、可能停车时刻、追上时刻。速度相等通常是距离取极值的时刻；是否真的追上，还要回到位移关系判断。
 
-若后车 $A$ 速度 $v_A$ 大于前车 $B$ 速度 $v_B$，$A$ 一定能追上 $B$。追上时间由 $v_A t - v_B t = \Delta x$ 解得。
+\begin{center}
+\begin{tabular}{p{0.18\textwidth}p{0.30\textwidth}p{0.38\textwidth}}
+\toprule
+模型 & 关键判断 & 方程入口 \\
+\midrule
+匀速追匀速 & 后车速度更大才可能追上 & $(v_A-v_B)t=\Delta x$ \\
+匀加速追匀速 & 先距离增大，$v_A=v_B$ 时距离最大，之后缩短 & 追上：$\frac12 at^2=v_Bt+\Delta x$ \\
+匀速追匀减速 & 先判断前车停车前能否追上；若不能，再分停车后继续追 & 停车时间 $t_0=v_B/a$；分别比较 $0\sim t_0$ 与 $t>t_0$ 的位移 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
-\subsection*{模型 2：匀加速追匀速}
+\noindent 使用顺序：先写位置关系，再找速度相等或停车这样的关键时刻，最后比较相对位移与初始距离。这样比孤立记公式更稳。
 
-$A$ 从静止开始匀加速追前方匀速运动的 $B$。在 $v_A = v_B$ 时距离最大，之后 $A$ 开始缩短距离，最终追上。
+\subsection*{追及题列式模板}
 
-\subsection*{模型 3：匀速追匀减速}
-
-$B$ 在前方做匀减速，$A$ 匀速追赶。要分两种情况：
-\begin{itemize}
-  \item 在 $B$ 停下之前追上。
-  \item $B$ 停下时还没追上——之后 $B$ 静止，$A$ 匀速接近。
-\end{itemize}
+\begin{enumerate}
+  \item \textbf{定正方向和初始位置：} 通常取运动方向为正，把领先距离写成 $\Delta x$ 或 $d$，不要默认两车从同一点出发。
+  \item \textbf{分别写位移：} 用 $x_A(t)$、$x_B(t)$ 表示两车从各自初始位置起算的位移。
+  \item \textbf{写追上条件：} 后车追上前车时，后车多走的位移等于初始距离，即 $x_{\text{后}}-x_{\text{前}}=\Delta x$。
+  \item \textbf{找极值时刻：} 距离最大或最小时，先令两车速度相等；若有匀减速物体，还要先比较停车时间。
+\end{enumerate}
 
 \section*{六、例题精讲}
 
@@ -145,9 +154,9 @@ $OA$ 段为过原点的直线，$AB$ 段为水平线，$BC$ 段为倾斜直线�
 
 \begin{examplebox}{追及问题——公式法}
 
-\textbf{题意分析：} 一辆汽车（$A$）以 $v_A = 20\ \mathrm{m/s}$ 行驶，发现前方 $d = 60\ \mathrm{m}$ 处有一辆摩托车（$B$）以 $v_B = 10\ \mathrm{m/s}$ 同向匀速行驶。汽车立即以 $a = 2\ \mathrm{m/s^2}$ 匀减速。问两车是否相撞？
+\textbf{题意分析：} 一辆汽车（$A$）以 $v_A = 20\ \mathrm{m/s}$ 行驶，发现前方 $d = 60\ \mathrm{m}$ 处有一辆摩托车（$B$）以 $v_B = 10\ \mathrm{m/s}$ 同向匀速行驶。汽车立即以大小为 $a = 2\ \mathrm{m/s^2}$ 的加速度匀减速。问两车是否相撞？
 
-\textbf{物理模型：} 匀减速（汽车）追匀速（摩托车）。判断是否追尾：当汽车速度减到与摩托车速度相等时，比较汽车位移与摩托车位移 $+ d$。
+\textbf{物理模型：} 匀减速（汽车）追匀速（摩托车）。这里的 $a$ 表示减速度大小，判断是否追尾：当汽车速度减到与摩托车速度相等时，比较汽车位移与摩托车位移 $+ d$。
 
 \textbf{解题过程：}
 
@@ -228,9 +237,9 @@ x_B = v_B t = 10 \times 5 = 50\ \mathrm{m}
 \section*{七、变式训练}
 
 \begin{enumerate}
-  \item 甲车以 $v_{\text{甲}} = 15\ \mathrm{m/s}$ 匀速行驶，发现前方 $L = 40\ \mathrm{m}$ 处乙车以 $v_{\text{乙}} = 10\ \mathrm{m/s}$ 匀速行驶，甲立即以 $a = 1\ \mathrm{m/s^2}$ 匀减速。通过计算判断是否相撞。
+  \item 甲车以 $v_{\text{甲}} = 15\ \mathrm{m/s}$ 匀速行驶，发现前方 $L = 40\ \mathrm{m}$ 处乙车以 $v_{\text{乙}} = 10\ \mathrm{m/s}$ 匀速行驶，甲立即以减速度大小 $a = 1\ \mathrm{m/s^2}$ 匀减速。通过计算判断是否相撞。
   
-  \item 在平直公路上，$A$ 车在前以 $v_A = 8\ \mathrm{m/s}$ 匀速行驶，$B$ 车在后以 $v_B = 20\ \mathrm{m/s}$ 匀速行驶。当两车相距 $d = 100\ \mathrm{m}$ 时，$B$ 开始以 $a = 2\ \mathrm{m/s^2}$ 匀减速。求：
+  \item 在平直公路上，$A$ 车在前以 $v_A = 8\ \mathrm{m/s}$ 匀速行驶，$B$ 车在后以 $v_B = 20\ \mathrm{m/s}$ 匀速行驶。当两车相距 $d = 100\ \mathrm{m}$ 时，$B$ 开始以减速度大小 $a = 2\ \mathrm{m/s^2}$ 匀减速。求：
   \begin{enumerate}
     \item $B$ 车能否追上 $A$？
     \item 若能，何时追上？若不能，最近距离是多少？

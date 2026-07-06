@@ -1,15 +1,16 @@
-% TikZ 图：连接体隔离法（分析B受力）
+% TikZ 图：连接体隔离法（分析 B 受力）
 % Day 07：连接体、斜面与摩擦综合
-\begin{tikzpicture}[scale=0.9,>=Latex]
-  \draw[thick] (-1,0) -- (4,0);
-  % B 物块
-  \draw[thick] (0,0) rectangle (1.5,1.2);
-  \node at (0.75,0.6) {$m_B$};
-  % 绳拉力 T
-  \draw[->,thick,blue] (0,0.6) -- (-1,0.6) node[above] {$T$};
-  % 摩擦力
-  \draw[->,thick,red] (1.5,0.3) -- (2.5,0.3) node[above] {$f_B$};
-  % 隔离法标注
-  \draw[decorate,decoration={brace,amplitude=4pt}] (0,-0.3) -- (1.5,-0.3);
-  \node[below] at (0.75,-0.6) {隔离 $m_B$：$T - f_B = m_B a$};
+\begin{tikzpicture}[scale=0.95,>=Latex]
+  \draw[thick] (-1.4,0) -- (3.4,0);
+  \draw[thick] (0,0) rectangle (1.5,1.1);
+  \node at (0.75,0.55) {$m_B$};
+
+  \draw[->,thick,blue] (1.5,0.65) -- (2.7,0.65) node[above] {$T$};
+  \draw[->,thick,red] (0,0.3) -- (-1.0,0.3) node[above] {$f_B$};
+  \draw[->,thick,blue] (0.25,1.45) -- (1.25,1.45) node[right] {$a$};
+
+  \draw[thick] (0,-0.3) -- (1.5,-0.3);
+  \draw[thick] (0,-0.2) -- (0,-0.4);
+  \draw[thick] (1.5,-0.2) -- (1.5,-0.4);
+  \node[below] at (0.75,-0.62) {隔离 $B$：$T-f_B=m_Ba$};
 \end{tikzpicture}

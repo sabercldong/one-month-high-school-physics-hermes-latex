@@ -20,7 +20,7 @@
 
 高中在此基础上加了三个新维度：
 \begin{enumerate}
-  \item \textbf{力的计算：} 弹力有 $F = kx$，滑动摩擦力有 $f = \mu N$，不再只是"画箭头"。
+  \item \textbf{力的计算：} 弹力有 $F = kx$，滑动摩擦力有 $f_k = \mu_k N$，不再只是"画箭头"。
   \item \textbf{受力分析的完整性：} 必须列出物体受到的所有力，不能漏，也不能多。
   \item \textbf{矢量合成：} 多个力作用的合力要用平行四边形定则计算。
 \end{enumerate}
@@ -59,7 +59,7 @@ G = mg
 
 \begin{itemize}
   \item $g \approx 9.8\ \mathrm{N/kg}$（高中常取 $10\ \mathrm{N/kg}$）。
-  \item \textbf{方向：} 竖直向下（不是"指向地心"，只有在赤道和两极才严格指向地心）。
+  \item \textbf{方向：} 竖直向下，即当地铅垂线方向；高中题目中不需要把它画成"指向地心"。
   \item \textbf{重心：} 重力在物体上的等效作用点。质量均匀、形状规则的物体重心在几何中心。不规则物体可用悬挂法找重心。
 \end{itemize}
 
@@ -135,8 +135,8 @@ f_k = \mu_k N
 \textbf{常见误区：}
 \begin{enumerate}
   \item 摩擦力不一定是阻力——人走路时鞋底受到的静摩擦力是动力。
-  \item $f = \mu N$ 只适用于滑动摩擦力，不适用于静摩擦力。
-  \item $\mu$ 与接触面积无关——同样材料，面积大一倍，$N$ 不变，$f$ 也不变。
+  \item $f_k = \mu_k N$ 只适用于滑动摩擦力，不适用于静摩擦力。
+  \item 摩擦因数与接触面积无关——同样材料，面积大一倍，$N$ 不变，滑动摩擦力也不变。
 \end{enumerate}
 
 \end{conceptbox}
@@ -206,7 +206,7 @@ $0 \leq f_s \leq f_{\max}$，$f_{\max}=\mu_s N$ & 静摩擦力 & 未滑动时，
 
 \begin{examplebox}{摩擦力计算}
 
-\textbf{题意分析：} 一个质量为 $m = 5\ \mathrm{kg}$ 的物体放在水平地面上，取最大静摩擦力近似为 $\mu N$，滑动摩擦力也取 $\mu N$，其中 $\mu = 0.3$，$g = 10\ \mathrm{m/s^2}$。
+\textbf{题意分析：} 一个质量为 $m = 5\ \mathrm{kg}$ 的物体放在水平地面上，为了突出判断方法，取 $\mu_s=\mu_k=0.3$，$g = 10\ \mathrm{m/s^2}$。
 \begin{enumerate}
   \item 用 $F_1 = 10\ \mathrm{N}$ 的水平拉力拉物体，求摩擦力。
   \item 用 $F_2 = 20\ \mathrm{N}$ 的水平拉力拉物体，求摩擦力。
@@ -217,20 +217,20 @@ $0 \leq f_s \leq f_{\max}$，$f_{\max}=\mu_s N$ & 静摩擦力 & 未滑动时，
 \textbf{解题过程：}
 
 正压力 $N = mg = 5 \times 10 = 50\ \mathrm{N}$。
-最大静摩擦力 $f_{\max} \approx \mu N = 0.3 \times 50 = 15\ \mathrm{N}$。
+最大静摩擦力 $f_{\max} = \mu_s N = 0.3 \times 50 = 15\ \mathrm{N}$。
 
 \begin{enumerate}
   \item $F_1 = 10\ \mathrm{N} < 15\ \mathrm{N}$，物体未滑动，静摩擦力 $f_{\text{静}} = F_1 = 10\ \mathrm{N}$。
-  \item $F_2 = 20\ \mathrm{N} > 15\ \mathrm{N}$，物体已滑动，滑动摩擦力 $f_{\text{滑}} = \mu N = 15\ \mathrm{N}$。
+  \item $F_2 = 20\ \mathrm{N} > 15\ \mathrm{N}$，物体已滑动，滑动摩擦力 $f_k = \mu_k N = 15\ \mathrm{N}$。
 \end{enumerate}
 
-\textbf{方法总结：} 先判断是静摩擦还是滑动摩擦。静摩擦力不是直接套 $\mu N$，而是先由平衡条件确定，且不能超过最大静摩擦力；滑动摩擦力才用 $f_k=\mu_k N$。
+\textbf{方法总结：} 先判断是静摩擦还是滑动摩擦。静摩擦力不是直接套 $\mu_s N$ 或 $\mu_k N$，而是先由平衡条件确定，且不能超过最大静摩擦力；滑动摩擦力才用 $f_k=\mu_k N$。
 
 \end{examplebox}
 
 \begin{examplebox}{综合受力分析}
 
-\textbf{题意分析：} 质量为 $m = 2\ \mathrm{kg}$ 的物体放在倾角 $\theta = 30^\circ$ 的粗糙斜面上，最大静摩擦因数和动摩擦因数均近似取 $\mu = 0.5$，$g = 10\ \mathrm{m/s^2}$。求物体受到的摩擦力和支持力大小。
+\textbf{题意分析：} 质量为 $m = 2\ \mathrm{kg}$ 的物体放在倾角 $\theta = 30^\circ$ 的粗糙斜面上，为了简化计算，取 $\mu_s=\mu_k=0.5$，$g = 10\ \mathrm{m/s^2}$。求物体受到的摩擦力和支持力大小。
 
 \textbf{物理模型：} 斜面上的物体，重力分解为沿斜面方向和垂直斜面方向的两个分力。
 
@@ -246,10 +246,10 @@ G_{\perp} = mg\cos\theta = 2 \times 10 \times \frac{\sqrt{3}}{2} \approx 17.3\ \
 
 垂直斜面方向平衡：$N = G_{\perp} = 17.3\ \mathrm{N}$
 
-判断物体是否下滑：最大静摩擦力 $f_{\max} = \mu N = 0.5 \times 17.3 \approx 8.7\ \mathrm{N}$。
+判断物体是否下滑：最大静摩擦力 $f_{\max} = \mu_s N = 0.5 \times 17.3 \approx 8.7\ \mathrm{N}$。
 $G_{\parallel} = 10\ \mathrm{N} > 8.7\ \mathrm{N}$，所以物体沿斜面下滑，摩擦力为滑动摩擦力：
 \[
-f = \mu N = 8.7\ \mathrm{N}
+f_k = \mu_k N = 8.7\ \mathrm{N}
 \]
 方向沿斜面向上。
 
@@ -258,8 +258,8 @@ f = \mu N = 8.7\ \mathrm{N}
 \textbf{方法总结：}
 \begin{enumerate}
   \item 斜面上要把重力分解为沿斜面和垂直斜面两个方向。
-  \item 先判断是否滑动（比较 $mg\sin\theta$ 和 $\mu mg\cos\theta$），再确定摩擦力类型。
-  \item 斜面倾角增大到 $\tan\theta > \mu$ 时物体开始下滑。
+  \item 先判断是否滑动（比较 $mg\sin\theta$ 和 $\mu_s mg\cos\theta$），再确定摩擦力类型。
+  \item 无其他沿斜面外力时，斜面倾角增大到 $\tan\theta > \mu_s$ 时物体开始下滑。
 \end{enumerate}
 
 \end{examplebox}
@@ -269,13 +269,13 @@ f = \mu N = 8.7\ \mathrm{N}
 \begin{enumerate}
   \item 一根弹簧原长 $l_0 = 20\ \mathrm{cm}$，劲度系数 $k = 200\ \mathrm{N/m}$，下端悬挂 $m = 1\ \mathrm{kg}$ 的砝码。求弹簧长度。
   
-  \item 一个 $m = 10\ \mathrm{kg}$ 的箱子放在水平地面上，$\mu = 0.4$，$g = 10\ \mathrm{m/s^2}$。用水平力 $F$ 拉箱子：
+  \item 一个 $m = 10\ \mathrm{kg}$ 的箱子放在水平地面上，取 $\mu_s=\mu_k=0.4$，$g = 10\ \mathrm{m/s^2}$。用水平力 $F$ 拉箱子：
   \begin{enumerate}
     \item $F = 30\ \mathrm{N}$ 时，摩擦力多大？
     \item $F = 50\ \mathrm{N}$ 时，摩擦力多大？
   \end{enumerate}
   
-  \item 质量为 $m$ 的物体放在倾角 $\theta = 37^\circ$（$\sin37^\circ = 0.6$，$\cos37^\circ = 0.8$）的斜面上，$\mu = 0.8$。物体是否下滑？并求出摩擦力大小。
+  \item 质量为 $m$ 的物体放在倾角 $\theta = 37^\circ$（$\sin37^\circ = 0.6$，$\cos37^\circ = 0.8$）的斜面上，最大静摩擦因数 $\mu_s = 0.8$。物体是否下滑？并求出摩擦力大小。
 \end{enumerate}
 
 \section*{八、易错点}
@@ -286,11 +286,11 @@ f = \mu N = 8.7\ \mathrm{N}
   
   \item \textbf{多画了"物体对外界的力"：} 受力分析只分析别的物体对研究对象的力。研究对象对外界的力不画在本研究对象的受力图上。
   
-  \item \textbf{误用 $f = \mu N$ 算静摩擦力：} $f = \mu N$ 只适用于滑动摩擦力。静摩擦力的大小需要根据平衡条件或牛顿定律来确定。
+  \item \textbf{误用摩擦公式算静摩擦力：} $f_k = \mu_k N$ 只适用于滑动摩擦力，$f_{\max}=\mu_sN$ 只是静摩擦力的上限。静摩擦力的大小需要根据平衡条件或牛顿定律来确定。
   
-  \item \textbf{认为摩擦力总是阻力：} 静摩擦力可以是动力（人走路、传送带上的物体）。判断标准是摩擦力与运动方向的关系，不是直觉。
+  \item \textbf{认为摩擦力总是阻力：} 静摩擦力可以是动力（人走路、传送带上的物体）。画摩擦力方向时看相对运动或相对运动趋势；判断它是动力还是阻力，才看它与物体运动方向的关系。
   
-  \item \textbf{弹力方向搞错：} 支持力的方向是垂直接触面"向上"（指向被支持物体），不是"竖直向上"。
+  \item \textbf{弹力方向搞错：} 支持力的方向是垂直接触面、指向被支持物体，不一定是竖直向上。
 \end{enumerate}
 \end{mistakebox}
 
@@ -316,7 +316,7 @@ k = k_1 + k_2
 \textbf{解：} 串联等效劲度系数 $\frac{1}{k_{\text{等}}} = \frac{1}{100} + \frac{1}{100}$，$k_{\text{等}} = 50\ \mathrm{N/m}$。
 伸长量 $x = \dfrac{mg}{k_{\text{等}}} = \dfrac{5}{50} = 0.1\ \mathrm{m} = 10\ \mathrm{cm}$。
 
-如果是并联，$k_{\text{等}} = 100 + 100 = 200\ \mathrm{N/m}$，$x = \dfrac{5}{200} = 2.5\ \mathrm{cm}$。
+如果是并联，$k_{\text{等}} = 100 + 100 = 200\ \mathrm{N/m}$，$x = \dfrac{5}{200} = 0.025\ \mathrm{m} = 2.5\ \mathrm{cm}$。
 
 \textbf{竞赛小贴士：} 弹簧连接问题中，串联各弹簧受力相等，并联各弹簧形变量相等——这是解题的关键。
 \end{competitionbox}
@@ -326,7 +326,7 @@ k = k_1 + k_2
 \begin{enumerate}
   \item 重力 $G = mg$，方向竖直向下；弹力由形变产生，方向垂直接触面或沿绳。
   \item 胡克定律 $F = kx$ 中的 $x$ 是形变量，不是弹簧总长。
-  \item 滑动摩擦力 $f = \mu N$，静摩擦力 $0 \leq f_{\text{静}} \leq f_{\max}$。
+  \item 滑动摩擦力 $f_k = \mu_k N$，静摩擦力 $0 \leq f_s \leq f_{\max}$。
   \item 受力分析顺序："一重二弹三摩擦"，只分析外界对研究对象的力。
   \item 斜面上的物体要把重力分解为沿斜面和垂直斜面两个方向。
 \end{enumerate}

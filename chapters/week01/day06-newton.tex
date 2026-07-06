@@ -1,7 +1,7 @@
 \daytitle{6}{牛顿运动定律}
 
 \begin{learningbox}{本讲义大致内容}
-牛顿三大定律是整个经典力学的基石。今天重点掌握牛顿第二定律 $F = ma$——它把力和运动联系起来了。学会用正交分解法列方程，解决各种动力学问题。
+牛顿三大定律是整个经典力学的基石。今天重点掌握牛顿第二定律 $F_{\text{合}} = ma$——它把力和运动联系起来了。学会用正交分解法列方程，解决各种动力学问题。
 \end{learningbox}
 
 \section*{一、学习目标}
@@ -54,7 +54,7 @@
 \begin{itemize}
   \item \textbf{矢量性：} $F_{\text{合}}$ 和 $a$ 方向相同。
   \item \textbf{瞬时性：} 力一旦产生，加速度立即产生（同时性）。
-  \item \textbf{独立性：} 每个力都独立产生加速度，合加速度是各力加速度的矢量和。
+  \item \textbf{叠加性：} 各个力的作用可以按矢量叠加，最终由合力决定物体的加速度。
 \end{itemize}
 
 \textbf{解题关键：} 用牛顿第二定律建立方程，把受力分析的结果代入。
@@ -65,7 +65,7 @@
 \begin{center}
 \input{figures/tikz/newton-second}
 
-\figcaption{水平面上 $F_{\text{合}} = F - f = ma$}\label{fig:newton-second}
+\figcaption{水平面滑动时 $F_{\text{合}} = F - f_k = ma$}\label{fig:newton-second}
 \end{center}
 
 \end{conceptbox}
@@ -130,8 +130,8 @@
 \noindent 列方程标准形式：
 \[
 \begin{cases}
-F_{x\text{合}} = ma_x \\
-F_{y\text{合}} = ma_y
+F_{x,\text{合}} = ma_x \\
+F_{y,\text{合}} = ma_y
 \end{cases}
 \]
 
@@ -141,20 +141,20 @@ F_{y\text{合}} = ma_y
 
 \subsection*{模型 1：水平面上的动力学}
 
-物体在水平拉力 $F$ 和摩擦力 $f$ 作用下运动：
+物体在水平拉力 $F$ 作用下已经在水平面上滑动：
 \[
-F - f = ma,\qquad N = mg
+F - f_k = ma,\qquad N = mg,\qquad f_k=\mu_k N
 \]
-若 $F$ 与水平方向成 $\theta$ 角，则：
+若拉力 $F$ 斜向上、与水平方向成 $\theta$ 角，且物体没有离开地面，则 $N = mg - F\sin\theta$，滑动摩擦力 $f_k=\mu_k N$：
 \[
-F\cos\theta - \mu (mg - F\sin\theta) = ma
+F\cos\theta - \mu_k (mg - F\sin\theta) = ma
 \]
 
 \subsection*{模型 2：斜面上的动力学}
 
 物体沿斜面\textbf{向下滑}（沿斜面向下为正方向）：
 \[
-mg\sin\theta - f = ma,\qquad N = mg\cos\theta,\qquad f = \mu_k N = \mu_k mg\cos\theta
+mg\sin\theta - f_k = ma,\qquad N = mg\cos\theta,\qquad f_k = \mu_k N = \mu_k mg\cos\theta
 \]
 \[
 a_{\text{下滑}} = g\sin\theta - \mu_k g\cos\theta
@@ -162,7 +162,7 @@ a_{\text{下滑}} = g\sin\theta - \mu_k g\cos\theta
 
 物体沿斜面\textbf{向上滑}（沿斜面向上为正方向）：
 \[
--mg\sin\theta - f = ma,\qquad N = mg\cos\theta,\qquad f = \mu_k N
+-mg\sin\theta - f_k = ma,\qquad N = mg\cos\theta,\qquad f_k = \mu_k N
 \]
 \[
 a_{\text{上滑}} = -\,(g\sin\theta + \mu_k g\cos\theta)
@@ -188,29 +188,29 @@ F - f_{\text{总}} = (m_1 + m_2) a
 
 \begin{examplebox}{水平面上的牛顿第二定律}
 
-\textbf{题意分析：} 一个 $m = 4\ \mathrm{kg}$ 的物体在水平面上，受水平拉力 $F = 20\ \mathrm{N}$，物体与地面间的动摩擦因数 $\mu = 0.3$，$g = 10\ \mathrm{m/s^2}$。求物体的加速度。
+\textbf{题意分析：} 一个 $m = 4\ \mathrm{kg}$ 的物体在水平面上，受水平拉力 $F = 20\ \mathrm{N}$，物体与地面间的动摩擦因数 $\mu_k = 0.3$，$g = 10\ \mathrm{m/s^2}$。求物体的加速度。
 
-\textbf{物理模型：} 水平面动力学，受拉力 $F$ 和摩擦力 $f$。
+\textbf{物理模型：} 水平面动力学，受拉力 $F$ 和滑动摩擦力 $f_k$。
 
 \textbf{解题过程：}
 
 正压力 $N = mg = 4 \times 10 = 40\ \mathrm{N}$
-滑动摩擦力 $f = \mu N = 0.3 \times 40 = 12\ \mathrm{N}$
+滑动摩擦力 $f_k = \mu_k N = 0.3 \times 40 = 12\ \mathrm{N}$
 
-水平方向合力：$F_{\text{合}} = F - f = 20 - 12 = 8\ \mathrm{N}$
+水平方向合力：$F_{\text{合}} = F - f_k = 20 - 12 = 8\ \mathrm{N}$
 
 由牛顿第二定律：
 \[
 a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
 \]
 
-\textbf{方法总结：} 水平面上先算 $N = mg$，再算 $f = \mu N$，然后用 $F - f = ma$。
+\textbf{方法总结：} 水平面上先算 $N = mg$，再算 $f_k = \mu_k N$，然后用 $F - f_k = ma$。
 
 \end{examplebox}
 
 \begin{examplebox}{斜面上的牛顿第二定律}
 
-\textbf{题意分析：} 质量为 $m = 2\ \mathrm{kg}$ 的物体从倾角 $\theta = 37^\circ$（$\sin37^\circ = 0.6$，$\cos37^\circ = 0.8$）的斜面顶端由静止下滑，物体与斜面间的动摩擦因数 $\mu = 0.25$，$g = 10\ \mathrm{m/s^2}$。求：
+\textbf{题意分析：} 质量为 $m = 2\ \mathrm{kg}$ 的物体从倾角 $\theta = 37^\circ$（$\sin37^\circ = 0.6$，$\cos37^\circ = 0.8$）的斜面顶端由静止下滑，物体与斜面间的动摩擦因数 $\mu_k = 0.25$，$g = 10\ \mathrm{m/s^2}$。求：
 \begin{enumerate}
   \item 物体下滑的加速度。
   \item 若斜面长 $L = 5\ \mathrm{m}$，物体滑到底端所需时间和末速度。
@@ -223,10 +223,10 @@ a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
 \begin{enumerate}
   \item 沿斜面方向合力：
   \[
-  mg\sin\theta - \mu mg\cos\theta = ma
+  mg\sin\theta - \mu_k mg\cos\theta = ma
   \]
   \[
-  a = g(\sin\theta - \mu\cos\theta) = 10 \times (0.6 - 0.25 \times 0.8) = 10 \times 0.4 = 4\ \mathrm{m/s^2}
+  a = g(\sin\theta - \mu_k\cos\theta) = 10 \times (0.6 - 0.25 \times 0.8) = 10 \times 0.4 = 4\ \mathrm{m/s^2}
   \]
   
   \item 由运动学公式（$v_0 = 0$）：
@@ -282,9 +282,9 @@ a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
 \section*{七、变式训练}
 
 \begin{enumerate}
-  \item 质量为 $m = 5\ \mathrm{kg}$ 的物体在水平面上，受水平拉力 $F = 25\ \mathrm{N}$，$\mu = 0.4$，$g = 10\ \mathrm{m/s^2}$。求加速度。
+  \item 质量为 $m = 5\ \mathrm{kg}$ 的物体在水平面上，受水平拉力 $F = 25\ \mathrm{N}$，动摩擦因数 $\mu_k = 0.4$，$g = 10\ \mathrm{m/s^2}$。求加速度。
   
-  \item 一个物体以 $v_0 = 10\ \mathrm{m/s}$ 的初速度沿倾角 $\theta = 30^\circ$ 的粗糙斜面向上滑行，$\mu = 0.2$，$g = 10\ \mathrm{m/s^2}$。求：
+  \item 一个物体以 $v_0 = 10\ \mathrm{m/s}$ 的初速度沿倾角 $\theta = 30^\circ$ 的粗糙斜面向上滑行，动摩擦因数 $\mu_k = 0.2$，$g = 10\ \mathrm{m/s^2}$。求：
   \begin{enumerate}
     \item 物体上滑的加速度大小和方向。
     \item 物体上滑的最大距离。
@@ -295,7 +295,7 @@ a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
 
 \begin{mistakebox}
 \begin{enumerate}
-  \item \textbf{把 $F = ma$ 中的 $F$ 理解为某个力而不是合力：} 物体在斜面上受重力、支持力、摩擦力，加速度 $a = g\sin\theta - \mu g\cos\theta$ 是由合力产生的，不是单由重力产生的。
+  \item \textbf{把 $F = ma$ 中的 $F$ 理解为某个力而不是合力：} 物体在斜面上受重力、支持力、摩擦力，加速度 $a = g\sin\theta - \mu_k g\cos\theta$ 是由合力产生的，不是单由重力产生的。
   
   \item \textbf{混淆作用力与反作用力和平衡力：} 平衡力作用在同一物体上，作用力与反作用力作用在两个不同物体上。受力分析只画外界对研究对象的力，不画研究对象对外界的力。
   

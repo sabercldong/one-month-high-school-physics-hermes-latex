@@ -1,23 +1,28 @@
-% TikZ 图：连接体（水平拉力，两物块用轻绳连接）
+% TikZ 图：水平连接体整体法
 % Day 07：连接体、斜面与摩擦综合
 \begin{tikzpicture}[scale=0.9,>=Latex]
   % 地面
-  \draw[thick] (-1,0) -- (6,0);
-  % A 物块
-  \draw[thick] (0,0) rectangle (1.5,1.2);
-  \node at (0.75,0.6) {$m_A$};
-  % B 物块
-  \draw[thick] (2.5,0) rectangle (4,1.2);
-  \node at (3.25,0.6) {$m_B$};
-  % 绳连接
-  \draw[thick] (1.5,0.6) -- (2.5,0.6);
-  \node[above] at (2,0.6) {绳};
-  % 拉力 F
-  \draw[->,thick,red] (4,0.6) -- (5.2,0.6) node[above] {$F$};
-  % 摩擦力
-  \draw[->,thick,red,yshift=2pt] (0,0.3) -- (-1,0.3) node[above] {$f_A$};
-  \draw[->,thick,red,yshift=2pt] (2.5,0.3) -- (1.5,0.3) node[above] {$f_B$};
-  % 整体法示意（大括号）
-  \draw[decorate,decoration={brace,amplitude=5pt}] (0,-0.3) -- (4,-0.3);
-  \node[below] at (2,-0.6) {整体：$F - (f_A+f_B) = (m_A+m_B)a$};
+  \draw[thick] (-1.0,0) -- (6.3,0);
+
+  % 后方 B，前方 A
+  \draw[thick] (0,0) rectangle (1.5,1.1);
+  \node at (0.75,0.55) {$m_B$};
+  \draw[thick] (3.0,0) rectangle (4.5,1.1);
+  \node at (3.75,0.55) {$m_A$};
+
+  % 轻绳
+  \draw[thick] (1.5,0.55) -- (3.0,0.55);
+  \node[above] at (2.25,0.55) {轻绳};
+
+  % 外力和外摩擦
+  \draw[->,thick,red] (4.5,0.55) -- (5.8,0.55) node[above] {$F$};
+  \draw[->,thick,red] (0,0.25) -- (-0.9,0.25) node[above] {$f_B$};
+  \draw[->,thick,red] (3.0,0.18) -- (2.1,0.18) node[below] {$f_A$};
+  \draw[->,thick,blue] (2.6,1.55) -- (3.7,1.55) node[right] {$a$};
+
+  % 整体法示意
+  \draw[thick] (0,-0.3) -- (4.5,-0.3);
+  \draw[thick] (0,-0.2) -- (0,-0.4);
+  \draw[thick] (4.5,-0.2) -- (4.5,-0.4);
+  \node[below] at (2.25,-0.62) {整体：$F-(f_A+f_B)=(m_A+m_B)a$};
 \end{tikzpicture}

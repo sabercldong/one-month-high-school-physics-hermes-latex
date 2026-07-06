@@ -1,23 +1,28 @@
-% TikZ 图：斜面与摩擦临界（物块静止在斜面上）
+% TikZ 图：斜面摩擦临界
 % Day 07：连接体、斜面与摩擦综合
-\begin{tikzpicture}[scale=0.9,>=Latex]
-  % 斜面左高右低
-  \draw[thick] (0,2.5) -- (5,0.5);
-  \draw[thick] (0,0.5) -- (5,0.5);
-  \draw (0.8,0.5) arc (0:-21.8:0.8);
-  \node at (1.1,0.35) {$\theta$};
-  % 方块
-  \begin{scope}[shift={(2.5,1.5)},rotate=-21.8]
-    \draw[thick] (-0.6,-0.5) rectangle (0.6,0.5);
-    \node at (0,0) {$m$};
-    % N 垂直斜面向上
-    \draw[->,thick,blue] (0,0.5) -- (0,1.4) node[above] {$N$};
-    % f 沿斜面向上（静止，达到最大静摩擦临界时 f = μ_s N）
-    \draw[->,thick,red] (-0.6,0) -- (-1.4,0) node[above] {$f$};
-    % 重力分力
-    \draw[->,thick,orange] (0,0) -- (1.4,0) node[right] {$G\sin\theta$};
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  % 斜面：右下方为可能下滑方向。
+  \draw[thick] (0,0) -- (5,0) -- (0,2) -- cycle;
+  \draw[thick] (0,2) -- (5,0);
+  \draw (4.25,0) arc (180:158.2:0.75);
+  \node at (4.1,0.25) {$\theta$};
+
+  \coordinate (P) at (2.35,1.06);
+  \coordinate (C) at ($(P)+(68.2:0.42)$);
+
+  \begin{scope}[shift={(P)},rotate=-21.8]
+    \draw[thick] (-0.6,0) rectangle (0.6,0.85);
+    \node at (0,0.43) {$m$};
   \end{scope}
-  \draw[->,thick,blue] (2.5,1.0) -- (2.5,-0.1) node[below] {$G$};
-  % 临界条件
-  \node[below,font=\footnotesize] at (2.5,-0.4) {临界：$G\sin\theta = f_{\max} = \mu_s N$};
+
+  % 真实力
+  \draw[->,thick,blue] (C) -- ++(0,-1.25) node[below] {$G$};
+  \draw[->,thick,blue] (C) -- ++(68.2:1.05) node[above] {$N$};
+  \draw[->,thick,red] (C) -- ++(158.2:1.15) node[above] {$f_s=f_{\max}$};
+
+  % 分力
+  \draw[->,thick,red,dashed] (C) -- ++(-21.8:1.25) node[right] {$G\sin\theta$};
+  \draw[->,thick,blue,dashed] (C) -- ++(-111.8:0.85) node[left] {$G\cos\theta$};
+
+  \node[font=\footnotesize] at (2.65,-0.45) {临界：$G\sin\theta=\mu_s N$};
 \end{tikzpicture}
