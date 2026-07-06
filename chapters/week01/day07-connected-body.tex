@@ -1,54 +1,324 @@
 \daytitle{7}{连接体、斜面与摩擦综合}
 
 \begin{learningbox}{本讲义大致内容}
-讲整体法、隔离法、连接体模型、斜面模型和摩擦临界问题。
+今天是运动学和力学的第一次综合实战。学会整体法/隔离法处理连接体问题，掌握斜面摩擦临界条件，并初步了解传送带模型。这一天的内容整合了 Day 05 的受力和 Day 06 的牛顿定律。
 \end{learningbox}
 
 \section*{一、学习目标}
+
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 掌握整体法与隔离法的选择原则和列方程方法。
+  \item 会用整体法求连接体的加速度，用隔离法求内力（绳中张力）。
+  \item 掌握斜面摩擦临界条件 $\tan\theta = \mu$ 的推导和应用。
+  \item 理解传送带模型中摩擦力的方向变化。
+  \item 能综合运用受力分析和牛顿定律解决多物体问题。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中物理中大部分问题只涉及单个物体。高中物理中经常出现两个或更多物体连接在一起运动的情况——这就是\textbf{连接体问题}。
+
+连接体问题的核心思路只有两条：
+\begin{enumerate}
+  \item \textbf{整体法：} 把几个物体看成一个整体，只分析整体受到的外力，求出共同加速度。
+  \item \textbf{隔离法：} 把其中一个物体分离出来单独分析，求内部相互作用力（如绳的张力）。
+\end{enumerate}
+
+这两个方法交替使用，就是解决连接体问题的标准流程。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{整体法与隔离法}
+
+\textbf{整体法：}
+\begin{itemize}
+  \item 适用范围：多个物体有相同的加速度（相对静止或一起运动）。
+  \item 操作：把多个物体看作一个整体，只画整体受到的外力（不画内部物体之间的力）。
+  \item 列方程：$F_{\text{合外}} = (m_1 + m_2 + \cdots) a$
+\end{itemize}
+
+\textbf{隔离法：}
+\begin{itemize}
+  \item 适用范围：需要求内部相互作用力（绳张力、支持力等）。
+  \item 操作：从系统中分离出一个物体单独做受力分析，列出牛顿第二定律方程。
+  \item 列方程：$F_{\text{合}} = m_i a$（注意 $a$ 与整体法中的 $a$ 相同）
+\end{itemize}
+
+\textbf{选择策略：}
+\begin{itemize}
+  \item 只求加速度 $\to$ 整体法。
+  \item 求内力 $\to$ 先整体法求加速度，再隔离法求内力。
+  \item 各物体加速度不同 $\to$ 不能用整体法，必须逐个隔离。
+\end{itemize}
+
+\end{conceptbox}
+
+\begin{conceptbox}{摩擦临界问题}
+
+\textbf{临界条件：} 物体刚好要滑动（或刚好能静止）时，静摩擦力达到最大值。
+
+\textbf{斜面摩擦临界：} 物块在粗糙斜面上刚好不下滑的条件：
+\[
+mg\sin\theta = f_{\max} = \mu_s mg\cos\theta
+\]
+\[
+\boxed{\tan\theta = \mu_s}
+\]
+
+\begin{itemize}
+  \item $\theta < \arctan\mu_s$：物块静止（$f_s = mg\sin\theta < f_{\max}$）。
+  \item $\theta = \arctan\mu_s$：临界，刚好要下滑。
+  \item $\theta > \arctan\mu_s$：物块下滑（滑动摩擦力 $f_k = \mu_k mg\cos\theta$）。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/critical-incline}
+
+\figcaption{斜面摩擦临界：$G\sin\theta = \mu_s N$ 时刚好要下滑}\label{fig:critical-incline}
+\end{center}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+方法 & 适用场景 & 核心关系 \\
+\midrule
+整体法 & 加速度相同的多物体系统 & $F_{\text{合外}} = m_{\text{总}} a$ \\
+隔离法 & 求内部相互作用力 & $F_i = m_i a$（$a$ 与整体相同） \\
+斜面临界 & 物块在斜面上静止/滑动 & $\tan\theta = \mu$ 为临界 \\
+传送带动/静摩擦 & 判断摩擦类型 & $v_{\text{物}} = v_{\text{带}}$ 时摩擦突变为0 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：水平面连接体}
+
+两个物体 $m_A$、$m_B$ 用轻绳连接，在水平拉力 $F$ 下运动。
+
+\begin{center}
+\input{figures/tikz/connected-body}
+
+\figcaption{连接体整体法：整体 $F - f_{\text{总}} = (m_A + m_B) a$}\label{fig:connected-body}
+\end{center}
+
+\noindent 隔离 $B$ 求张力：
+\begin{center}
+\input{figures/tikz/isolated-body}
+
+\figcaption{隔离 $B$：$T - f_B = m_B a$}\label{fig:isolated-body}
+\end{center}
+
+\subsection*{模型 2：斜面摩擦临界}
+
+上文已讲。核心是 $\tan\theta$ 与 $\mu$ 的比较。
+
+\subsection*{模型 3：传送带模型}
+
+物块轻放在水平传送带上：刚放上时物块速度为零，传送带速度为 $v$，物块相对传送带向左滑，受到向右的滑动摩擦力 $f = \mu mg$，做匀加速运动。当物块速度达到 $v$ 后，与传送带相对静止，摩擦力消失。
+
+\[
+\text{加速阶段：}\quad a = \mu g,\qquad v = \mu g t,\qquad x = \frac12 \mu g t^2
+\]
+
+\begin{center}
+\input{figures/tikz/conveyor-belt}
+
+\figcaption{传送带：物块刚放上时受向右摩擦力加速}\label{fig:conveyor-belt}
+\end{center}
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{水平连接体——整体法与隔离法}
 
-\textbf{解题过程：} TODO。
+\textbf{题意分析：} $m_A = 4\ \mathrm{kg}$、$m_B = 2\ \mathrm{kg}$ 用轻绳连接放在粗糙水平面上，$\mu = 0.3$，$g = 10\ \mathrm{m/s^2}$。在 $A$ 上施加 $F = 30\ \mathrm{N}$ 的水平拉力。求：
+\begin{enumerate}
+  \item 整体的加速度。
+  \item 绳中张力 $T$。
+\end{enumerate}
 
-\textbf{方法总结：} TODO。
+\textbf{物理模型：} 水平面粗糙连接体。
+
+\textbf{解题过程：}
+
+\begin{enumerate}
+  \item 整体法：
+  
+  总摩擦力 $f_{\text{总}} = \mu (m_A + m_B) g = 0.3 \times 6 \times 10 = 18\ \mathrm{N}$
+  
+  \[
+  F - f_{\text{总}} = (m_A + m_B) a,\qquad 30 - 18 = 6a,\qquad a = 2\ \mathrm{m/s^2}
+  \]
+  
+  \item 隔离 $B$（求张力 $T$）：
+  
+  $B$ 受拉力 $T$（向右）和摩擦力 $f_B = \mu m_B g = 0.3 \times 2 \times 10 = 6\ \mathrm{N}$（向左）。
+  
+  \[
+  T - f_B = m_B a,\qquad T - 6 = 2 \times 2,\qquad T = 10\ \mathrm{N}
+  \]
+  
+  验证（隔离 $A$）：$F - T - f_A = m_A a$，$30 - 10 - 12 = 8 = 4 \times 2$，正确。
+\end{enumerate}
+
+\textbf{方法总结：}
+\begin{enumerate}
+  \item 粗糙表面要先算总摩擦力，整体法中一起减掉。
+  \item 隔离时选受力较少的物体（通常是 $B$）计算更简单。
+  \item 隔离 $A$ 可以验证结果。
+\end{enumerate}
+
+\end{examplebox}
+
+\begin{examplebox}{斜面摩擦临界}
+
+\textbf{题意分析：} 质量为 $m$ 的物体放在倾角 $\theta = 30^\circ$ 的斜面上，$g = 10\ \mathrm{m/s^2}$。问：
+\begin{enumerate}
+  \item 若物体在斜面上刚好不下滑，求动摩擦因数 $\mu_s$。
+  \item 若 $\mu = 0.4$，物体会下滑吗？
+  \item 若 $\mu = 0.4$，用一个沿斜面向上的力 $F$ 推物体使物体匀速上滑，求 $F$。
+\end{enumerate}
+
+\textbf{物理模型：} 斜面摩擦临界 + 有外力时的动力学。
+
+\textbf{解题过程：}
+
+\begin{enumerate}
+  \item 临界条件 $\tan\theta = \mu_s$：
+  \[
+  \mu_s = \tan 30^\circ = \frac{\sqrt{3}}{3} \approx 0.577
+  \]
+  
+  \item $\mu = 0.4 < 0.577$，$\tan\theta > \mu$，物体下滑。
+  
+  下滑加速度：
+  \[
+  a = g(\sin\theta - \mu\cos\theta) = 10 \times (0.5 - 0.4 \times \frac{\sqrt{3}}{2}) = 10 \times (0.5 - 0.346) = 1.54\ \mathrm{m/s^2}
+  \]
+  
+  \item 匀速上滑时，$a = 0$，摩擦力沿斜面向下：
+  \[
+  F = mg\sin\theta + \mu mg\cos\theta
+  \]
+  \[
+  F = mg(0.5 + 0.4 \times 0.866) = mg \times 0.846
+  \]
+  \item 若 $m = 2\ \mathrm{kg}$，则 $F = 2 \times 10 \times 0.846 \approx 16.9\ \mathrm{N}$。
+\end{enumerate}
+
+\textbf{方法总结：}
+\begin{enumerate}
+  \item 临界条件 $\tan\theta = \mu$ 是选择题和填空题的秒杀工具。
+  \item 判断下滑与否只用看 $\tan\theta$ 与 $\mu$ 的大小关系。
+  \item 匀速上滑时摩擦力方向沿斜面向下（与运动方向相反）。
+\end{enumerate}
+
+\end{examplebox}
+
+\begin{examplebox}{传送带模型}
+
+\textbf{题意分析：} 水平传送带以 $v = 4\ \mathrm{m/s}$ 匀速运行，将一质量为 $m = 2\ \mathrm{kg}$ 的物块轻放在传送带左端，$\mu = 0.4$，$g = 10\ \mathrm{m/s^2}$，传送带足够长。求：
+\begin{enumerate}
+  \item 物块达到传送带速度所需时间和位移。
+  \item 物块在传送带上留下的摩擦痕迹长度。
+\end{enumerate}
+
+\textbf{物理模型：} 传送带——物块先匀加速后匀速。
+
+\textbf{解题过程：}
+
+\begin{enumerate}
+  \item 加速阶段：
+  \[
+  a = \mu g = 0.4 \times 10 = 4\ \mathrm{m/s^2}
+  \]
+  \[
+  v = a t,\qquad t = \frac{v}{a} = \frac{4}{4} = 1\ \mathrm{s}
+  \]
+  \[
+  x_{\text{物}} = \frac12 a t^2 = \frac12 \times 4 \times 1^2 = 2\ \mathrm{m}
+  \]
+  
+  \item 痕迹长度等于物块与传送带的相对位移：
+  \[
+  x_{\text{带}} = v t = 4 \times 1 = 4\ \mathrm{m}
+  \]
+  \[
+  \Delta x = x_{\text{带}} - x_{\text{物}} = 4 - 2 = 2\ \mathrm{m}
+  \]
+\end{enumerate}
+
+\textbf{方法总结：}
+\begin{enumerate}
+  \item 传送带问题的核心是判断摩擦力方向（相对运动方向）。
+  \item 物块刚放上时相对传送带向后滑，摩擦力向前——这是动力。
+  \item 摩擦痕迹长度 = 相对位移（即两者的位移差）。
+\end{enumerate}
+
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item $m_A = 5\ \mathrm{kg}$、$m_B = 3\ \mathrm{kg}$ 用轻绳连接放在光滑水平面上，在 $A$ 上施加 $F = 24\ \mathrm{N}$。求加速度和绳中张力。
+  
+  \item 质量为 $m = 3\ \mathrm{kg}$ 的物体放在倾角 $\theta = 37^\circ$（$\sin\theta = 0.6$，$\cos\theta = 0.8$）的斜面上，$\mu = 0.5$，$g = 10\ \mathrm{m/s^2}$。
+  \begin{enumerate}
+    \item 物体是否下滑？
+    \item 若下滑，加速度多大？若静止，摩擦力多大？
+  \end{enumerate}
+  
+  \item 水平传送带长 $L = 10\ \mathrm{m}$，以 $v = 6\ \mathrm{m/s}$ 运行，$\mu = 0.3$，$g = 10\ \mathrm{m/s^2}$。物块从传送带左端轻放，能否到达右端？若能，需要多长时间？
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{整体法漏了摩擦力：} 粗糙表面用整体法时，必须把所有物体受到的外摩擦力加起来。不要把每个物体的内部摩擦力也算进来。
+  
+  \item \textbf{隔离法选错对象：} 隔离受力少的物体简化计算。在水平连接体中隔离后面的物体（只受拉力和摩擦），比隔离前面的物体（受拉力、摩擦和张力）简单。
+  
+  \item \textbf{传送带问题中摩擦力方向判断错：} 物块刚放上时相对传送带向后滑，摩擦力向前（动力）。达到共速后摩擦力为零。
+  
+  \item \textbf{临界条件记反：} $\tan\theta > \mu$ 是下滑，$\tan\theta < \mu$ 是静止，$\tan\theta = \mu$ 是临界。不是反过来。
+  
+  \item \textbf{匀速上滑时把摩擦力方向画反：} 匀速上滑时物体相对斜面向上运动，摩擦力沿斜面向下（阻力），不是向上。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{加速度不同的连接体——必须分别隔离}
+
+如果连接体中各物体的加速度不同（例如动滑轮连接、斜面上下滑连接），不能使用整体法。
+
+\textbf{例题：} 质量 $m_A$ 和 $m_B$ 通过跨过定滑轮的轻绳连接，$A$ 在光滑水平面上，$B$ 竖直悬挂滑落。求加速度和绳中张力。
+
+\textbf{解：} 两物体加速度大小相同但方向不同，分别隔离：
+\begin{itemize}
+  \item 对 $A$（水平方向）：$T = m_A a$
+  \item 对 $B$（竖直方向）：$m_B g - T = m_B a$
+\end{itemize}
+联立得：
+\[
+a = \frac{m_B}{m_A + m_B} g,\qquad T = \frac{m_A m_B}{m_A + m_B} g
+\]
+
+\textbf{竞赛小贴士：} 滑轮连接体中，绳中各处的张力大小相等（轻绳、光滑滑轮），这是解题的关键条件。
 \end{competitionbox}
 
 \section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
 
+\begin{enumerate}
+  \item 整体法：求共同加速度时用，只考虑系统外力。
+  \item 隔离法：求内力时用，先整体求加速度再隔离。
+  \item 斜面临界：$\tan\theta = \mu$ 是刚好下滑的临界条件。
+  \item 传送带：物块刚放上时受滑动摩擦力加速，共速后无摩擦。
+  \item 注意摩擦方向的判断——与相对运动（趋势）方向相反，不是与运动方向相反。
+\end{enumerate}

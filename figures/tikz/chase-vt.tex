@@ -1,31 +1,33 @@
 % TikZ 图：追及问题的 v-t 图像
 % Day 04：运动图像与追及相遇
-% A 匀速（v=2.5），B 从静止匀加速
-% 在 t0 时，B 的面积（三角形）比 A 的面积（矩形）大 s0，满足 xB = xA + s0
-\begin{tikzpicture}[scale=1,>=Latex]
-  \draw[->] (-0.3,0) -- (5.5,0) node[right] {$t$};
-  \draw[->] (0,-0.3) -- (0,4.5) node[above] {$v$};
+% 对应例题：A 匀速 vA=4，B 从静止以 a=2 匀加速。
+% t1=2 s 时速度相等，t0=2+2sqrt(3) 时 B 追上 A。
+\begin{tikzpicture}[scale=0.82,>=Latex]
+  \draw[->] (-0.3,0) -- (6.2,0) node[right] {$t$};
+  \draw[->] (0,-0.3) -- (0,4.9) node[above] {$v$};
   \node[below left] at (0,0) {$O$};
-  % A 匀速
-  \draw[very thick,red] (0,2.5) -- (5,2.5);
-  \node[above right,red] at (5,2.5) {$A$};
-  % B 匀加速从静止（斜率更大，使 B 面积在 t0 时超过 A）
-  \draw[very thick,blue] (0,0) -- (4,4);
-  \node[above right,blue] at (4,4) {$B$};
-  % 追上时刻 t0
-  \draw[dashed] (3.2,0) -- (3.2,3.2);
-  \node[below] at (3.2,0) {$t_0$};
-  % A 面积（矩形）
-  \fill[red!15] (0,0) -- (0,2.5) -- (3.2,2.5) -- (3.2,0) -- cycle;
-  \node[red] at (1.6,1.25) {$x_A$};
-  % B 面积（三角形）
-  \fill[blue!15] (0,0) -- (3.2,3.2) -- (3.2,0) -- cycle;
-  \node[blue] at (2.0,2.2) {$x_B$};
-  % 面积差标注：x_B - x_A = s0
-  % 用大括号标注两块面积之间的差值区域
-  \fill[pattern=north west lines,pattern color=black!30] (0,2.5) -- (3.2,2.5) -- (3.2,3.2) -- cycle;
-  \draw[<->,thick] (3.6,2.5) -- (3.6,3.2);
-  \node[right] at (3.6,2.85) {$s_0$};
-  % 注解
-  \node[below] at (1.6,-0.5) {$x_B - x_A = s_0$ 时追上};
+
+  \coordinate (TOne) at (2,1.6);
+  \coordinate (TZeroA) at (5.46,1.6);
+  \coordinate (TZeroB) at (5.46,4.37);
+
+  % 有向面积：前段 A 多走，后段 B 多追。
+  \fill[red!15] (0,0) -- (0,1.6) -- (TOne) -- cycle;
+  \fill[blue!15] (TOne) -- (TZeroA) -- (TZeroB) -- cycle;
+
+  % A 匀速，B 匀加速
+  \draw[very thick,red] (0,1.6) -- (5.9,1.6) node[right] {$A$};
+  \draw[very thick,blue] (0,0) -- (5.9,4.72) node[above right] {$B$};
+
+  % 速度相等与追上时刻
+  \draw[dashed] (2,0) -- (TOne);
+  \node[below] at (2,0) {$t_1$};
+  \node[above left] at (TOne) {$v_A=v_B$};
+  \draw[dashed] (5.46,0) -- (TZeroB);
+  \node[below] at (5.46,0) {$t_0$};
+
+  \node[red] at (0.85,1.02) {\small $A$ 多走};
+  \node[blue] at (4.35,2.55) {\small $B$ 多追};
+  \node[align=center] at (3.05,-0.75)
+    {$\text{蓝色面积}-\text{红色面积}=s_0$，此时追上};
 \end{tikzpicture}

@@ -7,6 +7,8 @@
   \draw[->] (-0.3,0) -- (5.5,0) node[right] {$t$};
   \draw[->] (0,-0.3) -- (0,4.8) node[above] {$v$};
   \node[below left] at (0,0) {$O$};
+  % 梯形面积先填充，再画边界线，避免遮住图线
+  \fill[black!15] (0,0) -- (0,1) -- (4,4) -- (4,0) -- cycle;
   % v-t 直线：从 (0,v0) 到 (t,v)
   \draw[very thick] (0,1) -- (4,4);
   % v0 标注
@@ -15,13 +17,11 @@
   \draw[dashed] (4,0) -- (4,4);
   \node[below] at (4,0) {$t$};
   \node[right] at (4,4) {$v$};
-  % 梯形面积
-  \fill[black!15] (0,0) -- (0,1) -- (4,4) -- (4,0) -- cycle;
-  \node at (2.5,0.8) {$x$};
+  \node at (2.45,0.45) {$x=\dfrac{v_0+v}{2}t$};
   % 完整斜率三角形：从 (0,v0) 到 (t,v)
   \draw[dashed,thick] (0,1) -- (4,1);   % 水平边 = t
   \draw[dashed,thick] (4,1) -- (4,4);   % 竖直边 = v - v0
-  \node[below] at (2,1) {$t$};
+  \node[above] at (2,1) {$\Delta t=t$};
   \node[right] at (4,2.5) {$v - v_0$};
   % 斜边就是 v-t 直线本身（不重复画）
   % 斜率标注

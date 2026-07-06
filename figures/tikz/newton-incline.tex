@@ -1,33 +1,29 @@
 % TikZ 图：斜面上牛顿第二定律（下滑时）
 % Day 06：牛顿运动定律
-% 左高右低斜面，受真实力（G/N/f）+ 重力分力（虚线）
-\begin{tikzpicture}[scale=0.9,>=Latex]
-  % 斜面
-  \draw[thick] (0,2.5) -- (5,0.5);
-  \draw[thick] (0,0.5) -- (5,0.5);
-  % 角度
-  \draw (0.8,0.5) arc (0:-21.8:0.8);
-  \node at (1.1,0.35) {$\theta$};
-  
-  % 沿斜面画方块
-  \begin{scope}[shift={(2.5,1.5)},rotate=-21.8]
-    \draw[thick] (-0.6,-0.5) rectangle (0.6,0.5);
-    \node at (0,0) {$m$};
-    
-    % 真实力
-    \draw[->,thick,blue] (0,0.5) -- (0,1.4) node[above] {$N$};
-    \draw[->,thick,red] (-0.6,0) -- (-1.4,0) node[above] {$f$};
-    % 加速度 a（沿 x 正方向，即沿斜面向下）
-    \draw[->,ultra thick,red] (0.6,0) -- (1.6,0) node[above] {$a$};
-    
-    % 重力分力（虚线，橙色）
-    \draw[->,thick,dashed,orange] (0,0) -- (1.4,0) node[right] {$G\sin\theta$};
-    \draw[->,thick,dashed,orange] (0,0) -- (0,-0.9) node[below] {$G\cos\theta$};
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  % 斜面：物体放在上表面，右下方为下滑方向。
+  \draw[thick] (0,0) -- (5,0) -- (0,2) -- cycle;
+  \draw[thick] (0,2) -- (5,0);
+  \draw (4.25,0) arc (180:158.2:0.75);
+  \node at (4.1,0.25) {$\theta$};
+
+  \coordinate (P) at (2.35,1.06);
+  \coordinate (C) at ($(P)+(68.2:0.42)$);
+
+  \begin{scope}[shift={(P)},rotate=-21.8]
+    \draw[thick] (-0.6,0) rectangle (0.6,0.85);
+    \node at (0,0.43) {$m$};
   \end{scope}
-  
-  % G（全局坐标系）
-  \draw[->,thick,blue] (2.5,1.0) -- (2.5,-0.1) node[below] {$G$};
-  
-  % 条件
-  \node[below,font=\footnotesize] at (2.5,-0.4) {（下滑时 $f$ 沿斜面向上，虚线为重力分力）};
+
+  % 重力分力，用虚线区分，避免误认为额外真实力。
+  \draw[->,thick,red,dashed] (C) -- ++(-21.8:1.25) node[below right] {$G\sin\theta$};
+  \draw[->,thick,blue,dashed] (C) -- ++(-111.8:0.75) node[pos=0.75,left] {$G\cos\theta$};
+
+  % 真实受力：重力、支持力、摩擦力。
+  \draw[->,thick,blue] (C) -- ++(0,-1.15) node[right] {$G$};
+  \draw[->,thick,blue] (C) -- ++(68.2:1.1) node[above] {$N$};
+  \draw[->,thick,red] (C) -- ++(158.2:1.05) node[above] {$f$};
+
+  % 加速度方向。
+  \draw[->,ultra thick,red] ($(C)+(68.2:0.62)+(158.2:0.2)$) -- ++(-21.8:1.35) node[above right] {$a$};
 \end{tikzpicture}

@@ -1,0 +1,20 @@
+% TikZ 图：传送带模型
+% Day 07：连接体、斜面与摩擦综合
+% 水平传送带，物块刚放上时受滑动摩擦力加速
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  % 传送带
+  \draw[thick] (0,0) -- (5,0);
+  \draw[thick] (0,1) -- (5,1);
+  % 滚轮
+  \draw (0,0.5) circle (0.5);
+  \draw (5,0.5) circle (0.5);
+  % 物块
+  \draw[thick] (1.2,0) rectangle (2.4,1);
+  \node at (1.8,0.5) {$m$};
+  % 摩擦力（传动带对物块，向右）
+  \draw[->,thick,red] (2.4,0.5) -- (3.5,0.5) node[above] {$f$};
+  % 速度标注
+  \draw[->,thick,blue] (5.5,0.5) -- (6.2,0.5) node[right] {$v$};
+  % 标注
+  \node[below,font=\footnotesize] at (2.5,-0.3) {物块刚放上时相对传送带向左滑，$f$ 向右};
+\end{tikzpicture}

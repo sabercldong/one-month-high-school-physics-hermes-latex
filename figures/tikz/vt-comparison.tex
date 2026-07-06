@@ -1,16 +1,21 @@
-% TikZ 图：常见运动的 v-t 图像对比（错开不交于一点）
+% TikZ 图：常见运动的 v-t 图像对比
 % Day 04：运动图像与追及相遇
+% 分成三个小坐标系，避免三条线交于一点造成误读。
 \begin{tikzpicture}[scale=1,>=Latex]
-  \draw[->] (-0.3,0) -- (5.5,0) node[right] {$t$};
-  \draw[->] (0,-0.3) -- (0,4.5) node[above] {$v$};
-  \node[below left] at (0,0) {$O$};
-  % 匀速（粗实线，v=2）
-  \draw[very thick] (0,2) -- (5,2);
-  \node[above] at (5,2) {匀速};
-  % 匀加速（虚线，从 v=1 到 v=4）
-  \draw[very thick,dashed] (0,1) -- (5,4);
-  \node[above right] at (5,4) {匀加速};
-  % 匀减速（点划线，从 v=3.5 到 v=0.5）
-  \draw[very thick,dash dot dot] (0,3.5) -- (5,0.5);
-  \node[above left] at (0,3.5) {匀减速};
+  \foreach \x/\title in {0/匀速,2.5/匀加速,5/匀减速} {
+    \begin{scope}[xshift=\x cm]
+      \draw[->] (0,0) -- (1.8,0) node[right] {$t$};
+      \draw[->] (0,0) -- (0,1.8) node[above] {$v$};
+      \node[below left] at (0,0) {$O$};
+      \node[below] at (0.9,-0.35) {\title};
+    \end{scope}
+  }
+
+  \draw[very thick] (0.25,1.0) -- (1.55,1.0);
+  \begin{scope}[xshift=2.5cm]
+    \draw[very thick,dashed] (0.25,0.35) -- (1.55,1.45);
+  \end{scope}
+  \begin{scope}[xshift=5cm]
+    \draw[very thick,dash dot dot] (0.25,1.45) -- (1.55,0.35);
+  \end{scope}
 \end{tikzpicture}

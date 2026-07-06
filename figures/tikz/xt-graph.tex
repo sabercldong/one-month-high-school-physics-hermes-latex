@@ -6,11 +6,14 @@
   \node[below left] at (0,0) {$O$};
   % 匀速直线
   \draw[very thick] (0,0) -- (5,4);
-  % 完整直角三角形：水平边 Δt，竖直边 Δx，斜边在直线上
-  \draw[dashed,thick] (0,0) -- (3.5,0);   % 水平边 = t
-  \draw[dashed,thick] (3.5,0) -- (3.5,2.8); % 竖直边 = x
-  % 标注
-  \node[below] at (1.75,0) {$\Delta t$};
-  \node[right] at (3.5,1.4) {$\Delta x$};
-  \node[above right] at (0.5,0.8) {斜率 $= \dfrac{\Delta x}{\Delta t} = v$};
+  \node[above left] at (4.55,3.65) {$x=vt$};
+  \node[align=center] at (2.45,3.55) {斜率\\[-1pt]$v=\dfrac{\Delta x}{\Delta t}$};
+  % 完整直角三角形：避开坐标轴，突出斜率是两点之间的变化率
+  \coordinate (A) at (1.4,1.12);
+  \coordinate (B) at (3.6,2.88);
+  \draw[dashed,thick] (A) -- (3.6,1.12) -- (B);
+  \fill (A) circle (1.5pt);
+  \fill (B) circle (1.5pt);
+  \node[below] at (2.5,1.12) {$\Delta t$};
+  \node[right] at (3.6,2.0) {$\Delta x$};
 \end{tikzpicture}

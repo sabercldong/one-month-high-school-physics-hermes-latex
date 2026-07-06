@@ -1,31 +1,25 @@
 % TikZ 图：斜面上物体受力分析（有下滑趋势时）
 % Day 05：力、重力、弹力、摩擦力
-% 斜面左高右低，方块精确贴在斜面线上
-\begin{tikzpicture}[scale=0.9,>=Latex]
-  % 定义斜面
-  \draw[thick] (0,2.5) -- (5,0.5);
-  \draw[thick] (0,0.5) -- (5,0.5);
-  % 角度
-  \draw (0.8,0.5) arc (0:-21.8:0.8);
-  \node at (1.1,0.35) {$\theta$};
-  
-  % 沿斜面画方块：旋转整个 scope
-  \begin{scope}[shift={(2.5,1.5)},rotate=-21.8]
-    % shift 到斜面中点 (2.5,1.5) 处，然后旋转
-    % 方块左下角在 (-0.6,-0.5)，右上角在 (0.6,0.5) -> 尺寸 1.2×1.0
-    \draw[thick] (-0.6,-0.5) rectangle (0.6,0.5);
-    \node at (0,0) {$m$};
-    
-    % 真实力（在旋转后的坐标系中）
-    % N（沿 y 轴正方向，即垂直斜面向上）
-    \draw[->,thick,blue] (0,0.5) -- (0,1.4) node[above] {$N$};
-    % f（沿 x 轴负方向，即沿斜面向上）
-    \draw[->,thick,red] (-0.6,0) -- (-1.4,0) node[above] {$f$};
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  % 斜面：物体放在上表面，右下方为下滑方向。
+  \draw[thick] (0,0) -- (5,0) -- (0,2) -- cycle;
+  \draw[thick] (0,2) -- (5,0);
+  \draw (4.25,0) arc (180:158.2:0.75);
+  \node at (4.1,0.25) {$\theta$};
+
+  \coordinate (P) at (2.35,1.06);
+  \coordinate (C) at ($(P)+(68.2:0.42)$);
+
+  % 物体底边贴在斜面上。
+  \begin{scope}[shift={(P)},rotate=-21.8]
+    \draw[thick] (-0.6,0) rectangle (0.6,0.85);
+    \node at (0,0.43) {$m$};
   \end{scope}
-  
-  % G（全局坐标系中竖直向下）
-  \draw[->,thick,blue] (2.5,1.0) -- (2.5,-0.1) node[below] {$G$};
-  
-  % 条件
-  \node[below,font=\footnotesize] at (2.5,-0.4) {（有下滑趋势时 $f$ 沿斜面向上）};
+
+  % 三个真实受力。
+  \draw[->,thick,blue] (C) -- ++(0,-1.25) node[below] {$G$};
+  \draw[->,thick,blue] (C) -- ++(68.2:1.15) node[above] {$N$};
+  \draw[->,thick,red] (C) -- ++(158.2:1.15) node[above] {$f$};
+
+  \node[font=\footnotesize] at (2.65,-0.45) {有下滑趋势时，$f$ 沿斜面向上};
 \end{tikzpicture}

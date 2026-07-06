@@ -39,7 +39,7 @@ $x$-$t$ 图和 $v$-$t$ 图是运动学的"可视化语言"。今天学会读图�
 \textbf{关键读图方法：}
 \begin{itemize}
   \item \textbf{斜率} = 速度 $v$。直线越陡，速度越大。斜率为负表示反向运动。
-  \item \textbf{截距} = 初始位置 $x_0$。图线与 $x$ 轴的交点。
+  \item \textbf{截距} = 初始位置 $x_0$。图线与纵轴的交点。
   \item \textbf{交点} = 两物体在该时刻位置相同（相遇）。
   \item \textbf{水平线} = 物体静止。
   \item \textbf{曲线} = 变速运动（切线斜率为瞬时速度）。
@@ -90,17 +90,18 @@ $x$-$t$ 图和 $v$-$t$ 图是运动学的"可视化语言"。今天学会读图�
 
 \subsection*{追及问题的核心关系}
 
-设物体 $A$（速度 $v_A$）追物体 $B$（速度 $v_B$），初始相距 $\Delta x$。
+追及题先把初始位置说清楚。若追者在后、前车领先 $\Delta x$，并且两车位移都从各自初始位置开始计，则：
 \begin{itemize}
-  \item \textbf{追上条件：} $x_A = x_B + \Delta x$（位移关系）。
-  \item \textbf{相距最远/最近条件：} $v_A = v_B$（速度相等时距离取极值）。
+  \item \textbf{追上条件：} 追者多走的位移等于初始距离，$x_{\text{追}} - x_{\text{前}} = \Delta x$。
+  \item \textbf{相距最远/最近条件：} 两车速度相等，$v_{\text{追}} = v_{\text{前}}$，此时距离可能取极大或极小。
+  \item \textbf{$v$-$t$ 图像法：} 两条速度图线之间的有向面积，就是两车相对位移的变化量。
 \end{itemize}
 
 \section*{五、典型模型}
 
 \subsection*{模型 1：匀速追匀速}
 
-若 $v_A > v_B$，$A$ 一定能追上 $B$。追上时间由 $v_A t = v_B t + \Delta x$ 解得。
+若后车 $A$ 速度 $v_A$ 大于前车 $B$ 速度 $v_B$，$A$ 一定能追上 $B$。追上时间由 $v_A t - v_B t = \Delta x$ 解得。
 
 \subsection*{模型 2：匀加速追匀速}
 
@@ -208,10 +209,12 @@ x_B = v_B t = 10 \times 5 = 50\ \mathrm{m}
   最大距离：$s_{\max} = s_0 + x_A - x_B = 8 + 8 - 4 = 12\ \mathrm{m}$
 \end{enumerate}
 
+在 $v$-$t$ 图中，$t_1$ 之前 $B$ 比 $A$ 慢，红色面积表示两者距离继续增大；$t_1$ 之后 $B$ 比 $A$ 快，蓝色面积表示 $B$ 开始追近。追上时，蓝色面积比红色面积多出的部分正好等于初始距离 $s_0$。
+
 \begin{center}
 \input{figures/tikz/chase-vt}
 
-\figcaption{追及问题的 $v$-$t$ 图：$A$ 匀速、$B$ 匀加速，$x_A$ 和 $x_B$ 分别为到 $t_0$ 时的位移}\label{fig:chase-vt}
+\figcaption{追及问题的 $v$-$t$ 图：两图线之间的有向面积表示相对位移变化}\label{fig:chase-vt}
 \end{center}
 
 \textbf{方法总结：}
