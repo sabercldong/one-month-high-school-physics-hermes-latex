@@ -6,13 +6,14 @@
   % 物体
   \draw[thick] (0,0) rectangle (1.5,1.2);
   \node at (0.75,0.6) {$m$};
-  % 力 F（与水平成θ角）
-  \draw[->,thick,red] (0.75,0.6) -- (2.8,2.0) node[above] {$F$};
-  \draw[dashed,thick] (0.75,0.6) -- (2.5,0.6);
-  \draw (1.2,0.6) arc (0:37:0.45);
-  \node at (1.6,0.8) {$\theta$};
   % 位移
   \draw[->,thick,blue] (1.5,0.3) -- (4.5,0.3) node[below] {$x$};
-  % 做功标注
-  \node[below] at (2.5,-0.5) {$W = Fx\cos\theta$};
+  % 力 F（斜向上，画在物体上方以免与虚线重叠）
+  \draw[->,thick,red] (0.75,1.2) -- (2.8,2.6) node[above] {$F$};
+  % 虚线和角度标在物体右侧空白处
+  \draw[dashed] (0.75,1.2) -- (3.25,1.2);
+  \draw (1.5,1.2) arc (0:37:0.75);
+  \node at (2.0,1.5) {$\theta$};
+  % 公式
+  \node[below] at (2.5,-0.6) {$W = F x \cos\theta$};
 \end{tikzpicture}

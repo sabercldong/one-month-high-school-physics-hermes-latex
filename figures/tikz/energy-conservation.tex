@@ -1,24 +1,24 @@
 % TikZ 图：机械能守恒（摆球）
 % Day 09：机械能守恒与功能关系
-\begin{tikzpicture}[scale=0.9,>=Latex]
+\begin{tikzpicture}[scale=1,>=Latex]
   % 天花板
   \draw[thick] (-1.5,0) -- (1.5,0);
-  % 悬点
   \filldraw[black] (0,0) circle (2pt);
-  % 摆线 + 摆球（最高点）
+  % 摆球在最高点（虚线）
   \draw[thick] (0,0) -- (-1.2,-2.5);
   \filldraw[black] (-1.2,-2.5) circle (3pt);
   \node[left] at (-1.2,-2.5) {$m$};
-  \node[above left] at (-0.6,-1.25) {$l$};
-  % 最低点
+  % 最低点位置（虚线）
   \draw[dashed] (0,0) -- (0,-2.5);
   \filldraw[black] (0,-2.5) circle (2pt);
-  \node[right] at (0,-2.5) {$v$};
-  % 高度差
-  \draw[<->] (-1.5,-2.5) -- (-1.5,-3.5);
-  \node[left] at (-1.5,-3) {$h$};
-  % 能量转换标注
-  \node at (0,-3.8) {最高点：$E_p = mgh$，$E_k = 0$};
-  \node at (0,-4.2) {最低点：$E_p = 0$，$E_k = \frac12 mv^2$};
-  \node[red] at (0,-4.6) {$mgh = \frac12 mv^2$};
+  % 高度 h 用双箭头标在左侧空白处
+  \draw[<->] (-1.8,-2.5) -- (-1.8,-3.8);
+  \node[left] at (-1.8,-3.15) {$h$};
+  % 能量转换说明放在图下方
+  \node at (0,-3.3) {\small 最高点：$E_p = mgh,\; E_k = 0$};
+  \node at (0,-3.7) {\small 最低点：$E_p = 0,\; E_k = \frac12 mv^2$};
+  \node[red] at (0,-4.1) {\small $mgh = \frac12 mv^2$};
+  % 摆角示意
+  \draw (0,-0.5) arc (-90:-140:0.5);
+  \node at (-0.3,-0.8) {$\theta$};
 \end{tikzpicture}

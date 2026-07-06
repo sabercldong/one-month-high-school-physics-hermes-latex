@@ -55,7 +55,7 @@
 \begin{conceptbox}{动量定理}
 
 \[
-\boxed{F t = \Delta p = p_2 - p_1 = mv_2 - mv_1}
+\boxed{F_{\text{合}} t = \Delta p = p_2 - p_1 = mv_2 - mv_1}
 \]
 
 \begin{itemize}
@@ -97,12 +97,13 @@
 \begin{itemize}
   \item 动量守恒 + 动能守恒。
   \item 没有能量损失（理想情况）。
-  \item 两个方程联立可解出 $v_1'$ 和 $v_2'$：
+  \item 两个方程联立可解出 $v_1'$ 和 $v_2'$。
+  \item 以一维正碰、$v_2=0$ 为例，结果为：
   \[
   v_1' = \frac{m_1 - m_2}{m_1 + m_2} v_1,\qquad
   v_2' = \frac{2m_1}{m_1 + m_2} v_1
   \]
-  （以 $v_2=0$ 为例）
+  （若 $v_2\neq 0$，公式更复杂，用动量守恒+动能守恒联立求解即可）
 \end{itemize}
 
 \textbf{完全非弹性碰撞：}
@@ -127,9 +128,9 @@
 \midrule
 $p = mv$ & 动量 & 任何运动 \\
 $I = Ft$ & 冲量 & 恒力 \\
-$Ft = \Delta p$ & 动量定理 & 任何情况（变力取平均） \\
+$F_{\text{合}} t = \Delta p$ & 动量定理 & $F_{\text{合}}$ 为合外力（变力取平均） \\
 $m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'$ & 动量守恒 & 合外力为零 \\
-$\frac12 m_1 v_1^2 = \frac12 m_1 v_1'^2 + \frac12 m_2 v_2'^2$ & 动能守恒 & 弹性碰撞 \\
+$\frac12 m_1 v_1^2 = \frac12 m_1 v_1'^2 + \frac12 m_2 v_2'^2$ & 动能守恒 & 弹性碰撞，$v_2=0$ \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -283,7 +284,7 @@ v_2' = \frac{2 \times 2}{2+1} \times 3 = 4\ \mathrm{m/s}
   
   \item $m_1 = 4\ \mathrm{kg}$ 的小球以 $v_1 = 2\ \mathrm{m/s}$ 碰撞静止的 $m_2 = 2\ \mathrm{kg}$ 小球，碰后 $m_1$ 以 $v_1' = 0.5\ \mathrm{m/s}$ 继续前进。判断碰撞类型。
   
-  \item 质量为 $M$ 的船上站着一个质量为 $m$ 的人，船静止在水面上（阻力不计）。人从船头走到船尾，船相对于岸移动的距离是多少？
+  \item 质量为 $M = 150\ \mathrm{kg}$ 的船上站着一个质量为 $m = 60\ \mathrm{kg}$ 的人，船长 $L = 5\ \mathrm{m}$，船静止在水面上（阻力不计）。人从船头走到船尾，求船相对于岸移动的距离。
 \end{enumerate}
 
 \section*{八、易错点}
@@ -326,7 +327,7 @@ e = \frac{v_2' - v_1'}{v_1 - v_2}
 e = \frac{v_2' - v_1'}{v_1 - v_2} = \frac{0 - (-\sqrt{2gh_2})}{\sqrt{2gh_1} - 0} = \sqrt{\frac{h_2}{h_1}}
 \]
 
-\textbf{竞赛小贴士：} 恢复系数结合动量守恒，可以完全描述任何碰撞——两个方程两个未知数，总能解。
+\textbf{竞赛小贴士：} 恢复系数结合动量守恒，可以完全描述一维两体碰撞——两个方程两个未知数，总能解。
 \end{competitionbox}
 
 \section*{十、今日小结}
