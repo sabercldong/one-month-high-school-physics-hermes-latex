@@ -1,0 +1,24 @@
+% TikZ 图：弹簧-物体系统的能量转化
+% Day 09：机械能守恒与功能关系
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[thick] (-2.0,0) -- (3.5,0);
+  \foreach \x in {-1.8,-1.4,-1.0,-0.6,-0.2,0.2,0.6,1.0,1.4,1.8,2.2,2.6,3.0,3.4} {
+    \draw[gray] (\x,0) -- ++(-0.22,-0.22);
+  }
+
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=4pt,amplitude=3pt}]
+    (0.75,0) -- (0.75,1.55);
+  \draw[thick] (0.20,1.55) rectangle (1.30,1.90);
+  \node at (0.75,1.73) {$m$};
+
+  \draw[dashed] (-1.45,2.45) -- (2.95,2.45);
+  \node[left] at (-1.45,2.45) {原长位置};
+  \draw[<->,thick] (2.35,1.90) -- (2.35,2.45) node[midway,right] {$x$};
+
+  \draw[->,thick,blue] (1.58,1.75) -- (1.58,0.92) node[midway,right] {$mg$};
+  \draw[->,thick,red] (-0.25,1.55) -- (-0.25,2.25);
+  \node[red,left] at (-0.25,2.02) {$F_{\text{弹}}$};
+
+  \node at (0.75,3.03) {系统内只有重力和弹力做功};
+  \node at (0.75,-0.82) {$E=\frac12mv^2+mgh+\frac12kx^2=\text{常量}$};
+\end{tikzpicture}

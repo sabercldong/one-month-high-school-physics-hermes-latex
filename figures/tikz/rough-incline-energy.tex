@@ -1,0 +1,24 @@
+% TikZ 图：粗糙斜面的功能关系
+% Day 09：机械能守恒与功能关系
+\begin{tikzpicture}[scale=0.95,>=Latex]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (5,0);
+  \coordinate (C) at (5,2.6);
+
+  \draw[thick] (A) -- (B) -- (C) -- cycle;
+
+  \coordinate (P) at (2.0,1.04);
+  \begin{scope}[shift={(P)},rotate=27.5]
+    \draw[thick] (-0.45,0) rectangle (0.45,0.35);
+  \end{scope}
+  \draw[->,thick,blue] (P) -- ++(0,-1.05) node[below] {$mg$};
+  \draw[->,thick,red] (P) -- ++(27.5:1.15) node[above] {$f$};
+  \draw[->,thick] (P) -- ++(207.5:1.05) node[left] {$v$};
+
+  \node[right] at (5.18,1.30) {$h$};
+  \node[rotate=27.5,above] at (2.65,1.37) {$s$};
+  \draw (0.70,0) arc (0:27.5:0.70);
+  \node at (0.92,0.22) {$\theta$};
+
+  \node at (2.65,-0.65) {$mgh-\mu mg\cos\theta\cdot s=\frac12mv^2$};
+\end{tikzpicture}

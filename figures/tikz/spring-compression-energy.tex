@@ -1,0 +1,31 @@
+% TikZ 图：竖直弹簧最大压缩的初末态
+% Day 09：机械能守恒与功能关系
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  % 初态
+  \draw[thick] (-2.6,-3.0) -- (-0.4,-3.0);
+  \foreach \x in {-2.4,-2.0,-1.6,-1.2,-0.8} {
+    \draw[gray] (\x,-3.0) -- ++(-0.18,-0.18);
+  }
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=4pt,amplitude=3pt}]
+    (-1.5,-3.0) -- (-1.5,-1.1);
+  \draw[thick] (-2.05,-0.75) rectangle (-0.95,-1.1);
+  \node at (-1.5,-0.93) {$m$};
+  \draw[dashed] (-2.55,-1.1) -- (2.55,-1.1);
+  \node[left] at (-2.55,-1.1) {原长位置};
+  \node at (-1.5,-3.55) {初态};
+
+  % 末态
+  \draw[thick] (0.4,-3.0) -- (2.6,-3.0);
+  \foreach \x in {0.6,1.0,1.4,1.8,2.2} {
+    \draw[gray] (\x,-3.0) -- ++(-0.18,-0.18);
+  }
+  \draw[decorate,decoration={coil,aspect=0.4,segment length=3pt,amplitude=3pt}]
+    (1.5,-3.0) -- (1.5,-1.85);
+  \draw[thick] (0.95,-1.50) rectangle (2.05,-1.85);
+  \node at (1.5,-1.68) {$m$};
+  \draw[<->,thick] (2.35,-1.1) -- (2.35,-1.85) node[midway,right] {$x$};
+  \draw[->,thick,blue] (2.05,-1.55) -- (2.05,-2.35) node[midway,right] {$mg$};
+  \node at (1.5,-3.55) {末态：$v=0$};
+
+  \draw[->,thick] (-0.25,-1.65) -- (0.25,-1.65);
+\end{tikzpicture}

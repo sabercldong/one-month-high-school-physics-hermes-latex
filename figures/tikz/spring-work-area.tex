@@ -1,0 +1,20 @@
+% TikZ 图：弹簧外力做功的 F-x 面积
+% Day 08：功和动能定理
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[->,thick] (0,0) -- (5,0) node[right] {$x$};
+  \draw[->,thick] (0,0) -- (0,3.2) node[above] {$F_{\text{外}}$};
+
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (4,0);
+  \coordinate (B) at (4,2.4);
+
+  \fill[gray!18] (O) -- (A) -- (B) -- cycle;
+  \draw[thick] (O) -- (B) node[pos=0.65,above left] {$F=kx$};
+  \draw[dashed] (B) -- (A);
+  \draw[dashed] (B) -- (0,2.4);
+
+  \node[below] at (A) {$x$};
+  \node[left] at (0,2.4) {$kx$};
+  \node at (2.55,0.85) {$W_{\text{外}}=\frac12 kx^2$};
+  \node[below left] at (O) {$O$};
+\end{tikzpicture}

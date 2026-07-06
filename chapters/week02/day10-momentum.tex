@@ -58,6 +58,13 @@
 \boxed{F_{\text{合}} t = \Delta p = p_2 - p_1 = mv_2 - mv_1}
 \]
 
+\textbf{来源（牛顿第二定律的时间积累）：}
+由 $F_{\text{合}}=ma=m\dfrac{\Delta v}{\Delta t}$，两边同乘 $\Delta t$，得
+\[
+F_{\text{合}}\Delta t = m v_2 - m v_1 = \Delta p
+\]
+若力随时间变化，$F_{\text{合}}t$ 应理解为合外力的总冲量（平均合力乘作用时间）。
+
 \begin{itemize}
   \item 合外力的冲量等于物体动量的变化。
   \item 动量定理不关心中间过程，只关心初末动量。
@@ -68,6 +75,8 @@
 
 \end{conceptbox}
 
+\newpage
+
 \begin{conceptbox}{动量守恒定律}
 
 \textbf{条件：} 系统不受外力，或合外力为零。
@@ -76,6 +85,9 @@
 \[
 \boxed{m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'}
 \]
+
+\textbf{来源（系统内力成对抵消）：}
+内力成对出现，冲量等大反向，使系统内部动量变化相互抵消；若系统合外力的冲量为零，总动量就保持不变。
 
 \begin{itemize}
   \item 系统内力（碰撞中两物体的相互作用力）不改变总动量。
@@ -156,7 +168,7 @@ Q = \frac12 m v_0^2 - \frac12 (m+M) v'^2
 
 \subsection*{模型 3：人船模型}
 
-人在船上行走，人与船系统水平方向动量守恒（初动量为零）：
+取人相对船行走的方向为正。人在船上行走，人与船系统水平方向动量守恒（初动量为零）：
 \[
 m_{\text{人}} v_{\text{人}} + m_{\text{船}} v_{\text{船}} = 0
 \]
@@ -164,9 +176,20 @@ m_{\text{人}} v_{\text{人}} + m_{\text{船}} v_{\text{船}} = 0
 \[
 m_{\text{人}} x_{\text{人}} + m_{\text{船}} x_{\text{船}} = 0
 \]
-且人相对船的位移等于船长的相反数：$x_{\text{人}} - x_{\text{船}} = L$（人从船头走到船尾，相对船走了 $L$）。
+且人相对船的位移为船长 $L$：
+\[
+x_{\text{人}} - x_{\text{船}} = L
+\]
 
 联立可解得 $x_{\text{船}} = -\dfrac{m}{m+M} L$（负号表示船向反方向移动）。
+图中船的位移用同一个船上点（如船尾）的初末位置来量，因此有
+$L=x_{\text{人}}+|x_{\text{船}}|$。
+
+\begin{center}
+\input{figures/tikz/human-boat-model}
+
+\figcaption{人船模型：水平方向质心位置不变}\label{fig:human-boat-model}
+\end{center}
 
 \section*{六、例题精讲}
 
