@@ -2,32 +2,32 @@
 % Day 06：牛顿运动定律
 % 左高右低斜面，受真实力（G/N/f）+ 重力分力（虚线）
 \begin{tikzpicture}[scale=0.9,>=Latex]
-  % 斜面（左高右低）
+  % 斜面
   \draw[thick] (0,2.5) -- (5,0.5);
   \draw[thick] (0,0.5) -- (5,0.5);
-  % 角度标注在左下角
+  % 角度
   \draw (0.8,0.5) arc (0:-21.8:0.8);
   \node at (1.1,0.35) {$\theta$};
-  % 物体（方块，旋转贴合斜面，底边在斜面线上）
-  \draw[thick,rotate around={-21.8:(2.5,1.5)}] (1.9,1.0) rectangle (3.1,2.0);
-  \node[rotate=-21.8] at (2.5,1.5) {$m$};
   
-  % === 真实受力（箭头粗，实线）===
-  % 重力 G（竖直向下）
+  % 沿斜面画方块
+  \begin{scope}[shift={(2.5,1.5)},rotate=-21.8]
+    \draw[thick] (-0.6,-0.5) rectangle (0.6,0.5);
+    \node at (0,0) {$m$};
+    
+    % 真实力
+    \draw[->,thick,blue] (0,0.5) -- (0,1.4) node[above] {$N$};
+    \draw[->,thick,red] (-0.6,0) -- (-1.4,0) node[above] {$f$};
+    % 加速度 a（沿 x 正方向，即沿斜面向下）
+    \draw[->,ultra thick,red] (0.6,0) -- (1.6,0) node[above] {$a$};
+    
+    % 重力分力（虚线，橙色）
+    \draw[->,thick,dashed,orange] (0,0) -- (1.4,0) node[right] {$G\sin\theta$};
+    \draw[->,thick,dashed,orange] (0,0) -- (0,-0.9) node[below] {$G\cos\theta$};
+  \end{scope}
+  
+  % G（全局坐标系）
   \draw[->,thick,blue] (2.5,1.0) -- (2.5,-0.1) node[below] {$G$};
-  % 支持力 N（垂直斜面向上）
-  \draw[->,thick,blue,rotate around={-21.8:(2.5,1.5)}] (2.5,2.0) -- (2.5,2.9) node[above] {$N$};
-  % 摩擦力 f（下滑时沿斜面向上）
-  \draw[->,thick,red,rotate around={-21.8:(2.5,1.5)}] (1.9,1.5) -- (1.1,1.5) node[above] {$f$};
-  % 加速度 a
-  \draw[->,ultra thick,red,rotate around={-21.8:(2.5,1.5)}] (2.5,2.2) -- (4,2.2) node[above] {$a$};
   
-  % === 重力分力（虚线，较细）===
-  % G sinθ 沿斜面向下（虚线，橙色）
-  \draw[->,thick,dashed,orange,rotate around={-21.8:(2.5,1.5)}] (2.5,1.0) -- (4,1.0) node[right] {$G\sin\theta$};
-  % G cosθ 垂直压向斜面（虚线，橙色）
-  \draw[->,thick,dashed,orange,rotate around={-21.8:(2.5,1.5)}] (2.5,1.0) -- (2.5,-0.1) node[below] {$G\cos\theta$};
-  
-  % 条件说明
+  % 条件
   \node[below,font=\footnotesize] at (2.5,-0.4) {（下滑时 $f$ 沿斜面向上，虚线为重力分力）};
 \end{tikzpicture}
