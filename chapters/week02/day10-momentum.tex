@@ -64,7 +64,7 @@
   \item 与动能定理类似，但动量定理处理的是\textbf{时间}积累，动能定理处理的是\textbf{位移}积累。
 \end{itemize}
 
-\textbf{生活应用：} 跳远时沙坑、汽车安全气囊、鸡蛋落在海绵上——都是通过延长作用时间 $t$ 来减小平均作用力 $F$（因为 $Ft = \Delta p$ 恒定）。
+\textbf{生活应用：} 跳远时沙坑、汽车安全气囊、鸡蛋落在海绵上——都是通过延长作用时间 $t$ 来减小平均作用力 $F$（因为 $F_{\text{合}} t = \Delta p$ 恒定）。
 
 \end{conceptbox}
 
@@ -156,13 +156,17 @@ Q = \frac12 m v_0^2 - \frac12 (m+M) v'^2
 
 \subsection*{模型 3：人船模型}
 
-人在船上行走，人与船系统水平方向动量守恒：
+人在船上行走，人与船系统水平方向动量守恒（初动量为零）：
 \[
 m_{\text{人}} v_{\text{人}} + m_{\text{船}} v_{\text{船}} = 0
 \]
+由此可得位移关系：
 \[
 m_{\text{人}} x_{\text{人}} + m_{\text{船}} x_{\text{船}} = 0
 \]
+且人相对船的位移等于船长的相反数：$x_{\text{人}} - x_{\text{船}} = L$（人从船头走到船尾，相对船走了 $L$）。
+
+联立可解得 $x_{\text{船}} = -\dfrac{m}{m+M} L$（负号表示船向反方向移动）。
 
 \section*{六、例题精讲}
 
@@ -282,7 +286,7 @@ v_2' = \frac{2 \times 2}{2+1} \times 3 = 4\ \mathrm{m/s}
 \begin{enumerate}
   \item 质量为 $m = 60\ \mathrm{kg}$ 的人以 $v_0 = 5\ \mathrm{m/s}$ 的速度跳上静止在光滑水平面上的 $M = 120\ \mathrm{kg}$ 的小车。求人和小车的共同速度。若人与车之间的摩擦因数为 $\mu = 0.3$，求人相对车的滑行距离。
   
-  \item $m_1 = 4\ \mathrm{kg}$ 的小球以 $v_1 = 2\ \mathrm{m/s}$ 碰撞静止的 $m_2 = 2\ \mathrm{kg}$ 小球，碰后 $m_1$ 以 $v_1' = 0.5\ \mathrm{m/s}$ 继续前进。判断碰撞类型。
+  \item $m_1 = 4\ \mathrm{kg}$ 的小球以 $v_1 = 2\ \mathrm{m/s}$ 正面碰撞静止的 $m_2 = 2\ \mathrm{kg}$ 小球，碰后 $m_1$ 以 $v_1' = -0.5\ \mathrm{m/s}$（反向弹回）。判断碰撞类型并求 $v_2'$。
   
   \item 质量为 $M = 150\ \mathrm{kg}$ 的船上站着一个质量为 $m = 60\ \mathrm{kg}$ 的人，船长 $L = 5\ \mathrm{m}$，船静止在水面上（阻力不计）。人从船头走到船尾，求船相对于岸移动的距离。
 \end{enumerate}
@@ -333,7 +337,7 @@ e = \frac{v_2' - v_1'}{v_1 - v_2} = \frac{0 - (-\sqrt{2gh_2})}{\sqrt{2gh_1} - 0}
 \section*{十、今日小结}
 
 \begin{enumerate}
-  \item 动量 $p = mv$，冲量 $I = Ft$，动量定理 $Ft = \Delta p$。
+  \item 动量 $p = mv$，冲量 $I = Ft$，动量定理 $F_{\text{合}} t = \Delta p$。
   \item 动量守恒条件：系统合外力为零（碰撞中可近似）。
   \item 弹性碰撞：动量守恒 $+$ 动能守恒。
   \item 完全非弹性碰撞：动量守恒，碰后共速，动能损失最大。

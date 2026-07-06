@@ -1,24 +1,27 @@
 % TikZ 图：机械能守恒（摆球）
 % Day 09：机械能守恒与功能关系
+% 释放点在左侧上方，最低点在正下方，h 为两者竖直高度差
 \begin{tikzpicture}[scale=1,>=Latex]
   % 天花板
   \draw[thick] (-1.5,0) -- (1.5,0);
   \filldraw[black] (0,0) circle (2pt);
-  % 摆球在最高点（虚线）
-  \draw[thick] (0,0) -- (-1.2,-2.5);
-  \filldraw[black] (-1.2,-2.5) circle (3pt);
-  \node[left] at (-1.2,-2.5) {$m$};
-  % 最低点位置（虚线）
-  \draw[dashed] (0,0) -- (0,-2.5);
-  \filldraw[black] (0,-2.5) circle (2pt);
-  % 高度 h 用双箭头标在左侧空白处
-  \draw[<->] (-1.8,-2.5) -- (-1.8,-3.8);
-  \node[left] at (-1.8,-3.15) {$h$};
-  % 能量转换说明放在图下方
-  \node at (0,-3.3) {\small 最高点：$E_p = mgh,\; E_k = 0$};
-  \node at (0,-3.7) {\small 最低点：$E_p = 0,\; E_k = \frac12 mv^2$};
-  \node[red] at (0,-4.1) {\small $mgh = \frac12 mv^2$};
-  % 摆角示意
-  \draw (0,-0.5) arc (-90:-140:0.5);
-  \node at (-0.3,-0.8) {$\theta$};
+  % 摆线到释放点（左上方）
+  \draw[thick] (0,0) -- (-1.2,-1.5);
+  \filldraw[black] (-1.2,-1.5) circle (3pt);
+  \node[left] at (-1.2,-1.5) {$m$};
+  \node[above left] at (-0.6,-0.75) {$l$};
+  % 虚线到最低点
+  \draw[dashed] (0,0) -- (0,-2.8);
+  \filldraw[black] (0,-2.8) circle (2pt);
+  \node[right] at (0,-2.8) {最低点};
+  % 高度差 h：从释放点到最低点的竖直距离
+  \draw[<->,thick] (-1.8,-1.5) -- (-1.8,-2.8);
+  \node[left] at (-1.8,-2.15) {$h$};
+  % 释放点高度水平虚线
+  \draw[dashed] (-1.2,-1.5) -- (0.5,-1.5);
+  \node[below] at (0.3,-1.5) {释放点};
+  % 能量转换说明
+  \node at (0,-3.5) {\small 释放点：$E_p = mgh,\; E_k = 0$};
+  \node at (0,-3.9) {\small 最低点：$E_p = 0,\; E_k = \frac12 mv^2$};
+  \node[red] at (0,-4.3) {\small $mgh = \frac12 mv^2$};
 \end{tikzpicture}

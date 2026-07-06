@@ -95,7 +95,7 @@ E_k = \frac12 m v^2
 \]
 \begin{itemize}
   \item 标量，单位焦耳（$\mathrm{J}$）。
-  \item 动能永远为正，与速度方向无关。
+  \item 动能非负（$v=0$ 时 $E_k=0$），与速度方向无关。
   \item 动能的增量只与初末速度有关，与中间过程无关。
 \end{itemize}
 
@@ -284,14 +284,18 @@ W = \int_{x_1}^{x_2} F(x) \, dx
 
 在 $F$-$x$ 图上，变力做功等于图线与 $x$ 轴围成的面积。
 
-\textbf{例题：} 弹簧的劲度系数 $k = 200\ \mathrm{N/m}$，从原长拉伸 $x = 0.1\ \mathrm{m}$，求弹力做的功。
+\textbf{例题：} 弹簧的劲度系数 $k = 200\ \mathrm{N/m}$，从原长 $l_0$ 拉伸 $x = 0.1\ \mathrm{m}$，求外力克服弹力做的功。
 
-\textbf{解：} 弹力 $F = kx$ 随 $x$ 线性增大。$F$-$x$ 图是一个三角形，面积即为功：
+\textbf{解：} 弹簧弹力 $F_{\text{弹}} = kx$ 随 $x$ 线性增大，方向指向原长（收缩方向）。外力 $F_{\text{外}}$ 与之等大反向，$F_{\text{外}} = kx$。
+
+$F_{\text{外}}$-$x$ 图上，三角形面积即外力做的正功：
 \[
-W = \frac12 \times x \times kx = \frac12 k x^2 = \frac12 \times 200 \times 0.01 = 1\ \mathrm{J}
+W_{\text{外}} = \frac12 \times x \times kx = \frac12 k x^2 = \frac12 \times 200 \times 0.01 = 1\ \mathrm{J}
 \]
 
-弹力做负功（方向与位移相反），所以弹簧弹力做功 $W = -\frac12 kx^2$。这个结果就是弹性势能的表达式——下节课会重点讲。
+弹簧弹力做负功：$W_{\text{弹}} = -W_{\text{外}} = -\frac12 kx^2 = -1\ \mathrm{J}$。
+
+这两个结果分别对应弹性势能的变化：$W_{\text{外}} = \Delta E_p$，$W_{\text{弹}} = -\Delta E_p$。下节课会系统讲解弹性势能。
 \end{competitionbox}
 
 \section*{十、今日小结}
