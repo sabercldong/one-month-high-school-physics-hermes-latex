@@ -1,0 +1,16 @@
+% TikZ 图：万有引力与卫星轨道
+% Day 12：万有引力与天体运动
+\begin{tikzpicture}[scale=0.7,>=Latex]
+  % 地球
+  \filldraw[blue!30,draw=blue] (0,0) circle (1);
+  \node at (0,0) {地球};
+  % 卫星轨道
+  \draw[dashed,thick] (0,0) circle (3.5);
+  % 卫星
+  \filldraw[red] (30:3.5) circle (3pt);
+  \draw[->,thick,blue] (30:3.5) -- ++(120:1.2) node[above] {$v$};
+  \draw[->,thick,red] (30:3.5) -- ++(210:1.2) node[below] {$F$};
+  % 半径
+  \draw[thick] (0,0) -- (30:3.5);
+  \node at (15:2.2) {$r$};
+\end{tikzpicture}

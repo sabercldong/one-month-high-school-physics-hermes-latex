@@ -1,0 +1,19 @@
+% TikZ 图：汽车水平转弯
+% Day 11：圆周运动
+\begin{tikzpicture}[scale=0.8,>=Latex]
+  % 路面（俯视）
+  \draw[thick] (-2,0) .. controls (0,1) and (0,1) .. (2,0);
+  \draw[thick] (-2.5,-0.3) .. controls (0,0.7) and (0,0.7) .. (2.5,-0.3);
+  % 汽车（俯视方块）
+  \draw[thick,rotate around={30:(0,0)}] (-0.6,-0.4) rectangle (0.6,0.4);
+  \node[rotate=30] at (0,0) {车};
+  % 速度方向
+  \draw[->,thick,blue,rotate=30] (0.6,0) -- (1.6,0) node[above] {$v$};
+  % 摩擦力方向（指向弯道内侧）
+  \draw[->,thick,red,rotate=30] (0,-0.4) -- (0,-1.2) node[right] {$f_s$};
+  % 圆心方向
+  \draw[dashed] (0,0) -- (3.5,0);
+  \node at (2.5,-0.5) {向圆心};
+  % 公式
+  \node[below] at (0,-1.6) {$f_s = m\frac{v^2}{r} \leq \mu mg$};
+\end{tikzpicture}

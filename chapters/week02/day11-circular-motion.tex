@@ -1,54 +1,278 @@
 \daytitle{11}{圆周运动}
 
 \begin{learningbox}{本讲义大致内容}
-讲线速度、角速度、周期、向心加速度、向心力，处理水平圆周和竖直圆周入门问题。
+圆周运动是曲线运动最重要的形式。今天学习描述圆周运动的物理量——线速度、角速度、周期，以及向心加速度和向心力。从水平圆周到竖直圆周，建立完整的圆周运动分析框架。
 \end{learningbox}
 
 \section*{一、学习目标}
+
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 掌握线速度 $v = \dfrac{2\pi r}{T}$ 和角速度 $\omega = \dfrac{2\pi}{T}$ 及关系 $v = \omega r$。
+  \item 理解向心加速度 $a_n = \dfrac{v^2}{r} = \omega^2 r$，方向指向圆心。
+  \item 掌握向心力 $F_n = m\dfrac{v^2}{r}$，会分析水平圆周运动的受力。
+  \item 会分析竖直圆周运动最高点和最低点的受力。
+  \item 理解匀速圆周运动是变加速曲线运动（加速度方向不断变化）。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中只简单学过圆周运动的"快慢"（用转速描述），没有量化公式。
+
+高中引入三个核心物理量：
+\begin{itemize}
+  \item 线速度 $v$：沿圆周切线方向，$\mathrm{m/s}$。
+  \item 角速度 $\omega$：单位时间转过的角度，$\mathrm{rad/s}$。
+  \item 周期 $T$：转一圈的时间，$\mathrm{s}$。
+\end{itemize}
+
+更重要的是，高中揭示了一个关键结论：\textbf{匀速圆周运动需要指向圆心的合力}——这个力叫向心力。没有向心力，物体将沿切线飞出。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{描述圆周运动的物理量}
+
+\textbf{线速度：}
+\[
+v = \frac{\Delta s}{\Delta t} = \frac{2\pi r}{T}
+\]
+方向沿圆周切线方向，时刻变化。
+
+\textbf{角速度：}
+\[
+\omega = \frac{\Delta\theta}{\Delta t} = \frac{2\pi}{T}
+\]
+单位 $\mathrm{rad/s}$，方向用右手螺旋定则判断（高中阶段只关注大小）。
+
+\textbf{周期与频率：}
+\[
+T = \frac{1}{f},\qquad \omega = 2\pi f
+\]
+
+\textbf{核心关系：}
+\[
+\boxed{v = \omega r}
+\]
+
+\begin{center}
+\input{figures/tikz/circular-motion}
+
+\figcaption{匀速圆周运动：$v$ 沿切线方向，$a_n$ 指向圆心}\label{fig:circular-motion}
+\end{center}
+
+\end{conceptbox}
+
+\begin{conceptbox}{向心加速度}
+
+\[
+\boxed{a_n = \frac{v^2}{r} = \omega^2 r}
+\]
+
+\begin{itemize}
+  \item 方向：始终指向圆心，与速度方向垂直。
+  \item 物理意义：描述速度方向变化的快慢（不改变速度大小）。
+  \item 即使是"匀速"圆周运动，也有加速度——因为速度方向不断变化，所以是\textbf{变加速曲线运动}。
+\end{itemize}
+
+\end{conceptbox}
+
+\begin{conceptbox}{向心力}
+
+\[
+\boxed{F_n = m a_n = m\frac{v^2}{r} = m\omega^2 r}
+\]
+
+\begin{itemize}
+  \item 向心力不是一种新的性质力，而是\textbf{指向圆心的合力}。
+  \item 它由重力、弹力、摩擦力等真实力的合力（或其分力）提供。
+  \item 匀速圆周运动中，合力完全提供向心力（大小恒定、方向始终指向圆心）。
+\end{itemize}
+
+\textbf{常见来源举例：}
+\begin{itemize}
+  \item 绳拉小球在水平面转圈：绳的拉力提供向心力。
+  \item 汽车转弯：地面静摩擦力提供向心力。
+  \item 天体绕行：万有引力提供向心力。
+\end{itemize}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+公式 & 物理意义 & 适用条件 \\
+\midrule
+$v = \omega r$ & 线速度与角速度关系 & 任何圆周运动 \\
+$a_n = \dfrac{v^2}{r}$ & 向心加速度 & 匀速圆周运动（瞬时也适用于非匀速） \\
+$F_n = m\dfrac{v^2}{r}$ & 向心力 & 合力指向圆心时 \\
+$T = \dfrac{1}{f}$ & 周期与频率 & 周期性运动 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：水平圆周运动（圆锥摆）}
+
+轻绳一端固定，另一端系小球做水平圆周运动（圆锥摆）：
+\[
+T\sin\theta = m\omega^2 r = m\omega^2 l\sin\theta
+\]
+\[
+T\cos\theta = mg
+\]
+解得 $\omega = \sqrt{\dfrac{g}{l\cos\theta}}$。
+
+\subsection*{模型 2：竖直圆周运动（过山车）}
+
+\begin{center}
+\input{figures/tikz/vertical-circular}
+
+\figcaption{竖直圆周运动最高点和最低点的受力分析}\label{fig:vertical-circular}
+\end{center}
+
+\textbf{最高点：} $N + mg = m\dfrac{v^2}{r}$，临界条件 $v_{\min} = \sqrt{gr}$（$N=0$ 时）。
+
+\textbf{最低点：} $N - mg = m\dfrac{v^2}{r}$。
+
+\subsection*{模型 3：汽车转弯}
+
+水平路面：静摩擦力提供向心力，$f_s = m\dfrac{v^2}{r} \leq \mu_s mg$，最大安全速度 $v_{\max} = \sqrt{\mu_s g r}$。
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{水平圆周——传动装置}
 
-\textbf{解题过程：} TODO。
+\textbf{题意分析：} 两个轮子用皮带传动，主动轮半径 $r_A = 20\ \mathrm{cm}$，从动轮半径 $r_B = 10\ \mathrm{cm}$。主动轮以 $\omega_A = 10\ \mathrm{rad/s}$ 转动。求：
+\begin{enumerate}
+  \item 从动轮的角速度 $\omega_B$。
+  \item 两轮边缘点的线速度大小。
+\end{enumerate}
 
-\textbf{方法总结：} TODO。
+\textbf{物理模型：} 皮带传动，两轮边缘线速度大小相等（皮带不打滑）。
+
+\textbf{解题过程：}
+
+\begin{enumerate}
+  \item 线速度相等：$v_A = v_B$，$\omega_A r_A = \omega_B r_B$
+  \[
+  \omega_B = \frac{r_A}{r_B} \omega_A = \frac{20}{10} \times 10 = 20\ \mathrm{rad/s}
+  \]
+  
+  \item $v = \omega_A r_A = 10 \times 0.2 = 2\ \mathrm{m/s}$
+\end{enumerate}
+
+\textbf{方法总结：} 皮带（或齿轮）传动中，边缘线速度相等；同轴转动中，角速度相等。
+
+\end{examplebox}
+
+\begin{examplebox}{汽车转弯}
+
+\textbf{题意分析：} 汽车在水平弯道上转弯，弯道半径 $r = 50\ \mathrm{m}$，轮胎与地面间的动摩擦因数 $\mu = 0.4$，$g = 10\ \mathrm{m/s^2}$。求汽车安全转弯的最大速度。
+
+\textbf{物理模型：} 静摩擦力提供向心力。
+
+\textbf{解题过程：}
+
+静摩擦力最大值 $f_{\max} = \mu mg$，提供向心力：
+\[
+\mu mg = m\frac{v^2}{r}
+\]
+\[
+v_{\max} = \sqrt{\mu g r} = \sqrt{0.4 \times 10 \times 50} = \sqrt{200} \approx 14.1\ \mathrm{m/s}
+\]
+
+\textbf{方法总结：} 水平路面转弯的安全速度只与 $\mu$、$r$ 有关，与汽车质量无关。
+
+\end{examplebox}
+
+\begin{examplebox}{竖直圆周——过山车}
+
+\textbf{题意分析：} 过山车在竖直圆形轨道上运行，轨道半径 $r = 8\ \mathrm{m}$，$g = 10\ \mathrm{m/s^2}$。求：
+\begin{enumerate}
+  \item 过山车在最高点不掉下来的最小速度。
+  \item 若实际速度为 $v = 12\ \mathrm{m/s}$，求最高点时轨道对车的压力（$m = 500\ \mathrm{kg}$）。
+\end{enumerate}
+
+\textbf{物理模型：} 竖直圆周，最高点重力和支持力的合力提供向心力。
+
+\textbf{解题过程：}
+
+\begin{enumerate}
+  \item 临界条件：支持力 $N = 0$，重力提供向心力：
+  \[
+  mg = m\frac{v^2}{r},\qquad v_{\min} = \sqrt{gr} = \sqrt{10 \times 8} = \sqrt{80} \approx 8.94\ \mathrm{m/s}
+  \]
+  
+  \item $v = 12\ \mathrm{m/s} > v_{\min}$，安全：
+  \[
+  N + mg = m\frac{v^2}{r}
+  \]
+  \[
+  N = m(\frac{v^2}{r} - g) = 500 \times (\frac{144}{8} - 10) = 500 \times (18 - 10) = 4000\ \mathrm{N}
+  \]
+\end{enumerate}
+
+\textbf{方法总结：} 竖直圆周最高点的临界条件是 $N=0$、重力恰好提供向心力。速度小于临界值则会脱离轨道。
+
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 一个 $m = 0.5\ \mathrm{kg}$ 的小球用 $l = 1\ \mathrm{m}$ 的细绳系着做圆锥摆，绳与竖直方向夹角 $\theta = 30^\circ$，$g = 10\ \mathrm{m/s^2}$。求小球运动的角速度和线速度。
+  
+  \item 汽车以 $v = 15\ \mathrm{m/s}$ 通过半径 $r = 30\ \mathrm{m}$ 的水平弯道，路面与轮胎间 $\mu = 0.6$。问汽车是否侧滑？
+  
+  \item 质量为 $m$ 的小球在半径为 $r$ 的竖直光滑圆轨道内侧做圆周运动，在最高点速度为 $v$。求：
+  \begin{enumerate}
+    \item 轨道对小球的压力。
+    \item 若 $v = \sqrt{2gr}$，求最高点压力。
+  \end{enumerate}
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{误以为向心力是"真实力"：} 向心力是效果力，不是性质力。受力分析时不能画"向心力"，只能画提供向心力的真实力（重力、弹力、摩擦力等）。
+  
+  \item \textbf{认为匀速圆周运动是匀速运动：} "匀速"只指速率不变，速度方向不断变化，所以有加速度。
+  
+  \item \textbf{竖直圆周中漏了重力：} 在最高点和最低点做受力分析时，重力始终存在。不要把 $N$ 当成唯一提供向心力的力。
+  
+  \item \textbf{传动问题中搞混传动方式：} 皮带传动 $\to$ 线速度相等；同轴转动 $\to$ 角速度相等。
+  
+  \item \textbf{汽车转弯误用 $\mu mg$ 是滑动摩擦力：} 汽车正常转弯时是静摩擦力提供向心力，不是滑动摩擦力。$\mu mg$ 是最大静摩擦力的近似。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{非匀速圆周运动}
+
+如果速率也在变化（如竖直圆周运动中重力沿切线方向的分力），向心加速度公式 $a_n = \dfrac{v^2}{r}$ 仍然成立，但此时还有切向加速度 $a_t$ 改变速度大小。
+
+总加速度：
+\[
+a = \sqrt{a_n^2 + a_t^2}
+\]
+
+\textbf{例题：} 小球在竖直圆轨道最低点速度为 $v$，求该点的向心加速度和总加速度方向。
+
+\textbf{解：} 在最低点，切向加速度 $a_t = 0$（速度最小？不，在最低点速度最大，重力在切线方向无分量，所以 $a_t = 0$）。总加速度全部为向心加速度 $a_n = v^2/r$，方向竖直向上（指向圆心）。
+
+\textbf{竞赛小贴士：} 变速圆周运动中，合力不指向圆心——它分解为指向圆心的法向分量（提供向心加速度）和沿切线方向的切向分量（提供切向加速度）。
 \end{competitionbox}
 
 \section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
 
+\begin{enumerate}
+  \item 线速度 $v = \omega r$，向心加速度 $a_n = \dfrac{v^2}{r} = \omega^2 r$。
+  \item 向心力 $F_n = m\dfrac{v^2}{r}$，由真实力的合力提供，不是独立的性质力。
+  \item 水平转弯：$f_s$ 提供向心力，$v_{\max} = \sqrt{\mu g r}$。
+  \item 竖直圆周最高点临界：$v_{\min} = \sqrt{gr}$（$N=0$）。
+  \item 皮带传动线速度相等，同轴转动角速度相等。
+\end{enumerate}

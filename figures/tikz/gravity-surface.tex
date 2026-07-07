@@ -1,0 +1,18 @@
+% TikZ 图：地球表面重力与万有引力
+% Day 12：万有引力与天体运动
+\begin{tikzpicture}[scale=0.7,>=Latex]
+  % 地球
+  \shadedraw[ball color=blue!20,draw=blue] (0,0) circle (2);
+  \node at (0,0) {地球};
+  % 表面物体
+  \filldraw[red] (45:2) circle (3pt);
+  \node[above right] at (45:2) {$m$};
+  % 万有引力（指向地心）
+  \draw[->,thick,red] (45:2) -- ++(225:1.5) node[midway,above right] {$F_{\text{引}}$};
+  % 重力（竖直向下——近似指向地心）
+  \draw[->,thick,blue] (45:2) -- ++(225:1.0) node[below left] {$G = mg$};
+  % 自转轴
+  \draw[dashed] (0,-2.8) -- (0,2.8);
+  \node[above] at (0,2.8) {$N$（北极）};
+  \node[below] at (0,-2.8) {$S$（南极）};
+\end{tikzpicture}

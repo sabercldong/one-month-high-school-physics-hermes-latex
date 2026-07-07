@@ -1,0 +1,22 @@
+% TikZ 图：竖直圆周运动（过山车模型）
+% Day 11：圆周运动
+\begin{tikzpicture}[scale=0.7,>=Latex]
+  % 圆形轨道
+  \draw[thick] (0,0) circle (2.5);
+  % 轨道底座
+  \draw[thick] (-3,-3) -- (3,-3);
+  % 最高点
+  \filldraw[blue] (0,2.5) circle (3pt);
+  \draw[->,thick,blue] (0,2.5) -- (0.8,2.5) node[right] {$v$};
+  \draw[->,thick,red] (0,2.5) -- (0,1.5) node[below] {$mg$};
+  \draw[->,thick,red] (0,2.5) -- (0,3.3) node[above] {$N$};
+  \node[above] at (0,2.5) {最高点};
+  % 最低点
+  \filldraw[blue] (0,-2.5) circle (3pt);
+  \draw[->,thick,blue] (0,-2.5) -- (0.8,-2.5) node[right] {$v$};
+  \draw[->,thick,red] (0,-2.5) -- (0,-3.3) node[below] {$mg$};
+  \draw[->,thick,red] (0,-2.5) -- (0,-1.7) node[above] {$N$};
+  \node[below] at (0,-2.7) {最低点};
+  \node at (1.2,0) {最高点：$N+mg=m\frac{v^2}{r}$};
+  \node at (1.2,-0.5) {最低点：$N-mg=m\frac{v^2}{r}$};
+\end{tikzpicture}

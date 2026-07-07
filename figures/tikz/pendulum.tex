@@ -1,0 +1,22 @@
+% TikZ 图：单摆
+% Day 13：机械振动
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  % 天花板
+  \draw[thick] (-1.5,0) -- (1.5,0);
+  \filldraw[black] (0,0) circle (2pt);
+  % 摆线（最大振幅位置）
+  \draw[thick] (0,0) -- (-1.2,-2.5);
+  \filldraw[red] (-1.2,-2.5) circle (3pt);
+  \node[left] at (-1.2,-2.5) {$m$};
+  % 平衡位置（虚线）
+  \draw[dashed] (0,0) -- (0,-2.5);
+  \filldraw[black] (0,-2.5) circle (2pt);
+  \node[right] at (0,-2.5) {平衡};
+  % 摆角
+  \draw (0,-0.4) arc (-90:-120:0.4);
+  \node at (-0.3,-0.7) {$\theta$};
+  % 回复力示意
+  \draw[->,thick,red] (-1.2,-2.5) -- ++(0.8,0) node[right] {$F = -mg\sin\theta$};
+  % 摆长
+  \draw[<->,thick] (-1.5,0) -- (-1.5,-2.5) node[midway,left] {$l$};
+\end{tikzpicture}

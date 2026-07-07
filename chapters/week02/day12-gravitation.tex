@@ -1,54 +1,270 @@
 \daytitle{12}{万有引力与天体运动}
 
 \begin{learningbox}{本讲义大致内容}
-讲万有引力定律、重力与万有引力关系、卫星运动、同步卫星和第一宇宙速度。
+万有引力定律是牛顿最伟大的成就之一——它统一了"天上的力"和"地上的力"。
+今天我们学习万有引力定律、天体运动的基本规律、三个宇宙速度，并
+建立用万有引力解决天体问题的标准方法。
 \end{learningbox}
 
 \section*{一、学习目标}
+
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 理解万有引力定律 $F = G\dfrac{Mm}{r^2}$ 及 $G$ 的意义。
+  \item 掌握重力与万有引力的关系，会用 $GM = gR^2$（黄金代换）。
+  \item 掌握天体运动的基本方程 $G\dfrac{Mm}{r^2} = m\dfrac{v^2}{r}$。
+  \item 了解三个宇宙速度，会计算第一宇宙速度。
+  \item 了解开普勒三定律的初步内容。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中只简单提到过"万有引力"这个概念，知道苹果落地是因为地球吸引。
+
+高中把万有引力定量化，并揭示了一个深刻结论：\textbf{月球绕地球转和苹果落地，本质上是同一种力}——万有引力。牛顿的贡献在于：把天上的规律和地上的规律统一起来了。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{万有引力定律}
+
+\[
+\boxed{F = G\frac{Mm}{r^2}}
+\]
+
+\begin{itemize}
+  \item $G = 6.67 \times 10^{-11}\ \mathrm{N \cdot m^2 / kg^2}$：引力常量（卡文迪许扭秤实验测得）。
+  \item $M$、$m$：两个天体的质量。
+  \item $r$：两个天体中心的距离。
+  \item 方向：沿两物体中心的连线，相互吸引。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/gravity-law}
+
+\figcaption{万有引力：$F = F' = G\dfrac{Mm}{r^2}$，方向沿连线}\label{fig:gravity-law}
+\end{center}
+
+\textbf{注意：}
+\begin{enumerate}
+  \item 万有引力定律适用于质点间的相互作用。均匀球体可视为质量集中在球心的质点。
+  \item $G$ 非常小，说明引力在日常生活中可忽略——只有当天体级别的大质量时效果才显著。
+\end{enumerate}
+
+\end{conceptbox}
+
+\begin{conceptbox}{重力与万有引力的关系}
+
+\begin{center}
+\input{figures/tikz/gravity-surface}
+
+\figcaption{地面附近物体：万有引力 $\approx$ 重力（忽略自转）}\label{fig:gravity-surface}
+\end{center}
+
+\textbf{黄金代换：}
+\[
+\boxed{GM = gR^2}
+\]
+其中 $M$ 为地球质量，$R$ 为地球半径，$g$ 为地表重力加速度。
+
+\begin{itemize}
+  \item 在地球表面，$mg \approx G\dfrac{Mm}{R^2}$，所以 $g = \dfrac{GM}{R^2}$。
+  \item 在高度 $h$ 处：$g' = \dfrac{GM}{(R+h)^2} = g\left(\dfrac{R}{R+h}\right)^2$。
+  \item 天上 $g$ 变小——越高处的重力加速度越小。
+\end{itemize}
+
+\end{conceptbox}
+
+\begin{conceptbox}{天体运动的基本方程}
+
+卫星绕地球做匀速圆周运动，万有引力提供向心力：
+\[
+\boxed{G\frac{Mm}{r^2} = m\frac{v^2}{r} = m\omega^2 r = m\frac{4\pi^2}{T^2} r}
+\]
+
+由此可导出卫星运行参数：
+\[
+v = \sqrt{\frac{GM}{r}},\qquad
+\omega = \sqrt{\frac{GM}{r^3}},\qquad
+T = 2\pi\sqrt{\frac{r^3}{GM}}
+\]
+
+\textbf{规律：}
+\begin{itemize}
+  \item 轨道半径越大，速度越小、角速度越小、周期越大。
+  \item 近地卫星速度最大（第一宇宙速度），同步卫星周期 $T = 24\ \mathrm{h}$。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/satellite}
+
+\figcaption{卫星绕地球：万有引力 $F$ 提供向心力}\label{fig:satellite}
+\end{center}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+公式 & 物理意义 & 适用条件 \\
+\midrule
+$F = G\dfrac{Mm}{r^2}$ & 万有引力 & 质点或均匀球体 \\
+$GM = gR^2$ & 黄金代换 & 地表附近 \\
+$G\dfrac{Mm}{r^2} = m\dfrac{v^2}{r}$ & 天体运动基本方程 & 匀速圆周运动 \\
+$T = 2\pi\sqrt{\dfrac{r^3}{GM}}$ & 卫星周期 & 绕中心天体 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：近地卫星与第一宇宙速度}
+
+近地卫星：轨道半径 $\approx R$（地球半径），速度最大：
+\[
+G\frac{Mm}{R^2} = m\frac{v^2}{R},\qquad v = \sqrt{\frac{GM}{R}} = \sqrt{gR}
+\]
+第一宇宙速度 $v_1 = \sqrt{gR} = \sqrt{9.8 \times 6.4 \times 10^6} \approx 7.9\ \mathrm{km/s}$。
+
+\subsection*{模型 2：同步卫星}
+
+周期与地球自转周期相同（$T = 24\ \mathrm{h}$），轨道在赤道正上方。
+由 $T = 2\pi\sqrt{\dfrac{r^3}{GM}}$ 可算出轨道半径约 $4.2 \times 10^4\ \mathrm{km}$（距地面约 $3.6 \times 10^4\ \mathrm{km}$）。
+
+\subsection*{模型 3：双星系统}
+
+两颗星绕共同质心做圆周运动，距离 $L = r_1 + r_2$：
+\[
+G\frac{Mm}{L^2} = M\omega^2 r_1 = m\omega^2 r_2
+\]
+两星的角速度相同，轨道半径与质量成反比：$\dfrac{r_1}{r_2} = \dfrac{m}{M}$。
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{天体质量的计算}
 
-\textbf{解题过程：} TODO。
+\textbf{题意分析：} 已知地球半径 $R = 6.4 \times 10^6\ \mathrm{m}$，地表重力加速度 $g = 9.8\ \mathrm{m/s^2}$，引力常量 $G = 6.67 \times 10^{-11}$。求地球质量 $M$。
 
-\textbf{方法总结：} TODO。
+\textbf{物理模型：} 黄金代换。
+
+\textbf{解题过程：}
+
+由 $GM = gR^2$：
+\[
+M = \frac{gR^2}{G} = \frac{9.8 \times (6.4 \times 10^6)^2}{6.67 \times 10^{-11}}
+\]
+\[
+= \frac{9.8 \times 4.1 \times 10^{13}}{6.67 \times 10^{-11}} \approx 6.0 \times 10^{24}\ \mathrm{kg}
+\]
+
+\textbf{方法总结：} 只要知道某天体的 $g$ 和 $R$，就能用黄金代换求出质量。这是高中最常见的题型。
+
+\end{examplebox}
+
+\begin{examplebox}{卫星运行参数}
+
+\textbf{题意分析：} 一颗卫星在距地面 $h = 400\ \mathrm{km}$ 的轨道上运行，$R = 6.4 \times 10^6\ \mathrm{m}$，$M = 6.0 \times 10^{24}\ \mathrm{kg}$，$G = 6.67 \times 10^{-11}$。求卫星的线速度、角速度和周期。
+
+\textbf{物理模型：} 万有引力提供向心力。
+
+\textbf{解题过程：}
+
+轨道半径 $r = R + h = 6.4 \times 10^6 + 4.0 \times 10^5 = 6.8 \times 10^6\ \mathrm{m}$。
+
+线速度：
+\[
+v = \sqrt{\frac{GM}{r}} = \sqrt{\frac{6.67 \times 10^{-11} \times 6.0 \times 10^{24}}{6.8 \times 10^6}} \approx \sqrt{5.88 \times 10^7} \approx 7.67 \times 10^3\ \mathrm{m/s} = 7.67\ \mathrm{km/s}
+\]
+
+角速度：
+\[
+\omega = \frac{v}{r} = \frac{7.67 \times 10^3}{6.8 \times 10^6} \approx 1.13 \times 10^{-3}\ \mathrm{rad/s}
+\]
+
+周期：
+\[
+T = \frac{2\pi}{\omega} = \frac{2 \times 3.14}{1.13 \times 10^{-3}} \approx 5.56 \times 10^3\ \mathrm{s} \approx 1.54\ \mathrm{h}
+\]
+
+\textbf{方法总结：} 卫星问题的标准思路：$F_{\text{引}} = F_{\text{向}}$ $\to$ 列方程 $\to$ 解出所求量。注意轨道半径 $r = R + h$，单位要统一。
+
+\end{examplebox}
+
+\begin{examplebox}{第一宇宙速度}
+
+\textbf{题意分析：} 已知 $g = 9.8\ \mathrm{m/s^2}$，$R = 6.4 \times 10^6\ \mathrm{m}$。求第一宇宙速度。
+
+\textbf{物理模型：} 近地卫星，万有引力 $\approx$ 重力。
+
+\textbf{解题过程：}
+
+两种方法：
+\[
+v_1 = \sqrt{gR} = \sqrt{9.8 \times 6.4 \times 10^6} = \sqrt{6.27 \times 10^7} \approx 7.9 \times 10^3\ \mathrm{m/s}
+\]
+或
+\[
+v_1 = \sqrt{\frac{GM}{R}} \quad\text{结果相同}
+\]
+
+\textbf{方法总结：} 第一宇宙速度是最大的环绕速度，也是最小的发射速度。
+
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 已知月球半径 $R_{\text{月}} = 1.74 \times 10^6\ \mathrm{m}$，月球表面重力加速度 $g_{\text{月}} = 1.62\ \mathrm{m/s^2}$。求月球的质量。
+  
+  \item 地球同步卫星的周期 $T = 24\ \mathrm{h}$，地球质量 $M = 6.0 \times 10^{24}\ \mathrm{kg}$，$G = 6.67 \times 10^{-11}$。求同步卫星的轨道半径。
+  
+  \item 两颗卫星 $A$、$B$ 绕地球做匀速圆周运动，轨道半径之比 $r_A : r_B = 1 : 4$。求线速度之比和周期之比。
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{混淆 $r$ 的含义：} 在地表问题中 $GM = gR^2$ 的 $R$ 是地球半径；在卫星问题中 $G\frac{Mm}{r^2} = m\frac{v^2}{r}$ 的 $r$ 是轨道半径（地心到卫星的距离）。
+  
+  \item \textbf{误以为高轨道卫星速度更大：} 轨道半径越大速度越小（$v \propto 1/\sqrt{r}$），但发射高轨道卫星需要的总能量更大。
+  
+  \item \textbf{忘记黄金代换的推导：} $GM = gR^2$ 来自于地表物体的 $mg \approx G\frac{Mm}{R^2}$，不是凭空出现的。
+  
+  \item \textbf{单位错误：} 天体问题中数字很大，$R$ 通常是 $10^6\ \mathrm{m}$ 量级，$M$ 是 $10^{24}\ \mathrm{kg}$ 量级。代入计算时务必用科学计数法。
+  
+  \item \textbf{混淆三个宇宙速度：} 第一宇宙速度（$7.9\ \mathrm{km/s}$）是环绕速度，第二宇宙速度（$11.2\ \mathrm{km/s}$）是脱离地球引力，第三宇宙速度（$16.7\ \mathrm{km/s}$）是脱离太阳系。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{开普勒三定律}
+
+\begin{enumerate}
+  \item \textbf{椭圆轨道定律：} 行星绕太阳运动的轨道是椭圆，太阳在椭圆的一个焦点上。
+  \item \textbf{面积定律：} 行星与太阳的连线在相等时间内扫过的面积相等（近地点速度快，远地点速度慢）。
+  \item \textbf{周期定律：} $\dfrac{T^2}{a^3} = \dfrac{4\pi^2}{GM}$（$a$ 为半长轴），即 $T^2 \propto a^3$。
+\end{enumerate}
+
+\textbf{例题：} 地球公转周期 $T_{\text{地}} = 1\ \text{年}$，轨道半径 $R_{\text{地}} = 1\ \text{AU}$。某小行星轨道半长轴 $a = 2.5\ \text{AU}$，求其公转周期。
+
+\textbf{解：} 由 $\dfrac{T^2}{a^3} = \text{常量}$：
+\[
+\frac{T_{\text{行}}^2}{T_{\text{地}}^2} = \frac{a^3}{R_{\text{地}}^3},\qquad
+T_{\text{行}} = T_{\text{地}} \cdot \sqrt{\frac{a^3}{R_{\text{地}}^3}} = 1 \times \sqrt{2.5^3} \approx 3.95\ \text{年}
+\]
+
+\textbf{竞赛小贴士：} 开普勒第三定律对绕同一中心天体的所有卫星/行星都成立，$T^2 \propto r^3$（或 $a^3$）。在做选择题时可以直接用比例关系秒杀。
 \end{competitionbox}
 
 \section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
 
+\begin{enumerate}
+  \item 万有引力 $F = G\dfrac{Mm}{r^2}$，$G = 6.67 \times 10^{-11}$。
+  \item 黄金代换 $GM = gR^2$——联系天上和地上的桥梁。
+  \item 卫星方程：$G\dfrac{Mm}{r^2} = m\dfrac{v^2}{r}$ $\to$ $v = \sqrt{\dfrac{GM}{r}}$，$T = 2\pi\sqrt{\dfrac{r^3}{GM}}$。
+  \item 轨道半径越大，$v$、$\omega$ 越小，$T$ 越大。
+  \item 第一宇宙速度 $v_1 = \sqrt{gR} \approx 7.9\ \mathrm{km/s}$。
+\end{enumerate}

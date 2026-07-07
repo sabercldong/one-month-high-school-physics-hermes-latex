@@ -1,0 +1,22 @@
+% TikZ 图：匀速圆周运动
+% Day 11：圆周运动
+\begin{tikzpicture}[scale=0.8,>=Latex]
+  % 轨道
+  \draw[thick] (0,0) circle (2.5);
+  % 圆心
+  \filldraw[black] (0,0) circle (2pt);
+  \node[below left] at (0,0) {$O$};
+  % 半径
+  \draw[thick] (0,0) -- (30:2.5);
+  \node at (15:1.5) {$r$};
+  % 质点
+  \filldraw[red] (30:2.5) circle (3pt);
+  \node[above right] at (30:2.5) {$m$};
+  % 速度方向（切线方向）
+  \draw[->,thick,blue] (30:2.5) -- ++(120:1.2) node[above] {$\vect{v}$};
+  % 向心加速度方向（指向圆心）
+  \draw[->,thick,red] (30:2.5) -- ++(210:1.0) node[below] {$\vect{a}_n$};
+  % 角度
+  \draw (0:0.8) arc (0:30:0.8);
+  \node at (15:1.0) {$\theta$};
+\end{tikzpicture}

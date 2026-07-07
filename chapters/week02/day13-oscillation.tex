@@ -1,54 +1,274 @@
 \daytitle{13}{机械振动}
 
 \begin{learningbox}{本讲义大致内容}
-讲简谐运动、回复力、振幅、周期、频率、弹簧振子和单摆入门。
+机械振动是自然界最普遍的周期性运动形式。今天学习简谐运动的基本特征——弹簧振子和单摆，掌握回复力、振幅、周期、频率等概念，以及简谐运动的 $x$-$t$ 图像。
 \end{learningbox}
 
 \section*{一、学习目标}
+
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 理解简谐运动的特征：回复力 $F = -kx$。
+  \item 掌握弹簧振子的周期公式 $T = 2\pi\sqrt{\dfrac{m}{k}}$。
+  \item 掌握单摆的周期公式 $T = 2\pi\sqrt{\dfrac{l}{g}}$。
+  \item 能读懂简谐运动的 $x$-$t$ 图像，知道 $A$、$T$、$\omega$ 的物理意义。
+  \item 理解简谐运动中的能量转化关系。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中物理通过"弹簧振子"和"单摆"定性接触过振动——知道摆来回摆动一次是一周期。
+
+高中把振动定量化：定义了振幅 $A$、周期 $T$、频率 $f$，并给出了弹簧振子和单摆的周期公式——这是中学生第一次可以精确计算振动系统的周期。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{简谐运动}
+
+\textbf{定义：} 物体在跟位移大小成正比、方向总是指向平衡位置的力作用下的运动。
+
+\textbf{回复力：}
+\[
+\boxed{F = -kx}
+\]
+
+\begin{itemize}
+  \item $k$：比例系数（弹簧振子中为劲度系数）。
+  \item $x$：偏离平衡位置的位移。
+  \item 负号表示回复力方向始终与位移方向相反（指向平衡位置）。
+\end{itemize}
+
+\textbf{描述振动的物理量：}
+\begin{itemize}
+  \item \textbf{振幅 $A$：} 最大位移的绝对值，反映振动强弱。
+  \item \textbf{周期 $T$：} 完成一次全振动所需的时间。
+  \item \textbf{频率 $f$：} 单位时间内完成全振动的次数，$f = \dfrac{1}{T}$。
+\end{itemize}
+
+\end{conceptbox}
+
+\begin{conceptbox}{弹簧振子}
+
+水平弹簧振子是最基本的简谐运动模型。
+
+\begin{center}
+\input{figures/tikz/spring-oscillator}
+
+\figcaption{弹簧振子：$F = -kx$，$x$ 是偏离平衡位置的位移}\label{fig:spring-oscillator}
+\end{center}
+
+\textbf{周期公式：}
+\[
+\boxed{T = 2\pi\sqrt{\frac{m}{k}}}
+\]
+
+\begin{itemize}
+  \item $m$：振子质量。
+  \item $k$：弹簧劲度系数。
+  \item 周期与振幅无关（简谐运动的等时性）。
+\end{itemize}
+
+\end{conceptbox}
+
+\begin{conceptbox}{单摆}
+
+在摆角很小（$\theta < 5^\circ$）时，单摆做简谐运动。
+
+\begin{center}
+\input{figures/tikz/pendulum}
+
+\figcaption{单摆：回复力 $F = -mg\sin\theta \approx -mg\theta = -\dfrac{mg}{l}x$}\label{fig:pendulum}
+\end{center}
+
+\textbf{周期公式：}
+\[
+\boxed{T = 2\pi\sqrt{\frac{l}{g}}}
+\]
+
+\begin{itemize}
+  \item $l$：摆长。
+  \item $g$：当地重力加速度。
+  \item 周期与摆球质量、振幅无关——这是惠更斯的伟大发现。
+  \item 利用单摆可以测量当地的重力加速度。
+\end{itemize}
+
+\end{conceptbox}
+
+\begin{conceptbox}{简谐运动的 $x$-$t$ 图像}
+
+\begin{center}
+\input{figures/tikz/sh-motion-graph}
+
+\figcaption{简谐运动的位移-时间图像为正弦（或余弦）曲线}\label{fig:sh-motion-graph}
+\end{center}
+
+表达式：
+\[
+x = A\cos(\omega t + \varphi_0)
+\]
+其中 $\omega = \dfrac{2\pi}{T}$ 为角频率，$\varphi_0$ 为初相位。
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+公式 & 物理意义 & 适用条件 \\
+\midrule
+$F = -kx$ & 回复力 & 简谐运动 \\
+$T = 2\pi\sqrt{\dfrac{m}{k}}$ & 弹簧振子周期 & 水平/竖直弹簧振子 \\
+$T = 2\pi\sqrt{\dfrac{l}{g}}$ & 单摆周期 & 摆角 $\theta < 5^\circ$ \\
+$x = A\cos(\omega t + \varphi_0)$ & 振动方程 & 简谐运动 \\
+$f = \dfrac{1}{T}$ & 频率与周期 & 任何周期性运动 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：水平弹簧振子}
+
+平衡位置处速度最大、加速度为零；最大位移处速度为零、加速度最大。
+机械能守恒：$\dfrac12 kA^2 = \dfrac12 mv^2 + \dfrac12 kx^2$。
+
+\subsection*{模型 2：单摆测 $g$}
+
+由 $T = 2\pi\sqrt{\dfrac{l}{g}}$ 得 $g = \dfrac{4\pi^2 l}{T^2}$。实验中改变摆长测周期，作图求斜率可得 $g$。
+
+\subsection*{模型 3：简谐运动的能量}
+
+总机械能 $E = \dfrac12 kA^2$。动能和势能不断相互转化，总和守恒。
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{弹簧振子的周期}
 
-\textbf{解题过程：} TODO。
+\textbf{题意分析：} 一个水平弹簧振子，$m = 0.5\ \mathrm{kg}$，$k = 50\ \mathrm{N/m}$。求：
+\begin{enumerate}
+  \item 振子的周期和频率。
+  \item 若振幅 $A = 0.1\ \mathrm{m}$，求系统的总机械能。
+\end{enumerate}
 
-\textbf{方法总结：} TODO。
+\textbf{物理模型：} 弹簧振子简谐运动。
+
+\textbf{解题过程：}
+
+\begin{enumerate}
+  \item 周期：
+  \[
+  T = 2\pi\sqrt{\frac{m}{k}} = 2\pi\sqrt{\frac{0.5}{50}} = 2\pi\sqrt{0.01} = 2\pi \times 0.1 \approx 0.628\ \mathrm{s}
+  \]
+  频率：
+  \[
+  f = \frac{1}{T} \approx 1.59\ \mathrm{Hz}
+  \]
+  
+  \item 总机械能等于最大弹性势能：
+  \[
+  E = \frac12 k A^2 = \frac12 \times 50 \times 0.1^2 = 0.25\ \mathrm{J}
+  \]
+\end{enumerate}
+
+\textbf{方法总结：} 弹簧振子的周期只与 $m$ 和 $k$ 有关，与振幅无关。总机械能等于 $\frac12 kA^2$ 或最大动能 $\frac12 mv_{\max}^2$。
+
+\end{examplebox}
+
+\begin{examplebox}{单摆周期的计算}
+
+\textbf{题意分析：} 一个单摆摆长 $l = 1\ \mathrm{m}$，$g = 10\ \mathrm{m/s^2}$，$\pi^2 \approx 10$。求：
+\begin{enumerate}
+  \item 单摆的周期。
+  \item 若将摆长改为 $0.25\ \mathrm{m}$，周期变为原来的多少倍？
+\end{enumerate}
+
+\textbf{物理模型：} 单摆简谐运动。
+
+\textbf{解题过程：}
+
+\begin{enumerate}
+  \item $T = 2\pi\sqrt{\frac{l}{g}} = 2\pi\sqrt{\frac{1}{10}} = 2\pi \times \sqrt{0.1} \approx 2\ \mathrm{s}$（用 $\pi^2 \approx 10$）。
+  
+  \item $T' = 2\pi\sqrt{\frac{l'}{g}} = 2\pi\sqrt{\frac{0.25}{10}} = 2\pi \times \sqrt{0.025} = 2\pi \times \frac12\sqrt{0.1} = \frac12 T = 1\ \mathrm{s}$
+\end{enumerate}
+
+\textbf{方法总结：} 单摆周期与 $\sqrt{l}$ 成正比。摆长减为 $\frac14$，周期减半。
+
+\end{examplebox}
+
+\begin{examplebox}{单摆测重力加速度}
+
+\textbf{题意分析：} 某同学用单摆测重力加速度，测得摆长 $l = 0.992\ \mathrm{m}$，50 次全振动的时间 $t = 99.5\ \mathrm{s}$。求重力加速度 $g$。
+
+\textbf{物理模型：} 单摆实验数据处理。
+
+\textbf{解题过程：}
+
+周期 $T = \dfrac{t}{50} = \dfrac{99.5}{50} = 1.99\ \mathrm{s}$。
+
+由 $T = 2\pi\sqrt{\dfrac{l}{g}}$：
+\[
+g = \frac{4\pi^2 l}{T^2} = \frac{4 \times 3.14^2 \times 0.992}{1.99^2} \approx \frac{4 \times 9.86 \times 0.992}{3.96} \approx 9.88\ \mathrm{m/s^2}
+\]
+
+\textbf{方法总结：} 实验测 $g$ 的核心是准确测量周期（测多个周期取平均减小误差）和摆长。
+
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 弹簧振子 $m = 0.2\ \mathrm{kg}$，$k = 80\ \mathrm{N/m}$，振幅 $A = 0.05\ \mathrm{m}$。求周期、频率和最大速度。
+  
+  \item 单摆摆长 $l = 2\ \mathrm{m}$，$g = 9.8\ \mathrm{m/s^2}$。求周期。若想让周期变为 $3\ \mathrm{s}$，应如何调整摆长？
+  
+  \item 某同学用单摆测重力加速度，摆长 $l = 1.0\ \mathrm{m}$，测得 40 次全振动的时间 $t = 80.0\ \mathrm{s}$。求 $g$。
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{混淆振幅和位移：} 振幅 $A$ 是最大位移的绝对值，是常数；位移 $x$ 是变量，随时间在 $-A$ 到 $A$ 之间变化。
+  
+  \item \textbf{单摆公式 $T = 2\pi\sqrt{\dfrac{l}{g}}$ 的适用条件：} 必须摆角很小（$\theta < 5^\circ$），且是单摆（摆球直径远小于摆长）。
+  
+  \item \textbf{弹簧振子中误认为质量不计：} 弹簧质量不计，但振子质量 $m$ 不可忽略——它就是公式中的 $m$。
+  
+  \item \textbf{回复力不是新力：} 回复力是效果力，由重力、弹力等的合力（或其分力）提供，不是新的一种性质力。
+  
+  \item \textbf{单摆周期与质量无关：} 很多人直觉认为摆球越重摆动越快，实际上周期与质量完全无关。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{简谐运动的证明}
+
+判断一个运动是否是简谐运动的标准：看回复力是否满足 $F = -kx$。
+
+\textbf{例题：} 竖直方向的弹簧振子。弹簧原长 $l_0$，挂上质量为 $m$ 的物体后伸长 $\Delta l$ 静止（平衡位置）。证明物体在竖直方向做简谐运动。
+
+\textbf{证明：}
+\begin{enumerate}
+  \item 平衡时：$k\Delta l = mg$。
+  \item 从平衡位置向下拉 $x$：弹力 $F_{\text{弹}} = k(\Delta l + x)$，方向向上。
+  \item 合力：$F = k(\Delta l + x) - mg = kx$，方向向上（指向平衡位置）。
+  \item 得 $F = -kx$（取向下为正方向），是简谐运动。
+\end{enumerate}
+
+\textbf{结论：} 竖直弹簧振子也是简谐运动，周期公式 $T = 2\pi\sqrt{m/k}$ 仍然成立——与水平放置时相同。
+
+\textbf{竞赛小贴士：} 证明简谐运动的关键是找到平衡位置，然后看合力是否与偏离量成正比且指向平衡位置。
 \end{competitionbox}
 
 \section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
 
+\begin{enumerate}
+  \item 简谐运动回复力 $F = -kx$。
+  \item 弹簧振子周期 $T = 2\pi\sqrt{\dfrac{m}{k}}$，与振幅无关。
+  \item 单摆周期 $T = 2\pi\sqrt{\dfrac{l}{g}}$，与质量、振幅无关。
+  \item 简谐运动 $x$-$t$ 图像为正弦曲线，$x = A\cos(\omega t + \varphi_0)$。
+  \item 简谐运动中机械能守恒，$E = \frac12 kA^2$。
+\end{enumerate}
