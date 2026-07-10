@@ -1,18 +1,25 @@
-% TikZ 图：矢量加法示意（东3北4得5）
+% TikZ 图：矢量加法的平行四边形法则
 % Day 01：初高中物理的区别与学习方法
 % 使用：\input{figures/tikz/vector-addition.tex}
 \begin{tikzpicture}[scale=1.4,>=Latex]
-  % 画箭头（加长让标注有空间）
-  \draw[->,thick] (0,0) -- (3.2,0);
-  \draw[->,thick] (3.2,0) -- (3.2,4.2);
-  \draw[->,ultra thick,red] (0,0) -- (3.2,4.2);
-  % 长度标注放在箭头正中间的上方/右侧，远离坐标轴交汇处
-  \node[above,yshift=2pt] at (1.6,0) {$3\ \mathrm{m}$};
-  \node[right,xshift=4pt] at (3.2,2.1) {$4\ \mathrm{m}$};
-  \node[above left,yshift=4pt,xshift=-2pt] at (1.6,2.1) {$5\ \mathrm{m}$};
-  % 方向标注放在箭头末端之外
-  \node[below] at (3.2,-0.15) {东};
-  \node[right] at (3.5,4.2) {北};
-  % 起点
-  \node[below left,yshift=-2pt] at (0,0) {起点};
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (3.2,0);
+  \coordinate (B) at (0,4.2);
+  \coordinate (C) at (3.2,4.2);
+
+  % 两个分矢量从同一起点出发
+  \draw[->,thick] (O) -- (A) node[midway,below] {$3\ \mathrm{m}$};
+  \draw[->,thick] (O) -- (B) node[midway,left] {$4\ \mathrm{m}$};
+
+  % 平行四边形辅助线
+  \draw[dashed] (A) -- (C);
+  \draw[dashed] (B) -- (C);
+
+  % 合矢量
+  \draw[->,ultra thick,red] (O) -- (C) node[midway,above left] {$5\ \mathrm{m}$};
+
+  \node[below left] at (O) {起点};
+  \node[below] at (A) {东};
+  \node[left] at (B) {北};
+  \node[above right] at (C) {合矢量};
 \end{tikzpicture}

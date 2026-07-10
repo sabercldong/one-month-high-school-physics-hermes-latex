@@ -1,0 +1,18 @@
+% TikZ 图：电场叠加
+% Day 15：电荷、电场与电场强度
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  % +Q 和 -Q
+  \filldraw[red] (0,0) circle (3pt);
+  \node[above] at (0,0) {$+Q$};
+  \filldraw[blue] (3,0) circle (3pt);
+  \node[above] at (3,0) {$-Q$};
+  % 中点 P
+  \filldraw[black] (1.5,0) circle (2pt);
+  \node[below] at (1.5,0) {$P$};
+  % E1（+Q 对 P 向右）
+  \draw[->,thick,red] (1.5,0) -- (2.5,0) node[above] {$\vect{E}_1$};
+  % E2（-Q 对 P 向右）
+  \draw[->,thick,blue] (1.5,0) -- (2.5,-0.3) node[below] {$\vect{E}_2$};
+  % 合电场
+  \draw[->,ultra thick,black] (1.5,0) -- (3.2,0) node[above] {$\vect{E}$};
+\end{tikzpicture}

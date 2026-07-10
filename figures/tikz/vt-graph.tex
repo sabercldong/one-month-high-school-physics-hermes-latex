@@ -24,6 +24,6 @@
   \node[above] at (2,1) {$\Delta t=t$};
   \node[right] at (4,2.5) {$v - v_0$};
   % 斜边就是 v-t 直线本身（不重复画）
-  % 斜率标注
-  \node[above right] at (0.5,1.5) {$a = \dfrac{v-v_0}{t}$};
+  % 斜率标注放在图像上方空白处，避免压到直线与辅助线
+  \node[anchor=west,fill=white,inner sep=2pt] at (0.35,4.45) {斜率 $a = \dfrac{v-v_0}{t}$};
 \end{tikzpicture}

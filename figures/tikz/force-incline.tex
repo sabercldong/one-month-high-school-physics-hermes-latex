@@ -7,19 +7,19 @@
   \draw (4.25,0) arc (180:158.2:0.75);
   \node at (4.1,0.25) {$\theta$};
 
-  \coordinate (P) at (2.35,1.06);
-  \coordinate (C) at ($(P)+(68.2:0.42)$);
+  \coordinate (P) at ($(0,2)!0.47!(5,0)$);
+  \coordinate (C) at ($(P)+(68.199:0.42)$);
 
   % 物体底边贴在斜面上。
-  \begin{scope}[shift={(P)},rotate=-21.8]
-    \draw[thick] (-0.6,0) rectangle (0.6,0.85);
+  \begin{scope}[shift={(P)},rotate=-21.801]
+    \filldraw[fill=white,thick] (-0.6,0) rectangle (0.6,0.85);
     \node at (0,0.43) {$m$};
   \end{scope}
 
   % 三个真实受力。
   \draw[->,thick,blue] (C) -- ++(0,-1.25) node[below] {$G$};
-  \draw[->,thick,blue] (C) -- ++(68.2:1.15) node[above] {$N$};
-  \draw[->,thick,red] (C) -- ++(158.2:1.15) node[above] {$f_s$};
+  \draw[->,thick,blue] (C) -- ++(68.199:1.15) node[above] {$N$};
+  \draw[->,thick,red] (C) -- ++(158.199:1.15) node[above] {$f_s$};
 
   \node[font=\footnotesize] at (2.65,-0.45) {有下滑趋势时，$f_s$ 沿斜面向上};
 \end{tikzpicture}

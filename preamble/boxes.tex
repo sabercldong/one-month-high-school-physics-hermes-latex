@@ -5,11 +5,10 @@
   colframe=black!60,
   fonttitle=\bfseries,
   breakable,
+  title after break={#1（续）},
   arc=2mm,
   boxrule=0.6pt,
-  pad at break*=0mm,
-  overlay unbroken and first={},
-  overlay middle and last={\node[anchor=north east,inner sep=2pt,font=\footnotesize\itshape] at (frame.north east) {（续）};}
+  pad at break*=0mm
 }
 
 \newtcolorbox{conceptbox}[1]{
@@ -18,11 +17,10 @@
   colframe=black!70,
   fonttitle=\bfseries,
   breakable,
+  title after break={核心概念：#1（续）},
   arc=2mm,
   boxrule=0.6pt,
-  pad at break*=0mm,
-  overlay unbroken and first={},
-  overlay middle and last={\node[anchor=north east,inner sep=2pt,font=\footnotesize\itshape] at (frame.north east) {（续）};}
+  pad at break*=0mm
 }
 
 \newtcolorbox{examplebox}[1]{
@@ -31,11 +29,10 @@
   colframe=black!70,
   fonttitle=\bfseries,
   breakable,
+  title after break={例题：#1（续）},
   arc=2mm,
   boxrule=0.6pt,
-  pad at break*=0mm,
-  overlay unbroken and first={},
-  overlay middle and last={\node[anchor=north east,inner sep=2pt,font=\footnotesize\itshape] at (frame.north east) {（续）};}
+  pad at break*=0mm
 }
 
 \newtcolorbox{mistakebox}{
@@ -44,11 +41,10 @@
   colframe=black!70,
   fonttitle=\bfseries,
   breakable,
+  title after break={易错点（续）},
   arc=2mm,
   boxrule=0.6pt,
-  pad at break*=0mm,
-  overlay unbroken and first={},
-  overlay middle and last={\node[anchor=north east,inner sep=2pt,font=\footnotesize\itshape] at (frame.north east) {（续）};}
+  pad at break*=0mm
 }
 
 \newtcolorbox{competitionbox}{
@@ -57,9 +53,8 @@
   colframe=black!70,
   fonttitle=\bfseries,
   breakable,
+  title after break={竞赛入门补充（续）},
   arc=2mm,
   boxrule=0.6pt,
-  pad at break*=0mm,
-  overlay unbroken and first={},
-  overlay middle and last={\node[anchor=north east,inner sep=2pt,font=\footnotesize\itshape] at (frame.north east) {（续）};}
+  pad at break*=0mm
 }

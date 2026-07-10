@@ -1,54 +1,300 @@
 \daytitle{14}{机械波}
 
 \begin{learningbox}{本讲义大致内容}
-讲波的形成、波长、频率、波速、波形图和波的传播方向判断。
+机械波是“振动在介质中的传播”。今天把 Day 13 的机械振动向空间推广：一个质点振动，会带动周围质点依次振动，于是形成波。重点掌握波长、频率、周期、波速的关系，区分波形图和振动图，并会用微平移法判断质点振动方向。
 \end{learningbox}
 
 \section*{一、学习目标}
+
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 理解机械波的形成条件：振源和介质。
+  \item 知道机械波传播的是振动形式和能量，介质质点不随波迁移。
+  \item 区分横波和纵波，能识别波峰、波谷、密部、疏部。
+  \item 掌握 $T$、$f$、$\lambda$、$v$ 的物理意义和关系 $v=\lambda f$。
+  \item 能读懂 $y$-$x$ 波形图和 $y$-$t$ 振动图，并判断质点振动方向。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中见过水波、声波，也知道“声音的传播需要介质”。高中要进一步回答三个问题：
+
+\begin{enumerate}
+  \item \textbf{谁在振动？} 介质中的每个质点都在自己的平衡位置附近振动。
+  \item \textbf{什么在传播？} 传播的是振动状态和能量，不是介质整体被运走。
+  \item \textbf{图像横轴是什么？} $y$-$x$ 图像表示同一时刻不同质点的位置；$y$-$t$ 图像表示同一质点随时间的振动。
+\end{enumerate}
+
+这节课最容易混淆的地方，正是“波向前走”和“质点只在附近振动”这两件事要同时成立。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{机械波的形成}
+
+\textbf{定义：} 机械振动在介质中由近及远传播，形成机械波。
+
+\textbf{形成条件：}
+\begin{itemize}
+  \item \textbf{振源：} 先有一个持续或短暂的振动。
+  \item \textbf{介质：} 相邻质点之间能相互作用，把振动传下去。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/wave-transverse-formation}
+
+\figcaption{横波的形成：介质质点上下振动，波形向右传播}\label{fig:wave-transverse-formation}
+\end{center}
+
+\textbf{关键认识：} 质点并不跟着波一直向前跑。波向右传播时，每个质点只在自己的平衡位置附近振动。
+
+\end{conceptbox}
+
+\begin{conceptbox}{横波与纵波}
+
+\textbf{横波：} 质点振动方向与波的传播方向垂直。绳波、水面波的直观图像常画成横波。
+
+\textbf{纵波：} 质点振动方向与波的传播方向在同一直线上。声波是典型纵波，空气中出现疏部和密部。
+
+\begin{center}
+\input{figures/tikz/wave-longitudinal-density}
+
+\figcaption{纵波：疏部和密部沿传播方向前进}\label{fig:wave-longitudinal-density}
+\end{center}
+
+\textbf{判断方法：} 只比较“质点振动方向”和“波传播方向”。不要只看图像像不像正弦曲线。
+
+\end{conceptbox}
+
+\begin{conceptbox}{描述机械波的物理量}
+
+\begin{center}
+\input{figures/tikz/wave-parameters}
+
+\figcaption{波的基本物理量：振幅 $A$、波长 $\lambda$、波速 $v$}\label{fig:wave-parameters}
+\end{center}
+
+\begin{itemize}
+  \item \textbf{振幅 $A$：} 介质质点离开平衡位置的最大距离，反映振动强弱。
+  \item \textbf{周期 $T$：} 一个质点完成一次全振动的时间。
+  \item \textbf{频率 $f$：} 一个质点单位时间完成全振动的次数，$f=\dfrac{1}{T}$。
+  \item \textbf{波长 $\lambda$：} 沿传播方向，相邻两个同相质点之间的距离。
+  \item \textbf{波速 $v$：} 波形向前传播的速度。
+\end{itemize}
+
+\textbf{核心公式：}
+\[
+\boxed{v=\frac{\lambda}{T}=\lambda f}
+\]
+
+\end{conceptbox}
+
+\begin{conceptbox}{波形图与振动图}
+
+\begin{center}
+\input{figures/tikz/wave-yx-yt-compare}
+
+\figcaption{$y$-$x$ 波形图与 $y$-$t$ 振动图的区别}\label{fig:wave-yx-yt-compare}
+\end{center}
+
+\begin{itemize}
+  \item $y$-$x$ 波形图：固定一个时刻，看整条介质上各质点的位置。横轴是位置 $x$，可以读出波长 $\lambda$。
+  \item $y$-$t$ 振动图：固定一个质点，看它随时间怎样振动。横轴是时间 $t$，可以读出周期 $T$。
+\end{itemize}
+
+\textbf{一句话记忆：} 波形图看“一排人此刻在哪里”，振动图看“一个人随时间怎么动”。
+
+\end{conceptbox}
+
+\begin{conceptbox}{传播方向与质点振动方向}
+
+在波形图上，波的传播方向和某个质点的振动方向不是同一个方向。判断时常用“微平移法”：
+
+\begin{center}
+\input{figures/tikz/wave-direction-shift}
+
+\figcaption{微平移法：把波形沿传播方向平移一点，看质点下一刻往哪里走}\label{fig:wave-direction-shift}
+\end{center}
+
+\begin{enumerate}
+  \item 先确定波向哪边传播。
+  \item 把整条波形沿传播方向平移很小一段。
+  \item 观察原来位置的质点要到达新波形上的对应高度，是向上还是向下。
+\end{enumerate}
+
+\textbf{结论：} 对向右传播的横波，斜率为负处质点向上运动，斜率为正处质点向下运动；向左传播时相反。
+
+\end{conceptbox}
+
+\begin{conceptbox}{同相点与反相点}
+
+同相表示两个质点的振动步调完全一致：同时到达波峰、同时经过平衡位置且运动方向相同。
+
+\begin{center}
+\input{figures/tikz/wave-phase-points}
+
+\figcaption{相距 $\lambda$ 的质点同相，相距 $\lambda/2$ 的质点反相}\label{fig:wave-phase-points}
+\end{center}
+
+\begin{itemize}
+  \item 相距 $n\lambda$ 的两个质点同相，$n=0,1,2,\cdots$。
+  \item 相距 $\dfrac{2n+1}{2}\lambda$ 的两个质点反相。
+\end{itemize}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+公式或关系 & 物理意义 & 使用提醒 \\
+\midrule
+$f=\dfrac{1}{T}$ & 频率与周期互为倒数 & 同一个质点的振动周期 \\
+$v=\dfrac{\lambda}{T}=\lambda f$ & 波速、波长、频率关系 & 机械波普遍适用 \\
+$\Delta x=v\Delta t$ & 波形在时间 $\Delta t$ 内前进的距离 & $v$ 是波速，不是质点速度 \\
+$\Delta x=n\lambda$ & 两质点同相 & $n$ 为整数 \\
+$\Delta x=\dfrac{2n+1}{2}\lambda$ & 两质点反相 & $n$ 为整数 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{特别提醒：} 在同一种介质中，波速主要由介质性质决定。振源频率改变时，波长随之改变，使 $v=\lambda f$ 仍成立。
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：绳上的横波}
+
+绳上每个质点上下振动，波形沿绳传播。解题时先读图得到 $A$、$\lambda$，再用 $v=\lambda f$ 或 $\Delta x=v\Delta t$ 处理传播。
+
+\subsection*{模型 2：声波}
+
+声波在空气中是纵波。空气分子沿传播方向往复振动，疏部和密部向前传播。声波可以传递能量，但空气整体不会随声音从声源跑到人耳。
+
+\subsection*{模型 3：波形图方向判断}
+
+题目常给某时刻波形，并告诉波向左或向右传播。判断某点下一刻向上还是向下时，用微平移法，不要凭“离波峰近”猜。
+
+\subsection*{模型 4：相位关系}
+
+相邻波峰、相邻波谷、一个波峰到下一个波峰的距离都是 $\lambda$；一个波峰到相邻波谷的距离是 $\lambda/2$，这两点反相。
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{波长、周期、波速的计算}
 
-\textbf{解题过程：} TODO。
+\textbf{题意分析：} 一列横波在绳上向右传播。某时刻波形图读出振幅 $A=4\ \mathrm{cm}$，波长 $\lambda=0.80\ \mathrm{m}$。若振源频率 $f=5.0\ \mathrm{Hz}$，求周期、波速，以及 $2.0\ \mathrm{s}$ 内波形传播的距离。
 
-\textbf{方法总结：} TODO。
+\textbf{物理模型：} 机械横波的基本物理量计算。
+
+\textbf{解题过程：}
+\[
+T=\frac{1}{f}=\frac{1}{5.0}=0.20\ \mathrm{s}
+\]
+\[
+v=\lambda f=0.80\times 5.0=4.0\ \mathrm{m/s}
+\]
+\[
+\Delta x=v\Delta t=4.0\times 2.0=8.0\ \mathrm{m}
+\]
+
+\textbf{方法总结：} $A$ 描述质点振动强弱，不参与波速计算；波速由 $\lambda$ 和 $f$ 的乘积给出。
+
+\end{examplebox}
+
+\begin{examplebox}{波形平移求下一时刻位置}
+
+\textbf{题意分析：} 一列波沿 $x$ 轴正方向传播，波速 $v=2.0\ \mathrm{m/s}$，波长 $\lambda=4.0\ \mathrm{m}$。$t=0$ 时，某波峰在 $x=1.0\ \mathrm{m}$ 处。求 $0.50\ \mathrm{s}$ 后这个波峰的位置。
+
+\textbf{物理模型：} 波形整体沿传播方向平移。
+
+\textbf{解题过程：}
+
+波形在 $0.50\ \mathrm{s}$ 内前进：
+\[
+\Delta x=v\Delta t=2.0\times 0.50=1.0\ \mathrm{m}
+\]
+
+波向右传播，所以波峰位置变为：
+\[
+x'=1.0+1.0=2.0\ \mathrm{m}
+\]
+
+\textbf{方法总结：} 波峰、波谷不是固定质点，而是波形上的特征位置。波向右传播时，整个波形向右平移。
+
+\end{examplebox}
+
+\begin{examplebox}{由波形图判断质点运动方向}
+
+\textbf{题意分析：} 某时刻一列横波沿 $x$ 轴正方向传播。图上某点 $P$ 位于平衡位置上方，且所在处波形斜率为负。判断 $P$ 点此刻向上还是向下运动。
+
+\textbf{物理模型：} 右行横波的微平移判断。
+
+\textbf{解题过程：}
+
+波向右传播，把波形向右平移一小段。原来 $P$ 点所在的 $x$ 位置，将对应到平移后波形上更高的位置，因此 $P$ 点要向上运动。
+
+\[
+\boxed{P\text{ 点向上运动}}
+\]
+
+\textbf{方法总结：} 对右行波，斜率为负处质点向上，斜率为正处质点向下。对左行波，判断结果相反。
+
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 一列机械波的频率 $f=20\ \mathrm{Hz}$，波长 $\lambda=0.50\ \mathrm{m}$。求波速和周期。
+
+  \item 一列波的波速为 $340\ \mathrm{m/s}$，频率为 $170\ \mathrm{Hz}$。求波长，并说明这可能对应哪类生活中的机械波。
+
+  \item 一列横波向右传播，某时刻点 $A$ 处波形斜率为正，点 $B$ 处波形斜率为负。判断 $A$、$B$ 此刻的振动方向。
+
+  \item 一列简谐波中，$P$、$Q$ 两质点相距 $1.5\ \mathrm{m}$。若波长 $\lambda=1.0\ \mathrm{m}$，判断 $P$、$Q$ 是同相还是反相；若 $\lambda=3.0\ \mathrm{m}$ 呢？
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{认为波把介质带走：} 机械波传播的是振动状态和能量，介质质点只在平衡位置附近振动。
+
+  \item \textbf{混淆波速和质点速度：} 波速 $v$ 是波形传播速度；质点速度是某个介质质点振动时的瞬时速度，大小和方向都随时间变化。
+
+  \item \textbf{混淆 $y$-$x$ 图像和 $y$-$t$ 图像：} 前者横轴是位置，读波长；后者横轴是时间，读周期。
+
+  \item \textbf{误以为 $v=\lambda f$ 中频率决定波速：} 在同一介质中，波速主要由介质决定。频率变大时，通常是波长变小。
+
+  \item \textbf{把相邻零点距离当作波长：} 相邻两个同向过平衡位置的点相距 $\lambda$；相邻两个零点通常相距 $\lambda/2$。
+
+  \item \textbf{横波纵波按图形形状判断：} 横波和纵波看的是质点振动方向与传播方向的关系，不是看画出来像不像“横着的曲线”。
+\end{enumerate}
 \end{mistakebox}
 
+\clearpage
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{波的叠加原理}
+
+当两列波在同一介质中相遇时，每个质点的实际位移等于两列波分别引起位移的代数和。相遇后，两列波仍按原来的方向传播。
+
+\begin{center}
+\input{figures/tikz/wave-superposition}
+
+\figcaption{两列向上位移脉冲相遇时，位移相加；相遇后继续传播}\label{fig:wave-superposition}
+\end{center}
+
+\textbf{模型意识：} 叠加不是“碰撞后合成一列波”，而是同一质点同时参与两个振动。若两列周期相同、方向相反的波长期叠加，就会出现驻波的雏形：有些点几乎不动，叫波节；有些点振幅最大，叫波腹。
+
+\textbf{竞赛小贴士：} 遇到两列波叠加，先分别画出每列波在该时刻造成的位移，再按正负相加，不要把波峰、波谷当作物体相撞。
 \end{competitionbox}
 
 \section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
 
+\begin{enumerate}
+  \item 机械波需要振源和介质，传播的是振动形式和能量。
+  \item 横波中质点振动方向与传播方向垂直；纵波中二者在同一直线上。
+  \item 波的基本关系为 $v=\dfrac{\lambda}{T}=\lambda f$。
+  \item $y$-$x$ 波形图读 $\lambda$，$y$-$t$ 振动图读 $T$。
+  \item 判断质点振动方向时，用微平移法；判断相位时，看两点间距与 $\lambda$ 的关系。
+\end{enumerate}

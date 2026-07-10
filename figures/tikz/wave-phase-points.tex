@@ -1,0 +1,17 @@
+% TikZ 图：同相点与反相点
+% Day 14：机械波
+\begin{tikzpicture}[x=0.95cm,y=0.82cm,>=Latex]
+  \draw[->] (-0.3,0) -- (6.6,0) node[right] {$x$};
+  \draw[->] (0,-1.35) -- (0,1.45) node[above] {$y$};
+  \draw[very thick,red,smooth,domain=0:6.15,samples=100]
+    plot (\x,{sin(120*\x)});
+
+  \foreach \x/\name/\pos in {0.75/A/above,2.25/C/below,3.75/B/above} {
+    \filldraw[black] (\x,{sin(120*\x)}) circle (2pt) node[\pos] {$\name$};
+  }
+
+  \draw[<->] (0.75,1.2) -- (3.75,1.2) node[midway,above] {$\lambda$};
+  \draw[<->] (0.75,-1.2) -- (2.25,-1.2) node[midway,below] {$\lambda/2$};
+  \node[anchor=west] at (4.35,0.8) {$A$ 与 $B$ 同相};
+  \node[anchor=west] at (4.35,-0.8) {$A$ 与 $C$ 反相};
+\end{tikzpicture}

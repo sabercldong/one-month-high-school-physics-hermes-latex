@@ -1,0 +1,14 @@
+% TikZ 图：匀强电场
+% Day 15：电荷、电场与电场强度
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  % 平行板
+  \draw[thick] (-2,1.5) -- (2,1.5);
+  \node[above] at (0,1.5) {$+$};
+  \draw[thick] (-2,-1.5) -- (2,-1.5);
+  \node[below] at (0,-1.5) {$-$};
+  % 电场线（竖直向下，均匀等距）
+  \foreach \x in {-1.5,-0.5,0.5,1.5} {
+    \draw[->,thick,blue] (\x,1.3) -- (\x,-1.3);
+  }
+  \node[blue,right] at (2.2,0) {$\vect{E}$};
+\end{tikzpicture}

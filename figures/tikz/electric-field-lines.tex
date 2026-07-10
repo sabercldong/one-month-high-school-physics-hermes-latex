@@ -1,0 +1,13 @@
+% TikZ 图：点电荷的电场线
+% Day 15：电荷、电场与电场强度
+\begin{tikzpicture}[scale=0.8,>=Latex]
+  % 正点电荷
+  \filldraw[red] (0,0) circle (3pt);
+  \node[above right] at (0,0) {$+Q$};
+  % 电场线（从正电荷向外辐射）
+  \foreach \angle in {0,30,60,90,120,150,180,210,240,270,300,330} {
+    \draw[->,thick] (0,0) -- (\angle:1.0);
+    \draw[->,thick] (\angle:1.0) -- (\angle:2.0);
+    \draw[->,thick] (\angle:2.0) -- (\angle:2.8);
+  }
+\end{tikzpicture}

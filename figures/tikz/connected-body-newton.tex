@@ -1,0 +1,23 @@
+% TikZ 图：连接体整体法与隔离法
+% Day 06：牛顿运动定律
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[thick] (-0.8,0) -- (6.0,0);
+
+  % 两个物体与轻绳：外力拉右侧 A，左侧 B 被绳拉动。
+  \draw[thick,fill=white] (0.2,0) rectangle (1.6,0.9);
+  \draw[thick,fill=white] (2.5,0) rectangle (3.9,0.9);
+  \draw[thick] (1.6,0.45) -- (2.5,0.45);
+  \node at (0.9,0.45) {$B$};
+  \node at (3.2,0.45) {$A$};
+  \node[font=\footnotesize] at (2.05,0.7) {轻绳};
+
+  % 外力、加速度与隔离 B 时的张力。
+  \draw[->,ultra thick,red] (3.9,0.45) -- (5.05,0.45) node[midway,above] {$F$};
+  \draw[->,thick,blue] (1.6,0.45) -- (2.38,0.45) node[midway,below] {$T$};
+  \draw[->,thick,blue] (1.55,1.35) -- (3.0,1.35) node[midway,above] {$a$};
+
+  % 方法提示。
+  \draw[dashed,rounded corners=2pt] (-0.05,-0.15) rectangle (4.15,1.1);
+  \node[font=\footnotesize,align=center] at (2.05,-0.62)
+    {整体法：只算外力求 $a$；隔离 $B$：用 $T=m_Ba$ 求张力};
+\end{tikzpicture}

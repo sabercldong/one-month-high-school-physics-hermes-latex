@@ -1,0 +1,26 @@
+% TikZ 图：作用力与反作用力、平衡力对比
+% Day 06：牛顿运动定律
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  % 左图：作用力与反作用力作用在不同物体上。
+  \begin{scope}
+    \node[font=\bfseries] at (1.45,1.75) {作用力与反作用力};
+    \draw[thick] (0,0) rectangle (1.1,0.75);
+    \draw[thick] (1.8,0) rectangle (2.9,0.75);
+    \node at (0.55,0.38) {$A$};
+    \node at (2.35,0.38) {$B$};
+    \draw[->,thick,blue] (1.1,0.38) -- (0.12,0.38) node[midway,above] {\footnotesize $B$ 对 $A$};
+    \draw[->,thick,red] (1.8,0.38) -- (2.78,0.38) node[midway,above] {\footnotesize $A$ 对 $B$};
+    \node[font=\footnotesize,align=center] at (1.45,-0.55) {等大反向、共线\\但作用在两个物体上};
+  \end{scope}
+
+  % 右图：平衡力作用在同一个物体上。
+  \begin{scope}[shift={(5.2,0)}]
+    \node[font=\bfseries] at (1.05,1.75) {平衡力};
+    \draw[thick] (-0.2,-0.05) -- (2.3,-0.05);
+    \draw[thick,fill=white] (0.45,0) rectangle (1.65,0.75);
+    \node at (1.05,0.38) {$m$};
+    \draw[->,thick,blue] (1.05,0.75) -- (1.05,1.45) node[right] {$N$};
+    \draw[->,thick,red] (1.05,0) -- (1.05,-0.82) node[right] {$G$};
+    \node[font=\footnotesize,align=center] at (1.05,-1.18) {作用在同一物体上\\合力可以为零};
+  \end{scope}
+\end{tikzpicture}

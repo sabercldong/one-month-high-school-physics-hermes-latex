@@ -1,0 +1,23 @@
+% TikZ 图：匀强电场中电势差与距离
+% Day 16：电势能、电势与电势差
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  % 平行板
+  \draw[thick] (0,1.5) -- (0,-1.5);
+  \node[left] at (0,0) {$+$};
+  \draw[thick] (4,1.5) -- (4,-1.5);
+  \node[right] at (4,0) {$-$};
+  % 电场线
+  \foreach \y in {-1.2,-0.4,0.4,1.2} {
+    \draw[->,blue] (0.2,\y) -- (3.8,\y);
+  }
+  % A、B 两点
+  \filldraw[red] (1,0.5) circle (2pt);
+  \node[above] at (1,0.5) {$A$};
+  \filldraw[red] (3,-0.5) circle (2pt);
+  \node[below] at (3,-0.5) {$B$};
+  % 距离 d
+  \draw[<->] (1,0.8) -- (3,0.8);
+  \node[above] at (2,0.8) {$d$};
+  % 公式
+  \node at (2,-1.8) {$U_{AB} = Ed$，$W_{AB} = qU_{AB}$};
+\end{tikzpicture}

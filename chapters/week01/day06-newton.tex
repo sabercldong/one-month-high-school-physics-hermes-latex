@@ -1,7 +1,7 @@
 \daytitle{6}{牛顿运动定律}
 
 \begin{learningbox}{本讲义大致内容}
-牛顿三大定律是整个经典力学的基石。今天重点掌握牛顿第二定律 $F_{\text{合}} = ma$——它把力和运动联系起来了。学会用正交分解法列方程，解决各种动力学问题。
+牛顿三大定律是整个经典力学的基石。今天重点掌握牛顿第二定律 $F_{\text{合}} = ma$——它把受力分析和运动学联系起来了。学会先画受力图，再列动力学方程，解决水平面、斜面和连接体问题。
 \end{learningbox}
 
 \section*{一、学习目标}
@@ -16,14 +16,16 @@
 
 \section*{二、初高中衔接}
 
-初中对牛顿定律的学习停留在定性层面：牛顿第一定律叫"惯性定律"，牛顿第三定律叫"力的作用是相互的"。
+初中对牛顿定律的学习停留在定性层面：牛顿第一定律叫“惯性定律”，牛顿第三定律叫“力的作用是相互的”。
 
 高中在以下方面深化：
 \begin{enumerate}
   \item \textbf{牛顿第二定律定量化：} $F_{\text{合}} = ma$，已知力可以算加速度，已知加速度可以反推力。
-  \item \textbf{力学与运动学打通：} 牛顿定律是"桥梁"——受力分析 $\to$ 合力 $\to$ 加速度 $\to$ 运动学公式。
+  \item \textbf{力学与运动学打通：} 牛顿定律是“桥梁”——受力分析 $\to$ 合力 $\to$ 加速度 $\to$ 运动学公式。
   \item \textbf{多物体系统：} 整体法和隔离法分析连接体问题。
 \end{enumerate}
+
+本节的学习顺序是：先判断研究对象，再画真实受力图，接着选正方向、列 $F_{\text{合}}=ma$，最后把求出的加速度代入运动学公式。不要一看到题目就直接套公式。
 
 \section*{三、核心概念}
 
@@ -37,7 +39,13 @@
   \item 质量是惯性大小的量度——质量越大，惯性越大，运动状态越难改变。
 \end{itemize}
 
-\textbf{伽利略的理想实验：} 斜面实验表明，如果没有摩擦力，小球将沿另一斜面上升到相同高度。若另一斜面倾角为零（水平），小球将一直运动下去——推翻了亚里士多德"力是维持运动的原因"的错误观点。
+\textbf{伽利略的理想实验：} 斜面实验表明，如果没有摩擦力，小球将沿另一斜面上升到相同高度。若另一斜面倾角为零（水平），小球将一直运动下去——推翻了亚里士多德“力是维持运动的原因”的错误观点。
+
+\begin{center}
+\input{figures/tikz/newton-first-ideal}
+
+\figcaption{伽利略理想斜面：无摩擦时，运动不需要持续外力维持}\label{fig:newton-first-ideal}
+\end{center}
 
 \textbf{注意：} 牛顿第一定律不能直接用实验验证（无法完全消除外力），它是由实验和推理得出的。
 
@@ -101,6 +109,12 @@
 \end{tabular}
 \end{center}
 
+\begin{center}
+\input{figures/tikz/newton-third-compare}
+
+\figcaption{作用力与反作用力和平衡力的研究对象不同}\label{fig:newton-third-compare}
+\end{center}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
@@ -119,7 +133,7 @@
 
 \subsection*{正交分解法}
 
-当物体受力不在同一直线上时，把力分解到两个互相垂直的方向上。
+当物体受力不在同一直线上时，把力分解到两个互相垂直的方向上。分解前先规定正方向；列方程时把每个力的分量带正负号代入。
 
 \begin{center}
 \input{figures/tikz/orthogonal-decomp}
@@ -169,6 +183,8 @@ a_{\text{上滑}} = -\,(g\sin\theta + \mu_k g\cos\theta)
 \]
 （负号表示加速度沿斜面向下，大小为 $g\sin\theta + \mu_k g\cos\theta$）
 
+画斜面受力图时，先画真实力：重力、支持力、摩擦力。重力的两个分力只是列方程时的计算工具，不是额外多出来的力。
+
 \begin{center}
 \input{figures/tikz/newton-incline}
 
@@ -183,6 +199,12 @@ a_{\text{上滑}} = -\,(g\sin\theta + \mu_k g\cos\theta)
 F - f_{\text{总}} = (m_1 + m_2) a
 \]
 再用隔离法求绳中张力。
+
+\begin{center}
+\input{figures/tikz/connected-body-newton}
+
+\figcaption{连接体：整体法求共同加速度，隔离法求内力}\label{fig:connected-body-newton}
+\end{center}
 
 \section*{六、例题精讲}
 
@@ -244,7 +266,7 @@ a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
 
 \begin{examplebox}{连接体问题}
 
-\textbf{题意分析：} 质量 $m_A = 3\ \mathrm{kg}$、$m_B = 2\ \mathrm{kg}$ 的两个物体用轻绳连接，放在光滑水平面上。在 $A$ 上施加水平拉力 $F = 10\ \mathrm{N}$。求：
+\textbf{题意分析：} 质量 $m_A = 3\ \mathrm{kg}$、$m_B = 2\ \mathrm{kg}$ 的两个物体用轻绳连接，放在光滑水平面上。$B$ 在左、$A$ 在右，在 $A$ 上施加水平向右的拉力 $F = 10\ \mathrm{N}$。求：
 \begin{enumerate}
   \item 整体的加速度。
   \item 绳中张力 $T$。
@@ -312,7 +334,7 @@ a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
 \begin{competitionbox}
 \textbf{牛顿第二定律的瞬时性问题}
 
-竞赛中常见"剪断绳子"、"撤去支持物"等瞬时变化问题。
+竞赛中常见“剪断绳子”、“撤去支持物”等瞬时变化问题。
 
 \textbf{关键：} 弹簧弹力不能突变（形变需要时间），而绳的拉力可以突变。
 

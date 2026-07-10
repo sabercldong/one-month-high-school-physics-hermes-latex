@@ -1,0 +1,22 @@
+% TikZ 图：摩擦临界角
+% Day 05：力、重力、弹力、摩擦力
+\begin{tikzpicture}[scale=0.86,>=Latex]
+  % 斜面
+  \draw[thick] (0,0) -- (5.2,0) -- (0,2.3) -- cycle;
+  \draw[thick] (0,2.3) -- (5.2,0);
+  \draw (4.35,0) arc (180:156.1:0.78);
+  \node at (4.12,0.28) {$\theta_c$};
+
+  % 物体
+  \coordinate (P) at ($(0,2.3)!0.49!(5.2,0)$);
+  \coordinate (C) at ($(P)+(66.140:0.42)$);
+  \begin{scope}[shift={(P)},rotate=-23.860]
+    \filldraw[fill=white,thick] (-0.62,0) rectangle (0.62,0.82);
+    \node at (0,0.41) {$m$};
+  \end{scope}
+
+  % 真实力
+  \draw[->,thick,blue] (C) -- ++(0,-1.35) node[below] {$mg$};
+  \draw[->,thick,blue] (C) -- ++(66.140:1.18) node[above] {$N$};
+  \draw[->,thick,red] (C) -- ++(156.140:1.23) node[pos=0.9,above left] {$f_{\max}$};
+\end{tikzpicture}

@@ -1,22 +1,25 @@
-% TikZ 图：竖直圆周运动（过山车模型）
+% TikZ 图：竖直圆周运动（内侧轨道/过山车模型）
 % Day 11：圆周运动
-\begin{tikzpicture}[scale=0.7,>=Latex]
-  % 圆形轨道
+\begin{tikzpicture}[scale=0.72,>=Latex]
   \draw[thick] (0,0) circle (2.5);
-  % 轨道底座
-  \draw[thick] (-3,-3) -- (3,-3);
-  % 最高点
+  \filldraw[black] (0,0) circle (2pt);
+  \node[left] at (0,0) {$O$};
+
+  % 最高点：重力和支持力都指向圆心
   \filldraw[blue] (0,2.5) circle (3pt);
-  \draw[->,thick,blue] (0,2.5) -- (0.8,2.5) node[right] {$v$};
-  \draw[->,thick,red] (0,2.5) -- (0,1.5) node[below] {$mg$};
-  \draw[->,thick,red] (0,2.5) -- (0,3.3) node[above] {$N$};
-  \node[above] at (0,2.5) {最高点};
-  % 最低点
+  \node[above] at (0,2.8) {最高点};
+  \draw[->,thick,blue] (0,2.5) -- (1.05,2.5) node[above right] {$v$};
+  \draw[->,thick,red] (-0.35,2.5) -- (-0.35,1.50) node[midway,left] {$mg$};
+  \draw[->,thick,red] (0.35,2.5) -- (0.35,1.75) node[midway,right] {$N$};
+
+  % 最低点：支持力向上，重力向下
   \filldraw[blue] (0,-2.5) circle (3pt);
-  \draw[->,thick,blue] (0,-2.5) -- (0.8,-2.5) node[right] {$v$};
-  \draw[->,thick,red] (0,-2.5) -- (0,-3.3) node[below] {$mg$};
-  \draw[->,thick,red] (0,-2.5) -- (0,-1.7) node[above] {$N$};
-  \node[below] at (0,-2.7) {最低点};
-  \node at (1.2,0) {最高点：$N+mg=m\frac{v^2}{r}$};
-  \node at (1.2,-0.5) {最低点：$N-mg=m\frac{v^2}{r}$};
+  \node[below right] at (0.22,-2.82) {最低点};
+  \draw[->,thick,blue] (0,-2.5) -- (1.05,-2.5) node[above right] {$v$};
+  \draw[->,thick,red] (-0.35,-2.5) -- (-0.35,-3.35) node[midway,left] {$mg$};
+  \draw[->,thick,red] (0.35,-2.5) -- (0.35,-1.55) node[midway,right] {$N$};
+
+  \node[right] at (2.85,1.0) {最高点：$N+mg=m\dfrac{v^2}{r}$};
+  \node[right] at (2.85,0.25) {临界：$N=0$};
+  \node[right] at (2.85,-0.75) {最低点：$N-mg=m\dfrac{v^2}{r}$};
 \end{tikzpicture}

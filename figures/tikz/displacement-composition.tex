@@ -11,10 +11,14 @@
   \filldraw[black] (3,0) circle (2pt) node[below right] {$B$};
   % C点（北400→4）
   \filldraw[black] (3,4) circle (2pt) node[above right] {$C$};
+  \coordinate (D) at (0,4);
   % AB
   \draw[->,thick] (0,0) -- (3,0) node[midway,below] {$300\ \mathrm{m}$};
   % BC
   \draw[->,thick] (3,0) -- (3,4) node[midway,right] {$400\ \mathrm{m}$};
+  % 平行四边形辅助线：把第二个位移平移到 A 点
+  \draw[->,thick,blue] (0,0) -- (D) node[midway,left] {$400\ \mathrm{m}$};
+  \draw[dashed] (D) -- (3,4);
   % AC（位移）
   \draw[->,ultra thick,red] (0,0) -- (3,4) node[midway,above left] {$500\ \mathrm{m}$};
   % 角度

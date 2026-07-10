@@ -1,54 +1,265 @@
 \daytitle{15}{电荷、电场与电场强度}
 
 \begin{learningbox}{本讲义大致内容}
-讲电荷、库仑定律、电场概念、电场强度、点电荷电场、电场叠加和电场线。
+电磁学的第一块基石。从电荷、库仑定律开始，引入场的概念——电场、电场强度、电场线。理解场是物质存在的一种形式，以及如何用"场"的观点代替"超距作用"。
 \end{learningbox}
 
 \section*{一、学习目标}
+
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 理解电荷守恒定律和库仑定律 $F = k\dfrac{Q_1 Q_2}{r^2}$。
+  \item 理解电场强度的定义 $E = \dfrac{F}{q}$，能用电场线描述电场。
+  \item 掌握点电荷的电场公式 $E = k\dfrac{Q}{r^2}$。
+  \item 掌握电场叠加原理，能计算多个点电荷的合场强。
+  \item 区分匀强电场和非匀强电场的特点。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中物理讲过"电荷"和"电荷间的相互作用"——同种电荷相斥、异种电荷相吸。这是定性的。
+
+高中在三个方向上深化：
+\begin{enumerate}
+  \item \textbf{定量化：} 库仑定律给出了电荷间作用力的精确公式。
+  \item \textbf{场的概念：} 引入"电场"——电荷周围存在的一种看不见的物质，通过电场传递作用力。
+  \item \textbf{场的强弱：} 电场强度 $E$ 定量描述电场"有多强"和"朝哪指"。
+\end{enumerate}
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{电荷与库仑定律}
+
+\textbf{电荷：}
+\begin{itemize}
+  \item 正电荷（$+$）和负电荷（$-$），同种相斥、异种相吸。
+  \item 电荷量 $Q$ 的单位：库仑（$\mathrm{C}$）。
+  \item 元电荷 $e = 1.60 \times 10^{-19}\ \mathrm{C}$。
+  \item 电荷守恒定律：电荷既不能创造、也不能消灭，只能从一个物体转移到另一个物体。
+\end{itemize}
+
+\textbf{库仑定律：}
+\[
+\boxed{F = k\frac{Q_1 Q_2}{r^2}}
+\]
+
+\begin{itemize}
+  \item $k = 9.0 \times 10^9\ \mathrm{N \cdot m^2 / C^2}$（静电力常量）。
+  \item $F$：静电斥力（$Q_1$、$Q_2$ 同号）或吸力（异号）。
+  \item 适用条件：真空中的点电荷（高中可近似用于空气中的点电荷）。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/coulomb-law}
+
+\figcaption{库仑定律：同号电荷相斥，$F = k\dfrac{Q_1 Q_2}{r^2}$}\label{fig:coulomb-law}
+\end{center}
+
+\end{conceptbox}
+
+\begin{conceptbox}{电场与电场强度}
+
+\textbf{电场：} 电荷周围存在的一种特殊物质。电场对放入其中的电荷有力的作用。
+
+\textbf{电场强度（定义式）：}
+\[
+\boxed{E = \frac{F}{q}}
+\]
+
+\begin{itemize}
+  \item 矢量，方向与正电荷在该点受到的电场力方向相同。
+  \item 单位：$\mathrm{N/C}$ 或 $\mathrm{V/m}$。
+  \item 由电场本身决定，与试探电荷 $q$ 无关。
+\end{itemize}
+
+\textbf{点电荷的电场强度：}
+\[
+E = k\frac{Q}{r^2}
+\]
+
+\end{conceptbox}
+
+\begin{conceptbox}{电场叠加原理}
+
+多个点电荷在某点产生的合场强等于各点电荷单独在该点产生的场强的矢量和。
+
+\begin{center}
+\input{figures/tikz/electric-superposition}
+
+\figcaption{电场叠加：$\vect{E} = \vect{E}_1 + \vect{E}_2$}\label{fig:electric-superposition}
+\end{center}
+
+\end{conceptbox}
+
+\begin{conceptbox}{电场线}
+
+电场线是描述电场分布的假想曲线：
+\begin{itemize}
+  \item 电场线从正电荷出发、终止于负电荷。
+  \item 电场线的疏密表示电场强度的大小。
+  \item 电场线某点的切线方向为该点的场强方向。
+  \item 电场线不相交。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/electric-field-lines}
+
+\figcaption{正点电荷的电场线：从正电荷向外辐射}\label{fig:electric-field-lines}
+
+\vspace{0.5em}
+\input{figures/tikz/uniform-field}
+
+\figcaption{匀强电场：平行等距的电场线}\label{fig:uniform-field}
+\end{center}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+公式 & 物理意义 & 适用条件 \\
+\midrule
+$F = k\dfrac{Q_1 Q_2}{r^2}$ & 库仑定律 & 真空点电荷 \\
+$E = \dfrac{F}{q}$ & 电场强度定义 & 任何电场 \\
+$E = k\dfrac{Q}{r^2}$ & 点电荷场强 & 点电荷周围 \\
+$\vect{E} = \sum \vect{E}_i$ & 电场叠加 & 任何电场 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：等量异种电荷的电场}
+
+中垂线上场强的方向平行于两电荷连线。中点处场强不为零（两电荷在该点产生的场强方向相同）。
+
+\subsection*{模型 2：等量同种电荷的电场}
+
+中垂线上场强从中点向外先增大后减小。中点处场强为零。
+
+\subsection*{模型 3：匀强电场}
+
+平行板电容器之间的电场近似为匀强电场（两极板间电场线平行等距）。
+$E = \dfrac{U}{d}$（$U$ 为两板间电压，$d$ 为间距）。
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{库仑定律的应用}
 
-\textbf{解题过程：} TODO。
+\textbf{题意分析：} 两个点电荷 $Q_1 = 2 \times 10^{-8}\ \mathrm{C}$、$Q_2 = -3 \times 10^{-8}\ \mathrm{C}$ 相距 $r = 0.1\ \mathrm{m}$。求它们之间的库仑力大小和方向。
 
-\textbf{方法总结：} TODO。
+\textbf{物理模型：} 库仑定律。
+
+\textbf{解题过程：}
+
+\[
+F = k\frac{|Q_1 Q_2|}{r^2} = 9 \times 10^9 \times \frac{2 \times 10^{-8} \times 3 \times 10^{-8}}{(0.1)^2}
+\]
+\[
+= 9 \times 10^9 \times \frac{6 \times 10^{-16}}{0.01} = 9 \times 10^9 \times 6 \times 10^{-14} = 5.4 \times 10^{-4}\ \mathrm{N}
+\]
+
+方向：异种电荷相互吸引。
+
+\textbf{方法总结：} 库仑力的大小用绝对值代入公式计算，方向由电荷的正负单独判断。计算时注意指数运算。
+
+\end{examplebox}
+
+\begin{examplebox}{电场强度的计算}
+
+\textbf{题意分析：} 在 $x$ 轴上 $x_1 = -0.1\ \mathrm{m}$ 处放 $Q_1 = +4 \times 10^{-9}\ \mathrm{C}$，$x_2 = 0.1\ \mathrm{m}$ 处放 $Q_2 = -4 \times 10^{-9}\ \mathrm{C}$。求原点 $O$ 处的电场强度。
+
+\textbf{物理模型：} 等量异种电荷，电场叠加。
+
+\textbf{解题过程：}
+
+$Q_1$ 在 $O$ 点产生场强：方向向右（$+Q \to$ 正电荷场强方向向外）。
+\[
+E_1 = k\frac{Q_1}{r^2} = 9 \times 10^9 \times \frac{4 \times 10^{-9}}{(0.1)^2} = 9 \times 10^9 \times 4 \times 10^{-7} = 3600\ \mathrm{N/C}
+\]
+
+$Q_2$ 在 $O$ 点产生场强：方向向右（$-Q \to$ 负电荷场强方向向内）。
+\[
+E_2 = k\frac{|Q_2|}{r^2} = 3600\ \mathrm{N/C}\ (\text{方向向右})
+\]
+
+合场强：$E = E_1 + E_2 = 7200\ \mathrm{N/C}$，方向向右。
+
+\textbf{方法总结：} 计算合场强时，先分别计算各电荷产生的场强大小和方向，再用矢量加法求和。在同一直线上用正负表示方向。
+
+\end{examplebox}
+
+\begin{examplebox}{电场线与运动轨迹}
+
+\textbf{题意分析：} 一个正电荷仅在电场力作用下从静止释放，它会沿电场线运动吗？
+
+\textbf{解题过程：}
+不一定。如果电场线是直线（匀强电场、点电荷的径向电场），正电荷会沿电场线运动。但如果电场线是曲线，正电荷不会沿电场线运动——因为电场力的方向沿切线方向，而惯性会使电荷偏离曲线。
+
+\textbf{方法总结：} 电场线不是电荷的运动轨迹。只有在电场线是直线且电荷初速度为零（或沿电场线方向）时，电荷才沿电场线运动。
+
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 两个点电荷 $Q_1 = 3 \times 10^{-8}\ \mathrm{C}$、$Q_2 = 5 \times 10^{-8}\ \mathrm{C}$ 相距 $0.2\ \mathrm{m}$，求库仑力大小。
+  
+  \item 在 $x$ 轴上 $x = 0.2\ \mathrm{m}$ 处有一个 $Q = -2 \times 10^{-9}\ \mathrm{C}$ 的点电荷。求 $x = 0$ 处的电场强度大小和方向。
+  
+  \item 等量同种正电荷 $+Q$ 相距 $2a$，求它们连线中点处的电场强度。
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{库仑定律中 $r$ 取距离不是间距的平方：} 分母是 $r^2$，不是 $r$。
+  
+  \item \textbf{混淆 $E = F/q$ 和 $E = kQ/r^2$：} 前者是定义式（任何电场），后者是点电荷的决定式（只适用于点电荷）。
+  
+  \item \textbf{用试探电荷 $q$ 的正负判断场强方向：} 场强方向定义为正电荷所受电场力的方向，与负电荷受力方向相反。
+  
+  \item \textbf{电场叠加时忘了 $E$ 的方向：} $E$ 是矢量，叠加要用平行四边形定则，不能直接代数和。
+  
+  \item \textbf{认为电场线是电荷的轨迹：} 电场线只是描述工具，不是运动轨迹。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{静电力作用下的平衡问题}
+
+库仑力可以与绳的拉力、重力等平衡。
+
+\textbf{例题：} 两个质量均为 $m$、带电量均为 $+q$ 的小球，用等长细线悬挂在同一点。平衡时两线夹角为 $2\theta$，求 $q$。
+
+\textbf{解：} 对一个小球受力分析：
+\begin{itemize}
+  \item 水平方向：库仑斥力 $F = k\dfrac{q^2}{r^2}$，绳拉力的水平分力 $T\sin\theta$。
+  \item 竖直方向：重力 $mg$，绳拉力的竖直分力 $T\cos\theta$。
+\end{itemize}
+由平衡条件：
+\[
+T\sin\theta = k\frac{q^2}{r^2},\qquad T\cos\theta = mg
+\]
+两式相除得：
+\[
+\tan\theta = \frac{k q^2}{m g r^2}
+\]
+其中 $r = 2l\sin\theta$（$l$ 为绳长）。代入可得 $q$。
+
+\textbf{竞赛小贴士：} 涉及电场力的平衡问题，把库仑力当做一个普通力加入受力分析即可——与力学平衡问题没有任何区别。
 \end{competitionbox}
 
 \section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
 
+\begin{enumerate}
+  \item 库仑定律 $F = k\dfrac{Q_1 Q_2}{r^2}$，$k = 9 \times 10^9$。
+  \item 电场强度 $E = \dfrac{F}{q}$（定义式），$E = k\dfrac{Q}{r^2}$（点电荷决定式）。
+  \item 电场强度是矢量，遵循叠加原理。
+  \item 电场线：从正电荷出发到负电荷，疏密表示强弱，切线表示方向。
+  \item 匀强电场中 $E = \dfrac{U}{d}$（与电势差的关系——下节课讲）。
+\end{enumerate}

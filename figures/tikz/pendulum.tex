@@ -15,8 +15,9 @@
   % 摆角
   \draw (0,-0.4) arc (-90:-120:0.4);
   \node at (-0.3,-0.7) {$\theta$};
-  % 回复力示意
-  \draw[->,thick,red] (-1.2,-2.5) -- ++(0.8,0) node[right] {$F = -mg\sin\theta$};
-  % 摆长
-  \draw[<->,thick] (-1.5,0) -- (-1.5,-2.5) node[midway,left] {$l$};
+  % 回复力示意：沿切线指向平衡位置
+  \draw[->,thick,red] (-1.2,-2.5) -- ++(-25:0.95) node[midway,below] {$F_{\text{回}}$};
+  \draw[->,thick,blue] (-1.2,-2.5) -- ++(0,-0.8) node[below] {$mg$};
+  % 摆长沿摆线标注
+  \draw[<->,thick] (-0.22,-0.05) -- (-1.42,-2.55) node[midway,left] {$l$};
 \end{tikzpicture}

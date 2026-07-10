@@ -6,12 +6,13 @@
   \node at (0,0) {$M$};
   \filldraw[red!40,draw=red] (4,0) circle (0.5);
   \node at (4,0) {$m$};
-  % 距离
-  \draw[<->] (0.8,0.3) -- (3.5,0.3);
-  \node[above] at (2.15,0.3) {$r$};
-  % 引力
-  \draw[->,thick,red] (0.8,0) -- (2.5,0) node[midway,above] {$\vect{F}$};
-  \draw[->,thick,red] (3.5,0) -- (1.5,0) node[midway,below] {$\vect{F}'$};
+  % 中心距
+  \draw[dashed] (0,0) -- (0,1.15);
+  \draw[dashed] (4,0) -- (4,1.15);
+  \draw[<->] (0,1.0) -- (4,1.0) node[midway,above] {$r$};
+  % 引力：分别画在连线两侧，避免标签重叠
+  \draw[->,thick,red] (0.85,-0.22) -- (1.85,-0.22) node[midway,below] {$F$};
+  \draw[->,thick,red] (3.45,-0.22) -- (2.45,-0.22) node[midway,below] {$F'$};
   % 公式
   \node at (2,-1.5) {$F = G\frac{Mm}{r^2}$};
 \end{tikzpicture}

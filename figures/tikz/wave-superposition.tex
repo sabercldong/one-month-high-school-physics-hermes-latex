@@ -1,0 +1,31 @@
+% TikZ 图：两列波的叠加
+% Day 14：机械波
+\begin{tikzpicture}[x=0.8cm,y=0.75cm,>=Latex]
+  % 第一行：相遇前
+  \draw[->] (-0.2,0) -- (8.2,0) node[right] {$x$};
+  \draw[very thick,red] (0.7,0) -- (1.2,0.9) -- (1.7,0);
+  \draw[very thick,blue] (5.9,0) -- (6.4,0.9) -- (6.9,0);
+  \draw[->,red,thick] (1.9,0.55) -- (2.8,0.55);
+  \draw[->,blue,thick] (5.7,0.55) -- (4.8,0.55);
+  \node[left] at (-0.1,0.7) {相遇前};
+
+  % 第二行：重叠时
+  \begin{scope}[shift={(0,-1.75)}]
+    \draw[->] (-0.2,0) -- (8.2,0) node[right] {$x$};
+    \draw[dashed,red] (3.5,0) -- (4.0,0.9) -- (4.5,0);
+    \draw[dashed,blue] (3.5,0) -- (4.0,0.9) -- (4.5,0);
+    \draw[very thick,purple] (3.5,0) -- (4.0,1.8) -- (4.5,0);
+    \node[left] at (-0.1,0.8) {叠加时};
+    \node[right] at (4.7,1.25) {$y=y_1+y_2$};
+  \end{scope}
+
+  % 第三行：相遇后
+  \begin{scope}[shift={(0,-3.5)}]
+    \draw[->] (-0.2,0) -- (8.2,0) node[right] {$x$};
+    \draw[very thick,blue] (0.7,0) -- (1.2,0.9) -- (1.7,0);
+    \draw[very thick,red] (5.9,0) -- (6.4,0.9) -- (6.9,0);
+    \draw[->,blue,thick] (1.9,0.55) -- (1.0,0.55);
+    \draw[->,red,thick] (5.7,0.55) -- (6.6,0.55);
+    \node[left] at (-0.1,0.7) {相遇后};
+  \end{scope}
+\end{tikzpicture}

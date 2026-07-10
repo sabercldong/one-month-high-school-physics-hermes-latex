@@ -7,10 +7,10 @@
   % 表面物体
   \filldraw[red] (45:2) circle (3pt);
   \node[above right] at (45:2) {$m$};
-  % 万有引力（指向地心）
-  \draw[->,thick,red] (45:2) -- ++(225:1.5) node[midway,above right] {$F_{\text{引}}$};
-  % 重力（竖直向下——近似指向地心）
-  \draw[->,thick,blue] (45:2) -- ++(225:1.0) node[below left] {$G = mg$};
+  % 万有引力近似等于重力（忽略地球自转）
+  \draw[->,thick,red] (45:2) -- ++(225:1.45) node[midway,above right] {$F_{\text{引}}\approx mg$};
+  \draw[dashed] (0,0) -- (45:2);
+  \node at (25:1.15) {$R$};
   % 自转轴
   \draw[dashed] (0,-2.8) -- (0,2.8);
   \node[above] at (0,2.8) {$N$（北极）};

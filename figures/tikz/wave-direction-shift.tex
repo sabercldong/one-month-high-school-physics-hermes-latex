@@ -1,0 +1,17 @@
+% TikZ 图：微平移法判断质点振动方向
+% Day 14：机械波
+\begin{tikzpicture}[x=1.0cm,y=0.85cm,>=Latex]
+  \draw[->] (-0.3,0) -- (6.4,0) node[right] {$x$};
+  \draw[->] (0,-1.35) -- (0,1.45) node[above] {$y$};
+  \draw[very thick,red,smooth,domain=0:6.0,samples=100]
+    plot (\x,{sin(120*\x)});
+  \draw[dashed,gray,smooth,domain=0.25:6.25,samples=100]
+    plot (\x,{sin(120*(\x-0.25))});
+
+  \draw[->,thick] (4.7,1.25) -- (5.8,1.25) node[right] {波向右传播};
+  \coordinate (P) at (1.40,{sin(120*1.40)});
+  \coordinate (Q) at (1.40,{sin(120*(1.40-0.25))});
+  \filldraw[black] (P) circle (1.8pt) node[below left] {$P$};
+  \draw[->,thick,blue] (P) -- (Q) node[midway,right] {$v_P$};
+  \node[gray] at (3.25,-1.15) {虚线：极短时间后的波形};
+\end{tikzpicture}

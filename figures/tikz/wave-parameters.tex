@@ -1,0 +1,19 @@
+% TikZ 图：波长、振幅和波速
+% Day 14：机械波
+\begin{tikzpicture}[x=0.95cm,y=0.82cm,>=Latex]
+  \draw[->] (-0.35,0) -- (6.8,0) node[right] {$x$};
+  \draw[->] (0,-1.45) -- (0,1.65) node[above] {$y$};
+  \node[below left] at (0,0) {$O$};
+
+  \draw[very thick,red,smooth,domain=0:6.2,samples=100]
+    plot (\x,{sin(120*\x)});
+
+  \draw[dashed,gray] (0.75,0) -- (0.75,1);
+  \draw[dashed,gray] (3.75,0) -- (3.75,1);
+  \draw[<->] (0.75,1.25) -- (3.75,1.25) node[midway,above] {$\lambda$};
+
+  \draw[<->] (0.25,0) -- (0.25,1) node[midway,right] {$A$};
+  \node[above] at (0.75,1.05) {波峰};
+  \node[below] at (2.25,-1.05) {波谷};
+  \draw[->,thick] (5.0,1.25) -- (6.15,1.25) node[right] {$v$};
+\end{tikzpicture}

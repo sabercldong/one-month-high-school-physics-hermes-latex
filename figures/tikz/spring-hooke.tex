@@ -22,7 +22,9 @@
   \draw[<->,red] (4.2,-1.8) -- (4.2,-2.8) node[midway,right,xshift=2pt] {$x$};
   
   % 弹力箭头（红，向上）
-  \draw[->,thick,red] (2.5,-2.8) -- (2.5,-1.2) node[above right,xshift=2pt] {$F = kx$};
+  \draw[->,thick,red] (2.5,-2.8) -- (2.5,-1.2);
+  \node[red,anchor=east] at (2.25,-1.55) {$F = kx$};
   % 重力箭头（蓝，向下）
-  \draw[->,thick,blue] (2.5,-3.3) -- (2.5,-4.2) node[right,xshift=2pt] {$G = mg$};
+  \draw[->,thick,blue] (2.5,-3.3) -- (2.5,-4.2);
+  \node[blue,anchor=west] at (2.75,-3.95) {$G = mg$};
 \end{tikzpicture}
