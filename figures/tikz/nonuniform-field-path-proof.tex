@@ -1,0 +1,19 @@
+% TikZ 图：非匀强电场中路径无关的径向积分思路
+% Day 16：电势能、电势与电势差
+\begin{tikzpicture}[scale=0.82,>=Latex]
+  \filldraw[red] (0,0) circle (4pt);
+  \node[below] at (0,0) {$Q$};
+  \coordinate (A) at (1.2,0.95);
+  \coordinate (B) at (2.75,-0.55);
+  \filldraw[black] (A) circle (2pt) node[above] {$A$};
+  \filldraw[black] (B) circle (2pt) node[right] {$B$};
+
+  \draw[thick] (A) .. controls (1.9,1.45) and (2.9,0.65) .. (B);
+  \draw[thick,dashed] (A) .. controls (0.95,0.05) and (1.75,-1.1) .. (B);
+  \draw[dashed,gray] (0,0) -- (A);
+  \draw[dashed,gray] (0,0) -- (B);
+  \node[left] at (0.62,0.48) {$r_A$};
+  \node[below] at (1.35,-0.26) {$r_B$};
+
+  \draw[->,blue] (1.4,0) -- (2.0,0) node[midway,above] {$\vect{E}$};
+\end{tikzpicture}

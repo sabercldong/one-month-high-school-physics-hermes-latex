@@ -1,0 +1,34 @@
+% TikZ 图：电容器的充放电
+% Day 18：电容器
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  % 电源
+  \draw[thick] (-0.8,-0.3) -- (-0.8,0.3);
+  \draw[thick] (-0.3,-0.3) -- (-0.3,0.3);
+  \node[right] at (0,0) {电源 $E$};
+  % 电阻
+  \draw[thick] (1.5,0.5) -- (1.5,-0.5);
+  \draw[thick] (1.3,0.5) -- (1.7,0.5);
+  \draw[thick] (1.3,-0.5) -- (1.7,-0.5);
+  \node[above] at (1.5,0.8) {$R$};
+  % 开关
+  \draw[thick] (0.5,0) -- (1,0);
+  \filldraw[black] (1,0) circle (2pt);
+  \node[above] at (0.8,0.2) {$K$};
+  % 电容器
+  \draw[thick] (3.5,0.5) -- (3.5,1);
+  \draw[thick] (3.5,1) -- (5,1);
+  \draw[thick] (3.5,-0.5) -- (3.5,-1);
+  \draw[thick] (3.5,-1) -- (5,-1);
+  \draw[thick] (5,1) -- (5,-1);
+  % 极板
+  \draw[thick] (4.2,1) -- (5,1);
+  \draw[thick] (4.2,-1) -- (5,-1);
+  \node[right] at (5.2,0) {$C$};
+  % 连线
+  \draw[thick] (0,0) -- (0.5,0);
+  \draw[thick] (1.5,0) -- (3.5,0);
+  \draw[thick] (0,0) -- (0,-1.5) -- (3.5,-1.5) -- (3.5,-1);
+  % 回路标注
+  \draw[->,thick,red] (2.5,0.5) arc (0:180:0.5);
+  \node[red,right] at (2.5,0.8) {$I$};
+\end{tikzpicture}

@@ -1,0 +1,36 @@
+\begin{tikzpicture}[scale=0.95,>=stealth]
+  \coordinate (O) at (1.75,0);
+  \def\r{0.32}
+
+  % 墙角：滑轮圆心固定在桌边墙角处
+  \draw[thick] (-2.0,0) -- (O) -- (1.75,-2.35);
+  \foreach \x in {-1.8,-1.45,...,1.45} {
+    \draw[gray!60] (\x,0) -- ++(0.18,-0.12);
+  }
+  \foreach \y in {-0.25,-0.60,...,-2.15} {
+    \draw[gray!60] (1.75,\y) -- ++(0.12,0.18);
+  }
+
+  \draw[fill=white,thick] (-1.5,0) rectangle (-0.6,0.55);
+  \node at (-1.05,0.28) {$A$};
+
+  \draw[fill=white,thick] (1.87,-1.85) rectangle (2.45,-1.0);
+  \node at (2.16,-1.43) {$B$};
+
+  \draw[thick,fill=white] (O) circle (\r);
+  \fill (O) circle (0.025);
+
+  % 一根连续轻绳：A 端--滑轮--B 端
+  \draw[thick] (-0.6,\r) -- ($(O)+(0,\r)$)
+    arc[start angle=90,end angle=0,radius=\r]
+    -- ($(O)+(\r,-1.0)$);
+
+  \draw[<->,blue] (-0.6,0.88) -- ($(O)+(0,0.88)$) node[midway,above] {$l_1$};
+  \draw[<->,red] ($(O)+(0.62,0)$) -- ($(O)+(0.62,-1.0)$) node[midway,right] {$l_2$};
+  \draw[->,thick,blue] (-1.05,-0.18) -- (-0.25,-0.18) node[right] {$a_A$};
+  \draw[->,thick,red] (2.16,-1.85) -- (2.16,-2.48) node[midway,right] {$a_B$};
+
+  \node[align=center] at (-0.25,-3.35)
+    {$l_1+l_2+\text{定长部分}=L$\\[2pt]
+     $\Delta l_1+\Delta l_2=0\Rightarrow |a_A|=|a_B|$};
+\end{tikzpicture}

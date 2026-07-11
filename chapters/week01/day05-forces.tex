@@ -51,6 +51,24 @@
 
 \textbf{注意：} 效果力是按作用效果命名的（如“向心力”“回复力”），本质上通常是性质力的合力或分力。
 
+\vspace{0.5em}
+\textbf{作用力与反作用力、平衡力的区别：}
+
+\begin{center}
+\begin{tabular}{p{0.24\textwidth}p{0.31\textwidth}p{0.31\textwidth}}
+\toprule
+ & 作用力与反作用力 & 平衡力 \\
+\midrule
+受力对象 & 分别作用在两个物体上 & 作用在同一个物体上 \\
+大小方向 & 大小相等、方向相反 & 大小相等、方向相反 \\
+是否能抵消 & 不能抵消，因为对象不同 & 能抵消，使该物体合力为零 \\
+例子 & 书压桌子，桌子支持书 & 书静止时，重力和支持力平衡 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+受力分析时只画\textbf{研究对象受到的力}。例如研究“书”时，画桌子对书的支持力，不画书对桌子的压力；后者是作用在桌子上的力。
+
 \end{conceptbox}
 
 \begin{conceptbox}{重力}
@@ -141,6 +159,14 @@ f_k = \mu_k N
 \input{figures/tikz/friction-compare}
 
 \figcaption{静摩擦与滑动摩擦的对比}\label{fig:friction-compare}
+\end{center}
+
+\textbf{科学发展接口：静摩擦力是“自适应”的。} 机器人夹爪、轮胎起步、鞋底防滑都依赖静摩擦力。静摩擦力不是一开始就等于 $\mu_s N$，而是在最大值以内按需要变化；只有达到临界状态时，才有 $f_s=f_{\max}=\mu_s N$。
+
+\begin{center}
+\input{figures/tikz/static-friction-adaptive}
+
+\figcaption{静摩擦力随外力自适应变化，达到最大值后发生滑动}\label{fig:static-friction-adaptive}
 \end{center}
 
 \textbf{常见误区：}

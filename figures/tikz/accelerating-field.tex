@@ -2,16 +2,26 @@
 % Day 17：带电粒子在电场中的运动
 \begin{tikzpicture}[scale=0.9,>=Latex]
   % 加速电极
-  \draw[thick] (-2,1) -- (-2,-1);
-  \node[left] at (-2,0) {$+$};
-  \draw[thick] (2,1) -- (2,-1);
-  \node[right] at (2,0) {$-$};
+  \draw[thick] (-2.4,1.05) -- (-2.4,-1.05);
+  \draw[thick] (2.4,1.05) -- (2.4,-1.05);
+  \node[above,font=\large] at (-2.4,1.12) {$+$};
+  \node[above,font=\large] at (2.4,1.12) {$-$};
+  \node[below,font=\small] at (-2.4,-1.12) {正极板};
+  \node[below,font=\small] at (2.4,-1.12) {负极板};
+
   % 电场线
-  \foreach \y in {-0.6,0,0.6} {
-    \draw[->,blue] (-1.8,\y) -- (1.8,\y);
+  \foreach \y in {-0.55,0,0.55} {
+    \draw[->,blue] (-2.1,\y) -- (2.1,\y);
   }
-  % 电子
-  \filldraw[red] (-1.5,0) circle (2pt);
-  \draw[->,thick,red] (-1.5,0.4) -- (1.5,0.4) node[above] {$v$};
-  \node[below] at (0,-1.3) {$qU = \frac12 mv^2$（初速为零）};
+  \node[blue,fill=white,inner sep=1pt] at (0,0.78) {$\vect{E}$};
+
+  % 正电粒子
+  \filldraw[red] (-1.75,0) circle (2pt);
+  \node[below left,red,fill=white,inner sep=1pt] at (-1.75,0) {$+q$};
+  \draw[->,thick,red] (-1.55,0.32) -- (1.55,0.32);
+  \node[above,red,fill=white,inner sep=1pt] at (1.55,0.32) {$v$};
+
+  \draw[<->] (-2.4,1.45) -- (2.4,1.45);
+  \node[above,fill=white,inner sep=1pt] at (0,1.45) {加速电压 $U$};
+  \node[below] at (0,-1.65) {$qU = \frac12 mv^2$（初速为零）};
 \end{tikzpicture}

@@ -1,0 +1,33 @@
+% TikZ 图：串联并联对比
+% Day 19：直流电路
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  % 串联
+  \draw[thick] (0,0) -- (1,0);
+  \draw[thick] (1,0.5) -- (1,-0.5);
+  \draw[thick] (0.8,0.5) -- (1.2,0.5);
+  \draw[thick] (0.8,-0.5) -- (1.2,-0.5);
+  \node[above] at (1,0.8) {$R_1$};
+  \draw[thick] (1,0) -- (2.5,0);
+  \draw[thick] (2.5,0.5) -- (2.5,-0.5);
+  \draw[thick] (2.3,0.5) -- (2.7,0.5);
+  \draw[thick] (2.3,-0.5) -- (2.7,-0.5);
+  \node[above] at (2.5,0.8) {$R_2$};
+  \draw[thick] (2.5,0) -- (3.5,0);
+  \node[below] at (1.75,-0.8) {串联：$R = R_1 + R_2$};
+  
+  % 并联
+  \draw[thick] (5.5,0.8) -- (9.5,0.8);
+  \draw[thick] (5.5,-0.1) -- (9.5,-0.1);
+  \draw[thick] (7,0.8) -- (7,-0.1);
+  \draw[thick] (7.5,0.8) -- (7.5,-0.1);
+  \draw[thick] (7.5,0.5) -- (7.5,-0.5);
+  \draw[thick] (7.3,0.5) -- (7.7,0.5);
+  \draw[thick] (7.3,-0.5) -- (7.7,-0.5);
+  \node[above] at (7.5,1.1) {$R_1$};
+  \draw[thick] (8.5,0.8) -- (8.5,-0.1);
+  \draw[thick] (8.5,0.5) -- (8.5,-0.5);
+  \draw[thick] (8.3,0.5) -- (8.7,0.5);
+  \draw[thick] (8.3,-0.5) -- (8.7,-0.5);
+  \node[above] at (8.5,1.1) {$R_2$};
+  \node[below] at (7.5,-0.8) {并联：$\dfrac{1}{R} = \dfrac{1}{R_1} + \dfrac{1}{R_2}$};
+\end{tikzpicture}

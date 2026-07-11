@@ -1,54 +1,272 @@
 \daytitle{20}{闭合电路欧姆定律与实验电路}
 
 \begin{learningbox}{本讲义大致内容}
-讲电动势、内阻、闭合电路欧姆定律、路端电压、电源输出功率和伏安法实验电路。
+前面的电路问题中，我们默认电源是理想的（电压恒定）。实际上电源有内阻，电动势和路端电压并不相等。今天学习闭合电路欧姆定律、路端电压随负载的变化、电源输出功率的特性，以及测量电源电动势和内阻的实验方法。
 \end{learningbox}
 
 \section*{一、学习目标}
+
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 理解电源电动势 $E$ 和内阻 $r$ 的概念。
+  \item 掌握闭合电路欧姆定律 $I = \dfrac{E}{R+r}$。
+  \item 掌握路端电压 $U = E - Ir$ 随外电阻的变化规律。
+  \item 理解电源输出功率 $P_{\text{出}} = I^2R$ 在 $R = r$ 时最大。
+  \item 了解伏安法测 $E$ 和 $r$ 的实验原理。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中物理中，电源被认为能输出恒定电压（如"一节干电池 $1.5\ \mathrm{V}$"）。但如果你用万用表测一个旧电池的两端，会发现电压低于 $1.5\ \mathrm{V}$——这是因为电池有内阻。
+
+高中引入两个新概念：
+\begin{itemize}
+  \item \textbf{电动势 $E$：} 电源本身的特性（如干电池的电动势为 $1.5\ \mathrm{V}$）。
+  \item \textbf{内阻 $r$：} 电源内部的电阻（旧电池内阻增大，所以输出电压降低）。
+\end{itemize}
+
+闭合电路欧姆定律揭示了：$E$ = 外电路电压 + 内电路电压。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{电动势与闭合电路欧姆定律}
+
+\textbf{电动势 $E$：} 电源将其他形式的能转化为电能的本领，等于电源开路时两极间的电压。
+
+\textbf{闭合电路欧姆定律：}
+\[
+\boxed{I = \frac{E}{R + r}}
+\]
+
+\begin{itemize}
+  \item $E$：电源电动势（$\mathrm{V}$），由电源本身决定。
+  \item $R$：外电路总电阻。
+  \item $r$：电源内阻。
+\end{itemize}
+
+\textbf{路端电压（外电路电压）：}
+\[
+\boxed{U = IR = E - Ir}
+\]
+
+\begin{itemize}
+  \item $U$ 是电源两端的实际电压（不等于 $E$）。
+  \item $Ir$ 是内阻上的电压降（内电压）。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/closed-circuit}
+
+\figcaption{闭合电路：$E = IR + Ir = U + Ir$}\label{fig:closed-circuit}
+\end{center}
+
+\end{conceptbox}
+
+\begin{conceptbox}{路端电压与外电阻的关系}
+
+\begin{itemize}
+  \item 外电阻 $R \uparrow$ $\to$ 电流 $I \downarrow$ $\to$ 内压 $Ir \downarrow$ $\to$ 路端电压 $U \uparrow$。
+  \item 外电阻 $R \downarrow$ $\to$ 电流 $I \uparrow$ $\to$ 内压 $Ir \uparrow$ $\to$ 路端电压 $U \downarrow$。
+\end{itemize}
+
+\textbf{两个极端情况：}
+\begin{itemize}
+  \item $R \to \infty$（开路）：$I = 0$，$U = E$（路端电压等于电动势）。
+  \item $R \to 0$（短路）：$I_{\text{短}} = \dfrac{E}{r}$，$U = 0$。短路电流很大，会损坏电源。
+\end{itemize}
+
+\end{conceptbox}
+
+\begin{conceptbox}{电源的输出功率}
+
+\[
+P_{\text{出}} = I^2R = \left(\frac{E}{R+r}\right)^2 R
+\]
+
+\textbf{最大输出功率条件：}
+当 $R = r$ 时，输出功率最大：
+\[
+P_{\max} = \frac{E^2}{4r}
+\]
+
+\begin{center}
+\input{figures/tikz/power-output}
+
+\figcaption{电源输出功率 $P_{\text{出}}$ 随外电阻 $R$ 的变化}\label{fig:power-output}
+\end{center}
+
+电源的效率：
+\[
+\eta = \frac{P_{\text{出}}}{P_{\text{总}}} = \frac{I^2R}{I^2(R+r)} = \frac{R}{R+r}
+\]
+
+$R$ 越大，效率越高。但在最大输出功率时（$R = r$），效率仅为 $50\%$。
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+公式 & 物理意义 & 适用条件 \\
+\midrule
+$I = \dfrac{E}{R+r}$ & 闭合电路欧姆定律 & 纯电阻电路 \\
+$U = E - Ir$ & 路端电压 & 任何闭合电路 \\
+$P_{\text{出}} = I^2R$ & 电源输出功率 & 纯电阻电路 \\
+$P_{\max} = \dfrac{E^2}{4r}$ & 最大输出功率 & $R = r$ 时 \\
+$\eta = \dfrac{R}{R+r}$ & 电源效率 & 纯电阻电路 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：外电阻变化引起的动态分析}
+
+$R \uparrow \to I \downarrow \to U \uparrow$。分析顺序：局部 $\to$ 整体 $\to$ 局部。
+
+\subsection*{模型 2：电源伏安特性曲线}
+
+$U = E - Ir$，$U$-$I$ 图像是一条斜率为 $-r$ 的直线。
+\begin{itemize}
+  \item 纵轴截距：$E$（电动势，$I=0$ 时）。
+  \item 斜率绝对值：$r$（内阻）。
+\end{itemize}
+
+\subsection*{模型 3：伏安法测 $E$ 和 $r$}
+
+实验原理：改变外电阻 $R$，测多组 $U$、$I$，作 $U$-$I$ 图，由截距和斜率求 $E$ 和 $r$。
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{闭合电路欧姆定律}
 
-\textbf{解题过程：} TODO。
+\textbf{题意分析：} 电源电动势 $E = 12\ \mathrm{V}$，内阻 $r = 1\ \Omega$，外电阻 $R = 5\ \Omega$。求：
+\begin{enumerate}
+  \item 电路中的电流。
+  \item 路端电压。
+  \item 内电压。
+\end{enumerate}
 
-\textbf{方法总结：} TODO。
+\textbf{物理模型：} 闭合电路欧姆定律。
+
+\textbf{解题过程：}
+
+\begin{enumerate}
+  \item $I = \dfrac{E}{R+r} = \dfrac{12}{5+1} = 2\ \mathrm{A}$
+  
+  \item $U = IR = 2 \times 5 = 10\ \mathrm{V}$（或 $U = E - Ir = 12 - 2 \times 1 = 10\ \mathrm{V}$）
+  
+  \item $U_{\text{内}} = Ir = 2 \times 1 = 2\ \mathrm{V}$
+  
+  验证：$E = U + U_{\text{内}} = 10 + 2 = 12\ \mathrm{V}$ ✔
+\end{enumerate}
+
+\textbf{方法总结：} $E = U_{\text{外}} + U_{\text{内}}$ 始终成立。路端电压小于电动势，差值等于内阻上的电压降。
+
+\end{examplebox}
+
+\begin{examplebox}{路端电压的变化}
+
+\textbf{题意分析：} 电源 $E = 6\ \mathrm{V}$，$r = 0.5\ \Omega$。外电阻从 $R_1 = 4.5\ \Omega$ 减小到 $R_2 = 1\ \Omega$，求电流和路端电压的变化。
+
+\textbf{物理模型：} 闭合电路动态分析。
+
+\textbf{解题过程：}
+
+$R_1 = 4.5\ \Omega$：
+\[
+I_1 = \frac{6}{4.5 + 0.5} = \frac{6}{5} = 1.2\ \mathrm{A},\qquad
+U_1 = 6 - 1.2 \times 0.5 = 5.4\ \mathrm{V}
+\]
+
+$R_2 = 1\ \Omega$：
+\[
+I_2 = \frac{6}{1 + 0.5} = \frac{6}{1.5} = 4\ \mathrm{A},\qquad
+U_2 = 6 - 4 \times 0.5 = 4\ \mathrm{V}
+\]
+
+\textbf{方法总结：} 外电阻越小，电流越大，但路端电压越小。外电阻接近于零时（短路），路端电压趋近于零。
+
+\end{examplebox}
+
+\begin{examplebox}{电源最大输出功率}
+
+\textbf{题意分析：} 电源 $E = 10\ \mathrm{V}$，$r = 2\ \Omega$。
+\begin{enumerate}
+  \item 外电阻为多大时输出功率最大？
+  \item 最大输出功率是多少？
+  \item 此时电源的效率是多少？
+\end{enumerate}
+
+\textbf{物理模型：} 电源输出功率。
+
+\textbf{解题过程：}
+
+\begin{enumerate}
+  \item $R = r = 2\ \Omega$ 时输出功率最大。
+  
+  \item $P_{\max} = \dfrac{E^2}{4r} = \dfrac{10^2}{4 \times 2} = \dfrac{100}{8} = 12.5\ \mathrm{W}$
+  
+  \item $\eta = \dfrac{R}{R+r} = \dfrac{2}{2+2} = 50\%$
+\end{enumerate}
+
+\textbf{方法总结：} 当外电阻等于内阻时，电源输出功率最大。此时输入功率一半消耗在内阻上，效率仅 $50\%$。
+
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 电源 $E = 9\ \mathrm{V}$，$r = 1\ \Omega$，外电阻 $R = 8\ \Omega$。求电流、路端电压和内电压。
+  
+  \item 电源 $E = 6\ \mathrm{V}$，$r = 2\ \Omega$，当外电阻 $R$ 多大时电源输出功率最大？最大功率是多少？
+  
+  \item 用伏安法测电源电动势和内阻，测得 $U_1 = 1.4\ \mathrm{V}$、$I_1 = 0.2\ \mathrm{A}$ 和 $U_2 = 1.2\ \mathrm{V}$、$I_2 = 0.4\ \mathrm{A}$。求 $E$ 和 $r$。
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{混淆电动势和路端电压：} 电动势 $E$ 是电源本身的属性，路端电压 $U$ 是接入外电路后的实际电压。开路时 $U = E$，闭路时 $U < E$。
+  
+  \item \textbf{短路电流的计算忘记内阻：} 短路时 $R = 0$，$I = \dfrac{E}{r}$，不是 $\infty$。内阻越小短路电流越大。
+  
+  \item \textbf{动态分析中 $U$、$I$ 的变化方向判断错：} 记住 $R \uparrow \to I \downarrow \to U \uparrow$ 的顺序。
+  
+  \item \textbf{最大功率的条件搞反：} 最大输出功率是 $R = r$，不是 $R$ 越大越好。$R > r$ 时功率反而减小。
+  
+  \item \textbf{实验测 $E$、$r$ 的误差分析：} 伏安法电路有电流表内接和外接两种接法，各有不同的系统误差。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{含电容器的闭合电路}
+
+在闭合电路中加入电容器，稳定时电容器支路相当于断路（没有电流通过），但电容器两端的电压等于并联部分的电压。
+
+\textbf{例题：} 电源 $E = 10\ \mathrm{V}$，$r = 1\ \Omega$，$R_1 = 4\ \Omega$，$R_2 = 5\ \Omega$，电容器 $C = 10\ \mu\mathrm{F}$ 与 $R_2$ 并联。求电容器带电量。
+
+\textbf{解：} 先求干路电流（电容器支路断路，不影响总电阻）：
+\[
+I = \frac{E}{R_1 + R_2 + r} = \frac{10}{4 + 5 + 1} = 1\ \mathrm{A}
+\]
+电容器两端电压等于 $R_2$ 两端电压：$U_C = IR_2 = 1 \times 5 = 5\ \mathrm{V}$
+
+电量：$Q = CU_C = 10 \times 10^{-6} \times 5 = 5 \times 10^{-5}\ \mathrm{C}$
+
+\textbf{竞赛小贴士：} 含电容器的直流电路问题中，稳定时电容器支路视为断路，电容器电压等于与之并联部分的电压。
 \end{competitionbox}
 
 \section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
 
+\begin{enumerate}
+  \item 闭合电路欧姆定律 $I = \dfrac{E}{R+r}$，$E = IR + Ir$。
+  \item 路端电压 $U = E - Ir$，$R \uparrow \to U \uparrow$。
+  \item 电源输出功率 $P_{\text{出}} = I^2R$，$R = r$ 时最大，$P_{\max} = \dfrac{E^2}{4r}$。
+  \item 电源效率 $\eta = \dfrac{R}{R+r}$，最大功率时效率仅 $50\%$。
+  \item 伏安法 $U$-$I$ 图：纵截距 $= E$，斜率 $= -r$。
+\end{enumerate}

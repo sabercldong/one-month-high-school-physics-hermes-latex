@@ -1,0 +1,32 @@
+% TikZ 图：匀强电场中的电势差与投影距离
+% Day 16：电势能、电势与电势差
+\begin{tikzpicture}[scale=0.88,>=Latex]
+  % 平行板与电场线
+  \draw[thick] (-0.2,1.5) -- (-0.2,-1.5);
+  \node[left] at (-0.2,0) {$+$};
+  \draw[thick] (4.4,1.5) -- (4.4,-1.5);
+  \node[right] at (4.4,0) {$-$};
+  \foreach \y in {-1.0,-0.35,0.35,1.0} {
+    \draw[->,blue] (0.05,\y) -- (4.15,\y);
+  }
+  \node[blue] at (4.45,1.05) {$\vect E$};
+
+  % 等势面
+  \foreach \x/\lab in {0.8/高电势,2.2/,3.6/低电势} {
+    \draw[gray,dashed] (\x,1.35) -- (\x,-1.35);
+  }
+  \node[gray,font=\small] at (0.8,1.65) {高电势};
+  \node[gray,font=\small] at (3.6,1.65) {低电势};
+
+  % A、B 与投影
+  \coordinate (A) at (0.8,0.75);
+  \coordinate (B) at (3.6,-0.55);
+  \filldraw[red] (A) circle (2pt) node[above left] {$A$};
+  \filldraw[red] (B) circle (2pt) node[below right] {$B$};
+  \draw[red,thick] (A) -- (B);
+  \draw[dashed,gray] (A) -- (0.8,-1.22);
+  \draw[dashed,gray] (B) -- (3.6,-1.22);
+  \draw[<->] (0.8,-1.22) -- (3.6,-1.22);
+  \node[below] at (2.2,-1.22) {$d$};
+  \node[font=\small] at (2.2,-1.65) {$d$ 是 $AB$ 沿电场方向的投影};
+\end{tikzpicture}

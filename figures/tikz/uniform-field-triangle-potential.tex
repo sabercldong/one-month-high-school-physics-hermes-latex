@@ -1,0 +1,22 @@
+% TikZ 图：匀强电场中等边三角形电势
+% Day 16：电势能、电势与电势差
+\begin{tikzpicture}[scale=1.05,>=Latex]
+  \coordinate (A) at (0,0);
+  \coordinate (C) at (4,0);
+  \coordinate (B) at (2,3.464);
+  \coordinate (M) at (2,0);
+
+  \draw[thick] (A) -- (B) -- (C) -- cycle;
+  \filldraw[red] (A) circle (2.2pt) node[below left] {$A,\ 10\,\mathrm{V}$};
+  \filldraw[red] (B) circle (2.2pt) node[above] {$B,\ 6\,\mathrm{V}$};
+  \filldraw[red] (C) circle (2.2pt) node[below right] {$C,\ 2\,\mathrm{V}$};
+  \filldraw[black] (M) circle (1.6pt) node[below right] {$M,\ 6\,\mathrm{V}$};
+
+  % 等势线 BM 与电场方向
+  \draw[gray,dashed,thick] (B) -- (M);
+  \node[gray,right] at (2.05,1.75) {等势线};
+  \draw[->,blue,very thick] (0.65,0.48) -- (3.35,0.48) node[midway,above] {$\vect E$};
+  % 长度标注
+  \draw[<->] (0,-0.85) -- (4,-0.85);
+  \node[below] at (2,-0.85) {$a$};
+\end{tikzpicture}

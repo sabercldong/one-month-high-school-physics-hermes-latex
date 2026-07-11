@@ -12,7 +12,7 @@
   \item 掌握带电粒子在偏转电场中的类平抛运动分析。
   \item 会计算粒子的偏转位移和偏转角。
   \item 理解示波管的基本原理。
-  \item 能区分带电粒子的"先加速后偏转"综合问题。
+  \item 能区分带电粒子的“先加速后偏转”综合问题。
 \end{enumerate}
 
 \section*{二、初高中衔接}
@@ -21,14 +21,14 @@
 
 \textbf{核心思路：}
 \[
-\text{电场力 } F = qE \;\to\; \text{加速度 } a = \frac{F}{m} = \frac{qE}{m} \;\to\; \text{运动学}
+\text{电场力 } F = |q|E \;\to\; \text{加速度大小 } a = \frac{F}{m} = \frac{|q|E}{m} \;\to\; \text{方向另判}
 \]
 
 \section*{三、核心概念}
 
 \begin{conceptbox}{加速电场}
 
-带电粒子在匀强电场中加速，电场力做正功，动能增加。
+带电粒子在匀强电场中加速，电场力做正功，动能增加。计算速度大小时，通常把 $q$ 理解为电荷量大小；运动方向由电荷正负和电场方向判断。
 
 \begin{center}
 \input{figures/tikz/accelerating-field}
@@ -36,14 +36,14 @@
 \figcaption{加速电场：$qU = \dfrac12 mv^2$}\label{fig:accelerating-field}
 \end{center}
 
-\textbf{核心公式（初速为零）：}
+\textbf{核心公式（初速为零，电场力做正功）：}
 \[
 \boxed{qU = \frac12 mv^2}
 \]
 
 \begin{itemize}
   \item $U$：加速电压。
-  \item $q$：粒子电荷量。
+  \item $q$：粒子电荷量大小。若使用带符号电荷量，应先判断电场力做功正负。
   \item 粒子的末速度 $v = \sqrt{\dfrac{2qU}{m}}$ 与加速距离无关。
 \end{itemize}
 
@@ -51,6 +51,7 @@
 \[
 qU = \frac12 mv^2 - \frac12 mv_0^2
 \]
+这里的 $qU$ 表示电场力做的正功；若电场力做负功，粒子动能减少。
 
 \end{conceptbox}
 
@@ -67,7 +68,7 @@ qU = \frac12 mv^2 - \frac12 mv_0^2
 \textbf{分析方法：} 正交分解
 \begin{itemize}
   \item $x$ 方向（匀速）：$x = v_0 t$。
-  \item $y$ 方向（匀加速）：$a = \dfrac{qE}{m} = \dfrac{qU}{md}$，$y = \dfrac12 a t^2$。
+  \item $y$ 方向（匀加速）：$a = \dfrac{qE}{m} = \dfrac{qU}{md}$，$y = \dfrac12 a t^2$。这里先按电荷量大小求加速度大小，偏转方向另由电荷正负和电场方向判断。
 \end{itemize}
 
 \textbf{偏转位移（极板长 $L$，粒子从极板中心射入）：}
@@ -103,22 +104,52 @@ $\tan\theta = \dfrac{qUL}{mdv_0^2}$ & 偏转角 & 同上 \\
 
 粒子先经过加速电压 $U_1$ 加速，再进入偏转电压 $U_2$ 的偏转电场。
 
+\begin{center}
+\input{figures/tikz/accelerate-deflect-model}
+
+\figcaption{先加速后偏转模型：$U_1$ 决定入射速度，$U_2$ 决定偏转大小}\label{fig:accelerate-deflect-model}
+\end{center}
+
 加速：$qU_1 = \frac12 mv_0^2 \;\Rightarrow\; v_0^2 = \frac{2qU_1}{m}$
 
 偏转位移：
 \[
 y = \frac{U_2 L^2}{4U_1 d}
 \]
-偏转位移与 $q$、$m$ 无关！——这是示波管能工作的核心原因。
+偏转位移与 $q$、$m$ 无关，这是示波管能工作的核心原因。
 
 \subsection*{模型 2：示波管}
 
-电子枪发射电子 $\to$ 加速电场加速 $\to$ 偏转电极（$x$、$y$ 方向各一对）偏转 $\to$ 打在荧光屏上发光。
+示波管可以看成“先加速后两次偏转”的装置。电子枪发射电子，电子先经加速电场获得较大的水平速度，再依次经过两对偏转板，最后打在荧光屏上形成亮点。
 
-\subsection*{模型 3：带电粒子在电场中的圆周运动}
+\begin{center}
+\input{figures/tikz/oscilloscope-model}
 
-若带电粒子垂直于电场方向以适当的速度射入，电场力提供向心力（如电子绕原子核运动模型在量子力学中处理，经典物理中遇到较少）。
+\figcaption{示波管模型：加速、偏转、屏幕成像}\label{fig:oscilloscope-model}
 \end{center}
+
+\begin{itemize}
+  \item \textbf{加速电场：} 决定电子进入偏转系统前的速度 $v_0$。
+  \item \textbf{$Y$ 偏转板：} 控制亮点的上下位置，通常接入待观测的信号电压。
+  \item \textbf{$X$ 偏转板：} 控制亮点的左右位置，常接扫描电压。
+  \item \textbf{荧光屏：} 电子打到屏上形成亮点，亮点随时间移动就形成图像。
+\end{itemize}
+
+\subsection*{模型 3：离开偏转电场后的无场区运动}
+
+粒子在偏转电场内做类平抛运动；离开极板后若进入无场区，就沿出射速度方向做匀速直线运动。因此屏幕上的总偏移通常由两部分组成：
+\[
+Y = y_1 + y_2
+\]
+其中 $y_1$ 是极板内偏转，$y_2$ 是离开极板后在无场区继续“斜着飞”产生的偏移。
+
+\begin{center}
+\input{figures/tikz/post-deflection-drift}
+
+\figcaption{离开偏转电场后的无场区：沿出射速度方向匀速直线运动}\label{fig:post-deflection-drift}
+\end{center}
+
+匀强电场中的电场力方向恒定，一般不会像圆周运动的向心力那样始终指向圆心，所以本节不把“圆周运动”作为主模型。
 
 \section*{六、例题精讲}
 
@@ -131,8 +162,12 @@ y = \frac{U_2 L^2}{4U_1 d}
 \textbf{解题过程：}
 
 \[
-v = \sqrt{\frac{2eU}{m}} = \sqrt{\frac{2 \times 1.6 \times 10^{-19} \times 500}{9.1 \times 10^{-31}}}
-= \sqrt{\frac{1.6 \times 10^{-16}}{9.1 \times 10^{-31}}} = \sqrt{1.76 \times 10^{14}} \approx 1.33 \times 10^7\ \mathrm{m/s}
+\begin{aligned}
+v &= \sqrt{\frac{2eU}{m}}
+= \sqrt{\frac{2 \times 1.6 \times 10^{-19} \times 500}{9.1 \times 10^{-31}}} \\
+&= \sqrt{1.76 \times 10^{14}}
+\approx 1.33 \times 10^7\ \mathrm{m/s}
+\end{aligned}
 \]
 
 \textbf{方法总结：} 电子的质量很小，$500\ \mathrm{V}$ 的电压就能让它加速到 $10^7\ \mathrm{m/s}$ 量级。但即使如此，远小于光速 $3 \times 10^8\ \mathrm{m/s}$，不需用相对论修正。
@@ -174,6 +209,12 @@ v = \sqrt{\frac{2eU}{m}} = \sqrt{\frac{2 \times 1.6 \times 10^{-19} \times 500}{
 
 \textbf{物理模型：} 先加速后偏转。
 
+\begin{center}
+\input{figures/tikz/accelerate-deflect-example}
+
+\figcaption{例题示意：先由 $U_1$ 加速，再由 $U_2$ 偏转}\label{fig:accelerate-deflect-example}
+\end{center}
+
 \textbf{解题过程：}
 
 加速后速度 $v_0^2 = \dfrac{2eU_1}{m}$
@@ -190,7 +231,7 @@ y = \frac12 \frac{eU_2}{md} \left(\frac{L}{v_0}\right)^2
 y = \frac{100 \times (0.05)^2}{4 \times 1000 \times 0.01} = \frac{100 \times 0.0025}{40} = \frac{0.25}{40} = 0.00625\ \mathrm{m} = 6.25\ \mathrm{mm}
 \]
 
-\textbf{方法总结：} 先加速后偏转问题中，偏转位移 $y = \dfrac{U_2 L^2}{4U_1 d}$ 与粒子的 $q$、$m$ 无关——不同带电粒子在同一装置中偏转相同。
+\textbf{方法总结：} 先加速后偏转问题中，在粒子从静止经同一加速电压加速、进入同一偏转电场且忽略重力和相对论效应时，偏转位移 $y = \dfrac{U_2 L^2}{4U_1 d}$ 与粒子的 $q$、$m$ 无关。若粒子电性相反，偏转方向相反。
 
 \end{examplebox}
 
@@ -208,7 +249,7 @@ y = \frac{100 \times (0.05)^2}{4 \times 1000 \times 0.01} = \frac{100 \times 0.0
 
 \begin{mistakebox}
 \begin{enumerate}
-  \item \textbf{把电场力加速度和重力加速度混淆：} 带电粒子在电场中的加速度 $a = \dfrac{qE}{m}$，不是 $g$。$g$ 只在重力作用下才有。
+  \item \textbf{把电场力加速度和重力加速度混淆：} 带电粒子在电场中的加速度大小 $a = \dfrac{|q|E}{m}$，不是 $g$。$g$ 只在重力作用下才有，方向要由电荷正负和电场方向判断。
   
   \item \textbf{偏转电场中忘记 $x$ 方向是匀速运动：} $x$ 方向不受力（重力一般忽略），是匀速直线运动，不能写成匀加速。
   
@@ -227,13 +268,21 @@ y = \frac{100 \times (0.05)^2}{4 \times 1000 \times 0.01} = \frac{100 \times 0.0
 
 如果偏转电场是交变的（如示波器中的锯齿波或正弦波电压），粒子的偏转位移随时间变化，在荧光屏上形成图像。
 
-\textbf{关键思路：} 粒子穿过偏转电场的时间 $t = L/v_0$ 非常短（通常 $< 10^{-8}\ \mathrm{s}$），而交变电压的周期 $T$ 较长（$10^{-3}\ \mathrm{s}$ 量级），所以可以认为粒子在极板间飞行时电压几乎不变。
+\begin{center}
+\input{figures/tikz/alternating-field-trace}
+
+\figcaption{交变偏转电场：扫描电压把时间展开，信号电压决定上下偏转}\label{fig:alternating-field-trace}
+\end{center}
+
+\textbf{关键思路：} 粒子穿过偏转电场的时间 $t = L/v_0$ 非常短（通常 $< 10^{-8}\ \mathrm{s}$），而交变电压的周期 $T$ 往往长得多，所以单个粒子通过极板时，可以近似认为电压不变。不同时间发出的电子对应不同瞬时电压，打在屏幕上的位置不同，连续起来就形成图像。
 
 \textbf{例题：} 示波器中 $x$ 偏转板加锯齿波电压（扫描电压），$y$ 偏转板加正弦信号电压。电子打在屏上的轨迹是什么？
 
-\textbf{解：} $y$ 方向偏转与正弦电压成正比，$x$ 方向偏转与锯齿波（时间线性增加）成正比。屏上呈现正弦波形。
+\textbf{解：} $y$ 方向偏转与正弦电压成正比，亮点随信号电压上下运动；$x$ 方向偏转与锯齿波扫描电压成正比，亮点随时间近似匀速向右运动。因此屏上把“随时间变化的正弦电压”展开成一条正弦曲线。
 
-\textbf{竞赛小贴士：} 处理交变电场问题时，先判断粒子经过电场的时间与交变周期的关系。如果 $t \ll T$，可以近似为恒定电场。
+\textbf{进一步理解：} 如果扫描电压周期与信号周期匹配，每次扫描画出的曲线重合，屏幕上看到稳定波形；如果二者不同步，波形会左右移动或变得不稳定。
+
+\textbf{竞赛小贴士：} 处理交变电场问题时，先判断粒子经过电场的时间与交变周期的关系。如果 $t \ll T$，可以对单个粒子近似为恒定电场；再把不同时刻的粒子落点按时间顺序连起来。
 \end{competitionbox}
 
 \section*{十、今日小结}

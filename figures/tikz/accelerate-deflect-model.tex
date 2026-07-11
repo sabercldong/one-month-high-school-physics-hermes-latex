@@ -1,0 +1,41 @@
+% TikZ 图：先加速后偏转模型
+% Day 17：带电粒子在电场中的运动
+\begin{tikzpicture}[scale=0.78,>=Latex]
+  % 加速区
+  \draw[thick] (-3.2,1.0) -- (-3.2,-1.0);
+  \draw[thick] (-1.6,1.0) -- (-1.6,-1.0);
+  \node[above] at (-3.2,1.04) {$+$};
+  \node[above] at (-1.6,1.04) {$-$};
+  \foreach \y in {-0.45,0,0.45} {
+    \draw[->,blue] (-3.0,\y) -- (-1.8,\y);
+  }
+  \draw[<->] (-3.2,1.32) -- (-1.6,1.32);
+  \node[above,blue,fill=white,inner sep=1pt] at (-2.4,1.32) {$U_1$};
+  \node[below left,red,fill=white,inner sep=1pt] at (-3.6,0) {$+q$};
+  \draw[red,thick,dashed] (-3.6,0) -- (-1.62,0);
+  \draw[-{Stealth[length=5pt,width=6pt]},red,line width=1.05pt] (-1.35,0) -- (-0.35,0);
+  \node[red,fill=white,inner sep=1pt] at (-0.82,0.28) {$v_0$};
+
+  % 偏转区
+  \draw[thick] (-0.2,1.2) -- (3.0,1.2);
+  \draw[thick] (-0.2,-1.2) -- (3.0,-1.2);
+  \node[above] at (-0.35,1.2) {$+$};
+  \node[below] at (-0.35,-1.2) {$-$};
+  \foreach \x in {0.35,1.05,1.75,2.45} {
+    \draw[->,blue] (\x,1.0) -- (\x,-1.0);
+  }
+  \draw[<->] (-0.2,1.55) -- (3.0,1.55);
+  \node[above,fill=white,inner sep=1pt] at (1.4,1.55) {$L$};
+  \draw[<->] (3.35,1.2) -- (3.35,-1.2);
+  \node[right,fill=white,inner sep=1pt] at (3.35,0) {$d$};
+  \node[blue,fill=white,inner sep=1pt] at (0.15,-1.48) {$U_2$};
+
+  \draw[red,thick,dashed,domain=0.25:3.3,samples=80]
+    plot (\x,{-0.10*(\x+0.2)*(\x+0.2)});
+  \draw[dashed,gray] (3.3,0) -- (3.3,-1.23);
+  \draw[<->] (4.0,0) -- (4.0,-1.23);
+  \node[right,fill=white,inner sep=1pt] at (4.0,-0.62) {$y$};
+
+  \node[font=\small,fill=white,inner sep=1pt] at (-2.4,-1.48) {加速区};
+  \node[font=\small,fill=white,inner sep=1pt] at (2.15,-1.82) {偏转区};
+\end{tikzpicture}

@@ -1,0 +1,17 @@
+\begin{tikzpicture}[>=stealth,node distance=1.35cm]
+  \tikzstyle{stepbox}=[draw,thick,minimum width=2.35cm,minimum height=0.82cm,align=center]
+
+  \node[stepbox] (obj) {选对象};
+  \node[stepbox,right=of obj] (force) {画真实力};
+  \node[stepbox,right=of force] (axis) {定正方向};
+  \node[stepbox,right=of axis] (eq) {列方程};
+
+  \draw[->,thick] (obj) -- (force);
+  \draw[->,thick] (force) -- (axis);
+  \draw[->,thick] (axis) -- (eq);
+
+  \node[below=0.48cm of obj,align=center] {隔离研究对象};
+  \node[below=0.48cm of force,align=center] {重力、弹力\\摩擦力};
+  \node[below=0.48cm of axis,align=center] {把力分解\\带正负号};
+  \node[below=0.48cm of eq,align=center] {$\sum F_x=ma_x$\\$\sum F_y=ma_y$};
+\end{tikzpicture}

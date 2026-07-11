@@ -1,0 +1,23 @@
+% TikZ 图：正方形缺角电荷的对称补全
+% Day 15：电荷、电场与电场强度
+\begin{tikzpicture}[scale=0.78,>=Latex]
+  \coordinate (A) at (-1.25,1.25);
+  \coordinate (B) at (1.25,1.25);
+  \coordinate (C) at (1.25,-1.25);
+  \coordinate (D) at (-1.25,-1.25);
+  \coordinate (O) at (0,0);
+
+  \draw[thick] (A) -- (B) -- (C) -- (D) -- cycle;
+  \filldraw[red] (A) circle (3.5pt) node[above left] {$+q$};
+  \draw[red,thick] (B) circle (5pt);
+  \node[red,above right] at (B) {缺};
+  \filldraw[red] (C) circle (3.5pt) node[below right] {$+q$};
+  \filldraw[red] (D) circle (3.5pt) node[below left] {$+q$};
+
+  \filldraw[black] (O) circle (2pt);
+  \node[below left] at (O) {$O$};
+  \draw[dashed,gray] (O) -- (B);
+  \draw[->,very thick,blue] (O) -- (0.9,0.9) node[midway,above left] {$\vect{E}$};
+  \draw[<->] (-1.25,-1.65) -- (1.25,-1.65);
+  \node[below] at (0,-1.65) {$a$};
+\end{tikzpicture}

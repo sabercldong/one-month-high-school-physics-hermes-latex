@@ -9,7 +9,7 @@
 \begin{enumerate}
   \item 掌握冲量 $I = Ft$ 和动量 $p = mv$ 的概念。
   \item 掌握动量定理 $F_{\text{合}}t = \Delta p$，会用动量定理解释缓冲现象。
-  \item 理解动量守恒的条件：系统不受外力或合外力为零。
+  \item 理解动量守恒的条件：系统合外力的冲量为零。
   \item 掌握弹性碰撞、完全非弹性碰撞的特点和公式。
   \item 会用动量守恒解决碰撞、爆炸、反冲问题。
 \end{enumerate}
@@ -71,7 +71,16 @@ F_{\text{合}}\Delta t = m v_2 - m v_1 = \Delta p
   \item 与动能定理类似，但动量定理处理的是\textbf{时间}积累，动能定理处理的是\textbf{位移}积累。
 \end{itemize}
 
-\textbf{生活应用：} 跳远时沙坑、汽车安全气囊、鸡蛋落在海绵上——都是通过延长作用时间 $t$ 来减小平均作用力 $F$（因为 $F_{\text{合}} t = \Delta p$ 恒定）。
+\textbf{生活应用与工程设计：} 跳远时沙坑、汽车安全气囊、头盔、缓冲垫——都是通过延长作用时间 $t$ 来减小平均作用力 $F$（因为 $F_{\text{合}} t = \Delta p$ 恒定）。
+
+\begin{center}
+\begin{minipage}{0.86\textwidth}
+\centering
+\input{figures/tikz/impulse-buffer}
+
+\figcaption{冲量相同时，延长作用时间可以减小平均作用力}\label{fig:impulse-buffer}
+\end{minipage}
+\end{center}
 
 \end{conceptbox}
 
@@ -79,7 +88,7 @@ F_{\text{合}}\Delta t = m v_2 - m v_1 = \Delta p
 
 \begin{conceptbox}{动量守恒定律}
 
-\textbf{条件：} 系统不受外力，或合外力为零。
+\textbf{条件：} 系统合外力的冲量为零。系统不受外力，或合外力为零，是它的常见特例。
 
 \textbf{定律：}
 \[
@@ -129,6 +138,18 @@ F_{\text{合}}\Delta t = m v_2 - m v_1 = \Delta p
 
 \textbf{非弹性碰撞：} 介于两者之间，动量守恒，动能部分损失。
 
+\textbf{动量和动能的区别：}
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+物理量 & 性质 & 碰撞中的特点 \\
+\midrule
+动量 $p=mv$ & 矢量，方向与速度相同 & 系统合外力冲量为零时守恒 \\
+动能 $E_k=\frac12 mv^2$ & 标量，永远非负 & 只有弹性碰撞才守恒 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
@@ -141,7 +162,7 @@ F_{\text{合}}\Delta t = m v_2 - m v_1 = \Delta p
 $p = mv$ & 动量 & 任何运动 \\
 $I = Ft$ & 冲量 & 恒力 \\
 $F_{\text{合}} t = \Delta p$ & 动量定理 & $F_{\text{合}}$ 为合外力（变力取平均） \\
-$m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'$ & 动量守恒 & 合外力为零 \\
+$m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'$ & 动量守恒 & 合外力冲量为零 \\
 $\frac12 m_1 v_1^2 = \frac12 m_1 v_1'^2 + \frac12 m_2 v_2'^2$ & 动能守恒 & 弹性碰撞，$v_2=0$ \\
 \bottomrule
 \end{tabular}
@@ -324,7 +345,7 @@ v_2' = \frac{2 \times 2}{2+1} \times 3 = 4\ \mathrm{m/s}
   
   \item \textbf{误以为碰撞中动能一定守恒：} 只有弹性碰撞动能守恒。完全非弹性碰撞动能损失最大。
   
-  \item \textbf{系统选择错误：} 动量守恒的前提是系统合外力为零。如果把地球也算进系统，重力就是内力了——但高中阶段一般不这么处理。
+  \item \textbf{系统选择错误：} 动量守恒的前提是系统合外力冲量为零。如果把地球也算进系统，重力就是内力了——但高中阶段一般不这么处理。
   
   \item \textbf{弹性碰撞和完全非弹性碰撞公式搞混：} 弹性碰撞碰后分开、速度不同；完全非弹性碰撞碰后粘在一起、速度相同。
 \end{enumerate}
@@ -348,7 +369,7 @@ e = \frac{v_2' - v_1'}{v_1 - v_2}
 
 \textbf{例题：} 一个小球从 $h_1$ 高处自由落下，与地面碰撞后弹起 $h_2$ 高（$h_2 < h_1$）。求恢复系数。
 
-\textbf{解：} 碰地前速度 $v_1 = \sqrt{2gh_1}$（向下），碰后速度 $v_1' = \sqrt{2gh_2}$（向上）。地面碰前速度 $v_2=0$，碰后 $v_2'=0$。
+\textbf{解：} 取向下为正方向。碰地前小球速度 $v_1 = \sqrt{2gh_1}$，碰后小球速度 $v_1' = -\sqrt{2gh_2}$；地面碰前速度 $v_2=0$，碰后 $v_2'=0$。
 
 \[
 e = \frac{v_2' - v_1'}{v_1 - v_2} = \frac{0 - (-\sqrt{2gh_2})}{\sqrt{2gh_1} - 0} = \sqrt{\frac{h_2}{h_1}}
@@ -361,7 +382,7 @@ e = \frac{v_2' - v_1'}{v_1 - v_2} = \frac{0 - (-\sqrt{2gh_2})}{\sqrt{2gh_1} - 0}
 
 \begin{enumerate}
   \item 动量 $p = mv$，冲量 $I = Ft$，动量定理 $F_{\text{合}} t = \Delta p$。
-  \item 动量守恒条件：系统合外力为零（碰撞中可近似）。
+  \item 动量守恒条件：系统合外力冲量为零（碰撞中常可近似）。
   \item 弹性碰撞：动量守恒 $+$ 动能守恒。
   \item 完全非弹性碰撞：动量守恒，碰后共速，动能损失最大。
   \item 反冲/爆炸：初动量为零，各部分动量矢量和为零。

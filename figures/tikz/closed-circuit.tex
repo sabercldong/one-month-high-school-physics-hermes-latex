@@ -1,0 +1,27 @@
+% TikZ 图：闭合电路
+% Day 20：闭合电路欧姆定律
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[thick] (0,0) -- (2,0);
+  % 外电阻
+  \draw[thick] (2,0.5) -- (2,-0.5);
+  \draw[thick] (1.8,0.5) -- (2.2,0.5);
+  \draw[thick] (1.8,-0.5) -- (2.2,-0.5);
+  \node[above] at (2,0.8) {$R$};
+  \draw[thick] (2,0) -- (4,0);
+  % 电源（含内阻）
+  \draw[thick] (4.3,-0.3) -- (4.3,0.3);
+  \draw[thick] (4.8,-0.3) -- (4.8,0.3);
+  \node[right] at (5.3,0) {$E$};
+  % 内阻
+  \draw[thick] (5.5,0.4) -- (5.5,-0.4);
+  \draw[thick] (5.3,0.4) -- (5.7,0.4);
+  \draw[thick] (5.3,-0.4) -- (5.7,-0.4);
+  \node[below] at (5.5,-0.7) {$r$};
+  \draw[thick] (5.5,0) -- (6,0);
+  % 回路
+  \draw[thick] (6,0) -- (6,-1.5) -- (0,-1.5) -- (0,0);
+  % 电流
+  \draw[->,thick,red] (1,0.3) -- (3,0.3) node[above] {$I$};
+  % 公式
+  \node at (3,-2.0) {$I = \dfrac{E}{R+r}$，$U = E - Ir$};
+\end{tikzpicture}

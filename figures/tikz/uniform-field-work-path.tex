@@ -1,0 +1,50 @@
+% TikZ 图：匀强电场中电场力做功与路径无关
+% Day 16：电势能、电势与电势差
+\begin{tikzpicture}[scale=0.82,>=Latex]
+  \foreach \y in {-1.2,-0.6,0,0.6,1.2} {
+    \draw[->,blue] (-0.35,\y) -- (4.35,\y);
+  }
+  \node[blue,above] at (0.15,1.2) {$\vect{E}$};
+
+  \coordinate (A) at (0.35,-0.9);
+  \coordinate (B) at (3.75,0.95);
+  \filldraw[red] (A) circle (2pt) node[below left] {$A$};
+  \filldraw[red] (B) circle (2pt) node[above right] {$B$};
+
+  \draw[thick] (A) .. controls (0.95,0.68) and (2.15,-1.05) .. (B);
+  \coordinate (S) at (1.5729,-0.1348);
+  \coordinate (T) at (2.0348,-0.1102);
+  \draw[orange!85!black,line width=2.6pt,line cap=round]
+    (S) .. controls (1.7184,-0.1317) and (1.8726,-0.1287) .. (T);
+  \filldraw[orange!85!black] (S) circle (1.8pt);
+  \filldraw[orange!85!black] (T) circle (1.8pt);
+  \node[orange!85!black,below] at (1.82,-0.52) {\small 截取这一小段};
+
+  \draw[dashed,gray] (A) -- (0.35,1.45);
+  \draw[dashed,gray] (B) -- (3.75,1.45);
+  \draw[<->] (0.35,1.35) -- (3.75,1.35);
+  \node[above] at (2.05,1.35) {$d=x_B-x_A$};
+
+  \draw[gray,dashed] (S) -- (4.75,-0.55);
+  \draw[gray,dashed] (T) -- (4.75,0.45);
+
+  \begin{scope}[shift={(4.75,0)}]
+    \draw[rounded corners=2pt,gray] (0,-1.25) rectangle (3.25,1.25);
+    \node[font=\small] at (1.62,1.02) {放大这一小段};
+    \foreach \y in {-0.65,0,0.65} {
+      \draw[->,blue!55] (0.28,\y) -- (3.0,\y);
+    }
+    \node[blue,right] at (3.0,0.65) {$\vect{E}$};
+
+    \coordinate (p) at (0.55,-0.55);
+    \coordinate (q) at (2.45,0.45);
+    \coordinate (h) at (2.45,-0.55);
+    \filldraw[orange!85!black] (p) circle (1.4pt);
+    \filldraw[orange!85!black] (q) circle (1.4pt);
+    \draw[->,very thick,orange!85!black] (p) -- (q)
+      node[midway,above left] {$\Delta \vect{s}$};
+    \draw[dashed,orange!85!black] (q) -- (h);
+    \draw[->,very thick,orange!85!black] (p) -- (h)
+      node[midway,below] {$\Delta x$};
+  \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,29 @@
+% TikZ 图：简单串联电路
+% Day 19：直流电路
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[thick] (0,0) -- (2,0);
+  % 电阻
+  \draw[thick] (2,0.5) -- (2,-0.5);
+  \draw[thick] (1.8,0.5) -- (2.2,0.5);
+  \draw[thick] (1.8,-0.5) -- (2.2,-0.5);
+  \node[above] at (2,0.8) {$R$};
+  \draw[thick] (2,0) -- (4,0);
+  % 灯泡
+  \draw[thick] (4,0.4) circle (0.4);
+  \node at (4,0) {L};
+  \draw[thick] (4,0) -- (5,0);
+  % 开关
+  \draw[thick] (5,0) -- (5.5,0);
+  \filldraw[black] (5.5,0) circle (2pt);
+  \draw[thick] (5.5,0) -- (6,0) node[above] {$K$};
+  \draw[thick] (6,0) -- (7,0);
+  % 电源
+  \draw[thick] (7.3,-0.3) -- (7.3,0.3);
+  \draw[thick] (7.8,-0.3) -- (7.8,0.3);
+  \node[right] at (8.3,0) {$E$};
+  \draw[thick] (7.8,0) -- (8,0);
+  % 回到起点
+  \draw[thick] (8,0) -- (8,-1.5) -- (0,-1.5) -- (0,0);
+  % 电流
+  \draw[->,thick,red] (1,0.3) -- (3,0.3) node[above] {$I$};
+\end{tikzpicture}

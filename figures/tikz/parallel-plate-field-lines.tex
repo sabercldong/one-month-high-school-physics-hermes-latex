@@ -1,0 +1,15 @@
+% TikZ 图：平行板间的匀强电场线
+% Day 15：电荷、电场与电场强度
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[very thick] (-2.8,1.0) -- (2.8,1.0);
+  \draw[very thick] (-2.8,-1.0) -- (2.8,-1.0);
+  \node[left] at (-2.8,1.0) {$+$};
+  \node[left] at (-2.8,-1.0) {$-$};
+
+  \foreach \x in {-2,-1,0,1,2} {
+    \draw[->,thick,blue] (\x,0.78) -- (\x,-0.78);
+  }
+  \draw[<->] (3.2,-1.0) -- (3.2,1.0);
+  \node[right] at (3.2,0) {$d$};
+  \node[font=\small] at (0,-1.45) {板间中部电场线近似平行等距，$U$ 为两板间电压};
+\end{tikzpicture}

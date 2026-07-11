@@ -1,0 +1,20 @@
+% TikZ 图：点电荷电势公式推导
+% Day 16：电势能、电势与电势差
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \filldraw[red] (0,0) circle (4pt);
+  \node[below] at (0,0) {$Q$};
+  \draw[->,thick] (0,0) -- (5.2,0);
+  \node[right] at (5.2,0) {无穷远};
+
+  \filldraw[black] (2.0,0) circle (2pt);
+  \node[above left=2pt] at (2.0,0) {$P(r)$};
+  \draw[<->] (0,-0.55) -- (2.0,-0.55);
+  \node[below] at (1.0,-0.55) {$r$};
+
+  \draw[->,blue,thick] (2.15,0.45) -- (3.15,0.45);
+  \node[blue,above] at (2.65,0.45) {$\vect{E}$};
+  \node[font=\small] at (4.05,0.75) {$E=k\dfrac{|Q|}{r^2}$};
+
+  \draw[->,orange!80!black,thick] (2.0,-0.95) -- (3.05,-0.95);
+  \node[orange!80!black,below] at (2.52,-0.95) {$\mathrm{d}r$};
+\end{tikzpicture}

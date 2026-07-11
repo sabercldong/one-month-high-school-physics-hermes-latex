@@ -1,0 +1,27 @@
+% TikZ 图：两个带电小球的静电平衡
+% Day 15：电荷、电场与电场强度
+\begin{tikzpicture}[scale=0.78,>=Latex]
+  \coordinate (O) at (0,1.8);
+  \coordinate (L) at (-1.45,-0.45);
+  \coordinate (R) at (1.45,-0.45);
+
+  \filldraw[black] (O) circle (1.5pt);
+  \draw[thick] (O) -- (L) node[midway,left] {$l$};
+  \draw[thick] (O) -- (R) node[midway,right] {$l$};
+
+  \draw[dashed,gray] (O) -- (0,-0.75);
+  \draw[->] (0,1.25) arc[start angle=-90,end angle=-57,radius=0.55];
+  \node at (0.32,1.05) {$\theta$};
+
+  \filldraw[red] (L) circle (4pt);
+  \filldraw[red] (R) circle (4pt);
+  \node[below] at (L) {$+q$};
+  \node[below] at (R) {$+q$};
+
+  \draw[<->] (-1.45,-0.95) -- (1.45,-0.95);
+  \node[below] at (0,-0.95) {$r$};
+
+  \draw[->,thick,blue] (R) -- (2.25,-0.45) node[right] {$F$};
+  \draw[->,thick,blue] (R) -- (1.02,0.22) node[right] {$T$};
+  \draw[->,thick,blue] (R) -- (1.45,-1.08) node[right] {$mg$};
+\end{tikzpicture}

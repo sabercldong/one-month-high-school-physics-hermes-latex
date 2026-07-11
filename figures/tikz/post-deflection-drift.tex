@@ -1,0 +1,30 @@
+% TikZ 图：离开偏转电场后的无场区运动
+% Day 17：带电粒子在电场中的运动
+\begin{tikzpicture}[scale=0.74,>=Latex]
+  \draw[thick] (0,1.15) -- (3.0,1.15);
+  \draw[thick] (0,-1.15) -- (3.0,-1.15);
+  \node[above] at (-0.15,1.15) {$+$};
+  \node[below] at (-0.15,-1.15) {$-$};
+  \foreach \x in {0.45,1.15,1.85,2.55} {
+    \draw[->,blue] (\x,0.95) -- (\x,-0.95);
+  }
+  \draw[red,thick,dashed,domain=0:3,samples=70] plot (\x,{-0.075*\x*\x});
+  \coordinate (P) at (3,-0.675);
+  \filldraw[red] (P) circle (1.8pt);
+  \coordinate (S) at (5.8,-1.935);
+  \draw[red,thick,dashed] (4.08,-1.16) -- (S);
+  \draw[-{Stealth[length=5pt,width=6pt]},red,line width=1.05pt,shorten <=2pt] (P) -- (4.08,-1.16);
+  \node[above right,red,fill=white,inner sep=1pt] at (4.08,-1.02) {$v$};
+  \draw[dashed,gray] (3,0) -- (P);
+  \draw[dashed,gray] (5.8,0) -- (S);
+  \draw[<->] (3.65,0) -- (3.65,-0.675);
+  \node[right,fill=white,inner sep=1pt] at (3.72,-0.34) {$y_1$};
+  \draw[<->] (6.25,0) -- (6.25,-1.95);
+  \node[right,fill=white,inner sep=1pt] at (6.25,-0.98) {$Y$};
+  \draw[<->] (3,-2.08) -- (5.8,-2.08);
+  \node[below,fill=white,inner sep=1pt] at (4.4,-2.08) {$s$};
+  \draw[thick] (5.8,1.1) -- (5.8,-2.2);
+  \node[right,fill=white,inner sep=1pt] at (5.8,1.0) {屏};
+  \node[font=\small,fill=white,inner sep=1pt] at (1.5,1.55) {有场区};
+  \node[font=\small,fill=white,inner sep=1pt] at (4.4,0.55) {无场区};
+\end{tikzpicture}

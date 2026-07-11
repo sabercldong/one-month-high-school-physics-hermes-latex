@@ -1,0 +1,29 @@
+\begin{tikzpicture}[scale=0.95]
+  \draw[->] (0,0) -- (0,3.8) node[above] {能量};
+  \draw[->] (0,0) -- (6.8,0);
+
+  \node at (1.25,-0.35) {初态};
+  \node at (4.65,-0.35) {末态};
+
+  \fill[blue!35] (0.75,0) rectangle (1.55,3.0);
+  \node[above] at (1.15,3.0) {$E_p$};
+  \draw[thick] (0.75,0) rectangle (1.55,3.0);
+
+  \fill[blue!35] (3.35,0) rectangle (4.15,0.65);
+  \node[above] at (3.75,0.65) {$E_p$};
+  \draw[thick] (3.35,0) rectangle (4.15,0.65);
+
+  \fill[red!35] (4.15,0) rectangle (4.95,1.9);
+  \node[above] at (4.55,1.9) {$E_k$};
+  \draw[thick] (4.15,0) rectangle (4.95,1.9);
+
+  \fill[gray!35] (4.95,0) rectangle (5.75,3.0);
+  \fill[gray!35] (4.95,0) rectangle (5.75,0.45);
+  \node[above] at (5.35,3.0) {内能};
+  \draw[thick] (4.95,0) rectangle (5.75,0.45);
+  \node[below=2pt] at (5.35,0.45) {$Q$};
+
+  \draw[dashed] (0.45,3.0) -- (6.05,3.0);
+  \node[right] at (6.05,3.0) {总能量不变};
+  \node[align=center] at (3.4,3.45) {有摩擦时：机械能减少，内能增加};
+\end{tikzpicture}

@@ -1,0 +1,37 @@
+% TikZ 图：示波管模型
+% Day 17：带电粒子在电场中的运动
+\begin{tikzpicture}[scale=0.76,>=Latex]
+  % 电子枪与加速区
+  \draw[thick] (-4.45,0.55) -- (-3.85,0) -- (-4.45,-0.55);
+  \node[left] at (-4.45,0) {电子枪};
+  \draw[thick] (-3.0,0.9) -- (-3.0,-0.9);
+  \draw[thick] (-2.35,0.9) -- (-2.35,-0.9);
+  \foreach \y in {-0.35,0,0.35} {
+    \draw[->,blue] (-2.9,\y) -- (-2.45,\y);
+  }
+  \node[below,font=\small,fill=white,inner sep=1pt] at (-2.68,-1.05) {加速区};
+
+  % y 偏转板
+  \draw[thick] (-1.35,0.8) -- (0.55,0.8);
+  \draw[thick] (-1.35,-0.8) -- (0.55,-0.8);
+  \node[above,font=\small,fill=white,inner sep=1pt] at (-0.4,0.9) {$Y$偏转板};
+  \foreach \x in {-1.0,-0.35,0.3} {
+    \draw[->,blue!65] (\x,0.65) -- (\x,-0.65);
+  }
+
+  % x 偏转板（侧视中用窄板表示）
+  \draw[thick] (1.05,0.65) -- (1.05,-0.65);
+  \draw[thick] (1.85,0.65) -- (1.85,-0.65);
+  \node[below,font=\small,fill=white,inner sep=1pt] at (1.45,-1.02) {$X$偏转板};
+
+  % 屏幕
+  \draw[thick] (3.7,1.45) -- (3.7,-1.45);
+  \node[right,fill=white,inner sep=1pt] at (3.7,1.2) {荧光屏};
+  \draw[red,thick,dashed] (-3.85,0) -- (-1.35,0)
+    .. controls (-0.55,-0.05) and (0.25,-0.35) .. (0.7,-0.45)
+    -- (1.9,-0.45)
+    .. controls (2.45,-0.40) and (3.05,-0.20) .. (3.7,0.25);
+  \filldraw[red] (3.7,0.25) circle (2.3pt);
+  \node[right,red,fill=white,inner sep=1pt] at (3.9,0.25) {亮点};
+
+\end{tikzpicture}

@@ -1,28 +1,28 @@
 \daytitle{15}{电荷、电场与电场强度}
 
 \begin{learningbox}{本讲义大致内容}
-电磁学的第一块基石。从电荷、库仑定律开始，引入场的概念——电场、电场强度、电场线。理解场是物质存在的一种形式，以及如何用"场"的观点代替"超距作用"。
+电磁学的第一块基石。从电荷、库仑定律开始，引入场的概念——电场、电场强度、电场线。理解场是物质存在的一种形式，以及如何用“场”的观点代替“超距作用”。
 \end{learningbox}
 
 \section*{一、学习目标}
 
 \begin{enumerate}
-  \item 理解电荷守恒定律和库仑定律 $F = k\dfrac{Q_1 Q_2}{r^2}$。
+  \item 理解电荷守恒定律和库仑定律 $F = k\dfrac{|Q_1 Q_2|}{r^2}$。
   \item 理解电场强度的定义 $E = \dfrac{F}{q}$，能用电场线描述电场。
-  \item 掌握点电荷的电场公式 $E = k\dfrac{Q}{r^2}$。
+  \item 掌握点电荷的电场强度大小 $E = k\dfrac{|Q|}{r^2}$，并能判断方向。
   \item 掌握电场叠加原理，能计算多个点电荷的合场强。
   \item 区分匀强电场和非匀强电场的特点。
 \end{enumerate}
 
 \section*{二、初高中衔接}
 
-初中物理讲过"电荷"和"电荷间的相互作用"——同种电荷相斥、异种电荷相吸。这是定性的。
+初中物理讲过“电荷”和“电荷间的相互作用”——同种电荷相斥、异种电荷相吸。这是定性的。
 
 高中在三个方向上深化：
 \begin{enumerate}
   \item \textbf{定量化：} 库仑定律给出了电荷间作用力的精确公式。
-  \item \textbf{场的概念：} 引入"电场"——电荷周围存在的一种看不见的物质，通过电场传递作用力。
-  \item \textbf{场的强弱：} 电场强度 $E$ 定量描述电场"有多强"和"朝哪指"。
+  \item \textbf{场的概念：} 引入“电场”——电荷周围存在的一种看不见的物质，通过电场传递作用力。
+  \item \textbf{场的强弱：} 电场强度 $E$ 定量描述电场“有多强”和“朝哪指”。
 \end{enumerate}
 
 \section*{三、核心概念}
@@ -39,7 +39,7 @@
 
 \textbf{库仑定律：}
 \[
-\boxed{F = k\frac{Q_1 Q_2}{r^2}}
+\boxed{F = k\frac{|Q_1 Q_2|}{r^2}}
 \]
 
 \begin{itemize}
@@ -51,7 +51,7 @@
 \begin{center}
 \input{figures/tikz/coulomb-law}
 
-\figcaption{库仑定律：同号电荷相斥，$F = k\dfrac{Q_1 Q_2}{r^2}$}\label{fig:coulomb-law}
+\figcaption{库仑定律：同号电荷相斥，大小 $F = k\dfrac{|Q_1 Q_2|}{r^2}$}\label{fig:coulomb-law}
 \end{center}
 
 \end{conceptbox}
@@ -69,12 +69,15 @@
   \item 矢量，方向与正电荷在该点受到的电场力方向相同。
   \item 单位：$\mathrm{N/C}$ 或 $\mathrm{V/m}$。
   \item 由电场本身决定，与试探电荷 $q$ 无关。
+  \item 试探电荷应足够小，放入后不能明显改变原来的电场分布。
 \end{itemize}
 
 \textbf{点电荷的电场强度：}
 \[
-E = k\frac{Q}{r^2}
+E = k\frac{|Q|}{r^2}
 \]
+
+方向由场源电荷 $Q$ 的正负决定：正点电荷的电场向外，负点电荷的电场向内。
 
 \end{conceptbox}
 
@@ -94,7 +97,7 @@ E = k\frac{Q}{r^2}
 
 电场线是描述电场分布的假想曲线：
 \begin{itemize}
-  \item 电场线从正电荷出发、终止于负电荷。
+  \item 电场线从正电荷或无穷远出发，终止于负电荷或无穷远。
   \item 电场线的疏密表示电场强度的大小。
   \item 电场线某点的切线方向为该点的场强方向。
   \item 电场线不相交。
@@ -120,9 +123,9 @@ E = k\frac{Q}{r^2}
 \toprule
 公式 & 物理意义 & 适用条件 \\
 \midrule
-$F = k\dfrac{Q_1 Q_2}{r^2}$ & 库仑定律 & 真空点电荷 \\
+$F = k\dfrac{|Q_1 Q_2|}{r^2}$ & 库仑力大小 & 真空点电荷 \\
 $E = \dfrac{F}{q}$ & 电场强度定义 & 任何电场 \\
-$E = k\dfrac{Q}{r^2}$ & 点电荷场强 & 点电荷周围 \\
+$E = k\dfrac{|Q|}{r^2}$ & 点电荷场强大小 & 点电荷周围 \\
 $\vect{E} = \sum \vect{E}_i$ & 电场叠加 & 任何电场 \\
 \bottomrule
 \end{tabular}
@@ -134,14 +137,32 @@ $\vect{E} = \sum \vect{E}_i$ & 电场叠加 & 任何电场 \\
 
 中垂线上场强的方向平行于两电荷连线。中点处场强不为零（两电荷在该点产生的场强方向相同）。
 
+\begin{center}
+\input{figures/tikz/dipole-field-lines}
+
+\figcaption{等量异种电荷的电场线：电场线从正电荷出发，终止于负电荷}\label{fig:dipole-field-lines}
+\end{center}
+
 \subsection*{模型 2：等量同种电荷的电场}
 
 中垂线上场强从中点向外先增大后减小。中点处场强为零。
+
+\begin{center}
+\input{figures/tikz/equal-like-field-lines}
+
+\figcaption{等量同种正电荷的电场线：中点场强为零}\label{fig:equal-like-field-lines}
+\end{center}
 
 \subsection*{模型 3：匀强电场}
 
 平行板电容器之间的电场近似为匀强电场（两极板间电场线平行等距）。
 $E = \dfrac{U}{d}$（$U$ 为两板间电压，$d$ 为间距）。
+
+\begin{center}
+\input{figures/tikz/parallel-plate-field-lines}
+
+\figcaption{平行板间的匀强电场线：中部区域近似平行等距}\label{fig:parallel-plate-field-lines}
+\end{center}
 
 \section*{六、例题精讲}
 
@@ -217,7 +238,7 @@ E_2 = k\frac{|Q_2|}{r^2} = 3600\ \mathrm{N/C}\ (\text{方向向右})
 \begin{enumerate}
   \item \textbf{库仑定律中 $r$ 取距离不是间距的平方：} 分母是 $r^2$，不是 $r$。
   
-  \item \textbf{混淆 $E = F/q$ 和 $E = kQ/r^2$：} 前者是定义式（任何电场），后者是点电荷的决定式（只适用于点电荷）。
+  \item \textbf{混淆 $E = F/q$ 和 $E = k|Q|/r^2$：} 前者是定义式（任何电场），后者是点电荷的场强大小公式（只适用于点电荷），方向还要单独判断。
   
   \item \textbf{用试探电荷 $q$ 的正负判断场强方向：} 场强方向定义为正电荷所受电场力的方向，与负电荷受力方向相反。
   
@@ -230,11 +251,17 @@ E_2 = k\frac{|Q_2|}{r^2} = 3600\ \mathrm{N/C}\ (\text{方向向右})
 \section*{九、竞赛入门补充}
 
 \begin{competitionbox}
-\textbf{静电力作用下的平衡问题}
+\textbf{竞赛视角 1：静电力作用下的平衡问题}
 
-库仑力可以与绳的拉力、重力等平衡。
+库仑力可以与绳的拉力、重力等共同平衡。竞赛入门题常把“力的分解”和“几何关系”放在一起考查。
 
 \textbf{例题：} 两个质量均为 $m$、带电量均为 $+q$ 的小球，用等长细线悬挂在同一点。平衡时两线夹角为 $2\theta$，求 $q$。
+
+\begin{center}
+\input{figures/tikz/charged-pendulum-equilibrium}
+
+\figcaption{带电小球平衡：库仑斥力、重力与绳拉力共同平衡}\label{fig:charged-pendulum-equilibrium}
+\end{center}
 
 \textbf{解：} 对一个小球受力分析：
 \begin{itemize}
@@ -249,17 +276,51 @@ T\sin\theta = k\frac{q^2}{r^2},\qquad T\cos\theta = mg
 \[
 \tan\theta = \frac{k q^2}{m g r^2}
 \]
-其中 $r = 2l\sin\theta$（$l$ 为绳长）。代入可得 $q$。
+其中 $r = 2l\sin\theta$（$l$ 为绳长）。代入得：
+\[
+q = 2l\sin\theta\sqrt{\frac{mg\tan\theta}{k}}
+\]
 
-\textbf{竞赛小贴士：} 涉及电场力的平衡问题，把库仑力当做一个普通力加入受力分析即可——与力学平衡问题没有任何区别。
 \end{competitionbox}
+
+\newpage
+
+\begin{competitionbox}
+\textbf{竞赛视角 2：用对称性快速求合场强}
+
+\textbf{例题：} 正方形边长为 $a$，四个顶点原来各放一个相同正点电荷 $+q$。若去掉右上角的电荷，求正方形中心 $O$ 处的合场强大小和方向。
+
+\begin{center}
+\input{figures/tikz/square-missing-charge-field}
+
+\figcaption{正方形缺角模型：用“完整对称系统”反推剩余电荷的合场强}\label{fig:square-missing-charge-field}
+\end{center}
+
+\textbf{解：} 四个顶点都放 $+q$ 时，中心处的合场强为零。去掉右上角电荷后，剩下三个电荷的合场强等于“原来被去掉的那个电荷在 $O$ 处场强”的反向。
+
+中心到顶点的距离：
+\[
+r = \frac{a}{\sqrt{2}}
+\]
+被去掉的电荷若存在，它在中心产生的场强大小为：
+\[
+E_0 = k\frac{q}{r^2} = k\frac{q}{(a/\sqrt{2})^2} = \frac{2kq}{a^2}
+\]
+所以剩下三个电荷在中心处的合场强大小为：
+\[
+E = \frac{2kq}{a^2}
+\]
+方向指向被去掉电荷所在的顶点。
+\end{competitionbox}
+
+\newpage
 
 \section*{十、今日小结}
 
 \begin{enumerate}
-  \item 库仑定律 $F = k\dfrac{Q_1 Q_2}{r^2}$，$k = 9 \times 10^9$。
-  \item 电场强度 $E = \dfrac{F}{q}$（定义式），$E = k\dfrac{Q}{r^2}$（点电荷决定式）。
+  \item 库仑力大小 $F = k\dfrac{|Q_1 Q_2|}{r^2}$，$k = 9 \times 10^9$。
+  \item 电场强度 $E = \dfrac{F}{q}$（定义式），点电荷场强大小 $E = k\dfrac{|Q|}{r^2}$。
   \item 电场强度是矢量，遵循叠加原理。
-  \item 电场线：从正电荷出发到负电荷，疏密表示强弱，切线表示方向。
-  \item 匀强电场中 $E = \dfrac{U}{d}$（与电势差的关系——下节课讲）。
+  \item 电场线：从正电荷或无穷远出发，终止于负电荷或无穷远；疏密表示强弱，切线表示方向。
+  \item 匀强电场中 $E = \dfrac{U}{d}$（下节从电势差角度解释）。
 \end{enumerate}

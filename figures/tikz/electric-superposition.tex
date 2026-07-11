@@ -6,13 +6,13 @@
   \node[above] at (0,0) {$+Q$};
   \filldraw[blue] (3,0) circle (3pt);
   \node[above] at (3,0) {$-Q$};
-  % 中点 P
-  \filldraw[black] (1.5,0) circle (2pt);
-  \node[below] at (1.5,0) {$P$};
-  % E1（+Q 对 P 向右）
-  \draw[->,thick,red] (1.5,0) -- (2.5,0) node[above] {$\vect{E}_1$};
-  % E2（-Q 对 P 向右）
-  \draw[->,thick,blue] (1.5,0) -- (2.5,-0.3) node[below] {$\vect{E}_2$};
+  % 点 P 不在两电荷连线上，突出二维矢量叠加
+  \filldraw[black] (1.5,1.2) circle (2pt);
+  \node[above] at (1.5,1.2) {$P$};
+  \draw[dashed,gray] (0,0) -- (1.5,1.2) -- (3,0);
+  % +Q 在 P 点的场强背离正电荷，-Q 在 P 点的场强指向负电荷
+  \draw[->,thick,red] (1.5,1.2) -- (2.1,1.68) node[above] {$\vect{E}_1$};
+  \draw[->,thick,blue] (1.5,1.2) -- (2.1,0.72) node[below] {$\vect{E}_2$};
   % 合电场
-  \draw[->,ultra thick,black] (1.5,0) -- (3.2,0) node[above] {$\vect{E}$};
+  \draw[->,ultra thick,black] (1.5,1.2) -- (2.75,1.2) node[above] {$\vect{E}$};
 \end{tikzpicture}

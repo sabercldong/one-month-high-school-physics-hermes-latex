@@ -1,0 +1,16 @@
+\begin{tikzpicture}[scale=0.95,>=stealth]
+  \draw[->] (0,0) -- (5.6,0) node[right] {$x$};
+  \draw[->] (0,0) -- (0,3.6) node[above] {$F$};
+
+  \fill[gray!25] (0.4,0) -- plot[smooth] coordinates {(0.4,0.8) (1.3,1.25) (2.2,1.65) (3.2,2.35) (4.5,2.75)} -- (4.5,0) -- cycle;
+  \draw[thick] plot[smooth] coordinates {(0.4,0.8) (1.3,1.25) (2.2,1.65) (3.2,2.35) (4.5,2.75)};
+
+  \fill[orange!45] (2.15,0) rectangle (2.55,1.82);
+  \draw[thick,orange] (2.15,0) rectangle (2.55,1.82);
+  \draw[dashed] (2.55,1.82) -- (0,1.82);
+  \node[left] at (0,1.82) {$F_i$};
+  \draw[<->] (2.15,-0.28) -- (2.55,-0.28) node[midway,below] {$\Delta x$};
+
+  \node[orange!80!black,align=center] at (3.45,1.15) {$\Delta W\approx F_i\Delta x$};
+  \node at (2.55,3.15) {曲线下总面积 $=W$};
+\end{tikzpicture}

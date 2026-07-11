@@ -1,7 +1,7 @@
 \daytitle{16}{电势能、电势与电势差}
 
 \begin{learningbox}{本讲义大致内容}
-上一节学习了电场的"力的属性"（电场强度 $E$），今天学习电场的"能的属性"——电势能、电势、电势差。这些概念和力学中的重力势能、高度差非常相似，可以用类比法理解。
+上一节学习了电场的“力的属性”（电场强度 $E$），今天学习电场的“能的属性”——电势能、电势、电势差。这些概念和力学中的重力势能、高度差非常相似，可以用类比法理解。
 \end{learningbox}
 
 \section*{一、学习目标}
@@ -16,7 +16,7 @@
 
 \section*{二、初高中衔接}
 
-重力场中有"重力势能"和"高度差"——类比到电场中：
+重力场中有“重力势能”和“高度差”——类比到电场中：
 \begin{center}
 \begin{tabular}{ll}
 \toprule
@@ -24,20 +24,45 @@
 \midrule
 重力 $mg$ & 电场力 $qE$ \\
 重力势能 $mgh$ & 电势能 $E_p = q\varphi$ \\
-高度 $h$ & 电势 $\varphi$ \\
+高度位置 $h$ & 电势 $\varphi$ \\
 高度差 $\Delta h$ & 电势差 $U$ \\
 重力做功 $mg\Delta h$ & 电场力做功 $qU$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-这个类比非常重要——几乎所有在重力场中学到的关于"功和能"的知识，都可以平移到静电场中。
+这个类比只能帮助理解，不能机械套用：高度是几何量，电势是单位正电荷的电势能，且电势正负还受电荷源和零电势点影响。
 
 \section*{三、核心概念}
 
 \begin{conceptbox}{电场力做功与电势能}
 
-\textbf{电场力做功：} 电场力对电荷做的功 $W_{AB} = qU_{AB}$。
+\textbf{先看匀强电场中的做功：} 设匀强电场方向为 $x$ 轴正方向。电荷从 $A$ 到 $B$ 可以走任意曲线路径，把路径分成很多小段 $\Delta \vect{s}$。每一小段中，电场力 $\vect{F}=q\vect{E}$ 近似不变：
+\[
+\Delta W = \vect{F}\cdot \Delta \vect{s}=qE\Delta x
+\]
+其中 $\Delta x$ 是这一小段沿电场方向的投影。整条路径上的总功为：
+\[
+W_{AB}=\sum \Delta W=qE\sum \Delta x=qE(x_B-x_A)
+\]
+所以在匀强电场中，电场力做功只与初末位置沿电场方向的距离有关，与路径形状无关。
+
+\begin{center}
+\input{figures/tikz/uniform-field-work-path}
+
+\figcaption{匀强电场中的微元法：只有沿电场方向的位移投影参与做功}\label{fig:uniform-field-work-path}
+\end{center}
+
+\textbf{由路径无关引入电势能：} 既然静电力做功只由初末位置决定，就可以像重力势能一样定义电势能。规定：
+\[
+\boxed{W_{AB}=E_{pA}-E_{pB}=-\Delta E_p}
+\]
+
+这个关系不只适用于匀强电场。一般静电场中，可把路径分成很多足够短的小段，每段近似看成匀强电场，有
+\[
+\mathrm{d}W=q\vect{E}\cdot\mathrm{d}\vect{s}
+\]
+把整条路径上的微小功相加，结果仍只由初末位置决定，因此可以推广定义电势能。更严格的非匀强电场证明放在本节“竞赛入门补充”中。
 
 \textbf{电势能：} 电荷在电场中某点具有的势能。
 \[
@@ -135,9 +160,17 @@ $U = Ed$ & 场强与电势差 & 匀强电场 \\
 
 \section*{五、典型模型}
 
-\subsection*{模型 1：匀强电场中的电势}
+\subsection*{模型 1：匀强电场中的电势差}
 
 平行板间电势沿电场线方向均匀降低。$A$、$B$ 两点沿电场方向相距 $d$，则 $U_{AB} = Ed$。
+
+\begin{center}
+\input{figures/tikz/uniform-field-potential-gradient}
+
+\figcaption{匀强电场中的电势差：只看沿电场方向的投影距离}\label{fig:uniform-field-potential-gradient}
+\end{center}
+
+若 $A$、$B$ 连线不沿电场方向，不能直接把 $AB$ 代入 $U=Ed$，必须先取沿电场方向的投影。
 
 \subsection*{模型 2：点电荷的电势}
 
@@ -146,6 +179,25 @@ $U = Ed$ & 场强与电势差 & 匀强电场 \\
 \varphi = k\frac{Q}{r}
 \]
 正电荷周围电势为正，负电荷周围电势为负。
+
+\textbf{推导：} 以正点电荷为例，把正试探电荷 $q$ 从距 $Q$ 为 $r$ 的点移到无穷远，电场力做功为
+\[
+W_{r\to\infty}=\int_r^\infty k\frac{Qq}{r^2}\,\mathrm{d}r
+=kQq\left[-\frac{1}{r}\right]_r^\infty
+=k\frac{Qq}{r}
+\]
+取无穷远处电势能为零，则 $W_{r\to\infty}=E_p(r)-E_p(\infty)=E_p(r)$，所以
+\[
+E_p(r)=k\frac{Qq}{r},\qquad
+\varphi=\frac{E_p}{q}=k\frac{Q}{r}
+\]
+若 $Q$ 为负，公式仍成立，电势为负。
+
+\begin{center}
+\input{figures/tikz/point-charge-potential-derivation}
+
+\figcaption{点电荷电势公式的推导：取无穷远为零电势点}\label{fig:point-charge-potential-derivation}
+\end{center}
 
 \subsection*{模型 3：带电粒子在电场中的能量关系}
 
@@ -253,23 +305,78 @@ U_{AB} = \frac{W_{AB}}{q} = \frac{3 \times 10^{-6}}{1 \times 10^{-8}} = 300\ \ma
 \section*{九、竞赛入门补充}
 
 \begin{competitionbox}
+\textbf{非匀强电场中路径无关的证明}
+
+匀强电场中可以直接用投影证明路径无关。非匀强电场里，场强大小和方向随位置变化，不能再简单写成 $qE d$，但静电场仍然具有路径无关性。
+
+\textbf{以点电荷电场为例：} 点电荷 $Q$ 周围的电场是非匀强电场。电场强度沿径向，大小为
+\[
+E=k\frac{|Q|}{r^2}
+\]
+
+\begin{center}
+\input{figures/tikz/nonuniform-field-path-proof}\\[0.3em]
+\figcaption{非匀强点电荷电场：不同路径的电场力做功相同}\label{fig:nonuniform-field-path-proof}
+\end{center}
+
+沿任意路径移动电荷 $q$ 时，只有径向位移 $\mathrm{d}r$ 对做功有贡献，切向位移与电场垂直，不做功。下面的 $Q$ 按带符号电荷量代入，因此
+\[
+\mathrm{d}W=qE\,\mathrm{d}r=k\frac{Qq}{r^2}\,\mathrm{d}r
+\]
+从 $A$ 到 $B$ 的总功为
+\[
+W_{AB}=\int_{r_A}^{r_B} k\frac{Qq}{r^2}\,\mathrm{d}r
+=kQq\left(\frac{1}{r_A}-\frac{1}{r_B}\right)
+\]
+结果只含 $r_A$、$r_B$，与具体路径无关。
+
+\textbf{推广：} 多个静止点电荷形成的静电场可以看成许多点电荷电场的叠加。每一部分做功都只与初末位置有关，所以总功也只与初末位置有关。因此静电场可以定义电势能和电势。
+\end{competitionbox}
+
+\begin{competitionbox}
 \textbf{匀强电场中电势的几何关系}
 
 在匀强电场中，沿任意方向电势均匀变化。这一性质在处理复杂几何问题时非常有用。
 
-\textbf{结论：} 在匀强电场中，如果 $A$、$B$、$C$ 是同一等势面上的三个点，则它们电势相等。如果一条直线上电势是线性分布的，那么两点间电势差与沿电场方向的距离成正比。
+\textbf{结论：} 在匀强电场中，如果 $A$、$B$、$C$ 是同一等势面上的三个点，则它们电势相等；反过来，找到两个电势相等的点，就能确定一条等势线。电场方向总是垂直等势线，并从高电势指向低电势。
 
 \textbf{例题：} 一个边长为 $a$ 的等边三角形 $ABC$ 放在匀强电场中，已知 $\varphi_A = 10\ \mathrm{V}$、$\varphi_B = 6\ \mathrm{V}$、$\varphi_C = 2\ \mathrm{V}$。求电场强度的大小和方向。
 
-\textbf{解：} 根据电势分布可找出等势面方向，电场线与等势面垂直且指向电势降低方向。由 $\varphi_A - \varphi_C$ 和 $AC$ 间的距离可计算出 $E$。
+\begin{center}
+\input{figures/tikz/uniform-field-triangle-potential}
 
-\textbf{竞赛小贴士：} 在匀强电场中，"两点间的电势差 = 场强 × 沿电场方向的距离"——先用等势面判断电场方向，再计算大小。
+\figcaption{匀强电场中的等边三角形电势：先找等势线，再找电场方向}\label{fig:uniform-field-triangle-potential}
+\end{center}
+
+\textbf{解：} 取 $AC$ 的中点为 $M$。由于匀强电场中同一直线上的电势线性变化，且
+\[
+\varphi_B=\frac{\varphi_A+\varphi_C}{2}
+\]
+说明 $B$ 点电势等于 $AC$ 中点 $M$ 的电势，$BM$ 是等势线。电场方向垂直于等势线 $BM$，即平行于 $AC$，并由高电势的 $A$ 指向低电势的 $C$。
+
+$A$、$C$ 间电势差为
+\[
+U_{AC}=\varphi_A-\varphi_C=8\ \mathrm{V}
+\]
+沿电场方向的距离就是 $AC$ 的长度
+\[
+d=a
+\]
+所以电场强度大小为
+\[
+E=\frac{U_{AC}}{d}=\frac{8}{a}
+\]
+
+方向：平行于 $AC$，由 $A$ 指向 $C$。
+
+\textbf{竞赛小贴士：} 在匀强电场中，“两点间的电势差 = 场强 × 沿电场方向的距离”——先用等势面判断电场方向，再计算大小。
 \end{competitionbox}
 
 \section*{十、今日小结}
 
 \begin{enumerate}
   \item 电场力做功 $W_{AB} = qU_{AB}$，与路径无关。
+  \item 电场力做功等于电势能变化的负值：$W_{AB}=-\Delta E_p$。
   \item 电势 $\varphi = \dfrac{E_p}{q}$，电势差 $U_{AB} = \varphi_A - \varphi_B$。
   \item 沿电场线方向电势降低。
   \item 匀强电场中 $U = Ed$，$E = \dfrac{U}{d}$。
