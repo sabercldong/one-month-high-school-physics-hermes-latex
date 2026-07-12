@@ -1,0 +1,41 @@
+% TikZ 图：通电线圈受力矩
+% Day 21：磁场与安培力
+\begin{tikzpicture}[scale=1.02,>=Latex,line join=round]
+  \path[use as bounding box] (-3.55,-1.75) rectangle (3.55,1.70);
+
+  \foreach \y in {-1.05,-0.35,0.35,1.05} {
+    \draw[->,blue,thick] (-3.25,\y) -- (3.25,\y);
+  }
+  \node[blue] at (3.45,1.05) {$B$};
+
+  \coordinate (A) at (-1.25,-0.88);
+  \coordinate (B) at (1.05,-0.88);
+  \coordinate (C) at (1.55,0.78);
+  \coordinate (D) at (-0.75,0.78);
+  \coordinate (E) at (-0.70,-0.58);
+  \coordinate (F) at (1.60,-0.58);
+  \coordinate (G) at (2.10,1.08);
+  \coordinate (H) at (-0.20,1.08);
+
+  \draw[thick,gray!65,dashed] (E) -- (F) -- (G) -- (H) -- cycle;
+  \draw[thick,fill=gray!8] (A) -- (B) -- (C) -- (D) -- cycle;
+  \draw[thick] (A) -- (E) (B) -- (F) (C) -- (G) (D) -- (H);
+
+  \draw[thick,dashed] (0.10,-1.28) -- (0.42,1.40);
+
+  \draw[->,red,very thick] (A) -- (D);
+  \draw[->,red,very thick] (G) -- (F);
+
+  \draw[purple,thick] (-1.62,0.03) circle (0.18);
+  \draw[purple,thick] (-1.74,-0.09) -- (-1.50,0.15);
+  \draw[purple,thick] (-1.74,0.15) -- (-1.50,-0.09);
+  \node[purple,align=center] at (-2.42,0.03) {$F_A$\\向里};
+
+  \draw[purple,thick] (2.02,0.03) circle (0.18);
+  \fill[purple] (2.02,0.03) circle (0.045);
+  \node[purple,align=center] at (2.80,0.03) {$F_A$\\向外};
+
+  \draw[->,orange,thick] (0.78,1.14) arc (105:-220:0.46);
+  \node[orange] at (1.32,1.38) {转动};
+  \node[font=\small] at (0,-1.58) {线圈两侧受一里一外的安培力，形成力矩};
+\end{tikzpicture}

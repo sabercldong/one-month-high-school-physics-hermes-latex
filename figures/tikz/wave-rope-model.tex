@@ -1,0 +1,20 @@
+% TikZ 图：绳上横波模型
+% Day 14：机械波
+\begin{tikzpicture}[x=0.86cm,y=0.72cm,>=Latex]
+  \draw[->] (-0.4,0) -- (7.4,0) node[right] {$x$};
+  \draw[dashed,gray] (0,0) -- (6.7,0);
+  \draw[very thick,red,smooth,domain=0:6.45,samples=120]
+    plot (\x,{0.85*sin(120*\x)});
+
+  \foreach \x in {0.35,0.90,1.45,2.00,2.55,3.10,3.65,4.20,4.75,5.30,5.85,6.40} {
+    \pgfmathsetmacro{\y}{0.85*sin(120*\x)}
+    \draw[gray!55] (\x,0) -- (\x,\y);
+    \filldraw[black] (\x,\y) circle (1.4pt);
+  }
+
+  \draw[->,thick] (5.25,1.15) -- (6.45,1.15) node[right] {波传播};
+  \draw[<->,thick,blue] (1.15,-0.75) -- (1.15,0.75);
+  \node[blue,anchor=east] at (1.02,0) {质点振动};
+  \draw[<->] (0.75,1.05) -- (3.75,1.05) node[midway,above] {$\lambda$};
+  \node[font=\small,align=center] at (3.4,-1.25) {介质质点只上下振动，波形向右传播};
+\end{tikzpicture}

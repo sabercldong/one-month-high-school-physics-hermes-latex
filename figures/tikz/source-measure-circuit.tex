@@ -1,0 +1,38 @@
+% TikZ 图：伏安法测电源电动势和内阻
+% Day 20：闭合电路欧姆定律
+\begin{tikzpicture}[scale=0.88,>=Latex]
+  \tikzset{wire/.style={thick}, meter/.style={thick}, res/.style={thick}}
+
+  \coordinate (P) at (0,2.4);
+  \coordinate (N) at (0,0);
+
+  % source
+  \draw[wire] (N) -- (0,0.75);
+  \draw[wire] (-0.32,0.75) -- (0.32,0.75);
+  \draw[wire] (-0.48,1.45) -- (0.48,1.45);
+  \draw[wire] (0,1.45) -- (P);
+  \node[left] at (-0.52,1.45) {$+$};
+  \node[left] at (-0.42,0.75) {$-$};
+  \node[right] at (0.52,1.10) {$E,r$};
+
+  % main circuit: ammeter and rheostat
+  \draw[wire] (P) -- (1.10,2.4);
+  \draw[meter] (1.55,2.4) circle (0.45);
+  \node at (1.55,2.4) {$A$};
+  \draw[wire] (2.00,2.4) -- (2.75,2.4);
+  \draw[res] (2.75,2.10) rectangle (4.70,2.70);
+  \node[above] at (3.72,2.76) {$R$};
+  \draw[->,thick] (4.85,2.95) -- (3.10,2.05);
+  \draw[wire] (4.70,2.4) -- (5.55,2.4) -- (5.55,0) -- (N);
+
+  % voltmeter parallel to source terminals
+  \draw[wire] (P) -- (-1.35,2.4) -- (-1.35,1.55);
+  \draw[wire] (N) -- (-1.35,0) -- (-1.35,0.85);
+  \draw[meter] (-1.35,1.20) circle (0.40);
+  \node at (-1.35,1.20) {$V$};
+
+  % current arrow and annotation
+  \draw[->,red,thick] (2.25,2.78) -- (2.95,2.78) node[midway,above] {$I$};
+  \node[font=\small,align=center] at (2.25,-0.55)
+    {改变滑片位置，记录多组 $(I,U)$；\\电压表读路端电压，电流表读干路电流。};
+\end{tikzpicture}

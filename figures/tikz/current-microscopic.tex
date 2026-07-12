@@ -1,0 +1,23 @@
+% TikZ 图：电流微观表达式的推导
+% Day 19：恒定电流
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[thick] (0,0) rectangle (6.8,1.55);
+  \draw[fill=blue!8,draw=blue!60,thick] (6.8,0.775) ellipse (0.28 and 0.775);
+  \node[blue,right] at (7.05,0.78) {截面 $S$};
+
+  \fill[orange!18] (4.45,0) rectangle (6.8,1.55);
+  \draw[dashed,orange!80!black,thick] (4.45,0) -- (4.45,1.55);
+  \draw[<->,thick] (4.45,-0.35) -- (6.8,-0.35);
+  \node[below] at (5.62,-0.35) {$v\Delta t$};
+
+  \foreach \x/\y in {0.55/0.35,1.25/1.05,1.9/0.55,2.55/1.18,3.2/0.35,3.85/0.96,4.75/0.42,5.25/1.10,5.85/0.72,6.35/1.25} {
+    \fill[red] (\x,\y) circle (1.9pt);
+    \draw[->,red] (\x+0.06,\y) -- ++(0.36,0);
+  }
+
+  \draw[->,very thick] (0.55,2.05) -- (6.25,2.05);
+  \node[above] at (3.4,2.05) {约定电流方向};
+  \node[red] at (3.4,1.78) {正载流子等效运动};
+  \node[align=left,font=\small] at (3.2,-1.05)
+    {在 $\Delta t$ 内能穿过截面 $S$ 的载流子，\\来自长度为 $v\Delta t$ 的薄片，体积 $Sv\Delta t$。};
+\end{tikzpicture}

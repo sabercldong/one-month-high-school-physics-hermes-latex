@@ -1,0 +1,13 @@
+% TikZ 图：楞次定律
+% Day 23：电磁感应
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[thick,fill=gray!12] (-3.0,-0.45) rectangle (-1.4,0.45);
+  \node at (-2.6,0) {$N$};
+  \node at (-1.8,0) {$S$};
+  \draw[->,red,thick] (-1.25,0) -- (-0.55,0) node[midway,above] {靠近};
+  \draw[thick] (0.15,0) ellipse (0.35 and 1.05);
+  \draw[thick] (0.45,0) ellipse (0.35 and 1.05);
+  \draw[thick] (0.75,0) ellipse (0.35 and 1.05);
+  \draw[->,blue,thick] (-0.55,0.72) -- (-1.25,0.72) node[left] {阻碍};
+  \node at (0.45,-1.45) {线圈近端表现为 $S$ 极，阻碍磁铁靠近};
+\end{tikzpicture}

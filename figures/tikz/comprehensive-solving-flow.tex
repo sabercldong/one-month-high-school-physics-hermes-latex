@@ -1,0 +1,14 @@
+% TikZ 图：综合题拆解流程
+% Day 30：综合训练
+\begin{tikzpicture}[scale=0.86,>=Latex]
+  \node[draw,rounded corners=2pt,fill=blue!8,minimum width=1.55cm,minimum height=0.72cm] (a) at (0,0) {画图};
+  \node[draw,rounded corners=2pt,fill=blue!8,minimum width=1.55cm,minimum height=0.72cm] (b) at (2.2,0) {选对象};
+  \node[draw,rounded corners=2pt,fill=blue!8,minimum width=1.55cm,minimum height=0.72cm] (c) at (4.4,0) {分过程};
+  \node[draw,rounded corners=2pt,fill=blue!8,minimum width=1.55cm,minimum height=0.72cm] (d) at (6.6,0) {列方程};
+  \node[draw,rounded corners=2pt,fill=blue!8,minimum width=1.55cm,minimum height=0.72cm] (e) at (8.8,0) {验结果};
+  \foreach \p/\q in {a/b,b/c,c/d,d/e}{
+    \draw[->,thick] (\p) -- (\q);
+  }
+  \node[font=\small,align=center] at (4.4,-0.9)
+    {每一步都要写出物理含义，不能只堆公式。};
+\end{tikzpicture}

@@ -1,0 +1,29 @@
+% TikZ 图：圆锥摆的受力与几何关系
+% Day 11：圆周运动
+\begin{tikzpicture}[scale=0.88,>=Latex]
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (1.45,-2.65);
+  \coordinate (C) at (0,-2.65);
+
+  \draw[thick] (-1.1,0) -- (1.1,0);
+  \filldraw[black] (O) circle (2pt);
+  \draw[dashed] (O) -- (C);
+  \draw[thick] (O) -- (P) node[midway,right=2pt] {$l$};
+  \draw[dashed] (C) ellipse (1.45 and 0.32);
+  \draw[densely dashed] (C) -- (0,-3.05);
+  \draw[densely dashed] (P) -- (1.45,-3.05);
+  \draw[<->,thick] (0,-3.05) -- (1.45,-3.05)
+    node[midway,below=2pt] {$r=l\sin\theta$};
+
+  \filldraw[red] (P) circle (3pt);
+  \node[right] at (P) {$m$};
+  \draw[->,thick,blue] (P) -- ($(P)!0.42!(O)$) node[midway,right] {$T$};
+  \draw[->,thick,red] (P) -- ++(0,-1.0) node[below] {$mg$};
+  \draw[->,thick,blue] (P) -- ++(-1.05,0) node[midway,above=2pt] {$F_n$};
+
+  \draw (0,-0.45) arc[start angle=-90,end angle=-61.3,radius=0.45];
+  \node at (0.28,-0.70) {$\theta$};
+  \node[align=center] at (3.35,-1.15)
+    {$T\cos\theta=mg$\\[3pt]
+     $T\sin\theta=m\omega^2r$};
+\end{tikzpicture}

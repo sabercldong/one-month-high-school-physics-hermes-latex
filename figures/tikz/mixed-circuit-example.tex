@@ -1,0 +1,33 @@
+% TikZ 图：混联电路例题
+% Day 19：恒定电流
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2.2,0);
+  \coordinate (C) at (5.0,0);
+  \coordinate (D) at (7.0,0);
+
+  \draw[thick] (A) -- (0,1.2) -- (B |- 0,1.2);
+  \draw[thick] (B) -- (B |- 0,1.2);
+  \draw[thick] (A) -- (0,-1.2) -- (B |- 0,-1.2);
+  \draw[thick] (B) -- (B |- 0,-1.2);
+
+  \draw[thick] (0.55,0.95) rectangle (1.65,1.45);
+  \node[above] at (1.10,1.45) {$R_1=6\ \Omega$};
+  \draw[thick] (0.55,-1.45) rectangle (1.65,-0.95);
+  \node[above] at (1.10,-0.88) {$R_2=12\ \Omega$};
+
+  \draw[thick] (B) -- (C);
+  \draw[thick] (3.05,-0.25) rectangle (4.15,0.25);
+  \node[above] at (3.60,0.35) {$R_3=4\ \Omega$};
+  \draw[thick] (C) -- (D);
+
+  \draw[thick] (D) -- (7,-1.8) -- (-1.2,-1.8) -- (-1.2,0) -- (A);
+  \draw[thick] (-0.65,-2.1) -- (-0.65,-1.5);
+  \draw[thick] (-0.25,-2.0) -- (-0.25,-1.6);
+  \node[below] at (-0.45,-2.15) {$12\ \mathrm{V}$};
+
+  \fill (A) circle (1.5pt) node[left] {$a$};
+  \fill (B) circle (1.5pt) node[below right] {$b$};
+  \node at (1.1,0) {$R_{12}$};
+  \draw[->,red,thick] (5.8,0.35) -- (6.6,0.35) node[midway,above] {$I$};
+\end{tikzpicture}

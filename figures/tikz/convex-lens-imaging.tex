@@ -1,0 +1,15 @@
+% TikZ 图：凸透镜成像
+% Day 25：光学基础
+\begin{tikzpicture}[scale=0.86,>=Latex]
+  \draw[->,thick] (-4.2,0) -- (4.6,0) node[right] {主光轴};
+  \draw[thick,blue] (0,-1.9) .. controls (0.45,-0.7) and (0.45,0.7) .. (0,1.9);
+  \draw[thick,blue] (0,-1.9) .. controls (-0.45,-0.7) and (-0.45,0.7) .. (0,1.9);
+  \foreach \x/\lab in {-1.5/F,1.5/F,-3/2F,3/2F}{
+    \draw (\x,0.08) -- (\x,-0.08) node[below] {$\lab$};
+  }
+  \draw[very thick,->] (-3.4,0) -- (-3.4,1.4) node[above] {物};
+  \draw[red,thick,->] (-3.4,1.4) -- (0,1.4) -- (3.0,-1.2);
+  \draw[red,thick,->] (-3.4,1.4) -- (0,0) -- (3.0,-1.24);
+  \draw[very thick,->] (2.65,0) -- (2.65,-1.05) node[below] {像};
+  \node[font=\small] at (0,-2.25) {过光心不偏折；平行主光轴的光线过焦点};
+\end{tikzpicture}

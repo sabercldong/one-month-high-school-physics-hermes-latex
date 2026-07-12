@@ -10,13 +10,13 @@
   \item 理解电源电动势 $E$ 和内阻 $r$ 的概念。
   \item 掌握闭合电路欧姆定律 $I = \dfrac{E}{R+r}$。
   \item 掌握路端电压 $U = E - Ir$ 随外电阻的变化规律。
-  \item 理解电源输出功率 $P_{\text{出}} = I^2R$ 在 $R = r$ 时最大。
+  \item 理解纯电阻负载下，电源输出功率 $P_{\text{出}} = I^2R$ 在 $R = r$ 时最大。
   \item 了解伏安法测 $E$ 和 $r$ 的实验原理。
 \end{enumerate}
 
 \section*{二、初高中衔接}
 
-初中物理中，电源被认为能输出恒定电压（如"一节干电池 $1.5\ \mathrm{V}$"）。但如果你用万用表测一个旧电池的两端，会发现电压低于 $1.5\ \mathrm{V}$——这是因为电池有内阻。
+初中物理中，电源被认为能输出恒定电压（如“一节干电池 $1.5\ \mathrm{V}$”）。但如果你用万用表测一个旧电池的两端，会发现电压低于 $1.5\ \mathrm{V}$——这是因为电池有内阻。
 
 高中引入两个新概念：
 \begin{itemize}
@@ -26,22 +26,42 @@
 
 闭合电路欧姆定律揭示了：$E$ = 外电路电压 + 内电路电压。
 
+\textbf{科学发展视角：} 电池技术是新能源汽车、储能电站和移动设备的核心。内阻决定了电池大电流输出时的发热、效率和路端电压下降，所以“旧电池带不动负载”不是一句经验话，而是闭合电路欧姆定律的直接体现。
+
 \section*{三、核心概念}
 
 \begin{conceptbox}{电动势与闭合电路欧姆定律}
 
-\textbf{电动势 $E$：} 电源将其他形式的能转化为电能的本领，等于电源开路时两极间的电压。
+\textbf{电动势 $E$：} 电源非静电力把单位正电荷从负极搬到正极所做的功，反映电源把其他形式能转化为电能的本领。数值上，理想电压表测得的开路电压等于电动势。
 
 \textbf{闭合电路欧姆定律：}
 \[
 \boxed{I = \frac{E}{R + r}}
 \]
 
+\textbf{它从哪里来：} 电源内部的非静电力把单位正电荷获得的能量记作 $E$。电荷沿闭合回路运动一周，这部分能量分别消耗在外电路和电源内阻上：
+\[
+E=U_{\text{外}}+U_{\text{内}}.
+\]
+若外电路为纯电阻 $R$，内阻为 $r$，同一闭合回路中电流相同，于是
+\[
+U_{\text{外}}=IR,\qquad U_{\text{内}}=Ir.
+\]
+代入得到
+\[
+E=IR+Ir=I(R+r),\qquad I=\frac{E}{R+r}.
+\]
+所以闭合电路欧姆定律不是凭空多出来的公式，而是“电源提供的能量 = 外电路消耗 + 内阻消耗”的结果。
+
 \begin{itemize}
   \item $E$：电源电动势（$\mathrm{V}$），由电源本身决定。
   \item $R$：外电路总电阻。
   \item $r$：电源内阻。
 \end{itemize}
+
+\end{conceptbox}
+
+\begin{conceptbox}{路端电压与电压分配}
 
 \textbf{路端电压（外电路电压）：}
 \[
@@ -53,13 +73,13 @@
   \item $Ir$ 是内阻上的电压降（内电压）。
 \end{itemize}
 
+\end{conceptbox}
+
 \begin{center}
 \input{figures/tikz/closed-circuit}
 
 \figcaption{闭合电路：$E = IR + Ir = U + Ir$}\label{fig:closed-circuit}
 \end{center}
-
-\end{conceptbox}
 
 \begin{conceptbox}{路端电压与外电阻的关系}
 
@@ -78,6 +98,10 @@
 
 \begin{conceptbox}{电源的输出功率}
 
+\[
+P_{\text{出}} = UI
+\]
+若外电路是纯电阻 $R$，则
 \[
 P_{\text{出}} = I^2R = \left(\frac{E}{R+r}\right)^2 R
 \]
@@ -112,8 +136,9 @@ $R$ 越大，效率越高。但在最大输出功率时（$R = r$），效率仅
 \midrule
 $I = \dfrac{E}{R+r}$ & 闭合电路欧姆定律 & 纯电阻电路 \\
 $U = E - Ir$ & 路端电压 & 任何闭合电路 \\
-$P_{\text{出}} = I^2R$ & 电源输出功率 & 纯电阻电路 \\
-$P_{\max} = \dfrac{E^2}{4r}$ & 最大输出功率 & $R = r$ 时 \\
+$P_{\text{出}} = UI$ & 电源输出功率 & 任何外电路 \\
+$P_{\text{出}} = I^2R$ & 纯电阻负载输出功率 & 外电路为电阻 $R$ \\
+$P_{\max} = \dfrac{E^2}{4r}$ & 最大输出功率 & 纯电阻负载且 $R = r$ 时 \\
 $\eta = \dfrac{R}{R+r}$ & 电源效率 & 纯电阻电路 \\
 \bottomrule
 \end{tabular}
@@ -125,6 +150,12 @@ $\eta = \dfrac{R}{R+r}$ & 电源效率 & 纯电阻电路 \\
 
 $R \uparrow \to I \downarrow \to U \uparrow$。分析顺序：局部 $\to$ 整体 $\to$ 局部。
 
+\begin{center}
+\input{figures/tikz/closed-circuit-dynamic}
+
+\figcaption{外电阻变化时，先判断总电流，再判断路端电压}\label{fig:closed-circuit-dynamic}
+\end{center}
+
 \subsection*{模型 2：电源伏安特性曲线}
 
 $U = E - Ir$，$U$-$I$ 图像是一条斜率为 $-r$ 的直线。
@@ -133,9 +164,32 @@ $U = E - Ir$，$U$-$I$ 图像是一条斜率为 $-r$ 的直线。
   \item 斜率绝对值：$r$（内阻）。
 \end{itemize}
 
+\begin{center}
+\input{figures/tikz/source-ui-graph}
+
+\figcaption{电源伏安特性曲线：截距求 $E$，斜率绝对值求 $r$}\label{fig:source-ui-graph}
+\end{center}
+
 \subsection*{模型 3：伏安法测 $E$ 和 $r$}
 
 实验原理：改变外电阻 $R$，测多组 $U$、$I$，作 $U$-$I$ 图，由截距和斜率求 $E$ 和 $r$。
+
+\begin{center}
+\input{figures/tikz/source-measure-circuit}
+
+\figcaption{伏安法测电源电动势和内阻：改变滑动变阻器，读取多组 $U$、$I$}\label{fig:source-measure-circuit}
+\end{center}
+
+\begin{center}
+\input{figures/tikz/source-ui-data-fit}
+
+\figcaption{多组实验数据作 $U$-$I$ 图：截距为 $E$，斜率为 $-r$}\label{fig:source-ui-data-fit}
+\end{center}
+
+若只给两组数据，也可以直接联立：
+\[
+r=\frac{U_1-U_2}{I_2-I_1},\qquad E=U_1+I_1r
+\]
 
 \section*{六、例题精讲}
 
@@ -150,6 +204,12 @@ $U = E - Ir$，$U$-$I$ 图像是一条斜率为 $-r$ 的直线。
 
 \textbf{物理模型：} 闭合电路欧姆定律。
 
+\begin{center}
+\input{figures/tikz/closed-circuit-example-basic}
+
+\figcaption{例题电路：电源内阻与外电阻在同一闭合回路中}\label{fig:closed-circuit-example-basic}
+\end{center}
+
 \textbf{解题过程：}
 
 \begin{enumerate}
@@ -159,7 +219,7 @@ $U = E - Ir$，$U$-$I$ 图像是一条斜率为 $-r$ 的直线。
   
   \item $U_{\text{内}} = Ir = 2 \times 1 = 2\ \mathrm{V}$
   
-  验证：$E = U + U_{\text{内}} = 10 + 2 = 12\ \mathrm{V}$ ✔
+  验证：$E = U + U_{\text{内}} = 10 + 2 = 12\ \mathrm{V}$ $\checkmark$
 \end{enumerate}
 
 \textbf{方法总结：} $E = U_{\text{外}} + U_{\text{内}}$ 始终成立。路端电压小于电动势，差值等于内阻上的电压降。
@@ -171,6 +231,12 @@ $U = E - Ir$，$U$-$I$ 图像是一条斜率为 $-r$ 的直线。
 \textbf{题意分析：} 电源 $E = 6\ \mathrm{V}$，$r = 0.5\ \Omega$。外电阻从 $R_1 = 4.5\ \Omega$ 减小到 $R_2 = 1\ \Omega$，求电流和路端电压的变化。
 
 \textbf{物理模型：} 闭合电路动态分析。
+
+\begin{center}
+\input{figures/tikz/terminal-voltage-change}
+
+\figcaption{外电阻减小时，干路电流增大，内压增大，路端电压减小}\label{fig:terminal-voltage-change}
+\end{center}
 
 \textbf{解题过程：}
 
@@ -190,6 +256,8 @@ U_2 = 6 - 4 \times 0.5 = 4\ \mathrm{V}
 
 \end{examplebox}
 
+\clearpage
+
 \begin{examplebox}{电源最大输出功率}
 
 \textbf{题意分析：} 电源 $E = 10\ \mathrm{V}$，$r = 2\ \Omega$。
@@ -200,6 +268,12 @@ U_2 = 6 - 4 \times 0.5 = 4\ \mathrm{V}
 \end{enumerate}
 
 \textbf{物理模型：} 电源输出功率。
+
+\begin{center}
+\input{figures/tikz/max-power-example}
+
+\figcaption{本题输出功率曲线：最大点对应 $R=r=2\ \Omega$}\label{fig:max-power-example}
+\end{center}
 
 \textbf{解题过程：}
 
@@ -241,12 +315,28 @@ U_2 = 6 - 4 \times 0.5 = 4\ \mathrm{V}
 \end{enumerate}
 \end{mistakebox}
 
-\section*{九、竞赛入门补充}
+\section*{九、方法补充}
+
+\begin{learningbox}{三个容易混在一起的判断}
+\begin{enumerate}
+  \item \textbf{动态分析：} 先看外电路总电阻，再看 $I=\dfrac{E}{R_{\text{外}}+r}$，最后看 $U=E-Ir$ 和局部支路。
+  \item \textbf{功率与效率：} $R=r$ 时输出功率最大，但效率只有 $50\%$；实际电源和输电常追求高效率，即希望内阻损耗小。
+  \item \textbf{实验作图：} 多组 $U$、$I$ 作直线拟合，可以减小偶然误差；判断系统误差时，要问清楚电压表、电流表实际测量的是哪一段电路。
+\end{enumerate}
+\end{learningbox}
+
+\section*{十、竞赛入门补充}
 
 \begin{competitionbox}
 \textbf{含电容器的闭合电路}
 
 在闭合电路中加入电容器，稳定时电容器支路相当于断路（没有电流通过），但电容器两端的电压等于并联部分的电压。
+
+\begin{center}
+\input{figures/tikz/capacitor-closed-circuit}
+
+\figcaption{含电容器的闭合电路：稳定后电容器支路断路，$U_C=U_{R_2}$}\label{fig:capacitor-closed-circuit}
+\end{center}
 
 \textbf{例题：} 电源 $E = 10\ \mathrm{V}$，$r = 1\ \Omega$，$R_1 = 4\ \Omega$，$R_2 = 5\ \Omega$，电容器 $C = 10\ \mu\mathrm{F}$ 与 $R_2$ 并联。求电容器带电量。
 
@@ -261,7 +351,7 @@ I = \frac{E}{R_1 + R_2 + r} = \frac{10}{4 + 5 + 1} = 1\ \mathrm{A}
 \textbf{竞赛小贴士：} 含电容器的直流电路问题中，稳定时电容器支路视为断路，电容器电压等于与之并联部分的电压。
 \end{competitionbox}
 
-\section*{十、今日小结}
+\section*{十一、今日小结}
 
 \begin{enumerate}
   \item 闭合电路欧姆定律 $I = \dfrac{E}{R+r}$，$E = IR + Ir$。

@@ -1,54 +1,357 @@
 \daytitle{29}{高中物理常见模型总复盘}
 
 \begin{learningbox}{本讲义大致内容}
-按模型复盘全书：运动学模型、受力模型、能量模型、动量模型、圆周模型、电场模型、电路模型、磁场模型和电磁感应模型。
+前 28 天已经学过大量知识点。今天不再按章节复述，而是按“模型”重组全书：运动学模型、受力模型、能量模型、动量模型、圆周模型、场模型、电路模型和电磁感应模型。复盘的目标是让学生看到题目时能先识别模型，而不是急着找公式。
 \end{learningbox}
 
 \section*{一、学习目标}
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 建立“对象、过程、约束、守恒量”的统一解题框架。
+  \item 能把复杂题拆成多个阶段，每阶段选择合适模型。
+  \item 熟悉高中物理常见模型的适用条件和典型公式。
+  \item 学会从题目关键词判断可能使用的物理方法。
+  \item 避免公式堆砌，形成可迁移的建模能力。
 \end{enumerate}
 
-\section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+\section*{二、为什么要按模型复盘}
+
+初学物理时，知识按章节出现：运动学、力学、电学、磁学。真正解题时，题目往往不会告诉你“这是第几章”。例如带电粒子在电场中运动，既有电场力，又有运动学；导体棒切割磁感线，既有电磁感应，又有安培力和能量转化。按模型复盘，就是把分散知识重新组织成解题工具箱。
+
+\begin{center}
+\input{figures/tikz/physics-model-map}
+
+\figcaption{高中物理模型地图：模型是解题视角，不只是公式集合}\label{fig:physics-model-map}
+\end{center}
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{物理建模的四步}
+
+\begin{enumerate}
+  \item \textbf{选对象：} 研究单个物体、系统，还是某个电路回路？
+  \item \textbf{分过程：} 运动是否分阶段？条件是否发生变化？
+  \item \textbf{找约束：} 绳长不变、轨道约束、闭合回路、电荷守恒等。
+  \item \textbf{选规律：} 牛顿定律、能量守恒、动量守恒、场力公式、电路定律等。
+\end{enumerate}
+
+\textbf{核心提醒：} 不要一看到速度就只想运动学，不要一看到高度就只想机械能；先看过程中的力、能量、动量和约束是否适用。
 \end{conceptbox}
 
-\section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+\begin{conceptbox}{方法选择树}
 
-\section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+\begin{center}
+\input{figures/tikz/method-decision-tree}
+
+\figcaption{方法选择树：题目问法常提示首选模型}\label{fig:method-decision-tree}
+\end{center}
+
+\begin{itemize}
+  \item 问位移、时间、速度，且加速度已知：优先运动学。
+  \item 问加速度、拉力、支持力：优先受力分析和牛顿第二定律。
+  \item 问高度、速度、压缩量、最远距离：优先能量。
+  \item 碰撞、爆炸、反冲、人船模型：优先动量。
+  \item 圆周运动、轨道、最高点最低点：优先径向受力。
+  \item 电路稳定量：优先欧姆定律、闭合电路定律和等效电路。
+  \item 电磁感应：优先磁通量变化、楞次定律和能量转化。
+\end{itemize}
+\end{conceptbox}
+
+\section*{四、模型总表}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+模型 & 典型关键词 & 核心规律 \\
+\midrule
+匀变速直线运动 & 匀加速、刹车、自由落体 & $v=v_0+at$，$x=v_0t+\frac12at^2$ \\
+受力模型 & 拉力、摩擦、斜面、连接体 & $\sum F=ma$ \\
+能量模型 & 高度、弹簧、粗糙面、最远 & $W=\Delta E_k$，机械能守恒 \\
+动量模型 & 碰撞、爆炸、反冲、人船 & $p=mv$，系统动量守恒 \\
+圆周模型 & 轨道、转弯、卫星、绳球 & $\sum F_r=m\dfrac{v^2}{r}$ \\
+电场模型 & 电势差、加速、偏转 & $qU=\Delta E_k$，$F=qE$ \\
+电路模型 & 串并联、电源、滑变 & 欧姆定律、闭合电路欧姆定律 \\
+磁场模型 & 洛伦兹力、半径、周期 & $qvB=m\dfrac{v^2}{r}$ \\
+感应模型 & 磁通量变化、切割、楞次 & $E=n\left|\dfrac{\Delta\Phi}{\Delta t}\right|$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{五、典型模型复盘}
+
+\subsection*{模型 1：运动学与图像}
+
+若加速度恒定，优先用匀变速公式；若题目给图像，先看斜率和面积：
+\[
+x\text{-}t\text{ 图像斜率}=v,\qquad
+v\text{-}t\text{ 图像斜率}=a,\qquad
+v\text{-}t\text{ 面积}=x.
+\]
+
+\subsection*{模型 2：受力分析}
+
+受力题先画受力图，再选坐标轴。斜面、圆周、带电粒子题都可以归结为“沿关键方向列牛顿第二定律”。
+
+\subsection*{模型 3：能量和动量}
+
+能量适合处理距离、速度、压缩量；动量适合处理相互作用时间很短或内力远大于外力的过程。两者常组合使用：碰撞前后用动量，碰撞后的运动用能量。
+
+\subsection*{模型 4：场与电路}
+
+电场和重力场相似：电场力做功与路径无关，可引入电势能。电路题则要先化简连接关系，再分析电源内阻和外电路变化。
+
+\subsection*{模型 5：电磁感应综合}
+
+导体棒题常把三件事连在一起：
+\[
+E=BLv,\qquad I=\frac{E}{R},\qquad F_A=BIL.
+\]
+若导体棒速度变化，还要结合牛顿第二定律或能量守恒。
+
+\begin{center}
+\input{figures/tikz/multi-model-problem}
+
+\figcaption{综合题分段建模：一个题目可能需要多个模型接力}\label{fig:multi-model-problem}
+\end{center}
+
+\subsection*{模型 6：跨章节模型切换}
+
+综合题真正的难点常常不是某个公式，而是“何时换模型”。例如小球先下滑、再碰撞、再压缩弹簧，三个阶段的适用规律完全不同。判断切换点时看条件是否改变：是否发生碰撞、是否进入粗糙面、是否进入场区、是否接入电路、是否达到临界状态。
+
+\begin{center}
+\input{figures/tikz/model-switching-map}
+
+\figcaption{模型切换：条件改变处就是重新选择规律的地方}\label{fig:model-switching-map}
+\end{center}
+
+\textbf{连接量意识：} 上一阶段的结果通常不是最终答案，而是下一阶段的已知量。例如碰前速度、碰后共同速度、最大压缩量、进入磁场速度、回路电流，都可能是“接力棒”。
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{同一道题的模型选择}
+\textbf{题意分析：} 一个小物块从光滑斜面高处由静止下滑，到达水平粗糙面后继续滑行，最终停下。问物块在水平面上滑行距离。
 
-\textbf{解题过程：} TODO。
+\textbf{物理模型：} 斜面段机械能守恒，水平段动能定理。
 
-\textbf{方法总结：} TODO。
+\textbf{解题过程：}
+斜面光滑，重力势能转化为动能：
+\[
+mgh=\frac12mv^2.
+\]
+进入水平粗糙面后，摩擦力做负功使动能减少：
+\[
+-\mu mg s=0-\frac12mv^2.
+\]
+联立得
+\[
+\mu mg s=mgh,\qquad s=\frac{h}{\mu}.
+\]
+
+\textbf{方法总结：} 这不是单纯“斜面题”，而是两个阶段：光滑段用机械能守恒，粗糙段用动能定理。
+\end{examplebox}
+
+\begin{examplebox}{碰撞后上升高度}
+\textbf{题意分析：} 质量为 $m$ 的小球以速度 $v_0$ 撞入质量为 $M$ 的木块并嵌在其中，随后整体沿光滑圆弧上升。求能上升的最大高度。
+
+\textbf{物理模型：} 完全非弹性碰撞用动量守恒，碰后上升用机械能守恒。
+
+\textbf{解题过程：}
+碰撞极短时间内水平方向动量守恒：
+\[
+mv_0=(m+M)v.
+\]
+碰后整体上升：
+\[
+\frac12(m+M)v^2=(m+M)gh.
+\]
+所以
+\[
+h=\frac{v^2}{2g}
+=\frac{1}{2g}\left(\frac{m}{m+M}v_0\right)^2.
+\]
+
+\textbf{方法总结：} 碰撞过程机械能一般不守恒，但碰撞后的光滑上升过程机械能守恒。
+\end{examplebox}
+
+\begin{examplebox}{一题多解：粗糙水平面上的刹停}
+\textbf{题意分析：} 质量为 $m$ 的物块以初速度 $v_0$ 在粗糙水平面上滑行，动摩擦因数为 $\mu$。求停止距离。
+
+\textbf{方法一：动能定理。}
+摩擦力做功使动能减少：
+\[
+-\mu mg s=0-\frac12mv_0^2,
+\]
+所以
+\[
+s=\frac{v_0^2}{2\mu g}.
+\]
+
+\textbf{方法二：牛顿定律加运动学。}
+水平方向加速度大小
+\[
+a=\mu g,
+\]
+方向与运动相反。取运动方向为正，则
+\[
+0-v_0^2=2(-\mu g)s,
+\]
+得到同样结果：
+\[
+s=\frac{v_0^2}{2\mu g}.
+\]
+
+\textbf{方法总结：} 两种方法都对，但视角不同。若题目只问距离且力做功容易表达，能量法更简洁；若还要求时间、加速度或中间速度，牛顿定律和运动学更直接。
+\end{examplebox}
+
+\begin{examplebox}{模型切换训练：电场加速后进入磁场}
+\textbf{题意分析：} 带电粒子从静止经电压 $U$ 加速后垂直进入磁感应强度为 $B$ 的匀强磁场。求磁场中圆周运动半径。
+
+\textbf{模型拆解：} 加速区用电场力做功，磁场区用洛伦兹力提供向心力。
+
+\textbf{解题过程：}
+加速区：
+\[
+qU=\frac12mv^2.
+\]
+磁场区：
+\[
+qvB=\frac{mv^2}{r},\qquad r=\frac{mv}{qB}.
+\]
+由第一式得
+\[
+v=\sqrt{\frac{2qU}{m}},
+\]
+代入半径式：
+\[
+r=\frac1B\sqrt{\frac{2mU}{q}}.
+\]
+
+\textbf{方法总结：} 电场改变速率，磁场改变方向。两个场区的物理作用不同，必须分阶段处理。
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 追及相遇题中，什么时候应优先考虑 $v$-$t$ 图像？
+  \item 粗糙斜面上滑题，为什么机械能不守恒但动能定理仍可用？
+  \item 两物体通过轻绳连接运动，选整体法还是隔离法取决于什么？
+  \item 带电粒子先加速后偏转，两个阶段分别用什么模型？
+  \item 导体棒切割磁感线达到匀速时，受力和能量分别怎样分析？
+\end{enumerate}
+
+\subsection*{训练提示}
+\begin{enumerate}
+  \item 当题目涉及两车速度变化、位移差、最大距离时，$v$-$t$ 图像很直观。
+  \item 有摩擦时机械能不守恒，但动能定理仍成立，因为它统计所有力做功。
+  \item 若要求系统加速度，优先整体法；若要求绳力或相互作用力，需要隔离法。
+  \item 加速区用动能定理，偏转区用类平抛分解。
+  \item 匀速时合力为 0；能量上外力做功转化为电能和焦耳热。
+\end{enumerate}
 
 \section*{八、易错点}
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{公式先行：} 未选对象、未分过程就套公式，容易把不同阶段混在一起。
+  \item \textbf{守恒条件不检查：} 机械能守恒、动量守恒都需要满足适用条件。
+  \item \textbf{方向正负混乱：} 矢量公式必须先规定正方向。
+  \item \textbf{把图像当装饰：} 图像的斜率、面积、交点、截距都有物理意义。
+  \item \textbf{综合题不分段：} 条件一变，模型往往也要变。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{量纲检查}
+
+竞赛和高水平综合题中，量纲检查是非常有用的自检工具。一个表达式若表示速度，量纲必须是
+\[
+[v]=\mathrm{L}\mathrm{T}^{-1}.
+\]
+例如 $\sqrt{gh}$ 的量纲为
+\[
+\sqrt{(\mathrm{L}\mathrm{T}^{-2})\mathrm{L}}=\mathrm{L}\mathrm{T}^{-1},
+\]
+可以作为速度量出现。
+
+\textbf{极限检查}
+
+得到结果后，令某个参数取极限，看结论是否合理。例如 $s=\dfrac{h}{\mu}$ 中，若 $\mu$ 越大，滑行距离越短；若 $\mu\rightarrow0$，水平面无摩擦，距离趋于无穷大，符合物理直觉。
+
+\textbf{模型意识：} 量纲检查和极限检查不能替代推导，但能快速发现许多荒谬答案。
 \end{competitionbox}
 
-\section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
+\section*{十、模型深化：适用条件比公式更重要}
 
+很多学生会背公式，但不会判断何时能用。真正的模型能力不是“公式记得多”，而是知道公式背后的条件。
+
+\begin{center}
+\input{figures/tikz/model-conditions-card}
+
+\figcaption{模型条件卡：每次使用模型前先检查适用条件}\label{fig:model-conditions-card}
+\end{center}
+
+\subsection*{1.\quad 三类常见“不能直接守恒”}
+
+\begin{enumerate}
+  \item \textbf{机械能不守恒：} 有摩擦、空气阻力、外力做功或非弹性碰撞。
+  \item \textbf{动量不守恒：} 系统外力冲量不可忽略，或研究方向上外力明显。
+  \item \textbf{电荷运动不能用匀速：} 存在电场力、磁场力或碰撞阻力时，速度方向或大小可能变化。
+\end{enumerate}
+
+\subsection*{2.\quad 多模型题的标注方法}
+
+建议在草稿纸上把题目过程标成
+\[
+\text{阶段 A}\rightarrow\text{阶段 B}\rightarrow\text{阶段 C}.
+\]
+每个阶段下面写一句话：
+\[
+\text{对象是什么？}\quad \text{用什么规律？}\quad \text{连接量是什么？}
+\]
+所谓连接量，就是上一阶段结果进入下一阶段的物理量，如速度、压缩量、电流、半径等。
+
+\begin{examplebox}{模型判断训练}
+\textbf{题意分析：} 小球从高处滑下，与静止木块碰撞后一起压缩弹簧。判断各阶段应使用什么规律。
+
+\textbf{模型拆解：}
+\begin{enumerate}
+  \item 小球滑下：若轨道光滑，用机械能守恒求碰前速度。
+  \item 碰撞瞬间：若碰撞时间很短，水平方向动量守恒。
+  \item 共同压缩弹簧：若水平面光滑，用机械能守恒；若粗糙，用功能关系。
+\end{enumerate}
+
+\textbf{方法总结：} 一个综合题中，机械能可能在某一段守恒，在另一段不守恒；不要用一个判断覆盖全过程。
+\end{examplebox}
+
+\subsection*{3.\quad 常见错因对照}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+错因 & 典型表现 & 修正方法 \\
+\midrule
+对象错误 & 把单个物体和系统混用 & 每个方程前写研究对象 \\
+过程错误 & 碰撞前后用同一规律 & 在条件改变处画分界线 \\
+守恒误用 & 有摩擦仍套机械能守恒 & 先检查外力功和非保守力功 \\
+方向错误 & 电场、磁场、摩擦方向混乱 & 先画方向，再代正负号 \\
+连接量遗漏 & 求出中间速度后忘记传给下一段 & 标出阶段间的接力物理量 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{4.\quad 分层训练}
+
+\begin{enumerate}
+  \item \textbf{基础：} 有摩擦力做功时，机械能一定不守恒吗？动能定理还能用吗？
+  \item \textbf{提高：} 两物体碰撞过程中，为什么常常能用动量守恒，却不能用机械能守恒？
+  \item \textbf{综合：} 导体棒在磁场中由静止开始运动，外力恒定，说明速度、电动势、电流、安培力怎样相互影响。
+  \item \textbf{开放思考：} 为什么物理建模常常要先忽略一些因素，再逐步加入修正？
+\end{enumerate}
+
+\section*{十一、今日小结}
+\begin{enumerate}
+  \item 物理建模先选对象、分过程、找约束、选规律。
+  \item 运动学、牛顿定律、能量、动量和场模型是高中物理主干。
+  \item 综合题常需要多个模型按阶段接力。
+  \item 守恒规律一定要检查适用条件。
+  \item 量纲检查和极限检查是非常重要的答案自检方法。
+\end{enumerate}

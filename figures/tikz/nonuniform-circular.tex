@@ -1,0 +1,36 @@
+% TikZ 图：非匀速圆周运动的加速度分解
+% Day 11：圆周运动
+\begin{tikzpicture}[scale=0.86,>=Latex]
+  \coordinate (O) at (-0.65,0);
+  \coordinate (P) at ($(O)+(35:2.25)$);
+  \coordinate (AtEnd) at ($(P)+(125:0.62)$);
+  \coordinate (AnEnd) at ($(P)+(215:0.86)$);
+  \coordinate (AEnd) at ($(AtEnd)+(215:0.86)$);
+
+  \draw[thick] (O) circle (2.25);
+  \filldraw[black] (O) circle (1.8pt);
+  \node[below left] at (O) {$O$};
+  \draw[dashed] (O) -- (P);
+  \filldraw[red] (P) circle (3pt);
+  \draw[densely dashed,gray] ($(P)+(-55:0.70)$) -- ($(P)+(125:1.12)$);
+
+  % 速度沿质点所在处的圆周切线方向。
+  \draw[->,blue,very thick] (P) -- ++(125:1.22)
+    node[above left=2pt] {$\vect v$};
+
+  % 加速度平行四边形：三个加速度都从圆上的质点位置出发。
+  \draw[dashed,gray] (AtEnd) -- (AEnd);
+  \draw[dashed,gray] (AnEnd) -- (AEnd);
+  \draw[->,orange,thick] (P) -- (AtEnd)
+    node[pos=0.50,right=3pt,fill=white,inner sep=1pt] {$\vect a_t$};
+  \draw[->,red,very thick] (P) -- (AnEnd)
+    node[pos=0.78,below right=2pt,fill=white,inner sep=1pt] {$\vect a_n$};
+  \draw[->,purple,very thick] (P) -- (AEnd)
+    node[pos=0.66,above left=2pt,fill=white,inner sep=1pt] {$\vect a$};
+  \filldraw[red] (P) circle (3pt);
+
+  \node[anchor=west,align=left,font=\footnotesize] at (3.20,0.30)
+    {法向：$a_n=\dfrac{v^2}{r}$\\[4pt]
+     切向：$a_t$ 改变速率\\[4pt]
+     合加速度：$\vect a=\vect a_n+\vect a_t$};
+\end{tikzpicture}

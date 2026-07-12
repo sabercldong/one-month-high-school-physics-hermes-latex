@@ -1,0 +1,15 @@
+% TikZ 图：安培力与重力平衡
+% Day 21：磁场与安培力
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \foreach \x in {-2.0,-1.2,-0.4,0.4,1.2,2.0} {
+    \foreach \y in {-0.7,0.9} {
+      \draw[blue,thick] (\x-0.09,\y-0.09) -- (\x+0.09,\y+0.09);
+      \draw[blue,thick] (\x-0.09,\y+0.09) -- (\x+0.09,\y-0.09);
+    }
+  }
+  \node[blue] at (2.55,1.05) {$B$ 向里};
+  \draw[very thick,red,->] (-1.7,0.1) -- (1.7,0.1) node[right=2pt] {$I$};
+  \draw[->,purple,thick] (0,0.1) -- (0,1.25) node[above] {$F_A$};
+  \draw[->,black,thick] (0,0.1) -- (0,-1.05) node[below] {$mg$};
+  \node at (0,-1.72) {安培力与重力平衡};
+\end{tikzpicture}

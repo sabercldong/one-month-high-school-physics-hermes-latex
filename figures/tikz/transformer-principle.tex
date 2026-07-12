@@ -1,0 +1,20 @@
+% TikZ 图：理想变压器模型
+% Day 24：变压器
+\begin{tikzpicture}[scale=0.88,>=Latex]
+  \draw[fill=gray!16,draw=gray!60] (2.6,-1.7) rectangle (3.5,1.7);
+  \foreach \y in {-1.1,-0.55,0,0.55,1.1}{
+    \draw[blue,thick] (2.6,\y) .. controls (2.0,\y+0.25) and (2.0,\y-0.25) .. (2.6,\y-0.02);
+    \draw[red,thick] (3.5,\y) .. controls (4.1,\y+0.25) and (4.1,\y-0.25) .. (3.5,\y-0.02);
+  }
+  \draw[->,blue,thick] (0.5,0.55) -- (1.75,0.55) node[midway,above] {$U_1$};
+  \draw[->,blue,thick] (1.75,-0.55) -- (0.5,-0.55) node[midway,below] {$I_1$};
+  \draw[->,red,thick] (4.35,0.55) -- (5.75,0.55) node[midway,above] {$U_2$};
+  \draw[->,red,thick] (5.75,-0.55) -- (4.35,-0.55) node[midway,below] {$I_2$};
+  \node[blue] at (1.55,1.55) {$n_1$};
+  \node[red] at (4.55,1.55) {$n_2$};
+  \node at (3.05,-2.05) {铁芯中磁通量周期性变化};
+  \node[align=left,font=\small] at (8.0,0.45)
+    {理想变压器：\\[2pt]
+     $\dfrac{U_2}{U_1}=\dfrac{n_2}{n_1}$\\[4pt]
+     $U_1I_1\approx U_2I_2$};
+\end{tikzpicture}

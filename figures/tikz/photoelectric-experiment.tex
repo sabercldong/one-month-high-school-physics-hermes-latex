@@ -1,0 +1,23 @@
+% TikZ 图：光电效应实验装置
+% Day 27：近代物理
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[thick,rounded corners] (-3,-1.4) rectangle (3,1.4);
+  \node[above] at (0,1.4) {抽成真空的光电管};
+  \draw[thick] (-1.8,-0.8) -- (-1.8,0.8);
+  \node[left] at (-1.8,0) {阴极 K};
+  \draw[thick] (1.8,-0.8) -- (1.8,0.8);
+  \node[right] at (1.8,0) {阳极 A};
+  \foreach \y in {-0.45,0,0.45} {
+    \draw[->,blue,thick] (-3.6,\y+0.35) -- (-1.9,\y);
+  }
+  \node[blue] at (-3.75,1.05) {入射光};
+  \draw[->,red,thick] (-1.6,0.2) -- (1.45,0.45) node[midway,above] {光电子};
+  \draw[->,red,thick] (-1.6,-0.25) -- (1.45,-0.15);
+  \draw[thick] (-1.8,-1.4) -- (-1.8,-2.0) -- (1.8,-2.0) -- (1.8,-1.4);
+  \draw[thick] (-0.45,-2.0) circle (0.25);
+  \node at (-0.45,-2.0) {$G$};
+  \draw[thick] (0.7,-2.0) circle (0.25);
+  \node at (0.7,-2.0) {$V$};
+  \node[font=\small,align=center] at (0,-2.65)
+    {调节外加电压，观察光电流是否存在以及何时为零};
+\end{tikzpicture}

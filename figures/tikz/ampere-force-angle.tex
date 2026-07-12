@@ -1,0 +1,19 @@
+% TikZ 图：安培力与夹角
+% Day 21：磁场与安培力
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \coordinate (O) at (-0.5,-0.25);
+  \foreach \y in {-1.05,-0.45,0.15,0.75} {
+    \draw[->,blue] (-2.7,\y) -- (2.7,\y);
+  }
+  \node[blue] at (2.95,0.75) {$B$};
+  \draw[very thick,red,->] (O) -- ++(2.25,1.55) node[above right] {$I$};
+  \draw[dashed,gray] (O) -- ++(2.45,0);
+  \draw[orange,thick,->] ($(O)+(0.82,0)$) arc (0:34.6:0.82);
+  \node[orange] at ($(O)+(1.05,0.38)$) {$\theta$};
+
+  \draw[purple,thick] (-2.05,1.12) circle (0.18);
+  \draw[purple,thick] (-2.17,1.00) -- (-1.93,1.24);
+  \draw[purple,thick] (-2.17,1.24) -- (-1.93,1.00);
+  \node[purple,align=center] at (-1.25,1.13) {$F_A$\\向里};
+  \node[font=\small] at (0,-1.65) {夹角 $\theta$ 是电流方向与磁场方向的夹角，$F_A=BIL\sin\theta$};
+\end{tikzpicture}

@@ -1,0 +1,27 @@
+% TikZ 图：两端固定弦的驻波
+% Day 14：机械波
+\begin{tikzpicture}[x=0.92cm,y=0.72cm,>=Latex]
+  \tikzset{wall/.style={thick}}
+  \foreach \y/\n/\lab in {0/1/基频, -1.8/2/二倍频, -3.6/3/三倍频} {
+    \draw[wall] (0,\y-0.75) -- (0,\y+0.75);
+    \draw[wall] (6.2,\y-0.75) -- (6.2,\y+0.75);
+    \draw[thick] (0,\y) -- (6.2,\y);
+    \draw[very thick,red,smooth,domain=0:6.2,samples=160]
+      plot (\x,{\y + 0.58*sin(180*\n*\x/6.2)});
+    \draw[very thick,red!55,dashed,smooth,domain=0:6.2,samples=160]
+      plot (\x,{\y - 0.58*sin(180*\n*\x/6.2)});
+    \node[left] at (-0.35,\y) {$n=\n$};
+    \node[right,font=\small] at (6.45,\y) {\lab};
+  }
+
+  \foreach \x in {0,6.2} {
+    \filldraw[black] (\x,0) circle (1.5pt);
+    \filldraw[black] (\x,-1.8) circle (1.5pt);
+    \filldraw[black] (\x,-3.6) circle (1.5pt);
+  }
+  \foreach \x in {3.1} {\filldraw[black] (\x,-1.8) circle (1.5pt);}
+  \foreach \x in {2.07,4.13} {\filldraw[black] (\x,-3.6) circle (1.5pt);}
+
+  \draw[<->] (0,0.95) -- (6.2,0.95) node[midway,above] {$L=\dfrac{\lambda_1}{2}$};
+  \node[font=\small,align=left] at (3.1,-4.55) {黑点为波节，红色实线/虚线表示相隔半个周期的两个极端形状};
+\end{tikzpicture}

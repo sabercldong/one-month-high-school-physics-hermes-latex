@@ -1,0 +1,26 @@
+% TikZ 图：简谐运动能量随位置变化
+% Day 13：机械振动
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \draw[->] (-3.15,0) -- (3.35,0) node[right] {$x$};
+  \draw[->] (0,0) -- (0,2.75) node[above] {能量};
+
+  \draw[dashed] (-2.65,2.20) -- (2.65,2.20);
+  \node[right] at (2.65,2.20) {$E=\dfrac12 kA^2$};
+
+  \draw[very thick,red,smooth,domain=-2.5:2.5,samples=80]
+    plot (\x,{0.352*\x*\x});
+  \draw[very thick,blue,smooth,domain=-2.5:2.5,samples=80]
+    plot (\x,{2.20-0.352*\x*\x});
+
+  \node[red] at (2.15,1.88) {$E_p$};
+  \node[blue] at (1.05,1.82) {$E_k$};
+
+  \draw[dashed] (-2.5,0) -- (-2.5,2.20);
+  \draw[dashed] (2.5,0) -- (2.5,2.20);
+  \node[below] at (-2.5,0) {$-A$};
+  \node[below left] at (0,0) {$O$};
+  \node[below] at (2.5,0) {$A$};
+
+  \node[align=center] at (0,-0.82)
+    {平衡位置动能最大；两端势能最大};
+\end{tikzpicture}

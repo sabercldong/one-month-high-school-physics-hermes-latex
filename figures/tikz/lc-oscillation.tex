@@ -1,0 +1,16 @@
+% TikZ 图：LC 振荡能量转化
+% Day 24：电磁振荡
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \foreach \x/\title/\cap in {0/电场能最大/电容器带电,3.4/磁场能最大/电流最大,6.8/电场能反向最大/极板反向带电}{
+    \draw[rounded corners=2pt] (\x,0) rectangle ++(2.2,1.6);
+    \draw[thick] (\x+0.55,0.35) -- (\x+0.55,1.25);
+    \draw[thick] (\x+0.85,0.35) -- (\x+0.85,1.25);
+    \draw[decorate,decoration={coil,aspect=0.45,segment length=4pt,amplitude=3pt}] (\x+1.25,0.80) -- (\x+1.85,0.80);
+    \node[font=\small] at (\x+1.1,1.9) {\title};
+    \node[font=\small] at (\x+1.1,-0.3) {\cap};
+  }
+  \draw[->,thick] (2.35,0.8) -- (3.15,0.8);
+  \draw[->,thick] (5.75,0.8) -- (6.55,0.8);
+  \node[align=center,font=\small] at (4.5,-0.85)
+    {$E_C=\dfrac12CU^2,\quad E_L=\dfrac12LI^2$};
+\end{tikzpicture}

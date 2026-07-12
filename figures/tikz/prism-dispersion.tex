@@ -1,0 +1,15 @@
+% TikZ 图：棱镜色散
+% Day 25：光学基础
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2.0,0);
+  \coordinate (C) at (1.0,1.75);
+  \draw[thick,fill=blue!6] (A)--(B)--(C)--cycle;
+  \draw[->,thick] (-2.2,0.9) -- (0.65,0.9) node[midway,above] {白光};
+  \draw[red,thick,->] (1.35,0.9) -- (3.4,1.35) node[right] {红};
+  \draw[orange,thick,->] (1.35,0.9) -- (3.4,1.08);
+  \draw[green!60!black,thick,->] (1.35,0.9) -- (3.4,0.78);
+  \draw[blue,thick,->] (1.35,0.9) -- (3.4,0.46);
+  \draw[violet,thick,->] (1.35,0.9) -- (3.4,0.20) node[right] {紫};
+  \node[font=\small,align=center] at (1.0,-0.45) {不同颜色光折射率不同};
+\end{tikzpicture}

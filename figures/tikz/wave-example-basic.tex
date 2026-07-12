@@ -1,0 +1,14 @@
+% TikZ 图：波长、频率、波速例题
+% Day 14：机械波
+\begin{tikzpicture}[x=0.95cm,y=0.78cm,>=Latex]
+  \draw[->] (-0.35,0) -- (6.7,0) node[right] {$x$};
+  \draw[->] (0,-1.25) -- (0,1.35) node[above] {$y$};
+  \draw[very thick,red,smooth,domain=0:6.1,samples=120]
+    plot (\x,{0.85*sin(120*\x)});
+  \draw[dashed,gray] (0.75,0) -- (0.75,0.85);
+  \draw[dashed,gray] (3.75,0) -- (3.75,0.85);
+  \draw[<->] (0.75,1.05) -- (3.75,1.05) node[midway,above] {$\lambda=0.80\ \mathrm{m}$};
+  \draw[<->,blue,thick] (0.25,0) -- (0.25,0.85) node[midway,left] {$A=4\ \mathrm{cm}$};
+  \draw[->,thick] (4.75,1.05) -- (6.0,1.05) node[right] {$v$};
+  \node[font=\small,align=center] at (3.25,-1.25) {$f=5.0\ \mathrm{Hz}$，先由 $T=1/f$，再由 $v=\lambda f$};
+\end{tikzpicture}

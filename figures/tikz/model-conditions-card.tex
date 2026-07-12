@@ -1,0 +1,14 @@
+% TikZ 图：模型适用条件卡
+% Day 29：模型复盘
+\begin{tikzpicture}[scale=0.88,>=Latex]
+  \foreach \x/\title/\body in {
+    0/机械能守恒/{只有重力、弹力做功},
+    3.7/动量守恒/{系统外力冲量可忽略},
+    7.4/匀变速公式/{加速度恒定}
+  }{
+    \draw[rounded corners=3pt,fill=blue!7,draw=gray!70] (\x,0) rectangle ++(3.0,2.0);
+    \node[font=\bfseries] at (\x+1.5,1.55) {\title};
+    \node[font=\small,align=center,text width=2.55cm] at (\x+1.5,0.75) {\body};
+  }
+  \node[font=\small] at (5.2,-0.45) {每次套公式前，先检查模型条件。};
+\end{tikzpicture}

@@ -1,0 +1,69 @@
+% TikZ 图：考虑地球自转时的受力
+% Day 12：万有引力与天体运动
+\begin{tikzpicture}[scale=0.78,>=Latex]
+  \tikzset{
+    earth/.style={draw=blue!70,thick,fill=blue!5},
+    grav/.style={->,red,thick},
+    normal/.style={->,orange,thick},
+    centrip/.style={->,blue,thick},
+    note/.style={font=\small,align=center}
+  }
+
+  % 极地
+  \begin{scope}[xshift=-4.75cm]
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (90:1.18);
+    \draw[earth] (O) circle (1.18);
+    \draw[dashed,gray] (0,-1.45) -- (0,1.45);
+    \node[above] at (0,1.62) {极地};
+    \filldraw[black] (O) circle (1.3pt);
+    \filldraw[red] (P) circle (2.2pt);
+    \draw[grav] (P) -- ++(270:0.66);
+    \draw[normal] (P) -- ++(90:0.54);
+    \node[red,left] at (-0.18,0.86) {$F_{\text{引}}$};
+    \node[orange,right] at (0.12,1.48) {$N$};
+    \node[note] at (0,-1.70) {极地：$\rho=0$};
+  \end{scope}
+
+  % 赤道
+  \begin{scope}
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (0:1.18);
+    \draw[earth] (O) circle (1.18);
+    \draw[dashed,gray] (0,-1.45) -- (0,1.45);
+    \draw[dashed,gray] (-1.42,0) -- (1.42,0);
+    \node[above] at (0,1.62) {赤道};
+    \filldraw[black] (O) circle (1.3pt);
+    \filldraw[red] (P) circle (2.2pt);
+    \draw[grav] (P) -- ++(180:0.72);
+    \draw[normal] (P) -- ++(0:0.55);
+    \draw[centrip] ($(P)+(0,-0.30)$) -- ++(180:0.62);
+    \node[red] at (0.55,0.33) {$F_{\text{引}}$};
+    \node[orange] at (1.88,0.16) {$N$};
+    \node[blue] at (0.63,-0.67) {$a_c$};
+    \node[note] at (0,-1.70) {赤道：$\rho=R$};
+  \end{scope}
+
+  % 任意纬度
+  \begin{scope}[xshift=4.75cm]
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (38:1.18);
+    \coordinate (H) at ({1.18*cos(38)},0);
+    \draw[earth] (O) circle (1.18);
+    \draw[dashed,gray] (0,-1.45) -- (0,1.45);
+    \draw[dashed,gray] (-1.42,0) -- (1.42,0);
+    \draw[dashed,gray] (O) -- (P);
+    \draw[dashed,gray] (P) -- (H);
+    \node[above] at (0,1.62) {纬度 $\varphi$};
+    \filldraw[black] (O) circle (1.3pt);
+    \filldraw[red] (P) circle (2.2pt);
+    \draw[grav] (P) -- ++(218:0.66);
+    \draw[normal] (P) -- ++(38:0.56);
+    \draw[centrip] ($(P)+(0,0.22)$) -- ++(180:0.66);
+    \draw[<->,thin] (0,-1.38) -- ($(H)+(0,-1.38)$);
+    \node[red] at (0.43,0.45) {$F_{\text{引}}$};
+    \node[orange] at (1.62,1.18) {$N$};
+    \node[blue] at (0.50,1.20) {$a_c$};
+    \node[note] at (0,-1.73) {纬度 $\varphi$：$\rho=R\cos\varphi$};
+  \end{scope}
+\end{tikzpicture}

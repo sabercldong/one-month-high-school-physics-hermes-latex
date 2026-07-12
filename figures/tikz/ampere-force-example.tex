@@ -1,0 +1,15 @@
+% TikZ 图：安培力例题示意
+% Day 21：磁场与安培力
+\begin{tikzpicture}[scale=0.82,>=Latex]
+  \foreach \x in {-1.8,-1.1,-0.4,0.3,1.0,1.7} {
+    \foreach \y in {-0.65,0.55} {
+      \draw[blue,thick] (\x-0.08,\y-0.08) -- (\x+0.08,\y+0.08);
+      \draw[blue,thick] (\x-0.08,\y+0.08) -- (\x+0.08,\y-0.08);
+    }
+  }
+  \node[blue] at (2.35,0.72) {$B$ 向里};
+  \draw[very thick,red,->] (-1.45,0) -- (1.45,0) node[right=2pt] {$I$};
+  \draw[<->,black] (-1.45,-0.95) -- (1.45,-0.95) node[midway,below] {$L$};
+  \draw[->,purple,very thick] (0,0) -- (0,1.08) node[above] {$F_A$};
+  \node[font=\small] at (0,-1.42) {$I\perp B$，可直接用 $F_A=BIL$};
+\end{tikzpicture}

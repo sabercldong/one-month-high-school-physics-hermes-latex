@@ -27,6 +27,8 @@
 
 更重要的是，高中揭示了一个关键结论：\textbf{匀速圆周运动需要指向圆心的合力}——这个力叫向心力。没有向心力，物体将沿切线飞出。
 
+\textbf{科学发展视角：} 圆周运动不是只出现在“转圈”的物体中。离心机用高速转动分离物质，过山车和高速弯道要用向心力保证安全，机器人、无人机和手机中的姿态传感器也要处理转动信息。遇到转弯问题时，要先抓住一个核心图像：速度沿切线方向，而加速度（或合力的法向分量）指向弯曲的内侧。这种把曲线运动分解成方向变化和大小变化的思想，是现代工程建模的基础。
+
 \section*{三、核心概念}
 
 \begin{conceptbox}{描述圆周运动的物理量}
@@ -53,6 +55,18 @@ T = \frac{1}{f},\qquad \omega = 2\pi f
 \boxed{v = \omega r}
 \]
 
+\textbf{简单推导：} 在很短时间 $\Delta t$ 内，质点转过角度 $\Delta\theta$，对应弧长
+\[
+\Delta s=r\Delta\theta
+\]
+所以
+\[
+v=\frac{\Delta s}{\Delta t}
+=r\frac{\Delta\theta}{\Delta t}
+=r\omega
+\]
+即 $v=\omega r$。这个关系来自“同一段圆弧既可以用弧长描述，也可以用圆心角描述”。
+
 \begin{center}
 \input{figures/tikz/circular-motion}
 
@@ -66,6 +80,22 @@ T = \frac{1}{f},\qquad \omega = 2\pi f
 \[
 \boxed{a_n = \frac{v^2}{r} = \omega^2 r}
 \]
+
+\textbf{简单推导：} 匀速圆周运动中，速度大小不变，但速度方向在变。很短时间 $\Delta t$ 内，半径转过小角度 $\Delta\theta$，速度方向也转过同样的小角度。两个速度矢量大小都为 $v$，它们的变化量近似为
+\[
+\Delta v \approx v\Delta\theta
+\]
+因此
+\[
+a_n=\lim_{\Delta t\to 0}\frac{\Delta v}{\Delta t}
+=v\lim_{\Delta t\to 0}\frac{\Delta\theta}{\Delta t}
+=v\omega
+\]
+又因为 $v=\omega r$，所以
+\[
+a_n=v\omega=\frac{v^2}{r}=\omega^2r
+\]
+方向指向圆心，所以叫向心加速度。
 
 \begin{itemize}
   \item 方向：始终指向圆心，与速度方向垂直。
@@ -116,6 +146,13 @@ $T = \dfrac{1}{f}$ & 周期与频率 & 周期性运动 \\
 \subsection*{模型 1：水平圆周运动（圆锥摆）}
 
 轻绳一端固定，另一端系小球做水平圆周运动（圆锥摆）：
+
+\begin{center}
+\input{figures/tikz/conical-pendulum}
+
+\figcaption{圆锥摆：拉力的竖直分量平衡重力，水平分量提供向心力}\label{fig:conical-pendulum}
+\end{center}
+
 \[
 T\sin\theta = m\omega^2 r = m\omega^2 l\sin\theta
 \]
@@ -132,7 +169,7 @@ T\cos\theta = mg
 \figcaption{竖直圆周运动最高点和最低点的受力分析}\label{fig:vertical-circular}
 \end{center}
 
-\textbf{最高点：} $N + mg = m\dfrac{v^2}{r}$，临界条件 $v_{\min} = \sqrt{gr}$（$N=0$ 时）。
+\textbf{内侧轨道/轻绳模型的最高点：} $N + mg = m\dfrac{v^2}{r}$，临界条件 $v_{\min} = \sqrt{gr}$（$N=0$ 时）。若是轻杆或外侧拱桥模型，受力方向和临界条件需要重新分析。
 
 \textbf{最低点：} $N - mg = m\dfrac{v^2}{r}$。
 
@@ -251,20 +288,54 @@ v_{\max} = \sqrt{\mu_s g r} = \sqrt{0.4 \times 10 \times 50} = \sqrt{200} \appro
 \section*{九、竞赛入门补充}
 
 \begin{competitionbox}
-\textbf{非匀速圆周运动}
+\textbf{非匀速圆周运动：法向与切向分解}
 
-如果速率也在变化（如竖直圆周运动中重力沿切线方向的分力），向心加速度公式 $a_n = \dfrac{v^2}{r}$ 仍然成立，但此时还有切向加速度 $a_t$ 改变速度大小。
+匀速圆周运动只有速度方向变化；非匀速圆周运动中，速度大小也会变化。此时要把加速度分成两个互相垂直的方向：
+
+\begin{center}
+\input{figures/tikz/nonuniform-circular}
+
+\figcaption{非匀速圆周运动：法向加速度改变速度方向，切向加速度改变速度大小}\label{fig:nonuniform-circular}
+\end{center}
+
+\begin{itemize}
+  \item \textbf{法向（指向圆心）：} 描述速度方向变化，大小仍为
+  \[
+  a_n=\frac{v^2}{r}
+  \]
+  \item \textbf{切向（沿切线）：} 描述速度大小变化，大小为
+  \[
+  a_t=\frac{\Delta v_{\text{大小}}}{\Delta t}
+  \]
+\end{itemize}
 
 总加速度：
 \[
 a = \sqrt{a_n^2 + a_t^2}
 \]
 
+对应到力的分解：
+\[
+\sum F_n=m\frac{v^2}{r},\qquad \sum F_t=ma_t
+\]
+其中 $\sum F_n$ 只负责“拐弯”，$\sum F_t$ 只负责“变快或变慢”。
+
+\textbf{竖直圆周中的关键认识：}
+\begin{itemize}
+  \item 在最高点和最低点，重力沿半径方向，没有切向分量，所以瞬时 $a_t=0$。
+  \item 在其他位置，重力通常有切向分量，会改变速率，因此运动一般不是匀速圆周运动。
+  \item 做题时不要把“合力一定指向圆心”当成通用结论；只有匀速圆周运动才是合力完全指向圆心。
+\end{itemize}
+
 \textbf{例题：} 小球在竖直圆轨道最低点速度为 $v$，求该点的向心加速度和总加速度方向。
 
-\textbf{解：} 在最低点，重力沿切线方向的分力为零，所以切向加速度 $a_t=0$。总加速度全部为向心加速度 $a_n = v^2/r$，方向竖直向上（指向圆心）。
+\textbf{解：} 最低点处，切线方向水平，重力竖直向下，沿切线方向没有分量，所以 $a_t=0$。总加速度全部为向心加速度：
+\[
+a=a_n=\frac{v^2}{r}
+\]
+方向竖直向上，指向圆心。
 
-\textbf{竞赛小贴士：} 变速圆周运动中，合力不指向圆心——它分解为指向圆心的法向分量（提供向心加速度）和沿切线方向的切向分量（提供切向加速度）。
+\textbf{竞赛小贴士：} 遇到圆周运动综合题，第一步不是直接套 $F=mv^2/r$，而是先建立“法向—切向”坐标。法向列向心方程，切向判断速度大小如何变化。这样才能处理竖直圆周、变速转弯、带摩擦圆轨道等更复杂模型。
 \end{competitionbox}
 
 \section*{十、今日小结}

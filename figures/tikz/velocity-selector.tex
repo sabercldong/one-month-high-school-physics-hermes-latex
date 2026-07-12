@@ -1,0 +1,22 @@
+% TikZ 图：速度选择器
+% Day 22：洛伦兹力
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \draw[thick] (-2,1.15) -- (2,1.15);
+  \node[above] at (-1.8,1.15) {$+$};
+  \draw[thick] (-2,-1.15) -- (2,-1.15);
+  \node[below] at (-1.8,-1.15) {$-$};
+  \foreach \x in {-1.4,-0.7,0,0.7,1.4} {
+    \draw[->,blue,thick] (\x,0.9) -- (\x,-0.9);
+  }
+  \foreach \x in {-1.5,-0.75,0,0.75,1.5} {
+    \foreach \y in {-0.55,0.25} {
+      \draw[gray,thick] (\x-0.06,\y-0.06) -- (\x+0.06,\y+0.06);
+      \draw[gray,thick] (\x-0.06,\y+0.06) -- (\x+0.06,\y-0.06);
+    }
+  }
+  \fill[red] (-1.8,0) circle (2pt);
+  \draw[->,red,very thick] (-1.8,0) -- (1.8,0) node[right] {$v$};
+  \draw[->,purple,thick] (-0.3,0) -- (-0.3,-0.85) node[below] {$qE$};
+  \draw[->,orange,thick] (0.25,0) -- (0.25,0.85) node[above] {$qvB$};
+  \node at (0,-1.65) {$qE=qvB\Rightarrow v=E/B$};
+\end{tikzpicture}

@@ -1,0 +1,20 @@
+% TikZ 图：交变电流的瞬时值、最大值和有效值
+% Day 24：交变电流
+\begin{tikzpicture}[scale=0.86,>=Latex]
+  \draw[->,thick] (0,0) -- (7.0,0) node[right] {$t$};
+  \draw[->,thick] (0,-2.0) -- (0,2.25) node[above] {$u$};
+  \draw[blue,thick,samples=120,domain=0:6.28] plot(\x,{1.45*sin(180*\x/3.14159)});
+  \draw[dashed,gray] (0,1.45) -- (6.35,1.45);
+  \draw[dashed,gray] (0,-1.45) -- (6.35,-1.45);
+  \draw[dashed,red!70] (0,1.03) -- (6.35,1.03);
+  \draw[dashed,red!70] (0,-1.03) -- (6.35,-1.03);
+  \node[left] at (0,1.45) {$U_m$};
+  \node[left,red!70] at (0,1.03) {$U$};
+  \node[left] at (0,-1.45) {$-U_m$};
+  \draw[<->] (0,-1.75) -- (6.28,-1.75) node[midway,below] {$T$};
+  \node[blue] at (3.2,1.9) {$u=U_m\sin\omega t$};
+  \node[align=left,font=\small] at (8.45,0.55)
+    {正弦交流电：\\[2pt]
+     $U=\dfrac{U_m}{\sqrt2}$\\[3pt]
+     $I=\dfrac{I_m}{\sqrt2}$};
+\end{tikzpicture}

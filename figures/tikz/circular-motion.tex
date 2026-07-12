@@ -1,22 +1,25 @@
 % TikZ 图：匀速圆周运动
 % Day 11：圆周运动
 \begin{tikzpicture}[scale=0.8,>=Latex]
+  \coordinate (P) at (30:2.5);
   % 轨道
   \draw[thick] (0,0) circle (2.5);
   % 圆心
   \filldraw[black] (0,0) circle (2pt);
   \node[below left] at (0,0) {$O$};
-  % 半径
+  % 半径与角度参考边
+  \draw[dashed,gray] (0,0) -- (0:2.15);
   \draw[thick] (0,0) -- (30:2.5);
-  \node at (15:1.5) {$r$};
+  \node[above left,fill=white,inner sep=1pt] at (48:1.05) {$r$};
   % 质点
-  \filldraw[red] (30:2.5) circle (3pt);
-  \node[above right] at (30:2.5) {$m$};
+  \filldraw[red] (P) circle (3pt);
+  \node[above right] at (P) {$m$};
   % 速度方向（切线方向）
-  \draw[->,thick,blue] (30:2.5) -- ++(120:1.2) node[above] {$\vect{v}$};
-  % 向心加速度方向（指向圆心）
-  \draw[->,thick,red] (30:2.5) -- ++(210:1.0) node[below] {$\vect{a}_n$};
+  \draw[->,thick,blue] (P) -- ++(120:1.2) node[above] {$\vect{v}$};
+  % 向心加速度方向（指向圆心）：略微错开，避免遮住半径
+  \draw[->,thick,red] ($(P)+(0.12,-0.18)$) -- ($(30:1.18)+(0.12,-0.18)$)
+    node[pos=0.58,below right,fill=white,inner sep=1pt] {$\vect{a}_n$};
   % 角度
   \draw (0:0.8) arc (0:30:0.8);
-  \node at (15:1.0) {$\theta$};
+  \node[fill=white,inner sep=1pt] at (15:1.0) {$\theta$};
 \end{tikzpicture}

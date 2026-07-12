@@ -1,54 +1,325 @@
 \daytitle{28}{高中物理实验专题}
 
 \begin{learningbox}{本讲义大致内容}
-讲打点计时器、牛顿第二定律实验、机械能守恒实验、动量守恒实验、电学实验和误差分析。
+实验题不是“背步骤”，而是考查物理量怎样被测出来。本节按通用能力组织：纸带与运动学、电学测量、验证规律、数据处理和误差分析。学习目标是看到实验题能迅速判断：测什么、怎么测、怎样处理数据、误差从哪里来。
 \end{learningbox}
 
 \section*{一、学习目标}
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 掌握纸带法求速度和加速度的基本思路。
+  \item 会识别常见力学实验、电学实验的测量对象和核心公式。
+  \item 理解图像法中斜率、截距和面积的物理意义。
+  \item 会区分系统误差和偶然误差，知道常见减小误差的方法。
+  \item 形成规范实验表达：单位、有效数字、坐标轴和结论都要清楚。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中实验多强调操作现象，高中实验更强调定量关系。例如同样是测速度，高中要知道为什么中间时刻速度可用一段位移除以对应时间近似表示；同样是测电阻，高中要知道电表内阻会带来系统误差。
+
+\textbf{科学发展视角：} 现代科学和工程本质上依赖测量。传感器、数据采集、图像识别和自动控制都在做同一件事：把物理量转化为可记录的数据，再用模型解释数据。高中实验训练的是这种科学思维的最小闭环。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{实验题的四个问题}
+
+做实验题时先问四个问题：
+\begin{enumerate}
+  \item \textbf{测量对象：} 最终要测什么物理量？
+  \item \textbf{直接测量量：} 哪些量可由仪器直接读出？
+  \item \textbf{间接关系：} 用什么公式把直接测量量转化为目标量？
+  \item \textbf{误差来源：} 哪些假设不完全成立？
+\end{enumerate}
+
+\begin{center}
+\input{figures/tikz/experiment-error-flow}
+
+\figcaption{实验处理流程：测量、记录、作图、误差分析缺一不可}\label{fig:experiment-error-flow}
+\end{center}
+\end{conceptbox}
+
+\begin{conceptbox}{纸带法}
+
+打点计时器每隔相同时间打一个点。若电源频率为 $50\ \mathrm{Hz}$，相邻点时间间隔为
+\[
+\Delta t=0.02\ \mathrm{s}.
+\]
+若每 5 个间隔取一个计数点，则相邻计数点时间为
+\[
+T=5\Delta t=0.10\ \mathrm{s}.
+\]
+
+\begin{center}
+\input{figures/tikz/ticker-tape-analysis}
+
+\figcaption{纸带法：用相等时间内位移变化研究匀变速运动}\label{fig:ticker-tape-analysis}
+\end{center}
+
+匀变速直线运动中，某段时间中间时刻的速度可近似为
+\[
+v=\frac{x}{t}.
+\]
+若连续相等时间内位移差恒定，则
+\[
+\Delta x=aT^2.
+\]
+\end{conceptbox}
+
+\begin{conceptbox}{电学测量}
+
+电学实验常见目标是测电阻、电源电动势和内阻。关键不是把电路画出来就结束，而是要判断电表内阻对测量结果的影响。
+
+\begin{center}
+\input{figures/tikz/electric-meter-circuits}
+
+\figcaption{伏安法测电阻：内接法和外接法适用于不同电阻范围}\label{fig:electric-meter-circuits}
+\end{center}
+
+\begin{itemize}
+  \item 大电阻常用电流表内接法，减小电压表分流影响。
+  \item 小电阻常用电流表外接法，减小电流表分压影响。
+  \item 电源实验常用 $U=E-Ir$，作 $U$-$I$ 图像求截距和斜率。
+\end{itemize}
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+公式 & 用途 & 注意事项 \\
+\midrule
+$v=\dfrac{x}{t}$ & 中间时刻速度 & 匀变速或近似匀变速 \\
+$\Delta x=aT^2$ & 纸带求加速度 & 相邻相等时间段 \\
+$a=\dfrac{x_3-x_1}{2T^2}$ & 逐差法示例 & 减小偶然误差 \\
+$R=\dfrac{U}{I}$ & 伏安法测电阻 & 注意电表内阻 \\
+$U=E-Ir$ & 测电源电动势和内阻 & 斜率为 $-r$ \\
+$g=\dfrac{4\pi^2l}{T^2}$ & 单摆测 $g$ & 小角度、摆长准确 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：验证牛顿第二定律}
+
+常见方法是控制变量：
+\begin{itemize}
+  \item 保持质量 $m$ 不变，研究 $a$ 与 $F$ 的关系；
+  \item 保持合力 $F$ 不变，研究 $a$ 与 $m$ 的关系。
+\end{itemize}
+若作 $a$-$F$ 图像，斜率应为 $\dfrac1m$。
+
+\subsection*{模型 2：验证机械能守恒}
+
+自由落体或摆球下落实验中，比较重力势能减少量和动能增加量：
+\[
+mgh\quad\text{与}\quad \frac12mv^2.
+\]
+若空气阻力、摩擦和测量误差较小，两者应近似相等。
+
+\subsection*{模型 3：测电源电动势和内阻}
+
+由闭合电路欧姆定律
+\[
+U=E-Ir.
+\]
+作 $U$-$I$ 图像时，纵截距为 $E$，斜率绝对值为 $r$。
+
+\subsection*{模型 4：图像法}
+
+图像法不是为了“画得好看”，而是把数据关系线性化。常见思路：
+\[
+y=kx+b.
+\]
+斜率 $k$、截距 $b$ 都必须有物理意义和单位。
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{纸带求加速度}
+\textbf{题意分析：} 某纸带上相邻计数点时间间隔 $T=0.10\ \mathrm{s}$。连续三段位移分别为 $x_1=2.10\ \mathrm{cm}$、$x_2=3.05\ \mathrm{cm}$、$x_3=4.00\ \mathrm{cm}$。求加速度。
 
-\textbf{解题过程：} TODO。
+\textbf{物理模型：} 匀变速直线运动，逐差法。
 
-\textbf{方法总结：} TODO。
+\textbf{解题过程：}
+\[
+a=\frac{x_3-x_1}{2T^2}.
+\]
+统一单位：
+\[
+x_3-x_1=(4.00-2.10)\ \mathrm{cm}=0.0190\ \mathrm{m}.
+\]
+\[
+a=\frac{0.0190}{2\times0.10^2}=0.95\ \mathrm{m/s^2}.
+\]
+
+\textbf{方法总结：} 纸带题最容易错在时间间隔和单位换算。
+\end{examplebox}
+
+\begin{examplebox}{测电源电动势和内阻}
+\textbf{题意分析：} 某电源的 $U$-$I$ 图像近似为直线，纵截距 $1.50\ \mathrm{V}$，当电流从 $0$ 增大到 $0.50\ \mathrm{A}$ 时，路端电压降到 $1.25\ \mathrm{V}$。求电动势和内阻。
+
+\textbf{物理模型：} $U=E-Ir$。
+
+\textbf{解题过程：}
+纵截距即
+\[
+E=1.50\ \mathrm{V}.
+\]
+斜率为
+\[
+k=\frac{\Delta U}{\Delta I}=\frac{1.25-1.50}{0.50-0}=-0.50\ \Omega.
+\]
+所以
+\[
+r=0.50\ \Omega.
+\]
+
+\textbf{方法总结：} $U$-$I$ 图像斜率是负的，内阻取其绝对值。
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 打点计时器频率为 $50\ \mathrm{Hz}$，每隔 4 个点取一个计数点，相邻计数点时间是多少？
+  \item 验证牛顿第二定律时，为什么要平衡摩擦力？
+  \item 用单摆测 $g$ 时，摆长应从哪里量到哪里？
+  \item 伏安法测小电阻时，更适合内接法还是外接法？说明理由。
+\end{enumerate}
+
+\subsection*{训练提示}
+\begin{enumerate}
+  \item 相邻打点时间为 $0.02\ \mathrm{s}$；“每隔 4 个点取一个计数点”通常意味着相邻计数点间有 5 个时间间隔。
+  \item 平衡摩擦力是为了让小车受到的合力更接近细线拉力。
+  \item 摆长应从悬点量到摆球球心，不能只量细线长度。
+  \item 小电阻更适合外接法，因为电流表分压带来的影响相对更明显，需要避免把电流表电阻算进待测电阻。
+\end{enumerate}
 
 \section*{八、易错点}
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{把相邻点时间和计数点时间混淆：} 打点间隔常为 $0.02\ \mathrm{s}$，计数点间隔可能是它的多倍。
+  \item \textbf{图像斜率没有单位：} 斜率是物理量，必须带单位。
+  \item \textbf{只报结论不分析误差：} 实验题常要求解释偏大、偏小的原因。
+  \item \textbf{有效数字随意写：} 结果精度不能明显超过测量仪器精度。
+  \item \textbf{电表内阻被忽略：} 内外接法选择本质上是在控制系统误差。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{线性化思想}
+
+许多实验公式不是天然的一次函数，但可以通过变换变量变成直线。例如单摆：
+\[
+T=2\pi\sqrt{\frac{l}{g}}
+\]
+平方后得
+\[
+T^2=\frac{4\pi^2}{g}l.
+\]
+于是作 $T^2-l$ 图像，斜率就是 $\dfrac{4\pi^2}{g}$。
+
+\textbf{竞赛与科研中的习惯：} 不只是“代入平均值”，而是尽量利用全部数据。作图、拟合、看残差，都是为了判断模型是否真的适合数据。高中阶段先掌握“直线斜率有物理意义”这一点，就已经抓住了实验数据处理的核心。
 \end{competitionbox}
 
-\section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
+\section*{十、模型深化：从数据到结论}
 
+\subsection*{1.\quad 最佳直线不是随手连点}
+
+实验数据有偶然误差，所以图像上的点通常不会完全落在一条直线上。画最佳直线时，应让点大致均匀分布在直线两侧，而不是机械地连接第一个点和最后一个点。
+
+\begin{center}
+\input{figures/tikz/experiment-linear-fit}
+
+\figcaption{实验图像处理：用最佳直线求斜率，减少偶然误差影响}\label{fig:experiment-linear-fit}
+\end{center}
+
+\textbf{斜率取点原则：} 计算斜率时，应在最佳直线上取相距较远的两个点，这两个点不一定是原始实验点。这样能减小读数误差对斜率的影响。
+
+\subsection*{2.\quad 常见实验的误差方向}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+实验 & 常见误差来源 & 可能影响 \\
+\midrule
+单摆测 $g$ & 摆长量短、周期测量偏大 & $g$ 可能偏小 \\
+机械能守恒 & 空气阻力、纸带摩擦 & 动能增加量小于势能减少量 \\
+牛顿第二定律 & 摩擦未平衡完全 & 测得加速度偏小 \\
+伏安法测电阻 & 电表内阻 & 测量值可能偏大或偏小 \\
+测电源内阻 & 电压表分流 & 内阻测量可能偏小 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{注意：} 误差方向不能死背，要回到实验原理判断。例如伏安法内接、外接的偏差方向，取决于电压表或电流表实际测到的是谁的电压、电流。
+
+\subsection*{3.\quad 伏安法内接、外接的误差来源}
+
+内接法和外接法的选择，本质是尽量让电表内阻造成的系统误差更小。
+
+\begin{center}
+\input{figures/tikz/voltmeter-ammeter-error}
+
+\figcaption{伏安法误差来源：关键是判断电压表和电流表实际测量范围}\label{fig:voltmeter-ammeter-error}
+\end{center}
+
+\begin{itemize}
+  \item \textbf{内接法：} 电压表测到的是待测电阻和电流表的总电压，适合待测电阻较大时使用。
+  \item \textbf{外接法：} 电流表测到的是待测电阻和电压表支路的总电流，适合待测电阻较小时使用。
+  \item \textbf{判断原则：} 大电阻怕电压表分流，小电阻怕电流表分压。不要只背“内大外小”，要能说出为什么。
+\end{itemize}
+
+\subsection*{4.\quad 实验设计题的答题模板}
+
+遇到“设计实验测某物理量”的题，可按以下顺序作答：
+\begin{enumerate}
+  \item 写出实验原理公式；
+  \item 说明需要测量哪些物理量；
+  \item 给出器材和电路/装置图；
+  \item 写出主要操作步骤；
+  \item 说明数据处理方法；
+  \item 简要分析误差来源和减小误差的方法。
+\end{enumerate}
+
+\begin{examplebox}{由图像求重力加速度}
+\textbf{题意分析：} 单摆实验得到多组摆长 $l$ 和周期 $T$，作出 $T^2-l$ 图像，斜率为 $s=4.05\ \mathrm{s^2/m}$。求当地重力加速度。
+
+\textbf{物理模型：} 单摆周期公式平方：
+\[
+T^2=\frac{4\pi^2}{g}l.
+\]
+
+\textbf{解题过程：}
+斜率
+\[
+s=\frac{4\pi^2}{g}.
+\]
+所以
+\[
+g=\frac{4\pi^2}{s}
+=\frac{4\times3.14^2}{4.05}
+\approx9.75\ \mathrm{m/s^2}.
+\]
+
+\textbf{方法总结：} 图像斜率的单位是 $\mathrm{s^2/m}$，最后结果单位应为 $\mathrm{m/s^2}$。
+\end{examplebox}
+
+\subsection*{5.\quad 分层训练}
+
+\begin{enumerate}
+  \item \textbf{基础：} 为什么用多次测量求平均值可以减小偶然误差？
+  \item \textbf{提高：} 验证机械能守恒时，若测得动能增加量总小于重力势能减少量，可能原因有哪些？
+  \item \textbf{综合：} 设计一个用图像法测弹簧劲度系数的实验，说明横轴、纵轴和斜率含义。
+  \item \textbf{开放思考：} 现代手机传感器测加速度时，为什么也需要校准和误差补偿？
+\end{enumerate}
+
+\section*{十一、今日小结}
+\begin{enumerate}
+  \item 实验题先明确测量对象、直接测量量、间接公式和误差来源。
+  \item 纸带法通过相等时间内位移变化研究匀变速运动。
+  \item 电学实验要注意电表内阻引起的系统误差。
+  \item 图像法的关键是斜率、截距和面积的物理意义。
+  \item 规范表达包括单位、有效数字、坐标轴、结论和误差分析。
+\end{enumerate}

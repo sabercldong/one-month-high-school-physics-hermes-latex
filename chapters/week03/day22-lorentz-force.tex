@@ -1,54 +1,317 @@
 \daytitle{22}{洛伦兹力与带电粒子在磁场中的运动}
 
 \begin{learningbox}{本讲义大致内容}
-讲洛伦兹力、带电粒子在匀强磁场中的圆周运动、半径公式、周期公式和磁场边界问题。
+上一节的安培力研究的是磁场对一段电流的作用。电流本质上是大量电荷的定向移动，所以今天进一步研究磁场对单个运动电荷的作用：洛伦兹力。重点是方向判断、圆周运动半径和周期、磁场边界中的几何关系，以及速度选择器、质谱仪等现代科学装置的物理原理。
 \end{learningbox}
 
 \section*{一、学习目标}
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 理解洛伦兹力是磁场对运动电荷的作用力。
+  \item 掌握洛伦兹力公式 $F=|q|vB\sin\theta$ 和方向判断方法。
+  \item 理解洛伦兹力不做功，只改变速度方向，不改变速率。
+  \item 掌握带电粒子在匀强磁场中的匀速圆周运动：$r=\dfrac{mv}{|q|B}$，$T=\dfrac{2\pi m}{|q|B}$。
+  \item 会分析粒子进入有界磁场时的圆心、半径、偏转角和运动时间。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+Day 17 中，带电粒子在匀强电场中受到电场力，可能做类平抛运动。磁场中的情况很不同：
+\begin{itemize}
+  \item 电场力方向通常沿电场方向，可能改变速率；
+  \item 洛伦兹力始终垂直于速度方向，只改变速度方向；
+  \item 电场可以给粒子加速，磁场不能单独给粒子加速。
+\end{itemize}
+
+因此，磁场题的核心不是“加速度大小怎么变”，而是“轨迹几何怎么找”。
+
+\textbf{科学发展视角：} 洛伦兹力是粒子加速器、质谱仪、等离子体约束和空间辐射探测的基础。现代科学常常不是直接“看见”微观粒子，而是通过电场和磁场控制它们的轨迹，再由轨迹反推粒子的速度、质量和电荷性质。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{洛伦兹力}
+
+运动电荷在磁场中受到的力叫洛伦兹力。若电荷量为 $q$，速度为 $v$，磁感应强度为 $B$，速度方向与磁场方向夹角为 $\theta$，则
+\[
+\boxed{F = |q|vB\sin\theta}
+\]
+
+\begin{itemize}
+  \item 当 $v\perp B$ 时，$F=|q|vB$。
+  \item 当 $v\parallel B$ 时，$F=0$。
+  \item 公式中的 $|q|$ 用电荷量大小；方向要另行判断。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/lorentz-force-direction}
+
+\figcaption{正电荷受力方向用左手定则判断；负电荷方向相反}\label{fig:lorentz-force-direction}
+\end{center}
+
+\textbf{方向判断：} 对正电荷，四指指向速度方向，磁感线穿入手心，拇指指向洛伦兹力方向。对负电荷，方向与正电荷相反。
+
+\end{conceptbox}
+
+\begin{conceptbox}{洛伦兹力不做功}
+
+洛伦兹力方向始终垂直于速度方向，因此瞬时功率
+\[
+P = \vect{F}\cdot \vect{v}=0
+\]
+所以洛伦兹力不做功，不改变粒子动能和速率，只改变速度方向。
+
+\begin{center}
+\input{figures/tikz/lorentz-no-work}
+
+\figcaption{洛伦兹力始终垂直速度：只改变方向，不改变速率}\label{fig:lorentz-no-work}
+\end{center}
+
+\textbf{重要区别：} 电场力可以改变带电粒子的动能；磁场力单独作用时不能改变动能。
+
+\end{conceptbox}
+
+\begin{conceptbox}{匀强磁场中的圆周运动}
+
+若带电粒子以速度 $v$ 垂直进入匀强磁场，洛伦兹力始终垂直速度，提供向心力：
+\[
+|q|vB=\frac{mv^2}{r}
+\]
+因此
+\[
+\boxed{r=\frac{mv}{|q|B}},\qquad
+\boxed{T=\frac{2\pi m}{|q|B}}
+\]
+
+\begin{center}
+\input{figures/tikz/magnetic-circular-motion}
+
+\figcaption{带电粒子垂直进入匀强磁场后做匀速圆周运动}\label{fig:magnetic-circular-motion}
+\end{center}
+
+\begin{itemize}
+  \item 半径 $r$ 与速度 $v$ 成正比。
+  \item 周期 $T$ 与速度 $v$ 无关，只由 $m$、$q$、$B$ 决定。
+  \item 轨迹方向由电荷正负和磁场方向共同决定。
+\end{itemize}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+公式 & 物理意义 & 适用条件 \\
+\midrule
+$F=|q|vB\sin\theta$ & 洛伦兹力大小 & 运动电荷在磁场中 \\
+$F=|q|vB$ & 最大洛伦兹力 & $v\perp B$ \\
+$r=\dfrac{mv}{|q|B}$ & 圆周运动半径 & $v\perp B$，匀强磁场 \\
+$T=\dfrac{2\pi m}{|q|B}$ & 圆周运动周期 & $v\perp B$，匀强磁场 \\
+$t=\dfrac{\alpha}{2\pi}T$ & 磁场中运动时间 & 偏转角为 $\alpha$ \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：有界磁场中的圆弧轨迹}
+
+粒子进入有界匀强磁场后，只在磁场内走圆弧。解题关键是找圆心：
+\begin{enumerate}
+  \item 入射点处，半径垂直于速度方向。
+  \item 出射点处，半径也垂直于出射速度方向。
+  \item 两条半径的交点就是圆心。
+\end{enumerate}
+
+\begin{center}
+\input{figures/tikz/magnetic-boundary-arc}
+
+\figcaption{有界磁场中先找圆心，再用几何关系求半径和时间}\label{fig:magnetic-boundary-arc}
+\end{center}
+
+\textbf{几何细化：} 有界磁场题常把“轨迹圆”藏起来。入射速度和出射速度的垂线交点就是圆心；圆心角 $\alpha$ 等于速度方向转过的角度，时间由圆心角决定：
+\[
+t=\frac{\alpha}{2\pi}T.
+\]
+
+\begin{center}
+\input{figures/tikz/bounded-magnetic-geometry}
+
+\figcaption{有界磁场圆弧几何：半径垂直速度，圆心角决定运动时间}\label{fig:bounded-magnetic-geometry}
+\end{center}
+
+\subsection*{模型 2：速度选择器}
+
+若粒子同时进入互相垂直的电场和磁场，电场力与洛伦兹力方向相反。只有满足
+\[
+qE=qvB,\qquad \boxed{v=\frac{E}{B}}
+\]
+的粒子才能沿直线通过。
+
+\begin{center}
+\input{figures/tikz/velocity-selector}
+
+\figcaption{速度选择器：电场力与洛伦兹力平衡时粒子不偏转}\label{fig:velocity-selector}
+\end{center}
+
+\subsection*{模型 3：质谱仪}
+
+速度选择器先筛出同一速度的粒子，再让粒子进入磁场做圆周运动。由
+\[
+r=\frac{mv}{|q|B}
+\]
+可知，在 $|q|$、$v$、$B$ 相同的情况下，质量越大，半径越大。
+
+\begin{center}
+\input{figures/tikz/mass-spectrometer}
+
+\figcaption{质谱仪原理：不同质量的粒子在磁场中半径不同}\label{fig:mass-spectrometer}
+\end{center}
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{带电粒子的圆周运动}
+\textbf{题意分析：} 质子以 $v=2.0\times 10^6\ \mathrm{m/s}$ 的速度垂直进入 $B=0.50\ \mathrm{T}$ 的匀强磁场。质子质量 $m=1.67\times10^{-27}\ \mathrm{kg}$，电荷量 $q=1.60\times10^{-19}\ \mathrm{C}$。求轨道半径。
 
-\textbf{解题过程：} TODO。
+\textbf{物理模型：} 洛伦兹力提供向心力。
 
-\textbf{方法总结：} TODO。
+\textbf{解题过程：}
+\[
+r=\frac{mv}{qB}
+=\frac{1.67\times10^{-27}\times2.0\times10^6}
+{1.60\times10^{-19}\times0.50}
+\approx 4.2\times10^{-2}\ \mathrm{m}
+\]
+
+\textbf{方法总结：} 半径公式来自向心力方程，不要直接死记。速度越大、质量越大，半径越大；电荷量越大、磁场越强，半径越小。
+\end{examplebox}
+
+\begin{examplebox}{半圆磁场中的运动时间}
+\textbf{题意分析：} 一个带正电粒子垂直进入匀强磁场，轨迹刚好为半圆后射出。已知 $m$、$q$、$B$，求粒子在磁场中的运动时间。
+
+\textbf{物理模型：} 圆周运动的一部分。
+
+\textbf{解题过程：}
+
+完整周期为
+\[
+T=\frac{2\pi m}{qB}
+\]
+半圆对应圆心角 $\pi$，所以时间为半个周期：
+\[
+t=\frac{T}{2}=\frac{\pi m}{qB}
+\]
+
+\textbf{方法总结：} 有界磁场时间题看“圆弧对应圆心角”，不是看弧长直观长短。
+\end{examplebox}
+
+\begin{examplebox}{速度选择器能通过的速度}
+\textbf{题意分析：} 速度选择器中匀强电场强度 $E=3.0\times10^4\ \mathrm{N/C}$，匀强磁场 $B=0.20\ \mathrm{T}$，电场力和洛伦兹力方向相反。求能沿直线通过的粒子速度。
+
+\textbf{物理模型：} 直线通过意味着合力为零。
+
+\textbf{解题过程：}
+\[
+qE=qvB.
+\]
+两边都有 $q$，所以能通过的速度与粒子电荷量大小无关：
+\[
+v=\frac{E}{B}
+=\frac{3.0\times10^4}{0.20}
+=1.5\times10^5\ \mathrm{m/s}.
+\]
+
+\textbf{方法总结：} 速度选择器不是“所有粒子都不偏转”，而是只允许特定速度的粒子直线通过；速度过大或过小都会偏转。
+\end{examplebox}
+
+\begin{examplebox}{质谱仪中的半径比较}
+\textbf{题意分析：} 两种一价正离子经过同一速度选择器后进入同一匀强磁场。若质量分别为 $m$ 和 $2m$，比较它们在磁场中的轨道半径。
+
+\textbf{物理模型：} 速度相同、电荷量相同、磁场相同，半径只随质量变化。
+
+\textbf{解题过程：}
+\[
+r=\frac{mv}{qB}.
+\]
+对质量为 $m$ 的离子：
+\[
+r_1=\frac{mv}{qB}.
+\]
+对质量为 $2m$ 的离子：
+\[
+r_2=\frac{2mv}{qB}=2r_1.
+\]
+
+\textbf{方法总结：} 质谱仪的核心是把“看不见的质量差异”转化为“看得见的轨迹半径差异”。
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 电子以速度 $v$ 垂直进入匀强磁场，若磁场增强为原来的 2 倍，轨道半径如何变化？
+  \item 一个带电粒子在匀强磁场中运动半径为 $0.20\ \mathrm{m}$，速度为 $1.0\times10^6\ \mathrm{m/s}$。若 $B=0.10\ \mathrm{T}$，求其比荷 $q/m$。
+  \item 粒子在磁场中偏转 $90^\circ$ 后射出，求其在磁场中运动时间与周期的关系。
+  \item 速度选择器中 $E=2.0\times10^4\ \mathrm{N/C}$，$B=0.20\ \mathrm{T}$，能直线通过的粒子速度是多少？
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{负电荷方向忘记反向：} 左手定则直接给出正电荷受力方向，负电荷要反向。
+  \item \textbf{认为磁场能使粒子加速：} 洛伦兹力不做功，不能改变速率，只改变速度方向。
+  \item \textbf{把半径公式写成 $r=\dfrac{qB}{mv}$：} 半径应为 $r=\dfrac{mv}{|q|B}$。
+  \item \textbf{周期误以为与速度有关：} $T=\dfrac{2\pi m}{|q|B}$，与速度大小无关。
+  \item \textbf{边界题不找圆心：} 只画轨迹不找圆心，几何关系往往会错。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{螺旋线运动：速度不完全垂直磁场}
+
+若粒子速度与磁场有夹角，可以把速度分解为
+\[
+v_\parallel = v\cos\theta,\qquad v_\perp = v\sin\theta
+\]
+
+\begin{itemize}
+  \item 平行磁场的分量 $v_\parallel$ 不受洛伦兹力影响，保持匀速直线运动。
+  \item 垂直磁场的分量 $v_\perp$ 产生圆周运动。
+  \item 两个运动合成后，轨迹为螺旋线。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/helical-motion}
+
+\figcaption{速度斜入磁场：平行分量匀速前进，垂直分量形成圆周运动}\label{fig:helical-motion}
+\end{center}
+
+螺旋线半径和螺距分别为
+\[
+r=\frac{mv_\perp}{|q|B},\qquad h=v_\parallel T
+\]
+这个模型是理解带电粒子在地磁场中运动、等离子体约束和粒子探测器轨迹的入门基础。
+
+\textbf{严谨提醒：} 螺旋运动中磁场仍然不做功，总速率不变；只是把运动分解后，平行分量保持匀速，垂直分量不断改变方向。
 \end{competitionbox}
 
-\section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
+\subsection*{补充训练：磁场边界题的三问}
 
+遇到有界磁场，不要先代公式，先回答三问：
+\begin{enumerate}
+  \item 入射点和出射点在哪里？
+  \item 这两点处速度方向分别是什么？
+  \item 由速度垂线找到的圆心在哪里？
+\end{enumerate}
+圆心确定后，半径、圆心角和时间才有可靠的几何依据。
+
+\section*{十、今日小结}
+
+\begin{enumerate}
+  \item 洛伦兹力大小 $F=|q|vB\sin\theta$，方向与电荷正负有关。
+  \item 洛伦兹力始终垂直速度，因此不做功、不改变速率。
+  \item 垂直进入匀强磁场时，粒子做匀速圆周运动。
+  \item 半径 $r=\dfrac{mv}{|q|B}$，周期 $T=\dfrac{2\pi m}{|q|B}$。
+  \item 有界磁场题先找圆心，再用几何关系求半径、角度和时间。
+\end{enumerate}

@@ -1,0 +1,14 @@
+% TikZ 图：综合题模型切换
+% Day 29：模型复盘
+\begin{tikzpicture}[scale=0.82,>=Latex]
+  \node[draw,rounded corners,fill=blue!6,text width=2.55cm,align=center,minimum height=0.78cm] (a) at (-4.1,0) {阶段 A\\获得速度};
+  \node[draw,rounded corners,fill=green!8,text width=2.55cm,align=center,minimum height=0.78cm] (b) at (0,0) {阶段 B\\相互作用};
+  \node[draw,rounded corners,fill=orange!10,text width=2.55cm,align=center,minimum height=0.78cm] (c) at (4.1,0) {阶段 C\\后续运动};
+  \draw[->,thick] (a) -- (b) node[midway,above] {$v$};
+  \draw[->,thick] (b) -- (c) node[midway,above] {$v'$};
+  \node[font=\small,align=center] at (-4.1,-1.35) {能量或运动学\\求碰前量};
+  \node[font=\small,align=center] at (0,-1.35) {动量、冲量\\或短时相互作用};
+  \node[font=\small,align=center] at (4.1,-1.35) {能量、圆周\\或功能关系};
+  \node[font=\small,align=center] at (0,-2.35)
+    {连接量通常是速度、电流、压缩量、半径等；条件变化处就是换模型处};
+\end{tikzpicture}

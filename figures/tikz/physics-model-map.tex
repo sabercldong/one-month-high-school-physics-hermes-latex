@@ -1,0 +1,17 @@
+% TikZ 图：高中物理模型地图
+% Day 29：模型复盘
+\begin{tikzpicture}[scale=0.84,>=Latex]
+  \node[draw,rounded corners=3pt,fill=gray!12] (core) at (0,0) {物理模型};
+  \foreach \name/\ang/\text in {
+    kin/90/运动学,
+    force/40/受力与牛顿,
+    energy/-10/能量,
+    momentum/-60/动量,
+    field/-115/场与电路,
+    em/180/电磁感应}{
+    \node[draw,rounded corners=2pt,fill=blue!7] (\name) at (\ang:3.0) {\text};
+    \draw[->] (core) -- (\name);
+  }
+  \node[font=\small,align=center] at (0,-3.7)
+    {先识别对象和过程，再选择模型；模型不是公式表，而是解题视角。};
+\end{tikzpicture}

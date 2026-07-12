@@ -1,0 +1,17 @@
+% TikZ 图：闭合电路欧姆定律例题图
+% Day 20：闭合电路欧姆定律
+\begin{tikzpicture}[scale=0.88,>=Latex]
+  \tikzset{wire/.style={thick}, res/.style={thick}}
+  \draw[wire] (0,0) -- (0,1.7) -- (1.0,1.7);
+  \draw[res] (1.0,1.42) rectangle (1.9,1.98);
+  \node[above] at (1.45,2.05) {$r=1\,\Omega$};
+  \draw[wire] (1.9,1.7) -- (3.0,1.7);
+  \draw[res] (3.0,1.42) rectangle (4.2,1.98);
+  \node[above] at (3.6,2.05) {$R=5\,\Omega$};
+  \draw[wire] (4.2,1.7) -- (5.2,1.7) -- (5.2,0) -- (0,0);
+  \draw[wire] (-0.32,0.50) -- (0.32,0.50);
+  \draw[wire] (-0.46,1.08) -- (0.46,1.08);
+  \node[left] at (-0.50,1.08) {$+$};
+  \node[right] at (0.48,0.78) {$E=12\,\mathrm{V}$};
+  \draw[->,red,thick] (2.20,2.08) -- (2.90,2.08) node[midway,above] {$I$};
+\end{tikzpicture}

@@ -1,0 +1,13 @@
+% TikZ 图：分子动理论
+% Day 26：热学基础
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[rounded corners=3pt,thick] (0,0) rectangle (4.5,2.8);
+  \foreach \x/\y/\dx/\dy in {0.7/0.8/0.55/0.35,1.3/2.0/-0.45/0.25,2.0/1.2/0.5/-0.35,3.1/2.2/-0.4/-0.3,3.7/0.75/0.45/0.4,2.9/1.35/0.35/0.45}{
+    \fill[blue!55] (\x,\y) circle (2.5pt);
+    \draw[->,blue!70] (\x,\y) -- ++(\dx,\dy);
+  }
+  \node at (2.25,-0.35) {分子不停做无规则热运动};
+  \node[align=left,font=\small] at (7.0,1.45)
+    {温度越高，\\分子平均动能越大。\\[3pt]
+     宏观压强来自\\大量分子碰撞器壁。};
+\end{tikzpicture}

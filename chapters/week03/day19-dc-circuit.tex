@@ -7,7 +7,7 @@
 \section*{一、学习目标}
 
 \begin{enumerate}
-  \item 理解电流 $I = \dfrac{Q}{t}$、电阻 $R = \dfrac{U}{I}$、欧姆定律 $I = \dfrac{U}{R}$。
+  \item 理解电流 $I = \dfrac{\Delta Q}{\Delta t}$、电阻 $R = \dfrac{U}{I}$、欧姆定律 $I = \dfrac{U}{R}$。
   \item 掌握电阻定律 $R = \rho\dfrac{l}{S}$，理解电阻率 $\rho$ 的含义。
   \item 会分析串联和并联电路中 $I$、$U$、$R$ 的分配关系。
   \item 掌握电功 $W = IUt$ 和电功率 $P = IU$。
@@ -20,19 +20,47 @@
 \begin{enumerate}
   \item \textbf{电流的微观解释：} $I = nqSv$（$n$ 为载流子浓度）。
   \item \textbf{电阻定律：} $R = \rho \dfrac{l}{S}$——电阻与材料、长度、横截面积的定量关系。
-  \item \textbf{电功率的精确理解：} $P = IU$ 对任何电路成立，在纯电阻电路中可改写为 $P = I^2R = \dfrac{U^2}{R}$。
+  \item \textbf{电功率的精确理解：} $P = IU$ 对任何电路成立；在纯电阻电路中，还可写成 $P = I^2R$ 或 $P = \dfrac{U^2}{R}$。
   \item \textbf{电路化简和复杂计算：} 多电阻串并联的等效电阻计算。
 \end{enumerate}
+
+\textbf{科学发展视角：} 真实电子设备从金属导线发展到半导体芯片，但基本电路思想仍然重要。传感器把温度、光照、压力等物理量转化为电信号，后续电路再进行放大、计算和控制。本节的串并联、功率和非纯电阻电路，是理解现代电子系统的入口。
 
 \section*{三、核心概念}
 
 \begin{conceptbox}{电流与电阻}
 
-\textbf{电流：}
+\textbf{电流：} 单位时间内通过导体横截面的电荷量。
 \[
-I = \frac{Q}{t}
+I = \frac{\Delta Q}{\Delta t}
 \]
 单位：安培（$\mathrm{A}$）。方向：正电荷定向移动的方向（与电子移动方向相反）。
+
+\begin{center}
+\input{figures/tikz/current-microscopic}
+
+\figcaption{电流的微观模型：载流子定向移动形成电流}\label{fig:current-microscopic}
+\end{center}
+
+若载流子电荷量为 $q$、数密度为 $n$、导体横截面积为 $S$、定向移动速率为 $v$，则可从“单位时间内穿过截面的载流子数”推出电流微观表达式。
+
+\textbf{推导：} 在很短时间 $\Delta t$ 内，能穿过截面 $S$ 的载流子，来自截面前方长度为 $v\Delta t$ 的一段导体。这个小柱体体积为
+\[
+V=S\cdot v\Delta t.
+\]
+其中载流子个数为
+\[
+N=nV=nSv\Delta t.
+\]
+这些载流子携带的电荷量为
+\[
+\Delta Q=Nq=nqSv\Delta t.
+\]
+代入电流定义 $I=\dfrac{\Delta Q}{\Delta t}$，得到
+\[
+\boxed{I=nqSv}.
+\]
+图中采用正载流子等效示意；在金属导体中，电子实际定向移动方向与约定电流方向相反。这个公式说明电流大小不仅与载流子运动快慢有关，也与载流子多少和导体粗细有关。
 
 \textbf{欧姆定律：}
 \[
@@ -40,9 +68,16 @@ I = \frac{Q}{t}
 \]
 
 \begin{itemize}
-  \item 适用条件：金属导体和电解液（线性元件）。不适用于气体导电和半导体。
+  \item 适用条件：线性导体，且温度等条件基本不变。
+  \item 不适用于二极管、气体放电管等明显非线性元件；灯丝电阻随温度变化，严格说也不是恒定电阻。
   \item $R$ 是导体本身的性质，与 $U$、$I$ 无关。
 \end{itemize}
+
+\textbf{来源理解：} 对金属导体，电压越大，导体内部推动自由电子定向运动的电场越强；在温度基本不变时，定向移动速率与电场强度近似成正比，所以电流与电压近似成正比：
+\[
+I\propto U.
+\]
+把比例系数写成 $\dfrac{1}{R}$，就得到 $I=\dfrac{U}{R}$。因此欧姆定律不是所有元件的“定义式”，而是许多金属导体在一定条件下表现出的实验规律。
 
 \textbf{电阻定律：}
 \[
@@ -54,6 +89,11 @@ I = \frac{Q}{t}
   \item 金属的电阻率随温度升高而增大。
   \item 超导现象：温度低于临界温度时 $\rho = 0$。
 \end{itemize}
+
+\textbf{来源理解：} 导体越长，载流子在定向移动中经历的阻碍越多，电阻越大，故 $R\propto l$；导体横截面积越大，相当于可供电流通过的“通道”越宽，电阻越小，故 $R\propto \dfrac{1}{S}$。材料不同，阻碍强弱不同，用电阻率 $\rho$ 表示，于是
+\[
+R=\rho\frac{l}{S}.
+\]
 
 \end{conceptbox}
 
@@ -95,6 +135,20 @@ W = IUt
 Q = I^2 Rt
 \]
 
+\textbf{焦耳定律的来源：} 电流通过电阻时，电场对电荷做功，电能转化为内能。电功率普遍为
+\[
+P=UI.
+\]
+对纯电阻，欧姆定律给出 $U=IR$，所以发热功率
+\[
+P_{\text{热}}=UI=I^2R.
+\]
+经过时间 $t$，产生的热量为
+\[
+Q=P_{\text{热}}t=I^2Rt.
+\]
+在非纯电阻电路中，$I^2Rt$ 仍表示发热量，但 $UIt$ 还包含转化为机械能、化学能等其他形式的能量。
+
 \textbf{电功率：}
 \[
 \boxed{P = IU}
@@ -131,6 +185,18 @@ $Q = I^2Rt$ & 焦耳定律 & 任何电路 \\
 串分压：电压与电阻成正比，大电阻分大电压。
 并分流：电流与电阻成反比，大电阻分小电流。
 
+\textbf{模型例题：} $R_1=4\ \Omega$、$R_2=8\ \Omega$ 串联接在 $12\ \mathrm{V}$ 电源两端，求两电阻分得的电压。
+
+\textbf{解：} 串联电路电流相同，电压按电阻成正比分配：
+\[
+U_1:U_2=R_1:R_2=4:8=1:2.
+\]
+总电压为 $12\ \mathrm{V}$，所以
+\[
+U_1=4\ \mathrm{V},\qquad U_2=8\ \mathrm{V}.
+\]
+\textbf{提醒：} 串联分压不是“平均分压”，而是按电阻比例分。
+
 \subsection*{模型 2：电路化简}
 
 找等电位点 $\to$ 判断串并联关系 $\to$ 逐级求等效电阻。
@@ -138,6 +204,14 @@ $Q = I^2Rt$ & 焦耳定律 & 任何电路 \\
 \subsection*{模型 3：非纯电阻电路}
 
 电动机：$P_{\text{电}} = UI$，$P_{\text{热}} = I^2R$，$P_{\text{机}} = UI - I^2R$。
+
+\begin{center}
+\input{figures/tikz/non-ohmic-motor-model}
+
+\figcaption{非纯电阻电路模型：输入电功率分成发热功率和机械功率}\label{fig:non-ohmic-motor-model}
+\end{center}
+
+\textbf{关键判断：} 电动机、电解槽、正在充电的电池都不是纯电阻元件。它们消耗的总电功率是 $UI$，其中只有 $I^2R$ 是线圈或内部电阻发热，不能用 $U^2/R$ 计算总功率。
 
 \section*{六、例题精讲}
 
@@ -151,6 +225,12 @@ $Q = I^2Rt$ & 焦耳定律 & 任何电路 \\
 \end{enumerate}
 
 \textbf{物理模型：} 混联电路。
+
+\begin{center}
+\input{figures/tikz/mixed-circuit-example}
+
+\figcaption{混联电路：先合并并联部分，再与 $R_3$ 串联}\label{fig:mixed-circuit-example}
+\end{center}
 
 \textbf{解题过程：}
 
@@ -192,7 +272,7 @@ $Q = I^2Rt$ & 焦耳定律 & 任何电路 \\
   \item $P_{\text{实}} = \dfrac{U_{\text{实}}^2}{R} = \dfrac{110^2}{484} = \dfrac{12100}{484} = 25\ \mathrm{W}$
 \end{enumerate}
 
-\textbf{方法总结：} 灯泡的电阻通常认为是定值。电压减半，功率减为 $\dfrac14$。
+\textbf{方法总结：} 本题已经说明“假设电阻不变”，因此可以用同一个 $R$ 计算实际功率。若考虑灯丝温度变化，电阻并非严格不变。
 
 \end{examplebox}
 
@@ -206,6 +286,12 @@ $Q = I^2Rt$ & 焦耳定律 & 任何电路 \\
 \end{enumerate}
 
 \textbf{物理模型：} 非纯电阻电路，$P = UI \neq I^2R$。
+
+\begin{center}
+\input{figures/tikz/non-ohmic-motor-example}
+
+\figcaption{非纯电阻例题图：电动机输入功率不等于线圈发热功率}\label{fig:non-ohmic-motor-example}
+\end{center}
 
 \textbf{解题过程：}
 
@@ -258,7 +344,22 @@ $Q = I^2Rt$ & 焦耳定律 & 任何电路 \\
 
 \textbf{例题：} 一个正方体框架每条棱的电阻为 $R$，求体对角线两个顶点间的等效电阻。
 
-\textbf{解：} 利用对称性，将与顶点相连的三条棱上的电流相同，将该顶点与对面顶点等电位的三个点合并，可将电路化简为一个简单的串并联组合。最终结果为 $R_{\text{总}} = \dfrac{5}{6}R$。
+\begin{center}
+\input{figures/tikz/cube-resistor-network}
+
+\figcaption{正方体电阻网络：从体对角线两端接入电流}\label{fig:cube-resistor-network}
+\end{center}
+
+\begin{center}
+\input{figures/tikz/cube-equivalent-network}
+
+\figcaption{正方体电阻网络的对称化简：同层等电位点可以合并}\label{fig:cube-equivalent-network}
+\end{center}
+
+\textbf{解：} 设电流从体对角线一端 $A$ 流入，从另一端 $B$ 流出。与 $A$ 相邻的三个顶点等电位，可合并为一组；与 $B$ 相邻的三个顶点也等电位，可合并为一组。于是电路化为三段串联：
+\[
+R_{\text{总}} = \frac{R}{3}+\frac{R}{6}+\frac{R}{3}=\frac{5}{6}R
+\]
 
 \textbf{竞赛小贴士：} 遇到复杂网络电阻问题，先观察对称性。等电位点可以合并、电流对称的支路可以等分，这些技巧能大幅简化计算。
 \end{competitionbox}

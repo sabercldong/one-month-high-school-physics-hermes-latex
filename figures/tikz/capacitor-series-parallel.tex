@@ -1,0 +1,38 @@
+% TikZ 图：电容器串并联
+% Day 18：电容器
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \tikzset{wire/.style={thick}, capplate/.style={very thick}}
+
+  \begin{scope}
+    \node[font=\bfseries] at (2.5,1.35) {并联：两端电压相同};
+    \draw[wire] (0,0.55) -- (0,-0.85);
+    \draw[wire] (4.7,0.55) -- (4.7,-0.85);
+    \draw[wire] (0,0.55) -- (1.5,0.55);
+    \draw[wire] (2.1,0.55) -- (4.7,0.55);
+    \draw[capplate] (1.5,0.85) -- (1.5,0.25);
+    \draw[capplate] (2.1,0.85) -- (2.1,0.25);
+    \node[left] at (1.35,0.55) {$C_1$};
+    \draw[wire] (0,-0.85) -- (1.5,-0.85);
+    \draw[wire] (2.1,-0.85) -- (4.7,-0.85);
+    \draw[capplate] (1.5,-0.55) -- (1.5,-1.15);
+    \draw[capplate] (2.1,-0.55) -- (2.1,-1.15);
+    \node[left] at (1.35,-0.85) {$C_2$};
+    \node[left] at (0,0.0) {$U$};
+  \end{scope}
+
+  \begin{scope}[xshift=6.5cm]
+    \node[font=\bfseries] at (2.35,1.25) {串联：各电容电荷量相同};
+    \draw[wire] (0,0) -- (1.1,0);
+    \draw[capplate] (1.1,0.35) -- (1.1,-0.35);
+    \draw[capplate] (1.7,0.35) -- (1.7,-0.35);
+    \node[above] at (1.4,0.45) {$C_1$};
+    \draw[wire] (1.7,0) -- (3.0,0);
+    \draw[capplate] (3.0,0.35) -- (3.0,-0.35);
+    \draw[capplate] (3.6,0.35) -- (3.6,-0.35);
+    \node[above] at (3.3,0.45) {$C_2$};
+    \draw[wire] (3.6,0) -- (4.7,0);
+    \node[below] at (0,0) {$+$};
+    \node[below] at (4.7,0) {$-$};
+    \node[font=\small,align=center] at (2.35,-1.15) {$U=U_1+U_2$\\$Q_1=Q_2=Q$};
+  \end{scope}
+\end{tikzpicture}

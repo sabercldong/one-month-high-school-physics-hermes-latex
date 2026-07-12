@@ -1,0 +1,31 @@
+% TikZ 图：电容器充放电电流-时间图像
+% Day 18：电容器
+\begin{tikzpicture}[x=0.9cm,y=0.82cm,>=Latex]
+  % charge graph
+  \begin{scope}
+    \node[font=\bfseries] at (2.2,2.85) {充电电流};
+    \draw[->] (-0.2,0) -- (4.8,0) node[right] {$t$};
+    \draw[->] (0,-0.25) -- (0,2.45) node[above] {$i$};
+    \fill[blue!12,domain=0:4.2,samples=80]
+      (0,0) -- plot (\x,{2.1*exp(-0.72*\x)}) -- (4.2,0) -- cycle;
+    \draw[very thick,blue,domain=0:4.2,samples=90]
+      plot (\x,{2.1*exp(-0.72*\x)});
+    \node[left] at (0,2.1) {$i_0$};
+    \node[align=center,font=\small] at (2.75,0.75) {面积\\$=\Delta Q$};
+    \node[font=\small] at (2.3,-0.45) {$i$ 逐渐减小，面积表示充入电荷量};
+  \end{scope}
+
+  % discharge graph
+  \begin{scope}[xshift=6.1cm]
+    \node[font=\bfseries] at (2.2,2.85) {放电电流};
+    \draw[->] (-0.2,0) -- (4.8,0) node[right] {$t$};
+    \draw[->] (0,-2.35) -- (0,0.55) node[above] {$i$};
+    \fill[red!12,domain=0:4.2,samples=80]
+      (0,0) -- plot (\x,{-2.0*exp(-0.72*\x)}) -- (4.2,0) -- cycle;
+    \draw[very thick,red,domain=0:4.2,samples=90]
+      plot (\x,{-2.0*exp(-0.72*\x)});
+    \node[left] at (0,-2.0) {$-i_0$};
+    \node[align=center,font=\small] at (2.75,-0.75) {面积\\$=-Q_0$};
+    \node[font=\small] at (2.3,-2.65) {若沿充电方向取正，放电电流为负};
+  \end{scope}
+\end{tikzpicture}

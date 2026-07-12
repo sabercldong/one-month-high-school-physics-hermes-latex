@@ -1,0 +1,17 @@
+% TikZ 图：实验图像线性拟合
+% Day 28：实验专题
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[->,thick] (0,0) -- (5.2,0) node[right] {$x$};
+  \draw[->,thick] (0,0) -- (0,3.4) node[above] {$y$};
+  \draw[blue,thick] (0.5,0.55) -- (4.75,2.85) node[pos=0.75,above,sloped] {最佳直线};
+  \foreach \x/\y in {0.75/0.72,1.25/1.0,1.8/1.18,2.35/1.65,2.9/1.86,3.45/2.25,4.1/2.38,4.55/2.78}{
+    \fill[red] (\x,\y) circle (2pt);
+  }
+  \draw[dashed] (1.2,0) -- (1.2,0.93);
+  \draw[dashed] (4.2,0) -- (4.2,2.55);
+  \draw[<->] (1.2,0.25) -- (4.2,0.25) node[midway,below] {$\Delta x$};
+  \draw[<->] (4.45,0.93) -- (4.45,2.55) node[midway,right] {$\Delta y$};
+  \node[font=\small,align=left] at (7.45,1.7)
+    {斜率：$k=\dfrac{\Delta y}{\Delta x}$\\[3pt]
+     截距和斜率都要写单位。};
+\end{tikzpicture}

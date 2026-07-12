@@ -1,54 +1,354 @@
 \daytitle{26}{热学基础}
 
 \begin{learningbox}{本讲义大致内容}
-讲分子动理论、温度、内能、气体实验定律和热力学第一定律入门。
+热学研究大量分子的集体行为。我们先从分子动理论理解温度、内能和压强，再学习理想气体实验定律，最后用热力学第一定律分析吸热、做功和内能变化。重点不是把热学公式背下来，而是建立“宏观现象由微观运动解释”的视角。
 \end{learningbox}
 
 \section*{一、学习目标}
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 理解分子动理论的三条基本观点。
+  \item 区分温度、热量、内能和做功。
+  \item 掌握玻意耳定律、查理定律、盖-吕萨克定律及其图像。
+  \item 会用理想气体状态方程分析简单变化过程。
+  \item 会用热力学第一定律判断内能变化。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中热学常把“热”与“温度升高”联系起来，但高中必须更精确：温度是状态量，热量是过程量；内能属于系统，热量和功是改变内能的两种方式。说“物体含有热量”是不严谨的，应说“物体具有内能”，或“在某过程中吸收、放出热量”。
+
+\textbf{科学发展视角：} 热学是能源技术的基础。热机效率、空调制冷、发动机、相变储能、温室效应、低温物理和芯片散热，都要求我们理解能量如何在微观粒子运动和宏观做功之间转化。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{分子动理论}
+
+分子动理论用微观运动解释宏观热现象，包含三个基本观点：
+\begin{enumerate}
+  \item 物体由大量分子组成；
+  \item 分子永不停息地做无规则热运动；
+  \item 分子间存在相互作用力。
+\end{enumerate}
+
+\begin{center}
+\input{figures/tikz/molecular-motion}
+
+\figcaption{分子热运动：宏观温度反映大量分子运动的统计特征}\label{fig:molecular-motion}
+\end{center}
+
+\textbf{关键理解：} 温度越高，分子平均动能越大；但不能说某一个分子的动能一定变大，因为分子运动是统计性的。
+\end{conceptbox}
+
+\begin{conceptbox}{温度、内能、热量}
+
+\begin{itemize}
+  \item \textbf{温度：} 描述分子平均动能大小的宏观量。
+  \item \textbf{内能：} 物体内所有分子的动能和分子势能总和。
+  \item \textbf{热量：} 热传递过程中转移的能量，是过程量。
+  \item \textbf{做功：} 通过宏观力和位移改变系统能量的方式。
+\end{itemize}
+
+\textbf{严谨表述：} 不能说“物体含有热量”，只能说“物体吸收热量”或“放出热量”。
+\end{conceptbox}
+
+\begin{conceptbox}{气体实验定律}
+
+一定质量理想气体在某个状态下可用 $p,V,T$ 描述。温度必须使用热力学温度：
+\[
+T=t+273.15.
+\]
+
+\begin{center}
+\input{figures/tikz/gas-laws-graphs}
+
+\figcaption{气体实验定律图像：温度必须用热力学温度 $T$}\label{fig:gas-laws-graphs}
+\end{center}
+
+\[
+\boxed{pV=C\quad(\text{等温})}
+\]
+\[
+\boxed{\frac{V}{T}=C\quad(\text{等压})}
+\]
+\[
+\boxed{\frac{p}{T}=C\quad(\text{等容})}
+\]
+
+综合起来，一定质量理想气体满足
+\[
+\boxed{\frac{pV}{T}=C}.
+\]
+\end{conceptbox}
+
+\begin{conceptbox}{热力学第一定律}
+
+取“系统吸热为正，系统对外做功为正”的约定：
+\[
+\boxed{\Delta U=Q-W}.
+\]
+
+\begin{center}
+\input{figures/tikz/first-law-piston}
+
+\figcaption{热力学第一定律：吸热和做功共同决定内能变化}\label{fig:first-law-piston}
+\end{center}
+
+\begin{itemize}
+  \item $Q>0$：系统吸热；$Q<0$：系统放热。
+  \item $W>0$：系统对外做功；$W<0$：外界对系统做功。
+  \item $\Delta U>0$：内能增加；$\Delta U<0$：内能减少。
+\end{itemize}
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+公式 & 物理意义 & 适用条件 \\
+\midrule
+$T=t+273.15$ & 摄氏温度转热力学温度 & 热学计算 \\
+$pV=C$ & 等温变化 & 一定质量理想气体 \\
+$\dfrac{V}{T}=C$ & 等压变化 & 一定质量理想气体 \\
+$\dfrac{p}{T}=C$ & 等容变化 & 一定质量理想气体 \\
+$\dfrac{pV}{T}=C$ & 状态方程 & 一定质量理想气体 \\
+$\Delta U=Q-W$ & 热力学第一定律 & 吸热为正、对外做功为正 \\
+$W=p\Delta V$ & 等压做功 & 压强恒定 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：等温压缩或膨胀}
+
+温度不变，理想气体内能不变。若气体被压缩，体积减小，压强增大：
+\[
+p_1V_1=p_2V_2.
+\]
+
+\subsection*{模型 2：等压升温}
+
+压强不变时，温度升高，体积增大：
+\[
+\frac{V_1}{T_1}=\frac{V_2}{T_2}.
+\]
+注意温度必须用 K，不能直接用摄氏温度代入比例式。
+
+\subsection*{模型 3：$p$-$V$ 图像中的功}
+
+气体对外做功可由 $p$-$V$ 图像下方面积表示：
+\[
+W=\int p\,dV.
+\]
+
+\begin{center}
+\input{figures/tikz/pv-work-area}
+
+\figcaption{$p$-$V$ 图像：图线下方面积表示气体对外做功}\label{fig:pv-work-area}
+\end{center}
+
+\subsection*{模型 4：绝热近似}
+
+若过程很快或保温良好，可近似认为 $Q=0$。此时
+\[
+\Delta U=-W.
+\]
+气体快速膨胀对外做功，内能减少，温度降低；气体被快速压缩，外界对它做功，内能增加，温度升高。
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{等温变化}
+\textbf{题意分析：} 一定质量气体温度不变，初态压强 $p_1=1.0\times10^5\ \mathrm{Pa}$，体积 $V_1=2.0\ \mathrm{L}$。若体积压缩到 $V_2=0.50\ \mathrm{L}$，求末态压强。
 
-\textbf{解题过程：} TODO。
+\textbf{物理模型：} 等温变化，$pV=C$。
 
-\textbf{方法总结：} TODO。
+\textbf{解题过程：}
+\[
+p_1V_1=p_2V_2,
+\qquad
+p_2=\frac{p_1V_1}{V_2}
+=\frac{1.0\times10^5\times2.0}{0.50}
+=4.0\times10^5\ \mathrm{Pa}.
+\]
+
+\textbf{方法总结：} 等温压缩时体积变为原来的 $\dfrac14$，压强变为原来的 4 倍。
+\end{examplebox}
+
+\begin{examplebox}{等压升温}
+\textbf{题意分析：} 一定质量气体在压强不变时，温度从 $27^\circ\mathrm{C}$ 升高到 $127^\circ\mathrm{C}$。初体积 $V_1=3.0\ \mathrm{L}$，求末体积。
+
+\textbf{物理模型：} 等压变化，$\dfrac{V}{T}=C$。
+
+\textbf{解题过程：}
+\[
+T_1=27+273=300\ \mathrm{K},\qquad T_2=127+273=400\ \mathrm{K}.
+\]
+\[
+\frac{V_1}{T_1}=\frac{V_2}{T_2},
+\qquad
+V_2=V_1\frac{T_2}{T_1}=3.0\times\frac{400}{300}=4.0\ \mathrm{L}.
+\]
+
+\textbf{方法总结：} 气体定律中的温度必须用热力学温度，不能用摄氏温度直接比。
+\end{examplebox}
+
+\begin{examplebox}{热力学第一定律}
+\textbf{题意分析：} 某气体吸收热量 $Q=500\ \mathrm{J}$，同时对外做功 $W=200\ \mathrm{J}$。求内能变化。
+
+\textbf{物理模型：} 热力学第一定律。
+
+\textbf{解题过程：}
+\[
+\Delta U=Q-W=500-200=300\ \mathrm{J}.
+\]
+
+\textbf{方法总结：} 吸热不一定全部转化为内能，若气体同时对外做功，内能增加量会小于吸收热量。
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 一定质量气体等温膨胀，体积变为原来的 3 倍，压强怎样变化？
+  \item 把 $-23^\circ\mathrm{C}$、$27^\circ\mathrm{C}$、$127^\circ\mathrm{C}$ 分别化为热力学温度。
+  \item 气体放热 $100\ \mathrm{J}$，外界对气体做功 $300\ \mathrm{J}$，内能如何变化？
+  \item 等压膨胀过程中，$p$-$V$ 图像下方面积表示什么物理量？
+\end{enumerate}
+
+\subsection*{训练提示}
+\begin{enumerate}
+  \item 等温时 $pV=C$，体积变为 3 倍，压强变为原来的 $\dfrac13$。
+  \item 分别为 $250\ \mathrm{K}$、$300\ \mathrm{K}$、$400\ \mathrm{K}$，近似计算时常取 $273$。
+  \item 放热 $Q=-100\ \mathrm{J}$，外界做功表示系统对外做功 $W=-300\ \mathrm{J}$。
+  \item $p$-$V$ 图像下方面积表示气体对外做功；若体积减小，则做功为负。
+\end{enumerate}
 
 \section*{八、易错点}
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{说“物体含有热量”：} 热量是过程量，不是状态量。
+  \item \textbf{气体定律用摄氏温度：} 比例关系必须使用热力学温度 $T$。
+  \item \textbf{混淆做功正负：} 本讲义约定系统对外做功为正，所以 $\Delta U=Q-W$。
+  \item \textbf{把温度看成单个分子动能：} 温度对应大量分子的平均动能。
+  \item \textbf{忽略内能还含分子势能：} 对实际物体和相变过程，分子势能变化也很重要。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{从微观角度看压强}
+
+气体压强来自大量分子不断碰撞器壁。单个分子的碰撞很复杂，但大量分子的平均效果很稳定，这就是统计物理的基本思想。
+
+在理想气体模型中，分子本身大小可忽略，分子间除碰撞外不考虑相互作用。由此可以推出
+\[
+pV=\frac23N\overline{E_k},
+\]
+其中 $N$ 是分子数，$\overline{E_k}$ 是单个分子的平均平动动能。又因为理想气体状态方程为
+\[
+pV=NkT,
+\]
+可得
+\[
+\overline{E_k}=\frac32kT.
+\]
+
+\textbf{意义：} 这说明温度不是模糊的冷热感觉，而是微观平均动能的量度。高中阶段不要求完整推导，但这个结果能帮助理解为什么绝对零度对应分子热运动的最低极限。
 \end{competitionbox}
 
-\section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
+\section*{十、模型深化：热机、循环与不可逆性}
 
+\subsection*{1.\quad 热机效率}
+
+热机从高温热源吸收热量 $Q_1$，把其中一部分转化为对外做功 $W$，其余热量 $Q_2$ 放给低温热源：
+\[
+Q_1=W+Q_2.
+\]
+热机效率定义为
+\[
+\eta=\frac{W}{Q_1}=1-\frac{Q_2}{Q_1}.
+\]
+
+\begin{center}
+\input{figures/tikz/heat-engine-cycle}
+
+\figcaption{热机循环：循环过程中系统回到初态，净功等于吸热与放热之差}\label{fig:heat-engine-cycle}
+\end{center}
+
+\textbf{重要理解：} 热机不可能把吸收的热量全部转化为功。实际热机还会因摩擦、散热和不可逆过程损失能量。
+
+\subsection*{2.\quad 四种常见过程的能量判断}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+过程 & 特征 & 第一定律分析 \\
+\midrule
+等温过程 & 理想气体温度不变 & $\Delta U=0$，吸热常转化为对外做功 \\
+等容过程 & 体积不变 & $W=0$，$\Delta U=Q$ \\
+等压过程 & 压强不变 & $W=p\Delta V$ \\
+绝热过程 & $Q=0$ & $\Delta U=-W$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{认知顺序：} 先判断过程类型，再判断 $Q$、$W$ 的正负，最后用 $\Delta U=Q-W$。不要一上来就代数运算。
+
+\textbf{正负号约定：} 本讲义采用“系统对外做功为正”的约定，因此气体膨胀时 $W>0$，压缩时 $W<0$；吸热时 $Q>0$，放热时 $Q<0$。若别的资料采用“外界对系统做功为正”，第一定律形式会不同，但物理结论一致。做题时先看清约定，再列式。
+
+\textbf{过程判断口诀：} 等温看温度，等容看体积，等压看压强，绝热看是否与外界交换热量。若题目没有明确过程类型，不能随意套某个特殊公式，只能从第一定律和状态方程出发分析。
+
+\begin{examplebox}{等容加热}
+\textbf{题意分析：} 一定质量理想气体被封闭在刚性容器中，吸收热量 $300\ \mathrm{J}$。求气体对外做功和内能变化。
+
+\textbf{物理模型：} 等容过程，体积不变。
+
+\textbf{解题过程：}
+容器刚性，体积不变，所以
+\[
+W=0.
+\]
+由热力学第一定律：
+\[
+\Delta U=Q-W=300-0=300\ \mathrm{J}.
+\]
+
+\textbf{方法总结：} 等容过程没有体积变化，气体不对外做体积功。
+\end{examplebox}
+
+\begin{examplebox}{绝热压缩}
+\textbf{题意分析：} 外界对气体做功 $200\ \mathrm{J}$，过程很快，可视为绝热。求内能变化，并判断温度如何变化。
+
+\textbf{物理模型：} 绝热过程，$Q=0$。本讲义约定系统对外做功为正。
+
+\textbf{解题过程：}
+外界对气体做功 $200\ \mathrm{J}$，即气体对外做功
+\[
+W=-200\ \mathrm{J}.
+\]
+所以
+\[
+\Delta U=Q-W=0-(-200)=200\ \mathrm{J}.
+\]
+内能增加，理想气体温度升高。
+
+\textbf{方法总结：} 绝热压缩会使气体升温，这也是打气筒快速打气时筒壁发热的原因之一。
+\end{examplebox}
+
+\subsection*{3.\quad 分层训练}
+
+\begin{enumerate}
+  \item \textbf{基础：} 一定质量理想气体等容放热，内能怎样变化？
+  \item \textbf{提高：} 气体等压膨胀，吸热 $500\ \mathrm{J}$，对外做功 $180\ \mathrm{J}$，求内能变化。
+  \item \textbf{综合：} 某热机每循环吸热 $1000\ \mathrm{J}$，放热 $650\ \mathrm{J}$，求输出功和效率。
+  \item \textbf{开放思考：} 为什么冰箱能把热量从低温处搬到高温处，但必须消耗电能？
+\end{enumerate}
+
+\section*{十一、今日小结}
+\begin{enumerate}
+  \item 分子动理论把宏观热现象解释为大量分子的统计运动。
+  \item 温度反映分子平均动能，内能是分子动能和分子势能总和。
+  \item 热量和功都是过程量，都是改变内能的方式。
+  \item 一定质量理想气体满足 $pV/T=C$。
+  \item 热力学第一定律在本讲义约定下写作 $\Delta U=Q-W$。
+\end{enumerate}

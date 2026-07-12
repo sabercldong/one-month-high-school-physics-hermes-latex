@@ -1,0 +1,16 @@
+% TikZ 图：纸带数据处理
+% Day 28：实验专题
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[thick] (0,0) -- (8.2,0);
+  \foreach \x/\lab in {0.4/0,1.0/1,1.75/2,2.65/3,3.7/4,4.9/5,6.25/6,7.75/7}{
+    \fill (\x,0) circle (2pt);
+    \node[below=5pt] at (\x,0) {\lab};
+  }
+  \draw[<->,blue] (1.0,0.45) -- (2.65,0.45) node[midway,above] {$x_1$};
+  \draw[<->,red] (2.65,0.80) -- (4.9,0.80) node[midway,above] {$x_2$};
+  \draw[<->,green!50!black] (4.9,0.45) -- (7.75,0.45) node[midway,above] {$x_3$};
+  \node[align=left,font=\small] at (10.0,0.35)
+    {相邻计数点时间相等：$T$\\[3pt]
+     中间时刻速度：$v=\dfrac{x}{t}$\\[3pt]
+     逐差法：$a=\dfrac{x_3-x_1}{2T^2}$};
+\end{tikzpicture}

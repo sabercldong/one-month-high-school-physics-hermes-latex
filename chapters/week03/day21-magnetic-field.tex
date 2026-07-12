@@ -1,54 +1,307 @@
 \daytitle{21}{磁场与安培力}
 
 \begin{learningbox}{本讲义大致内容}
-讲磁场、磁感应强度、安培力、左手定则、通电导线在磁场中的受力和平衡。
+前面几天学习了电场和电路：电荷受电场力，电流表示电荷定向移动。今天进入磁场。我们先认识磁感应强度 $B$、磁场方向和磁感线，再学习通电导线在磁场中受到的安培力。磁场这一章最重要的不是背公式，而是把“方向判断”和“受力分析”合在一起。
 \end{learningbox}
 
 \section*{一、学习目标}
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 理解磁场是客观存在的物质，能对磁体、电流和运动电荷产生作用。
+  \item 掌握磁感应强度 $B$ 的物理意义和单位特斯拉（$\mathrm{T}$）。
+  \item 会判断直线电流、环形电流和通电螺线管周围磁场方向。
+  \item 掌握安培力公式 $F = BIL\sin\theta$，明确公式的适用条件。
+  \item 会用左手定则判断安培力方向，并能进行简单平衡与运动分析。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中已经学过磁体有南北极、同名磁极相斥、异名磁极相吸，也知道通电导线周围存在磁场。高中要把这些现象进一步量化：
+\begin{itemize}
+  \item 用磁感应强度 $B$ 描述磁场强弱和方向；
+  \item 用磁感线描述磁场分布，但磁感线不是实际存在的线；
+  \item 用安培力公式计算磁场对电流的作用；
+  \item 把安培力纳入力学受力分析，和重力、弹力、摩擦力一起处理。
+\end{itemize}
+
+\textbf{科学发展视角：} 磁场和安培力是电动机、扬声器、磁悬浮和电动汽车驱动系统的基础。现代设备常利用磁场对电流的作用，实现电能与机械能之间的可控转换。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{磁场与磁感线}
+
+\textbf{磁场：} 磁体、电流和运动电荷周围存在磁场。磁场的基本性质是对放入其中的磁体、电流或运动电荷产生力的作用。
+
+\textbf{磁场方向：} 规定小磁针静止时北极（$N$ 极）所指方向为该点磁场方向。
+
+\textbf{磁感线：} 用来形象表示磁场方向和强弱的曲线。
+\begin{itemize}
+  \item 磁感线上某点的切线方向表示该点磁场方向。
+  \item 磁感线疏密表示磁场强弱：越密，磁场越强。
+  \item 磁感线是闭合曲线，在磁体外部从 $N$ 极指向 $S$ 极，在磁体内部从 $S$ 极回到 $N$ 极。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/magnetic-field-lines}
+
+\figcaption{条形磁体外部磁感线：外部从 $N$ 极指向 $S$ 极}\label{fig:magnetic-field-lines}
+\end{center}
+
+\end{conceptbox}
+
+\begin{conceptbox}{磁感应强度 $B$}
+
+磁感应强度 $B$ 是描述磁场强弱和方向的物理量。
+
+在匀强磁场中，当一段长度为 $L$、电流为 $I$ 的直导线垂直于磁场放置时，受到的安培力为 $F$，定义
+\[
+\boxed{B = \frac{F}{IL}}
+\]
+
+\begin{itemize}
+  \item 单位：特斯拉（$\mathrm{T}$），$1\ \mathrm{T} = 1\ \mathrm{N/(A\cdot m)}$。
+  \item $B$ 是矢量，方向就是该点磁场方向。
+  \item 定义式 $B=\dfrac{F}{IL}$ 要求导线与磁场垂直；一般情形要用安培力公式。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/magnetic-field-symbols}
+
+\figcaption{垂直纸面的磁场符号：叉号表示垂直纸面向里，点号表示垂直纸面向外}\label{fig:magnetic-field-symbols}
+\end{center}
+
+\end{conceptbox}
+
+\begin{conceptbox}{电流周围的磁场}
+
+电流会产生磁场。高中阶段常见三类图像：
+\begin{itemize}
+  \item \textbf{直线电流：} 磁感线是以导线为中心的同心圆。
+  \item \textbf{环形电流：} 一侧相当于 $N$ 极，另一侧相当于 $S$ 极，中心附近磁场近似沿轴线方向。
+  \item \textbf{通电螺线管：} 外部磁场类似条形磁体。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/current-magnetic-field}
+
+\figcaption{右手螺旋定则：拇指指电流方向，四指环绕方向为磁场方向}\label{fig:current-magnetic-field}
+\end{center}
+
+\textbf{认知提醒：} 判断电流产生的磁场用右手；判断通电导线受安培力用左手。两种定则解决的问题不同，不要混用。
+
+\end{conceptbox}
+
+\begin{conceptbox}{安培力}
+
+一段通电直导线放在磁场中会受到安培力。若导线长度为 $L$，电流为 $I$，磁感应强度为 $B$，电流方向与磁场方向夹角为 $\theta$，则
+\[
+\boxed{F = BIL\sin\theta}
+\]
+
+\begin{itemize}
+  \item 当导线垂直于磁场时，$\theta = 90^\circ$，$F = BIL$。
+  \item 当导线平行于磁场时，$\theta = 0^\circ$，$F = 0$。
+  \item $L$ 指处在磁场中的有效导线长度。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/ampere-force-angle}
+
+\figcaption{安培力大小由电流方向与磁场方向的夹角决定}\label{fig:ampere-force-angle}
+\end{center}
+
+\textbf{左手定则：} 伸开左手，使磁感线穿入手心，四指指向电流方向，则拇指所指方向为安培力方向。
+
+\begin{center}
+\input{figures/tikz/left-hand-rule}
+
+\figcaption{左手定则：手心迎磁场，四指指电流，拇指指安培力}\label{fig:left-hand-rule}
+\end{center}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+公式 & 物理意义 & 适用条件 \\
+\midrule
+$B=\dfrac{F}{IL}$ & 磁感应强度定义 & $I$ 与 $B$ 垂直 \\
+$F=BIL$ & 安培力最大值 & 直导线垂直匀强磁场 \\
+$F=BIL\sin\theta$ & 安培力一般式 & 直导线、匀强磁场或局部近似匀强 \\
+$F=0$ & 无安培力 & 电流与磁场平行 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：垂直纸面的磁场}
+
+叉号“$\times$”像箭尾，表示磁场垂直纸面向里；点号“$\odot$”像箭头尖，表示磁场垂直纸面向外。遇到电磁题先把纸面内外方向翻译清楚。
+
+\subsection*{模型 2：磁场也要按矢量叠加}
+
+多个电流或磁体同时存在时，某点的磁场不是简单“谁更近听谁的”，而是各个磁场矢量的合成。高中阶段常见处理顺序是：
+\[
+\text{分别判断方向}\rightarrow\text{比较大小}\rightarrow\text{矢量合成}.
+\]
+若两个磁场方向相同，合磁场增强；方向相反，合磁场减弱；方向成角度，则按平行四边形法则合成。
+
+\begin{center}
+\input{figures/tikz/magnetic-superposition}
+
+\figcaption{磁场叠加：磁感应强度是矢量，既有大小又有方向}\label{fig:magnetic-superposition}
+\end{center}
+
+\subsection*{模型 3：通电导线的受力平衡}
+
+通电导线在磁场中常和重力、弹力、拉力一起平衡。解题顺序：
+\[
+\text{定磁场方向} \to \text{定电流方向} \to \text{左手定则定安培力} \to \text{列平衡方程}
+\]
+
+\begin{center}
+\input{figures/tikz/ampere-balance}
+
+\figcaption{水平导线在磁场中平衡：安培力可与重力平衡}\label{fig:ampere-balance}
+\end{center}
+
+\subsection*{模型 4：通电导体棒在导轨上运动}
+
+导体棒中有电流，若处在磁场中，就受到安培力。安培力方向决定导体棒向哪边加速，是电动机模型的最简雏形。
+
+\begin{center}
+\input{figures/tikz/rail-ampere-force}
+
+\figcaption{导体棒受安培力运动：磁场、电流、力三者两两垂直}\label{fig:rail-ampere-force}
+\end{center}
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{安培力大小与方向}
+\textbf{题意分析：} 长度 $L=0.20\ \mathrm{m}$ 的直导线垂直放入匀强磁场，磁感应强度 $B=0.50\ \mathrm{T}$，导线中电流 $I=3.0\ \mathrm{A}$。求导线所受安培力大小。
 
-\textbf{解题过程：} TODO。
+\textbf{物理模型：} 直导线垂直匀强磁场，$F=BIL$。
 
-\textbf{方法总结：} TODO。
+\begin{center}
+\input{figures/tikz/ampere-force-example}
+\end{center}
+
+\textbf{解题过程：}
+\[
+F = BIL = 0.50 \times 3.0 \times 0.20 = 0.30\ \mathrm{N}
+\]
+
+\textbf{方法总结：} 先判断夹角。若题中说“垂直放入”，可以直接用 $F=BIL$；若有夹角，必须乘 $\sin\theta$。
+\end{examplebox}
+
+\begin{examplebox}{通电导线的平衡}
+\textbf{题意分析：} 一根水平导线长 $L=0.10\ \mathrm{m}$、质量 $m=0.020\ \mathrm{kg}$，处在垂直纸面向里的匀强磁场中。若希望导线静止悬浮，磁感应强度 $B=0.50\ \mathrm{T}$，求所需电流大小。取 $g=10\ \mathrm{m/s^2}$。
+
+\textbf{物理模型：} 安培力与重力平衡。
+
+\begin{center}
+\input{figures/tikz/ampere-balance-example}
+\end{center}
+
+\textbf{解题过程：}
+\[
+F_A = mg,\qquad BIL = mg
+\]
+\[
+I = \frac{mg}{BL}
+= \frac{0.020\times 10}{0.50\times 0.10}
+=4.0\ \mathrm{A}
+\]
+
+方向由左手定则确定：若磁场向里，安培力要向上，则电流应向右。
+
+\textbf{方法总结：} 电磁平衡题仍然是力学题。安培力只是新增的一种力，先画受力图再列方程。
+\end{examplebox}
+
+\begin{examplebox}{导体棒在导轨上的加速}
+\textbf{题意分析：} 光滑水平导轨间距 $L=0.30\ \mathrm{m}$，导体棒质量 $m=0.060\ \mathrm{kg}$，棒中电流 $I=4.0\ \mathrm{A}$，匀强磁场 $B=0.50\ \mathrm{T}$ 垂直纸面向里。若安培力水平向左，求导体棒加速度大小。
+
+\textbf{物理模型：} 安培力提供水平方向合力，仍用牛顿第二定律。
+
+\begin{center}
+\input{figures/tikz/rail-ampere-example}
+\end{center}
+
+\textbf{解题过程：}
+导体棒所受安培力
+\[
+F_A=BIL=0.50\times4.0\times0.30=0.60\ \mathrm{N}.
+\]
+导轨光滑，水平方向合力就是安培力：
+\[
+a=\frac{F_A}{m}=\frac{0.60}{0.060}=10\ \mathrm{m/s^2}.
+\]
+
+\textbf{方法总结：} “电磁题”并不意味着力学消失。判断出安培力方向和大小后，后面就是受力分析和牛顿第二定律。
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 长 $0.30\ \mathrm{m}$ 的导线中通有 $2.0\ \mathrm{A}$ 电流，垂直放入 $0.40\ \mathrm{T}$ 的匀强磁场中，求安培力大小。
+  \item 若上题中导线与磁场夹角为 $30^\circ$，安培力变为多少？
+  \item 一根质量 $0.05\ \mathrm{kg}$、长 $0.25\ \mathrm{m}$ 的水平导线悬挂在匀强磁场中，若电流为 $4\ \mathrm{A}$ 时恰好平衡，求磁感应强度大小。
+  \item 判断：磁场垂直纸面向外，导线中电流向右，则安培力方向是向上还是向下？
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{把磁感线当成真实存在的线：} 磁感线只是描述磁场的工具，不能说“电流沿磁感线运动”。
+  \item \textbf{混用左右手定则：} 电流产生磁场用右手；磁场对电流的力用左手。
+  \item \textbf{忘记夹角：} $F=BIL$ 只适用于电流与磁场垂直；一般式是 $F=BIL\sin\theta$。
+  \item \textbf{把 $L$ 当成整根导线长度：} $L$ 是处在磁场中的有效长度。
+  \item \textbf{忽略安培力方向：} 安培力方向一定同时垂直于电流方向和磁场方向。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{从安培力看电动机的基本思想}
+
+电动机的本质是：通电线圈在磁场中受到安培力矩。单根导线只受一个力；线圈两侧电流方向相反，在磁场中一侧受力向里、另一侧受力向外，于是形成转动效果。
+
+\begin{center}
+\input{figures/tikz/motor-coil-torque}
+
+\figcaption{通电线圈在磁场中受力形成力矩：电能转化为机械能}\label{fig:motor-coil-torque}
+\end{center}
+
+竞赛入门阶段要注意一个观点：安培力公式 $F=BIL$ 可以看成许多运动电荷受洛伦兹力的宏观合力。下一节学习洛伦兹力后，会看到磁场对“单个运动电荷”和“整段电流”的描述其实是同一件事的两个层次。
+
+\textbf{进一步理解：} 若线圈平面与磁场方向夹角变化，线圈所受力矩也会变化。真实电动机需要换向器或电子控制，让线圈持续受到同向转动效果。这也是从“安培力公式”走向“电动机模型”的关键一步。
 \end{competitionbox}
 
-\section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
+\subsection*{补充训练：方向判断三步法}
 
+安培力方向题不要凭直觉转手腕，建议固定三步：
+\begin{enumerate}
+  \item 先把磁场方向画成箭头、叉号或点号；
+  \item 再把电流方向画在导线有效长度上；
+  \item 最后用左手定则确定安培力，并检查安培力是否同时垂直于 $I$ 和 $B$。
+\end{enumerate}
+
+\begin{enumerate}
+  \item 磁场向右，电流向上，安培力指向纸内还是纸外？
+  \item 磁场向里，电流向左，安培力向上还是向下？
+  \item 若导线与磁场平行，为什么无论电流多大，安培力都为零？
+\end{enumerate}
+
+\section*{十、今日小结}
+
+\begin{enumerate}
+  \item 磁场方向规定为小磁针静止时 $N$ 极所指方向。
+  \item 磁感应强度 $B$ 描述磁场强弱和方向，单位是 $\mathrm{T}$。
+  \item 电流产生磁场用右手螺旋定则。
+  \item 通电导线在磁场中受安培力：$F=BIL\sin\theta$。
+  \item 判断安培力方向用左手定则，并把安培力纳入力学受力分析。
+\end{enumerate}

@@ -1,0 +1,22 @@
+% TikZ 图：正方体电阻网络
+% Day 19：恒定电流
+\begin{tikzpicture}[scale=0.86,>=Latex]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2.2,0);
+  \coordinate (C) at (2.2,2.0);
+  \coordinate (D) at (0,2.0);
+  \coordinate (E) at (0.85,0.75);
+  \coordinate (F) at (3.05,0.75);
+  \coordinate (G) at (3.05,2.75);
+  \coordinate (H) at (0.85,2.75);
+
+  \foreach \p/\q in {A/B,B/C,C/D,D/A,E/F,F/G,G/H,H/E,A/E,B/F,C/G,D/H} {
+    \draw[thick] (\p) -- (\q);
+  }
+  \foreach \p in {A,B,C,D,E,F,G,H} {\filldraw[black] (\p) circle (1.5pt);}
+  \node[below left] at (A) {$A$};
+  \node[above right] at (G) {$B$};
+  \draw[->,red,thick] (-0.9,-0.25) -- (A) node[midway,below] {$I$};
+  \draw[->,red,thick] (G) -- (3.95,3.05) node[midway,above] {$I$};
+  \node[font=\small,align=center] at (1.65,-0.85) {每条棱电阻均为 $R$，求体对角线 $AB$ 间等效电阻};
+\end{tikzpicture}

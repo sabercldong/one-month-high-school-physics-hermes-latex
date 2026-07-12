@@ -1,54 +1,374 @@
 \daytitle{30}{综合训练与后续学习路线}
 
 \begin{learningbox}{本讲义大致内容}
-讲综合题拆解方法，做力学综合和电磁学综合入门，并给出高一学习路线和竞赛入门路线。
+最后一天不再新增大量概念，而是把 30 天的学习转化为可执行的方法：综合题如何读题、画图、选对象、分过程、列方程和检验结果；力学综合、电磁综合如何拆解；完成一个月入门后，怎样继续走向高一同步、高考能力和竞赛入门。
 \end{learningbox}
 
 \section*{一、学习目标}
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 掌握综合题“五步拆解法”。
+  \item 能把复杂过程拆成若干简单模型。
+  \item 会用文字解释方程的物理意义，而不是只写代数。
+  \item 通过综合例题复习力学、电场和能量方法。
+  \item 明确后续学习路线和复盘方法。
 \end{enumerate}
 
-\section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+\section*{二、从会听到会做}
 
-\section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+学完 30 天后，最重要的变化不是“记住了多少公式”，而是看到题目时能主动建立模型。真正会做题的学生通常不是更快找到公式，而是更快看清对象、过程和约束。
+
+\begin{center}
+\input{figures/tikz/comprehensive-solving-flow}
+
+\figcaption{综合题五步拆解：画图、选对象、分过程、列方程、验结果}\label{fig:comprehensive-solving-flow}
+\end{center}
+
+\section*{三、核心方法}
+
+\begin{conceptbox}{综合题五步法}
+
+\begin{enumerate}
+  \item \textbf{画图：} 把物体、轨道、场区、电路、方向都画出来。
+  \item \textbf{选对象：} 明确研究单个物体还是系统。
+  \item \textbf{分过程：} 找到力、电场、磁场、接触、碰撞等条件改变的位置。
+  \item \textbf{列方程：} 每个方程旁边写出所用物理规律。
+  \item \textbf{验结果：} 检查单位、正负、极限和数量级。
+\end{enumerate}
+
+\textbf{提醒：} 综合题的难点通常不在单个公式，而在“什么时候换模型”。
 \end{conceptbox}
 
-\section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+\begin{conceptbox}{结果检验的三把尺}
 
-\section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+\begin{itemize}
+  \item \textbf{量纲：} 表达式单位是否等于所求量单位？
+  \item \textbf{极限：} 参数变大、变小或趋零时，结果是否合理？
+  \item \textbf{方向：} 矢量结果是否符合受力、场力和运动趋势？
+\end{itemize}
+
+例如得到速度表达式 $v=\sqrt{2gh}$，量纲正确；当 $h$ 增大时速度增大，极限合理；方向还要由具体运动决定。
+\end{conceptbox}
+
+\section*{四、综合模型图}
+
+\begin{center}
+\input{figures/tikz/integrated-track-field}
+
+\figcaption{力电综合示意：轨道运动、电场偏转和能量方法常组合出现}\label{fig:integrated-track-field}
+\end{center}
+
+这类题通常包含多个阶段：
+\begin{enumerate}
+  \item 在轨道上运动：常用机械能守恒或动能定理。
+  \item 进入电场：先判断电场力方向，再分解运动。
+  \item 离开场区：用速度分量合成或继续做匀速直线运动。
+\end{enumerate}
+
+\section*{五、典型综合模型}
+
+\subsection*{模型 1：力学综合}
+
+常见组合：
+\[
+\text{受力分析}\rightarrow\text{加速度}\rightarrow\text{运动学}
+\]
+或
+\[
+\text{高度/弹簧/摩擦}\rightarrow\text{能量方程}.
+\]
+
+若题中出现“最大压缩量、最远距离、刚好通过最高点”，往往要优先考虑能量和临界条件。
+
+\subsection*{模型 2：碰撞与后续运动}
+
+碰撞瞬间用动量守恒，碰撞后的运动再根据轨道、摩擦或弹簧选择能量方法。不要把整个过程一口气套机械能守恒。
+
+\subsection*{模型 3：电场中的粒子运动}
+
+先加速后偏转是典型模型：
+\[
+qU_1=\frac12mv_0^2,
+\]
+进入偏转电场后，
+\[
+a=\frac{qE}{m}=\frac{qU_2}{md}.
+\]
+水平方向匀速，竖直方向匀加速。
+
+\subsection*{模型 4：电磁感应中的动力学}
+
+导体棒切割磁感线时，速度决定电动势，电流决定安培力，安培力又反过来影响速度：
+\[
+v\rightarrow E=BLv\rightarrow I=\frac{E}{R}\rightarrow F=BIL.
+\]
+这就是反馈模型，常出现“最终匀速”或“终端速度”。
+
+\begin{center}
+\input{figures/tikz/comprehensive-em-induction}
+
+\figcaption{电磁感应综合：速度、电流、安培力和能量转化相互联系}\label{fig:comprehensive-em-induction}
+\end{center}
+
+\subsection*{模型 5：实验综合}
+
+实验综合题通常不只问“算一个数”，而是按完整科学流程考查：
+\[
+\text{原理公式}\rightarrow\text{测量量}\rightarrow\text{图像处理}\rightarrow\text{误差分析}.
+\]
+若题目给数据表，优先想能否线性化；若题目给电路，先判断电表实际测到的电压和电流；若题目问改进方案，要围绕减小系统误差和偶然误差回答。
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{力学综合：弹簧与粗糙面}
+\textbf{题意分析：} 质量为 $m$ 的物块以速度 $v_0$ 滑上水平粗糙面，前方有劲度系数为 $k$ 的轻弹簧。物块压缩弹簧最大量为 $x$，动摩擦因数为 $\mu$。求满足的方程。
 
-\textbf{解题过程：} TODO。
+\textbf{物理模型：} 动能转化为弹性势能，同时摩擦力做负功。
 
-\textbf{方法总结：} TODO。
+\textbf{解题过程：}
+从接触弹簧到最大压缩，初态动能为 $\dfrac12mv_0^2$，末态速度为 0，弹簧势能为 $\dfrac12kx^2$，摩擦力做功为 $-\mu mgx$。
+\[
+\frac12mv_0^2-\mu mgx=\frac12kx^2.
+\]
+整理：
+\[
+\frac12kx^2+\mu mgx-\frac12mv_0^2=0.
+\]
+
+\textbf{方法总结：} 有摩擦时机械能不守恒，但动能定理或功能关系仍然可靠。
+\end{examplebox}
+
+\begin{examplebox}{电场综合：先加速后偏转}
+\textbf{题意分析：} 质量为 $m$、电荷量为 $q$ 的粒子由静止经电压 $U_1$ 加速后，以水平速度进入板长为 $L$、板间距为 $d$、电压为 $U_2$ 的偏转电场。忽略重力，求离开偏转电场时的竖直偏移量。
+
+\textbf{物理模型：} 加速区用动能定理，偏转区用类平抛运动。
+
+\textbf{解题过程：}
+加速区：
+\[
+qU_1=\frac12mv_0^2,
+\qquad
+v_0=\sqrt{\frac{2qU_1}{m}}.
+\]
+偏转区电场强度
+\[
+E=\frac{U_2}{d},
+\qquad
+a=\frac{qE}{m}=\frac{qU_2}{md}.
+\]
+通过偏转区时间
+\[
+t=\frac{L}{v_0}.
+\]
+竖直偏移
+\[
+y=\frac12at^2
+=\frac12\cdot\frac{qU_2}{md}\cdot\frac{L^2}{v_0^2}.
+\]
+代入 $v_0^2=\dfrac{2qU_1}{m}$：
+\[
+y=\frac{U_2L^2}{4U_1d}.
+\]
+
+\textbf{方法总结：} 结果中 $m$、$q$ 消去，说明在忽略重力、初速由同一加速电压产生时，偏移由电压和几何尺寸决定。
+\end{examplebox}
+
+\begin{examplebox}{磁场综合：电场加速后进入磁场}
+\textbf{题意分析：} 带电粒子质量为 $m$、电荷量为 $q$，从静止经电压 $U$ 加速后，垂直进入磁感应强度为 $B$ 的匀强磁场。求粒子在磁场中的轨道半径和周期。
+
+\textbf{物理模型：} 加速区用动能定理；磁场区用洛伦兹力提供向心力。
+
+\textbf{解题过程：}
+加速区：
+\[
+qU=\frac12mv^2,\qquad v=\sqrt{\frac{2qU}{m}}.
+\]
+磁场区：
+\[
+qvB=\frac{mv^2}{r},\qquad r=\frac{mv}{qB}.
+\]
+代入速度：
+\[
+r=\frac{1}{B}\sqrt{\frac{2mU}{q}}.
+\]
+周期为
+\[
+T=\frac{2\pi m}{qB}.
+\]
+
+\textbf{方法总结：} 电场负责“加速”，磁场负责“转弯”。看到“先加速后进入磁场”，一定分成两个阶段。
+\end{examplebox}
+
+\begin{examplebox}{电磁感应综合：恒力拉导体棒}
+\textbf{题意分析：} 长为 $L$ 的导体棒在间距为 $L$ 的光滑导轨上运动，磁场 $B$ 垂直导轨平面，回路总电阻为 $R$。外力 $F$ 水平向右恒定，求导体棒最终匀速速度，并说明能量转化。
+
+\textbf{物理模型：} 导体棒运动产生感应电动势，感应电流产生反向安培力，最终受力平衡。
+
+\textbf{解题过程：}
+\[
+E=BLv,\qquad I=\frac{E}{R}=\frac{BLv}{R}.
+\]
+安培力大小
+\[
+F_A=BIL=\frac{B^2L^2v}{R}.
+\]
+最终匀速时
+\[
+F=F_A,
+\]
+所以
+\[
+v=\frac{FR}{B^2L^2}.
+\]
+能量上，外力做功的功率为
+\[
+P_{\text{外}}=Fv,
+\]
+最终全部转化为电路焦耳热：
+\[
+P_R=I^2R.
+\]
+
+\textbf{方法总结：} 这类题的主线是“运动产生电，电流产生力，力反过来限制运动”。
+\end{examplebox}
+
+\begin{examplebox}{实验综合：由图像求电源内阻}
+\textbf{题意分析：} 测电源电动势和内阻实验中，作出 $U$-$I$ 图像，纵截距为 $1.50\ \mathrm{V}$，图线斜率为 $-0.80\ \mathrm{V/A}$。求电动势和内阻，并说明为什么斜率取绝对值。
+
+\textbf{物理模型：} 闭合电路欧姆定律
+\[
+U=E-Ir.
+\]
+
+\textbf{解题过程：}
+与一次函数 $y=b+kx$ 对比：
+\[
+U=E-rI.
+\]
+纵截距就是
+\[
+E=1.50\ \mathrm{V}.
+\]
+斜率为 $-r$，所以
+\[
+r=0.80\ \Omega.
+\]
+
+\textbf{方法总结：} 图像题要同时读截距、斜率和单位。斜率为负是因为电流越大，内阻电压降越大，路端电压越小。
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 物块从光滑斜面滑下进入粗糙水平面，求停止距离，应如何分阶段？
+  \item 完全非弹性碰撞后连接弹簧，碰撞和压缩两个阶段分别用什么规律？
+  \item 带电粒子在匀强磁场中做圆周运动，若速度变为原来 2 倍，半径怎样变化？
+  \item 导体棒在磁场中最终匀速，安培力与外力关系如何？
+  \item 对任意一个综合题，写出“选对象、分过程、列方程”的三句话。
+\end{enumerate}
+
+\subsection*{训练提示}
+\begin{enumerate}
+  \item 光滑斜面段用机械能守恒，粗糙水平面段用动能定理。
+  \item 碰撞阶段用动量守恒；压缩弹簧阶段若无摩擦用机械能守恒，有摩擦用功能关系。
+  \item 洛伦兹力提供向心力，$r=\dfrac{mv}{qB}$，速度变为 2 倍，半径也变为 2 倍。
+  \item 最终匀速时安培力与外力平衡；若外力做功，能量最终转化为焦耳热。
+  \item 这类题没有唯一答案，关键是把对象、阶段和规律说清楚。
+\end{enumerate}
 
 \section*{八、易错点}
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{不画图：} 综合题不画图，方向和阶段很容易混乱。
+  \item \textbf{全过程套一个规律：} 条件变化后模型往往要变。
+  \item \textbf{方程没有物理解释：} 只写公式不说明来源，容易漏项或错项。
+  \item \textbf{忽略临界词：} “刚好”“最大”“最小”“恰不离开”通常对应临界条件。
+  \item \textbf{答案不检验：} 单位不对、极限荒谬的结果应及时发现。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{后续学习路线}
+
+\begin{center}
+\input{figures/tikz/learning-route-map}
+
+\figcaption{一个月入门后的学习路线：基础、模型、实验、综合逐步推进}\label{fig:learning-route-map}
+\end{center}
+
+\textbf{课内同步路线：}
+\begin{enumerate}
+  \item 每学一节，先写概念定义和适用条件。
+  \item 每做一道错题，标注错因：概念、受力、公式、计算、审题还是表达。
+  \item 每周复盘一次模型，而不是只复盘题号。
+\end{enumerate}
+
+\textbf{竞赛入门路线：}
+\begin{enumerate}
+  \item 力学：加强矢量、微元、能量、动量和圆周运动。
+  \item 电磁学：加强场的叠加、电势、带电粒子运动和电磁感应综合。
+  \item 数学工具：熟悉函数图像、三角关系、近似思想和简单微积分语言。
+\end{enumerate}
+
+\textbf{最重要的习惯：} 每一个公式都要能回答三件事：从哪里来、适用于什么条件、结果变大变小是否合理。
 \end{competitionbox}
 
-\section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
+\section*{十、最后加练：复盘系统}
 
+一个月学习结束后，最容易出现的问题是“听懂了，但过两周又散了”。解决办法不是简单多刷题，而是建立复盘系统。
+
+\begin{center}
+\input{figures/tikz/comprehensive-review-cycle}
+
+\figcaption{复盘循环：把错题转化为模型经验}\label{fig:comprehensive-review-cycle}
+\end{center}
+
+\subsection*{1.\quad 错题分类表}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+错因类型 & 典型表现 & 处理方式 \\
+\midrule
+概念错误 & 把热量当状态量、把电势和电势能混淆 & 回到定义和适用条件 \\
+模型错误 & 碰撞中误用机械能守恒 & 写出模型条件卡 \\
+受力错误 & 漏摩擦、支持力方向错 & 重画受力图 \\
+方向错误 & 矢量正负号混乱 & 先规定正方向 \\
+计算错误 & 单位、指数、根号错误 & 单独做计算复查 \\
+表达错误 & 过程写不清、结论无单位 & 按规范步骤重写 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{2.\quad 七天复盘安排}
+
+\begin{enumerate}
+  \item 第 1 天：复盘运动学、图像和矢量。
+  \item 第 2 天：复盘受力分析、摩擦和牛顿定律。
+  \item 第 3 天：复盘能量、动量、圆周运动。
+  \item 第 4 天：复盘电场、电势、电路。
+  \item 第 5 天：复盘磁场、电磁感应和交流电。
+  \item 第 6 天：复盘光学、热学、近代物理。
+  \item 第 7 天：做一套综合题，只按错因分类，不按分数评价。
+\end{enumerate}
+
+\subsection*{3.\quad 综合训练题组}
+
+\begin{enumerate}
+  \item \textbf{力学综合：} 斜面、粗糙水平面、弹簧组合，要求写出每一阶段能量方程。
+  \item \textbf{动量综合：} 碰撞后进入圆轨道，要求区分碰撞阶段和圆周阶段。
+  \item \textbf{电场综合：} 带电粒子先加速后偏转，要求画出速度分解图。
+  \item \textbf{电磁感应综合：} 导体棒在磁场中运动，要求从 $v$ 推到 $E,I,F$。
+  \item \textbf{实验综合：} 给出一组数据，要求作图、求斜率、解释误差。
+\end{enumerate}
+
+\textbf{最后提醒：} 学完一本讲义不是终点。真正的进步发生在你能把题目讲给别人听，并能说明每一步为什么这样做。
+
+\section*{十一、今日小结}
+\begin{enumerate}
+  \item 综合题要按画图、选对象、分过程、列方程、验结果推进。
+  \item 复杂题常常是多个简单模型的组合。
+  \item 机械能、动量、电场和电磁感应都要检查适用条件。
+  \item 方程必须服务于物理过程，不能只堆符号。
+  \item 后续学习要从知识点记忆转向模型复盘和错因复盘。
+\end{enumerate}

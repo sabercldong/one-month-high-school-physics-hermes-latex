@@ -1,0 +1,21 @@
+% TikZ 图：全反射和临界角
+% Day 25：光学基础
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \fill[blue!7] (-3,-1.5) rectangle (3,0);
+  \draw[thick] (-3,0) -- (3,0);
+  \draw[dashed] (0,-1.5) -- (0,1.6) node[above] {法线};
+  \node at (-2.25,-1.15) {光密介质 $n_1$};
+  \node at (-2.25,0.55) {光疏介质 $n_2$};
+  \draw[->,red,thick] (-1.6,-1.25) -- (0,0);
+  \draw[->,red,thick] (0,0) -- (2.25,0);
+  \draw[->,blue,thick] (-2.2,-1.05) -- (-0.1,0);
+  \draw[->,blue,thick] (0.1,0) -- (2.2,-1.05);
+  \draw (-90:0.65) arc (-90:-142:0.65);
+  \node at (-116:0.95) {$C$};
+  \node[red,above] at (1.45,0.10) {临界折射光};
+  \node[red,above] at (1.65,0.45) {沿界面};
+  \node[blue] at (1.55,-1.1) {全反射};
+  \node[font=\small,align=left] at (4.95,-0.20)
+    {$\sin C=\dfrac{n_2}{n_1}$\\[3pt]
+     条件：$n_1>n_2$，且 $i>C$};
+\end{tikzpicture}

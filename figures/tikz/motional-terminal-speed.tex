@@ -1,0 +1,21 @@
+% TikZ 图：导体棒终端速度
+% Day 23：电磁感应
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[thick] (-2.2,1.0) -- (2.6,1.0);
+  \draw[thick] (-2.2,-1.0) -- (2.6,-1.0);
+  \draw[very thick,red] (0,-1.0) -- (0,1.0);
+  \foreach \x in {-1.7,-0.9,-0.1,0.7,1.5,2.3} {
+    \foreach \y in {-0.55,0.25} {
+      \draw[blue] (\x-0.05,\y-0.05) -- (\x+0.05,\y+0.05);
+      \draw[blue] (\x-0.05,\y+0.05) -- (\x+0.05,\y-0.05);
+    }
+  }
+  \draw[->,red,thick] (0,0.35) -- (1.1,0.35) node[right] {$v$};
+  \draw[->,purple,thick] (0,-0.15) -- (1.1,-0.15) node[right] {$F$};
+  \draw[->,orange,thick] (0,-0.55) -- (-1.0,-0.55) node[left] {$F_A$};
+  \node[blue] at (2.95,0.85) {$B$ 向里};
+  \node[font=\small,align=center] at (0,-1.65)
+    {$v$ 增大 $\Rightarrow E$ 增大 $\Rightarrow I$ 增大 $\Rightarrow F_A$ 增大};
+  \node[font=\small,align=center] at (0,-2.25)
+    {最终匀速：$F=F_A$};
+\end{tikzpicture}

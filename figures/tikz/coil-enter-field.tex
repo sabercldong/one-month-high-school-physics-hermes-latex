@@ -1,0 +1,21 @@
+% TikZ 图：线圈进入磁场
+% Day 23：电磁感应
+\begin{tikzpicture}[scale=0.88,>=Latex]
+  \draw[thick,fill=blue!4] (-0.2,-1.15) rectangle (3.5,1.15);
+  \node[blue] at (2.8,0.92) {匀强磁场};
+  \foreach \x in {0.3,1.0,1.7,2.4,3.1} {
+    \foreach \y in {-0.75,0,0.75} {
+      \draw[blue,thick] (\x-0.055,\y-0.055) -- (\x+0.055,\y+0.055);
+      \draw[blue,thick] (\x-0.055,\y+0.055) -- (\x+0.055,\y-0.055);
+    }
+  }
+  \draw[thick,red] (-1.45,-0.55) rectangle (-0.45,0.55);
+  \draw[->,red,thick] (-1.0,0) -- (-0.25,0) node[above] {$v$};
+  \node[align=center] at (-1.0,-1.75) {进入\\$\Phi$ 增大};
+  \draw[thick,orange] (1.0,-0.55) rectangle (2.0,0.55);
+  \draw[->,orange,thick] (1.35,0) -- (2.1,0);
+  \node[align=center] at (1.5,-1.75) {内部\\$\Phi$ 不变};
+  \draw[thick,purple] (3.0,-0.55) rectangle (4.0,0.55);
+  \draw[->,purple,thick] (3.35,0) -- (4.1,0);
+  \node[align=center] at (3.5,-1.75) {离开\\$\Phi$ 减小};
+\end{tikzpicture}

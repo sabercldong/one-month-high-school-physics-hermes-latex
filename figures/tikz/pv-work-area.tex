@@ -1,0 +1,14 @@
+% TikZ 图：p-V 图像面积表示气体做功
+% Day 26：热学基础
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[->,thick] (0,0) -- (5.0,0) node[right] {$V$};
+  \draw[->,thick] (0,0) -- (0,3.4) node[above] {$p$};
+  \draw[blue,thick] (0.8,2.5) .. controls (2.1,2.2) and (3.2,1.5) .. (4.3,0.9);
+  \fill[blue!12] (0.8,0) -- (0.8,2.5) .. controls (2.1,2.2) and (3.2,1.5) .. (4.3,0.9) -- (4.3,0) -- cycle;
+  \draw[dashed] (0.8,0) -- (0.8,2.5);
+  \draw[dashed] (4.3,0) -- (4.3,0.9);
+  \node[below] at (0.8,0) {$V_1$};
+  \node[below] at (4.3,0) {$V_2$};
+  \node at (2.6,0.75) {$W=\int p\,dV$};
+  \node[font=\small] at (2.6,-0.55) {$p$-$V$ 图线下方面积表示气体对外做功};
+\end{tikzpicture}

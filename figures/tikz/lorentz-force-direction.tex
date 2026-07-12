@@ -1,0 +1,19 @@
+% TikZ 图：洛伦兹力方向
+% Day 22：洛伦兹力
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \foreach \x in {-1.8,-1.0,-0.2,0.6,1.4} {
+    \foreach \y in {-0.8,0,0.8} {
+      \draw[blue,thick] (\x-0.08,\y-0.08) -- (\x+0.08,\y+0.08);
+      \draw[blue,thick] (\x-0.08,\y+0.08) -- (\x+0.08,\y-0.08);
+    }
+  }
+  \node[blue] at (2.15,0.85) {$B$ 向里};
+  \fill[red] (-1.55,0) circle (2pt);
+  \node[red,below] at (-1.55,-0.12) {$+q$};
+  \draw[->,red,very thick] (-1.55,0) -- (-0.1,0) node[below] {$v$};
+  \draw[->,purple,very thick] (-1.0,0.05) -- (-1.0,1.15) node[above] {$F$};
+  \fill[red] (0.75,0) circle (2pt);
+  \node[red,below] at (0.75,-0.12) {$-q$};
+  \draw[->,red,very thick] (0.75,0) -- (1.85,0) node[below] {$v$};
+  \draw[->,purple,very thick] (1.25,-0.05) -- (1.25,-1.15) node[below] {$F$};
+\end{tikzpicture}

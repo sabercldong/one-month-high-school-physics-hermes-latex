@@ -1,0 +1,31 @@
+% TikZ 图：参考圆法理解简谐运动
+% Day 13：机械振动
+\begin{tikzpicture}[scale=0.90,>=Latex]
+  \coordinate (O) at (0,0);
+  \coordinate (P0) at (0:1.55);
+  \coordinate (P1) at (60:1.55);
+  \coordinate (H) at ({1.55*cos(60)},0);
+
+  \draw[->,thick] (-2.05,0) -- (2.35,0) node[right] {$x$};
+  \draw[dashed,gray] (O) circle (1.55);
+  \filldraw[black] (O) circle (1.5pt);
+  \node[below left=2pt] at (O) {$O$};
+  \draw[->,blue,thick] (20:1.55) arc (20:70:1.55);
+  \node[blue] at (44:1.95) {$\omega$};
+
+  \filldraw[red] (P0) circle (2pt);
+  \node[above right=2pt] at (P0) {$A$};
+  \filldraw[red] (P1) circle (2pt);
+  \draw[dashed,red] (P1) -- (H);
+  \filldraw[red] (H) circle (2pt);
+  \node[below=9pt] at (H) {$\dfrac{A}{2}$};
+
+  \draw[thick] (O) -- (P0);
+  \draw[thick,red] (O) -- (P1);
+  \draw pic["$\dfrac{\pi}{3}$",draw,->,angle radius=0.55cm,angle eccentricity=1.45] {angle=P0--O--P1};
+
+  \node[align=left,font=\small,anchor=west] at (3.15,0.72)
+    {从 $x=A$ 到 $x=A/2$：\\[3pt]
+     $\omega t=\dfrac{\pi}{3}$\\[3pt]
+     $t=\dfrac{\pi/3}{2\pi/T}=\dfrac{T}{6}$};
+\end{tikzpicture}

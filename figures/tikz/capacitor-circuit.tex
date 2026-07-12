@@ -1,34 +1,45 @@
-% TikZ 图：电容器的充放电
+% TikZ 图：电容器的充放电回路
 % Day 18：电容器
-\begin{tikzpicture}[scale=0.9,>=Latex]
-  % 电源
-  \draw[thick] (-0.8,-0.3) -- (-0.8,0.3);
-  \draw[thick] (-0.3,-0.3) -- (-0.3,0.3);
-  \node[right] at (0,0) {电源 $E$};
-  % 电阻
-  \draw[thick] (1.5,0.5) -- (1.5,-0.5);
-  \draw[thick] (1.3,0.5) -- (1.7,0.5);
-  \draw[thick] (1.3,-0.5) -- (1.7,-0.5);
-  \node[above] at (1.5,0.8) {$R$};
-  % 开关
-  \draw[thick] (0.5,0) -- (1,0);
-  \filldraw[black] (1,0) circle (2pt);
-  \node[above] at (0.8,0.2) {$K$};
-  % 电容器
-  \draw[thick] (3.5,0.5) -- (3.5,1);
-  \draw[thick] (3.5,1) -- (5,1);
-  \draw[thick] (3.5,-0.5) -- (3.5,-1);
-  \draw[thick] (3.5,-1) -- (5,-1);
-  \draw[thick] (5,1) -- (5,-1);
-  % 极板
-  \draw[thick] (4.2,1) -- (5,1);
-  \draw[thick] (4.2,-1) -- (5,-1);
-  \node[right] at (5.2,0) {$C$};
-  % 连线
-  \draw[thick] (0,0) -- (0.5,0);
-  \draw[thick] (1.5,0) -- (3.5,0);
-  \draw[thick] (0,0) -- (0,-1.5) -- (3.5,-1.5) -- (3.5,-1);
-  % 回路标注
-  \draw[->,thick,red] (2.5,0.5) arc (0:180:0.5);
-  \node[red,right] at (2.5,0.8) {$I$};
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \tikzset{wire/.style={thick}, plate/.style={very thick}}
+
+  % charge circuit
+  \begin{scope}
+    \node[font=\bfseries] at (2.55,2.18) {充电};
+    \draw[wire] (0,0) -- (0,1.25) -- (1.05,1.25);
+    \draw[wire] (1.95,1.25) -- (3.25,1.25);
+    \draw[wire] (3.25,1.25) -- (3.25,0.62);
+    \draw[plate] (2.95,0.62) -- (3.55,0.62);
+    \draw[plate] (2.95,0.22) -- (3.55,0.22);
+    \draw[wire] (3.25,0.22) -- (3.25,-0.55) -- (0,-0.55);
+    \draw[wire] (0,-0.55) -- (0,-0.28);
+    \draw[wire] (-0.15,-0.28) -- (0.15,-0.28);
+    \draw[wire] (-0.28,0.02) -- (0.28,0.02);
+    \node[left] at (-0.35,0.02) {$+$};
+    \node[left] at (-0.35,-0.28) {$-$};
+    \node[left] at (-0.45,-0.12) {电源};
+    \draw[wire] (1.05,1.55) rectangle (1.95,0.95);
+    \node[above] at (1.5,1.58) {$R$};
+    \node[right] at (3.65,0.42) {$C$};
+    \draw[->,red,thick] (0.65,1.55) -- (1.25,1.55) node[midway,above] {$i$};
+    \node[font=\small,align=center] at (2.0,-1.05) {电源经电阻给电容器充电\\电流逐渐减小};
+  \end{scope}
+
+  % discharge circuit
+  \begin{scope}[xshift=6.4cm]
+    \node[font=\bfseries] at (2.25,2.18) {放电};
+    \draw[wire] (0.35,1.25) -- (1.1,1.25);
+    \draw[wire] (2.0,1.25) -- (3.1,1.25);
+    \draw[wire] (3.1,1.25) -- (3.1,0.62);
+    \draw[plate] (2.8,0.62) -- (3.4,0.62);
+    \draw[plate] (2.8,0.22) -- (3.4,0.22);
+    \draw[wire] (3.1,0.22) -- (3.1,-0.55) -- (0.35,-0.55) -- (0.35,1.25);
+    \draw[wire] (1.1,1.55) rectangle (2.0,0.95);
+    \node[above] at (1.55,1.58) {$R$};
+    \node[right] at (3.5,0.42) {$C$};
+    \node[above] at (2.72,0.68) {$+$};
+    \node[below] at (2.72,0.16) {$-$};
+    \draw[->,red,thick] (2.55,1.55) -- (1.95,1.55) node[midway,above] {$i$};
+    \node[font=\small,align=center] at (1.8,-1.05) {断开电源后通过电阻放电\\电流方向与充电相反};
+  \end{scope}
 \end{tikzpicture}

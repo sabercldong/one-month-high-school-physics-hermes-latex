@@ -1,27 +1,43 @@
 % TikZ 图：闭合电路
 % Day 20：闭合电路欧姆定律
-\begin{tikzpicture}[scale=0.9,>=Latex]
-  \draw[thick] (0,0) -- (2,0);
-  % 外电阻
-  \draw[thick] (2,0.5) -- (2,-0.5);
-  \draw[thick] (1.8,0.5) -- (2.2,0.5);
-  \draw[thick] (1.8,-0.5) -- (2.2,-0.5);
-  \node[above] at (2,0.8) {$R$};
-  \draw[thick] (2,0) -- (4,0);
-  % 电源（含内阻）
-  \draw[thick] (4.3,-0.3) -- (4.3,0.3);
-  \draw[thick] (4.8,-0.3) -- (4.8,0.3);
-  \node[right] at (5.3,0) {$E$};
-  % 内阻
-  \draw[thick] (5.5,0.4) -- (5.5,-0.4);
-  \draw[thick] (5.3,0.4) -- (5.7,0.4);
-  \draw[thick] (5.3,-0.4) -- (5.7,-0.4);
-  \node[below] at (5.5,-0.7) {$r$};
-  \draw[thick] (5.5,0) -- (6,0);
-  % 回路
-  \draw[thick] (6,0) -- (6,-1.5) -- (0,-1.5) -- (0,0);
-  % 电流
-  \draw[->,thick,red] (1,0.3) -- (3,0.3) node[above] {$I$};
-  % 公式
-  \node at (3,-2.0) {$I = \dfrac{E}{R+r}$，$U = E - Ir$};
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \tikzset{wire/.style={thick}, res/.style={thick}}
+
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (0,2.2);
+  \coordinate (C) at (5.8,2.2);
+  \coordinate (D) at (5.8,0);
+
+  % wires
+  \draw[wire] (A) -- (0,0.75);
+  \draw[wire] (0,1.45) -- (B) -- (1.05,2.2);
+  \draw[wire] (2.15,2.2) -- (3.45,2.2);
+  \draw[wire] (4.55,2.2) -- (C) -- (D) -- (A);
+
+  % source plates
+  \draw[wire] (-0.45,0.75) -- (0.45,0.75);
+  \draw[wire] (-0.28,1.45) -- (0.28,1.45);
+  \node[left] at (-0.50,1.45) {$+$};
+  \node[left] at (-0.50,0.75) {$-$};
+  \node[left] at (-0.82,1.10) {$E$};
+
+  % internal resistor and external resistor
+  \draw[res] (1.05,1.90) rectangle (2.15,2.50);
+  \node[above] at (1.60,2.52) {$r$};
+  \draw[res] (3.45,1.90) rectangle (4.55,2.50);
+  \node[above] at (4.00,2.52) {$R$};
+
+  % current
+  \draw[->,red,thick] (2.45,2.52) -- (3.15,2.52) node[midway,above] {$I$};
+
+  % voltage annotations
+  \draw[<->,blue,thick] (3.45,1.62) -- (4.55,1.62);
+  \node[blue,below] at (4.00,1.58) {$U=IR$};
+  \draw[<->,orange!85!black,thick] (1.05,1.62) -- (2.15,1.62);
+  \node[orange!85!black,below] at (1.60,1.48) {$U_{\text{内}}=Ir$};
+
+  % equation
+  \node[align=center,font=\small] at (2.95,-0.48)
+    {电源提供的电动势分配在外电路和内阻上：\\[-1pt]
+    $E=U+Ir=IR+Ir$};
 \end{tikzpicture}

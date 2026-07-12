@@ -1,0 +1,15 @@
+% TikZ 图：解题方法选择树
+% Day 29：模型复盘
+\begin{tikzpicture}[scale=0.86,>=Latex]
+  \node[draw,rounded corners=2pt,fill=gray!10] (q) at (0,0) {题目问什么？};
+  \node[draw,rounded corners=2pt,fill=blue!8] (motion) at (-3,-1.4) {时间/位移/速度};
+  \node[draw,rounded corners=2pt,fill=blue!8] (force) at (0,-1.4) {加速度/受力};
+  \node[draw,rounded corners=2pt,fill=blue!8] (energy) at (3,-1.4) {速度/高度/距离};
+  \node[draw,rounded corners=2pt,fill=red!8] at (-3,-2.7) {运动学或图像法};
+  \node[draw,rounded corners=2pt,fill=red!8] at (0,-2.7) {牛顿第二定律};
+  \node[draw,rounded corners=2pt,fill=red!8] at (3,-2.7) {能量/动量};
+  \foreach \a in {motion,force,energy}{\draw[->,thick] (q) -- (\a);}
+  \draw[->,thick] (motion) -- (-3,-2.25);
+  \draw[->,thick] (force) -- (0,-2.25);
+  \draw[->,thick] (energy) -- (3,-2.25);
+\end{tikzpicture}

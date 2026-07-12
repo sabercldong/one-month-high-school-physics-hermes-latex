@@ -1,0 +1,14 @@
+% TikZ 图：复盘循环
+% Day 30：综合训练
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \node[draw,rounded corners=2pt,fill=green!10,minimum width=1.35cm] (a) at (0,2.1) {做题};
+  \node[draw,rounded corners=2pt,fill=blue!8,minimum width=1.65cm] (b) at (4.0,2.1) {定位错因};
+  \node[draw,rounded corners=2pt,fill=orange!12,minimum width=1.65cm] (c) at (4.0,0) {归入模型};
+  \node[draw,rounded corners=2pt,fill=red!8,minimum width=1.65cm] (d) at (0,0) {重做变式};
+  \draw[->,thick] (a) -- (b);
+  \draw[->,thick] (b) -- (c);
+  \draw[->,thick] (c) -- (d);
+  \draw[->,thick] (d) -- (a);
+  \node[align=center,font=\small] at (2.0,1.05)
+    {错题不是收藏品，\\要变成模型经验};
+\end{tikzpicture}

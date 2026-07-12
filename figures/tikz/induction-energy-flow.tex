@@ -1,0 +1,18 @@
+% TikZ 图：电磁感应能量转化
+% Day 23：电磁感应
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[thick] (-2,1) -- (2.3,1);
+  \draw[thick] (-2,-1) -- (2.3,-1);
+  \draw[very thick,red] (0,-1) -- (0,1);
+  \draw[->,red,thick] (0,0.25) -- (1.05,0.25) node[right] {$v$};
+  \draw[->,purple,thick] (0,-0.25) -- (1.05,-0.25) node[right] {$F_{\text{外}}$};
+  \draw[->,orange,thick] (0,0) -- (-1.05,0) node[left] {$F_A$};
+  \foreach \x in {-1.5,-0.8,-0.1,0.6,1.3,2.0} {
+    \foreach \y in {-0.55,0.25} {
+      \draw[blue,thick] (\x-0.06,\y-0.06) -- (\x+0.06,\y+0.06);
+      \draw[blue,thick] (\x-0.06,\y+0.06) -- (\x+0.06,\y-0.06);
+    }
+  }
+  \node[blue] at (2.75,0.8) {$B$ 向里};
+  \node at (0,-1.55) {$P_{\text{外}}=F_{\text{外}}v=I^2R$};
+\end{tikzpicture}

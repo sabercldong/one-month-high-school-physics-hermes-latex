@@ -3,23 +3,25 @@
 \begin{tikzpicture}[x=0.82cm,y=0.72cm,>=Latex]
   % 左：波形图
   \begin{scope}
+    \node[font=\small\bfseries] at (1.65,2.02) {$y$-$x$ 波形图};
     \draw[->] (-0.25,0) -- (3.6,0) node[right] {$x$};
-    \draw[->] (0,-1.25) -- (0,1.35) node[above] {$y$};
+    \draw[->] (0,-1.25) -- (0,1.55) node[above] {$y$};
     \draw[very thick,red,smooth,domain=0:3.2,samples=70]
       plot (\x,{sin(180*\x)});
-    \draw[<->] (0.5,1.15) -- (2.5,1.15) node[midway,above] {$\lambda$};
+    \draw[<->] (0.5,1.28) -- (2.5,1.28);
+    \node[below] at (1.5,1.28) {$\lambda$};
     \node[font=\footnotesize,align=center,text width=3.6cm] at (1.65,-1.55) {某一时刻\\整条介质的位置};
-    \node[font=\bfseries] at (1.65,1.75) {$y$-$x$ 波形图};
   \end{scope}
 
   % 右：振动图
   \begin{scope}[shift={(5.2,0)}]
+    \node[font=\small\bfseries] at (1.65,2.02) {$y$-$t$ 振动图};
     \draw[->] (-0.25,0) -- (3.6,0) node[right] {$t$};
-    \draw[->] (0,-1.25) -- (0,1.35) node[above] {$y$};
+    \draw[->] (0,-1.25) -- (0,1.55) node[above] {$y$};
     \draw[very thick,blue,smooth,domain=0:3.2,samples=70]
       plot (\x,{sin(180*\x)});
-    \draw[<->] (0.5,1.15) -- (2.5,1.15) node[midway,above] {$T$};
+    \draw[<->] (0.5,1.28) -- (2.5,1.28);
+    \node[below] at (1.5,1.28) {$T$};
     \node[font=\footnotesize,align=center,text width=3.6cm] at (1.65,-1.55) {某一质点\\随时间的振动};
-    \node[font=\bfseries] at (1.65,1.75) {$y$-$t$ 振动图};
   \end{scope}
 \end{tikzpicture}

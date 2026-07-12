@@ -22,6 +22,8 @@
 
 高中把万有引力定量化，并揭示了一个深刻结论：\textbf{月球绕地球转和苹果落地，本质上是同一种力}——万有引力。牛顿的贡献在于：把天上的规律和地上的规律统一起来了。
 
+\textbf{科学发展视角：} 今天的导航卫星、气象卫星、深空探测器和空间站轨道设计，都离不开万有引力和圆周运动。学习本节时不要只把公式当作计算工具，还要形成一个观念：航天问题首先是“引力提供向心力”的模型问题。
+
 \section*{三、核心概念}
 
 \begin{conceptbox}{万有引力定律}
@@ -70,6 +72,42 @@
   \item 在高度 $h$ 处：$g' = \dfrac{GM}{(R+h)^2} = g\left(\dfrac{R}{R+h}\right)^2$。
   \item 天上 $g$ 变小——越高处的重力加速度越小。
 \end{itemize}
+
+\end{conceptbox}
+
+\begin{conceptbox}{考虑地球自转时：引力、视重与向心力}
+
+前面把 $mg$ 近似看作万有引力，是\textbf{忽略地球自转}的结果。若考虑地球自转，地面物体随地球绕自转轴做圆周运动，需要指向自转轴的向心力，因此“弹簧秤读数”（视重）会略小于万有引力。
+
+这里的支持力 $N$ 就是\textbf{视重}：物体压在水平秤上时，秤的示数对应的力就是地面对物体的支持力大小。真实的万有引力指向地心，视重是地面支撑物体时表现出来的“被称出来的重”。
+
+\vspace{0.6em}
+\begin{center}
+\input{figures/tikz/earth-rotation-weight}
+
+\figcaption{考虑地球自转：万有引力的一部分用于提供随地球转动的向心力}\label{fig:earth-rotation-weight}
+\end{center}
+
+设地球角速度为 $\omega$，纬度为 $\varphi$，地球半径为 $R$。
+
+\begin{itemize}
+  \item \textbf{极地：} 到自转轴距离为 $0$，不需要因自转产生的向心力，
+  \[
+  N_{\text{极}}=G\frac{Mm}{R^2}.
+  \]
+  \item \textbf{赤道：} 到自转轴距离为 $R$，向心力最大，
+  \[
+  G\frac{Mm}{R^2}-N_{\text{赤}}=m\omega^2R,
+  \qquad
+  N_{\text{赤}}=m\left(\frac{GM}{R^2}-\omega^2R\right).
+  \]
+  \item \textbf{纬度 $\varphi$ 处：} 到自转轴距离为 $R\cos\varphi$，向心加速度大小为 $\omega^2R\cos\varphi$，方向指向自转轴。若只比较沿半径方向的视重近似，有
+  \[
+  N_{\varphi}\approx m\left(\frac{GM}{R^2}-\omega^2R\cos^2\varphi\right).
+  \]
+\end{itemize}
+
+\textbf{认知提醒：} 万有引力是真实力，始终指向地心；向心力不是新力，而是合力指向自转轴的效果。高中多数题默认忽略地球自转，因此直接用 $mg\approx G\dfrac{Mm}{R^2}$。
 
 \end{conceptbox}
 
@@ -126,6 +164,20 @@ G\frac{Mm}{R^2} = m\frac{v^2}{R},\qquad v = \sqrt{\frac{GM}{R}} = \sqrt{gR}
 \]
 第一宇宙速度 $v_1 = \sqrt{gR} = \sqrt{9.8 \times 6.4 \times 10^6} \approx 7.9\ \mathrm{km/s}$。
 
+\textbf{第二、第三宇宙速度：}
+
+\begin{center}
+\input{figures/tikz/cosmic-speeds}
+
+\figcaption{三个宇宙速度：环绕地球、脱离地球、脱离太阳系}\label{fig:cosmic-speeds}
+\end{center}
+
+\begin{itemize}
+  \item \textbf{第一宇宙速度：} $v_1=\sqrt{\dfrac{GM}{R}}=\sqrt{gR}\approx 7.9\ \mathrm{km/s}$，近地圆轨道环绕速度。
+  \item \textbf{第二宇宙速度：} $v_2=\sqrt{\dfrac{2GM}{R}}=\sqrt{2}\,v_1\approx 11.2\ \mathrm{km/s}$，从地面附近脱离地球引力束缚的最小速度（忽略空气阻力和地球自转）。
+  \item \textbf{第三宇宙速度：} $v_3\approx 16.7\ \mathrm{km/s}$，从地面附近发射并最终脱离太阳系的最小速度（理想情形，且发射方向取最有利方向）。
+\end{itemize}
+
 \subsection*{模型 2：同步卫星}
 
 周期与地球自转周期相同（$T \approx 24\ \mathrm{h}$），轨道在赤道正上方。
@@ -134,10 +186,41 @@ G\frac{Mm}{R^2} = m\frac{v^2}{R},\qquad v = \sqrt{\frac{GM}{R}} = \sqrt{gR}
 \subsection*{模型 3：双星系统}
 
 两颗星绕共同质心做圆周运动，距离 $L = r_1 + r_2$：
+
+\begin{center}
+\input{figures/tikz/binary-star}
+
+\figcaption{双星系统：两星绕共同质心 $O$ 做同周期圆周运动}\label{fig:binary-star}
+\end{center}
+
+设两星质量分别为 $M$、$m$，到共同质心的距离分别为 $r_1$、$r_2$。质心位置满足
+\[
+Mr_1=mr_2,\qquad r_1+r_2=L.
+\]
+所以
+\[
+r_1=\frac{m}{M+m}L,\qquad r_2=\frac{M}{M+m}L.
+\]
+
+两星之间的万有引力大小相同，分别提供各自圆周运动的向心力：
 \[
 G\frac{Mm}{L^2} = M\omega^2 r_1 = m\omega^2 r_2
 \]
-两星的角速度相同，轨道半径与质量成反比：$\dfrac{r_1}{r_2} = \dfrac{m}{M}$。
+代入 $r_1=\dfrac{m}{M+m}L$，得
+\[
+G\frac{Mm}{L^2}=M\omega^2\frac{m}{M+m}L
+\]
+化简：
+\[
+\boxed{\omega^2=\frac{G(M+m)}{L^3}},\qquad
+\boxed{T=2\pi\sqrt{\frac{L^3}{G(M+m)}}}.
+\]
+
+\textbf{结论：} 两星角速度相同、周期相同；轨道半径与质量成反比：
+\[
+\frac{r_1}{r_2}=\frac{m}{M}.
+\]
+质量大的星离质心近，质量小的星离质心远。
 
 \section*{六、例题精讲}
 
@@ -173,7 +256,13 @@ M = \frac{gR^2}{G} = \frac{9.8 \times (6.4 \times 10^6)^2}{6.67 \times 10^{-11}}
 
 线速度：
 \[
-v = \sqrt{\frac{GM}{r}} = \sqrt{\frac{6.67 \times 10^{-11} \times 6.0 \times 10^{24}}{6.8 \times 10^6}} \approx \sqrt{5.88 \times 10^7} \approx 7.67 \times 10^3\ \mathrm{m/s} = 7.67\ \mathrm{km/s}
+\begin{aligned}
+v &= \sqrt{\frac{GM}{r}}
+ = \sqrt{\frac{6.67 \times 10^{-11} \times 6.0 \times 10^{24}}{6.8 \times 10^6}} \\
+&\approx \sqrt{5.88 \times 10^7}
+ \approx 7.67 \times 10^3\ \mathrm{m/s}
+ = 7.67\ \mathrm{km/s}
+\end{aligned}
 \]
 
 角速度：
@@ -233,20 +322,70 @@ v_1 = \sqrt{\frac{GM}{R}} \quad\text{结果相同}
   
   \item \textbf{单位错误：} 天体问题中数字很大，$R$ 通常是 $10^6\ \mathrm{m}$ 量级，$M$ 是 $10^{24}\ \mathrm{kg}$ 量级。代入计算时务必用科学计数法。
   
-  \item \textbf{混淆三个宇宙速度：} 第一宇宙速度（$7.9\ \mathrm{km/s}$）是环绕速度，第二宇宙速度（$11.2\ \mathrm{km/s}$）是脱离地球引力，第三宇宙速度（$16.7\ \mathrm{km/s}$）是脱离太阳系。
+  \item \textbf{混淆三个宇宙速度：} 第一宇宙速度（$7.9\ \mathrm{km/s}$）是环绕速度，第二宇宙速度（$11.2\ \mathrm{km/s}$）是脱离地球引力，第三宇宙速度（$16.7\ \mathrm{km/s}$）是脱离太阳系。这些数值通常指从地面附近发射，并忽略空气阻力和地球自转影响时的理想值。
 \end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
 
 \begin{competitionbox}
-\textbf{开普勒三定律}
+\textbf{从开普勒三定律到牛顿万有引力}
+
+在牛顿之前，开普勒已经从第谷的大量天文观测中总结出行星运动的经验规律：
 
 \begin{enumerate}
   \item \textbf{椭圆轨道定律：} 行星绕太阳运动的轨道是椭圆，太阳在椭圆的一个焦点上。
   \item \textbf{面积定律：} 行星与太阳的连线在相等时间内扫过的面积相等（近地点速度快，远地点速度慢）。
-  \item \textbf{周期定律：} $\dfrac{T^2}{a^3} = \dfrac{4\pi^2}{GM}$（$a$ 为半长轴），即 $T^2 \propto a^3$。
+  \item \textbf{周期定律：} $\dfrac{T^2}{a^3} = \text{常量}$。对绕太阳运动的行星，进一步可写成 $\dfrac{T^2}{a^3} = \dfrac{4\pi^2}{GM}$（$a$ 为半长轴）。
 \end{enumerate}
+
+\textbf{牛顿怎样从圆周运动走向万有引力定律}
+
+牛顿的关键思路不是先“猜一个公式”，而是把地面落体、月球绕地和开普勒定律放到同一个模型中。
+
+\begin{center}
+\input{figures/tikz/newton-moon-test}
+
+\figcaption{牛顿的月地检验：月球所需向心加速度约为地表重力加速度的 $1/60^2$}\label{fig:newton-moon-test}
+\end{center}
+
+\textbf{第一步：月球绕地球需要向心加速度。}
+
+把月球近似看成绕地球做圆周运动：
+\[
+a_{\text{月}}=\frac{4\pi^2r}{T^2}.
+\]
+代入月地距离约 $r\approx 60R$、月球周期约 $T\approx 27.3\ \text{天}$，可得
+\[
+a_{\text{月}}\approx 2.7\times 10^{-3}\ \mathrm{m/s^2}.
+\]
+
+\textbf{第二步：与地表重力加速度比较。}
+
+地表重力加速度 $g\approx 9.8\ \mathrm{m/s^2}$，而
+\[
+\frac{g}{60^2}\approx \frac{9.8}{3600}\approx 2.7\times 10^{-3}\ \mathrm{m/s^2}.
+\]
+这说明：如果地球对物体的吸引随距离按平方反比减弱，那么地表的“苹果下落”和月球绕地的向心加速度可以由同一种力解释。
+
+\textbf{第三步：用开普勒第三定律得到平方反比。}
+
+对近似圆轨道，
+\[
+a_n=\frac{4\pi^2r}{T^2}.
+\]
+开普勒第三定律给出 $T^2\propto r^3$，所以
+\[
+a_n\propto \frac{r}{r^3}=\frac{1}{r^2}.
+\]
+由 $F=ma$，行星受到的中心力也满足
+\[
+F\propto \frac{m}{r^2}.
+\]
+再结合“相互作用力成对出现”和不同中心天体的比较，可得到中心天体质量也应成正比进入公式，于是形成
+\[
+\boxed{F=G\frac{Mm}{r^2}}.
+\]
 
 \textbf{例题：} 地球公转周期 $T_{\text{地}} = 1\ \text{年}$，轨道半径 $R_{\text{地}} = 1\ \text{AU}$。某小行星轨道半长轴 $a = 2.5\ \text{AU}$，求其公转周期。
 
@@ -256,7 +395,7 @@ v_1 = \sqrt{\frac{GM}{R}} \quad\text{结果相同}
 T_{\text{行}} = T_{\text{地}} \cdot \sqrt{\frac{a^3}{R_{\text{地}}^3}} = 1 \times \sqrt{2.5^3} \approx 3.95\ \text{年}
 \]
 
-\textbf{竞赛小贴士：} 开普勒第三定律对绕同一中心天体的所有卫星/行星都成立，$T^2 \propto r^3$（或 $a^3$）。在做选择题时可以直接用比例关系秒杀。
+\textbf{竞赛小贴士：} 开普勒第三定律对绕同一中心天体的所有卫星/行星都成立，$T^2 \propto r^3$（椭圆轨道中为 $a^3$）。牛顿的高明之处在于：把这个经验规律转化成了“中心力按 $1/r^2$ 衰减”的动力学定律。
 \end{competitionbox}
 
 \section*{十、今日小结}
@@ -266,5 +405,5 @@ T_{\text{行}} = T_{\text{地}} \cdot \sqrt{\frac{a^3}{R_{\text{地}}^3}} = 1 \t
   \item 黄金代换 $GM = gR^2$——联系天上和地上的桥梁。
   \item 卫星方程：$G\dfrac{Mm}{r^2} = m\dfrac{v^2}{r}$ $\to$ $v = \sqrt{\dfrac{GM}{r}}$，$T = 2\pi\sqrt{\dfrac{r^3}{GM}}$。
   \item 轨道半径越大，$v$、$\omega$ 越小，$T$ 越大。
-  \item 第一宇宙速度 $v_1 = \sqrt{gR} \approx 7.9\ \mathrm{km/s}$。
+  \item 三个宇宙速度：$v_1\approx 7.9\ \mathrm{km/s}$，$v_2\approx 11.2\ \mathrm{km/s}$，$v_3\approx 16.7\ \mathrm{km/s}$。
 \end{enumerate}

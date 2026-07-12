@@ -1,6 +1,8 @@
 \begin{tikzpicture}[scale=0.95]
+  \node[align=center] at (3.2,4.35) {有摩擦时：机械能减少\\减少的部分转化为内能};
+
   \draw[->] (0,0) -- (0,3.8) node[above] {能量};
-  \draw[->] (0,0) -- (6.8,0);
+  \draw[->] (0,0) -- (7.0,0);
 
   \node at (1.25,-0.35) {初态};
   \node at (4.65,-0.35) {末态};
@@ -19,11 +21,10 @@
 
   \fill[gray!35] (4.95,0) rectangle (5.75,3.0);
   \fill[gray!35] (4.95,0) rectangle (5.75,0.45);
-  \node[above] at (5.35,3.0) {内能};
   \draw[thick] (4.95,0) rectangle (5.75,0.45);
+  \node[above=2pt] at (5.35,0.45) {内能};
   \node[below=2pt] at (5.35,0.45) {$Q$};
 
-  \draw[dashed] (0.45,3.0) -- (6.05,3.0);
-  \node[right] at (6.05,3.0) {总能量不变};
-  \node[align=center] at (3.4,3.45) {有摩擦时：机械能减少，内能增加};
+  \draw[dashed] (0.45,3.0) -- (6.15,3.0);
+  \node[anchor=west,align=left] at (6.20,3.22) {总能量\\不变};
 \end{tikzpicture}

@@ -1,54 +1,340 @@
 \daytitle{23}{电磁感应}
 
 \begin{learningbox}{本讲义大致内容}
-讲磁通量、感应电流、楞次定律、法拉第电磁感应定律、导体棒切割磁感线和线圈进出磁场。
+前两节研究“电流产生磁场”和“磁场对电流、运动电荷的作用”。今天反过来看：变化的磁场能否产生电？这就是电磁感应。我们将学习磁通量、感应电流产生条件、楞次定律、法拉第电磁感应定律，以及导体棒切割磁感线和线圈进出磁场的典型模型。
 \end{learningbox}
 
 \section*{一、学习目标}
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 理解磁通量 $\Phi = BS\cos\theta$ 的含义。
+  \item 掌握产生感应电流的条件：闭合回路中磁通量发生变化。
+  \item 会用楞次定律判断感应电流方向。
+  \item 掌握法拉第电磁感应定律的大小形式 $E=n\left|\dfrac{\Delta\Phi}{\Delta t}\right|$。
+  \item 会分析导体棒切割磁感线、线圈进出磁场和发电机的基本模型。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中知道发电机能把机械能转化为电能，但通常只记住现象：线圈在磁场中转动能发电。高中要回答三个更精确的问题：
+\begin{itemize}
+  \item 什么时候会产生感应电流？
+  \item 感应电流方向怎么判断？
+  \item 感应电动势大小由什么决定？
+\end{itemize}
+
+这三个问题分别对应磁通量变化、楞次定律和法拉第电磁感应定律。
+
+\textbf{科学发展视角：} 电磁感应连接了发电、输电和用电。发电机、无线充电、电磁炉、金属探测和电动汽车的再生制动，都建立在“磁通量变化产生感应电动势”的思想上。学到这里，电和磁不再是两条线，而开始合成一个完整的电磁学框架。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{磁通量}
+
+磁通量描述穿过某个面积的磁场“多少”。若匀强磁场磁感应强度为 $B$，平面面积为 $S$，磁场方向与平面法线夹角为 $\theta$，则
+\[
+\boxed{\Phi = BS\cos\theta}
+\]
+
+\begin{itemize}
+  \item 单位：韦伯（$\mathrm{Wb}$）。
+  \item 若磁场垂直穿过平面，$\theta=0^\circ$，$\Phi=BS$。
+  \item 若磁场平行于平面，$\theta=90^\circ$，$\Phi=0$。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/magnetic-flux-angle}
+
+\figcaption{磁通量取决于磁场强弱、面积大小和面积朝向}\label{fig:magnetic-flux-angle}
+\end{center}
+
+\end{conceptbox}
+
+\begin{conceptbox}{电磁感应现象}
+
+只要闭合回路中的磁通量发生变化，回路中就会产生感应电流。
+
+\[
+\boxed{\text{闭合回路}+\text{磁通量变化}\Rightarrow\text{感应电流}}
+\]
+
+磁通量可以通过三种方式改变：
+\begin{itemize}
+  \item 改变磁场强弱 $B$；
+  \item 改变回路面积 $S$；
+  \item 改变回路与磁场的夹角 $\theta$。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/induction-three-ways}
+
+\figcaption{改变 $B$、$S$ 或角度，都可能引起磁通量变化}\label{fig:induction-three-ways}
+\end{center}
+
+\textbf{注意：} 如果回路不闭合，也会有感应电动势，但没有持续的感应电流。
+
+\end{conceptbox}
+
+\begin{conceptbox}{楞次定律}
+
+感应电流的磁场总要阻碍引起它的磁通量变化。
+
+\[
+\boxed{\text{感应电流的效果，总是阻碍磁通量的变化}}
+\]
+
+\begin{center}
+\input{figures/tikz/lenz-law-magnet}
+
+\figcaption{磁铁靠近线圈时，线圈产生的磁场阻碍磁通量增加}\label{fig:lenz-law-magnet}
+\end{center}
+
+\textbf{四步判断法：}
+\begin{enumerate}
+  \item 判断原磁场方向；
+  \item 判断穿过回路的磁通量是增加还是减少；
+  \item 用“阻碍变化”确定感应磁场方向；
+  \item 用右手螺旋定则确定感应电流方向。
+\end{enumerate}
+
+\end{conceptbox}
+
+\begin{conceptbox}{法拉第电磁感应定律}
+
+感应电动势大小与磁通量变化率成正比：
+\[
+\boxed{E=n\left|\frac{\Delta\Phi}{\Delta t}\right|}
+\]
+
+\begin{itemize}
+  \item $n$ 是线圈匝数。
+  \item $\Delta\Phi$ 是每一匝线圈的磁通量变化量。
+  \item 变化越快，感应电动势越大。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/faraday-flux-time}
+
+\figcaption{$\Phi$-$t$ 图像的斜率大小决定感应电动势大小}\label{fig:faraday-flux-time}
+\end{center}
+
+若需要包含方向，可写为
+\[
+\mathcal{E}=-n\frac{\Delta\Phi}{\Delta t}
+\]
+其中负号体现楞次定律。高中计算大小时常用绝对值形式。
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+公式 & 物理意义 & 适用条件 \\
+\midrule
+$\Phi=BS\cos\theta$ & 磁通量 & 匀强磁场穿过平面 \\
+$E=n\left|\dfrac{\Delta\Phi}{\Delta t}\right|$ & 感应电动势平均值 & 磁通量变化过程 \\
+$E=BLv$ & 导体棒切割磁感线 & $B$、$L$、$v$ 两两垂直 \\
+$I=\dfrac{E}{R}$ & 感应电流 & 闭合回路总电阻为 $R$ \\
+$F_A=BIL$ & 安培阻力 & 导体棒中有感应电流 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：导体棒切割磁感线}
+
+长度为 $L$ 的导体棒以速度 $v$ 垂直切割磁感线时，感应电动势为
+\[
+\boxed{E=BLv}
+\]
+
+\begin{center}
+\input{figures/tikz/motional-emf-rail}
+
+\figcaption{导体棒切割磁感线：面积增大，磁通量增大，产生感应电流}\label{fig:motional-emf-rail}
+\end{center}
+
+若回路总电阻为 $R$，则
+\[
+I=\frac{BLv}{R}
+\]
+导体棒还会受到安培力，方向总是阻碍相对运动。
+
+\subsection*{模型 2：线圈进入或离开磁场}
+
+线圈进入磁场时，穿过线圈的磁通量从 0 增大；完全进入匀强磁场后，磁通量不变；离开磁场时，磁通量减小。
+
+\begin{center}
+\input{figures/tikz/coil-enter-field}
+
+\figcaption{线圈进出磁场：只有磁通量变化阶段才有感应电流}\label{fig:coil-enter-field}
+\end{center}
+
+\subsection*{模型 3：发电机模型}
+
+线圈在磁场中转动，面积方向不断改变，磁通量随时间周期性变化，于是产生交变电动势。
+
+\begin{center}
+\input{figures/tikz/generator-model}
+
+\figcaption{发电机基本模型：机械转动使磁通量周期性变化}\label{fig:generator-model}
+\end{center}
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{磁通量的计算}
+\textbf{题意分析：} 面积 $S=0.20\ \mathrm{m^2}$ 的线圈放在 $B=0.50\ \mathrm{T}$ 的匀强磁场中。若磁场方向与线圈平面法线夹角为 $60^\circ$，求磁通量。
 
-\textbf{解题过程：} TODO。
+\textbf{物理模型：} 磁通量 $\Phi=BS\cos\theta$。
 
-\textbf{方法总结：} TODO。
+\textbf{解题过程：}
+\[
+\Phi=BS\cos60^\circ
+=0.50\times0.20\times\frac12
+=0.050\ \mathrm{Wb}
+\]
+
+\textbf{方法总结：} 公式中的角度是磁场方向与“平面法线”的夹角，不是与平面本身的夹角。
+\end{examplebox}
+
+\begin{examplebox}{导体棒切割磁感线}
+\textbf{题意分析：} 长 $L=0.40\ \mathrm{m}$ 的导体棒在 $B=0.50\ \mathrm{T}$ 的匀强磁场中以 $v=2.0\ \mathrm{m/s}$ 垂直切割磁感线。回路总电阻 $R=2.0\ \Omega$。求感应电动势和感应电流。
+
+\textbf{物理模型：} 导体棒切割磁感线。
+
+\textbf{解题过程：}
+\[
+E=BLv=0.50\times0.40\times2.0=0.40\ \mathrm{V}
+\]
+\[
+I=\frac{E}{R}=\frac{0.40}{2.0}=0.20\ \mathrm{A}
+\]
+
+\textbf{方法总结：} $E=BLv$ 是法拉第定律在导体棒模型中的具体形式。若方向需要判断，再用楞次定律或右手定则。
+\end{examplebox}
+
+\begin{examplebox}{线圈进出磁场的电流时段}
+\textbf{题意分析：} 一个矩形线圈匀速进入一块匀强磁场区域，然后完全在磁场中运动，最后离开磁场。问哪些阶段有感应电流？
+
+\textbf{物理模型：} 判断磁通量是否变化。
+
+\textbf{解题过程：}
+\begin{itemize}
+  \item 进入磁场：穿过线圈的面积增大，磁通量增大，有感应电流。
+  \item 完全在磁场中：面积不变、磁场不变，磁通量不变，无感应电流。
+  \item 离开磁场：穿过线圈的面积减小，磁通量减小，有感应电流。
+\end{itemize}
+
+\textbf{方法总结：} 不要只看线圈是否在运动，要看磁通量是否变化。
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 匀强磁场 $B=0.20\ \mathrm{T}$ 垂直穿过面积 $0.50\ \mathrm{m^2}$ 的线圈，求磁通量。
+  \item 100 匝线圈的磁通量在 $0.10\ \mathrm{s}$ 内从 $0.020\ \mathrm{Wb}$ 变为 $0.005\ \mathrm{Wb}$，求平均感应电动势大小。
+  \item 长 $0.30\ \mathrm{m}$ 的导体棒以 $4.0\ \mathrm{m/s}$ 垂直切割 $0.25\ \mathrm{T}$ 的磁场，求感应电动势。
+  \item 一个线圈完全处在匀强磁场中匀速平移，是否一定有感应电流？说明理由。
+\end{enumerate}
 
 \section*{八、易错点}
+
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{认为有磁场就一定有感应电流：} 必须是闭合回路中的磁通量发生变化。
+  \item \textbf{角度用错：} $\Phi=BS\cos\theta$ 中 $\theta$ 是磁场与平面法线的夹角。
+  \item \textbf{楞次定律说成“阻碍运动”：} 更准确地说，是阻碍磁通量变化。有时表现为阻碍相对运动。
+  \item \textbf{完全进入匀强磁场后仍认为有电流：} 若磁通量不变，就没有感应电动势。
+  \item \textbf{混淆感应电动势和感应电流：} 回路不闭合时可以有感应电动势，但没有持续电流。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{电磁感应中的能量守恒}
+
+导体棒在磁场中匀速运动时，外力不断做功，电路中产生焦耳热。电磁感应不是“凭空产生电能”，而是把机械能转化为电能，再转化为内能。
+
+\begin{center}
+\input{figures/tikz/induction-energy-flow}
+
+\figcaption{导体棒匀速切割磁感线：外力功率等于电路热功率}\label{fig:induction-energy-flow}
+\end{center}
+
+若导体棒长 $L$，速度 $v$，回路总电阻 $R$，则
+\[
+E=BLv,\qquad I=\frac{BLv}{R}
+\]
+安培力大小
+\[
+F_A=BIL=\frac{B^2L^2v}{R}
+\]
+若导体棒匀速运动，外力 $F_{\text{外}}=F_A$，外力功率
+\[
+P_{\text{外}}=F_{\text{外}}v=\frac{B^2L^2v^2}{R}
+\]
+电路热功率
+\[
+P_R=I^2R=\left(\frac{BLv}{R}\right)^2R=\frac{B^2L^2v^2}{R}
+\]
+两者相等，体现能量守恒。
 \end{competitionbox}
 
-\section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
+\section*{十、模型深化：从阻碍变化到终端速度}
 
+\subsection*{1.\quad 楞次定律的能量解释}
+
+楞次定律说“阻碍磁通量变化”，不是说永远阻碍运动。若磁通量的变化由相对运动引起，感应电流产生的安培力常表现为阻碍相对运动；若磁通量的变化由磁场强弱改变引起，阻碍的就是磁通量增大或减小本身。这个“阻碍”保证了能量不会凭空产生。
+
+\subsection*{2.\quad 导体棒的终端速度}
+
+若导体棒在水平导轨上受恒定外力 $F$ 拉动，速度越大，感应电动势越大，电流越大，安培力也越大：
+\[
+v\uparrow \Rightarrow E=BLv\uparrow \Rightarrow I=\frac{E}{R}\uparrow
+\Rightarrow F_A=BIL\uparrow.
+\]
+当 $F_A$ 增大到与外力 $F$ 相等时，合力为零，导体棒达到终端速度。
+
+\begin{center}
+\input{figures/tikz/motional-terminal-speed}
+
+\figcaption{导体棒终端速度：速度增大引起反向安培力增大}\label{fig:motional-terminal-speed}
+\end{center}
+
+\begin{examplebox}{导体棒的终端速度}
+\textbf{题意分析：} 长为 $L$ 的导体棒在磁感应强度为 $B$ 的匀强磁场中沿导轨运动，回路总电阻为 $R$。若水平外力恒为 $F$，求最终匀速速度。
+
+\textbf{物理模型：} 终端速度时合力为零。
+
+\textbf{解题过程：}
+\[
+E=BLv,\qquad I=\frac{BLv}{R}.
+\]
+安培力
+\[
+F_A=BIL=\frac{B^2L^2v}{R}.
+\]
+最终匀速时
+\[
+F=F_A=\frac{B^2L^2v}{R},
+\]
+所以
+\[
+v=\frac{FR}{B^2L^2}.
+\]
+
+\textbf{方法总结：} 电磁感应综合题常有反馈链：速度决定电流，电流决定安培力，安培力又决定速度变化。
+\end{examplebox}
+
+\section*{十一、今日小结}
+
+\begin{enumerate}
+  \item 磁通量 $\Phi=BS\cos\theta$，表示穿过回路的磁场多少。
+  \item 闭合回路中磁通量变化，才会产生感应电流。
+  \item 楞次定律判断方向：感应电流的磁场阻碍磁通量变化。
+  \item 法拉第定律给出大小：$E=n\left|\dfrac{\Delta\Phi}{\Delta t}\right|$。
+  \item 导体棒切割磁感线常用 $E=BLv$，能量来源是外力做功。
+\end{enumerate}

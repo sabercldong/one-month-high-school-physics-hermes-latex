@@ -1,0 +1,18 @@
+% TikZ 图：综合题分段建模
+% Day 29：模型复盘
+\begin{tikzpicture}[scale=0.88,>=Latex]
+  \draw[thick] (0,0) -- (8.5,0);
+  \draw[fill=blue!10] (0.6,0) rectangle (2.2,0.35);
+  \draw[fill=red!10] (3.1,0) rectangle (4.7,0.35);
+  \draw[fill=green!12] (5.6,0) rectangle (7.4,0.35);
+  \draw[->,thick] (1.4,0.6) -- (1.4,0.1);
+  \draw[->,thick] (3.9,0.6) -- (3.9,0.1);
+  \draw[->,thick] (6.5,0.6) -- (6.5,0.1);
+  \node at (1.4,1.0) {阶段 1};
+  \node at (3.9,1.0) {阶段 2};
+  \node at (6.5,1.0) {阶段 3};
+  \node[font=\small,align=center] at (1.4,-0.55) {牛顿定律};
+  \node[font=\small,align=center] at (3.9,-0.55) {能量守恒};
+  \node[font=\small,align=center] at (6.5,-0.55) {动量/圆周};
+  \node[font=\small] at (4.3,-1.25) {综合题常常不是一个模型从头用到尾，而是按过程切段。};
+\end{tikzpicture}

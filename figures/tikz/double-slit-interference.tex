@@ -1,0 +1,20 @@
+% TikZ 图：双缝干涉
+% Day 25：波动光学入门
+\begin{tikzpicture}[scale=0.86,>=Latex]
+  \draw[thick] (0,-1.8) -- (0,-0.35);
+  \draw[thick] (0,0.35) -- (0,1.8);
+  \draw[thick] (5,-2.1) -- (5,2.1);
+  \fill[black] (0,0.55) circle (1.5pt) node[left] {$S_1$};
+  \fill[black] (0,-0.55) circle (1.5pt) node[left] {$S_2$};
+  \foreach \y in {-1.5,-0.75,0,0.75,1.5}{
+    \draw[red!70,thick] (5,\y) -- (5.35,\y);
+  }
+  \draw[dashed] (0,0.55) -- (5,0.75);
+  \draw[dashed] (0,-0.55) -- (5,0.75);
+  \draw[<->] (0.28,-0.55) -- (0.28,0.55) node[midway,right] {$d$};
+  \draw[<->] (0,-2.25) -- (5,-2.25) node[midway,below] {$L$};
+  \node[right] at (5.35,0.75) {亮纹};
+  \node[align=left,font=\small] at (7.2,0.25)
+    {相邻亮纹间距：\\[2pt]
+     $\Delta x=\dfrac{L\lambda}{d}$};
+\end{tikzpicture}

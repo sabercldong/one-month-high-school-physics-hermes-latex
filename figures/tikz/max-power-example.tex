@@ -1,0 +1,20 @@
+% TikZ 图：最大输出功率例题
+% Day 20：闭合电路欧姆定律
+\begin{tikzpicture}[scale=0.88,>=Latex]
+  \draw[->] (-0.25,0) -- (5.6,0) node[right] {$R/\Omega$};
+  \draw[->] (0,-0.25) -- (0,3.5) node[above] {$P_{\text{出}}/\mathrm{W}$};
+  \node[below left] at (0,0) {$O$};
+  % E=10, r=2: P=100R/(R+2)^2, max 12.5. x scale 0.55, y scale 0.24
+  \draw[very thick,red,smooth,domain=0.05:9.0,samples=120,variable=\x]
+    plot ({0.55*\x},{0.24*(100*\x/((\x+2)*(\x+2)))});
+  \coordinate (M) at (1.10,3.00);
+  \draw[dashed] (M) -- (1.10,0);
+  \draw[dashed] (M) -- (0,3.00);
+  \fill[red] (M) circle (1.6pt);
+  \node[below] at (1.10,0) {$2$};
+  \node[left] at (0,3.00) {$12.5$};
+  \node[above] at (1.55,3.05) {$R=r$};
+  \node[font=\small,align=left] at (3.90,3.10)
+    {$E=10\,\mathrm{V}$\\$r=2\,\Omega$};
+  \node[font=\small] at (3.55,1.60) {$R=2\,\Omega$ 时最大};
+\end{tikzpicture}

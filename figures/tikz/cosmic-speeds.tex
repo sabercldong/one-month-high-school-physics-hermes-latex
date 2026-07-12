@@ -1,0 +1,22 @@
+% TikZ 图：三个宇宙速度
+% Day 12：万有引力与天体运动
+\begin{tikzpicture}[scale=0.76,>=Latex]
+  \coordinate (O) at (0,0);
+  \filldraw[blue!25,draw=blue!70] (O) circle (0.65);
+  \node at (O) {地球};
+
+  \draw[dashed,gray] (O) circle (1.55);
+  \draw[->,blue,very thick] (20:1.55) arc (20:100:1.55);
+  \node[blue,align=center] at (0.15,2.15) {$v_1$\\环绕};
+
+  \draw[->,orange,very thick] (0.45,0.45) .. controls (2.0,1.9) and (3.3,2.0) .. (4.1,1.15);
+  \node[orange,align=center] at (3.35,2.35) {$v_2$\\脱离地球};
+
+  \draw[->,red,very thick] (0.65,-0.10) .. controls (2.1,-1.1) and (3.8,-1.05) .. (5.2,-0.15);
+  \node[red,align=center] at (4.55,-1.45) {$v_3$\\脱离太阳系};
+
+  \node[align=left,font=\small] at (7.15,0.55)
+    {$v_1\approx 7.9\,\mathrm{km/s}$\\[4pt]
+     $v_2\approx 11.2\,\mathrm{km/s}$\\[4pt]
+     $v_3\approx 16.7\,\mathrm{km/s}$};
+\end{tikzpicture}

@@ -8,7 +8,7 @@
 
 \begin{enumerate}
   \item 理解电容的定义 $C = \dfrac{Q}{U}$，单位法拉（$\mathrm{F}$）。
-  \item 掌握平行板电容器的决定式 $C = \dfrac{\varepsilon S}{4\pi k d}$。
+  \item 掌握平行板电容器的决定式 $C = \dfrac{\varepsilon_r S}{4\pi k d}$。
   \item 理解电容器充放电过程中 $Q$、$U$、$E$ 的变化。
   \item 能分析电容器在电路中的两种典型情形（电源接通/断开）。
   \item 理解电容器储存的电场能量 $E = \dfrac12 CU^2$。
@@ -16,14 +16,16 @@
 
 \section*{二、初高中衔接}
 
-初中只简单学过"电容器能储存电荷"——这是一个定性概念。
+初中只简单学过“电容器能储存电荷”——这是一个定性概念。
 
 高中要把电容器量化：
 \begin{itemize}
-  \item 电容 $C$ 表示电容器"储存电荷的能力"。
-  \item 平行板电容器的大小由极板面积 $S$、距离 $d$、介质 $\varepsilon$ 决定。
+  \item 电容 $C$ 表示电容器“储存电荷的能力”。
+  \item 平行板电容器的大小由极板面积 $S$、距离 $d$、介质 $\varepsilon_r$ 决定。
   \item 电容器中储存电场能量——这是很多电子设备（闪光灯、电源滤波）的基础。
 \end{itemize}
+
+\textbf{科学发展视角：} 电容器不仅是电路元件，也是传感器和储能元件。手机触控、相机闪光灯、电源滤波、超级电容储能都与电容有关。学习电容器时，要同时关注两个问题：它能储存多少电荷，也能储存多少电场能。
 
 \section*{三、核心概念}
 
@@ -42,15 +44,29 @@
 
 \textbf{平行板电容器的决定式：}
 \[
-\boxed{C = \frac{\varepsilon S}{4\pi k d}}
+\boxed{C = \frac{\varepsilon_r S}{4\pi k d}}
 \]
 
 \begin{itemize}
   \item $S$：极板正对面积。
   \item $d$：极板间距。
-  \item $\varepsilon$：介电常数（真空 $\varepsilon = 1$）。
+  \item $\varepsilon_r$：相对介电常数（真空 $\varepsilon_r = 1$）。
   \item $k = 9.0 \times 10^9$（静电力常量）。
 \end{itemize}
+
+\textbf{决定式的来源：} 平行板间的电场近似为匀强电场。若两板带电量为 $\pm Q$，正对面积为 $S$，板间充满相对介电常数为 $\varepsilon_r$ 的介质，则板间场强可写成
+\[
+E=\frac{4\pi kQ}{\varepsilon_r S}.
+\]
+两板间电势差
+\[
+U=Ed=\frac{4\pi kQd}{\varepsilon_r S}.
+\]
+代入电容定义 $C=\dfrac{Q}{U}$，得
+\[
+C=\frac{Q}{U}=\frac{\varepsilon_r S}{4\pi k d}.
+\]
+因此 $C$ 不是由已经带了多少电荷决定的，而是由“板有多大、离多远、中间是什么介质”决定的。
 
 \textbf{结论：} $S$ 越大 $C$ 越大，$d$ 越大 $C$ 越小。
 
@@ -62,12 +78,14 @@
 
 \end{conceptbox}
 
+\clearpage
+
 \begin{conceptbox}{电容器的充放电}
 
 \begin{center}
 \input{figures/tikz/capacitor-circuit}
 
-\figcaption{电容器 $RC$ 充电回路}\label{fig:capacitor-circuit}
+\figcaption{电容器 $RC$ 充放电回路：电流方向和大小随过程变化}\label{fig:capacitor-circuit}
 \end{center}
 
 \textbf{充电过程：}
@@ -84,9 +102,27 @@
   \item 放电电流从大到小，最后为零。
 \end{itemize}
 
+\begin{center}
+\input{figures/tikz/capacitor-current-time}
+
+\figcaption{电容器充放电的 $i$-$t$ 图像：图线与时间轴围成的面积表示电荷量变化}\label{fig:capacitor-current-time}
+\end{center}
+
+\textbf{面积意义：} 电流定义为单位时间通过导体横截面的电荷量，即 $i=\dfrac{\Delta Q}{\Delta t}$。因此在 $i$-$t$ 图像中，图线与时间轴围成的面积表示电荷量变化：
+\[
+\Delta Q=\int i\,dt.
+\]
+充电时面积等于电容器增加的电荷量；若把充电方向规定为正方向，放电电流为负，放电图像的有向面积为 $-Q_0$，面积的绝对值表示放出的电荷量。
+
 \end{conceptbox}
 
 \begin{conceptbox}{电容器的两类典型问题}
+
+\begin{center}
+\input{figures/tikz/capacitor-dynamic}
+
+\figcaption{电容器动态分析：先判断不变量，再沿公式链条推变化}\label{fig:capacitor-dynamic}
+\end{center}
 
 \textbf{情况 1：电容器与电源保持连接}
 \begin{itemize}
@@ -102,13 +138,19 @@
   \item $S \uparrow \Rightarrow C \uparrow \Rightarrow U \downarrow \Rightarrow E \downarrow$。
 \end{itemize}
 
-\textbf{关键结论：} $E = \dfrac{U}{d} = \dfrac{4\pi k Q}{\varepsilon S}$。$E$ 与 $d$ 无关（$Q$ 不变时），只与 $S$ 和 $Q$ 有关。
+\textbf{关键结论：} $E = \dfrac{U}{d} = \dfrac{4\pi k Q}{\varepsilon_r S}$。$Q$ 不变时，$E$ 与 $d$ 无关，只与 $Q$、$S$ 和介质有关。
 
 \end{conceptbox}
 
 \begin{conceptbox}{电容器的电场能量}
 
 电容器充电过程中，电源做功将电荷从一极板搬运到另一极板，能量以电场能的形式储存在电容器中。
+
+\begin{center}
+\input{figures/tikz/capacitor-energy-area}
+
+\figcaption{电容器能量来源：$U$ 随 $Q$ 线性增大，面积表示储存的电场能}\label{fig:capacitor-energy-area}
+\end{center}
 
 \[
 \boxed{E_C = \frac12 CU^2 = \frac12 QU = \frac{Q^2}{2C}}
@@ -129,7 +171,7 @@
 公式 & 物理意义 & 适用条件 \\
 \midrule
 $C = \dfrac{Q}{U}$ & 电容定义 & 任何电容器 \\
-$C = \dfrac{\varepsilon S}{4\pi k d}$ & 平行板电容 & 平行板电容器 \\
+$C = \dfrac{\varepsilon_r S}{4\pi k d}$ & 平行板电容 & 平行板电容器 \\
 $E = \dfrac{U}{d}$ & 板间场强 & 匀强电场近似 \\
 $E_C = \dfrac12 CU^2$ & 电场能量 & 任何电容器 \\
 \bottomrule
@@ -148,9 +190,32 @@ $E_C = \dfrac12 CU^2$ & 电场能量 & 任何电容器 \\
 
 \subsection*{模型 3：电容器的串并联}
 
-串联：$\dfrac{1}{C_{\text{总}}} = \dfrac{1}{C_1} + \dfrac{1}{C_2}$（与电阻串联相反）
+\begin{center}
+\input{figures/tikz/capacitor-series-parallel}
 
-并联：$C_{\text{总}} = C_1 + C_2$（与电阻并联相同）
+\figcaption{电容器并联与串联：并联同压，串联同荷}\label{fig:capacitor-series-parallel}
+\end{center}
+
+\textbf{并联推导：} 并联时两个电容器接在同一对节点上，所以两端电压相同，均为 $U$。总电荷量等于各电容器所带电荷量之和：
+\[
+Q_{\text{总}}=Q_1+Q_2=C_1U+C_2U=(C_1+C_2)U.
+\]
+又因为 $Q_{\text{总}}=C_{\text{总}}U$，所以
+\[
+\boxed{C_{\text{总}}=C_1+C_2}.
+\]
+
+\textbf{串联推导：} 串联时中间连接的极板总电荷不能凭空产生或消失，稳定后每个电容器所带电荷量大小相同，记为 $Q$。总电压等于两个电容器电压之和：
+\[
+U=U_1+U_2=\frac{Q}{C_1}+\frac{Q}{C_2}
+=Q\left(\frac{1}{C_1}+\frac{1}{C_2}\right).
+\]
+又因为 $U=\dfrac{Q}{C_{\text{总}}}$，所以
+\[
+\boxed{\frac{1}{C_{\text{总}}}=\frac{1}{C_1}+\frac{1}{C_2}}.
+\]
+
+\textbf{记忆方式：} 电容器并联相当于增大正对面积，电容变大；电容器串联相当于增大等效板间距，电容变小。
 
 \section*{六、例题精讲}
 
@@ -163,7 +228,13 @@ $E_C = \dfrac12 CU^2$ & 电场能量 & 任何电容器 \\
 \textbf{解题过程：}
 
 \[
-C = \frac{S}{4\pi k d} = \frac{0.02}{4 \times 3.14 \times 9 \times 10^9 \times 0.001} \approx \frac{0.02}{1.13 \times 10^8} \approx 1.77 \times 10^{-10}\ \mathrm{F} = 177\ \mathrm{pF}
+\begin{aligned}
+C &= \frac{S}{4\pi k d}
+ = \frac{0.02}{4 \times 3.14 \times 9 \times 10^9 \times 0.001} \\
+&\approx \frac{0.02}{1.13 \times 10^8}
+ \approx 1.77 \times 10^{-10}\ \mathrm{F}
+ = 177\ \mathrm{pF}
+\end{aligned}
 \]
 
 \textbf{方法总结：} 代入公式注意单位，$S$ 用 $\mathrm{m^2}$，$d$ 用 $\mathrm{m}$。实际电容器的电容通常是 $\mathrm{pF}$ 或 $\mu\mathrm{F}$ 量级。
@@ -228,7 +299,7 @@ $E = \dfrac{U}{d} = \dfrac{4\pi k Q}{\varepsilon S}$，与 $d$ 无关，所以 $
   
   \item \textbf{单位换算错误：} $1\ \mu\mathrm{F} = 10^{-6}\ \mathrm{F}$，$1\ \mathrm{pF} = 10^{-12}\ \mathrm{F}$。计算前先统一单位。
   
-  \item \textbf{忽略介电常数 $\varepsilon$：} 插入电介质（$\varepsilon > 1$）会使电容增大。真空或空气中 $\varepsilon \approx 1$。
+  \item \textbf{忽略介电常数 $\varepsilon_r$：} 插入电介质（$\varepsilon_r > 1$）会使电容增大。真空或空气中 $\varepsilon_r \approx 1$。
 \end{enumerate}
 \end{mistakebox}
 
@@ -237,17 +308,21 @@ $E = \dfrac{U}{d} = \dfrac{4\pi k Q}{\varepsilon S}$，与 $d$ 无关，所以 $
 \begin{competitionbox}
 \textbf{电容器的能量与电场力的功}
 
-电容器储存的能量 $E_C = \dfrac12 CU^2$。如果电容器极板在力的作用下移动，电场力做的功等于电场能量的变化。
+电容器储存的能量 $E_C = \dfrac12 CU^2$。如果电容器极板在力的作用下移动，要先分清做功对象：电场力做功 $W_{\text{电场}} = -\Delta E_C$，外力缓慢拉开极板时做功 $W_{\text{外}} = \Delta E_C$。
 
 \textbf{例题：} 平行板电容器充电后（$Q$ 不变），极板间的作用力 $F$ 是多少？
 
-\textbf{解：} 考虑极板移动一小段距离 $\Delta d$，电场能量变化 $\Delta E = \dfrac{Q^2}{2C'}-\dfrac{Q^2}{2C}$。由 $C \propto \dfrac{1}{d}$，在 $\Delta d$ 很小时可导出：
+\textbf{解：} 考虑极板距离增大一小段 $\Delta d$，电场能量变化 $\Delta E_C = \dfrac{Q^2}{2C'}-\dfrac{Q^2}{2C}$。由 $C = \dfrac{\varepsilon_r S}{4\pi k d}$ 可得
 \[
-F = -\frac{dE}{dd} = \frac{Q^2}{2\varepsilon S}
+E_C = \frac{Q^2}{2C} = \frac{2\pi k Q^2 d}{\varepsilon_r S}
+\]
+因此电场力沿“使 $d$ 减小”的方向，吸引力大小为：
+\[
+F_{\text{引}} = \left|\frac{dE_C}{dd}\right| = \frac{2\pi k Q^2}{\varepsilon_r S}
 \]
 极板间为引力，大小与 $d$ 无关。
 
-\textbf{竞赛小贴士：} 处理电容器极板受力问题时，用虚功原理（能量法）比直接用电场力 $F = QE$ 更可靠——因为电场是两极板共同产生的，不能简单用 $F = QE$。
+\textbf{竞赛小贴士：} 处理电容器极板受力问题时，用虚功原理（能量法）比直接用 $F = QE$ 更可靠——因为某一极板受力只来自另一极板产生的电场，不能把两板间的合场强直接代入。
 \end{competitionbox}
 
 \section*{十、今日小结}

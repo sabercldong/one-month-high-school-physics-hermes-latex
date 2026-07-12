@@ -1,0 +1,22 @@
+% TikZ 图：波形平移例题
+% Day 14：机械波
+\begin{tikzpicture}[x=0.95cm,y=0.75cm,>=Latex]
+  \draw[->] (-0.35,0) -- (7.4,0) node[right] {$x/\mathrm{m}$};
+  \draw[->] (0,-1.2) -- (0,1.35) node[above] {$y$};
+  \draw[very thick,red,smooth,domain=0:6.3,samples=140]
+    plot (\x,{0.80*cos(90*(\x-1))});
+  \draw[dashed,blue,thick,smooth,domain=0.7:7.0,samples=140]
+    plot (\x,{0.80*cos(90*(\x-2))});
+
+  \draw[dashed,gray] (1,0) -- (1,0.80);
+  \draw[dashed,gray] (2,0) -- (2,0.80);
+  \filldraw[red] (1,0.80) circle (1.8pt);
+  \filldraw[blue] (2,0.80) circle (1.8pt);
+  \node[red,above left] at (0.95,0.95) {$t=0$};
+  \node[blue,above right] at (2.08,0.95) {$0.50\ \mathrm{s}$ 后};
+  \draw[<->,thick] (1,-0.58) -- (2,-0.58);
+  \node[below] at (1.5,-0.58) {$\Delta x=1.0\ \mathrm{m}$};
+  \node[below] at (1,0) {$1.0$};
+  \node[below] at (2,0) {$2.0$};
+  \node[font=\footnotesize,align=center] at (4.45,-1.50) {红色为原波形，蓝色虚线为整体向右平移后的波形};
+\end{tikzpicture}

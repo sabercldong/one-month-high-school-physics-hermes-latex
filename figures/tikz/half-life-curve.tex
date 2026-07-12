@@ -1,0 +1,15 @@
+% TikZ 图：半衰期曲线
+% Day 27：近代物理
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[->,thick] (0,0) -- (5.4,0) node[right] {$t$};
+  \draw[->,thick] (0,0) -- (0,3.3) node[above] {$N$};
+  \draw[blue,thick,samples=80,domain=0:5] plot(\x,{2.8*exp(-0.55*\x)});
+  \foreach \x/\lab/\y in {0/$0$/2.8,1.26/$T_{1/2}$/1.4,2.52/$2T_{1/2}$/0.7,3.78/$3T_{1/2}$/0.35}{
+    \draw[dashed,gray] (\x,0) -- (\x,\y) -- (0,\y);
+    \node[below] at (\x,0) {\lab};
+  }
+  \node[left] at (0,2.8) {$N_0$};
+  \node[left] at (0,1.4) {$N_0/2$};
+  \node[left] at (0,0.7) {$N_0/4$};
+  \node[font=\small] at (2.8,-0.6) {每过一个半衰期，剩余原子核数减半};
+\end{tikzpicture}

@@ -1,54 +1,323 @@
 \daytitle{24}{交变电流、变压器与电磁应用}
 
 \begin{learningbox}{本讲义大致内容}
-讲交变电流、最大值和有效值、变压器、远距离输电、电磁振荡和传感器入门。
+上一节已经知道：线圈中的磁通量变化会产生感应电动势。今天把这个思想推进到实际电力系统：线圈在磁场中匀速转动会产生正弦交变电流；交变电流可以通过变压器升压、降压；远距离输电要用高压降低线路损耗；最后用电磁振荡和传感器作为现代电磁技术的入口。
 \end{learningbox}
 
 \section*{一、学习目标}
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 理解交变电流的瞬时值、最大值、有效值、周期和频率。
+  \item 会用正弦交流电的有效值关系 $U=\dfrac{U_m}{\sqrt2}$、$I=\dfrac{I_m}{\sqrt2}$。
+  \item 掌握理想变压器的电压关系、电流关系和功率近似守恒。
+  \item 能解释远距离输电为什么要先升压后降压。
+  \item 初步认识 LC 振荡、传感器和电磁应用中的能量转化。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中电学多讨论恒定电流：电流方向不变，电压也近似不变。高中电磁感应告诉我们，线圈转动时磁通量随时间周期性变化，感应电动势也会周期性变化。家庭用电中的“220 V、50 Hz”指的不是电压一直等于 $220\ \mathrm{V}$，而是正弦交流电的有效值为 $220\ \mathrm{V}$，频率为 $50\ \mathrm{Hz}$。
+
+\textbf{科学发展视角：} 现代电网的核心不是“把电送出去”这么简单，而是“用合适的电压、频率和功率控制方式高效送电”。发电机、变压器、电动机、无线充电、手机传感器和电动汽车充电桩，都离不开交变电流和电磁感应。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{交变电流}
+
+大小和方向都随时间周期性变化的电流叫交变电流。最常见、最重要的是正弦交流电：
+\[
+i=I_m\sin\omega t,\qquad u=U_m\sin\omega t.
+\]
+
+\begin{center}
+\input{figures/tikz/ac-sine-effective}
+
+\figcaption{正弦交流电：瞬时值周期性变化，有效值用于比较热效应}\label{fig:ac-sine-effective}
+\end{center}
+
+\begin{itemize}
+  \item $I_m$、$U_m$ 是最大值，不是平时电器标注的值。
+  \item $\omega=\dfrac{2\pi}{T}=2\pi f$ 是角频率。
+  \item 我国家庭交流电频率 $f=50\ \mathrm{Hz}$，周期 $T=0.02\ \mathrm{s}$。
+\end{itemize}
+
+\end{conceptbox}
+
+\begin{conceptbox}{有效值}
+
+交流电的有效值按热效应定义：若某交流电和某直流电在同一电阻、相同时间内产生的热量相同，则这个直流电的电流、电压就是该交流电的有效值。
+
+对正弦交流电：
+\[
+\boxed{I=\frac{I_m}{\sqrt2}},\qquad
+\boxed{U=\frac{U_m}{\sqrt2}}.
+\]
+
+\textbf{理解：} 有效值不是平均值。正弦交流电一个周期内电压平均值为 0，但它能让电阻发热，所以有效值不为 0。
+\end{conceptbox}
+
+\begin{conceptbox}{理想变压器}
+
+变压器利用交变电流产生变化磁场，再由变化磁场在副线圈中产生感应电动势。理想变压器近似满足
+\[
+\boxed{\frac{U_2}{U_1}=\frac{n_2}{n_1}},\qquad
+\boxed{U_1I_1=U_2I_2}.
+\]
+
+\begin{center}
+\input{figures/tikz/transformer-principle}
+
+\figcaption{理想变压器：共同铁芯让原、副线圈共享变化磁通量}\label{fig:transformer-principle}
+\end{center}
+
+\begin{itemize}
+  \item $n_2>n_1$：升压变压器，副线圈电压较高、电流较小。
+  \item $n_2<n_1$：降压变压器，副线圈电压较低、电流较大。
+  \item 变压器不能直接改变恒定直流电压，因为直流电不能在铁芯中持续产生变化磁通量。
+\end{itemize}
+
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+公式 & 物理意义 & 适用条件 \\
+\midrule
+$u=U_m\sin\omega t$ & 交流电瞬时电压 & 正弦交流电 \\
+$U=\dfrac{U_m}{\sqrt2}$ & 电压有效值 & 正弦交流电 \\
+$I=\dfrac{I_m}{\sqrt2}$ & 电流有效值 & 正弦交流电 \\
+$P=UI$ & 平均功率 & 纯电阻或已给有效值的简单电路 \\
+$\dfrac{U_2}{U_1}=\dfrac{n_2}{n_1}$ & 变压器电压关系 & 理想变压器 \\
+$U_1I_1=U_2I_2$ & 功率守恒 & 忽略损耗 \\
+$P_{\text{损}}=I^2R$ & 输电线热损耗 & 输电线电阻为 $R$ \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：交流电读数模型}
+
+电压表、电流表在交流电路中通常读有效值。若题目给出“最大值”，要先转化为有效值；若题目给出“220 V 交流电”，默认是有效值。
+\[
+U_m=\sqrt2\,U,\qquad I_m=\sqrt2\,I.
+\]
+
+\subsection*{模型 2：理想变压器}
+
+先由匝数比求电压，再由功率关系求电流。注意电流比和匝数比相反：
+\[
+\frac{I_2}{I_1}=\frac{U_1}{U_2}=\frac{n_1}{n_2}.
+\]
+
+\subsection*{模型 3：远距离输电}
+
+输送功率一定时，$P=UI$。提高输电电压 $U$，可以降低输电电流 $I$，从而显著减小线路损耗：
+\[
+P_{\text{损}}=I^2R.
+\]
+
+\begin{center}
+\input{figures/tikz/power-transmission}
+
+\figcaption{远距离输电：升压降低电流，降压保证用户安全用电}\label{fig:power-transmission}
+\end{center}
+
+\subsection*{模型 4：LC 电磁振荡}
+
+电容器储存电场能，线圈储存磁场能。理想 LC 回路中，两种能量周期性相互转化：
+\[
+E_C=\frac12CU^2,\qquad E_L=\frac12LI^2.
+\]
+
+\begin{center}
+\input{figures/tikz/lc-oscillation}
+
+\figcaption{LC 振荡：电场能和磁场能相互转化}\label{fig:lc-oscillation}
+\end{center}
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{交流电最大值与有效值}
+\textbf{题意分析：} 某正弦交流电压最大值为 $311\ \mathrm{V}$，频率为 $50\ \mathrm{Hz}$。求有效值和周期。
 
-\textbf{解题过程：} TODO。
+\textbf{物理模型：} 正弦交流电。
 
-\textbf{方法总结：} TODO。
+\textbf{解题过程：}
+\[
+U=\frac{U_m}{\sqrt2}=\frac{311}{1.414}\approx220\ \mathrm{V}.
+\]
+\[
+T=\frac1f=\frac1{50}=0.020\ \mathrm{s}.
+\]
+
+\textbf{方法总结：} 家庭电路中常说的 $220\ \mathrm{V}$ 就是有效值，最大值约为 $311\ \mathrm{V}$。
+\end{examplebox}
+
+\begin{examplebox}{理想变压器}
+\textbf{题意分析：} 一理想变压器原线圈接 $220\ \mathrm{V}$ 交流电，原、副线圈匝数分别为 $n_1=1100$、$n_2=110$。若副线圈接入电阻后电流为 $2.0\ \mathrm{A}$，求副线圈电压和原线圈电流。
+
+\textbf{物理模型：} 理想降压变压器。
+
+\textbf{解题过程：}
+\[
+\frac{U_2}{U_1}=\frac{n_2}{n_1}=\frac{110}{1100}=0.10,
+\quad U_2=22\ \mathrm{V}.
+\]
+理想变压器功率守恒：
+\[
+U_1I_1=U_2I_2,
+\quad I_1=\frac{U_2I_2}{U_1}
+=\frac{22\times2.0}{220}=0.20\ \mathrm{A}.
+\]
+
+\textbf{方法总结：} 降压时副线圈电流可以变大，但能量不会凭空增加。
+\end{examplebox}
+
+\begin{examplebox}{输电损耗比较}
+\textbf{题意分析：} 某线路输送功率 $P=100\ \mathrm{kW}$，输电线总电阻 $R=4.0\ \Omega$。若输电电压分别为 $1.0\ \mathrm{kV}$ 和 $10\ \mathrm{kV}$，比较线路损耗。
+
+\textbf{物理模型：} 输电功率一定，$I=P/U$，线路损耗 $P_{\text{损}}=I^2R$。
+
+\textbf{解题过程：}
+\[
+U_1=1.0\ \mathrm{kV}:\quad I_1=\frac{100000}{1000}=100\ \mathrm{A},
+\quad P_{\text{损}1}=100^2\times4=40000\ \mathrm{W}.
+\]
+\[
+U_2=10\ \mathrm{kV}:\quad I_2=\frac{100000}{10000}=10\ \mathrm{A},
+\quad P_{\text{损}2}=10^2\times4=400\ \mathrm{W}.
+\]
+
+\textbf{方法总结：} 电压提高 10 倍，电流降为原来的 $\dfrac1{10}$，线路损耗降为原来的 $\dfrac1{100}$。
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 某正弦交流电流有效值为 $5.0\ \mathrm{A}$，求最大值。
+  \item 理想变压器原线圈 $n_1=800$ 匝，副线圈 $n_2=200$ 匝，原线圈接 $220\ \mathrm{V}$，求副线圈电压。
+  \item 输送同样功率时，输电电压变为原来的 5 倍，输电线损耗变为原来的多少？
+  \item 一个 LC 回路中电容器电压最大时，线圈中的电流是否最大？说明能量分布。
+\end{enumerate}
+
+\subsection*{训练提示}
+\begin{enumerate}
+  \item 用 $I_m=\sqrt2 I$，注意最大值大于有效值。
+  \item 先由匝数比求 $U_2$，再判断这是升压还是降压。
+  \item 输电功率一定时 $I=P/U$，电压变为 5 倍，电流变为原来的 $\dfrac15$，损耗按 $I^2$ 变化。
+  \item 电容器电压最大时电场能最大，线圈电流为 0；线圈电流最大时磁场能最大，电容器电压为 0。
+\end{enumerate}
 
 \section*{八、易错点}
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{把有效值当最大值：} 交流电表读数和电器铭牌一般是有效值。
+  \item \textbf{认为变压器能改变直流电压：} 普通变压器依赖变化磁通量，不能直接用于恒定直流。
+  \item \textbf{只记电压比，忘记电流反比：} 理想变压器近似功率守恒，升压必然伴随降流。
+  \item \textbf{输电损耗用 $P=UI$ 乱算：} 输电线发热损耗应看输电线电流和线路电阻，常用 $I^2R$。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{为什么有效值里会出现 $\sqrt2$？}
+
+电阻发热由 $i^2R$ 决定。正弦电流 $i=I_m\sin\omega t$ 在一个周期内的平均发热功率为
+\[
+\overline P=\overline{i^2R}=I_m^2R\cdot\overline{\sin^2\omega t}.
+\]
+在一个周期内，
+\[
+\overline{\sin^2\omega t}=\frac12,
+\]
+所以
+\[
+\overline P=\frac12I_m^2R.
+\]
+若用直流有效电流 $I$ 产生同样热功率，则
+\[
+I^2R=\frac12I_m^2R,\qquad I=\frac{I_m}{\sqrt2}.
+\]
+
+\textbf{进一步思考：} 这个推导说明，有效值不是人为规定的换算，而是由能量和热效应决定的物理量。
 \end{competitionbox}
 
-\section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
+\section*{十、模型深化与科学应用}
 
+\subsection*{1.\quad 交流电从哪里来}
+
+上一节的发电机模型告诉我们：线圈在磁场中转动时，穿过线圈的磁通量不断变化。若线圈面积为 $S$，匀强磁场为 $B$，线圈以角速度 $\omega$ 匀速转动，则磁通量可写成
+\[
+\Phi=BS\cos\omega t.
+\]
+由法拉第电磁感应定律，感应电动势大小与磁通量变化率有关。磁通量在最大值附近变化较慢，在过零点附近变化最快，因此感应电动势与磁通量相差四分之一个周期：
+\[
+e=E_m\sin\omega t,\qquad E_m=NBS\omega.
+\]
+
+\begin{center}
+\input{figures/tikz/ac-generator-emf}
+
+\figcaption{交流电的产生：线圈转动使磁通量周期性变化}\label{fig:ac-generator-emf}
+\end{center}
+
+\textbf{学生常见疑问：} 为什么磁通量最大时电动势反而为 0？因为电动势看的是“变化快慢”，不是磁通量本身大小。磁通量最大的一瞬间，曲线斜率为 0，所以感应电动势为 0。
+
+\subsection*{2.\quad 变压器不是能量放大器}
+
+升压变压器把电压升高，但电流降低；降压变压器把电压降低，但电流升高。忽略损耗时
+\[
+P_1=P_2.
+\]
+这说明变压器只是改变电能传输的电压电流配比，不会凭空创造能量。实际变压器还会有铜损、铁损、漏磁等损耗，所以输出功率略小于输入功率。
+
+\subsection*{3.\quad 交流电应用的三个方向}
+
+\begin{enumerate}
+  \item \textbf{电力系统：} 发电、升压输电、降压用电。
+  \item \textbf{信息与传感：} 交流信号可携带频率、相位和幅度信息。
+  \item \textbf{能量转换：} 电动机把电能转化为机械能，发电机把机械能转化为电能。
+\end{enumerate}
+
+\subsection*{4.\quad 负载改变时，变压器怎样响应}
+
+理想变压器中，副线圈接入负载后，副线圈电流由负载决定：
+\[
+I_2=\frac{U_2}{R_{\text{负载}}}.
+\]
+由于理想情况下 $P_1=P_2$，副线圈用电功率增大时，原线圈从电源吸收的功率也随之增大，原线圈电流增大。也就是说，变压器不是先“固定给出某个电流”，而是在电压由匝数比决定后，由负载决定电流，再由能量守恒反映到原线圈。
+
+\textbf{严谨提醒：} 实际变压器有铜损、铁损和漏磁，不能把 $P_1=P_2$ 当成绝对等式；高中题若说“理想变压器”，才可忽略这些损耗。
+
+\begin{examplebox}{交流发电机最大电动势}
+\textbf{题意分析：} 一线圈匝数 $N=200$，面积 $S=0.020\ \mathrm{m^2}$，放在 $B=0.50\ \mathrm{T}$ 的匀强磁场中，以角速度 $\omega=100\ \mathrm{rad/s}$ 匀速转动。求感应电动势最大值。
+
+\textbf{物理模型：} 线圈匀速转动产生正弦交流电，$E_m=NBS\omega$。
+
+\textbf{解题过程：}
+\[
+E_m=NBS\omega=200\times0.50\times0.020\times100=200\ \mathrm{V}.
+\]
+
+\textbf{方法总结：} 最大电动势与匝数、磁场、面积和转动角速度成正比。
+\end{examplebox}
+
+\subsection*{5.\quad 分层训练}
+
+\begin{enumerate}
+  \item \textbf{基础：} 正弦交流电 $u=220\sqrt2\sin100\pi t$，求有效值、最大值、频率和周期。
+  \item \textbf{提高：} 理想变压器原线圈接 $220\ \mathrm{V}$，副线圈接 $22\ \Omega$ 电阻，匝数比 $n_1:n_2=10:1$，求副线圈电流和原线圈电流。
+  \item \textbf{综合：} 输送功率一定时，若输电电压提高为原来的 $k$ 倍，推导输电线热损耗变为原来的多少。
+  \item \textbf{开放思考：} 为什么许多电子设备内部先把交流电整流为直流电，再用开关电源变换电压？
+\end{enumerate}
+
+\section*{十一、今日小结}
+\begin{enumerate}
+  \item 正弦交流电瞬时值周期性变化，电表通常读有效值。
+  \item 正弦交流电满足 $U=U_m/\sqrt2$、$I=I_m/\sqrt2$。
+  \item 理想变压器满足电压比等于匝数比，输入输出功率近似相等。
+  \item 远距离输电用高压降低电流，从而减小 $I^2R$ 损耗。
+  \item LC 振荡体现电场能和磁场能的周期性转化。
+\end{enumerate}

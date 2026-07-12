@@ -1,0 +1,21 @@
+% TikZ 图：外电阻变化的动态分析电路
+% Day 20：闭合电路欧姆定律
+\begin{tikzpicture}[scale=0.86,>=Latex]
+  \tikzset{wire/.style={thick}, res/.style={thick}}
+  \draw[wire] (0,0) -- (0,0.65);
+  \draw[wire] (0,1.22) -- (0,2.0) -- (1.0,2.0);
+  \draw[wire] (2.0,2.0) -- (3.0,2.0);
+  \draw[res] (1.0,1.72) rectangle (2.0,2.28);
+  \node[above] at (1.5,2.33) {$r$};
+  \draw[res] (3.0,1.72) rectangle (5.2,2.28);
+  \node[above] at (4.1,2.35) {滑动变阻器 $R$};
+  \draw[->,thick] (4.85,2.72) -- (3.90,2.20);
+  \draw[wire] (5.2,2.0) -- (6.0,2.0) -- (6.0,0) -- (0,0);
+  \draw[wire] (-0.32,0.65) -- (0.32,0.65);
+  \draw[wire] (-0.46,1.22) -- (0.46,1.22);
+  \node[left] at (-0.50,1.22) {$+$};
+  \node[right] at (0.50,0.95) {$E$};
+  \draw[->,red,thick] (2.20,2.38) -- (2.85,2.38) node[midway,above] {$I$};
+  \node[align=center,font=\small] at (3.05,-0.48)
+    {$R\uparrow \Rightarrow I\downarrow \Rightarrow Ir\downarrow \Rightarrow U=E-Ir\uparrow$};
+\end{tikzpicture}

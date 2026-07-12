@@ -1,0 +1,30 @@
+% TikZ 图：电容器动态分析两类不变量
+% Day 18：电容器
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \begin{scope}
+    \node[font=\bfseries] at (0,1.55) {接电源};
+    \draw[thick] (-1.0,0.75) -- (-1.0,-0.75);
+    \draw[thick] (1.0,0.75) -- (1.0,-0.75);
+    \foreach \y in {-0.45,0,0.45} {
+      \draw[->,blue] (-0.75,\y) -- (0.75,\y);
+    }
+    \draw[thick] (-1.0,0) -- (-2.0,0) -- (-2.0,-1.15) -- (2.0,-1.15) -- (2.0,0) -- (1.0,0);
+    \draw[thick] (-0.25,-1.45) -- (-0.25,-0.85);
+    \draw[thick] (0.25,-1.35) -- (0.25,-0.95);
+    \node[below] at (0,-1.55) {$U$ 不变};
+    \draw[<->] (-1.0,1.0) -- (1.0,1.0) node[midway,above] {$d$};
+  \end{scope}
+
+  \begin{scope}[xshift=6.2cm]
+    \node[font=\bfseries] at (0,1.55) {断电源};
+    \draw[thick] (-1.0,0.75) -- (-1.0,-0.75);
+    \draw[thick] (1.0,0.75) -- (1.0,-0.75);
+    \foreach \y in {-0.45,0,0.45} {
+      \draw[->,blue] (-0.75,\y) -- (0.75,\y);
+    }
+    \node[left] at (-1.0,0.95) {$+Q$};
+    \node[right] at (1.0,0.95) {$-Q$};
+    \draw[<->] (-1.0,1.0) -- (1.0,1.0) node[midway,above] {$d$};
+    \node[below] at (0,-1.1) {$Q$ 不变};
+  \end{scope}
+\end{tikzpicture}

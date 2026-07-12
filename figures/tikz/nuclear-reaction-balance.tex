@@ -1,0 +1,11 @@
+% TikZ 图：核反应方程守恒
+% Day 27：近代物理
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \node[draw,rounded corners=2pt,fill=blue!8,minimum width=2.3cm,minimum height=1.0cm] (left) at (0,0) {反应前};
+  \node[draw,rounded corners=2pt,fill=red!8,minimum width=2.3cm,minimum height=1.0cm] (right) at (4.1,0) {反应后};
+  \draw[->,thick] (left) -- (right);
+  \node[align=left,font=\small] at (8.0,0.3)
+    {质量数守恒：$\sum A_{\text{前}}=\sum A_{\text{后}}$\\[4pt]
+     电荷数守恒：$\sum Z_{\text{前}}=\sum Z_{\text{后}}$};
+  \node[font=\small] at (2.05,-0.85) {能量释放来自质量亏损：$\Delta E=\Delta m c^2$};
+\end{tikzpicture}

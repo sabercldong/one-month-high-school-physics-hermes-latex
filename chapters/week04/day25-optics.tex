@@ -1,54 +1,325 @@
 \daytitle{25}{光学基础}
 
 \begin{learningbox}{本讲义大致内容}
-讲光的反射、折射、折射率、全反射、临界角、光路图，以及干涉衍射入门。
+本节先建立“光线模型”：反射、折射、折射率、全反射和凸透镜成像；再用双缝干涉把光从“几何光学”推进到“波动光学”。学习顺序是：先会画光路图，再会用公式计算，最后理解光既可像直线传播，也可表现出波动性。
 \end{learningbox}
 
 \section*{一、学习目标}
 \begin{enumerate}
-  \item TODO：补充本节学生需要掌握的核心目标。
-  \item TODO：补充本节对应的高中物理模型。
-  \item TODO：补充本节易错点和训练目标。
+  \item 掌握反射定律、折射定律和折射率的含义。
+  \item 会判断光从光疏介质进入光密介质时偏折方向。
+  \item 理解全反射条件和临界角公式。
+  \item 会用凸透镜光路图分析成像性质。
+  \item 初步理解双缝干涉中条纹间距与波长、缝距、屏距的关系。
 \end{enumerate}
 
 \section*{二、初高中衔接}
-TODO：说明初中已有知识如何过渡到本节高中物理内容。
+
+初中学习光学时，重点是反射、折射、凸透镜成像现象。高中要更精确地处理三个问题：角度必须相对于法线来量；折射率反映光速在介质中的变化；光路图不仅是画图题，也是建立几何关系的工具。
+
+\textbf{科学发展视角：} 光学不只服务于眼镜和照相机。光纤通信、激光测距、显微成像、天文望远镜、芯片光刻和医学内窥镜，都依赖几何光学与波动光学的结合。
 
 \section*{三、核心概念}
-\begin{conceptbox}{待补充}
-TODO：先用直观语言解释，再给出严格定义。
+
+\begin{conceptbox}{反射与折射}
+
+光遇到两种介质的分界面时，一部分返回原介质形成反射光，一部分进入另一介质形成折射光。
+
+\[
+\boxed{i=i'},\qquad
+\boxed{n_1\sin i=n_2\sin r}.
+\]
+
+\begin{center}
+\input{figures/tikz/reflection-refraction}
+
+\figcaption{反射和折射：入射角、反射角、折射角都相对于法线测量}\label{fig:reflection-refraction}
+\end{center}
+
+\begin{itemize}
+  \item $i$：入射角；$i'$：反射角；$r$：折射角。
+  \item 光从光疏介质进入光密介质，折射光线靠近法线。
+  \item 光从光密介质进入光疏介质，折射光线远离法线。
+\end{itemize}
+
+\end{conceptbox}
+
+\begin{conceptbox}{折射率}
+
+介质的绝对折射率定义为
+\[
+\boxed{n=\frac{c}{v}},
+\]
+其中 $c$ 是真空中光速，$v$ 是光在介质中的传播速度。
+
+\begin{itemize}
+  \item $n$ 越大，光在该介质中传播越慢。
+  \item 真空折射率为 1，空气折射率通常近似取 1。
+  \item 折射率不是“光线弯曲程度”的直接定义，但它决定折射角。
+\end{itemize}
+\end{conceptbox}
+
+\begin{conceptbox}{全反射}
+
+当光从光密介质射向光疏介质，且入射角大于临界角时，折射光消失，全部光返回原介质，这就是全反射。
+
+\[
+\boxed{\sin C=\frac{n_2}{n_1}}\qquad(n_1>n_2)
+\]
+
+\begin{center}
+\input{figures/tikz/total-internal-reflection}
+
+\figcaption{全反射：只有从光密介质射向光疏介质才可能发生}\label{fig:total-internal-reflection}
+\end{center}
+
+光纤通信正是利用全反射，让光在细长光纤中多次反射而不轻易漏出。
+\end{conceptbox}
+
+\begin{conceptbox}{凸透镜成像}
+
+凸透镜会聚光线。常用三条特殊光线画图：
+\begin{enumerate}
+  \item 平行主光轴的光线，折射后过焦点；
+  \item 过光心的光线，传播方向不变；
+  \item 过焦点的光线，折射后平行主光轴。
+\end{enumerate}
+
+\begin{center}
+\input{figures/tikz/convex-lens-imaging}
+
+\figcaption{凸透镜成像：用两条特殊光线即可确定像的位置}\label{fig:convex-lens-imaging}
+\end{center}
 \end{conceptbox}
 
 \section*{四、公式与适用条件}
-TODO：列出本节核心公式，并说明适用条件、物理意义和常见误用。
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+公式 & 物理意义 & 适用条件 \\
+\midrule
+$i=i'$ & 反射定律 & 镜面反射 \\
+$n_1\sin i=n_2\sin r$ & 折射定律 & 两介质分界面 \\
+$n=\dfrac{c}{v}$ & 绝对折射率 & 介质中光速为 $v$ \\
+$\sin C=\dfrac{n_2}{n_1}$ & 临界角 & 光密到光疏，$n_1>n_2$ \\
+$\dfrac1f=\dfrac1u+\dfrac1v$ & 薄透镜成像 & 近轴光线、薄透镜 \\
+$\Delta x=\dfrac{L\lambda}{d}$ & 双缝条纹间距 & $L\gg d$ 的近似条件 \\
+\bottomrule
+\end{tabular}
+\end{center}
 
 \section*{五、典型模型}
-TODO：整理本节最重要的物理模型。
+
+\subsection*{模型 1：折射方向判断}
+
+判断折射方向时不要凭直觉“向上弯、向下弯”，而要看法线：
+\[
+n_2>n_1\Rightarrow r<i,\qquad n_2<n_1\Rightarrow r>i.
+\]
+
+\subsection*{模型 2：全反射与光纤}
+
+全反射必须同时满足两个条件：
+\[
+\text{光密介质}\rightarrow\text{光疏介质},\qquad i>C.
+\]
+若只满足入射角大，但方向是从光疏到光密，不会发生全反射。
+
+\subsection*{模型 3：凸透镜成像}
+
+物距大于 $2f$ 时，成倒立缩小实像；物距在 $f$ 与 $2f$ 之间时，成倒立放大实像；物距小于 $f$ 时，成正立放大虚像。
+
+\subsection*{模型 4：双缝干涉}
+
+光具有波动性，相干光叠加会形成明暗条纹。相邻亮纹间距为
+\[
+\Delta x=\frac{L\lambda}{d}.
+\]
+
+\begin{center}
+\input{figures/tikz/double-slit-interference}
+
+\figcaption{双缝干涉：条纹间距随波长和屏距增大，随缝距增大而减小}\label{fig:double-slit-interference}
+\end{center}
 
 \section*{六、例题精讲}
-\begin{examplebox}{待补充例题}
-\textbf{题意分析：} TODO。
 
-\textbf{物理模型：} TODO。
+\begin{examplebox}{折射角计算}
+\textbf{题意分析：} 光从空气射入某玻璃，入射角 $i=30^\circ$，玻璃折射率 $n=1.5$，空气折射率取 1。求折射角。
 
-\textbf{解题过程：} TODO。
+\textbf{物理模型：} 折射定律。
 
-\textbf{方法总结：} TODO。
+\textbf{解题过程：}
+\[
+n_1\sin i=n_2\sin r
+\]
+\[
+1\times\sin30^\circ=1.5\sin r
+\]
+\[
+\sin r=\frac{1}{3},\qquad r\approx19.5^\circ.
+\]
+
+\textbf{方法总结：} 光进入光密介质后靠近法线，所以折射角应小于入射角，结果符合判断。
+\end{examplebox}
+
+\begin{examplebox}{全反射临界角}
+\textbf{题意分析：} 光从折射率为 $1.50$ 的玻璃射向空气，求临界角。
+
+\textbf{物理模型：} 光密介质到光疏介质的全反射。
+
+\textbf{解题过程：}
+\[
+\sin C=\frac{n_2}{n_1}=\frac{1}{1.50}=\frac23.
+\]
+因此
+\[
+C\approx41.8^\circ.
+\]
+
+\textbf{方法总结：} 临界角公式中的分子是光疏介质折射率，分母是光密介质折射率。
+\end{examplebox}
+
+\begin{examplebox}{双缝干涉条纹间距}
+\textbf{题意分析：} 双缝间距 $d=0.50\ \mathrm{mm}$，屏到双缝距离 $L=1.0\ \mathrm{m}$，用波长 $\lambda=600\ \mathrm{nm}$ 的光照射，求相邻亮纹间距。
+
+\textbf{物理模型：} 双缝干涉。
+
+\textbf{解题过程：}
+\[
+\Delta x=\frac{L\lambda}{d}
+=\frac{1.0\times600\times10^{-9}}{0.50\times10^{-3}}
+=1.2\times10^{-3}\ \mathrm{m}.
+\]
+即
+\[
+\Delta x=1.2\ \mathrm{mm}.
+\]
+
+\textbf{方法总结：} 单位必须统一到国际单位制，纳米和毫米最容易漏换。
 \end{examplebox}
 
 \section*{七、变式训练}
-TODO：补充基础题、提高题和综合题。
+
+\begin{enumerate}
+  \item 光从水射入空气时，折射光线相对法线是靠近还是远离？
+  \item 某介质中光速为 $2.0\times10^8\ \mathrm{m/s}$，求折射率。
+  \item 光从折射率 $1.33$ 的水射向空气，写出临界角满足的方程。
+  \item 双缝实验中，若缝距增大为原来的 2 倍，条纹间距怎样变化？
+\end{enumerate}
+
+\subsection*{训练提示}
+\begin{enumerate}
+  \item 水到空气是光密到光疏，折射光线远离法线；若入射角足够大，还可能全反射。
+  \item 用 $n=c/v$，真空光速取 $3.0\times10^8\ \mathrm{m/s}$。
+  \item 临界角满足 $\sin C=\dfrac{1}{1.33}$，不要把分子分母写反。
+  \item 由 $\Delta x=\dfrac{L\lambda}{d}$ 可知，$d$ 增大为 2 倍，条纹间距变为原来的一半。
+\end{enumerate}
 
 \section*{八、易错点}
 \begin{mistakebox}
-TODO：补充本节常见错误。
+\begin{enumerate}
+  \item \textbf{角度量错：} 入射角、反射角、折射角都相对于法线，不是相对于界面。
+  \item \textbf{全反射条件不完整：} 只写 $i>C$ 不够，还必须是光密到光疏。
+  \item \textbf{把折射率理解成光速变快：} 折射率越大，介质中光速越小。
+  \item \textbf{凸透镜成像只背表格：} 真正稳定的方法是画两条特殊光线。
+  \item \textbf{波动光学单位混乱：} $\lambda$ 常用纳米，$d$ 常用毫米，计算前必须换算。
+\end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
 \begin{competitionbox}
-TODO：补充适度的模型意识或推广思考。
+\textbf{费马原理的思想}
+
+几何光学中有一个更深的统一观点：光在两点之间传播时，实际光路使传播时间取极值。反射定律和折射定律都可以从这个思想推出。
+
+\textbf{为什么折射会偏折？}
+光在不同介质中速度不同。若一束斜入射光进入较慢介质，波前的一侧先进入介质而速度先变慢，另一侧仍在原介质中较快传播，波前发生旋转，于是光线方向改变。
+
+\textbf{竞赛入门模型：} 多介质光路问题常不直接套公式，而是把光路分成几段，分别写出每段时间
+\[
+t=\frac{s_1}{v_1}+\frac{s_2}{v_2}+\cdots,
+\]
+再利用几何关系寻找最短时间路径。高中阶段先掌握法线、角度和折射率，竞赛阶段再把它们统一到“最短时间”思想中。
 \end{competitionbox}
 
-\section*{十、今日小结}
-TODO：用 3--5 条总结本节内容。
+\section*{十、模型深化与现代光学}
 
+\subsection*{1.\quad 棱镜色散：折射率与波长有关}
+
+白光通过棱镜后会分解成不同颜色的光，这是因为同一介质对不同颜色光的折射率不同。通常玻璃对紫光的折射率略大，对红光的折射率略小，所以紫光偏折更明显。
+
+\begin{center}
+\input{figures/tikz/prism-dispersion}
+
+\figcaption{棱镜色散：不同颜色光在介质中的折射率不同}\label{fig:prism-dispersion}
+\end{center}
+
+\textbf{科学应用：} 光谱仪利用色散把不同波长的光分开，从而分析物质成分。天文学中，恒星光谱可以告诉我们恒星含有哪些元素。
+
+\subsection*{2.\quad 透镜公式的使用边界}
+
+薄透镜公式
+\[
+\frac1f=\frac1u+\frac1v
+\]
+非常有用，但它有适用边界：
+\begin{itemize}
+  \item 透镜要足够薄；
+  \item 光线要近轴；
+  \item 物、像距离的正负号要按统一规则处理；
+  \item 真实光学仪器还会有像差，不能把理想透镜公式无限推广。
+\end{itemize}
+
+\textbf{学习建议：} 初学阶段先用光路图判断像的性质，再用公式计算数值。图像判断能防止公式符号用错。
+
+\textbf{符号提醒：} 若采用高中常用的实物实像正取法，计算前必须先约定物距、像距、焦距的正负；若只做初步判断，可以先用光路图判断成实像还是虚像，再代入统一规则。不要在同一题中混用两套符号约定。
+
+\subsection*{3.\quad 波动光学的三个关键词}
+
+\begin{enumerate}
+  \item \textbf{相干：} 两束光频率相同、相位差稳定，才容易形成稳定干涉条纹。
+  \item \textbf{光程差：} 决定某处是加强还是减弱。
+  \item \textbf{波长：} 条纹间距、衍射明显程度都与波长有关。
+\end{enumerate}
+
+双缝干涉中，相邻亮纹间距
+\[
+\Delta x=\frac{L\lambda}{d}
+\]
+说明：波长越长、屏越远，条纹越疏；双缝间距越大，条纹越密。
+
+\textbf{公式来源直觉：} 屏越远，同样的角度差在屏上拉开的距离越大；双缝间距越大，同一位置产生的光程差变化更快，条纹就更密。这比只记公式更能防止把 $L$ 和 $d$ 的影响记反。
+
+\begin{examplebox}{光纤临界角与数值判断}
+\textbf{题意分析：} 某光纤芯层折射率 $n_1=1.48$，包层折射率 $n_2=1.46$。光从芯层射向包层，求临界角满足的关系，并判断临界角接近 $80^\circ$ 还是 $40^\circ$。
+
+\textbf{物理模型：} 光密介质到光疏介质，全反射临界角。
+
+\textbf{解题过程：}
+\[
+\sin C=\frac{n_2}{n_1}=\frac{1.46}{1.48}\approx0.986.
+\]
+由于 $\sin C$ 接近 1，所以 $C$ 接近 $90^\circ$，更接近 $80^\circ$。
+
+\textbf{方法总结：} 折射率差很小时，临界角很大，光必须以较“贴近界面”的方向入射才会全反射。
+\end{examplebox}
+
+\subsection*{4.\quad 分层训练}
+
+\begin{enumerate}
+  \item \textbf{基础：} 光从空气进入水中，入射角为 $45^\circ$，折射角比入射角大还是小？
+  \item \textbf{提高：} 某透明介质折射率为 $1.60$，光从该介质射向空气，写出临界角方程。
+  \item \textbf{综合：} 双缝实验中换用波长更短的蓝光，其他条件不变，条纹间距如何变化？说明理由。
+  \item \textbf{开放思考：} 为什么显微镜和望远镜不仅要考虑几何成像，还要考虑衍射极限？
+\end{enumerate}
+
+\section*{十一、今日小结}
+\begin{enumerate}
+  \item 反射角等于入射角，折射遵循 $n_1\sin i=n_2\sin r$。
+  \item 折射率 $n=c/v$，折射率越大，介质中光速越小。
+  \item 全反射必须从光密介质射向光疏介质，且入射角大于临界角。
+  \item 凸透镜成像要会画特殊光线，不只背结论。
+  \item 双缝干涉说明光具有波动性，条纹间距 $\Delta x=L\lambda/d$。
+\end{enumerate}

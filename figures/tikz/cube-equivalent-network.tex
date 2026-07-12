@@ -1,0 +1,17 @@
+% TikZ 图：正方体电阻网络的等效分层
+% Day 19：恒定电流
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \node[circle,draw,inner sep=2pt] (A) at (0,0) {$A$};
+  \node[circle,draw,inner sep=2pt] (L1) at (2.1,0) {三点};
+  \node[circle,draw,inner sep=2pt] (L2) at (4.6,0) {三点};
+  \node[circle,draw,inner sep=2pt] (B) at (6.7,0) {$B$};
+
+  \draw[thick] (A) -- (L1) node[midway,above] {$R/3$};
+  \draw[thick] (L1) -- (L2) node[midway,above] {$R/6$};
+  \draw[thick] (L2) -- (B) node[midway,above] {$R/3$};
+  \draw[->,red,thick] (-0.7,0) -- (A);
+  \draw[->,red,thick] (B) -- (7.4,0);
+
+  \node[align=center] at (3.35,-1.35)
+    {对称点电势相同，可以合并\\三段串联：$R_{\text{总}}=\dfrac{R}{3}+\dfrac{R}{6}+\dfrac{R}{3}$};
+\end{tikzpicture}

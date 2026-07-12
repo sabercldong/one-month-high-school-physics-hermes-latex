@@ -26,6 +26,8 @@
 
 这节课最容易混淆的地方，正是“波向前走”和“质点只在附近振动”这两件事要同时成立。
 
+\textbf{科学发展视角：} 波动是现代通信、医学成像和地球探测的共同语言。声波用于超声检查，电磁波用于无线通信，地震波帮助研究地球内部结构。先学机械波，是为了建立“振动状态传播、能量传播、介质不整体迁移”的基本图像。
+
 \section*{三、核心概念}
 
 \begin{conceptbox}{机械波的形成}
@@ -165,9 +167,25 @@ $\Delta x=\dfrac{2n+1}{2}\lambda$ & 两质点反相 & $n$ 为整数 \\
 
 绳上每个质点上下振动，波形沿绳传播。解题时先读图得到 $A$、$\lambda$，再用 $v=\lambda f$ 或 $\Delta x=v\Delta t$ 处理传播。
 
+\begin{center}
+\input{figures/tikz/wave-rope-model}
+
+\figcaption{绳上横波模型：质点振动方向与波传播方向垂直}\label{fig:wave-rope-model}
+\end{center}
+
+\textbf{解题抓手：} 横波图像虽然画成一条“会前进的曲线”，但曲线上每一个质点只在平衡位置附近上下振动。图中向右的是波速，不是质点速度。
+
 \subsection*{模型 2：声波}
 
 声波在空气中是纵波。空气分子沿传播方向往复振动，疏部和密部向前传播。声波可以传递能量，但空气整体不会随声音从声源跑到人耳。
+
+\begin{center}
+\input{figures/tikz/sound-wave-model}
+
+\figcaption{声波纵波模型：疏密状态沿传播方向移动}\label{fig:sound-wave-model}
+\end{center}
+
+\textbf{解题抓手：} 纵波的关键不是“画不画得出正弦曲线”，而是看质点振动方向是否与传播方向共线。空气中的声波传播时，密部、疏部向前移动，空气分子只在小范围内往复运动。
 
 \subsection*{模型 3：波形图方向判断}
 
@@ -182,6 +200,12 @@ $\Delta x=\dfrac{2n+1}{2}\lambda$ & 两质点反相 & $n$ 为整数 \\
 \begin{examplebox}{波长、周期、波速的计算}
 
 \textbf{题意分析：} 一列横波在绳上向右传播。某时刻波形图读出振幅 $A=4\ \mathrm{cm}$，波长 $\lambda=0.80\ \mathrm{m}$。若振源频率 $f=5.0\ \mathrm{Hz}$，求周期、波速，以及 $2.0\ \mathrm{s}$ 内波形传播的距离。
+
+\begin{center}
+\input{figures/tikz/wave-example-basic}
+
+\figcaption{例题图：由波形图读出振幅和波长，再求波速}\label{fig:wave-example-basic}
+\end{center}
 
 \textbf{物理模型：} 机械横波的基本物理量计算。
 
@@ -204,6 +228,12 @@ v=\lambda f=0.80\times 5.0=4.0\ \mathrm{m/s}
 
 \textbf{题意分析：} 一列波沿 $x$ 轴正方向传播，波速 $v=2.0\ \mathrm{m/s}$，波长 $\lambda=4.0\ \mathrm{m}$。$t=0$ 时，某波峰在 $x=1.0\ \mathrm{m}$ 处。求 $0.50\ \mathrm{s}$ 后这个波峰的位置。
 
+\begin{center}
+\input{figures/tikz/wave-example-shift}
+
+\figcaption{例题图：波形整体向右平移 $\Delta x=v\Delta t$}\label{fig:wave-example-shift}
+\end{center}
+
 \textbf{物理模型：} 波形整体沿传播方向平移。
 
 \textbf{解题过程：}
@@ -225,6 +255,12 @@ x'=1.0+1.0=2.0\ \mathrm{m}
 \begin{examplebox}{由波形图判断质点运动方向}
 
 \textbf{题意分析：} 某时刻一列横波沿 $x$ 轴正方向传播。图上某点 $P$ 位于平衡位置上方，且所在处波形斜率为负。判断 $P$ 点此刻向上还是向下运动。
+
+\begin{center}
+\input{figures/tikz/wave-example-direction}
+
+\figcaption{例题图：微平移法判断 $P$ 点的振动方向}\label{fig:wave-example-direction}
+\end{center}
 
 \textbf{物理模型：} 右行横波的微平移判断。
 
@@ -284,7 +320,32 @@ x'=1.0+1.0=2.0\ \mathrm{m}
 \figcaption{两列向上位移脉冲相遇时，位移相加；相遇后继续传播}\label{fig:wave-superposition}
 \end{center}
 
-\textbf{模型意识：} 叠加不是“碰撞后合成一列波”，而是同一质点同时参与两个振动。若两列周期相同、方向相反的波长期叠加，就会出现驻波的雏形：有些点几乎不动，叫波节；有些点振幅最大，叫波腹。
+\textbf{驻波模型}
+
+若两列振幅相同、频率相同、传播方向相反的简谐波在同一条线上叠加，会形成\textbf{驻波}。驻波看起来“不向前传播”，但它不是静止的波形，而是各点在原地做不同振幅的振动：
+\begin{itemize}
+  \item \textbf{波节：} 始终不动的位置，振幅为零。
+  \item \textbf{波腹：} 振幅最大的位置。
+  \item 相邻两个波节之间、相邻两个波腹之间的距离都是 $\dfrac{\lambda}{2}$。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/standing-wave-modes}
+
+\figcaption{两端固定弦的驻波：只允许形成满足边界条件的波长}\label{fig:standing-wave-modes}
+\end{center}
+
+对两端固定、长度为 $L$ 的弦，两端必须都是波节，因此弦长必须容纳整数个“半波长”：
+\[
+L=n\frac{\lambda_n}{2}\qquad(n=1,2,3,\cdots)
+\]
+所以
+\[
+\lambda_n=\frac{2L}{n},\qquad f_n=\frac{v}{\lambda_n}=\frac{nv}{2L}.
+\]
+其中 $n=1$ 是基频，$n=2,3,\cdots$ 是更高的谐频。
+
+\textbf{模型意识：} 叠加不是“碰撞后合成一列波”，而是同一质点同时参与两个振动。驻波题的关键是先判断边界条件：固定端是波节，自由端通常是波腹；再用“半波长拼接”的几何关系确定 $\lambda$。
 
 \textbf{竞赛小贴士：} 遇到两列波叠加，先分别画出每列波在该时刻造成的位移，再按正负相加，不要把波峰、波谷当作物体相撞。
 \end{competitionbox}

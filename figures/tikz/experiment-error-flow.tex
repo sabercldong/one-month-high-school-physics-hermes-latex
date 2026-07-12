@@ -1,0 +1,12 @@
+% TikZ 图：实验误差处理流程
+% Day 28：实验专题
+\begin{tikzpicture}[scale=0.88,>=Latex]
+  \node[draw,rounded corners=2pt,fill=blue!8] (a) at (0,0) {明确测量量};
+  \node[draw,rounded corners=2pt,fill=blue!8] (b) at (2.7,0) {设计记录表};
+  \node[draw,rounded corners=2pt,fill=blue!8] (c) at (5.4,0) {多次测量};
+  \node[draw,rounded corners=2pt,fill=blue!8] (d) at (8.1,0) {作图/计算};
+  \node[draw,rounded corners=2pt,fill=red!8] (e) at (10.8,0) {分析误差};
+  \foreach \p/\q in {a/b,b/c,c/d,d/e}{\draw[->,thick] (\p) -- (\q);}
+  \node[font=\small,align=center] at (5.4,-0.9)
+    {有效数字、单位、坐标轴、斜率含义都要写清楚};
+\end{tikzpicture}

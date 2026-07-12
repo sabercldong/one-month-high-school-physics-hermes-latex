@@ -1,0 +1,26 @@
+% TikZ 图：电表内外接法
+% Day 28：实验专题
+\begin{tikzpicture}[scale=0.88,>=Latex]
+  \begin{scope}
+    \draw (0,0) rectangle (3.2,2.1);
+    \draw (0.4,1.05) -- (0.95,1.05);
+    \draw (0.95,1.05) circle (0.18) node {$A$};
+    \draw (1.15,1.05) -- (2.1,1.05);
+    \draw[thick] (2.1,0.75) rectangle (2.65,1.35) node[midway] {$R_x$};
+    \draw (2.65,1.05) -- (3.0,1.05);
+    \draw (2.1,1.35) -- (2.1,1.75) -- (2.65,1.75) -- (2.65,1.35);
+    \node at (2.38,1.95) {$V$};
+    \node at (1.6,-0.35) {电流表内接};
+  \end{scope}
+  \begin{scope}[xshift=5.0cm]
+    \draw (0,0) rectangle (3.2,2.1);
+    \draw (0.4,1.05) -- (1.0,1.05);
+    \draw[thick] (1.0,0.75) rectangle (1.55,1.35) node[midway] {$R_x$};
+    \draw (1.55,1.05) -- (2.0,1.05);
+    \draw (2.0,1.05) circle (0.18) node {$A$};
+    \draw (2.2,1.05) -- (3.0,1.05);
+    \draw (1.0,1.35) -- (1.0,1.75) -- (1.55,1.75) -- (1.55,1.35);
+    \node at (1.28,1.95) {$V$};
+    \node at (1.6,-0.35) {电流表外接};
+  \end{scope}
+\end{tikzpicture}

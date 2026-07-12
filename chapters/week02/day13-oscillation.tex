@@ -20,6 +20,8 @@
 
 高中把振动定量化：定义了振幅 $A$、周期 $T$、频率 $f$，并给出了弹簧振子和单摆的周期公式——这是中学生第一次可以精确计算振动系统的周期。
 
+\textbf{科学发展视角：} 振动既可以被利用，也需要被控制。石英钟靠稳定振动计时，建筑和桥梁要避开共振，手机和汽车中的振动传感器能感知运动状态。学习简谐运动时，要把“回复力指向平衡位置”看成很多复杂振动的最基本模型。
+
 \section*{三、核心概念}
 
 \begin{conceptbox}{简谐运动}
@@ -61,6 +63,21 @@
 \boxed{T = 2\pi\sqrt{\frac{m}{k}}}
 \]
 
+\textbf{公式来源（定性推导）：}
+弹簧振子偏离平衡位置 $x$ 时，合力为
+\[
+F=-kx.
+\]
+由牛顿第二定律 $F=ma$ 可知
+\[
+a=-\frac{k}{m}x.
+\]
+这说明加速度与位移成正比、方向相反，运动的“快慢节奏”由 $\dfrac{k}{m}$ 决定。数学上可证明这种运动的角频率满足
+\[
+\omega^2=\frac{k}{m},\qquad T=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{m}{k}}.
+\]
+因此弹簧越硬（$k$ 越大）振得越快，物体越重（$m$ 越大）振得越慢。
+
 \begin{itemize}
   \item $m$：振子质量。
   \item $k$：弹簧劲度系数。
@@ -83,6 +100,25 @@
 \[
 \boxed{T = 2\pi\sqrt{\frac{l}{g}}}
 \]
+
+\textbf{公式来源（小角度近似）：}
+摆球沿圆弧方向的回复力来自重力的切向分力：
+\[
+F_{\tau}=-mg\sin\theta.
+\]
+当摆角很小时，$\sin\theta\approx\theta$，且弧长位移 $x\approx l\theta$，所以
+\[
+F_{\tau}\approx-mg\theta=-\frac{mg}{l}x.
+\]
+它与弹簧振子的 $F=-kx$ 形式完全相同，只是等效“劲度系数”为
+\[
+k_{\text{等效}}=\frac{mg}{l}.
+\]
+代入 $T=2\pi\sqrt{\dfrac{m}{k}}$，得
+\[
+T=2\pi\sqrt{\frac{m}{mg/l}}=2\pi\sqrt{\frac{l}{g}}.
+\]
+这也解释了单摆周期为什么与摆球质量无关。
 
 \begin{itemize}
   \item $l$：摆长。
@@ -136,9 +172,30 @@ $f = \dfrac{1}{T}$ & 频率与周期 & 任何周期性运动 \\
 
 由 $T = 2\pi\sqrt{\dfrac{l}{g}}$ 得 $g = \dfrac{4\pi^2 l}{T^2}$。实验中改变摆长测周期，作图求斜率可得 $g$。
 
+更规范的数据处理方法是把公式平方：
+\[
+T^2=\frac{4\pi^2}{g}l.
+\]
+以 $l$ 为横轴、$T^2$ 为纵轴作图，应得到一条过原点附近的直线。若直线斜率为 $s$，则
+\[
+s=\frac{4\pi^2}{g},\qquad g=\frac{4\pi^2}{s}.
+\]
+
+\begin{center}
+\input{figures/tikz/pendulum-data-plot}
+
+\figcaption{单摆测 $g$ 的数据处理：作 $T^2-l$ 图像，用斜率求 $g$}\label{fig:pendulum-data-plot}
+\end{center}
+
 \subsection*{模型 3：简谐运动的能量}
 
 总机械能 $E = \dfrac12 kA^2$。动能和势能不断相互转化，总和守恒。
+
+\begin{center}
+\input{figures/tikz/shm-energy}
+
+\figcaption{简谐运动能量转化：动能和势能此消彼长，总能量守恒}\label{fig:shm-energy}
+\end{center}
 
 \section*{六、例题精讲}
 
@@ -264,6 +321,35 @@ g = \frac{4\pi^2 l}{T^2} = \frac{4 \times 3.14^2 \times 0.992}{1.99^2} \approx \
 \textbf{结论：} 竖直弹簧振子也是简谐运动，周期公式 $T = 2\pi\sqrt{m/k}$ 仍然成立——与水平放置时相同。
 
 \textbf{竞赛小贴士：} 证明简谐运动的关键是找到平衡位置，然后看合力是否与偏离量成正比且指向平衡位置。
+
+\pagebreak[4]
+\medskip
+\textbf{参考圆法：用匀速圆周运动理解简谐运动}
+
+简谐运动可以看成匀速圆周运动在一条直径上的投影。若圆半径为 $A$，角速度为 $\omega$，从最右端开始计时，则投影满足
+\[
+x=A\cos\omega t.
+\]
+
+\begin{center}
+\input{figures/tikz/reference-circle-shm}
+
+\figcaption{参考圆法：圆周运动在直径上的投影就是简谐运动}\label{fig:reference-circle-shm}
+\end{center}
+
+\textbf{例：从最大位移到振幅一半位置要多久？}
+
+若从 $x=A$ 开始计时，到 $x=\dfrac{A}{2}$ 时，
+\[
+A\cos\omega t=\frac{A}{2},\qquad \cos\omega t=\frac12.
+\]
+因此
+\[
+\omega t=\frac{\pi}{3},\qquad
+t=\frac{\pi/3}{2\pi/T}=\frac{T}{6}.
+\]
+
+\textbf{容易混淆：} 若从平衡位置 $x=0$ 开始向正方向运动，到 $x=\dfrac{A}{2}$，对应参考圆转过角度 $\dfrac{\pi}{6}$，所用时间是 $\dfrac{T}{12}$。所以做题时必须先看清“从哪里开始计时”。
 \end{competitionbox}
 
 \section*{十、今日小结}

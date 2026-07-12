@@ -1,0 +1,10 @@
+% TikZ 图：洛伦兹力不做功
+% Day 22：洛伦兹力
+\begin{tikzpicture}[scale=0.95,>=Latex]
+  \draw[thick,dashed] (0,0) circle (1.35);
+  \fill[red] (0.95,0.95) circle (2pt);
+  \draw[->,red,very thick] (0.95,0.95) -- (1.75,0.15) node[right] {$v$};
+  \draw[->,purple,very thick] (0.95,0.95) -- (0.35,0.35) node[left] {$F$};
+  \draw[gray] (0,0) -- (0.95,0.95);
+  \node at (0,-1.85) {$F\perp v,\quad P=\vect{F}\cdot\vect{v}=0$};
+\end{tikzpicture}
