@@ -1,14 +1,14 @@
 % TikZ 图：反射和折射
 % Day 25：光学基础
-\begin{tikzpicture}[scale=0.9,>=Latex]
+\begin{tikzpicture}[scale=0.9,>=Latex,line cap=round,line join=round]
   \draw[thick] (-3.0,0) -- (3.0,0);
   \node[right] at (3.0,0) {界面};
   \draw[dashed] (0,-2.0) -- (0,2.2) node[above] {法线};
   \draw[->,blue,thick] (-2.2,1.7) -- (0,0);
   \draw[->,blue,thick] (0,0) -- (2.0,1.55);
   \draw[->,red,thick] (0,0) -- (1.05,-1.8);
-  \draw (126:0.62) arc (126:90:0.62);
-  \node at (106:0.9) {$i$};
+  \draw (90:0.62) arc (90:142:0.62);
+  \node at (116:0.90) {$i$};
   \draw (90:0.78) arc (90:38:0.78);
   \node at (62:1.05) {$i'$};
   \draw (-90:0.78) arc (-90:-60:0.78);
@@ -16,7 +16,6 @@
   \node[blue] at (-2.0,1.95) {入射光};
   \node[blue] at (2.1,1.8) {反射光};
   \node[red] at (1.35,-1.75) {折射光};
-  \node[font=\small] at (-1.8,-0.35) {$n_1$};
-  \node[font=\small] at (-1.8,0.35) {空气};
-  \node[font=\small] at (2.1,-0.35) {$n_2$};
+  \node[font=\small] at (-1.9,0.35) {$n_1$ 空气};
+  \node[font=\small] at (2.0,-0.35) {$n_2$ 玻璃};
 \end{tikzpicture}

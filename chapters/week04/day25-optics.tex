@@ -19,6 +19,8 @@
 
 \textbf{科学发展视角：} 光学不只服务于眼镜和照相机。光纤通信、激光测距、显微成像、天文望远镜、芯片光刻和医学内窥镜，都依赖几何光学与波动光学的结合。
 
+\textbf{本节读题路线：} 几何光学题先画界面和法线，再标角度；折射题先判断光速变快还是变慢，再用折射定律计算；透镜题先用特殊光线判断像的性质，再考虑公式；干涉题先看条纹间距受 $L$、$\lambda$、$d$ 哪个量影响。
+
 \section*{三、核心概念}
 
 \begin{conceptbox}{反射与折射}
@@ -143,12 +145,26 @@ n_2>n_1\Rightarrow r<i,\qquad n_2<n_1\Rightarrow r>i.
 \figcaption{双缝干涉：条纹间距随波长和屏距增大，随缝距增大而减小}\label{fig:double-slit-interference}
 \end{center}
 
+这个公式可以用“光程差”直观理解。相邻亮纹对应的光程差相差一个波长 $\lambda$。当屏到双缝距离 $L$ 远大于缝距 $d$ 时，小角度近似下
+\[
+\Delta \ell \approx d\frac{x}{L}.
+\]
+令相邻亮纹的光程差变化为 $\lambda$，就得到
+\[
+\Delta x=\frac{L\lambda}{d}.
+\]
+因此，屏越远或波长越长，条纹越疏；双缝间距越大，条纹越密。
+
 \section*{六、例题精讲}
 
 \begin{examplebox}{折射角计算}
 \textbf{题意分析：} 光从空气射入某玻璃，入射角 $i=30^\circ$，玻璃折射率 $n=1.5$，空气折射率取 1。求折射角。
 
 \textbf{物理模型：} 折射定律。
+
+\begin{center}
+\input{figures/tikz/refraction-example-angle}
+\end{center}
 
 \textbf{解题过程：}
 \[
@@ -169,6 +185,10 @@ n_1\sin i=n_2\sin r
 
 \textbf{物理模型：} 光密介质到光疏介质的全反射。
 
+\begin{center}
+\input{figures/tikz/tir-critical-example}
+\end{center}
+
 \textbf{解题过程：}
 \[
 \sin C=\frac{n_2}{n_1}=\frac{1}{1.50}=\frac23.
@@ -185,6 +205,10 @@ C\approx41.8^\circ.
 \textbf{题意分析：} 双缝间距 $d=0.50\ \mathrm{mm}$，屏到双缝距离 $L=1.0\ \mathrm{m}$，用波长 $\lambda=600\ \mathrm{nm}$ 的光照射，求相邻亮纹间距。
 
 \textbf{物理模型：} 双缝干涉。
+
+\begin{center}
+\input{figures/tikz/double-slit-example}
+\end{center}
 
 \textbf{解题过程：}
 \[

@@ -1,0 +1,20 @@
+% TikZ 图：等温压缩例题
+% Day 26：热学基础
+\begin{tikzpicture}[scale=0.82,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.35,-1.25) rectangle (7.70,1.85);
+  \begin{scope}
+    \draw[thick] (0,0) rectangle (2.25,1.25);
+    \draw[fill=gray!20,thick] (1.75,0) rectangle (1.92,1.25);
+    \node[font=\small] at (0.95,0.68) {$p_1,V_1$};
+    \node[font=\small] at (1.10,-0.35) {$V_1=2.0\ \mathrm{L}$};
+  \end{scope}
+  \draw[->,thick] (2.70,0.62) -- (3.65,0.62);
+  \node[font=\small,fill=white,inner sep=0.8pt] at (3.18,0.98) {等温压缩};
+  \begin{scope}[xshift=4.10cm]
+    \draw[thick] (0,0) rectangle (2.25,1.25);
+    \draw[fill=gray!20,thick] (0.65,0) rectangle (0.82,1.25);
+    \node[font=\small] at (1.45,0.68) {$p_2,V_2$};
+    \node[font=\small] at (1.05,-0.35) {$V_2=0.50\ \mathrm{L}$};
+  \end{scope}
+  \node[font=\small,align=center] at (3.85,1.68) {$T$ 不变：$pV=C$；体积变小，压强变大};
+\end{tikzpicture}

@@ -1,0 +1,18 @@
+% TikZ 图：光电效应例题的能量账本
+% Day 27：近代物理
+\begin{tikzpicture}[scale=0.86,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.25,-0.90) rectangle (7.70,1.55);
+  \draw[->,blue,thick] (0.05,0.35) -- (1.45,0.35);
+  \node[blue,font=\small,fill=white,inner sep=1pt] at (0.80,0.82)
+    {$h\nu=3.5\ \mathrm{eV}$};
+  \draw[thick,fill=gray!16] (1.70,-0.05) rectangle (2.50,0.75);
+  \node[font=\small] at (2.10,0.35) {金属};
+  \draw[->,red,thick] (2.75,0.35) -- (4.25,0.35);
+  \node[red,font=\small,fill=white,inner sep=1pt] at (3.50,0.82)
+    {$W_0=2.0\ \mathrm{eV}$};
+  \draw[->,orange,thick] (4.55,0.35) -- (6.45,0.35);
+  \node[orange,font=\small,fill=white,inner sep=1pt] at (5.52,0.82)
+    {$E_{k\max}$};
+  \node[font=\small,align=center] at (3.90,-0.55)
+    {光子能量先克服逸出功，剩余部分成为最大初动能};
+\end{tikzpicture}

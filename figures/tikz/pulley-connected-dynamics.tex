@@ -1,0 +1,39 @@
+% TikZ 图：定滑轮连接体动力学
+% Day 07：连接体、斜面与摩擦综合
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \path[use as bounding box] (-0.4,-2.95) rectangle (4.85,1.20);
+  \coordinate (O) at (3.0,0);
+  \def\r{0.34}
+
+  % Table and wall corner; pulley center is fixed at the corner.
+  \draw[thick] (-0.25,0) -- (O) -- (3.0,-2.35);
+  \foreach \x in {0.0,0.35,...,2.65} {
+    \draw[gray!60] (\x,0) -- ++(-0.16,-0.13);
+  }
+  \foreach \y in {-0.25,-0.60,...,-2.10} {
+    \draw[gray!60] (3.0,\y) -- ++(0.13,0.17);
+  }
+
+  % Blocks.
+  \draw[fill=white,thick] (0.75,0) rectangle (1.55,0.58);
+  \node at (1.15,0.30) {$m_A$};
+  \draw[fill=white,thick] (3.06,-1.65) rectangle (3.68,-0.84);
+  \node at (3.37,-1.25) {$m_B$};
+
+  % Pulley and one continuous light string.
+  \draw[fill=white,thick] (O) circle (\r);
+  \fill (O) circle (0.035);
+  \draw[thick] (1.55,\r) -- ($(O)+(0,\r)$)
+    arc[start angle=90,end angle=0,radius=\r]
+    -- ($(O)+(\r,-0.84)$);
+
+  % Forces and accelerations.
+  \draw[->,thick,red] (1.55,0.29) -- (2.22,0.29) node[midway,below] {$T$};
+  \draw[->,thick,blue] (0.95,0.83) -- (1.78,0.83) node[right] {$a$};
+  \draw[->,thick,red] (3.37,-0.84) -- (3.37,-0.22) node[midway,left] {$T$};
+  \draw[->,thick,blue] (3.37,-1.65) -- (3.37,-2.30) node[midway,left] {$m_Bg$};
+  \draw[->,thick,blue] (4.08,-1.18) -- (4.08,-1.88) node[midway,right] {$a$};
+
+  \node[font=\footnotesize,align=center] at (1.85,-2.62)
+    {轻绳不伸长：$A$ 向右与 $B$ 向下的加速度大小相同};
+\end{tikzpicture}

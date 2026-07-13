@@ -1,0 +1,29 @@
+% TikZ 图：理想变压器负载响应
+% Day 24：交变电流与变压器
+\begin{tikzpicture}[scale=0.88,>=Latex]
+  \path[use as bounding box] (-0.35,-1.65) rectangle (8.55,1.55);
+
+  \node[draw,rounded corners=2pt,fill=blue!6,minimum width=1.65cm,minimum height=0.85cm]
+    (turns) at (0.75,0.45) {匝数比};
+  \node[font=\small,align=center] at (0.75,-0.55)
+    {$\dfrac{U_2}{U_1}=\dfrac{n_2}{n_1}$};
+
+  \node[draw,rounded corners=2pt,fill=gray!10,minimum width=1.85cm,minimum height=0.85cm]
+    (voltage) at (3.00,0.45) {副线圈电压};
+  \node[font=\small] at (3.00,-0.55) {$U_2$};
+
+  \node[draw,rounded corners=2pt,fill=red!6,minimum width=1.75cm,minimum height=0.85cm]
+    (load) at (5.20,0.45) {负载};
+  \node[font=\small] at (5.20,-0.55) {$R_{\text{负载}}$};
+
+  \node[draw,rounded corners=2pt,fill=orange!8,minimum width=1.75cm,minimum height=0.85cm]
+    (current) at (7.35,0.45) {电流};
+  \node[font=\small] at (7.35,-0.55) {$I_2=U_2/R_{\text{负载}}$};
+
+  \draw[->,thick] (turns) -- (voltage);
+  \draw[->,thick] (voltage) -- (load);
+  \draw[->,thick] (load) -- (current);
+
+  \node[purple,font=\small,align=center] at (4.15,-1.35)
+    {理想情况下 $U_1I_1\approx U_2I_2$，\\负载功率需求会反馈到原线圈};
+\end{tikzpicture}

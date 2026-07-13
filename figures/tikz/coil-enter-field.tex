@@ -1,8 +1,9 @@
 % TikZ 图：线圈进入磁场
 % Day 23：电磁感应
-\begin{tikzpicture}[scale=0.88,>=Latex]
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-1.75,-1.98) rectangle (4.35,1.55);
   \draw[thick,fill=blue!4] (-0.2,-1.15) rectangle (3.5,1.15);
-  \node[blue] at (2.8,0.92) {匀强磁场};
+  \node[blue,font=\small,fill=white,inner sep=0.8pt] at (2.62,1.35) {匀强磁场};
   \foreach \x in {0.3,1.0,1.7,2.4,3.1} {
     \foreach \y in {-0.75,0,0.75} {
       \draw[blue,thick] (\x-0.055,\y-0.055) -- (\x+0.055,\y+0.055);

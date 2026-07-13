@@ -1,0 +1,25 @@
+% TikZ 图：理想变压器例题电路
+% Day 24：交变电流
+\begin{tikzpicture}[scale=0.82,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.45,-1.55) rectangle (7.85,1.75);
+  \draw[fill=gray!14,draw=gray!60] (3.10,-1.15) rectangle (3.75,1.15);
+  \foreach \y in {-0.72,-0.36,0,0.36,0.72} {
+    \draw[blue,thick] (3.10,\y) .. controls (2.62,\y+0.18) and (2.62,\y-0.18) .. (3.10,\y-0.01);
+  }
+  \foreach \y in {-0.45,0,0.45} {
+    \draw[red,thick] (3.75,\y) .. controls (4.18,\y+0.18) and (4.18,\y-0.18) .. (3.75,\y-0.01);
+  }
+  \draw[thick] (0.30,0.58) -- (2.38,0.58);
+  \draw[thick] (2.38,-0.58) -- (0.30,-0.58);
+  \draw[thick] (4.48,0.58) -- (6.20,0.58);
+  \draw[thick] (6.20,0.58) -- (6.20,-0.58);
+  \draw[thick] (6.20,-0.58) -- (4.48,-0.58);
+  \draw[thick] (6.00,-0.20) -- (6.40,-0.20);
+  \draw[thick] (6.00,0.20) -- (6.40,0.20);
+  \node[blue,font=\small] at (1.20,1.05) {$U_1=220\ \mathrm{V}$};
+  \node[blue,font=\small,fill=white,inner sep=0.8pt] at (2.65,1.50) {$n_1=1100$};
+  \node[red,font=\small,fill=white,inner sep=0.8pt] at (4.55,1.50) {$n_2=110$};
+  \node[red,font=\small] at (6.85,0.30) {负载};
+  \node[red,font=\small] at (6.85,-0.25) {$I_2=2.0\ \mathrm{A}$};
+  \node[font=\small] at (3.42,-1.42) {降压变压器};
+\end{tikzpicture}

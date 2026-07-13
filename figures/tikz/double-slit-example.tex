@@ -1,0 +1,17 @@
+% TikZ 图：双缝干涉例题
+% Day 25：光学基础
+\begin{tikzpicture}[scale=0.80,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.35,-1.65) rectangle (6.65,1.65);
+  \draw[thick] (0,-1.25) -- (0,-0.30);
+  \draw[thick] (0,0.30) -- (0,1.25);
+  \fill[black] (0,0.45) circle (1.4pt) node[left] {$S_1$};
+  \fill[black] (0,-0.45) circle (1.4pt) node[left] {$S_2$};
+  \draw[thick] (5.00,-1.35) -- (5.00,1.35);
+  \foreach \y in {-0.72,0,0.72} {
+    \draw[red!70,thick] (5,\y) -- (5.35,\y);
+  }
+  \draw[<->] (0.25,-0.45) -- (0.25,0.45) node[midway,right] {$d=0.50\ \mathrm{mm}$};
+  \draw[<->] (0,-1.45) -- (5,-1.45) node[midway,below] {$L=1.0\ \mathrm{m}$};
+  \draw[<->,orange,thick] (5.55,0) -- (5.55,0.72) node[midway,right] {$\Delta x$};
+  \node[font=\small,align=center] at (3.05,1.25) {$\lambda=600\ \mathrm{nm}$\\先统一单位};
+\end{tikzpicture}

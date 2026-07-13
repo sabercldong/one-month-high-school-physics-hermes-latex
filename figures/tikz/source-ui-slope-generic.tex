@@ -1,0 +1,17 @@
+% TikZ 图：U-I 图像求电源电动势和内阻
+% Day 30：综合训练
+\begin{tikzpicture}[scale=0.90,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.55,-0.65) rectangle (5.65,3.05);
+  \draw[->,thick] (0,0) -- (5.10,0) node[right] {$I$};
+  \draw[->,thick] (0,0) -- (0,2.75) node[above] {$U$};
+  \draw[blue,thick] (0,2.35) -- (4.35,1.25);
+  \node[left] at (0,2.35) {$E$};
+  \draw[dashed] (3.20,1.54) -- (3.20,0);
+  \draw[dashed] (3.20,1.54) -- (0,1.54);
+  \fill[blue] (0,2.35) circle (1.7pt);
+  \fill[blue] (3.20,1.54) circle (1.7pt);
+  \node[blue,font=\small,align=center] at (3.65,2.45)
+    {斜率 $k=-r$\\纵截距 $E$};
+  \draw[<->,red,thick] (0.18,2.28) -- (3.02,1.58)
+    node[midway,below,sloped] {$\Delta U/\Delta I$};
+\end{tikzpicture}

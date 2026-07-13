@@ -1,0 +1,17 @@
+% TikZ 图：电源 U-I 图像求 E 和 r
+% Day 28：实验专题
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.45,-0.65) rectangle (5.75,3.20);
+  \draw[->,thick] (0,0) -- (5.20,0) node[right] {$I/\mathrm{A}$};
+  \draw[->,thick] (0,0) -- (0,2.85) node[above] {$U/\mathrm{V}$};
+  \draw[blue,thick] (0,2.45) -- (4.35,1.55);
+  \fill[blue] (0,2.45) circle (1.7pt);
+  \fill[blue] (3.60,1.70) circle (1.7pt);
+  \draw[dashed] (3.60,1.70) -- (3.60,0) node[below] {$0.50$};
+  \draw[dashed] (3.60,1.70) -- (0,1.70) node[left] {$1.25$};
+  \node[left] at (0,2.45) {$1.50$};
+  \node[blue,font=\small,align=center] at (3.55,2.55)
+    {纵截距 $E$\\斜率 $k=-r$};
+  \draw[<->,red] (0.18,2.45) -- (3.42,1.70)
+    node[midway,below,sloped] {$\Delta U/\Delta I$};
+\end{tikzpicture}

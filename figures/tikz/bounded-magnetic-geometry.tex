@@ -1,29 +1,33 @@
 % TikZ 图：有界磁场圆弧几何
 % Day 22：洛伦兹力
-\begin{tikzpicture}[scale=0.9,>=Latex]
-  \draw[thick,fill=blue!5] (-0.2,-1.8) rectangle (4.2,1.8);
-  \foreach \x in {0.3,1.1,1.9,2.7,3.5} {
-    \foreach \y in {-1.2,-0.4,0.4,1.2} {
+\begin{tikzpicture}[scale=1.02,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-1.65,-2.10) rectangle (3.65,2.05);
+  \draw[thick,fill=blue!5] (0,-1.48) rectangle (2.75,1.48);
+  \foreach \x in {0.45,1.10,1.75,2.40} {
+    \foreach \y in {-1.02,-0.34,0.34,1.02} {
       \draw[gray] (\x-0.05,\y-0.05) -- (\x+0.05,\y+0.05);
       \draw[gray] (\x-0.05,\y+0.05) -- (\x+0.05,\y-0.05);
     }
   }
-  \node[blue] at (0.65,1.55) {$B$ 向里};
+  \node[blue,font=\small] at (2.05,1.08) {$B$ 向里};
 
-  \coordinate (A) at (-0.2,-0.9);
-  \coordinate (B) at (2.8,1.35);
-  \coordinate (O) at (1.35,-0.15);
-  \draw[red,very thick,->] (A) .. controls (0.15,0.2) and (1.45,1.4) .. (B);
-  \fill[red] (A) circle (2pt) node[left] {入射点};
-  \fill[red] (B) circle (2pt) node[below right] {出射点};
-  \fill[black] (O) circle (1.8pt) node[below] {$O$};
+  \coordinate (O) at (0,0.35);
+  \coordinate (A) at (0,-1.05);
+  \coordinate (C) at (1.21,-0.35);
+  \draw[->,red,thick] (-1.25,-1.05) -- (A) node[midway,below] {$v_1$};
+  \draw[red,very thick,->] (A) arc (-90:-30:1.40);
+  \draw[->,red,thick] (C) -- ++(0.62,1.08);
+  \node[red] at (1.72,0.78) {$v_2$};
 
-  \draw[->,red,thick] (-1.2,-0.9) -- (A) node[midway,below] {$v_1$};
-  \draw[->,red,thick] (B) -- (3.7,1.35) node[right] {$v_2$};
-  \draw[dashed,thick] (O) -- (A) node[midway,below left] {$r$};
-  \draw[dashed,thick] (O) -- (B) node[midway,right] {$r$};
-  \draw[orange,thick,->] (1.75,0.05) arc (20:72:0.65);
-  \node[orange] at (2.05,0.55) {$\alpha$};
-  \node[font=\small,align=center] at (2.0,-2.25)
-    {半径垂直速度；圆心角 $\alpha$ 决定运动时间 $t=\dfrac{\alpha}{2\pi}T$};
+  \fill[red] (A) circle (2pt) node[below left] {$A$};
+  \fill[red] (C) circle (2pt);
+  \node[red] at (1.48,-0.52) {$C$};
+  \fill[black] (O) circle (1.6pt) node[left=2pt] {$O$};
+  \draw[dashed,thick] (O) -- (A) node[midway,left] {$r$};
+  \draw[dashed,thick] (O) -- (C) node[midway,above=2pt] {$r$};
+
+  \draw[orange,thick,->] (0,-0.55) arc (-90:-30:0.90);
+  \node[orange] at (0.62,-0.50) {$\alpha$};
+  \node[font=\small,align=center] at (1.35,-1.85)
+    {$\alpha$：圆心角 = 速度方向转角};
 \end{tikzpicture}

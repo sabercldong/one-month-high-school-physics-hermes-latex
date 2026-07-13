@@ -1,0 +1,24 @@
+% TikZ 图：线圈进出磁场例题草图
+% Day 23：电磁感应
+\begin{tikzpicture}[scale=0.78,>=Latex,line cap=round]
+  \path[use as bounding box] (-1.95,-1.38) rectangle (4.15,1.25);
+  \draw[thick,fill=blue!4] (-0.20,-0.85) rectangle (3.25,0.85);
+  \foreach \x in {0.25,0.85,1.45,2.05,2.65} {
+    \foreach \y in {-0.45,0.25} {
+      \draw[blue,thick] (\x-0.05,\y-0.05) -- (\x+0.05,\y+0.05);
+      \draw[blue,thick] (\x-0.05,\y+0.05) -- (\x+0.05,\y-0.05);
+    }
+  }
+
+  \draw[thick,red] (-1.55,-0.42) rectangle (-0.70,0.42);
+  \draw[->,red,thick] (-1.12,0) -- (-0.32,0);
+  \node[font=\small,align=center] at (-1.12,-1.12) {进入\\$\Phi\uparrow$};
+
+  \draw[thick,orange] (1.08,-0.42) rectangle (1.93,0.42);
+  \draw[->,orange,thick] (1.35,0) -- (2.15,0);
+  \node[font=\small,align=center] at (1.50,-1.12) {内部\\$\Phi$ 不变};
+
+  \draw[thick,purple] (2.78,-0.42) rectangle (3.63,0.42);
+  \draw[->,purple,thick] (3.05,0) -- (3.85,0);
+  \node[font=\small,align=center] at (3.22,-1.12) {离开\\$\Phi\downarrow$};
+\end{tikzpicture}

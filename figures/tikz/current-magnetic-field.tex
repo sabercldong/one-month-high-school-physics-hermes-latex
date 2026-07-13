@@ -1,26 +1,34 @@
 % TikZ 图：直线电流周围磁场
 % Day 21：磁场与安培力
-\begin{tikzpicture}[scale=0.92,>=Latex]
-  \begin{scope}[shift={(-2.2,0)}]
+\begin{tikzpicture}[scale=0.92,>=Latex,line cap=round]
+  \path[use as bounding box] (-4.25,-2.20) rectangle (4.25,1.85);
+
+  \begin{scope}[shift={(-2.25,0)}]
     \draw[thick] (0,0) circle (0.22);
     \fill[red] (0,0) circle (0.055);
-    \node[red] at (0,0.48) {$I$ 向外};
-    \draw[blue,thick,->] (0.88,0) arc (0:270:0.88);
-    \draw[blue,thick,->] (1.28,0) arc (0:270:1.28);
-    \node[blue] at (-1.23,1.12) {$B$};
-    \node[font=\small] at (0,-1.68) {拇指指出纸面};
+    \node[red] at (0,0.50) {$I$ 向外};
+
+    \draw[blue,thick] (0,0) circle (0.82);
+    \draw[blue,thick] (0,0) circle (1.20);
+    \draw[blue,thick,->] (0.82,0) arc (0:62:0.82);
+    \draw[blue,thick,->] (-1.20,0) arc (180:242:1.20);
+    \node[blue] at (-1.32,1.02) {$B$};
+    \node[font=\small] at (0,-1.55) {拇指指出纸面};
   \end{scope}
 
-  \begin{scope}[shift={(2.2,0)}]
+  \begin{scope}[shift={(2.25,0)}]
     \draw[thick] (0,0) circle (0.22);
     \draw[red,thick] (-0.12,-0.12) -- (0.12,0.12);
     \draw[red,thick] (-0.12,0.12) -- (0.12,-0.12);
-    \node[red] at (0,0.48) {$I$ 向里};
-    \draw[blue,thick,->] (0.88,0) arc (0:-270:0.88);
-    \draw[blue,thick,->] (1.28,0) arc (0:-270:1.28);
-    \node[blue] at (1.23,1.12) {$B$};
-    \node[font=\small] at (0,-1.68) {拇指指入纸面};
+    \node[red] at (0,0.50) {$I$ 向里};
+
+    \draw[blue,thick] (0,0) circle (0.82);
+    \draw[blue,thick] (0,0) circle (1.20);
+    \draw[blue,thick,->] (0.82,0) arc (0:-62:0.82);
+    \draw[blue,thick,->] (-1.20,0) arc (180:118:1.20);
+    \node[blue] at (1.32,1.02) {$B$};
+    \node[font=\small] at (0,-1.55) {拇指指入纸面};
   \end{scope}
 
-  \node[font=\small,align=center] at (0,-2.18) {俯视导线截面：右手四指弯曲方向就是磁场方向};
+  \node[font=\small,align=center] at (0,-2.02) {俯视导线截面：磁感线是以导线为圆心的同心圆，箭头表示磁场方向};
 \end{tikzpicture}

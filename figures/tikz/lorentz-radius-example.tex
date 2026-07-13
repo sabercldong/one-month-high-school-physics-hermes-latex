@@ -1,0 +1,19 @@
+% TikZ 图：洛伦兹力半径例题
+% Day 22：洛伦兹力
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \foreach \x in {-1.8,-1.1,-0.4,0.3,1.0,1.7} {
+    \foreach \y in {-1.0,-0.35,0.3,0.95} {
+      \draw[blue,thick] (\x-0.055,\y-0.055) -- (\x+0.055,\y+0.055);
+      \draw[blue,thick] (\x-0.055,\y+0.055) -- (\x+0.055,\y-0.055);
+    }
+  }
+  \node[blue,font=\small] at (2.25,0.95) {$B$ 向里};
+  \coordinate (O) at (0,0);
+  \coordinate (P) at (0,-1.05);
+  \draw[dashed] (O) circle (1.05);
+  \draw[red,very thick,->] (-1.45,-1.05) -- (P) node[midway,below] {$v$};
+  \draw[red,thick,->] (P) arc (-90:120:1.05);
+  \draw[gray] (O) -- (P) node[midway,right] {$r$};
+  \fill (O) circle (1.5pt) node[above] {$O$};
+  \fill[red] (P) circle (2pt);
+\end{tikzpicture}

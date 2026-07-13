@@ -1,0 +1,25 @@
+% TikZ 图：电场加速后进入磁场
+% Day 29：模型复盘
+\begin{tikzpicture}[scale=0.84,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.35,-0.95) rectangle (8.10,1.75);
+  \draw[thick] (0.30,-0.45) -- (0.30,1.05);
+  \draw[thick] (2.05,-0.45) -- (2.05,1.05);
+  \node[above] at (1.18,1.05) {$U$};
+  \foreach \y in {-0.18,0.25,0.68}{
+    \draw[->,blue,thick] (0.58,\y) -- (1.72,\y);
+  }
+  \node[red] at (-0.05,0.25) {$q$};
+  \draw[->,red,thick,dashed] (0.18,0.25) -- (2.38,0.25);
+  \draw[thick] (2.55,-0.55) rectangle (7.55,1.30);
+  \foreach \x in {3.0,3.7,4.4,5.1,5.8,6.5,7.2}{
+    \foreach \y in {-0.25,0.25,0.75,1.15}{
+      \node[blue] at (\x,\y) {$\times$};
+    }
+  }
+  \draw[red,thick,->] (2.65,0.25) arc[start angle=180,end angle=55,radius=1.10];
+  \draw[dashed] (3.75,0.25) circle (1.10);
+  \draw[<->,orange,thick] (3.75,0.25) -- (3.12,1.15)
+    node[midway,right] {$r$};
+  \node[font=\small] at (1.18,1.48) {电场加速};
+  \node[font=\small] at (5.25,1.48) {磁场偏转};
+\end{tikzpicture}

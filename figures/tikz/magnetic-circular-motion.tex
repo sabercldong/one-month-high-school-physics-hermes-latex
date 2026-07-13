@@ -9,10 +9,11 @@
   }
   \node[blue] at (2.65,1.1) {$B$ 向里};
   \draw[thick,dashed] (0,0) circle (1.15);
-  \draw[->,red,very thick] (-2.4,-1.15) -- (-1.15,-1.15) node[midway,below] {$v$};
-  \draw[red,thick,->] (-1.15,-1.15) arc (-180:75:1.15);
-  \fill[red] (-1.15,-1.15) circle (2pt);
+  \coordinate (P) at (0,-1.15);
+  \draw[->,red,very thick] (-1.65,-1.15) -- (P) node[midway,below] {$v$};
+  \draw[red,thick,->] (P) arc (-90:170:1.15);
+  \fill[red] (P) circle (2pt);
   \fill (0,0) circle (1.5pt);
-  \draw[gray] (0,0) -- (-1.15,-1.15) node[midway,above left] {$r$};
-  \node at (0,-1.75) {$|q|vB=\dfrac{mv^2}{r}$};
+  \draw[gray] (0,0) -- (P) node[midway,right] {$r$};
+  \draw[->,purple,thick] (P) -- (0,-0.35) node[midway,right] {$F$};
 \end{tikzpicture}

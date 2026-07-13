@@ -1,0 +1,14 @@
+% TikZ 图：能级跃迁例题
+% Day 27：近代物理
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.55,-0.75) rectangle (5.35,2.55);
+  \draw[thick] (0,0) -- (3.80,0);
+  \node[left] at (0,0) {$E_1=-13.6\ \mathrm{eV}$};
+  \draw[thick] (0,2.00) -- (3.80,2.00);
+  \node[left] at (0,2.00) {$E_3=-1.5\ \mathrm{eV}$};
+  \draw[->,red,thick] (2.15,2.00) -- (2.15,0.08);
+  \draw[->,orange,thick] (2.35,1.35) -- (4.40,1.35)
+    node[right] {$E_\gamma=12.1\ \mathrm{eV}$};
+  \node[font=\small,align=center] at (2.00,-0.48)
+    {高能级降到低能级，能级差以光子形式放出};
+\end{tikzpicture}

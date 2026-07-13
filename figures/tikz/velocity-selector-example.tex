@@ -1,0 +1,22 @@
+% TikZ 图：速度选择器例题
+% Day 22：洛伦兹力
+\begin{tikzpicture}[scale=0.9,>=Latex,line cap=round]
+  \path[use as bounding box] (-2.55,-1.75) rectangle (2.70,1.45);
+  \draw[thick] (-2.3,1.0) -- (2.3,1.0);
+  \draw[thick] (-2.3,-1.0) -- (2.3,-1.0);
+  \node at (-2.15,1.25) {$+$};
+  \node at (-2.15,-1.25) {$-$};
+  \foreach \x in {-1.5,-0.75,0,0.75,1.5} {
+    \draw[->,blue,thick] (\x,0.78) -- (\x,-0.78);
+  }
+  \foreach \x in {-1.7,-0.9,-0.1,0.7,1.5} {
+    \draw[gray,thick] (\x-0.055,-0.055) -- (\x+0.055,0.055);
+    \draw[gray,thick] (\x-0.055,0.055) -- (\x+0.055,-0.055);
+  }
+  \draw[->,red,very thick] (-2.0,0) -- (2.0,0) node[right] {$v$};
+  \draw[->,purple,thick] (-0.45,0) -- (-0.45,-0.68);
+  \node[purple,font=\small] at (-1.02,-0.46) {$qE$};
+  \draw[->,orange,thick] (0.45,0) -- (0.45,0.68);
+  \node[orange,font=\small] at (0.80,0.55) {$qvB$};
+  \node[font=\small] at (0,-1.55) {直线通过：$qE=qvB$};
+\end{tikzpicture}

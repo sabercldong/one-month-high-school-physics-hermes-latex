@@ -26,6 +26,8 @@ Day 17 中，带电粒子在匀强电场中受到电场力，可能做类平抛�
 
 \textbf{科学发展视角：} 洛伦兹力是粒子加速器、质谱仪、等离子体约束和空间辐射探测的基础。现代科学常常不是直接“看见”微观粒子，而是通过电场和磁场控制它们的轨迹，再由轨迹反推粒子的速度、质量和电荷性质。
 
+\textbf{本节读题路线：} 先判断洛伦兹力方向，知道粒子向哪边弯；再用“不做功”判断速率是否变化；最后把弯曲轨迹看成圆周运动的一段，用圆心、半径和圆心角解决几何问题。这样学，公式就不是孤立记忆，而是从受力图自然长出来的。
+
 \section*{三、核心概念}
 
 \begin{conceptbox}{洛伦兹力}
@@ -113,6 +115,12 @@ $t=\dfrac{\alpha}{2\pi}T$ & 磁场中运动时间 & 偏转角为 $\alpha$ \\
 
 \section*{五、典型模型}
 
+\textbf{磁场粒子题的三层拆解：} 遇到带电粒子进磁场，建议先不要急着代 $r=\dfrac{mv}{|q|B}$。完整思路是：
+\[
+\text{方向判断}\rightarrow\text{圆周模型}\rightarrow\text{边界几何}.
+\]
+第一步确定粒子向哪边偏；第二步确认洛伦兹力提供向心力；第三步再看题目给的是半径、直径、弦长、圆心角还是运动时间。
+
 \subsection*{模型 1：有界磁场中的圆弧轨迹}
 
 粒子进入有界匀强磁场后，只在磁场内走圆弧。解题关键是找圆心：
@@ -132,6 +140,7 @@ $t=\dfrac{\alpha}{2\pi}T$ & 磁场中运动时间 & 偏转角为 $\alpha$ \\
 \[
 t=\frac{\alpha}{2\pi}T.
 \]
+这里最容易错的不是公式，而是把圆心找错。一旦圆心错了，半径、圆心角和运动时间都会跟着错。
 
 \begin{center}
 \input{figures/tikz/bounded-magnetic-geometry}
@@ -162,9 +171,12 @@ r=\frac{mv}{|q|B}
 可知，在 $|q|$、$v$、$B$ 相同的情况下，质量越大，半径越大。
 
 \begin{center}
+\begin{minipage}{0.95\textwidth}
+\centering
 \input{figures/tikz/mass-spectrometer}
 
 \figcaption{质谱仪原理：不同质量的粒子在磁场中半径不同}\label{fig:mass-spectrometer}
+\end{minipage}
 \end{center}
 
 \section*{六、例题精讲}
@@ -173,6 +185,10 @@ r=\frac{mv}{|q|B}
 \textbf{题意分析：} 质子以 $v=2.0\times 10^6\ \mathrm{m/s}$ 的速度垂直进入 $B=0.50\ \mathrm{T}$ 的匀强磁场。质子质量 $m=1.67\times10^{-27}\ \mathrm{kg}$，电荷量 $q=1.60\times10^{-19}\ \mathrm{C}$。求轨道半径。
 
 \textbf{物理模型：} 洛伦兹力提供向心力。
+
+\begin{center}
+\input{figures/tikz/lorentz-radius-example}
+\end{center}
 
 \textbf{解题过程：}
 \[
@@ -189,6 +205,10 @@ r=\frac{mv}{qB}
 \textbf{题意分析：} 一个带正电粒子垂直进入匀强磁场，轨迹刚好为半圆后射出。已知 $m$、$q$、$B$，求粒子在磁场中的运动时间。
 
 \textbf{物理模型：} 圆周运动的一部分。
+
+\begin{center}
+\input{figures/tikz/magnetic-half-circle-time}
+\end{center}
 
 \textbf{解题过程：}
 
@@ -209,6 +229,10 @@ t=\frac{T}{2}=\frac{\pi m}{qB}
 
 \textbf{物理模型：} 直线通过意味着合力为零。
 
+\begin{center}
+\input{figures/tikz/velocity-selector-example}
+\end{center}
+
 \textbf{解题过程：}
 \[
 qE=qvB.
@@ -227,6 +251,10 @@ v=\frac{E}{B}
 \textbf{题意分析：} 两种一价正离子经过同一速度选择器后进入同一匀强磁场。若质量分别为 $m$ 和 $2m$，比较它们在磁场中的轨道半径。
 
 \textbf{物理模型：} 速度相同、电荷量相同、磁场相同，半径只随质量变化。
+
+\begin{center}
+\input{figures/tikz/mass-radius-comparison}
+\end{center}
 
 \textbf{解题过程：}
 \[

@@ -1,0 +1,19 @@
+% TikZ 图：导体棒切割磁感线例题草图
+% Day 23：电磁感应
+\begin{tikzpicture}[scale=0.82,>=Latex,line cap=round]
+  \path[use as bounding box] (-2.15,-1.35) rectangle (2.65,1.30);
+  \draw[thick] (-1.85,0.85) -- (2.10,0.85);
+  \draw[thick] (-1.85,-0.85) -- (2.10,-0.85);
+  \draw[thick] (-1.85,0.85) -- (-1.85,-0.85);
+  \draw[very thick,red] (-0.10,-0.85) -- (-0.10,0.85);
+  \node[red] at (0.18,0.18) {$L$};
+  \draw[->,red,very thick] (-0.10,0) -- (0.92,0) node[right] {$v$};
+  \foreach \x in {-1.35,-0.75,-0.15,0.45,1.05,1.65} {
+    \foreach \y in {-0.45,0.25} {
+      \draw[blue,thick] (\x-0.055,\y-0.055) -- (\x+0.055,\y+0.055);
+      \draw[blue,thick] (\x-0.055,\y+0.055) -- (\x+0.055,\y-0.055);
+    }
+  }
+  \node[blue,font=\small] at (2.30,0.70) {$B$ 向里};
+  \node[font=\small] at (0,-1.20) {先判定 $B,L,v$ 两两垂直，再用 $E=BLv$};
+\end{tikzpicture}

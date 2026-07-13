@@ -19,6 +19,8 @@
 
 \textbf{科学发展视角：} 现代电网的核心不是“把电送出去”这么简单，而是“用合适的电压、频率和功率控制方式高效送电”。发电机、变压器、电动机、无线充电、手机传感器和电动汽车充电桩，都离不开交变电流和电磁感应。
 
+\textbf{本节读题路线：} 遇到交流电，先区分“瞬时值、最大值、有效值”；遇到变压器，先用匝数比定电压，再由负载和功率关系定电流；遇到输电，先固定输送功率，再看电压升高怎样让电流和线路损耗降低。
+
 \section*{三、核心概念}
 
 \begin{conceptbox}{交变电流}
@@ -45,6 +47,8 @@ i=I_m\sin\omega t,\qquad u=U_m\sin\omega t.
 \begin{conceptbox}{有效值}
 
 交流电的有效值按热效应定义：若某交流电和某直流电在同一电阻、相同时间内产生的热量相同，则这个直流电的电流、电压就是该交流电的有效值。
+
+换句话说，有效值回答的不是“某一瞬间电压是多少”，而是“这个交流电让电阻发热的本领相当于多大的直流电”。电器铭牌和交流电表通常关心这个量。
 
 对正弦交流电：
 \[
@@ -74,6 +78,17 @@ i=I_m\sin\omega t,\qquad u=U_m\sin\omega t.
   \item $n_2<n_1$：降压变压器，副线圈电压较低、电流较大。
   \item 变压器不能直接改变恒定直流电压，因为直流电不能在铁芯中持续产生变化磁通量。
 \end{itemize}
+
+\textbf{电压比的来源：} 原、副线圈绕在同一铁芯上，理想情况下穿过每一匝线圈的磁通量变化相同。由法拉第电磁感应定律，
+\[
+E_1=n_1\left|\frac{\Delta\Phi}{\Delta t}\right|,\qquad
+E_2=n_2\left|\frac{\Delta\Phi}{\Delta t}\right|.
+\]
+因此感应电动势之比等于匝数比。忽略线圈电阻时，端电压近似等于感应电动势，便得到
+\[
+\frac{U_2}{U_1}=\frac{n_2}{n_1}.
+\]
+这样理解后，变压器公式不是孤立记忆，而是电磁感应定律在两个线圈上的应用。
 
 \end{conceptbox}
 
@@ -110,6 +125,17 @@ U_m=\sqrt2\,U,\qquad I_m=\sqrt2\,I.
 \[
 \frac{I_2}{I_1}=\frac{U_1}{U_2}=\frac{n_1}{n_2}.
 \]
+实际解题时还要注意：副线圈电流不是由匝数比直接“给定”的，而是由副线圈接的负载决定：
+\[
+I_2=\frac{U_2}{R_{\text{负载}}}.
+\]
+副线圈功率一变，原线圈从电源吸收的功率也随之改变。
+
+\begin{center}
+\input{figures/tikz/transformer-load-response}
+
+\figcaption{理想变压器负载响应：匝数比定电压，负载定电流}\label{fig:transformer-load-response}
+\end{center}
 
 \subsection*{模型 3：远距离输电}
 
@@ -144,6 +170,10 @@ E_C=\frac12CU^2,\qquad E_L=\frac12LI^2.
 
 \textbf{物理模型：} 正弦交流电。
 
+\begin{center}
+\input{figures/tikz/ac-rms-example}
+\end{center}
+
 \textbf{解题过程：}
 \[
 U=\frac{U_m}{\sqrt2}=\frac{311}{1.414}\approx220\ \mathrm{V}.
@@ -159,6 +189,10 @@ T=\frac1f=\frac1{50}=0.020\ \mathrm{s}.
 \textbf{题意分析：} 一理想变压器原线圈接 $220\ \mathrm{V}$ 交流电，原、副线圈匝数分别为 $n_1=1100$、$n_2=110$。若副线圈接入电阻后电流为 $2.0\ \mathrm{A}$，求副线圈电压和原线圈电流。
 
 \textbf{物理模型：} 理想降压变压器。
+
+\begin{center}
+\input{figures/tikz/transformer-example-circuit}
+\end{center}
 
 \textbf{解题过程：}
 \[
@@ -179,6 +213,10 @@ U_1I_1=U_2I_2,
 \textbf{题意分析：} 某线路输送功率 $P=100\ \mathrm{kW}$，输电线总电阻 $R=4.0\ \Omega$。若输电电压分别为 $1.0\ \mathrm{kV}$ 和 $10\ \mathrm{kV}$，比较线路损耗。
 
 \textbf{物理模型：} 输电功率一定，$I=P/U$，线路损耗 $P_{\text{损}}=I^2R$。
+
+\begin{center}
+\input{figures/tikz/transmission-loss-compare}
+\end{center}
 
 \textbf{解题过程：}
 \[
@@ -281,6 +319,8 @@ P_1=P_2.
   \item \textbf{能量转换：} 电动机把电能转化为机械能，发电机把机械能转化为电能。
 \end{enumerate}
 
+\textbf{现代补充：} 传统电网大量使用交流电，一个关键原因是交流电可以方便地通过变压器升压、降压。今天的远距离大容量输电中，也会使用高压直流输电；它通常先把交流整流为直流，远距离传输后再逆变为交流。高中阶段先掌握交流变压和 $I^2R$ 损耗，是理解现代电网的基础。
+
 \subsection*{4.\quad 负载改变时，变压器怎样响应}
 
 理想变压器中，副线圈接入负载后，副线圈电流由负载决定：
@@ -321,3 +361,7 @@ E_m=NBS\omega=200\times0.50\times0.020\times100=200\ \mathrm{V}.
   \item 远距离输电用高压降低电流，从而减小 $I^2R$ 损耗。
   \item LC 振荡体现电场能和磁场能的周期性转化。
 \end{enumerate}
+
+\section*{十二、下一部分衔接}
+
+到这里，力、电、磁已经形成了一条完整链条：力学描述运动和能量，电磁学描述电荷、电场、磁场以及能量传输。下一部分进入光、热、原子和实验综合，会看到两件事：一是物理模型继续扩展到波、热运动和微观结构；二是实验方法会越来越重要，很多结论不只靠公式推导，还要靠测量、图像和误差分析来建立。

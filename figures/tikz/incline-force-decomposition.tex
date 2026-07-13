@@ -1,0 +1,38 @@
+% TikZ 图：斜面受力与重力分解示意
+% Day 05：综合受力分析例题
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \path[use as bounding box] (-0.2,-0.55) rectangle (6.3,3.25);
+
+  % 30 degree incline.
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (5.2,0);
+  \coordinate (D) at (0,3.0);
+  \draw[thick] (A) -- (B) -- (D) -- cycle;
+  \draw[thick] (D) -- (B);
+  \draw (4.35,0) arc (180:150:0.72);
+  \node at (4.1,0.25) {$30^\circ$};
+
+  \coordinate (P) at ($(D)!0.47!(B)$);
+  \coordinate (C) at ($(P)+(60:0.42)$);
+
+  % Block, with lower face on incline.
+  \begin{scope}[shift={(P)},rotate=-30]
+    \filldraw[fill=white,thick] (-0.58,0) rectangle (0.58,0.82);
+    \node at (0,0.41) {$m$};
+  \end{scope}
+
+  % Real forces.
+  \fill (C) circle (1.1pt);
+  \draw[->,thick,blue] (C) -- ++(0,-1.55) node[below,fill=white,inner sep=1pt] {$G=mg$};
+  \draw[->,thick,blue] (C) -- ++(60:1.1) node[above right,fill=white,inner sep=1pt] {$N$};
+  \draw[->,thick,red] (C) -- ++(150:1.1) node[pos=0.78,above left,fill=white,inner sep=1pt] {$f_k$};
+
+  % Components used in calculation, not additional forces.
+  \draw[->,thick,dashed,orange!85!black] (C) -- ++(-30:0.78)
+    node[pos=0.78,below right,fill=white,inner sep=1pt] {$G_{\parallel}=mg\sin\theta$};
+  \draw[->,thick,dashed,orange!85!black] (C) -- ++(-120:1.35)
+    node[pos=0.65,left,fill=white,inner sep=1pt] {$G_{\perp}=mg\cos\theta$};
+
+  \node[font=\footnotesize,align=center] at (3.0,-0.35)
+    {蓝色为真实力，橙色虚线为重力分解};
+\end{tikzpicture}

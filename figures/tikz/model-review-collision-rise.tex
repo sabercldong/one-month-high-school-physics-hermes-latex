@@ -1,0 +1,19 @@
+% TikZ 图：完全非弹性碰撞后上升
+% Day 29：模型复盘
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.30,-0.75) rectangle (7.60,2.55);
+  \draw[thick] (0,0) -- (3.05,0);
+  \draw[thick] (3.05,0) arc[start angle=-90,end angle=25,radius=2.05];
+  \fill[gray!20,draw=black,thick] (2.35,0.22) rectangle (3.05,0.78);
+  \node at (2.70,0.50) {$M$};
+  \fill[red] (0.75,0.50) circle (0.14);
+  \node[red,above] at (0.75,0.64) {$m$};
+  \draw[->,red,thick] (0.95,0.50) -- (1.95,0.50)
+    node[midway,above] {$v_0$};
+  \draw[->,blue,thick] (3.35,0.35) arc[start angle=-82,end angle=15,radius=1.70];
+  \draw[dashed] (4.95,0) -- (4.95,1.35);
+  \draw[<->,orange,thick] (5.20,0) -- (5.20,1.25)
+    node[midway,right] {$h$};
+  \node[font=\small] at (2.10,-0.42) {碰撞瞬间：动量守恒};
+  \node[font=\small] at (5.15,2.05) {碰后上升：机械能守恒};
+\end{tikzpicture}

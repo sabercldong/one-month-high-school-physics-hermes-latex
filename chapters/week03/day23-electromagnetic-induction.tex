@@ -26,6 +26,8 @@
 
 \textbf{科学发展视角：} 电磁感应连接了发电、输电和用电。发电机、无线充电、电磁炉、金属探测和电动汽车的再生制动，都建立在“磁通量变化产生感应电动势”的思想上。学到这里，电和磁不再是两条线，而开始合成一个完整的电磁学框架。
 
+\textbf{本节读题路线：} 先问“磁通量是否变化”，决定有没有感应电动势；再用楞次定律问“感应电流要产生怎样的磁场”，判断方向；最后用法拉第定律问“变化有多快”，计算大小。这样处理，电磁感应题就不再是一堆方向规则的记忆，而是一条因果链。
+
 \section*{三、核心概念}
 
 \begin{conceptbox}{磁通量}
@@ -150,6 +152,20 @@ $F_A=BIL$ & 安培阻力 & 导体棒中有感应电流 \\
 \boxed{E=BLv}
 \]
 
+这个公式可以从法拉第定律直接得到。导体棒在时间 $\Delta t$ 内前进 $\Delta x$，回路面积增加
+\[
+\Delta S=L\Delta x.
+\]
+匀强磁场垂直穿过回路，磁通量变化
+\[
+\Delta\Phi=B\Delta S=BL\Delta x,
+\]
+所以
+\[
+E=\left|\frac{\Delta\Phi}{\Delta t}\right|=BL\frac{\Delta x}{\Delta t}=BLv.
+\]
+因此，$E=BLv$ 不是新公式，而是“面积变化导致磁通量变化”的具体结果。
+
 \begin{center}
 \input{figures/tikz/motional-emf-rail}
 
@@ -170,6 +186,14 @@ I=\frac{BLv}{R}
 \input{figures/tikz/coil-enter-field}
 
 \figcaption{线圈进出磁场：只有磁通量变化阶段才有感应电流}\label{fig:coil-enter-field}
+\end{center}
+
+如果线圈匀速运动，进入和离开阶段穿过磁场的面积近似线性变化，因此 $\Phi$-$t$ 图像是“上升—水平—下降”的分段图像；感应电动势看斜率，进入和离开阶段大小相同、方向相反，完全在磁场中时为零。
+
+\begin{center}
+\input{figures/tikz/coil-flux-current-graph}
+
+\figcaption{线圈进出磁场的分段图像：看斜率判断感应电动势}\label{fig:coil-flux-current-graph}
 \end{center}
 
 \subsection*{模型 3：发电机模型}
@@ -202,7 +226,11 @@ I=\frac{BLv}{R}
 \begin{examplebox}{导体棒切割磁感线}
 \textbf{题意分析：} 长 $L=0.40\ \mathrm{m}$ 的导体棒在 $B=0.50\ \mathrm{T}$ 的匀强磁场中以 $v=2.0\ \mathrm{m/s}$ 垂直切割磁感线。回路总电阻 $R=2.0\ \Omega$。求感应电动势和感应电流。
 
-\textbf{物理模型：} 导体棒切割磁感线。
+\textbf{物理模型：} 导体棒切割磁感线。先画出导轨、导体棒、磁场方向和速度方向，再判断能否直接用 $E=BLv$。
+
+\begin{center}
+\input{figures/tikz/motional-emf-example}
+\end{center}
 
 \textbf{解题过程：}
 \[
@@ -218,7 +246,11 @@ I=\frac{E}{R}=\frac{0.40}{2.0}=0.20\ \mathrm{A}
 \begin{examplebox}{线圈进出磁场的电流时段}
 \textbf{题意分析：} 一个矩形线圈匀速进入一块匀强磁场区域，然后完全在磁场中运动，最后离开磁场。问哪些阶段有感应电流？
 
-\textbf{物理模型：} 判断磁通量是否变化。
+\textbf{物理模型：} 判断磁通量是否变化。不要只看“线圈在动”，要把进入、完全在内部、离开三个阶段分开画。
+
+\begin{center}
+\input{figures/tikz/coil-current-stages-example}
+\end{center}
 
 \textbf{解题过程：}
 \begin{itemize}
@@ -238,6 +270,12 @@ I=\frac{E}{R}=\frac{0.40}{2.0}=0.20\ \mathrm{A}
   \item 长 $0.30\ \mathrm{m}$ 的导体棒以 $4.0\ \mathrm{m/s}$ 垂直切割 $0.25\ \mathrm{T}$ 的磁场，求感应电动势。
   \item 一个线圈完全处在匀强磁场中匀速平移，是否一定有感应电流？说明理由。
 \end{enumerate}
+
+\textbf{画图提示：} 第 3、4 题都先画“磁场区域、运动方向、有效面积”。第 3 题看导体棒是否切割磁感线；第 4 题不要只看线圈在动，要看穿过线圈的磁通量是否变化。
+
+\begin{center}
+\input{figures/tikz/induction-training-hints}
+\end{center}
 
 \section*{八、易错点}
 
@@ -338,3 +376,16 @@ v=\frac{FR}{B^2L^2}.
   \item 法拉第定律给出大小：$E=n\left|\dfrac{\Delta\Phi}{\Delta t}\right|$。
   \item 导体棒切割磁感线常用 $E=BLv$，能量来源是外力做功。
 \end{enumerate}
+
+\section*{十二、下一节衔接}
+
+今天的关键词是“磁通量变化”。如果让线圈在磁场中不断转动，磁通量就会周期性变化，感应电动势也会周期性变化。这正是交流发电机的基本思想。
+
+下一节学习交变电流时，可以继续沿用今天的三步思路：
+\begin{enumerate}
+  \item 先看磁通量怎样随时间变化；
+  \item 再看感应电动势怎样随时间变化；
+  \item 最后用有效值、变压器和输电模型把它接到真实电力系统。
+\end{enumerate}
+
+这样看，交流电不是突然出现的新知识，而是电磁感应在工程系统中的自然延伸。

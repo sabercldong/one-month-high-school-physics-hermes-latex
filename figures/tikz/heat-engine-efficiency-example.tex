@@ -1,0 +1,23 @@
+% TikZ 图：热机效率例题
+% Day 26：热学基础
+\begin{tikzpicture}[scale=0.82,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.35,-1.20) rectangle (7.40,1.45);
+  \node[draw,rounded corners=2pt,fill=red!8,minimum width=1.60cm,minimum height=0.65cm]
+    (hot) at (0.85,0) {高温热源};
+  \node[draw,rounded corners=2pt,fill=orange!10,minimum width=1.25cm,minimum height=0.78cm]
+    (engine) at (3.50,0) {热机};
+  \node[draw,rounded corners=2pt,fill=blue!8,minimum width=1.60cm,minimum height=0.65cm]
+    (cold) at (6.15,0) {低温热源};
+
+  \draw[->,red,thick] (hot.east) -- (engine.west);
+  \node[red,font=\small,fill=white,inner sep=0.8pt] at (2.18,0.50)
+    {$Q_1=1000\ \mathrm{J}$};
+  \draw[->,blue,thick] (engine.east) -- (cold.west);
+  \node[blue,font=\small,fill=white,inner sep=0.8pt] at (4.84,-0.50)
+    {$Q_2=650\ \mathrm{J}$};
+  \draw[->,orange,thick] (3.50,0.43) -- (3.50,1.18);
+  \node[orange,font=\small,fill=white,inner sep=0.8pt] at (4.18,1.06)
+    {$W=350\ \mathrm{J}$};
+  \node[font=\small] at (3.50,-0.96)
+    {$\Delta U_{\text{循环}}=0,\quad W=Q_1-Q_2$};
+\end{tikzpicture}

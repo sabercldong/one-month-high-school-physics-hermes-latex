@@ -1,0 +1,17 @@
+% TikZ 图：光滑斜面到粗糙水平面
+% Day 29：模型复盘
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.25,-0.70) rectangle (7.70,2.55);
+  \draw[thick] (0,0) -- (2.65,1.75) -- (3.05,0) -- (7.35,0);
+  \draw[fill=gray!12,thick,rotate around={33.4:(1.55,1.02)}]
+    (1.25,0.82) rectangle (1.85,1.20);
+  \draw[<->,blue,thick] (2.92,0) -- (2.92,1.75)
+    node[midway,right] {$h$};
+  \draw[->,red,thick] (3.22,0.25) -- (4.20,0.25);
+  \node[red,font=\small,fill=white,inner sep=1pt] at (3.75,0.58) {$v$};
+  \draw[<->,orange,thick] (3.35,-0.35) -- (6.75,-0.35)
+    node[midway,below] {$s$};
+  \node[font=\small] at (1.20,2.05) {光滑段：机械能守恒};
+  \node[font=\small] at (5.55,0.92) {粗糙段：动能定理};
+  \node[font=\small] at (5.30,-0.02) {$\mu$};
+\end{tikzpicture}

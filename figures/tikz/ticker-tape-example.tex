@@ -1,0 +1,17 @@
+% TikZ 图：纸带逐差法例题
+% Day 28：实验专题
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.25,-0.55) rectangle (7.95,1.28);
+  \draw[thick] (0,0) -- (7.60,0);
+  \foreach \x in {0.30,2.15,4.85,7.30}{
+    \fill (\x,0) circle (2pt);
+  }
+  \draw[<->,blue,thick] (0.30,0.42) -- (2.15,0.42)
+    node[midway,above] {$x_1$};
+  \draw[<->,red,thick] (2.15,0.88) -- (4.85,0.88)
+    node[midway,above] {$x_2$};
+  \draw[<->,green!50!black,thick] (4.85,0.42) -- (7.30,0.42)
+    node[midway,above] {$x_3$};
+  \node[font=\small] at (3.80,-0.38)
+    {相邻计数点时间均为 $T$};
+\end{tikzpicture}

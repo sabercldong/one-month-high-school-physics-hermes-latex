@@ -1,0 +1,21 @@
+% TikZ 图：粗糙水平面上压缩弹簧
+% Day 30：综合训练
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.35,-0.75) rectangle (7.80,1.85);
+  \draw[thick] (0,0) -- (7.35,0);
+  \foreach \x in {0.25,0.75,...,7.0}{
+    \draw[gray] (\x,0) -- ++(0.18,-0.18);
+  }
+  \draw[thick] (7.35,0) -- (7.35,1.35);
+  \draw[decorate,decoration={coil,aspect=0.45,segment length=4pt,amplitude=4pt},thick]
+    (5.35,0.55) -- (7.35,0.55);
+  \draw[fill=gray!14,thick] (4.55,0.18) rectangle (5.35,0.92);
+  \node at (4.95,0.55) {$m$};
+  \draw[->,red,thick] (3.30,0.55) -- (4.35,0.55)
+    node[midway,above] {$v_0$};
+  \draw[->,orange,thick] (4.95,1.20) -- (4.10,1.20)
+    node[midway,above] {$f=\mu mg$};
+  \draw[<->,blue,thick] (5.35,-0.42) -- (7.35,-0.42)
+    node[midway,below] {$x$};
+  \node[font=\small] at (6.35,1.12) {最大压缩时 $v=0$};
+\end{tikzpicture}

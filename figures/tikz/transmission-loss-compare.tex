@@ -1,0 +1,14 @@
+% TikZ 图：输电损耗比较例题
+% Day 24：交变电流
+\begin{tikzpicture}[scale=0.82,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.35,-1.60) rectangle (8.15,1.30);
+  \node[draw,rounded corners=2pt,fill=blue!7,minimum width=1.10cm,minimum height=0.65cm] (s1) at (0.55,0.70) {电源};
+  \node[draw,rounded corners=2pt,fill=red!7,minimum width=1.10cm,minimum height=0.65cm] (u1) at (7.15,0.70) {用户};
+  \draw[->,thick] (s1) -- (u1) node[midway,above] {$U=1.0\ \mathrm{kV},\ I=100\ \mathrm{A}$};
+  \node[font=\small,orange] at (3.85,0.25) {$P_{\text{损}}=40\ \mathrm{kW}$};
+
+  \node[draw,rounded corners=2pt,fill=blue!7,minimum width=1.10cm,minimum height=0.65cm] (s2) at (0.55,-0.80) {电源};
+  \node[draw,rounded corners=2pt,fill=red!7,minimum width=1.10cm,minimum height=0.65cm] (u2) at (7.15,-0.80) {用户};
+  \draw[->,thick] (s2) -- (u2) node[midway,above] {$U=10\ \mathrm{kV},\ I=10\ \mathrm{A}$};
+  \node[font=\small,orange] at (3.85,-1.25) {$P_{\text{损}}=0.40\ \mathrm{kW}$};
+\end{tikzpicture}

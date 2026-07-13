@@ -1,0 +1,28 @@
+% TikZ 图：线圈进出磁场的磁通量与感应电动势图像
+% Day 23：电磁感应
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \path[use as bounding box] (-0.35,-2.45) rectangle (6.45,2.35);
+
+  % Magnetic flux graph.
+  \draw[->] (0,0) -- (6.05,0) node[right] {$t$};
+  \draw[->] (0,0) -- (0,2.05) node[above] {$\Phi$};
+  \draw[blue,very thick] (0.45,0) -- (2.05,1.45) -- (3.85,1.45) -- (5.45,0);
+  \draw[dashed] (2.05,1.45) -- (2.05,-1.55);
+  \draw[dashed] (3.85,1.45) -- (3.85,-1.55);
+  \node[font=\small] at (1.25,1.85) {进入};
+  \node[font=\small] at (2.95,1.85) {内部};
+  \node[font=\small] at (4.65,1.85) {离开};
+
+  % Induced emf/current sign graph.
+  \draw[->] (0,-1.65) -- (6.05,-1.65) node[right] {$t$};
+  \draw[->] (0,-2.25) -- (0,-0.85) node[above] {$\mathcal{E}$};
+  \draw[red,very thick] (0.45,-1.00) -- (2.05,-1.00);
+  \draw[red,very thick] (2.05,-1.65) -- (3.85,-1.65);
+  \draw[red,very thick] (3.85,-2.25) -- (5.45,-2.25);
+  \draw[red,dashed] (2.05,-1.00) -- (2.05,-1.65);
+  \draw[red,dashed] (3.85,-1.65) -- (3.85,-2.25);
+  \node[red,font=\small] at (1.10,-0.58) {方向 1};
+  \node[red,font=\small] at (2.95,-1.38) {$0$};
+  \node[red,font=\small] at (4.70,-2.42) {方向相反};
+
+\end{tikzpicture}
