@@ -207,6 +207,24 @@ $E_C = \dfrac12 CU^2$ & 电场能量 & 线性电容器模型 \\
 \end{tabular}
 \end{center}
 
+\begin{learningbox}{电容器动态题的三步账本}
+电容器动态题最怕一上来就套公式。比较稳的做法是先写“谁不变”，再写“谁先变”：
+\begin{enumerate}
+  \item \textbf{先定不变量：} 接着电源，通常 $U$ 不变；充电后断开电源，通常 $Q$ 不变。
+  \item \textbf{再看结构量：} $S$、$d$、$\varepsilon_r$ 的改变先影响 $C=\dfrac{\varepsilon_r S}{4\pi kd}$。
+  \item \textbf{最后顺着关系推：} 用关系式逐步判断：
+  \[
+  Q=CU,\qquad E=\frac{U}{d},\qquad
+  E=\frac{4\pi kQ}{\varepsilon_r S}\ \text{（断电的理想平行板）}.
+  \]
+\end{enumerate}
+如果题目问能量，再根据已知量选择
+\[
+E_C=\frac12 CU^2=\frac12 QU=\frac{Q^2}{2C}.
+\]
+接电源时电源会参与能量转化，断电源时通常只在电容器和外力之间转化，二者不要混在一起。
+\end{learningbox}
+
 \section*{五、典型模型}
 
 \subsection*{模型 1：平行板电容器的动态分析}
