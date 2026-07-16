@@ -137,6 +137,32 @@
   \item 每个方向的加速度是否真的为零，不要把“没有运动”误判成“没有受力”。
 \end{enumerate}
 
+\begin{learningbox}{从受力图到方程的三行账本}
+牛顿第二定律题的关键不是把公式背熟，而是把受力图翻译成方程。每选一个研究对象，就按下面三行写：
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+步骤 & 要写清什么 & 例子 \\
+\midrule
+1 & 选轴与正方向 & 沿斜面向下为 $x$ 轴正方向 \\
+2 & 写该方向所有力的代数和 & $mg\sin\theta-f_k$ \\
+3 & 写该方向的加速度 & $a_x=a$，垂直斜面 $a_y=0$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+于是沿斜面方向写成
+\[
+mg\sin\theta-f_k=ma,
+\]
+垂直斜面方向写成
+\[
+N-mg\cos\theta=0.
+\]
+\textbf{判断标准：} 方程左边必须来自受力图中的真实力或真实力的分量；右边是同一方向的 $ma$。若某方向没有加速度，右边才写 $0$，不是因为“这个方向没有运动”就自动没有受力。
+\end{learningbox}
+
 \subsection*{核心公式}
 
 \[
