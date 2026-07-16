@@ -8,7 +8,28 @@
 \text{看懂情境}\quad\longrightarrow\quad\text{建立模型}\quad\longrightarrow\quad\text{用公式解决问题}.
 \]
 如果某一天读得慢，通常不是你不适合学物理，而是某个模型、方向或适用条件还没有想清楚。把问题拆小，再回到图像和定义，往往比反复背公式更有效。
+
+\begin{center}
+\begin{tikzpicture}[
+  box/.style={draw=black!65, rounded corners=2pt, minimum width=2.25cm, minimum height=0.82cm, align=center, font=\small},
+  arrow/.style={-{Latex[length=2.2mm]}, thick}
+]
+\node[box, fill=blue!5] (read) at (0,0) {读题路线\\看懂情境};
+\node[box, fill=green!6] (model) at (2.9,0) {画图建模\\对象与过程};
+\node[box, fill=yellow!10] (check) at (5.8,0) {使用前检查\\条件与单位};
+\node[box, fill=red!5] (solve) at (8.7,0) {列式求解\\方向与符号};
+\node[box, fill=gray!8] (review) at (11.6,0) {做后自检\\结果是否可信};
+\draw[arrow] (read) -- (model);
+\draw[arrow] (model) -- (check);
+\draw[arrow] (check) -- (solve);
+\draw[arrow] (solve) -- (review);
+\draw[arrow, rounded corners=8pt, black!55] (review.south) |- ++(0,-0.75) -| (model.south);
+\node[font=\small, black!70] at (5.8,-1.05) {发现方向、条件或数量级不合理时，回到图像和模型重新检查};
+\end{tikzpicture}
+\end{center}
 \end{learningbox}
+
+后面每节开头的“本节读题路线”，对应流程图中的第一步；“公式使用前检查”，对应第三步；例题后的方法总结和易错点，则帮助完成最后的自检。读书时可以把它们看成同一套动作，而不是彼此独立的小栏目。
 
 \section*{一、每节十个板块应该怎么读}
 
