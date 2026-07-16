@@ -1,0 +1,15 @@
+\begin{tikzpicture}[scale=0.85,>=Stealth]
+  \draw[thick] (0,0) -- (0.9,0);
+  \draw[thick] (3.1,0) -- (4.0,0);
+  \draw[thick] (1.45,-0.75) -- (1.45,0.75);
+  \draw[thick] (2.55,-0.75) -- (2.55,0.75);
+  \foreach \y in {-0.55,-0.33,-0.11,0.11,0.33,0.55}
+    \draw[blue] (1.0,\y) arc[start angle=90,end angle=270,radius=0.11];
+  \foreach \y in {-0.45,-0.15,0.15,0.45}
+    \draw[red] (2.9,\y) arc[start angle=90,end angle=270,radius=0.11];
+  \node[blue] at (0.55,0.42) {$U_1$};
+  \node[blue,font=\small] at (0.85,1.08) {$n_1=800$};
+  \node[red,font=\small] at (3.15,1.08) {$n_2=200$};
+  \node[red] at (3.55,0.42) {$U_2$};
+  \node at (2.0,-1.08) {$\dfrac{U_2}{U_1}=\dfrac{n_2}{n_1}$};
+\end{tikzpicture}

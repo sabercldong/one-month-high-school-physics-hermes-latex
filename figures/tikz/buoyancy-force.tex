@@ -1,0 +1,29 @@
+% TikZ 图：浮力与排开液体
+% Day 05：力、重力、弹力、摩擦力
+\begin{tikzpicture}[scale=0.95,>=Latex]
+  \tikzset{
+    water/.style={blue!25},
+    body/.style={draw,thick,fill=gray!18},
+    force/.style={->,very thick},
+    note/.style={font=\small,align=center}
+  }
+
+  \draw[thick] (-2.3,1.35) -- (-2.3,-1.4) -- (2.3,-1.4) -- (2.3,1.35);
+  \fill[water] (-2.25,-1.35) rectangle (2.25,0.85);
+  \draw[blue,thick] (-2.25,0.85) -- (2.25,0.85);
+  \node[blue,font=\small] at (1.65,1.10) {液面};
+
+  \node[body,minimum width=1.00cm,minimum height=1.25cm] (block) at (-0.20,0.08) {};
+  \node[font=\small] at (-0.20,0.08) {物体};
+
+  \draw[force,blue] (-0.20,0.70) -- (-0.20,1.62)
+    node[above] {$F_{\text{浮}}$};
+  \draw[force,red] (-0.20,-0.55) -- (-0.20,-1.42)
+    node[midway,left=3pt] {$G=mg$};
+
+  \draw[dashed] (0.75,0.72) rectangle (1.45,-0.58);
+  \node[note] at (1.10,-0.88) {排开液体\\体积 $V_{\text{排}}$};
+
+  \node[note] at (0,-2.05)
+    {$F_{\text{浮}}=\rho_{\text{液}}gV_{\text{排}}$，方向竖直向上};
+\end{tikzpicture}

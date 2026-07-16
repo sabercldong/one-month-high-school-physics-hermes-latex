@@ -1,16 +1,21 @@
 \daytitle{26}{热学基础}
 
 \begin{learningbox}{本讲义大致内容}
-热学研究大量分子的集体行为。我们先从分子动理论理解温度、内能和压强，再学习理想气体实验定律，最后用热力学第一定律分析吸热、做功和内能变化。重点不是把热学公式背下来，而是建立“宏观现象由微观运动解释”的视角。
+热学研究大量分子的集体行为。我们先从分子动理论理解温度、内能和压强，再学习理想气体实验定律，最后用热力学第一定律分析吸热、做功和内能变化。重点不是机械记忆热学公式，而是建立“宏观现象由微观运动解释”的视角。
 \end{learningbox}
 
 \section*{一、学习目标}
 \begin{enumerate}
   \item 理解分子动理论的三条基本观点。
+  \item 能用扩散现象和布朗运动说明分子热运动的证据。
+  \item 了解油膜法估测分子大小的基本思想。
+  \item 理解热平衡和温度计读数的物理前提。
   \item 区分温度、热量、内能和做功。
   \item 掌握玻意耳定律、查理定律、盖-吕萨克定律及其图像。
-  \item 会用理想气体状态方程分析简单变化过程。
+  \item 会用理想气体状态方程分析简单变化过程，并知道物质的量 $n$ 在其中的作用。
   \item 会用热力学第一定律判断内能变化。
+  \item 理解热机效率和热力学第二定律的定性含义。
+  \item 了解晶体、非晶体、液晶、相对湿度、表面张力和毛细现象的基本物理图像。
 \end{enumerate}
 
 \section*{二、初高中衔接}
@@ -20,6 +25,13 @@
 \textbf{科学发展视角：} 热学是能源技术的基础。热机效率、空调制冷、发动机、相变储能、温室效应、低温物理和芯片散热，都要求我们理解能量如何在微观粒子运动和宏观做功之间转化。
 
 \textbf{本节读题路线：} 先判断研究对象是哪一团气体或哪个热机；再区分状态量（$p,V,T,U$）和过程量（$Q,W$）；气体题先看过程类型，热力学第一定律题先定正负号，图像题先看 $p$-$V$ 面积和体积变化方向。
+
+\begin{learningbox}{本节概念地图}
+热学要把三层语言对应起来：微观层面看分子运动和相互作用，宏观层面看 $p,V,T,U$ 等状态量，过程层面看热传递 $Q$ 和做功 $W$。读题时先判断题目问的是“此刻状态”，还是“变化过程”。
+\[
+\text{分子运动}\rightarrow \text{宏观状态量}\rightarrow \text{热量、做功与能量转化}.
+\]
+\end{learningbox}
 
 \section*{三、核心概念}
 
@@ -38,19 +50,61 @@
 \figcaption{分子热运动：宏观温度反映大量分子运动的统计特征}\label{fig:molecular-motion}
 \end{center}
 
-\textbf{关键理解：} 温度越高，分子平均动能越大；但不能说某一个分子的动能一定变大，因为分子运动是统计性的。
+\textbf{关键理解：} 温度反映大量分子无规则热运动的统计平均；对理想气体来说，温度越高，分子的平均平动动能越大。但不能说某一个分子的动能一定变大，因为分子运动是统计性的。
+
+\textbf{两个重要证据：} 
+\begin{itemize}
+  \item \textbf{扩散现象：} 不同物质能够自发地彼此进入对方，例如香味在空气中扩散、墨水在水中散开。扩散说明分子在不停运动。
+  \item \textbf{布朗运动：} 悬浮在液体或气体中的微小颗粒做无规则运动。颗粒本身不是分子，它的运动来自周围大量分子从各个方向不断撞击且瞬时不平衡。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/diffusion-brownian-motion}
+
+\figcaption{扩散与布朗运动：宏观可见现象背后是分子的无规则热运动}\label{fig:diffusion-brownian-motion}
+\end{center}
+\end{conceptbox}
+
+\begin{conceptbox}{油膜法估测分子大小}
+
+分子很小，不能用普通刻度尺直接测量。高中常用一个理想化实验建立数量级认识：把已知体积 $V$ 的油酸滴在水面上，使它尽量摊成一层很薄的\textbf{单分子油膜}。若测得油膜面积为 $S$，则油膜厚度可估作油酸分子的直径：
+\[
+\boxed{d\approx\frac{V}{S}}.
+\]
+
+\begin{center}
+\input{figures/tikz/oil-film-molecule-size}
+
+\figcaption{油膜法：把微小体积转化为可测面积，用 $d\approx V/S$ 估测分子直径}\label{fig:oil-film-molecule-size}
+\end{center}
+
+\textbf{关键假设：} 油酸在水面上近似形成单分子层，且分子可粗略看作直立排列。真实实验中常把油酸配成稀溶液，计算 $V$ 时必须取\textbf{纯油酸体积}，不能把整滴溶液体积直接代入。
 \end{conceptbox}
 
 \begin{conceptbox}{温度、内能、热量}
 
+两个温度不同的物体接触后，若没有其他外界影响，热量会从高温物体传向低温物体，直到二者达到\textbf{热平衡}。热平衡时没有净热传递，二者温度相同。温度计测温并不是“碰一下就立刻知道真值”，而是要等温度计与被测物体达到热平衡后再读数。
+
+\begin{center}
+\input{figures/tikz/thermal-equilibrium-thermometer}
+
+\figcaption{热平衡与温度计：温度计读数依赖它与被测物体达到热平衡}\label{fig:thermal-equilibrium-thermometer}
+\end{center}
+
 \begin{itemize}
-  \item \textbf{温度：} 描述分子平均动能大小的宏观量。
-  \item \textbf{内能：} 物体内所有分子的动能和分子势能总和。
+  \item \textbf{温度：} 描述大量分子热运动剧烈程度的宏观量；在理想气体模型中，它直接反映分子平均动能。
+  \item \textbf{内能：} 物体内大量分子热运动动能和分子间相互作用势能的总和，不包括物体整体的机械能。
   \item \textbf{热量：} 热传递过程中转移的能量，是过程量。
   \item \textbf{做功：} 通过宏观力和位移改变系统能量的方式。
 \end{itemize}
 
 \textbf{严谨表述：} 不能说“物体含有热量”，只能说“物体吸收热量”或“放出热量”。
+
+\begin{center}
+\input{figures/tikz/thermal-state-process-map}
+
+\figcaption{状态量与过程量：内能属于系统，热量和功只描述能量转移过程}\label{fig:thermal-state-process-map}
+\end{center}
 \end{conceptbox}
 
 \begin{conceptbox}{气体实验定律}
@@ -80,6 +134,22 @@ T=t+273.15.
 \[
 \boxed{\frac{pV}{T}=C}.
 \]
+
+\textbf{物质的量版本：} 这里的常量 $C$ 对同一团气体不变，但不是所有气体共用的普适常量。若气体的物质的量为 $n$，理想气体状态方程可写为
+\[
+\boxed{pV=nRT}.
+\]
+其中 $R$ 是气体常量。若从微观分子数看，也可写成
+\[
+\boxed{pV=NkT},\qquad N=nN_A.
+\]
+这里 $N_A$ 是阿伏伽德罗常量，$k$ 是玻尔兹曼常量。高中常用 $\dfrac{pV}{T}=C$ 处理“同一团气体”的状态变化；若题目比较不同物质的量的气体，要想到 $pV$ 与 $nT$ 成正比。
+
+\begin{center}
+\input{figures/tikz/ideal-gas-mole-bridge}
+
+\figcaption{理想气体状态方程：物质的量把宏观状态量和分子数连接起来}\label{fig:ideal-gas-mole-bridge}
+\end{center}
 \end{conceptbox}
 
 \begin{conceptbox}{热力学第一定律}
@@ -105,19 +175,25 @@ T=t+273.15.
 \section*{四、公式与适用条件}
 
 \begin{center}
-\begin{tabular}{lll}
+\begingroup
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{p{0.24\textwidth}p{0.25\textwidth}p{0.41\textwidth}}
 \toprule
 公式 & 物理意义 & 适用条件 \\
 \midrule
-$T=t+273.15$ & 摄氏温度转热力学温度 & 热学计算 \\
-$pV=C$ & 等温变化 & 一定质量理想气体 \\
-$\dfrac{V}{T}=C$ & 等压变化 & 一定质量理想气体 \\
-$\dfrac{p}{T}=C$ & 等容变化 & 一定质量理想气体 \\
-$\dfrac{pV}{T}=C$ & 状态方程 & 一定质量理想气体 \\
+$T=t+273.15$ & 温标换算 & $t$ 用摄氏度，$T$ 用 K；比例计算必须用 $T$ \\
+$pV=C$ & 等温变化 & 一定质量理想气体，热力学温度不变 \\
+$\dfrac{V}{T}=C$ & 等压变化 & 一定质量理想气体，压强不变，$T$ 用 K \\
+$\dfrac{p}{T}=C$ & 等容变化 & 一定质量理想气体，体积不变，$T$ 用 K \\
+$\dfrac{pV}{T}=C$ & 状态方程 & 同一团理想气体，物质的量不变，$T$ 用 K \\
+$pV=nRT$ & 理想气体状态方程 & 理想气体；物质的量为 $n$，单位统一 \\
+$d\approx\dfrac{V}{S}$ & 油膜法估测分子直径 & 单分子油膜近似 \\
 $\Delta U=Q-W$ & 热力学第一定律 & 吸热为正、对外做功为正 \\
-$W=p\Delta V$ & 等压做功 & 压强恒定 \\
+$W=p\Delta V$ & 等压做功 & 准静态等压体积功；$W$ 为系统对外做功 \\
+$\varphi=\dfrac{p}{p_s}\times100\%$ & 相对湿度 & $p_s$ 为同温度饱和汽压 \\
 \bottomrule
 \end{tabular}
+\endgroup
 \end{center}
 
 \section*{五、典型模型}
@@ -139,7 +215,7 @@ p_1V_1=p_2V_2.
 
 \subsection*{模型 3：$p$-$V$ 图像中的功}
 
-气体对外做功可由 $p$-$V$ 图像下方面积表示：
+在准静态膨胀或压缩过程中，气体对外做的体积功可由 $p$-$V$ 图像下方面积表示：
 \[
 W=\int p\,dV.
 \]
@@ -159,10 +235,27 @@ W=\int p\,dV.
 \]
 气体快速膨胀对外做功，内能减少，温度降低；气体被快速压缩，外界对它做功，内能增加，温度升高。
 
+\begin{center}
+\input{figures/tikz/thermal-process-pv-summary}
+
+\figcaption{常见热过程的 $p$-$V$ 图像：图像形状和面积帮助判断做功}\label{fig:thermal-process-pv-summary}
+\end{center}
+
+\subsection*{模型 5：扩散与布朗运动的判断}
+
+遇到微观热运动的定性题，先分清“谁在动”：
+\begin{itemize}
+  \item 若是两种物质彼此混合、浓度逐渐均匀，通常是\textbf{扩散现象}；
+  \item 若是在显微镜下看到小颗粒不停做无规则运动，通常是\textbf{布朗运动}；
+  \item 布朗运动越明显，说明颗粒越小、温度越高，周围分子撞击造成的瞬时不平衡越明显。
+\end{itemize}
+
+\textbf{严谨边界：} 布朗运动不是“分子本身的运动被看见了”，而是可见微粒受到大量分子撞击后的运动。它间接证明分子在做无规则热运动。
+
 \section*{六、例题精讲}
 
 \begin{examplebox}{等温变化}
-\textbf{题意分析：} 一定质量气体温度不变，初态压强 $p_1=1.0\times10^5\ \mathrm{Pa}$，体积 $V_1=2.0\ \mathrm{L}$。若体积压缩到 $V_2=0.50\ \mathrm{L}$，求末态压强。
+\textbf{题意分析：} 一定质量理想气体温度不变，初态压强 $p_1=1.0\times10^5\ \mathrm{Pa}$，体积 $V_1=2.0\ \mathrm{L}$。若体积压缩到 $V_2=0.50\ \mathrm{L}$，求末态压强。
 
 \textbf{物理模型：} 等温变化，$pV=C$。
 
@@ -183,7 +276,7 @@ p_2=\frac{p_1V_1}{V_2}
 \end{examplebox}
 
 \begin{examplebox}{等压升温}
-\textbf{题意分析：} 一定质量气体在压强不变时，温度从 $27^\circ\mathrm{C}$ 升高到 $127^\circ\mathrm{C}$。初体积 $V_1=3.0\ \mathrm{L}$，求末体积。
+\textbf{题意分析：} 一定质量理想气体在压强不变时，温度从 $27^\circ\mathrm{C}$ 升高到 $127^\circ\mathrm{C}$。初体积 $V_1=3.0\ \mathrm{L}$，求末体积。
 
 \textbf{物理模型：} 等压变化，$\dfrac{V}{T}=C$。
 
@@ -224,10 +317,14 @@ V_2=V_1\frac{T_2}{T_1}=3.0\times\frac{400}{300}=4.0\ \mathrm{L}.
 \section*{七、变式训练}
 
 \begin{enumerate}
-  \item 一定质量气体等温膨胀，体积变为原来的 3 倍，压强怎样变化？
+  \item 一定质量理想气体等温膨胀，体积变为原来的 3 倍，压强怎样变化？
   \item 把 $-23^\circ\mathrm{C}$、$27^\circ\mathrm{C}$、$127^\circ\mathrm{C}$ 分别化为热力学温度。
   \item 气体放热 $100\ \mathrm{J}$，外界对气体做功 $300\ \mathrm{J}$，内能如何变化？
   \item 等压膨胀过程中，$p$-$V$ 图像下方面积表示什么物理量？
+  \begin{center}
+  \input{figures/tikz/training-thermal-pv-work}
+  \end{center}
+  \item 香水味逐渐传到房间另一端、显微镜下花粉微粒无规则运动，分别对应哪一种热运动证据？
 \end{enumerate}
 
 \subsection*{训练提示}
@@ -236,6 +333,7 @@ V_2=V_1\frac{T_2}{T_1}=3.0\times\frac{400}{300}=4.0\ \mathrm{L}.
   \item 分别为 $250\ \mathrm{K}$、$300\ \mathrm{K}$、$400\ \mathrm{K}$，近似计算时常取 $273$。
   \item 放热 $Q=-100\ \mathrm{J}$，外界做功表示系统对外做功 $W=-300\ \mathrm{J}$。
   \item $p$-$V$ 图像下方面积表示气体对外做功；若体积减小，则做功为负。
+  \item 香水味传播是扩散现象；花粉微粒无规则运动是布朗运动，注意布朗运动的对象是微粒而不是单个分子。
 \end{enumerate}
 
 \begin{center}
@@ -246,10 +344,14 @@ V_2=V_1\frac{T_2}{T_1}=3.0\times\frac{400}{300}=4.0\ \mathrm{L}.
 \begin{mistakebox}
 \begin{enumerate}
   \item \textbf{说“物体含有热量”：} 热量是过程量，不是状态量。
+  \item \textbf{温度计刚接触就读数：} 温度计需要与被测物体达到热平衡，读数才代表被测物体温度。
   \item \textbf{气体定律用摄氏温度：} 比例关系必须使用热力学温度 $T$。
+  \item \textbf{把 $pV/T=C$ 中的 $C$ 当成普适常量：} 对同一团气体 $C$ 不变；不同物质的量的气体要用 $pV=nRT$ 比较。
   \item \textbf{混淆做功正负：} 本讲义约定系统对外做功为正，所以 $\Delta U=Q-W$。
   \item \textbf{把温度看成单个分子动能：} 温度对应大量分子的平均动能。
+  \item \textbf{油膜法把溶液体积当油酸体积：} 计算 $d=V/S$ 时，$V$ 应是形成油膜的纯油酸体积。
   \item \textbf{忽略内能还含分子势能：} 对实际物体和相变过程，分子势能变化也很重要。
+  \item \textbf{把布朗运动说成分子运动：} 布朗运动是微小颗粒的无规则运动，间接反映分子热运动。
 \end{enumerate}
 \end{mistakebox}
 
@@ -272,17 +374,77 @@ pV=NkT,
 \overline{E_k}=\frac32kT.
 \]
 
-\textbf{意义：} 这说明温度不是模糊的冷热感觉，而是微观平均动能的量度。高中阶段不要求完整推导，但这个结果能帮助理解为什么绝对零度对应分子热运动的最低极限。
+\textbf{意义：} 这说明温度不是模糊的冷热感觉，而是微观平均动能的量度。高中阶段不要求完整推导，但这个结果能帮助理解为什么绝对零度可看作热运动强弱的最低极限。
+
+\begin{center}
+\input{figures/tikz/gas-pressure-micro}
+
+\figcaption{气体压强的微观来源：大量分子碰撞器壁形成稳定的平均压强}\label{fig:gas-pressure-micro}
+\end{center}
 \end{competitionbox}
 
-\section*{十、模型深化：热机、循环与不可逆性}
+\subsection*{1.\quad 相变与潜热：温度不变也能吸热}
 
-\subsection*{1.\quad 热机效率}
+许多学生会误以为“吸热一定升温”。相变过程正好提醒我们：吸收的热量不一定都转化为分子平均动能，也可能主要改变分子间的相互作用势能。
+
+\begin{center}
+\input{figures/tikz/phase-change-heating-curve}
+
+\figcaption{相变加热曲线：熔化和汽化过程中温度可保持不变，但仍在吸收热量}\label{fig:phase-change-heating-curve}
+\end{center}
+
+\textbf{典型判断：} 冰熔化成水时，温度可以保持在 $0^\circ\mathrm{C}$；水沸腾时，温度可以保持在沸点。平台段吸收的热量叫\textbf{潜热}，主要用于改变物质的微观结构或分子势能，而不是提高温度。
+
+\textbf{与内能的关系：} 内能包括分子动能和分子势能。温度主要反映分子平均动能；相变时温度不变，但分子势能改变，所以内能仍可改变。
+
+\subsection*{2.\quad 固体、液晶与湿度：从模型走向材料}
+
+热学不只研究气体。实际材料的性质也来自微观结构：
+\begin{itemize}
+  \item \textbf{晶体：} 微粒排列有规则，常有确定熔点，许多金属、食盐、石英属于晶体。
+  \item \textbf{非晶体：} 微粒排列没有长程规则，通常没有严格固定熔点，玻璃、松香等可看作典型例子。
+  \item \textbf{液晶：} 既能像液体那样流动，又有一定取向有序性，液晶显示器正是利用外电场改变分子取向来控制透光。
+\end{itemize}
+
+空气中的水蒸气也要用热学语言描述。同一温度下，空气中水蒸气压有一个最大值，叫\textbf{饱和汽压} $p_s$。实际水蒸气压为 $p$ 时，相对湿度为
+\[
+\varphi=\frac{p}{p_s}\times100\%.
+\]
+温度升高时，饱和汽压通常增大，所以同样多的水蒸气在较高温度下可能显得“不那么潮湿”。这也是为什么降温容易结露：空气容纳水蒸气的能力下降，多余水蒸气凝结成小水滴。
+
+\begin{center}
+\input{figures/tikz/materials-humidity}
+
+\figcaption{材料结构与湿度：微观排列决定材料性质，饱和汽压决定相对湿度}\label{fig:materials-humidity}
+\end{center}
+
+\textbf{学习边界：} 高中阶段通常只要求定性区分晶体、非晶体和液晶，理解相对湿度的含义；不要求深入晶格结构或复杂相图。
+
+\subsection*{3.\quad 液体表面张力与毛细现象}
+
+液体表面附近的分子受力情况不同于液体内部。液体内部某个分子受到周围分子的吸引大致平衡；而液体表面分子上方分子较少，受力不完全对称，于是液面有收缩趋势，好像一张被拉紧的薄膜。这种使液面趋向收缩的作用叫\textbf{表面张力}。
+
+\begin{center}
+\input{figures/tikz/surface-tension-capillary}
+
+\figcaption{表面张力与毛细现象：液面趋向收缩，细管中液面可上升或下降}\label{fig:surface-tension-capillary}
+\end{center}
+
+\textbf{两个常见现象：}
+\begin{itemize}
+  \item 小水滴常接近球形，是因为在体积一定时球形表面积最小，表面张力使液面趋向收缩。
+  \item 细玻璃管插入水中，水可沿管壁上升；若液体不浸润管壁，也可能出现液面下降。这类现象叫\textbf{毛细现象}。
+\end{itemize}
+
+\textbf{认知边界：} 高中阶段一般定性理解表面张力和毛细现象即可，不要求计算表面张力系数。它们说明液体性质也来自分子间相互作用，而不只是“会流动”。
+
+\subsection*{4.\quad 热机效率}
 
 热机从高温热源吸收热量 $Q_1$，把其中一部分转化为对外做功 $W$，其余热量 $Q_2$ 放给低温热源：
 \[
 Q_1=W+Q_2.
 \]
+这里的 $Q_1$、$Q_2$ 都按热量大小取正值，$Q_2$ 不是代入第一定律时的负号放热量。
 热机效率定义为
 \[
 \eta=\frac{W}{Q_1}=1-\frac{Q_2}{Q_1}.
@@ -294,7 +456,25 @@ Q_1=W+Q_2.
 \figcaption{热机循环：循环过程中系统回到初态，净功等于吸热与放热之差}\label{fig:heat-engine-cycle}
 \end{center}
 
-\textbf{重要理解：} 热机不可能把吸收的热量全部转化为功。实际热机还会因摩擦、散热和不可逆过程损失能量。
+\textbf{重要理解：} 对循环工作的热机，不能从单一热源吸热并把它全部转化为功而不产生其他影响；因此实际热机都需要向低温热源放出一部分热量。真实装置还会因摩擦、散热和不可逆过程产生额外损耗。
+
+\textbf{热力学第二定律的定性理解：} 热量可以自发地从高温物体传到低温物体，但不能自发地从低温物体传到高温物体。若要把热量从低温处搬到高温处，例如冰箱和空调，就必须消耗外界做功。这说明能量不仅要守恒，还要考虑过程方向。
+
+\begin{center}
+\input{figures/tikz/second-law-heat-flow}
+
+\figcaption{热力学第二定律的方向性：逆向搬运热量必须消耗外界做功}\label{fig:second-law-heat-flow}
+\end{center}
+
+\textbf{现代应用：制冷机与热泵。} 冰箱、空调和热泵并不是“违反第二定律”，而是消耗外界做功，把热量从低温处搬到高温处。若关注冷端降温，就是制冷机；若关注热端供热，就是热泵。
+
+\begin{center}
+\input{figures/tikz/refrigerator-heat-pump}
+
+\figcaption{制冷机与热泵：外界做功使热量逆向转移}\label{fig:refrigerator-heat-pump}
+\end{center}
+
+\textbf{认知提醒：} 制冷机和热泵不是“凭空制造冷或热”。它们都遵守能量守恒：电功输入后，热量被重新分配。冰箱背面发热，是因为它把箱内热量连同压缩机消耗的电功一起排到室内。
 
 \begin{examplebox}{热机每循环输出功和效率}
 \textbf{题意分析：} 某热机每循环从高温热源吸收 $Q_1=1000\ \mathrm{J}$，向低温热源放出 $Q_2=650\ \mathrm{J}$。求每循环输出功和效率。
@@ -316,14 +496,14 @@ W=Q_1-Q_2=1000-650=350\ \mathrm{J}.
 \textbf{方法总结：} 一个循环结束后热机回到初态，内能不积累；吸热与放热之差就是对外输出功。
 \end{examplebox}
 
-\subsection*{2.\quad 四种常见过程的能量判断}
+\subsection*{5.\quad 四种常见过程的能量判断}
 
 \begin{center}
 \begin{tabular}{lll}
 \toprule
 过程 & 特征 & 第一定律分析 \\
 \midrule
-等温过程 & 理想气体温度不变 & $\Delta U=0$，吸热常转化为对外做功 \\
+等温过程 & 理想气体温度不变 & $\Delta U=0$，故 $Q=W$；膨胀吸热，压缩放热 \\
 等容过程 & 体积不变 & $W=0$，$\Delta U=Q$ \\
 等压过程 & 压强不变 & $W=p\Delta V$ \\
 绝热过程 & $Q=0$ & $\Delta U=-W$ \\
@@ -374,20 +554,30 @@ W=-200\ \mathrm{J}.
 \textbf{方法总结：} 绝热压缩会使气体升温，这也是打气筒快速打气时筒壁发热的原因之一。
 \end{examplebox}
 
-\subsection*{3.\quad 分层训练}
+\subsection*{6.\quad 分层训练}
 
 \begin{enumerate}
   \item \textbf{基础：} 一定质量理想气体等容放热，内能怎样变化？
   \item \textbf{提高：} 气体等压膨胀，吸热 $500\ \mathrm{J}$，对外做功 $180\ \mathrm{J}$，求内能变化。
   \item \textbf{综合：} 某热机每循环吸热 $1000\ \mathrm{J}$，放热 $650\ \mathrm{J}$，求输出功和效率。
+  \item \textbf{应用：} 同一房间温度降低时，为什么窗玻璃上更容易出现水珠？
   \item \textbf{开放思考：} 为什么冰箱能把热量从低温处搬到高温处，但必须消耗电能？
+  \item \textbf{拓展观察：} 小水滴为什么常接近球形？细玻璃管插入水中时，液面为什么可能高于管外水面？
 \end{enumerate}
 
-\section*{十一、今日小结}
+\section*{十、今日小结}
 \begin{enumerate}
   \item 分子动理论把宏观热现象解释为大量分子的统计运动。
+  \item 扩散现象和布朗运动都是分子热运动的重要证据。
+  \item 油膜法用 $d\approx V/S$ 估测分子大小，前提是形成近似单分子层。
+  \item 热平衡时没有净热传递，温度计读数的前提是温度计与被测物体达到热平衡。
   \item 温度反映分子平均动能，内能是分子动能和分子势能总和。
   \item 热量和功都是过程量，都是改变内能的方式。
-  \item 一定质量理想气体满足 $pV/T=C$。
+  \item 一定质量理想气体满足 $pV/T=C$；若显式给出物质的量，则用 $pV=nRT$。
   \item 热力学第一定律在本讲义约定下写作 $\Delta U=Q-W$。
+  \item 相变时温度可能不变，但吸收或放出的潜热会改变分子势能和内能。
+  \item 晶体、非晶体和液晶的差别来自微观排列；相对湿度描述空气中水蒸气接近饱和的程度。
+  \item 表面张力来自液体表面分子受力不对称，毛细现象与浸润、管径和表面张力有关。
+  \item 热力学第二定律强调过程方向：热量不会自发地从低温物体传到高温物体。
+  \item 制冷机和热泵靠外界做功把热量从低温处搬到高温处，不违背能量守恒和第二定律。
 \end{enumerate}

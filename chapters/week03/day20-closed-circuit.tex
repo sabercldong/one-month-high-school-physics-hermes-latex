@@ -26,7 +26,7 @@
 
 闭合电路欧姆定律揭示了：$E$ = 外电路电压 + 内电路电压。
 
-\textbf{科学发展视角：} 电池技术是新能源汽车、储能电站和移动设备的核心。内阻决定了电池大电流输出时的发热、效率和路端电压下降，所以“旧电池带不动负载”不是一句经验话，而是闭合电路欧姆定律的直接体现。
+\textbf{科学发展视角：} 电池技术是新能源汽车、储能电站和移动设备的核心。内阻决定了电池大电流输出时的发热、效率和路端电压下降，所以“旧电池带不动负载”并非单纯经验判断，而是闭合电路欧姆定律的直接体现。
 
 \section*{三、核心概念}
 
@@ -51,7 +51,7 @@ U_{\text{外}}=IR,\qquad U_{\text{内}}=Ir.
 \[
 E=IR+Ir=I(R+r),\qquad I=\frac{E}{R+r}.
 \]
-所以闭合电路欧姆定律不是凭空多出来的公式，而是“电源提供的能量 = 外电路消耗 + 内阻消耗”的结果。
+所以闭合电路欧姆定律不是孤立新增的公式，而是“电源提供的能量 = 外电路消耗 + 内阻消耗”的结果。
 
 \begin{itemize}
   \item $E$：电源电动势（$\mathrm{V}$），由电源本身决定。
@@ -134,12 +134,12 @@ $R$ 越大，效率越高。但在最大输出功率时（$R = r$），效率仅
 \toprule
 公式 & 物理意义 & 适用条件 \\
 \midrule
-$I = \dfrac{E}{R+r}$ & 闭合电路欧姆定律 & 纯电阻电路 \\
-$U = E - Ir$ & 路端电压 & 任何闭合电路 \\
-$P_{\text{出}} = UI$ & 电源输出功率 & 任何外电路 \\
+$I = \dfrac{E}{R+r}$ & 闭合电路欧姆定律 & 单电源、内阻为 $r$、外电路可等效为纯电阻 $R$ \\
+$U = E - Ir$ & 路端电压 & 电源放电，电流由正极流出 \\
+$P_{\text{出}} = UI$ & 电源输出功率 & 电源端口对外输出电能 \\
 $P_{\text{出}} = I^2R$ & 纯电阻负载输出功率 & 外电路为电阻 $R$ \\
 $P_{\max} = \dfrac{E^2}{4r}$ & 最大输出功率 & 纯电阻负载且 $R = r$ 时 \\
-$\eta = \dfrac{R}{R+r}$ & 电源效率 & 纯电阻电路 \\
+$\eta = \dfrac{R}{R+r}$ & 电源效率 & 单电源纯电阻外电路 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -222,9 +222,11 @@ r=\frac{U_1-U_2}{I_2-I_1},\qquad E=U_1+I_1r
   验证：$E = U + U_{\text{内}} = 10 + 2 = 12\ \mathrm{V}$ $\checkmark$
 \end{enumerate}
 
-\textbf{方法总结：} $E = U_{\text{外}} + U_{\text{内}}$ 始终成立。路端电压小于电动势，差值等于内阻上的电压降。
+\textbf{方法总结：} 在电源向外供电的普通闭合电路中，$E = U_{\text{外}} + U_{\text{内}}$。此时路端电压小于电动势，差值等于内阻上的电压降；若讨论给电池充电等反向过程，路端电压与电动势的关系需要重新按能量方向判断。
 
 \end{examplebox}
+
+\clearpage
 
 \begin{examplebox}{路端电压的变化}
 
@@ -293,8 +295,14 @@ U_2 = 6 - 4 \times 0.5 = 4\ \mathrm{V}
 
 \begin{enumerate}
   \item 电源 $E = 9\ \mathrm{V}$，$r = 1\ \Omega$，外电阻 $R = 8\ \Omega$。求电流、路端电压和内电压。
+  \begin{center}
+  \input{figures/tikz/training-closed-circuit-generic}
+  \end{center}
   
   \item 电源 $E = 6\ \mathrm{V}$，$r = 2\ \Omega$，当外电阻 $R$ 多大时电源输出功率最大？最大功率是多少？
+  \begin{center}
+  \input{figures/tikz/training-max-power-generic}
+  \end{center}
   
   \item 用伏安法测电源电动势和内阻，测得 $U_1 = 1.4\ \mathrm{V}$、$I_1 = 0.2\ \mathrm{A}$ 和 $U_2 = 1.2\ \mathrm{V}$、$I_2 = 0.4\ \mathrm{A}$。求 $E$ 和 $r$。
 \end{enumerate}
@@ -315,7 +323,10 @@ U_2 = 6 - 4 \times 0.5 = 4\ \mathrm{V}
 \end{enumerate}
 \end{mistakebox}
 
-\section*{九、方法补充}
+\newpage
+\section*{九、竞赛入门补充}
+
+\subsection*{1.\quad 闭合电路综合判断}
 
 \begin{learningbox}{三个容易混在一起的判断}
 \begin{enumerate}
@@ -325,7 +336,8 @@ U_2 = 6 - 4 \times 0.5 = 4\ \mathrm{V}
 \end{enumerate}
 \end{learningbox}
 
-\section*{十、竞赛入门补充}
+\newpage
+\subsection*{2.\quad 含电容器的闭合电路}
 
 \begin{competitionbox}
 \textbf{含电容器的闭合电路}
@@ -351,11 +363,11 @@ I = \frac{E}{R_1 + R_2 + r} = \frac{10}{4 + 5 + 1} = 1\ \mathrm{A}
 \textbf{竞赛小贴士：} 含电容器的直流电路问题中，稳定时电容器支路视为断路，电容器电压等于与之并联部分的电压。
 \end{competitionbox}
 
-\section*{十一、今日小结}
+\section*{十、今日小结}
 
 \begin{enumerate}
-  \item 闭合电路欧姆定律 $I = \dfrac{E}{R+r}$，$E = IR + Ir$。
-  \item 路端电压 $U = E - Ir$，$R \uparrow \to U \uparrow$。
+  \item 外电路可等效为纯电阻 $R$ 时，闭合电路欧姆定律 $I = \dfrac{E}{R+r}$，$E = IR + Ir$。
+  \item 电源向外供电时，路端电压 $U = E - Ir$，外电阻增大通常使 $U$ 增大。
   \item 电源输出功率 $P_{\text{出}} = I^2R$，$R = r$ 时最大，$P_{\max} = \dfrac{E^2}{4r}$。
   \item 电源效率 $\eta = \dfrac{R}{R+r}$，最大功率时效率仅 $50\%$。
   \item 伏安法 $U$-$I$ 图：纵截距 $= E$，斜率 $= -r$。

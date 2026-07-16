@@ -9,9 +9,10 @@
 \begin{enumerate}
   \item 理解简谐运动的特征：回复力 $F = -kx$。
   \item 掌握弹簧振子的周期公式 $T = 2\pi\sqrt{\dfrac{m}{k}}$。
-  \item 掌握单摆的周期公式 $T = 2\pi\sqrt{\dfrac{l}{g}}$。
+  \item 掌握理想单摆在小角度近似下的周期公式 $T = 2\pi\sqrt{\dfrac{l}{g}}$。
   \item 能读懂简谐运动的 $x$-$t$ 图像，知道 $A$、$T$、$\omega$ 的物理意义。
   \item 理解简谐运动中的能量转化关系。
+  \item 初步理解多个弹簧可以等效为一个弹簧，再代入弹簧振子模型。
 \end{enumerate}
 
 \section*{二、初高中衔接}
@@ -26,7 +27,7 @@
 
 \begin{conceptbox}{简谐运动}
 
-\textbf{定义：} 物体所受回复力（或沿运动方向的合力）与偏离平衡位置的位移大小成正比，方向总是指向平衡位置，这样的运动叫简谐运动。
+\textbf{定义：} 物体所受回复力（或沿振动方向的合力）与偏离平衡位置的位移大小成正比，方向总是指向平衡位置，这样的运动叫简谐运动。
 
 \textbf{回复力：}
 \[
@@ -72,7 +73,7 @@ F=-kx.
 \[
 a=-\frac{k}{m}x.
 \]
-这说明加速度与位移成正比、方向相反，运动的“快慢节奏”由 $\dfrac{k}{m}$ 决定。数学上可证明这种运动的角频率满足
+这说明加速度与位移成正比、方向相反。把 $a$ 看成位移对时间的二阶变化，就得到简谐运动的标准方程；其中 $\dfrac{k}{m}$ 决定振动的“快慢节奏”，角频率满足
 \[
 \omega^2=\frac{k}{m},\qquad T=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{m}{k}}.
 \]
@@ -81,7 +82,7 @@ a=-\frac{k}{m}x.
 \begin{itemize}
   \item $m$：振子质量。
   \item $k$：弹簧劲度系数。
-  \item 周期与振幅无关（简谐运动的等时性）。
+  \item 在线性弹簧模型和无阻尼近似下，周期与振幅无关（简谐运动的等时性）。
 \end{itemize}
 
 \end{conceptbox}
@@ -110,7 +111,7 @@ F_{\tau}=-mg\sin\theta.
 \[
 F_{\tau}\approx-mg\theta=-\frac{mg}{l}x.
 \]
-它与弹簧振子的 $F=-kx$ 形式完全相同，只是等效“劲度系数”为
+它与弹簧振子的 $F=-kx$ 在数学形式上相同，只是等效“劲度系数”为
 \[
 k_{\text{等效}}=\frac{mg}{l}.
 \]
@@ -121,9 +122,9 @@ T=2\pi\sqrt{\frac{m}{mg/l}}=2\pi\sqrt{\frac{l}{g}}.
 这也解释了单摆周期为什么与摆球质量无关。
 
 \begin{itemize}
-  \item $l$：摆长。
+  \item $l$：摆长，指悬点到摆球球心的距离，不是绳长的裸数值或摆球最低点到悬点的距离。
   \item $g$：当地重力加速度。
-  \item 在小角度近似下，周期与摆球质量、振幅无关——这是惠更斯的伟大发现。
+  \item 在理想单摆、小角度近似下，周期与摆球质量无关，并近似与振幅无关——这是惠更斯的重要发现。
   \item 利用单摆可以测量当地的重力加速度。
 \end{itemize}
 
@@ -152,9 +153,9 @@ x = A\cos(\omega t + \varphi_0)
 \toprule
 公式 & 物理意义 & 适用条件 \\
 \midrule
-$F = -kx$ & 回复力 & 简谐运动 \\
-$T = 2\pi\sqrt{\dfrac{m}{k}}$ & 弹簧振子周期 & 水平/竖直弹簧振子 \\
-$T = 2\pi\sqrt{\dfrac{l}{g}}$ & 单摆周期 & 摆角 $\theta < 5^\circ$ \\
+$F = -kx$ & 回复力 & 位移从平衡位置计，线性回复力 \\
+$T = 2\pi\sqrt{\dfrac{m}{k}}$ & 弹簧振子周期 & 轻弹簧、线性范围、忽略阻尼 \\
+$T = 2\pi\sqrt{\dfrac{l}{g}}$ & 单摆周期 & 理想单摆，小角度近似 \\
 $x = A\cos(\omega t + \varphi_0)$ & 振动方程 & 简谐运动 \\
 $f = \dfrac{1}{T}$ & 频率与周期 & 任何周期性运动 \\
 \bottomrule
@@ -165,8 +166,11 @@ $f = \dfrac{1}{T}$ & 频率与周期 & 任何周期性运动 \\
 
 \subsection*{模型 1：水平弹簧振子}
 
-平衡位置处速度最大、加速度为零；最大位移处速度为零、加速度最大。
-机械能守恒：$\dfrac12 kA^2 = \dfrac12 mv^2 + \dfrac12 kx^2$。
+平衡位置处速度最大、加速度为零；最大位移处速度为零、加速度大小最大。
+理想无阻尼弹簧振子机械能守恒：
+\[
+\dfrac12 kA^2 = \dfrac12 mv^2 + \dfrac12 kx^2.
+\]
 
 \subsection*{模型 2：单摆测 $g$}
 
@@ -189,7 +193,11 @@ s=\frac{4\pi^2}{g},\qquad g=\frac{4\pi^2}{s}.
 
 \subsection*{模型 3：简谐运动的能量}
 
-总机械能 $E = \dfrac12 kA^2$。动能和势能不断相互转化，总和守恒。
+对满足 $F=-kx$ 的理想线性简谐模型，若 $k$ 表示回复力与位移的比例系数，则总机械能可写为
+\[
+E=\frac12 kA^2.
+\]
+对水平弹簧振子，这里的 $k$ 就是弹簧劲度系数；对单摆小角度振动，可理解为沿切向位移的等效比例系数。动能和势能不断相互转化，总和守恒。
 
 \begin{center}
 \input{figures/tikz/shm-energy}
@@ -227,7 +235,7 @@ s=\frac{4\pi^2}{g},\qquad g=\frac{4\pi^2}{s}.
   \]
 \end{enumerate}
 
-\textbf{方法总结：} 弹簧振子的周期只与 $m$ 和 $k$ 有关，与振幅无关。总机械能等于 $\frac12 kA^2$ 或最大动能 $\frac12 mv_{\max}^2$。
+\textbf{方法总结：} 在理想轻弹簧、线性范围和忽略阻尼的模型中，弹簧振子的周期只与 $m$ 和 $k$ 有关，与振幅无关。水平弹簧振子的总机械能等于 $\frac12 kA^2$ 或最大动能 $\frac12 mv_{\max}^2$。
 
 \end{examplebox}
 
@@ -278,8 +286,13 @@ g = \frac{4\pi^2 l}{T^2} = \frac{4 \times 3.14^2 \times 0.992}{1.99^2} \approx \
   \item 弹簧振子 $m = 0.2\ \mathrm{kg}$，$k = 80\ \mathrm{N/m}$，振幅 $A = 0.05\ \mathrm{m}$。求周期、频率和最大速度。
   
   \item 单摆摆长 $l = 2\ \mathrm{m}$，$g = 9.8\ \mathrm{m/s^2}$。求周期。若想让周期变为 $3\ \mathrm{s}$，应如何调整摆长？
+  \begin{center}
+  \input{figures/tikz/training-oscillation-basics}
+  \end{center}
   
   \item 某同学用单摆测重力加速度，摆长 $l = 1.0\ \mathrm{m}$，测得 40 次全振动的时间 $t = 80.0\ \mathrm{s}$。求 $g$。
+
+  \item 两根轻弹簧劲度系数分别为 $k_1$、$k_2$。若并联后连接同一物体做水平振动，等效劲度系数是多少？若串联后连接同一物体，等效劲度系数满足什么关系？
 \end{enumerate}
 
 \section*{八、易错点}
@@ -288,13 +301,15 @@ g = \frac{4\pi^2 l}{T^2} = \frac{4 \times 3.14^2 \times 0.992}{1.99^2} \approx \
 \begin{enumerate}
   \item \textbf{混淆振幅和位移：} 振幅 $A$ 是最大位移的绝对值，是常数；位移 $x$ 是变量，随时间在 $-A$ 到 $A$ 之间变化。
   
-  \item \textbf{单摆公式 $T = 2\pi\sqrt{\dfrac{l}{g}}$ 的适用条件：} 必须摆角很小（$\theta < 5^\circ$），且是单摆（摆球直径远小于摆长）。
+  \item \textbf{单摆公式 $T = 2\pi\sqrt{\dfrac{l}{g}}$ 的适用条件：} 要求摆角较小（高中常用 $\theta < 5^\circ$ 作为近似足够好的范围），且是单摆（摆球直径远小于摆长）。
   
   \item \textbf{弹簧振子中误认为质量不计：} 弹簧质量不计，但振子质量 $m$ 不可忽略——它就是公式中的 $m$。
   
   \item \textbf{回复力不是新力：} 回复力是效果力，由重力、弹力等的合力（或其分力）提供，不是新的一种性质力。
   
-  \item \textbf{单摆周期与质量无关：} 很多人直觉认为摆球越重摆动越快，实际上周期与质量完全无关。
+  \item \textbf{单摆周期与质量无关：} 很多人直觉认为摆球越重摆动越快；在理想单摆、小角度近似下，周期与质量无关。
+
+  \item \textbf{把串联、并联弹簧公式记反：} 并联弹簧形变量相同、弹力相加；串联弹簧拉力相同、形变量相加。
 \end{enumerate}
 \end{mistakebox}
 
@@ -330,7 +345,45 @@ g = \frac{4\pi^2 l}{T^2} = \frac{4 \times 3.14^2 \times 0.992}{1.99^2} \approx \
 
 \textbf{竞赛小贴士：} 证明简谐运动的关键是找到平衡位置，然后看合力是否与偏离量成正比且指向平衡位置。
 
-\pagebreak[4]
+\pagebreak[3]
+\medskip
+\textbf{等效弹簧：多个弹簧先化成一个 $k$}
+
+弹簧振子周期公式中的 $k$，本质上是“物体偏离平衡位置 $x$ 时，回复力大小与 $x$ 的比例系数”。若物体同时连接多个弹簧，先求等效劲度系数 $k_{\text{等效}}$，再代入
+\[
+T=2\pi\sqrt{\frac{m}{k_{\text{等效}}}}.
+\]
+
+\begin{center}
+\input{figures/tikz/equivalent-springs}
+
+\figcaption{等效弹簧：并联看力相加，串联看形变量相加}\label{fig:equivalent-springs}
+\end{center}
+
+\textbf{并联弹簧：} 两根弹簧一端固定，另一端共同连接同一物体。物体向右偏离 $x$ 时，两根弹簧的形变量都是 $x$，回复力大小分别为 $k_1x$、$k_2x$，总回复力
+\[
+F=(k_1+k_2)x.
+\]
+所以
+\[
+k_{\text{并}}=k_1+k_2.
+\]
+
+\textbf{串联弹簧：} 两根弹簧首尾相连。串联时两根弹簧中的拉力大小相同，设为 $F$。它们的形变量分别为
+\[
+x_1=\frac{F}{k_1},\qquad x_2=\frac{F}{k_2}.
+\]
+总形变量
+\[
+x=x_1+x_2=F\left(\frac1{k_1}+\frac1{k_2}\right).
+\]
+若用一个等效弹簧表示，$x=\dfrac{F}{k_{\text{串}}}$，因此
+\[
+\frac1{k_{\text{串}}}=\frac1{k_1}+\frac1{k_2}.
+\]
+
+\textbf{认知提醒：} 并联弹簧更“硬”，等效 $k$ 变大；串联弹簧更“软”，等效 $k$ 变小。若两根相同弹簧劲度系数都是 $k$，并联得 $2k$，串联得 $\dfrac{k}{2}$。
+
 \medskip
 \textbf{参考圆法：用匀速圆周运动理解简谐运动}
 
@@ -358,14 +411,29 @@ t=\frac{\pi/3}{2\pi/T}=\frac{T}{6}.
 \]
 
 \textbf{容易混淆：} 若从平衡位置 $x=0$ 开始向正方向运动，到 $x=\dfrac{A}{2}$，对应参考圆转过角度 $\dfrac{\pi}{6}$，所用时间是 $\dfrac{T}{12}$。所以做题时必须先看清“从哪里开始计时”。
+
+\medskip
+\textbf{受迫振动与共振}
+
+真实系统常受到外界周期性驱动，例如秋千被人周期性推动，桥梁受到周期性风力或人群步伐作用。外力频率叫\textbf{驱动频率}，系统自己最容易振动的频率叫\textbf{固有频率}。当驱动频率接近固有频率时，振幅会显著增大，这就是\textbf{共振}。
+
+\begin{center}
+\input{figures/tikz/resonance-curve}
+
+\figcaption{共振曲线：驱动频率接近固有频率时，振幅显著增大}\label{fig:resonance-curve}
+\end{center}
+
+\textbf{模型意识：} 共振不是“外力越大越容易发生”，而是频率匹配导致能量不断有效输入。工程上既会利用共振（乐器、石英振荡器），也要避免危险共振（桥梁、机器、建筑结构）。
 \end{competitionbox}
 
 \section*{十、今日小结}
 
 \begin{enumerate}
   \item 简谐运动回复力 $F = -kx$。
-  \item 弹簧振子周期 $T = 2\pi\sqrt{\dfrac{m}{k}}$，与振幅无关。
-  \item 单摆周期 $T = 2\pi\sqrt{\dfrac{l}{g}}$，小角度近似下与质量、振幅无关。
+  \item 理想轻弹簧振子周期 $T = 2\pi\sqrt{\dfrac{m}{k}}$，在线性范围内与振幅无关。
+  \item 单摆周期 $T = 2\pi\sqrt{\dfrac{l}{g}}$，理想小角度近似下与质量无关，并近似与振幅无关。
   \item 简谐运动 $x$-$t$ 图像为正弦曲线，$x = A\cos(\omega t + \varphi_0)$。
-  \item 简谐运动中机械能守恒，$E = \frac12 kA^2$。
+  \item 理想无阻尼简谐运动中机械能守恒，弹簧振子 $E = \frac12 kA^2$。
+  \item 多根弹簧先求等效劲度系数：并联 $k$ 相加，串联倒数相加。
+  \item 共振发生在驱动频率接近固有频率时，关键是频率匹配。
 \end{enumerate}

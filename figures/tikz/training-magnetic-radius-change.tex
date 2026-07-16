@@ -1,0 +1,33 @@
+\begin{tikzpicture}[scale=0.88,>=Stealth,line cap=round,line join=round]
+  \path[use as bounding box] (-0.35,-0.70) rectangle (7.25,1.98);
+  \begin{scope}
+    \fill[blue!5] (-0.15,-0.1) rectangle (2.55,1.95);
+    \foreach \x in {0.25,0.75,1.25,1.75,2.25}
+      \foreach \y in {0.25,0.75,1.25,1.75}
+        \node[blue!70] at (\x,\y) {$\times$};
+    \coordinate (S) at (0.42,1.72);
+    \coordinate (O) at (0.42,0.62);
+    \draw[dashed] (O) -- (S) node[midway,left,font=\small] {$r$};
+    \fill (O) circle (0.025);
+    \draw[thick,red,->] (S) arc[start angle=90,end angle=-35,radius=1.10];
+    \draw[->,thick] (-0.22,1.72) -- (S) node[midway,above,font=\small] {$v$};
+    \node[red,font=\small] at (1.12,1.15) {$e^-$};
+    \node[font=\small] at (1.20,-0.42) {$B$ 向里};
+  \end{scope}
+  \draw[->,thick] (2.78,0.88) -- (3.28,0.88);
+  \node[font=\scriptsize] at (3.03,1.17) {$B$ 加倍};
+  \begin{scope}[xshift=3.55cm]
+    \fill[blue!5] (-0.15,-0.1) rectangle (2.55,1.95);
+    \foreach \x in {0.25,0.75,1.25,1.75,2.25}
+      \foreach \y in {0.25,0.75,1.25,1.75}
+        \node[blue!80] at (\x,\y) {$\times$};
+    \coordinate (S2) at (0.42,1.72);
+    \coordinate (O2) at (0.42,1.17);
+    \draw[dashed] (O2) -- (S2) node[midway,left,font=\small] {$r/2$};
+    \fill (O2) circle (0.025);
+    \draw[thick,red,->] (S2) arc[start angle=90,end angle=-70,radius=0.55];
+    \draw[->,thick] (-0.22,1.72) -- (S2) node[midway,above,font=\small] {$v$};
+    \node[red,font=\small] at (0.95,0.95) {$e^-$};
+    \node[font=\small] at (1.20,-0.42) {$2B$ 向里};
+  \end{scope}
+\end{tikzpicture}

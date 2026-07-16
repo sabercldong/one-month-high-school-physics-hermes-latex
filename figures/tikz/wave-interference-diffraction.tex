@@ -1,0 +1,36 @@
+\begin{tikzpicture}[scale=0.92,>=Stealth]
+  \begin{scope}
+    \node[font=\small] at (0,1.85) {两波源干涉};
+    \fill[blue] (-0.55,0.35) circle (0.055);
+    \fill[blue] (-0.55,-0.35) circle (0.055);
+    \node[font=\scriptsize,left] at (-0.60,0.35) {$S_1$};
+    \node[font=\scriptsize,left] at (-0.60,-0.35) {$S_2$};
+    \foreach \r in {0.45,0.90,1.35,1.80}{
+      \draw[blue!45] (-0.55,0.35) circle (\r);
+      \draw[blue!45] (-0.55,-0.35) circle (\r);
+    }
+    \draw[red,thick] (-0.55,0) -- (2.05,0);
+    \draw[orange!85!black,thick,dashed] (-0.55,0.35) -- (1.80,1.35);
+    \draw[orange!85!black,thick,dashed] (-0.55,-0.35) -- (1.80,-1.35);
+    \node[font=\scriptsize,red] at (1.10,0.36) {相长};
+    \node[font=\scriptsize,orange!85!black] at (1.85,1.52) {相消线附近};
+  \end{scope}
+
+  \begin{scope}[xshift=5.2cm]
+    \node[font=\small] at (0,1.85) {小孔/窄缝衍射};
+    \draw[thick] (-1.95,-1.35) -- (-1.95,-0.28);
+    \draw[thick] (-1.95,0.28) -- (-1.95,1.35);
+    \draw[<->] (-2.22,-0.28) -- (-2.22,0.28);
+    \node[font=\scriptsize,left] at (-2.22,0) {$a$};
+    \foreach \x in {-3.15,-2.75,-2.35}{
+      \draw[blue,->] (\x,-1.0) -- (\x+0.55,-1.0);
+      \draw[blue,->] (\x,0) -- (\x+0.55,0);
+      \draw[blue,->] (\x,1.0) -- (\x+0.55,1.0);
+    }
+    \foreach \r in {0.45,0.85,1.25,1.65}{
+      \draw[red!70] (-1.95,0) arc (180:30:\r);
+      \draw[red!70] (-1.95,0) arc (180:330:\r);
+    }
+    \node[font=\scriptsize,align=center] at (0.55,-1.55) {$a$ 与 $\lambda$ 可比时\\绕射更明显};
+  \end{scope}
+\end{tikzpicture}

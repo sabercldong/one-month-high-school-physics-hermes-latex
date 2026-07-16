@@ -1,0 +1,24 @@
+\begin{tikzpicture}[scale=0.88,>=Stealth,line cap=round,line join=round]
+  \path[use as bounding box] (-0.25,-0.75) rectangle (8.15,2.25);
+  \begin{scope}
+    \draw[thick] (0,0) -- (2.8,0);
+    \draw[fill=gray!12,thick] (0.25,0) rectangle (0.85,0.55) node[midway] {$m_1$};
+    \draw[fill=gray!12,thick] (1.75,0) rectangle (2.35,0.55) node[midway] {$m_2$};
+    \draw[->,red,thick] (0.9,0.38) -- (1.55,0.38) node[midway,above,font=\small] {$v_0$};
+    \node[font=\small] at (1.4,-0.42) {碰撞前};
+  \end{scope}
+  \draw[->,thick] (3.0,0.35) -- (3.75,0.35);
+  \begin{scope}[xshift=4.0cm]
+    \draw[thick] (0,0) -- (3.8,0);
+    \draw[fill=gray!12,thick] (0.25,0) rectangle (1.35,0.55) node[midway] {$m_1+m_2$};
+    \draw[decorate,decoration={zigzag,segment length=5pt,amplitude=2pt},thick]
+      (1.35,0.28) -- (2.28,0.28);
+    \draw[thick] (2.28,0) rectangle (2.42,0.85);
+    \draw[thick] (2.42,0) -- (2.42,1.2);
+    \draw[thick] (2.42,0) -- (2.95,0);
+    \draw[<->,blue,thick] (1.35,1.0) -- (2.28,1.0) node[midway,above,font=\small] {$x$};
+    \node[font=\small] at (1.75,-0.42) {碰后压缩弹簧};
+  \end{scope}
+  \node[font=\small,align=center] at (4.0,2.0)
+    {碰撞：动量守恒\\压缩：无耗散用机械能，有耗散用功能关系};
+\end{tikzpicture}

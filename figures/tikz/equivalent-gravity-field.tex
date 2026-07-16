@@ -1,0 +1,40 @@
+% TikZ 图：匀强电场中的等效重力场
+% Day 15：电荷、电场与电场强度
+\begin{tikzpicture}[scale=0.86,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  % Left: force composition on a positive charge.
+  \begin{scope}[shift={(-3.1,0)}]
+    \draw[blue!70,->] (-1.45,1.25) -- (1.45,1.25) node[right] {$\vect{E}$};
+    \foreach \y in {0.55,-0.15,-0.85} {
+      \draw[blue!70,->] (-1.45,\y) -- (1.45,\y);
+    }
+    \filldraw[red] (0,0) circle (3pt);
+    \node[red,above left] at (-0.08,0.08) {$+q$};
+    \draw[very thick,red!80!black,->] (0,0) -- (1.15,0);
+    \node[red!80!black,above] at (0.82,0.10) {$qE$};
+    \draw[very thick,black,->] (0,0) -- (0,-1.15) node[left] {$mg$};
+    \draw[very thick,orange!85!black,->] (0,0) -- (1.15,-1.15)
+      node[below right] {$mg'$};
+    \draw[dashed,gray] (1.15,0) -- (1.15,-1.15) -- (0,-1.15);
+  \end{scope}
+
+  % Right: pendulum aligns with the resultant force.
+  \begin{scope}[shift={(2.8,0)}]
+    \coordinate (O) at (0,1.35);
+    \coordinate (P) at (0.82,-0.65);
+    \filldraw[black] (O) circle (1.4pt);
+    \draw[dashed,gray] (O) -- (0,-1.15);
+    \draw[thick] (O) -- (P);
+    \filldraw[red] (P) circle (4pt);
+    \node[red,below left] at ($(P)+(-0.04,-0.03)$) {$+q$};
+    \draw[blue!70,->] (-1.45,0.55) -- (1.45,0.55) node[right] {$\vect{E}$};
+    \draw[blue!70,->] (-1.45,-0.15) -- (1.45,-0.15);
+    \draw[very thick,orange!85!black,->] (P) -- ++(0.60,-1.10)
+      node[right] {$mg'$};
+    \draw[very thick,black,->] (P) -- ++(0,-0.95) node[left] {$mg$};
+    \draw[very thick,red!80!black,->] (P) -- ++(0.90,0);
+    \node[red!80!black,above] at ($(P)+(0.72,0.10)$) {$qE$};
+    \draw[->] (0,0.66) arc[start angle=-90,end angle=-68,radius=0.58];
+    \node at (0.30,0.42) {$\theta$};
+  \end{scope}
+\end{tikzpicture}

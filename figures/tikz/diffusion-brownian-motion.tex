@@ -1,0 +1,51 @@
+% TikZ 图：扩散现象与布朗运动
+% Day 26：热学基础
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  \begin{scope}
+    \node[font=\small\bfseries] at (2.35,2.95) {扩散现象};
+    \draw[rounded corners=4pt,thick,fill=blue!3] (0,0) rectangle (4.7,2.45);
+    \draw[dashed,gray] (2.35,0.18) -- (2.35,2.27);
+
+    \foreach \x/\y in {0.45/0.45,0.85/1.10,1.15/1.85,1.55/0.75,1.88/1.55}{
+      \fill[red!75] (\x,\y) circle (2.2pt);
+    }
+    \foreach \x/\y in {2.85/0.55,3.20/1.35,3.62/1.95,4.05/0.95,4.28/1.70}{
+      \fill[blue!65] (\x,\y) circle (2.2pt);
+    }
+    \foreach \x/\y in {1.95/0.35,2.15/1.15,2.55/1.75,2.70/0.82}{
+      \fill[red!75] (\x,\y) circle (2pt);
+      \fill[blue!65] (\x+0.18,\y+0.12) circle (2pt);
+    }
+
+    \draw[->,red!70] (1.35,1.20) .. controls (1.75,1.45) and (2.15,1.50) .. (2.65,1.42);
+    \draw[->,blue!70] (3.38,1.20) .. controls (2.95,0.90) and (2.45,0.88) .. (1.95,0.94);
+    \node[font=\scriptsize,align=center] at (2.35,-0.55)
+      {不同分子彼此进入对方\\最终趋向均匀混合};
+  \end{scope}
+
+  \begin{scope}[xshift=6.35cm]
+    \node[font=\small\bfseries] at (2.35,2.95) {布朗运动};
+    \draw[rounded corners=4pt,thick,fill=green!3] (0,0) rectangle (4.7,2.45);
+
+    \foreach \x/\y/\dx/\dy in {
+      0.55/0.50/0.45/0.20,0.82/1.85/0.35/-0.25,1.55/0.92/-0.40/0.20,
+      2.05/1.92/0.28/-0.32,2.95/0.48/-0.42/0.34,3.62/1.52/-0.35/-0.28,
+      4.12/0.92/-0.45/0.15}{
+      \fill[blue!55] (\x,\y) circle (1.8pt);
+      \draw[->,blue!60] (\x,\y) -- ++(\dx,\dy);
+    }
+
+    \fill[orange!85!black] (2.35,1.20) circle (5.5pt);
+    \node[orange!85!black,above right] at (2.42,1.25) {微粒};
+    \draw[very thick,orange!85!black,->] (2.35,1.20)
+      -- (2.85,1.50) -- (2.48,1.78) -- (3.08,2.05);
+
+    \foreach \x/\y in {1.85/1.18,2.10/0.85,2.68/1.00,2.02/1.52,2.78/1.52}{
+      \draw[->,gray] (\x,\y) -- (2.35,1.20);
+    }
+
+    \node[font=\scriptsize,align=center] at (2.35,-0.55)
+      {微粒受大量分子撞击\\瞬时不平衡而抖动};
+  \end{scope}
+\end{tikzpicture}

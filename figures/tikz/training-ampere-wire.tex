@@ -1,0 +1,8 @@
+\begin{tikzpicture}[scale=0.85,>=Stealth]
+  \foreach \x in {0,0.6,1.2,1.8,2.4,3.0}
+    \foreach \y in {0,0.6,1.2}
+      \node[blue] at (\x,\y) {$\odot$};
+  \draw[red,very thick,->] (-0.15,0.6) -- (3.25,0.6) node[right] {$I$};
+  \draw[->,black,thick] (1.55,0.48) -- (1.55,-0.45) node[below] {$F$};
+  \node[font=\small] at (1.5,1.62) {磁场向外，电流向右};
+\end{tikzpicture}

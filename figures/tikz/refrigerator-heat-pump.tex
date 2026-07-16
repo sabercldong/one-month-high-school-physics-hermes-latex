@@ -1,0 +1,40 @@
+% TikZ 图：制冷机与热泵的能量流
+% Day 26：热学基础
+\begin{tikzpicture}[scale=0.95,>=Latex]
+  \tikzset{
+    box/.style={rounded corners=4pt,thick,align=center,minimum width=2.0cm,minimum height=0.8cm},
+    machine/.style={rounded corners=5pt,thick,fill=gray!10,align=center,minimum width=1.85cm,minimum height=1.05cm},
+    flow/.style={->,very thick},
+    note/.style={font=\small}
+  }
+
+  % 左：制冷机
+  \begin{scope}
+    \node[font=\bfseries] at (2.4,1.85) {制冷机：关注冷端降温};
+    \node[box,fill=blue!8] (cold) at (0,0) {低温空间\\冰箱内};
+    \node[machine] (mach) at (2.4,0) {制冷机};
+    \node[box,fill=red!8] (hot) at (4.9,0) {高温环境\\室内};
+
+    \draw[flow,blue] (cold) -- node[above,note] {$Q_{\text{冷}}$} (mach);
+    \draw[flow,orange!90!black] (mach) -- node[above,note] {$Q_{\text{热}}$} (hot);
+    \draw[flow,red] (2.4,-1.25) -- node[right,note] {外界做功 $W$} (mach);
+
+    \node[note,align=center] at (2.45,-1.85) {消耗电功，把热量从低温处搬到高温处};
+  \end{scope}
+
+  \draw[gray!55,dashed] (5.85,-2.05) -- (5.85,2.10);
+
+  % 右：热泵
+  \begin{scope}[xshift=6.55cm]
+    \node[font=\bfseries] at (2.4,1.85) {热泵：关注热端供热};
+    \node[box,fill=blue!8] (out) at (0,0) {低温环境\\室外};
+    \node[machine] (pump) at (2.4,0) {热泵};
+    \node[box,fill=red!8] (room) at (4.9,0) {高温空间\\室内};
+
+    \draw[flow,blue] (out) -- node[above,note] {$Q_{\text{取}}$} (pump);
+    \draw[flow,orange!90!black] (pump) -- node[above,note] {$Q_{\text{供}}$} (room);
+    \draw[flow,red] (2.4,-1.25) -- node[right,note] {外界做功 $W$} (pump);
+
+    \node[note,align=center] at (2.45,-1.85) {空调制热和热泵热水器都利用这个思路};
+  \end{scope}
+\end{tikzpicture}

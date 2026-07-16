@@ -1,0 +1,12 @@
+\begin{tikzpicture}[scale=0.8,>=Stealth]
+  \draw[thick] (-0.4,0) -- (6.2,0);
+  \draw[fill=gray!10] (0,0) rectangle (0.9,0.42);
+  \draw[fill=gray!10] (4.0,0) rectangle (4.9,0.42);
+  \node[above] at (0.45,0.42) {$B$};
+  \node[above] at (4.45,0.42) {$A$};
+  \draw[->,blue,thick] (0.95,0.3) -- (1.8,0.3) node[midway,above] {$v_B$};
+  \draw[->,blue,thick] (4.95,0.3) -- (5.65,0.3) node[midway,above] {$v_A$};
+  \draw[->,red,thick] (0.95,0.12) -- (0.35,0.12) node[midway,below] {$a$};
+  \draw[<->] (0.9,-0.35) -- (4.0,-0.35) node[midway,below] {$d$};
+  \node at (2.45,0.82) {同向追及};
+\end{tikzpicture}

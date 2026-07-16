@@ -1,0 +1,58 @@
+\begin{tikzpicture}[scale=0.90,>=Stealth]
+  \tikzset{
+    lens/.style={blue,very thick},
+    ray/.style={red!80!black,thick,->},
+    guide/.style={gray,dashed},
+    obj/.style={black,very thick,->},
+    img/.style={purple,very thick,->}
+  }
+
+  \begin{scope}
+    \node[font=\small] at (-1.55,1.95) {照相机/人眼};
+    \draw[->,thick] (-3.7,0) -- (1.15,0);
+    \draw[lens] (-0.45,-1.05) .. controls (-0.12,-0.35) and (-0.12,0.35) .. (-0.45,1.05);
+    \draw[lens] (-0.45,-1.05) .. controls (-0.78,-0.35) and (-0.78,0.35) .. (-0.45,1.05);
+    \draw[thick] (0.65,-1.05) -- (0.65,1.05);
+    \node[font=\scriptsize] at (0.65,-1.30) {胶片/视网膜};
+    \draw[obj] (-3.15,0) -- (-3.15,1.00) node[above,font=\scriptsize] {远物};
+    \draw[ray] (-3.15,1.00) -- (-0.45,1.00) -- (0.65,-0.48);
+    \draw[ray] (-3.15,1.00) -- (-0.45,0) -- (0.65,-0.48);
+    \draw[img] (0.65,0) -- (0.65,-0.42);
+    \node[font=\scriptsize,align=center] at (-1.30,-1.65) {倒立、缩小\\实像落在屏上};
+  \end{scope}
+
+  \begin{scope}[xshift=5.45cm]
+    \node[font=\small] at (-1.35,1.95) {放大镜};
+    \draw[->,thick] (-3.30,0) -- (1.45,0);
+    \draw[lens] (-0.40,-1.05) .. controls (-0.08,-0.35) and (-0.08,0.35) .. (-0.40,1.05);
+    \draw[lens] (-0.40,-1.05) .. controls (-0.72,-0.35) and (-0.72,0.35) .. (-0.40,1.05);
+    \foreach \x/\lab in {-1.35/F,0.55/F}{
+      \draw (\x,0.08) -- (\x,-0.08) node[below,font=\scriptsize] {$\lab$};
+    }
+    \draw[obj] (-0.95,0) -- (-0.95,0.55) node[above,font=\scriptsize] {物};
+    \draw[ray] (-0.95,0.55) -- (-0.40,0.55) -- (1.15,0.05);
+    \draw[ray] (-0.95,0.55) -- (-0.40,0) -- (1.15,-0.23);
+    \draw[guide] (-0.40,0.55) -- (-2.50,1.23);
+    \draw[guide] (-0.40,0) -- (-2.50,0.88);
+    \draw[img] (-2.25,0) -- (-2.25,1.05);
+    \node[font=\scriptsize,align=center] at (-1.10,-1.65) {物在焦点内\\正立、放大虚像};
+  \end{scope}
+
+  \begin{scope}[xshift=2.70cm,yshift=-4.05cm]
+    \node[font=\small] at (-1.40,1.95) {显微镜/望远镜};
+    \draw[->,thick] (-3.70,0) -- (1.55,0);
+    \foreach \x/\name in {-2.35/物镜,-0.30/目镜}{
+      \draw[lens] (\x,-1.05) .. controls (\x+0.28,-0.35) and (\x+0.28,0.35) .. (\x,1.05);
+      \draw[lens] (\x,-1.05) .. controls (\x-0.28,-0.35) and (\x-0.28,0.35) .. (\x,1.05);
+      \node[font=\scriptsize] at (\x,-1.28) {\name};
+    }
+    \draw[obj] (-3.30,0) -- (-3.30,0.58) node[above,font=\scriptsize] {物};
+    \draw[ray] (-3.30,0.58) -- (-2.35,0.58) -- (-1.08,-0.38);
+    \draw[ray] (-3.30,0.58) -- (-2.35,0) -- (-1.08,-0.38);
+    \draw[img] (-1.08,0) -- (-1.08,-0.38);
+    \node[font=\scriptsize] at (-1.08,-0.64) {中间像};
+    \draw[ray] (-1.08,-0.38) -- (-0.30,-0.16) -- (1.15,0.14);
+    \draw[ray] (-1.08,-0.38) -- (-0.30,0) -- (1.15,0.34);
+    \node[font=\scriptsize,align=center] at (-1.35,-1.70) {物镜先成中间像，目镜再放大观察};
+  \end{scope}
+\end{tikzpicture}

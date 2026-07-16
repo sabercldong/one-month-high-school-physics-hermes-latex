@@ -1,0 +1,58 @@
+% TikZ 图：近视与远视的透镜矫正
+% Day 25：光学
+\begin{tikzpicture}[scale=0.95,>=Latex]
+  \tikzset{
+    ray/.style={thick,red},
+    lens/.style={thick,blue},
+    retina/.style={thick},
+    note/.style={font=\small}
+  }
+
+  % 左：近视
+  \begin{scope}
+    \node[font=\bfseries] at (2.25,1.45) {近视：凹透镜矫正};
+
+    % 矫正镜
+    \draw[lens] (0.55,-0.85) .. controls (0.30,0) .. (0.55,0.85);
+    \draw[lens] (0.80,-0.85) .. controls (1.05,0) .. (0.80,0.85);
+    \node[blue,note] at (0.68,-1.10) {凹透镜};
+
+    % 眼球与视网膜
+    \draw[thick] (2.65,0) ellipse (1.05 and 0.78);
+    \draw[retina] (3.22,-0.62) arc[start angle=-55,end angle=55,radius=1.08];
+    \node[note] at (3.72,0.70) {视网膜};
+
+    % 矫正后光线
+    \draw[ray] (-0.45,0.36) -- (0.68,0.16) -- (2.45,0.08) -- (3.22,0);
+    \draw[ray] (-0.45,-0.36) -- (0.68,-0.16) -- (2.45,-0.08) -- (3.22,0);
+    \fill[red] (3.22,0) circle (1.8pt);
+
+    % 未矫正像位置
+    \fill[red!60] (2.55,0) circle (1.4pt);
+    \node[red,note,below] at (2.55,-0.40) {未矫正像在前};
+  \end{scope}
+
+  % 右：远视
+  \begin{scope}[xshift=5.35cm]
+    \node[font=\bfseries] at (2.25,1.45) {远视：凸透镜矫正};
+
+    % 矫正镜
+    \draw[lens] (0.45,-0.85) .. controls (0.75,0) .. (0.45,0.85);
+    \draw[lens] (0.90,-0.85) .. controls (0.60,0) .. (0.90,0.85);
+    \node[blue,note] at (0.68,-1.10) {凸透镜};
+
+    % 眼球与视网膜
+    \draw[thick] (2.65,0) ellipse (1.05 and 0.78);
+    \draw[retina] (3.22,-0.62) arc[start angle=-55,end angle=55,radius=1.08];
+    \node[note] at (3.72,0.70) {视网膜};
+
+    % 矫正后光线
+    \draw[ray] (-0.45,0.36) -- (0.68,0.26) -- (2.42,0.10) -- (3.22,0);
+    \draw[ray] (-0.45,-0.36) -- (0.68,-0.26) -- (2.42,-0.10) -- (3.22,0);
+    \fill[red] (3.22,0) circle (1.8pt);
+
+    % 未矫正像位置
+    \fill[red!60] (3.72,0) circle (1.4pt);
+    \node[red,note,below] at (3.72,-0.40) {未矫正像在后};
+  \end{scope}
+\end{tikzpicture}

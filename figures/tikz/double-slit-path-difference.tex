@@ -1,0 +1,29 @@
+\begin{tikzpicture}[scale=0.95,>=Stealth]
+  \draw[thick] (-3.2,-1.35) -- (-3.2,1.35);
+  \draw[fill=white] (-3.2,0.45) circle (0.045);
+  \draw[fill=white] (-3.2,-0.45) circle (0.045);
+  \node[font=\small,left] at (-3.25,0.45) {$S_1$};
+  \node[font=\small,left] at (-3.25,-0.45) {$S_2$};
+  \draw[<->] (-3.55,-0.45) -- (-3.55,0.45);
+  \node[font=\small,left] at (-3.55,0) {$d$};
+
+  \draw[thick] (3.0,-1.55) -- (3.0,1.55);
+  \coordinate (P) at (3.0,0.95);
+  \coordinate (O) at (3.0,0);
+  \fill[red] (P) circle (0.045);
+  \node[font=\small,right] at (P) {$P$};
+  \node[font=\small,right] at (O) {$O$};
+  \draw[<->] (3.35,0) -- (3.35,0.95);
+  \node[font=\small,right] at (3.35,0.48) {$x$};
+
+  \draw[blue,thick] (-3.2,0.45) -- (P);
+  \draw[blue,thick] (-3.2,-0.45) -- (P);
+  \draw[dashed] (-3.2,0) -- (O);
+  \draw[<->] (-3.2,-1.25) -- (3.0,-1.25);
+  \node[font=\small] at (-0.1,-1.48) {$L$};
+  \draw[->,thin] (-1.8,0) arc (0:10:1.4);
+  \node[font=\small] at (-1.1,0.22) {$\theta$};
+
+  \node[font=\small,align=center] at (0,1.45) {远屏近似：$\Delta \ell \approx d\sin\theta \approx d\dfrac{x}{L}$};
+  \node[font=\small,align=center] at (0,-0.62) {亮纹：$\Delta \ell=k\lambda$\\相邻亮纹差一个 $\lambda$};
+\end{tikzpicture}

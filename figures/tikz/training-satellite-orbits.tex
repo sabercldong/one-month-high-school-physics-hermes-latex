@@ -1,0 +1,13 @@
+\begin{tikzpicture}[scale=0.78,>=Stealth]
+  \fill[blue!12] (0,0) circle (0.45);
+  \node at (0,0) {地};
+  \draw[thick] (0,0) circle (1.25);
+  \draw[thick] (0,0) circle (2.5);
+  \fill (1.25,0) circle (1.8pt) node[above right] {$A$};
+  \fill (2.5,0) circle (1.8pt) node[above right] {$B$};
+  \draw[->,red,thick] (1.25,0.08) -- (0.58,0.08) node[midway,above] {$F_A$};
+  \draw[->,red,thick] (2.5,-0.08) -- (2.08,-0.08) node[midway,below] {$F_B$};
+  \draw[<->] (0,-0.35) -- (1.25,-0.35) node[midway,below] {$r_A$};
+  \draw[<->] (0,-0.8) -- (2.5,-0.8) node[midway,below] {$r_B$};
+  \node at (0,2.95) {$r_A:r_B=1:4$};
+\end{tikzpicture}

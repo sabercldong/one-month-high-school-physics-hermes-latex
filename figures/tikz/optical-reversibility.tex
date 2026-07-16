@@ -1,0 +1,38 @@
+\begin{tikzpicture}[scale=0.92,>=Stealth]
+  \tikzset{
+    ray/.style={very thick,blue,->},
+    reverse/.style={very thick,orange!90!black,->},
+    guide/.style={gray,dashed},
+    medium/.style={fill=blue!5,draw=none}
+  }
+
+  \fill[medium] (-3.4,-1.2) rectangle (3.4,0);
+  \draw[thick] (-3.4,0) -- (3.4,0);
+  \draw[guide] (0,-1.20) -- (0,1.45);
+  \node[font=\small] at (-2.65,0.42) {空气};
+  \node[font=\small] at (-2.65,-0.70) {玻璃};
+  \node[font=\scriptsize,gray] at (0.34,1.18) {法线};
+
+  \coordinate (A) at (-2.75,1.05);
+  \coordinate (O) at (0,0);
+  \coordinate (B) at (2.75,-0.86);
+
+  \draw[very thick,blue] (A) -- (O) -- (B);
+  \draw[ray] (-1.72,0.66) -- (-1.22,0.47);
+  \draw[ray] (1.10,-0.34) -- (1.60,-0.50);
+  \draw[reverse] (1.72,-0.54) -- (1.22,-0.38);
+  \draw[reverse] (-1.10,0.42) -- (-1.60,0.61);
+
+  \fill[red] (A) circle (1.5pt) node[above left,font=\small] {$A$};
+  \fill[red] (B) circle (1.5pt) node[below right,font=\small] {$B$};
+  \fill[black] (O) circle (1.2pt);
+
+  \draw[guide] (0.72,0) arc[start angle=0,end angle=159,radius=0.72];
+  \node[font=\scriptsize] at (-0.46,0.30) {$i$};
+  \draw[guide] (0.55,0) arc[start angle=0,end angle=-17,radius=0.55];
+  \node[font=\scriptsize] at (0.54,-0.16) {$r$};
+
+  \node[font=\small,align=center,blue] at (-1.55,-1.62) {从 $A$ 到 $B$};
+  \node[font=\small,align=center,orange!90!black] at (1.55,-1.62) {反向仍沿原路};
+  \node[font=\small,align=center] at (0,-2.13) {同一组介质中，光路可逆；作图时可从物点画向像点，也可反向检验};
+\end{tikzpicture}

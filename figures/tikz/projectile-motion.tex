@@ -1,0 +1,21 @@
+% TikZ 图：平抛运动的横竖分解
+% Day 03：加速度
+\begin{tikzpicture}[scale=0.86,>=Latex]
+  \draw[->,thick] (-0.2,0) -- (5.4,0) node[right] {$x$};
+  \draw[->,thick] (0,0.2) -- (0,-3.2) node[below] {$y$};
+  \filldraw[black] (0,0) circle (2pt) node[above left] {抛出点};
+
+  \draw[red,thick,->] (0,0) -- (1.4,0) node[above] {$v_0$};
+  \draw[blue,thick,->] (4.5,-0.4) -- (4.5,-2.1) node[midway,right] {$g$};
+
+  \draw[thick,domain=0:4.6,samples=80]
+    plot(\x,{-0.14*\x*\x});
+  \filldraw[black] (4.2,-2.47) circle (2pt);
+  \draw[dashed] (4.2,0) -- (4.2,-2.47);
+  \draw[dashed] (0,-2.47) -- (4.2,-2.47);
+
+  \draw[->,blue] (0.15,-2.85) -- (4.2,-2.85)
+    node[midway,below] {$x=v_0t$};
+  \draw[->,red] (4.65,0) -- (4.65,-2.47)
+    node[midway,right] {$y=\frac12gt^2$};
+\end{tikzpicture}

@@ -1,0 +1,26 @@
+\begin{tikzpicture}[scale=0.86,>=Stealth,line cap=round,line join=round]
+  \path[use as bounding box] (-0.25,-0.92) rectangle (7.65,2.30);
+  \begin{scope}
+    \fill[blue!5] (-0.05,0.15) rectangle (3.0,2.1);
+    \foreach \x in {0.35,0.85,1.35,1.85,2.35,2.85}
+      \foreach \y in {0.35,0.85,1.35,1.85}
+        \node[blue!75] at (\x,\y) {$\times$};
+    \draw[thick] (0.45,0.25) -- (0.45,1.9);
+    \draw[thick] (2.45,0.25) -- (2.45,1.9);
+    \draw[very thick,red] (1.15,0.35) -- (1.15,1.8);
+    \draw[->,red,thick] (1.15,1.05) -- (2.0,1.05) node[midway,above,font=\small] {$v$};
+    \draw[<->,black] (1.02,0.35) -- (1.02,1.8) node[midway,left,font=\small] {$L$};
+    \node[font=\small,align=center] at (1.48,-0.55)
+      {导体棒切割磁感线\\$\mathcal E=BLv$};
+  \end{scope}
+  \begin{scope}[xshift=4.55cm]
+    \fill[blue!5] (-0.15,0.15) rectangle (2.65,2.1);
+    \foreach \x in {0.2,0.7,1.2,1.7,2.2}
+      \foreach \y in {0.35,0.85,1.35,1.85}
+        \node[blue!75] at (\x,\y) {$\times$};
+    \draw[thick] (0.55,0.55) rectangle (1.85,1.65);
+    \draw[->,red,thick] (1.2,1.1) -- (2.18,1.1) node[midway,above,font=\small] {$v$};
+    \node[font=\small,align=center] at (1.20,-0.55)
+      {线圈整体平移\\磁通量不变};
+  \end{scope}
+\end{tikzpicture}

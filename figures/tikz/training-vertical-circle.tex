@@ -1,0 +1,10 @@
+\begin{tikzpicture}[scale=0.8,>=Stealth]
+  \draw[thick] (0,0) circle (1.6);
+  \fill (0,1.6) circle (2pt);
+  \node[above=5pt] at (0,1.6) {最高点};
+  \draw[->,blue,thick] (0,1.6) -- (0.95,1.6) node[midway,above] {$v$};
+  \draw[->,red,thick] (0.18,1.55) -- (0.18,0.78) node[midway,right] {$mg$};
+  \draw[->,red,thick] (-0.32,1.55) -- (-0.32,0.78) node[midway,left] {$N$};
+  \draw[dashed] (0,0) -- (0,1.6) node[midway,right] {$r$};
+  \node at (0,-1.95) {最高点合力指向圆心};
+\end{tikzpicture}

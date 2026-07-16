@@ -1,14 +1,15 @@
 \daytitle{8}{功、功率与动能定理}
 
 \begin{learningbox}{本讲义大致内容}
-从力的角度解决问题需要知道加速度和运动时间，但很多问题我们只关心初末状态，不关心中间过程。能量方法就是为此而生。今天学习功、功率、动能定理——用能量“绕开”加速度，直接建立初末状态的关系。
+从力的角度解决问题常常需要知道加速度和运动时间，但很多问题只关心初末状态，不关心中间过程。能量方法就是为此而生。今天学习功、功率、动能定理——在适用条件满足时，用功和能量直接建立初末状态的关系。
 \end{learningbox}
 
 \section*{一、学习目标}
 
 \begin{enumerate}
   \item 理解功的定义 $W = Fx\cos\theta$，会判断正功、负功、零功。
-  \item 理解功率 $P = \dfrac{W}{t} = Fv$，区分瞬时功率和平均功率。
+  \item 理解平均功率 $P = \dfrac{W}{t}$ 与瞬时功率 $P=Fv\cos\theta$，区分瞬时功率和平均功率。
+  \item 理解机械效率 $\eta=\dfrac{W_{\text{有用}}}{W_{\text{总}}}$，区分功率和效率。
   \item 掌握动能 $E_k = \dfrac12 mv^2$。
   \item 掌握动能定理 $W_{\text{合}} = \Delta E_k$，会用动能定理解决多过程问题。
   \item 理解用能量方法比用动力学方法更简单的场景。
@@ -62,7 +63,7 @@ $90^\circ < \theta \leq 180^\circ$ & $<0$ & 负功（阻力做功） \\
 \textbf{常见注意：}
 \begin{enumerate}
   \item 摩擦力可以做正功（传送带对物块）、负功（刹车）、不做功（静摩擦力的作用点无地面位移时，如人走路时鞋底静摩擦力对人不做功——但人整体动能增加是通过内部肌肉做功实现的）。
-  \item 功是标量，没有方向，但有正负——正负表示能量是增加还是减少。
+  \item 功是标量，没有方向，但有正负——正负表示这个力对能量转化的贡献方向；物体动能最终增减要看合外力总功。
   \item 总功等于各力做功的代数和，不是矢量和。
 \end{enumerate}
 
@@ -82,7 +83,7 @@ P = F v \cos\theta \quad\text{(瞬时功率)}
 \begin{itemize}
   \item 单位：瓦特（$\mathrm{W}$），$1\ \mathrm{W} = 1\ \mathrm{J/s}$。
   \item 瞬时功率公式中 $v$ 是瞬时速度。
-  \item 机车功率问题：$P = F v$，其中 $F$ 是牵引力。当功率一定时，牵引力与速度成反比。
+  \item 机车功率问题中，若牵引力与速度同向，可写 $P = Fv$；当输出功率一定时，牵引力与速度成反比。
 \end{itemize}
 
 \end{conceptbox}
@@ -139,9 +140,10 @@ $W_{\text{合}}=\Delta E_k$。
 \midrule
 $W = Fx\cos\theta$ & 恒力做功 & 恒力，位移已知 \\
 $P = \dfrac{W}{t}$ & 平均功率 & 一段时间内的平均功率 \\
-$P = Fv$ & 瞬时功率 & 力与速度同向时 \\
-$E_k = \frac12 mv^2$ & 动能定义 & 任何运动 \\
-$W_{\text{合}} = \Delta E_k$ & 动能定理 & 任何过程（变力也成立） \\
+$P = Fv$ & 瞬时功率 & 力与速度同向时；一般看力沿速度方向的分量 \\
+$\eta=\dfrac{W_{\text{有用}}}{W_{\text{总}}}$ & 机械效率 & $W_{\text{总}}=W_{\text{有用}}+W_{\text{额外}}$ \\
+$E_k = \frac12 mv^2$ & 动能定义 & 高中非相对论范围 \\
+$W_{\text{合}} = \Delta E_k$ & 动能定理 & 高中非相对论范围，变力过程也成立 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -150,18 +152,18 @@ $W_{\text{合}} = \Delta E_k$ & 动能定理 & 任何过程（变力也成立）
 
 \subsection*{模型 1：恒力做功}
 
-直接用 $W = Fx\cos\theta$ 计算。重力做功 $W_G = mgh$ 只与高度差有关，与路径无关。
+直接用 $W = Fx\cos\theta$ 计算。重力做功只与高度差有关，与路径无关；若 $h$ 表示物体下降的竖直高度，则 $W_G = mgh$，一般写作 $W_G=mg(h_1-h_2)$。
 
 \subsection*{模型 2：变力做功}
 
-若力随位移线性变化（如弹簧 $F = kx$），可用平均力 $\bar{F} = \frac{F_1+F_2}{2}$ 求功。
+若沿位移方向的力分量随位移线性变化（如缓慢拉伸弹簧时外力大小 $F = kx$），可用平均力 $\bar{F} = \frac{F_1+F_2}{2}$ 求功。若力的方向也在变，或力与位移不是同一直线，就要先取沿位移方向的分量，不能机械套平均力。
 
-\textbf{为什么 $F-x$ 图像面积表示功：} 把位移切成很多小段，每段内力近似不变，则 $\Delta W \approx F_i \Delta x$。所有小矩形面积相加，就是总功；当小段足够细时，得到曲线下方的面积。
+\textbf{为什么 $F-x$ 图像面积表示功：} 把位移切成很多小段，每段内力近似不变，则 $\Delta W \approx F_i \Delta x$。所有小矩形面积相加，就是总功；当小段足够细时，得到图线与 $x$ 轴围成的有向面积。
 
 \begin{center}
 \input{figures/tikz/work-area-micro}
 
-\figcaption{$F-x$ 图像中，曲线下方面积表示变力做功}\label{fig:work-area-micro}
+\figcaption{$F-x$ 图像中，图线与 $x$ 轴围成的有向面积表示变力做功}\label{fig:work-area-micro}
 \end{center}
 
 \textbf{弹簧弹力做功（区分两种视角）：}
@@ -175,11 +177,51 @@ $W_{\text{合}} = \Delta E_k$ & 动能定理 & 任何过程（变力也成立）
 W_{\text{外}}=\Delta E_p,\qquad
 W_{\text{弹}}=-\Delta E_p
 \]
-下节课会详细展开弹性势能。
+弹性势能在机械能系统中会作为一种储能形式统一处理。
 
 \subsection*{模型 3：机车启动}
 
-恒定功率启动：$P = Fv$，随着 $v$ 增大、$F$ 减小，加速度减小。当 $F = f$（阻力）时，达到最大速度 $v_{\max} = \dfrac{P}{f}$。
+机车启动题的核心不是背公式，而是同时看三句话：
+\[
+P=Fv,\qquad F-f=ma,\qquad F=f\Rightarrow a=0.
+\]
+其中 $F$ 是牵引力，$f$ 是阻力。高中常见有两种情形：
+
+\begin{itemize}
+  \item \textbf{恒定功率启动：} 若一开始就保持功率 $P$ 不变，则 $F=\dfrac{P}{v}$。随着 $v$ 增大，牵引力 $F$ 减小，加速度 $a=\dfrac{F-f}{m}$ 逐渐减小。当 $F=f$ 时达到最大速度
+  \[
+  v_{\max}=\frac{P}{f}.
+  \]
+  \item \textbf{先恒定牵引力，后恒定功率：} 若起步阶段牵引力保持 $F_0$，则加速度
+  \[
+  a=\frac{F_0-f}{m}
+  \]
+  近似恒定，速度增大时功率 $P=F_0v$ 随之增大。当 $P$ 增大到额定功率 $P_{\text{额}}$ 后，不能再继续增大功率，于是转入恒定功率阶段，牵引力随速度增大而减小，直到 $F=f$。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/vehicle-startup-power}
+
+\figcaption{机车启动：恒牵引力阶段到额定功率阶段，再到最大速度}\label{fig:vehicle-startup-power}
+\end{center}
+
+\textbf{解题顺序：} 先判断题目给的是“牵引力恒定”还是“功率恒定”；再用 $P=Fv$ 找阶段转换速度；最后用 $F-f=ma$ 判断加速度变化。不要把最大速度公式 $v_{\max}=P/f$ 用到还没有达到额定功率的阶段。
+
+\subsection*{模型 4：机械效率}
+
+机械效率描述输入能量中有多少真正转化成目标效果：
+\[
+\eta=\frac{W_{\text{有用}}}{W_{\text{总}}}\times100\%.
+\]
+例如用斜面把物体升高，克服重力增加的重力势能常是有用功；克服摩擦、绳轮损耗等消耗的功是额外功。效率不是做功快慢，而是能量利用比例。
+
+\begin{center}
+\input{figures/tikz/mechanical-efficiency}
+
+\figcaption{机械效率：输入功分成有用功和额外损耗}\label{fig:mechanical-efficiency}
+\end{center}
+
+\textbf{认知提醒：} 功率大只表示单位时间做功多，不一定效率高；效率高也不表示做功快。现实机器的效率小于 $100\%$，不是能量不守恒，而是部分能量转化为内能、声能等非目标形式。
 
 \section*{六、例题精讲}
 
@@ -245,7 +287,7 @@ x = \frac{v_0^2}{2\mu g} = \frac{6^2}{2 \times 0.3 \times 10} = \frac{36}{6} = 6
 
 \textbf{题意分析：} 物体从 $h = 5\ \mathrm{m}$ 高的光滑斜面顶端由静止滑下，然后在水平粗糙面上滑行，$\mu = 0.4$，$g = 10\ \mathrm{m/s^2}$。求物体在水平面上滑行的距离。
 
-\textbf{物理模型：} 斜面（只有重力做功）+ 水平面（只有摩擦力做功）。用动能定理列全过程方程。
+\textbf{物理模型：} 斜面段支持力不做功，只有重力做功；水平面段重力和支持力不做功，只有摩擦力做功。用动能定理列全过程方程。
 
 \textbf{解题过程：}
 
@@ -266,7 +308,7 @@ x = \frac{h}{\mu} = \frac{5}{0.4} = 12.5\ \mathrm{m}
 
 \textbf{方法总结：}
 \begin{enumerate}
-  \item 多过程问题用动能定理可以一次性列方程，不需要分段求解。
+  \item 多过程问题若始末状态清楚，且每一段的做功能写出，常可用动能定理对全过程一次列式；但列式前仍要分清各段哪些力做功。
   \item 重力做功只与高度差有关，与具体路径无关——这是用能量方法的核心优势。
 \end{enumerate}
 
@@ -280,15 +322,21 @@ x = \frac{h}{\mu} = \frac{5}{0.4} = 12.5\ \mathrm{m}
   \item 一颗子弹以 $v_0 = 400\ \mathrm{m/s}$ 的速度射入固定的木块，射入深度 $d = 20\ \mathrm{cm}$。设阻力恒定，求子弹受到的平均阻力。若子弹质量 $m = 10\ \mathrm{g}$。
   
   \item 物体从 $h = 3.2\ \mathrm{m}$ 高处由静止沿光滑斜面滑下，然后在水平面上滑行 $x = 8\ \mathrm{m}$ 后停止。求水平面的动摩擦因数 $\mu$。
+  \begin{center}
+  \input{figures/tikz/training-incline-horizontal-energy}
+  \end{center}
+
+  \item 用机械装置把重为 $200\ \mathrm{N}$ 的物体匀速提升 $2.0\ \mathrm{m}$，外力实际做功 $500\ \mathrm{J}$。求有用功和机械效率。
 \end{enumerate}
 
 \section*{八、易错点}
 
 \begin{mistakebox}
 \begin{enumerate}
-  \item \textbf{误以为 $W = Fx$ 在所有情况下成立：} 必须有 $F$ 与 $x$ 同向。否则要乘 $\cos\theta$。垂直的情况做功为零。
+  \item \textbf{误以为 $W = Fx$ 在所有情况下成立：} 这个写法要求力为恒力，且力与位移同向。若力与位移成角度，要用 $W=Fx\cos\theta$；若力随位置变化，要用图像面积、平均力或功能关系。
   
   \item \textbf{混淆功率和机械效率：} 功率是做功快慢，效率是有用功与总功之比，两个概念不同。
+  \item \textbf{机车启动只背最大速度：} $v_{\max}=P/f$ 只适用于恒定功率阶段的最终状态；起步若是恒定牵引力，应先判断是否已经达到额定功率。
   
   \item \textbf{动能定理中漏掉某个力的功：} 把所有力做的功加起来——重力、弹力、摩擦力、拉力，一个不能少。
   
@@ -308,19 +356,19 @@ x = \frac{h}{\mu} = \frac{5}{0.4} = 12.5\ \mathrm{m}
 W = \int_{x_1}^{x_2} F(x) \, dx
 \]
 
-在 $F$-$x$ 图上，变力做功等于图线与 $x$ 轴围成的面积。这是因为每一小段的微元功
+在 $F$-$x$ 图上，变力做功等于图线与 $x$ 轴围成的有向面积。这是因为每一小段的微元功
 $\Delta W \approx F(x)\Delta x$，对应一条窄矩形的面积；把所有窄矩形相加并取极限，
 就得到曲线下方的面积。
 
 \begin{center}
 \input{figures/tikz/spring-work-area}
 
-\figcaption{线性变力做功：$F$-$x$ 图像下的面积就是功}\label{fig:spring-work-area}
+\figcaption{线性变力做功：$F$-$x$ 图像下的有向面积就是功}\label{fig:spring-work-area}
 \end{center}
 
 \textbf{例题：} 弹簧的劲度系数 $k = 200\ \mathrm{N/m}$，从原长 $l_0$ 拉伸 $x = 0.1\ \mathrm{m}$，求外力克服弹力做的功。
 
-\textbf{解：} 弹簧弹力 $F_{\text{弹}} = kx$ 随 $x$ 线性增大，方向指向原长（收缩方向）。外力 $F_{\text{外}}$ 与之等大反向，$F_{\text{外}} = kx$。
+\textbf{解：} 弹簧弹力 $F_{\text{弹}} = kx$ 随 $x$ 线性增大，方向指向原长（收缩方向）。若缓慢拉伸，使每一刻外力近似与弹簧弹力等大反向，则 $F_{\text{外}} = kx$。
 
 $F_{\text{外}}$-$x$ 图上，三角形面积即外力做的正功：
 \[
@@ -329,7 +377,7 @@ W_{\text{外}} = \frac12 \times x \times kx = \frac12 k x^2 = \frac12 \times 200
 
 弹簧弹力做负功：$W_{\text{弹}} = -W_{\text{外}} = -\frac12 kx^2 = -1\ \mathrm{J}$。
 
-这两个结果分别对应弹性势能的变化：$W_{\text{外}} = \Delta E_p$，$W_{\text{弹}} = -\Delta E_p$。下节课会系统讲解弹性势能。
+在初末动能都可忽略的缓慢拉伸过程中，这两个结果分别对应弹性势能的变化：$W_{\text{外}} = \Delta E_p$，$W_{\text{弹}} = -\Delta E_p$。后面使用机械能守恒时，弹簧的弹性势能要作为系统能量的一部分写入方程。
 \end{competitionbox}
 
 \section*{十、今日小结}
@@ -340,4 +388,6 @@ W_{\text{外}} = \frac12 \times x \times kx = \frac12 k x^2 = \frac12 \times 200
   \item 动能定理不涉及加速度和时间，解决多过程问题很高效。
   \item 重力做功只与高度差有关，与路径无关。
   \item 变力做功可用 $F$-$x$ 图面积或功能关系求解。
+  \item 机车启动题先分清恒牵引力阶段和恒功率阶段，再用 $P=Fv$ 与 $F-f=ma$ 联立判断。
+  \item 机械效率 $\eta=W_{\text{有用}}/W_{\text{总}}$，功率和效率不能混为一谈。
 \end{enumerate}

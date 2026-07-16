@@ -1,7 +1,7 @@
 \daytitle{3}{加速度}
 
 \begin{learningbox}{本讲义大致内容}
-速度描述“运动快慢”，加速度描述“速度变化的快慢”。今天我们从生活直觉出发，建立加速度的概念，并用 v-t 图直观推导出匀变速直线运动的三个核心公式。最后用它们解决刹车和自由落体问题。
+速度描述“运动快慢”，加速度描述“速度变化的快慢”。今天我们从生活直觉出发，建立加速度的概念，并用 v-t 图直观推导出匀变速直线运动的三个核心公式。最后用它们解决刹车、自由落体、平抛和斜抛运动问题。
 \end{learningbox}
 
 \section*{一、学习目标}
@@ -11,7 +11,7 @@
   \item 能在 v-t 图上读出加速度和位移。
   \item 掌握匀变速直线运动三大公式的来源和适用条件。
   \item 能区分加速和减速（$a$ 与 $v$ 同号/异号）。
-  \item 能用公式解决刹车模型和自由落体问题。
+  \item 能用公式解决刹车模型、自由落体、竖直上抛、平抛和斜抛运动问题。
 \end{enumerate}
 
 \section*{二、初高中衔接}
@@ -58,7 +58,7 @@ $a = 0$ & 匀速或静止 \\
 \textbf{三个常见错觉：}
 \begin{enumerate}
   \item $a$ 大 $\neq$ $v$ 大。火箭点火时 $a$ 极大但 $v\approx 0$。
-  \item $a$ 减小 $\neq$ $v$ 减小。只要 $a$ 与 $v$ 同向，$v$ 就在增加，只是增加得慢了。
+  \item $a$ 减小 $\neq$ 速度大小减小。只要 $a$ 与 $v$ 同向，速度大小就在增加，只是增加得慢了。
   \item $v=0$ $\neq$ $a=0$。竖直上抛最高点 $v=0$，但 $a=g\neq 0$。
 \end{enumerate}
 
@@ -66,13 +66,13 @@ $a = 0$ & 匀速或静止 \\
 
 \section*{四、公式与适用条件}
 
-\subsection*{为什么 v-t 图的面积等于位移？}
+\subsection*{为什么 v-t 图的有向面积等于位移？}
 
 先看一个简单情况：如果物体以速度 $v$ 匀速运动了时间 $t$，位移 $x = vt$。在 $v$-$t$ 图上，这是一条水平线，与 $t$ 轴围成一个矩形，矩形面积正好是 $v \times t = x$。
 
 如果速度在变化呢？我们把时间 $t$ 切成很多极短的小段 $\Delta t$，在每个 $\Delta t$ 内速度近似不变（匀速），位移 $\approx v_i \Delta t$（小矩形面积）。把所有小矩形面积加起来，总和 $\approx \sum v_i \Delta t = x$。当 $\Delta t \to 0$ 时，这些小矩形的总面积就等于 $v$-$t$ 图线与 $t$ 轴围成的面积。
 
-所以结论是：\textbf{$v$-$t$ 图线与时间轴围成的有向面积等于位移}。在 $t$ 轴上方的面积取正，在 $t$ 轴下方的面积取负；这个结论对任何运动都成立，不限于匀变速。
+所以结论是：\textbf{$v$-$t$ 图线与时间轴围成的有向面积等于位移}。在 $t$ 轴上方的面积取正，在 $t$ 轴下方的面积取负；这个结论对能用 $v$-$t$ 图描述的一维运动成立，不限于匀变速。
 
 \subsection*{从 v-t 图推导三大公式}
 
@@ -81,7 +81,7 @@ $a = 0$ & 匀速或静止 \\
 \begin{center}
 \input{figures/tikz/vt-graph}
 
-\figcaption{匀变速直线运动的 $v$-$t$ 图像：斜率 $=a$，图线下的梯形面积 $=$ 位移}\label{fig:vt-graph}
+\figcaption{匀变速直线运动的 $v$-$t$ 图像：斜率 $=a$，图线下的有向梯形面积 $=$ 位移}\label{fig:vt-graph}
 \end{center}
 
 图中可以读出两个核心关系：
@@ -174,13 +174,13 @@ v^2 - v_0^2 = 2 a x
 
 \subsection*{模型 1：匀加速直线运动}
 
-加速度 $a$ 与初速度 $v_0$ 同号，速度均匀增大。这是最基本的模型，三大公式直接套用。
+规定正方向后，加速度 $a$ 与初速度 $v_0$ 同号，速度大小均匀增大。这是最基本的模型，三大公式可在统一符号约定下使用。
 
 \textbf{例题特征：} 从静止启动（$v_0=0$），或从某初速度开始均匀加速。
 
 \subsection*{模型 2：刹车模型（匀减速）}
 
-加速度 $a$ 与初速度 $v_0$ 异号，速度均匀减小到零。
+加速度 $a$ 与初速度 $v_0$ 异号，速度大小均匀减小到零。
 
 \textbf{核心注意：先算停车时间！}
 \[
@@ -205,6 +205,75 @@ v = gt,\qquad h = \frac12 gt^2,\qquad v^2 = 2gh
 
 \figcaption{自由落体中第 $1,2,3\ \mathrm{s}$ 内的位移之比为 $1:3:5$}\label{fig:freefall-proportion}
 \end{center}
+
+\subsection*{模型 4：竖直上抛}
+
+竖直上抛是自由落体的“反向版本”，但本质仍是竖直方向的匀变速直线运动。忽略空气阻力时，小球离手后只受重力，加速度始终竖直向下，大小为 $g$。即使上升到最高点，速度瞬时为零，加速度也仍然是 $g$，不会在最高点“停住一会儿”。
+
+\begin{center}
+\input{figures/tikz/vertical-throw-motion}
+
+\figcaption{竖直上抛：最高点速度为零，但加速度仍为重力加速度}\label{fig:vertical-throw-motion}
+\end{center}
+
+若取竖直向上为正方向，则
+\[
+a=-g,\qquad
+v=v_0-gt,\qquad
+y=v_0t-\frac12gt^2.
+\]
+到达最高点时 $v=0$，因此
+\[
+t_{\text{上}}=\frac{v_0}{g},\qquad
+H=\frac{v_0^2}{2g}.
+\]
+若从某高度上抛或落回高度不同的位置，不要直接套“上升时间等于下降时间”，应回到带正负号的匀变速方程。
+
+\subsection*{模型 5：平抛运动（二维匀变速）}
+
+不计空气阻力时，平抛运动不是一个全新的公式系统，而是“水平方向匀速 + 竖直方向自由落体”的组合。它是学生第一次把一维匀变速运动推广到二维运动的重要模型。
+
+\begin{center}
+\input{figures/tikz/projectile-motion}
+
+\figcaption{平抛运动：不计空气阻力时，水平方向不受力，竖直方向只受重力}\label{fig:projectile-motion}
+\end{center}
+
+\[
+x=v_0t,\qquad y=\frac12gt^2,\qquad v_y=gt.
+\]
+
+\textbf{使用顺序：} 先由竖直方向求时间，再由水平方向求水平位移。不要把平抛轨迹当成斜向匀速运动。
+
+\subsection*{模型 6：斜抛运动（平抛的推广）}
+
+斜抛运动只是初速度不再水平。把初速度分解为水平和竖直两个分量后，仍然是同一套思想：
+\[
+v_{0x}=v_0\cos\theta,\qquad v_{0y}=v_0\sin\theta.
+\]
+
+\begin{center}
+\input{figures/tikz/oblique-projectile-motion}
+
+\figcaption{斜抛运动：先把初速度分解，再分别研究水平和竖直方向}\label{fig:oblique-projectile-motion}
+\end{center}
+
+不计空气阻力，取竖直向上为正方向：
+\[
+x=v_0\cos\theta\, t,\qquad
+y=v_0\sin\theta\, t-\frac12gt^2,\qquad
+v_y=v_0\sin\theta-gt.
+\]
+
+\textbf{认知提醒：} 平抛是斜抛的特殊情况。平抛相当于 $\theta=0^\circ$，所以 $v_{0y}=0$。斜抛题不要背成新题型，仍然按“分解初速度、分方向列式、最后合成”的顺序处理。
+
+\textbf{同高落点的常用结论（了解来源，不机械套用）：} 若抛出点和落地点等高，则落地时 $y=0$，除去 $t=0$，可得
+\[
+T=\frac{2v_0\sin\theta}{g},\qquad
+R=v_0\cos\theta\, T=\frac{v_0^2\sin2\theta}{g},\qquad
+H=\frac{(v_0\sin\theta)^2}{2g}.
+\]
+这些结论只适用于同高落点、空气阻力可忽略、$g$ 近似恒定的情形；若落点高度不同，应回到分方向方程。
 
 \section*{六、例题精讲}
 
@@ -322,11 +391,28 @@ t_{\text{停}} = \frac{0 - v_0}{a} = \frac{0 - 20}{-5} = 4\ \mathrm{s}
 
 \textbf{方法总结：}
 \begin{enumerate}
-  \item 自由落体就是 $v_0=0$ 的匀加速，所有公式直接可用。
+  \item 在忽略空气阻力、$g$ 近似恒定时，自由落体可看作 $v_0=0$ 的匀加速直线运动，再使用匀变速公式。
   \item 求某段时间内的位移，常用“总减前”的方法。
   \item 自由落体第 $1$、$2$、$3$、$4\ \mathrm{s}$ 内位移比例 $1:3:5:7$，本题中 $35\ \mathrm{m}$ 正好对应第 $4$ 份。
 \end{enumerate}
 
+\end{examplebox}
+
+\begin{examplebox}{平抛运动——横竖分解}
+
+\textbf{题意分析：} 小球以 $v_0=6\ \mathrm{m/s}$ 的水平速度从高 $h=20\ \mathrm{m}$ 的平台边缘抛出，取 $g=10\ \mathrm{m/s^2}$。求落地时间和水平位移。
+
+\textbf{物理模型：} 不计空气阻力的平抛运动，水平方向匀速，竖直方向自由落体。
+
+\textbf{解题过程：}
+\[
+h=\frac12gt^2,\qquad 20=\frac12\times10\times t^2,\qquad t=2\ \mathrm{s}.
+\]
+\[
+x=v_0t=6\times2=12\ \mathrm{m}.
+\]
+
+\textbf{方法总结：} 平抛题先看竖直方向，因为高度决定飞行时间；再用水平方向的匀速运动求射程。
 \end{examplebox}
 
 \section*{七、变式训练}
@@ -335,25 +421,49 @@ t_{\text{停}} = \frac{0 - v_0}{a} = \frac{0 - 20}{-5} = 4\ \mathrm{s}
   \item 一物体以 $v_0 = 4\ \mathrm{m/s}$ 的初速度做匀加速直线运动，$a = 2\ \mathrm{m/s^2}$。求 $5\ \mathrm{s}$ 末的速度和 $5\ \mathrm{s}$ 内的位移。
   
   \item 一辆汽车以 $v_0 = 30\ \mathrm{m/s}$ 行驶，司机发现前方 $50\ \mathrm{m}$ 处有障碍物后紧急刹车，刹车加速度 $a = -6\ \mathrm{m/s^2}$。问汽车是否会发生碰撞？
+  \begin{center}
+  \input{figures/tikz/training-braking-obstacle}
+  \end{center}
   
   \item 一个物体从 $125\ \mathrm{m}$ 高处自由下落，$g = 10\ \mathrm{m/s^2}$。求：
   \begin{enumerate}
     \item 落地时间和落地速度。
     \item 下落过程中最后 $2\ \mathrm{s}$ 内的位移。
   \end{enumerate}
+
+  \item 小球以 $v_0=20\ \mathrm{m/s}$ 竖直上抛，忽略空气阻力，取 $g=10\ \mathrm{m/s^2}$。求上升到最高点所需时间和最大高度，并说明最高点的加速度方向。
+  \begin{center}
+  \input{figures/tikz/vertical-throw-motion}
+  \end{center}
+  
+  \item 小球以 $8\ \mathrm{m/s}$ 的水平速度从 $45\ \mathrm{m}$ 高处抛出，取 $g=10\ \mathrm{m/s^2}$。求落地时间和水平位移。
+  \begin{center}
+  \input{figures/tikz/projectile-motion}
+  \end{center}
+
+  \item 小球从水平地面以 $v_0=20\ \mathrm{m/s}$、与水平面成 $30^\circ$ 角斜向上抛出，忽略空气阻力，取 $g=10\ \mathrm{m/s^2}$。求飞行时间、最大高度和水平射程。
+  \begin{center}
+  \input{figures/tikz/oblique-projectile-motion}
+  \end{center}
 \end{enumerate}
 
 \section*{八、易错点}
 
 \begin{mistakebox}
 \begin{enumerate}
-  \item \textbf{刹车不先求停车时间：} 直接代入题目给的 $t$ 算位移，结果算出车“倒着走”的荒谬情况。
+  \item \textbf{刹车不先求停车时间：} 直接代入题目给的 $t$ 算位移，可能得到车“倒着走”的不合理结果。
   
   \item \textbf{混淆 $a$ 的方向：} 加速度方向由 $\Delta v$ 决定，与 $v$ 无关。汽车向东减速，加速度向西。
   
-  \item \textbf{“$a$ 减小 = $v$ 减小”：} 这是错的。只要 $a$ 与 $v$ 同向，$v$ 就增大；$a$ 减小只表示 $v$ 增大得慢了。
+  \item \textbf{“$a$ 减小 = 速度大小减小”：} 这是错的。只要 $a$ 与 $v$ 同向，速度大小就增大；$a$ 减小只表示速度大小增大得慢了。
   
-  \item \textbf{自由落体 $g$ 的符号乱用：} $g$ 方向始终向下。取向下为正则 $g=+10$，取向上为正则 $g=-10$。正方向一旦选定，全程保持一致。
+  \item \textbf{自由落体和上抛中 $g$ 的符号乱用：} $g$ 方向始终向下。取向下为正则 $g=+10$，取向上为正则 $g=-10$。正方向一旦选定，全程保持一致。
+
+  \item \textbf{误以为竖直上抛最高点加速度为零：} 最高点只是速度瞬时为零，物体仍受重力，加速度仍向下。
+  
+  \item \textbf{平抛运动把速度方向当成位移方向：} 平抛轨迹是曲线，水平方向和竖直方向要分开列式，不能用斜线长度直接套匀速公式。
+
+  \item \textbf{斜抛运动不分解初速度：} 斜抛题的第一步是把 $v_0$ 分解成 $v_0\cos\theta$ 和 $v_0\sin\theta$，不能把 $v_0$ 整体直接代入水平或竖直方向公式。
   
   \item \textbf{选错公式：} 常用公式分别不含 $t$、$v$、$a$ 或 $x$。题目给了哪些条件、不涉及哪个量，就选不含它的公式。例如已知 $v_0, a, t$ 但没给 $v$，就选 $x = v_0 t + \frac12 at^2$（不含 $v$）。
 \end{enumerate}
@@ -375,6 +485,8 @@ t_{\text{停}} = \frac{0 - v_0}{a} = \frac{0 - 20}{-5} = 4\ \mathrm{s}
 \end{itemize}
 
 \textbf{小提示：} 在处理打点计时器纸带时，相邻相等时间内的位移差 $\Delta s = aT^2$ 是一个常用工具。这个公式在高中实验专题中会重点讲，这里先了解即可。
+
+\textbf{模型提醒：} 平抛运动的竖直方向正是初速度为零的匀加速运动，因此上面的比例关系也可用于判断连续相等时间内竖直下落位移的变化。
 \end{competitionbox}
 
 \enlargethispage{-3\baselineskip}
@@ -386,5 +498,6 @@ t_{\text{停}} = \frac{0 - v_0}{a} = \frac{0 - 20}{-5} = 4\ \mathrm{s}
   \item v-t 图中斜率 $=a$，面积 $=$ 位移——这是理解三大公式的几何工具。
   \item 三大公式：$v = v_0 + at$，$x = v_0 t + \frac12 a t^2$，$v^2 - v_0^2 = 2ax$。
   \item 使用公式前先定正方向，再给 $v_0$、$v$、$a$、$x$ 带上正负号。
-  \item 刹车问题先求停车时间，自由落体是 $v_0=0$、$a=g$ 的特例。
+  \item 刹车问题先求停车时间，自由落体是 $v_0=0$、$a=g$ 的特例；竖直上抛最高点 $v=0$ 但 $a\neq0$。
+  \item 平抛和斜抛都用运动分解：水平方向匀速，竖直方向匀变速；同高斜抛的射程公式有明确适用条件。
 \end{enumerate}

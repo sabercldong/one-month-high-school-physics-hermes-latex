@@ -1,0 +1,41 @@
+% TikZ 图：磁化与电磁铁
+% Day 21：磁场与安培力
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-5.15,-2.10) rectangle (5.15,2.15);
+
+  \begin{scope}[shift={(-2.55,0)}]
+    \node[font=\small] at (0,1.78) {空心螺线管};
+    \draw[thick] (-1.55,-0.42) rectangle (1.55,0.42);
+    \foreach \x in {-1.30,-0.95,-0.60,-0.25,0.10,0.45,0.80,1.15} {
+      \draw[red,thick] (\x,-0.58) .. controls (\x+0.18,-0.18) and (\x+0.18,0.18) .. (\x,0.58);
+    }
+    \draw[red,thick,->] (-1.75,-0.58) -- (-1.40,-0.58);
+    \node[red,font=\small] at (-1.95,-0.78) {$I$};
+
+    \foreach \y in {-0.22,0.22} {
+      \draw[blue,thick,->] (-1.85,\y) -- (1.85,\y);
+    }
+    \draw[blue,thick,->] (-1.80,0.86) .. controls (-0.65,1.18) and (0.65,1.18) .. (1.80,0.86);
+    \draw[blue,thick,->] (1.80,-0.86) .. controls (0.65,-1.18) and (-0.65,-1.18) .. (-1.80,-0.86);
+    \node[blue,font=\small] at (1.95,0.36) {$B$};
+    \node[font=\small] at (0,-1.58) {电流产生磁场};
+  \end{scope}
+
+  \begin{scope}[shift={(2.55,0)}]
+    \node[font=\small] at (0,1.78) {插入软铁芯：电磁铁};
+    \draw[thick,fill=gray!25] (-1.62,-0.35) rectangle (1.62,0.35);
+    \foreach \x in {-1.38,-1.03,-0.68,-0.33,0.02,0.37,0.72,1.07} {
+      \draw[red,thick] (\x,-0.58) .. controls (\x+0.18,-0.18) and (\x+0.18,0.18) .. (\x,0.58);
+    }
+    \draw[red,thick,->] (-1.82,-0.58) -- (-1.47,-0.58);
+    \node[red,font=\small] at (-2.03,-0.78) {$I$};
+
+    \foreach \y in {-0.35,0,0.35} {
+      \draw[blue,very thick,->] (-1.98,\y) -- (1.98,\y);
+    }
+    \draw[blue,very thick,->] (-1.95,0.92) .. controls (-0.70,1.32) and (0.70,1.32) .. (1.95,0.92);
+    \draw[blue,very thick,->] (1.95,-0.92) .. controls (0.70,-1.32) and (-0.70,-1.32) .. (-1.95,-0.92);
+    \node[blue,font=\small] at (2.12,0.52) {$B$ 增强};
+    \node[font=\small] at (0,-1.58) {铁芯磁化，磁场增强};
+  \end{scope}
+\end{tikzpicture}

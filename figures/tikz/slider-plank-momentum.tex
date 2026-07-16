@@ -1,0 +1,34 @@
+% TikZ 图：滑块-木板模型中的动量与相对位移
+% Day 10：冲量、动量与动量守恒
+\begin{tikzpicture}[scale=0.82,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  % Before
+  \begin{scope}[shift={(-3.6,0)}]
+    \draw[thick] (-2.0,-0.70) -- (2.0,-0.70);
+    \draw[fill=gray!18,thick] (-1.45,-0.45) rectangle (1.45,-0.15);
+    \draw[fill=blue!12,thick] (-1.25,-0.15) rectangle (-0.55,0.35);
+    \node at (-0.90,0.10) {$m$};
+    \node at (0,-0.31) {$M$};
+    \draw[->,red!80!black,thick] (-1.23,0.54) -- (-0.10,0.54)
+      node[midway,above] {$v_0$};
+    \node[align=center] at (0,-1.10) {滑块有速度，木板静止};
+  \end{scope}
+
+  % Arrow between states
+  \draw[->,thick] (-0.85,0.06) -- (0.85,0.06)
+    node[midway,above] {摩擦作用};
+
+  % After
+  \begin{scope}[shift={(3.6,0)}]
+    \draw[thick] (-2.0,-0.70) -- (2.0,-0.70);
+    \draw[fill=gray!18,thick] (-1.45,-0.45) rectangle (1.45,-0.15);
+    \draw[fill=blue!12,thick] (0.08,-0.15) rectangle (0.78,0.35);
+    \node at (0.43,0.10) {$m$};
+    \node at (0,-0.31) {$M$};
+    \draw[->,red!80!black,thick] (-0.20,0.56) -- (0.95,0.56)
+      node[midway,above] {$v$};
+    \draw[<->,blue!75!black] (-0.90,-0.98) -- (0.43,-0.98);
+    \node[blue!75!black] at (-0.23,-1.23) {$s_{\text{相对}}$};
+    \node[align=center] at (0,-1.62) {滑块和木板达到共同速度};
+  \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,20 @@
+\begin{tikzpicture}[scale=0.92,>=Stealth]
+  \coordinate (O) at (0,0);
+  \fill[blue!15] (O) circle (0.34);
+  \node[font=\scriptsize] at (0,-0.58) {地球};
+  \draw[thick] (O) circle (1.15);
+  \draw[thick] (O) circle (2.15);
+  \draw[orange!85!black,very thick] (-0.50,0) ellipse (1.65 and 1.57);
+  \fill[red] (1.15,0) circle (0.055);
+  \fill[red] (-2.15,0) circle (0.055);
+  \draw[->,red,very thick] (1.15,0) -- (1.15,0.62);
+  \node[font=\scriptsize,red,right] at (1.20,0.52) {近地点加速};
+  \draw[->,red,very thick] (-2.15,0) -- (-2.15,-0.62);
+  \node[font=\scriptsize,red,left] at (-2.20,-0.55) {远地点再加速圆化};
+  \draw[->,blue,thick] (0.80,0.82) arc (46:76:1.15);
+  \draw[->,blue,thick] (-1.64,1.38) arc (140:118:2.15);
+  \node[font=\small] at (1.70,-1.00) {低圆轨道};
+  \node[font=\small] at (-2.45,1.58) {高圆轨道};
+  \node[font=\small,orange!85!black] at (0.55,1.62) {转移椭圆};
+  \node[font=\small,align=center] at (0,-2.55) {升到更高圆轨道：近地点加速进入椭圆，远地点再加速圆化};
+\end{tikzpicture}

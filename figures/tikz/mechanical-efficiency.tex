@@ -1,0 +1,20 @@
+\begin{tikzpicture}[x=0.92cm,y=0.78cm,>=Stealth]
+  \node[draw,rounded corners=4pt,fill=blue!7,minimum width=2.45cm,minimum height=1.0cm,align=center] (in) at (-3.4,0)
+    {输入功\\$W_{\text{总}}$};
+  \node[draw,rounded corners=4pt,fill=green!10,minimum width=2.45cm,minimum height=1.0cm,align=center] (use) at (0.7,0.95)
+    {有用功\\$W_{\text{有用}}$};
+  \node[draw,rounded corners=4pt,fill=red!8,minimum width=2.45cm,minimum height=1.0cm,align=center] (loss) at (0.7,-0.95)
+    {额外功/损耗\\$W_{\text{额外}}$};
+
+  \draw[->,very thick] (in.east) -- ++(1.05,0) |- (use.west);
+  \draw[->,very thick] (in.east) -- ++(1.05,0) |- (loss.west);
+
+  \node[align=center,font=\small] at (4.0,0.0)
+    {$W_{\text{总}}=W_{\text{有用}}+W_{\text{额外}}$\\[2pt]
+     $\displaystyle \eta=\frac{W_{\text{有用}}}{W_{\text{总}}}$};
+
+  \draw[thick] (-4.5,-2.05) -- (4.55,-2.05);
+  \node[font=\scriptsize,align=center] at (-3.35,-2.48) {功率：做功快慢};
+  \node[font=\scriptsize,align=center] at (0.75,-2.48) {效率：能量利用比例};
+  \node[font=\scriptsize,align=center] at (3.75,-2.48) {效率不能超过 $100\%$};
+\end{tikzpicture}

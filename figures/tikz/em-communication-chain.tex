@@ -1,0 +1,47 @@
+% TikZ 图：电磁波通信的基本链路
+% Day 24：交变电流、变压器与电磁应用
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \tikzset{
+    block/.style={draw,thick,rounded corners=3pt,fill=gray!7,
+      minimum width=1.75cm,minimum height=0.85cm,align=center,font=\small},
+    arr/.style={->,thick},
+    waveblue/.style={blue,very thick},
+    wavered/.style={red,very thick}
+  }
+
+  \node[block] (info) at (-5.1,0) {声音/数据\\低频信号};
+  \node[block] (mod) at (-2.55,0) {调制\\装到载波上};
+  \node[block] (tx) at (-0.10,0) {发射天线};
+  \node[block] (rx) at (2.90,0) {接收天线};
+  \node[block] (demod) at (5.45,0) {解调\\取回信息};
+
+  \draw[arr] (info) -- (mod);
+  \draw[arr] (mod) -- (tx);
+  \draw[arr] (rx) -- (demod);
+
+  \draw[wavered,domain=-5.85:-4.35,samples=70]
+    plot(\x,{-1.35+0.33*sin(360*(\x+5.85))});
+  \node[font=\scriptsize,red] at (-5.1,-1.92) {信息信号};
+
+  \draw[waveblue,domain=-3.30:-1.80,samples=140]
+    plot(\x,{-1.35+0.26*sin(1080*(\x+3.30))});
+  \draw[wavered,domain=-3.30:-1.80,samples=70]
+    plot(\x,{-1.35+0.45*sin(360*(\x+3.30))});
+  \node[font=\scriptsize,align=center] at (-2.55,-2.08) {高频载波\\随信息改变};
+
+  \draw[arr,blue] (0.72,0.72) -- (2.08,0.72);
+  \draw[waveblue,domain=0.75:2.05,samples=120]
+    plot(\x,{0.72+0.22*sin(900*(\x-0.75))});
+  \draw[waveblue,domain=0.75:2.05,samples=120]
+    plot(\x,{0.72-0.22*sin(900*(\x-0.75))});
+  \draw[blue,thick] (tx.north) -- (0.55,0.58);
+  \draw[blue,thick] (2.25,0.58) -- (rx.north);
+  \node[font=\scriptsize,blue] at (1.40,1.28) {电磁波在空间传播};
+
+  \draw[wavered,domain=4.70:6.20,samples=70]
+    plot(\x,{-1.35+0.33*sin(360*(\x-4.70))});
+  \node[font=\scriptsize,red] at (5.45,-1.92) {还原信息};
+
+  \node[font=\small,align=center] at (0,-2.75)
+    {核心思想：用高频电磁波作“载波”，把低频信息带到远处，再在接收端取出};
+\end{tikzpicture}

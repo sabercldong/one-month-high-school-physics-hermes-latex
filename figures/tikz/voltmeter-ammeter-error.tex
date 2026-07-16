@@ -1,30 +1,40 @@
 % TikZ 图：伏安法内外接误差
 % Day 28：实验专题
-\begin{tikzpicture}[scale=0.86,>=Latex]
-  \begin{scope}[xshift=-3.2cm]
-    \node at (0,1.55) {电流表内接};
-    \draw[thick] (-1.8,0.8) -- (1.8,0.8) -- (1.8,-0.8) -- (-1.8,-0.8) -- cycle;
-    \draw[thick] (-0.5,0.8) rectangle (0.5,0.25);
-    \node at (0,0.53) {$R_x$};
-    \draw[thick] (0.95,0.8) circle (0.25);
-    \node at (0.95,0.8) {$A$};
-    \draw[thick] (-0.5,0.25) -- (-0.5,-0.35) -- (0.5,-0.35) -- (0.5,0.25);
-    \draw[thick] (0,-0.35) circle (0.25);
-    \node at (0,-0.35) {$V$};
+\begin{tikzpicture}[scale=0.86,>=Latex,line cap=round,line join=round]
+  \begin{scope}[xshift=-3.25cm]
+    \node at (0,1.65) {电流表内接};
+    \coordinate (L) at (-1.75,0.75);
+    \coordinate (R) at (1.75,0.75);
+    \draw[thick] (L) -- (-0.70,0.75);
+    \draw[thick] (-0.70,1.03) rectangle (0.05,0.47);
+    \node at (-0.325,0.75) {$R_x$};
+    \draw[thick] (0.05,0.75) -- (0.70,0.75);
+    \draw[thick] (1.00,0.75) circle (0.30);
+    \node at (1.00,0.75) {$A$};
+    \draw[thick] (1.30,0.75) -- (R) -- (1.75,-0.75) -- (-1.75,-0.75) -- (L);
+    % Voltmeter spans both R_x and A in the ammeter-inside connection.
+    \draw[thick] (-0.70,0.75) -- (-0.70,-0.05) -- (0.70,-0.05);
+    \draw[thick] (1.30,0.75) -- (1.30,-0.05) -- (1.00,-0.05);
+    \draw[thick] (0.85,-0.05) circle (0.25);
+    \node at (0.85,-0.05) {$V$};
     \node[font=\small,align=center] at (0,-1.35)
-      {$V$ 测 $R_x+A$ 的电压\\适合较大电阻};
+      {$V$ 测 $R_x+A$ 的电压\\测得电阻偏大，适合较大电阻};
   \end{scope}
-  \begin{scope}[xshift=3.2cm]
-    \node at (0,1.55) {电流表外接};
-    \draw[thick] (-1.8,0.8) -- (1.8,0.8) -- (1.8,-0.8) -- (-1.8,-0.8) -- cycle;
-    \draw[thick] (-0.65,0.8) rectangle (0.15,0.25);
-    \node at (-0.25,0.53) {$R_x$};
-    \draw[thick] (0.95,0.8) circle (0.25);
-    \node at (0.95,0.8) {$A$};
-    \draw[thick] (-0.65,0.25) -- (-0.65,-0.35) -- (0.15,-0.35) -- (0.15,0.25);
-    \draw[thick] (-0.25,-0.35) circle (0.25);
-    \node at (-0.25,-0.35) {$V$};
+  \begin{scope}[xshift=3.25cm]
+    \node at (0,1.65) {电流表外接};
+    \draw[thick] (-1.75,0.75) -- (-0.65,0.75);
+    \draw[thick] (-0.65,1.03) rectangle (0.15,0.47);
+    \node at (-0.25,0.75) {$R_x$};
+    \draw[thick] (0.15,0.75) -- (0.70,0.75);
+    \draw[thick] (1.00,0.75) circle (0.30);
+    \node at (1.00,0.75) {$A$};
+    \draw[thick] (1.30,0.75) -- (1.75,0.75) -- (1.75,-0.75) -- (-1.75,-0.75) -- (-1.75,0.75);
+    % Voltmeter only spans R_x, so the ammeter reads current through R_x plus the voltmeter branch.
+    \draw[thick] (-0.65,0.75) -- (-0.65,-0.05) -- (-0.50,-0.05);
+    \draw[thick] (0.15,0.75) -- (0.15,-0.05) -- (0.00,-0.05);
+    \draw[thick] (-0.25,-0.05) circle (0.25);
+    \node at (-0.25,-0.05) {$V$};
     \node[font=\small,align=center] at (0,-1.35)
-      {$A$ 测 $R_x+V$ 的总电流\\适合较小电阻};
+      {$A$ 测两支路总电流\\测得电阻偏小，适合较小电阻};
   \end{scope}
 \end{tikzpicture}

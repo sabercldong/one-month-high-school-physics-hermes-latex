@@ -1,7 +1,7 @@
 \daytitle{2}{质点、参考系、位移与速度}
 
 \begin{learningbox}{本讲义大致内容}
-从初中“路程”的概念进入高中“位移”的概念；讲清楚参考系为什么重要；区分平均速度和瞬时速度；建立描述运动的基本语言——位置、位移、速度，为下一节加速度做准备。
+从初中“路程”的概念进入高中“位移”的概念；讲清楚参考系为什么重要；区分平均速度和瞬时速度；建立描述运动的基本语言——位置、位移、速度，为后续分析速度变化打基础。
 \end{learningbox}
 
 \section*{一、学习目标}
@@ -12,6 +12,7 @@
   \item 掌握平均速度和瞬时速度的区别与联系。
   \item 会用公式 $v = \dfrac{\Delta x}{\Delta t}$ 和 $v=\dfrac{x-x_0}{t}$（匀速直线运动，$t_0=0$）进行简单计算。
   \item 理解“速度”在高中物理中默认指瞬时速度，速率指速度大小。
+  \item 初步会用速度矢量合成处理相对运动和小船过河模型。
 \end{enumerate}
 
 \section*{二、初高中衔接}
@@ -115,8 +116,8 @@
 
 \textbf{常见误用：}
 \begin{enumerate}
-  \item 平均速度 $\neq$ 速度的平均值。例如：某物体沿同一直线同向运动，前一半位移的速度为 $4\ \mathrm{m/s}$，后一半位移的速度为 $6\ \mathrm{m/s}$。速度的算术平均是 $(4+6)/2 = 5\ \mathrm{m/s}$，但全程平均速度要这样算：设每半程位移大小为 $s$，则总时间 $t = \dfrac{s}{4} + \dfrac{s}{6} = \dfrac{5s}{12}$，全程平均速度 $\bar{v} = \dfrac{2s}{5s/12} = \dfrac{24}{5} = 4.8\ \mathrm{m/s} \neq 5\ \mathrm{m/s}$。两段位移相等但时间不同，算术平均值法失效；用定义式 $\bar{v}=\Delta x/\Delta t$ 永远正确。
-  \item 平均速率 $\neq$ 平均速度的大小。走弯路时平均速率大于平均速度的大小（因为路程 $\geq$ 位移）。
+  \item 平均速度 $\neq$ 速度的平均值。例如：某物体沿同一直线同向运动，前一半位移的速度为 $4\ \mathrm{m/s}$，后一半位移的速度为 $6\ \mathrm{m/s}$。速度的算术平均是 $(4+6)/2 = 5\ \mathrm{m/s}$，但全程平均速度要这样算：设每半程位移大小为 $s$，则总时间 $t = \dfrac{s}{4} + \dfrac{s}{6} = \dfrac{5s}{12}$，全程平均速度 $\bar{v} = \dfrac{2s}{5s/12} = \dfrac{24}{5} = 4.8\ \mathrm{m/s} \neq 5\ \mathrm{m/s}$。两段位移相等但时间不同，算术平均值法失效；应回到定义式 $\bar{v}=\Delta x/\Delta t$。
+  \item 平均速率 $\neq$ 平均速度的大小。走弯路时平均速率大于平均速度的大小（因为路程 $\geq$ 位移大小）。
 \end{enumerate}
 
 \end{conceptbox}
@@ -131,9 +132,9 @@
   \bar{v} = \frac{\Delta x}{\Delta t}
   \]
   \begin{itemize}
-    \item 适用条件：任何运动都成立（匀变速、非匀变速都行）。
+    \item 适用条件：任意一段运动都可用它定义该时间段的平均速度。
     \item 物理意义：一段时间内位置变化的平均快慢。
-    \item 注意：这是\textbf{定义式}，不是决定式。它永远成立，但不是用来求瞬时速度的。
+    \item 注意：这是\textbf{定义式}，不是决定式。它给出的是一段时间内的平均效果，不能直接替代某一时刻的瞬时速度。
   \end{itemize}
 
   \item \textbf{匀速直线运动的速度公式：}
@@ -197,7 +198,7 @@
   \]
   方向：东偏北 $\theta$ 角，其中 $\tan\theta = \dfrac{400}{300} = \dfrac{4}{3}$，$\theta \approx 53^\circ$。
   
-  \item 平均速度：$\bar{v} = \dfrac{|\Delta\vect{x}|}{\Delta t} = \dfrac{500}{250} = 2.0\ \mathrm{m/s}$，方向东偏北 $53^\circ$。
+  \item 平均速度大小：$|\bar{\vect{v}}| = \dfrac{|\Delta\vect{x}|}{\Delta t} = \dfrac{500}{250} = 2.0\ \mathrm{m/s}$，方向东偏北 $53^\circ$。
   
   平均速率：$\bar{v}_{\text{速率}} = \dfrac{s}{\Delta t} = \dfrac{700}{250} = 2.8\ \mathrm{m/s}$。
 \end{enumerate}
@@ -243,7 +244,7 @@ t_1 = \frac{x}{v_1},\qquad t_2 = \frac{x}{v_2}
 
 \textbf{方法总结：} 
 \begin{itemize}
-  \item 平均速度只能用定义 $\bar{v} = \Delta x / \Delta t$ 计算。
+  \item 平均速度最稳妥的入口是定义 $\bar{v} = \Delta x / \Delta t$，先求总位移和总时间。
   \item 等位移段的平均速度公式 $\bar{v} = \dfrac{2v_1v_2}{v_1+v_2}$ 是调和平均数。
   \item 类似地，等时间段的平均速度是算术平均数 $\bar{v} = \dfrac{v_1+v_2}{2}$。两种情形不要混淆。
 \end{itemize}
@@ -256,6 +257,9 @@ t_1 = \frac{x}{v_1},\qquad t_2 = \frac{x}{v_2}
   \item 某人骑自行车沿直线从 $A$ 到 $B$，前 $1/3$ 路程的速度为 $4\ \mathrm{m/s}$，中间 $1/3$ 路程的速度为 $6\ \mathrm{m/s}$，最后 $1/3$ 路程的速度为 $12\ \mathrm{m/s}$。求全程的平均速度。（提示：不是三段速度取平均！）
   
   \item 一质点沿半径为 $R = 10\ \mathrm{m}$ 的圆形轨道运动了半圈，用时 $5\ \mathrm{s}$。求：
+  \begin{center}
+  \input{figures/tikz/training-half-circle}
+  \end{center}
   \begin{enumerate}
     \item 位移大小和路程。
     \item 平均速度大小和平均速率。
@@ -281,7 +285,9 @@ t_1 = \frac{x}{v_1},\qquad t_2 = \frac{x}{v_2}
   
   \item \textbf{正负号只表示方向：} 在一维直线运动中，速度的正负只表示方向，不表示大小。$v = -10\ \mathrm{m/s}$ 和 $v = 5\ \mathrm{m/s}$ 相比，$|-10| > |5|$，前者更快。
   
-  \item \textbf{位移和路程搞混：} 位移 $\leq$ 路程。单向直线运动时两者大小相等，但只要折返或走曲线，位移就小于路程。特别要注意“回到原点”时位移为零但路程不为零。
+  \item \textbf{位移和路程搞混：} 位移大小 $\leq$ 路程。单向直线运动时两者大小相等，但只要折返或走曲线，位移大小就小于路程。特别要注意“回到原点”时位移为零但路程不为零。
+
+  \item \textbf{小船过河中把船头方向当作运动方向：} 有水流时，小船实际运动方向由船对水速度和水流速度的合速度决定。
 \end{enumerate}
 \end{mistakebox}
 
@@ -313,14 +319,39 @@ t_1 = \frac{x}{v_1},\qquad t_2 = \frac{x}{v_2}
 矢量减法用三角形法则计算，大小 $|\vect{v}_{m\text{对}c}| = \sqrt{20^2 + 30^2} \approx 36.1\ \mathrm{m/s}$，方向北偏西约 $33.7^\circ$。
 
 这个思想在后续的追及相遇问题、抛体运动问题中会反复用到。
+
+\medskip
+\textbf{小船过河：速度合成的经典模型}
+
+小船过河题本质上是相对速度的二维合成。若以地面为参考系：
+\[
+\vect{v}_{\text{船对地}}
+=\vect{v}_{\text{船对水}}+\vect{v}_{\text{水对地}}.
+\]
+其中 $\vect{v}_{\text{船对水}}$ 由船头朝向和发动机决定，$\vect{v}_{\text{水对地}}$ 是水流速度，真正决定小船轨迹的是合速度 $\vect{v}_{\text{船对地}}$。
+
+\begin{center}
+\input{figures/tikz/boat-river-crossing}
+
+\figcaption{小船过河：船对地速度由船对水速度与水流速度合成}\label{fig:boat-river-crossing}
+\end{center}
+
+\textbf{两个常见目标：}
+\begin{enumerate}
+  \item \textbf{过河时间最短：} 船头垂直河岸，让垂直河岸方向的速度最大。若河宽为 $d$，船相对水速度大小为 $v$，则 $t_{\min}=d/v$，但会被水流冲到下游。
+  \item \textbf{位移最短：} 希望船相对地的合速度垂直河岸，就要让船头略向上游，使船速的上游分量抵消水流。若船速不足以抵消水流，则不能垂直到达对岸。
+\end{enumerate}
+
+\textbf{认知提醒：} “船头指向”不一定是“运动方向”。船头方向对应 $\vect{v}_{\text{船对水}}$，实际轨迹方向对应 $\vect{v}_{\text{船对地}}$。
 \end{competitionbox}
 
 \section*{十、今日小结}
 
 \begin{enumerate}
   \item 参考系是描述运动的前提。运动是相对的，选择不同的参考系对同一运动的描述不同。
-  \item 位移是矢量，从起点指向终点；路程是标量，是实际路径总长度。位移 $\leq$ 路程。
+  \item 位移是矢量，从起点指向终点；路程是标量，是实际路径总长度。位移大小 $\leq$ 路程。
   \item 平均速度 $\bar{v} = \dfrac{\Delta x}{\Delta t}$，是矢量；平均速率 $= \dfrac{s}{\Delta t}$，是标量。
   \item 瞬时速度是 $\Delta t \to 0$ 时的极限，高中物理说“速度”默认指瞬时速度。
   \item 平均速度不是速度的平均值，必须用总位移 ÷ 总时间计算。
+  \item 相对运动用速度矢量相加减；小船过河中，船对地速度等于船对水速度与水流速度的矢量和。
 \end{enumerate}

@@ -17,13 +17,13 @@
 
   \filldraw[red] (P) circle (3pt);
   \node[right] at (P) {$m$};
-  \draw[->,thick,blue] (P) -- ($(P)!0.42!(O)$) node[midway,right] {$T$};
-  \draw[->,thick,red] (P) -- ++(0,-1.0) node[below] {$mg$};
-  \draw[->,thick,blue] (P) -- ++(-1.05,0) node[midway,above=2pt] {$F_n$};
+  \draw[->,thick,blue] (P) -- ($(P)!0.42!(O)$) node[pos=0.58,right=4pt] {$F_T$};
+  \draw[->,thick,red] (P) -- ++(0,-1.0) node[pos=0.82,right=6pt] {$mg$};
+  \draw[->,thick,blue] (P) -- ++(-1.05,0) node[pos=0.64,below=2pt] {$F_n$};
 
   \draw (0,-0.45) arc[start angle=-90,end angle=-61.3,radius=0.45];
   \node at (0.28,-0.70) {$\theta$};
   \node[align=center] at (3.35,-1.15)
-    {$T\cos\theta=mg$\\[3pt]
-     $T\sin\theta=m\omega^2r$};
+    {$F_T\cos\theta=mg$\\[3pt]
+     $F_T\sin\theta=m\omega^2r$};
 \end{tikzpicture}

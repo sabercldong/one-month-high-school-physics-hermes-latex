@@ -1,19 +1,24 @@
 % TikZ 图：汽车水平转弯
 % Day 11：圆周运动
-\begin{tikzpicture}[scale=0.8,>=Latex]
-  % 路面（俯视）
-  \draw[thick] (-2,0) .. controls (0,1) and (0,1) .. (2,0);
-  \draw[thick] (-2.5,-0.3) .. controls (0,0.7) and (0,0.7) .. (2.5,-0.3);
-  % 汽车（俯视方块）
-  \draw[thick,rotate around={30:(0,0)}] (-0.6,-0.4) rectangle (0.6,0.4);
-  \node[rotate=30] at (0,0) {车};
-  % 速度方向
-  \draw[->,thick,blue,rotate=30] (0.6,0) -- (1.6,0) node[above] {$v$};
-  % 摩擦力方向（指向弯道内侧）
-  \draw[->,thick,red,rotate=30] (0,-0.4) -- (0,-1.2) node[right] {$f_s$};
-  % 圆心方向
-  \draw[dashed] (0,0) -- (3.5,0);
-  \node at (2.5,-0.5) {向圆心};
-  % 公式
-  \node[below] at (0,-1.6) {$f_s = m\frac{v^2}{r} \leq \mu mg$};
+\begin{tikzpicture}[scale=0.82,>=Latex,line cap=round,line join=round]
+  \coordinate (C) at (0,-2.10);
+  \coordinate (P) at (0,0);
+
+  % 俯视弯道：两条同心圆弧
+  \draw[thick] (C) ++(124:2.55) arc[start angle=124,end angle=56,radius=2.55];
+  \draw[thick] (C) ++(128:1.65) arc[start angle=128,end angle=52,radius=1.65];
+  \draw[dashed,gray] (C) -- (P);
+  \fill[black] (C) circle (1.4pt);
+  \node[right=4pt,font=\small] at (C) {圆心};
+
+  % 汽车俯视图，车身沿切线方向
+  \draw[thick,fill=gray!8] (-0.62,-0.30) rectangle (0.62,0.30);
+  \node at (0,0) {车};
+
+  % 速度沿切线，静摩擦力指向圆心
+  \draw[->,thick,blue] (0.62,0) -- (1.55,0) node[right] {$v$};
+  \draw[->,thick,red!80!black] (0,-0.32) -- (0,-1.35)
+    node[midway,right=2pt] {$f_s$};
+  \node[red!80!black,align=center,font=\small] at (-1.28,-0.85) {静摩擦力\\指向圆心};
+
 \end{tikzpicture}

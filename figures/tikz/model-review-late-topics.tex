@@ -1,0 +1,27 @@
+% TikZ 图：光学、热学、近代物理模型复盘
+% Day 29：模型总复盘
+\begin{tikzpicture}[scale=0.95,>=Latex]
+  \tikzset{
+    card/.style={rounded corners=5pt,thick,fill=gray!8,minimum width=3.0cm,minimum height=1.75cm,text width=2.65cm,align=center,font=\small},
+    head/.style={font=\bfseries},
+    link/.style={->,thick}
+  }
+
+  \node[card] (optics) at (0,0) {
+    \textbf{光学模型}\\[4pt]
+    光线：反射/折射/成像\\
+    波动：干涉/衍射/偏振
+  };
+
+  \node[card] (thermal) at (4.15,0) {
+    \textbf{热学模型}\\[4pt]
+    状态量：$p,V,T,U$\\
+    过程量：$Q,W$
+  };
+
+  \node[card] (modern) at (8.30,0) {
+    \textbf{近代物理模型}\\[4pt]
+    光子/能级/半衰期\\
+    核反应守恒/质能关系
+  };
+\end{tikzpicture}

@@ -1,0 +1,18 @@
+\begin{tikzpicture}[scale=0.95,>=Stealth]
+  \draw[->,thick] (0,0) -- (6.4,0) node[right] {吸收热量 $Q$};
+  \draw[->,thick] (0,0) -- (0,3.2) node[above] {温度 $T$};
+  \draw[very thick,blue] (0.45,0.45) -- (1.55,1.20)
+    -- (3.25,1.20)
+    -- (4.35,2.05)
+    -- (5.75,2.05)
+    -- (6.15,2.45);
+  \draw[dashed] (0,1.20) -- (3.25,1.20);
+  \draw[dashed] (0,2.05) -- (5.75,2.05);
+  \node[font=\scriptsize,left] at (0,1.20) {熔点};
+  \node[font=\scriptsize,left] at (0,2.05) {沸点};
+  \node[font=\small] at (1.55,0.35) {固体升温};
+  \node[font=\small,red] at (2.40,1.55) {熔化平台};
+  \node[font=\small] at (4.76,1.58) {液体升温};
+  \node[font=\small,red] at (5.05,2.38) {汽化平台};
+  \node[font=\small,align=center] at (3.15,-0.55) {平台段温度不变，吸收的热量主要改变分子势能};
+\end{tikzpicture}

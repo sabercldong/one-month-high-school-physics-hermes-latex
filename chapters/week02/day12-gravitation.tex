@@ -13,6 +13,7 @@
   \item 掌握重力与万有引力的关系，会用 $GM = gR^2$（黄金代换）。
   \item 掌握天体运动的基本方程 $G\dfrac{Mm}{r^2} = m\dfrac{v^2}{r}$。
   \item 了解三个宇宙速度，会计算第一宇宙速度。
+  \item 掌握同步卫星的轨道条件和半径求法。
   \item 了解开普勒三定律的初步内容。
 \end{enumerate}
 
@@ -48,7 +49,7 @@
 \textbf{注意：}
 \begin{enumerate}
   \item 万有引力定律适用于质点间的相互作用。均匀球体可视为质量集中在球心的质点。
-  \item $G$ 非常小，说明引力在日常生活中可忽略——只有当天体级别的大质量时效果才显著。
+  \item $G$ 非常小，所以日常物体彼此之间的万有引力通常可忽略；但地球质量巨大，地球对物体的引力就是日常重力的来源。
 \end{enumerate}
 
 \end{conceptbox}
@@ -77,7 +78,8 @@
 
 \begin{conceptbox}{考虑地球自转时：引力、视重与向心力}
 
-前面把 $mg$ 近似看作万有引力，是\textbf{忽略地球自转}的结果。若考虑地球自转，地面物体随地球绕自转轴做圆周运动，需要指向自转轴的向心力，因此“弹簧秤读数”（视重）会略小于万有引力。
+\vspace{0.2em}
+前面把 $mg$ 近似看作万有引力，是\textbf{忽略地球自转}的结果。若考虑地球自转，地面物体随地球绕自转轴做圆周运动，需要指向自转轴的向心力；除极地外，“弹簧秤读数”（视重）会略小于万有引力。
 
 这里的支持力 $N$ 就是\textbf{视重}：物体压在水平秤上时，秤的示数对应的力就是地面对物体的支持力大小。真实的万有引力指向地心，视重是地面支撑物体时表现出来的“被称出来的重”。
 
@@ -101,13 +103,14 @@
   \qquad
   N_{\text{赤}}=m\left(\frac{GM}{R^2}-\omega^2R\right).
   \]
-  \item \textbf{纬度 $\varphi$ 处：} 到自转轴距离为 $R\cos\varphi$，向心加速度大小为 $\omega^2R\cos\varphi$，方向指向自转轴。若只比较沿半径方向的视重近似，有
+  \item \textbf{纬度 $\varphi$ 处：} 到自转轴距离为 $R\cos\varphi$，向心加速度大小为 $\omega^2R\cos\varphi$，方向指向自转轴。严格说，向心加速度不完全沿地心方向，接触力的方向和大小要按矢量合成判断；高中题若只比较沿半径方向的视重近似，有
   \[
   N_{\varphi}\approx m\left(\frac{GM}{R^2}-\omega^2R\cos^2\varphi\right).
   \]
 \end{itemize}
 
-\textbf{认知提醒：} 万有引力是真实力，始终指向地心；向心力不是新力，而是合力指向自转轴的效果。高中多数题默认忽略地球自转，因此直接用 $mg\approx G\dfrac{Mm}{R^2}$。
+\vspace*{0.35em}
+\textbf{认知提醒：} 万有引力是真实力，始终指向地心；向心力不是新力，而是合力指向自转轴的效果。弹簧秤读数对应接触力大小（通常称视重），在极地和赤道方向关系最简单；任意纬度的精确处理要保留矢量方向。高中多数题默认忽略地球自转，因此直接用 $mg\approx G\dfrac{Mm}{R^2}$。
 
 \end{conceptbox}
 
@@ -128,7 +131,7 @@ T = 2\pi\sqrt{\frac{r^3}{GM}}
 \textbf{规律：}
 \begin{itemize}
   \item 轨道半径越大，速度越小、角速度越小、周期越大。
-  \item 近地圆轨道的环绕速度最大（第一宇宙速度），同步卫星周期约为 $24\ \mathrm{h}$。
+  \item 近地圆轨道的环绕速度最大（第一宇宙速度），地球静止同步卫星周期约为 $24\ \mathrm{h}$。
 \end{itemize}
 
 \begin{center}
@@ -147,9 +150,9 @@ T = 2\pi\sqrt{\frac{r^3}{GM}}
 公式 & 物理意义 & 适用条件 \\
 \midrule
 $F = G\dfrac{Mm}{r^2}$ & 万有引力 & 质点或均匀球体 \\
-$GM = gR^2$ & 黄金代换 & 地表附近 \\
+$GM = gR^2$ & 黄金代换 & 地表附近，忽略地球自转等修正 \\
 $G\dfrac{Mm}{r^2} = m\dfrac{v^2}{r}$ & 天体运动基本方程 & 匀速圆周运动 \\
-$T = 2\pi\sqrt{\dfrac{r^3}{GM}}$ & 卫星周期 & 绕中心天体 \\
+$T = 2\pi\sqrt{\dfrac{r^3}{GM}}$ & 卫星周期 & 绕中心天体做圆周运动 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -169,7 +172,7 @@ G\frac{Mm}{R^2} = m\frac{v^2}{R},\qquad v = \sqrt{\frac{GM}{R}} = \sqrt{gR}
 \begin{center}
 \input{figures/tikz/cosmic-speeds}
 
-\figcaption{三个宇宙速度：环绕地球、脱离地球、脱离太阳系}\label{fig:cosmic-speeds}
+\figcaption{三个宇宙速度：环绕地球、脱离地球引力束缚、脱离太阳系引力束缚}\label{fig:cosmic-speeds}
 \end{center}
 
 \begin{itemize}
@@ -178,12 +181,39 @@ G\frac{Mm}{R^2} = m\frac{v^2}{R},\qquad v = \sqrt{\frac{GM}{R}} = \sqrt{gR}
   \item \textbf{第三宇宙速度：} $v_3\approx 16.7\ \mathrm{km/s}$，从地面附近发射并最终脱离太阳系的最小速度（理想情形，且发射方向取最有利方向）。
 \end{itemize}
 
-\subsection*{模型 2：同步卫星}
+\subsection*{模型 2：地球静止同步卫星}
 
-周期与地球自转周期相同（$T \approx 24\ \mathrm{h}$），轨道在赤道正上方。
+若卫星要相对地面某点保持近似静止，它必须是\textbf{地球静止同步卫星}：周期与地球自转周期相同（$T \approx 24\ \mathrm{h}$），轨道在赤道正上方，并与地球同向转动。
 由 $T = 2\pi\sqrt{\dfrac{r^3}{GM}}$ 可算出轨道半径约 $4.2 \times 10^4\ \mathrm{km}$（距地面约 $3.6 \times 10^4\ \mathrm{km}$）。
 
-\subsection*{模型 3：双星系统}
+\begin{center}
+\input{figures/tikz/geostationary-satellite}
+
+\figcaption{同步卫星：在赤道平面内与地球同向、同周期转动}\label{fig:geostationary-satellite}
+\end{center}
+
+\textbf{地球静止同步卫星的三个条件：}
+\begin{enumerate}
+  \item 周期等于地球自转周期；
+  \item 轨道平面必须是赤道平面；
+  \item 运动方向与地球自转方向相同。
+\end{enumerate}
+
+满足这三个条件时，卫星相对地面某一经度附近几乎不动，常用于通信、广播和气象观测。不同同步卫星可以位于不同经度上方，但轨道半径和周期相同。
+
+\subsection*{模型 3：卫星变轨}
+
+圆轨道上 $v=\sqrt{GM/r}$，所以高轨道圆周速度反而更小；但从低轨道升到高轨道，需要发动机做功使卫星机械能增大。典型的两次变轨思路是：在低轨道某点沿切向加速，进入转移椭圆；到达远地点后再沿切向加速，使轨道圆化到高轨道。
+
+\begin{center}
+\input{figures/tikz/satellite-transfer-orbit}
+
+\figcaption{卫星升轨：近地点加速进入转移椭圆，远地点再加速圆化}\label{fig:satellite-transfer-orbit}
+\end{center}
+
+\textbf{认知提醒：} “高轨道圆周速度更小”和“升轨需要加速”并不矛盾。前者比较的是两个稳定圆轨道上的速度；后者讨论的是变轨瞬间必须增加机械能。
+
+\subsection*{模型 4：双星系统}
 
 两颗星绕共同质心做圆周运动，距离 $L = r_1 + r_2$：
 
@@ -240,7 +270,7 @@ M = \frac{gR^2}{G} = \frac{9.8 \times (6.4 \times 10^6)^2}{6.67 \times 10^{-11}}
 = \frac{9.8 \times 4.1 \times 10^{13}}{6.67 \times 10^{-11}} \approx 6.0 \times 10^{24}\ \mathrm{kg}
 \]
 
-\textbf{方法总结：} 只要知道某天体的 $g$ 和 $R$，就能用黄金代换求出质量。这是高中最常见的题型。
+\textbf{方法总结：} 若已知某天体表面的重力加速度 $g$ 和半径 $R$，并忽略自转等修正，就能用黄金代换估算天体质量。这是高中最常见的题型。
 
 \end{examplebox}
 
@@ -279,6 +309,42 @@ T = \frac{2\pi}{\omega} = \frac{2 \times 3.14}{1.13 \times 10^{-3}} \approx 5.56
 
 \end{examplebox}
 
+\begin{examplebox}{同步卫星轨道半径}
+
+\textbf{题意分析：} 地球同步卫星的周期取 $T=24\ \mathrm{h}$，地球质量 $M=6.0\times10^{24}\ \mathrm{kg}$，引力常量 $G=6.67\times10^{-11}\ \mathrm{N\cdot m^2/kg^2}$。求同步卫星的轨道半径，并估算离地高度。地球半径取 $R=6.4\times10^6\ \mathrm{m}$。
+
+\textbf{物理模型：} 同步卫星仍是万有引力提供向心力，只是周期由地球自转周期决定。
+
+\begin{center}
+\input{figures/tikz/geostationary-satellite}
+\end{center}
+
+\textbf{解题过程：}
+
+轨道周期满足
+\[
+T=2\pi\sqrt{\frac{r^3}{GM}}.
+\]
+整理得
+\[
+r=\sqrt[3]{GM\left(\frac{T}{2\pi}\right)^2}.
+\]
+把 $T=24\times3600=8.64\times10^4\ \mathrm{s}$ 代入：
+\[
+r\approx\sqrt[3]{6.67\times10^{-11}\times6.0\times10^{24}
+\left(\frac{8.64\times10^4}{2\pi}\right)^2}
+\approx4.2\times10^7\ \mathrm{m}.
+\]
+离地高度为
+\[
+h=r-R\approx4.2\times10^7-6.4\times10^6
+\approx3.6\times10^7\ \mathrm{m}.
+\]
+
+\textbf{方法总结：} 同步卫星题先由周期求轨道半径 $r$，最后才减去地球半径得到离地高度 $h$。不要把题中“高度”和“轨道半径”混用。
+\end{examplebox}
+
+\clearpage
 \begin{examplebox}{第一宇宙速度}
 
 \textbf{题意分析：} 已知 $g = 9.8\ \mathrm{m/s^2}$，$R = 6.4 \times 10^6\ \mathrm{m}$。求第一宇宙速度。
@@ -296,7 +362,7 @@ v_1 = \sqrt{gR} = \sqrt{9.8 \times 6.4 \times 10^6} = \sqrt{6.27 \times 10^7} \a
 v_1 = \sqrt{\frac{GM}{R}} \quad\text{结果相同}
 \]
 
-\textbf{方法总结：} 第一宇宙速度是最大的圆轨道环绕速度，也是近地圆轨道的最小水平发射速度（忽略空气阻力和地球自转）。
+\textbf{方法总结：} 第一宇宙速度是最大的圆轨道环绕速度，也可看作从地面附近发射、刚好形成理想近地圆轨道的临界水平速度（忽略空气阻力、地球自转和地形等实际因素）。
 
 \end{examplebox}
 
@@ -308,6 +374,9 @@ v_1 = \sqrt{\frac{GM}{R}} \quad\text{结果相同}
   \item 地球同步卫星的周期 $T \approx 24\ \mathrm{h}$，地球质量 $M = 6.0 \times 10^{24}\ \mathrm{kg}$，$G = 6.67 \times 10^{-11}$。求同步卫星的轨道半径。
   
   \item 两颗卫星 $A$、$B$ 绕地球做匀速圆周运动，轨道半径之比 $r_A : r_B = 1 : 4$。求线速度之比和周期之比。
+  \begin{center}
+  \input{figures/tikz/training-satellite-orbits}
+  \end{center}
 \end{enumerate}
 
 \section*{八、易错点}
@@ -317,12 +386,14 @@ v_1 = \sqrt{\frac{GM}{R}} \quad\text{结果相同}
   \item \textbf{混淆 $r$ 的含义：} 在地表问题中 $GM = gR^2$ 的 $R$ 是地球半径；在卫星问题中 $G\frac{Mm}{r^2} = m\frac{v^2}{r}$ 的 $r$ 是轨道半径（地心到卫星的距离）。
   
   \item \textbf{误以为高轨道卫星速度更大：} 轨道半径越大速度越小（$v \propto 1/\sqrt{r}$），但发射高轨道卫星需要的总能量更大。
+
+  \item \textbf{把地球静止同步卫星理解成任意周期为 24 h 的卫星：} 仅有周期相同还不够；若要相对地面某点静止，卫星还必须在赤道平面内并与地球同向转动。
   
   \item \textbf{忘记黄金代换的推导：} $GM = gR^2$ 来自于地表物体的 $mg \approx G\frac{Mm}{R^2}$，不是凭空出现的。
   
   \item \textbf{单位错误：} 天体问题中数字很大，$R$ 通常是 $10^6\ \mathrm{m}$ 量级，$M$ 是 $10^{24}\ \mathrm{kg}$ 量级。代入计算时务必用科学计数法。
   
-  \item \textbf{混淆三个宇宙速度：} 第一宇宙速度（$7.9\ \mathrm{km/s}$）是环绕速度，第二宇宙速度（$11.2\ \mathrm{km/s}$）是脱离地球引力，第三宇宙速度（$16.7\ \mathrm{km/s}$）是脱离太阳系。这些数值通常指从地面附近发射，并忽略空气阻力和地球自转影响时的理想值。
+  \item \textbf{混淆三个宇宙速度：} 第一宇宙速度（$7.9\ \mathrm{km/s}$）是环绕速度，第二宇宙速度（$11.2\ \mathrm{km/s}$）是脱离地球引力束缚，第三宇宙速度（$16.7\ \mathrm{km/s}$）是脱离太阳系引力束缚。这些数值通常指从地面附近发射，并忽略空气阻力和地球自转影响时的理想值。
 \end{enumerate}
 \end{mistakebox}
 
@@ -405,5 +476,7 @@ T_{\text{行}} = T_{\text{地}} \cdot \sqrt{\frac{a^3}{R_{\text{地}}^3}} = 1 \t
   \item 黄金代换 $GM = gR^2$——联系天上和地上的桥梁。
   \item 卫星方程：$G\dfrac{Mm}{r^2} = m\dfrac{v^2}{r}$ $\to$ $v = \sqrt{\dfrac{GM}{r}}$，$T = 2\pi\sqrt{\dfrac{r^3}{GM}}$。
   \item 轨道半径越大，$v$、$\omega$ 越小，$T$ 越大。
+  \item 地球静止同步卫星周期等于地球自转周期，轨道在赤道平面内，且绕行方向与地球自转方向相同，轨道半径约 $4.2\times10^4\ \mathrm{km}$。
   \item 三个宇宙速度：$v_1\approx 7.9\ \mathrm{km/s}$，$v_2\approx 11.2\ \mathrm{km/s}$，$v_3\approx 16.7\ \mathrm{km/s}$。
+  \item 卫星升轨需要增加机械能；高轨道圆周速度较小，但变轨瞬间常需要沿运动方向加速。
 \end{enumerate}

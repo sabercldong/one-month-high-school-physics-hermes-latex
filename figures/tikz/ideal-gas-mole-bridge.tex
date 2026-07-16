@@ -1,0 +1,26 @@
+% TikZ 图：理想气体状态方程中的物质的量
+% Day 26：把宏观状态量、物质的量和分子数连接起来
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \tikzset{
+    box/.style={draw,rounded corners=4pt,thick,fill=gray!6,
+      minimum width=2.95cm,minimum height=1.35cm,
+      text width=2.55cm,align=center,font=\small},
+    arrow/.style={->,thick},
+    note/.style={font=\scriptsize,align=center}
+  }
+
+  \node[box] (macro) at (0,0) {\textbf{宏观状态量}\\$p,V,T$};
+  \node[box] (mole) at (3.65,0) {\textbf{物质的量}\\$n$，单位 $\mathrm{mol}$};
+  \node[box] (micro) at (7.30,0) {\textbf{分子数}\\$N=nN_A$};
+
+  \draw[arrow] (macro) -- (mole);
+  \draw[arrow] (mole) -- (micro);
+
+  \node[draw,rounded corners=4pt,thick,fill=blue!5,
+    minimum width=5.8cm,minimum height=0.88cm,
+    font=\small] at (3.65,-1.72)
+    {$pV=nRT=NkT$};
+
+  \node[note] at (3.65,-2.52)
+    {$R$ 是气体常量，$k$ 是玻尔兹曼常量，$N_A$ 是阿伏伽德罗常量};
+\end{tikzpicture}

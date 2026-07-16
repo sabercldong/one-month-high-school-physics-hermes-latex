@@ -1,0 +1,11 @@
+\begin{tikzpicture}[scale=0.85,>=Stealth]
+  \node[draw,rounded corners=2pt,fill=blue!6] (s1) at (0,0.7) {电源};
+  \node[draw,rounded corners=2pt,fill=red!6] (u1) at (4.4,0.7) {用户};
+  \draw[->,thick] (s1) -- (u1) node[midway,above] {$U,\ I$};
+  \node[orange] at (2.2,0.25) {$P_{\text{损}}=I^2R$};
+  \node[draw,rounded corners=2pt,fill=blue!6] (s2) at (0,-0.8) {电源};
+  \node[draw,rounded corners=2pt,fill=red!6] (u2) at (4.4,-0.8) {用户};
+  \draw[->,thick] (s2) -- (u2) node[midway,above] {$5U,\ I/5$};
+  \node[orange] at (2.2,-1.25) {$P'_{\text{损}}=P_{\text{损}}/25$};
+  \node[font=\small] at (2.2,1.55) {输送功率一定，升压降流};
+\end{tikzpicture}

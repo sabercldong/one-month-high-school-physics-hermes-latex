@@ -9,11 +9,11 @@
   \item 掌握综合题“五步拆解法”。
   \item 能把复杂过程拆成若干简单模型。
   \item 会用文字解释方程的物理意义，而不是只写代数。
-  \item 通过综合例题复习力学、电场和能量方法。
+  \item 通过综合例题复习力学、电磁、光学、热学和近代物理的建模方法。
   \item 明确后续学习路线和复盘方法。
 \end{enumerate}
 
-\section*{二、从会听到会做}
+\section*{二、初高中衔接}
 
 学完 30 天后，最重要的变化不是“记住了多少公式”，而是看到题目时能主动建立模型。真正会做题的学生通常不是更快找到公式，而是更快看清对象、过程和约束。
 
@@ -23,7 +23,7 @@
 \figcaption{综合题五步拆解：画图、选对象、分过程、列方程、验结果}\label{fig:comprehensive-solving-flow}
 \end{center}
 
-\section*{三、核心方法}
+\section*{三、核心概念}
 
 \begin{conceptbox}{综合题五步法}
 
@@ -49,7 +49,7 @@
 例如得到速度表达式 $v=\sqrt{2gh}$，量纲正确；当 $h$ 增大时速度增大，极限合理；方向还要由具体运动决定。
 \end{conceptbox}
 
-\section*{四、综合模型图}
+\section*{四、公式与适用条件}
 
 \begin{center}
 \input{figures/tikz/integrated-track-field}
@@ -59,12 +59,12 @@
 
 这类题通常包含多个阶段：
 \begin{enumerate}
-  \item 在轨道上运动：常用机械能守恒或动能定理。
+  \item 在轨道上运动：先判断是否光滑、是否有外力做功；光滑段常用机械能守恒，粗糙或有外力做功时用动能定理或功能关系。
   \item 进入电场：先判断电场力方向，再分解运动。
   \item 离开场区：用速度分量合成或继续做匀速直线运动。
 \end{enumerate}
 
-\section*{五、典型综合模型}
+\section*{五、典型模型}
 
 \subsection*{模型 1：力学综合}
 
@@ -85,15 +85,15 @@
 
 \subsection*{模型 3：电场中的粒子运动}
 
-先加速后偏转是典型模型：
+先加速后偏转是典型模型。若用 $|q|$ 表示电荷量大小，且 $U_1$ 是使粒子加速的电压大小，则
 \[
-qU_1=\frac12mv_0^2,
+|q|U_1=\frac12mv_0^2,
 \]
 进入偏转电场后，
 \[
-a=\frac{qE}{m}=\frac{qU_2}{md}.
+a=\frac{|q|E}{m}=\frac{|q|U_2}{md}.
 \]
-水平方向匀速，竖直方向匀加速。
+若只求偏移大小可用上式；实际偏转方向还要由电荷正负和电场方向判断。水平方向匀速，竖直方向匀加速。
 
 \subsection*{模型 4：电磁感应中的动力学}
 
@@ -117,6 +117,77 @@ v\rightarrow E=BLv\rightarrow I=\frac{E}{R}\rightarrow F=BIL.
 \]
 若题目给数据表，优先想能否线性化；若题目给电路，先判断电表实际测到的电压和电流；若题目问改进方案，要围绕减小系统误差和偶然误差回答。
 
+\begin{center}
+\input{figures/tikz/experiment-model-review}
+
+\figcaption{实验综合的共同结构：直接读数要通过模型关系转化为待求量}\label{fig:experiment-model-review-day30}
+\end{center}
+
+\textbf{典型转化：}
+\begin{itemize}
+  \item 纸带和光电门：把长度、时间转化为速度或加速度。
+  \item 伏安法、电源实验、电桥：把电压、电流或平衡关系转化为电阻、电动势和内阻。
+  \item 油膜法：把微小体积和可测面积转化为分子大小的数量级。
+  \item 图像法：斜率、截距和面积都必须带单位，不能只看几何形状。
+\end{itemize}
+
+\subsection*{模型 6：后段专题综合}
+
+光学、热学和近代物理看起来不像力学那样“受力列方程”，但做题方式仍然是先建模。光学先画光路，判断反射、折射、透镜成像或波动光学；热学先区分状态量和过程量，再用第一定律和图像面积；近代物理先判断粒子、光子、能级或核反应，再用能量、动量、电荷数和质量数守恒。
+
+\begin{center}
+\input{figures/tikz/comprehensive-late-topics}
+
+\figcaption{后段专题综合：光路、热过程和能级图也要先转化为模型}\label{fig:comprehensive-late-topics}
+\end{center}
+
+\textbf{判断顺序：}
+\begin{enumerate}
+  \item 光学题先问“光怎么走、像在哪里、是否相干”。
+  \item 热学题先问“状态是否变了、热量和功怎样转移”。
+  \item 近代物理题先问“能量是否量子化、守恒量有哪些”。
+\end{enumerate}
+
+\subsection*{模型 7：能源与可持续发展}
+
+高中物理还要训练一种更大的建模视角：真实技术系统不是一个孤立公式，而是一条能量链。分析能源与工程问题时，先问能量从哪里来、经过哪些转换、在哪里传输和储存、最后变成什么有用效果，又在哪里损耗。
+
+\begin{center}
+\input{figures/tikz/energy-sustainable-system}
+
+\figcaption{能源与可持续发展模型：从能量来源、转换、传输到利用都要检查守恒、效率和边界}\label{fig:energy-sustainable-system}
+\end{center}
+
+\textbf{三个判断点：}
+\begin{enumerate}
+  \item \textbf{守恒账本：} 总能量守恒，但能量品质会降低，废热、噪声和线路损耗会减少可利用能量。
+  \item \textbf{效率意识：} 热机、电动机、输电线、变压器和充电器都有效率问题；功率大不等于效率高。
+  \item \textbf{边界意识：} 核能、化石能源、可再生能源和储能技术都要同时考虑安全、环境、成本、稳定性和材料条件。
+\end{enumerate}
+
+\subsection*{模型 8：数量级估算}
+
+真实问题常常不给出所有精确数据，或者数据太多、太杂。此时先做数量级估算，可以判断答案是否合理，也能帮助发现漏单位、漏平方、指数写错等问题。数量级估算不是“随便猜”，而是有步骤的近似建模。
+
+\begin{center}
+\input{figures/tikz/order-of-magnitude-estimate}
+
+\figcaption{数量级估算：先抓主要量，再用单位、极限和常识检查结果}\label{fig:order-of-magnitude-estimate}
+\end{center}
+
+\textbf{估算原则：}
+\begin{enumerate}
+  \item \textbf{先定主量：} 找出最影响结果的物理量，如功率、时间、速度、面积或距离。
+  \item \textbf{再取近似：} 只保留一到两位有效数字，优先判断 $10^0,10^1,10^2$ 这样的量级。
+  \item \textbf{最后检验：} 单位必须正确，结果不能明显违背生活经验或物理边界。
+\end{enumerate}
+
+\textbf{例：} 估算一盏 $10\ \mathrm{W}$ 的 LED 灯连续亮 $5\ \mathrm{h}$ 消耗的电能：
+\[
+E=Pt\approx 10\ \mathrm{W}\times 5\ \mathrm{h}=50\ \mathrm{Wh}=0.05\ \mathrm{kWh}.
+\]
+如果算出 $50\ \mathrm{kWh}$，就应该立刻警觉：这已经接近很多家庭数天甚至更久的用电量，数量级明显不合理。
+
 \section*{六、例题精讲}
 
 \begin{examplebox}{力学综合：弹簧与粗糙面}
@@ -138,11 +209,11 @@ v\rightarrow E=BLv\rightarrow I=\frac{E}{R}\rightarrow F=BIL.
 \frac12kx^2+\mu mgx-\frac12mv_0^2=0.
 \]
 
-\textbf{方法总结：} 有摩擦时机械能不守恒，但动能定理或功能关系仍然可靠。
+\textbf{方法总结：} 有滑动摩擦并产生耗散时，机械能通常不守恒；但动能定理或功能关系仍然可靠。
 \end{examplebox}
 
 \begin{examplebox}{电场综合：先加速后偏转}
-\textbf{题意分析：} 质量为 $m$、电荷量为 $q$ 的粒子由静止经电压 $U_1$ 加速后，以水平速度进入板长为 $L$、板间距为 $d$、电压为 $U_2$ 的偏转电场。忽略重力，求离开偏转电场时的竖直偏移量。
+\textbf{题意分析：} 质量为 $m$、电荷量大小为 $q$ 的粒子由静止经电压 $U_1$ 加速后，以水平速度进入板长为 $L$、板间距为 $d$、电压大小为 $U_2$ 的偏转电场。忽略重力，求离开偏转电场时竖直偏移量的大小。
 
 \textbf{物理模型：} 加速区用动能定理，偏转区用类平抛运动。
 
@@ -153,15 +224,15 @@ v\rightarrow E=BLv\rightarrow I=\frac{E}{R}\rightarrow F=BIL.
 \textbf{解题过程：}
 加速区：
 \[
-qU_1=\frac12mv_0^2,
+|q|U_1=\frac12mv_0^2,
 \qquad
-v_0=\sqrt{\frac{2qU_1}{m}}.
+v_0=\sqrt{\frac{2|q|U_1}{m}}.
 \]
 偏转区电场强度
 \[
 E=\frac{U_2}{d},
 \qquad
-a=\frac{qE}{m}=\frac{qU_2}{md}.
+a=\frac{|q|E}{m}=\frac{|q|U_2}{md}.
 \]
 通过偏转区时间
 \[
@@ -170,18 +241,18 @@ t=\frac{L}{v_0}.
 竖直偏移
 \[
 y=\frac12at^2
-=\frac12\cdot\frac{qU_2}{md}\cdot\frac{L^2}{v_0^2}.
+=\frac12\cdot\frac{|q|U_2}{md}\cdot\frac{L^2}{v_0^2}.
 \]
-代入 $v_0^2=\dfrac{2qU_1}{m}$：
+代入 $v_0^2=\dfrac{2|q|U_1}{m}$：
 \[
 y=\frac{U_2L^2}{4U_1d}.
 \]
 
-\textbf{方法总结：} 结果中 $m$、$q$ 消去，说明在忽略重力、初速由同一加速电压产生时，偏移由电压和几何尺寸决定。
+\textbf{方法总结：} 上式求的是偏移大小。结果中 $m$、$q$ 消去，说明在忽略重力、初速由同一加速电压产生时，偏移大小由电压和几何尺寸决定；偏转向上还是向下仍要看电荷正负和电场方向。
 \end{examplebox}
 
 \begin{examplebox}{磁场综合：电场加速后进入磁场}
-\textbf{题意分析：} 带电粒子质量为 $m$、电荷量为 $q$，从静止经电压 $U$ 加速后，垂直进入磁感应强度为 $B$ 的匀强磁场。求粒子在磁场中的轨道半径和周期。
+\textbf{题意分析：} 带电粒子质量为 $m$、电荷量大小为 $q$，从静止经电压 $U$ 加速后，垂直进入磁感应强度为 $B$ 的匀强磁场。求粒子在磁场中的轨道半径和周期。
 
 \textbf{物理模型：} 加速区用动能定理；磁场区用洛伦兹力提供向心力。
 
@@ -192,22 +263,22 @@ y=\frac{U_2L^2}{4U_1d}.
 \textbf{解题过程：}
 加速区：
 \[
-qU=\frac12mv^2,\qquad v=\sqrt{\frac{2qU}{m}}.
+|q|U=\frac12mv^2,\qquad v=\sqrt{\frac{2|q|U}{m}}.
 \]
 磁场区：
 \[
-qvB=\frac{mv^2}{r},\qquad r=\frac{mv}{qB}.
+|q|vB=\frac{mv^2}{r},\qquad r=\frac{mv}{|q|B}.
 \]
 代入速度：
 \[
-r=\frac{1}{B}\sqrt{\frac{2mU}{q}}.
+r=\frac{1}{B}\sqrt{\frac{2mU}{|q|}}.
 \]
 周期为
 \[
-T=\frac{2\pi m}{qB}.
+T=\frac{2\pi m}{|q|B}.
 \]
 
-\textbf{方法总结：} 电场负责“加速”，磁场负责“转弯”。看到“先加速后进入磁场”，一定分成两个阶段。
+\textbf{方法总结：} 这里用 $|q|$ 表示电荷量大小，且加速电场对粒子做正功。图示以正电荷为例；若粒子带负电，进入磁场后的偏转方向相反，但半径和周期大小不变。本题中电场力做功改变动能，磁场力提供向心力并改变速度方向。看到“先加速后进入磁场”，一定分成两个阶段。
 \end{examplebox}
 
 \begin{examplebox}{电磁感应综合：恒力拉导体棒}
@@ -239,7 +310,7 @@ v=\frac{FR}{B^2L^2}.
 \[
 P_{\text{外}}=Fv,
 \]
-最终全部转化为电路焦耳热：
+在回路中只有电阻发热、忽略机械摩擦和辐射等损耗的理想模型中，最终匀速时动能不再变化，外力输入功率转化为电路焦耳热：
 \[
 P_R=I^2R.
 \]
@@ -280,9 +351,18 @@ r=0.80\ \Omega.
 
 \begin{enumerate}
   \item 物块从光滑斜面滑下进入粗糙水平面，求停止距离，应如何分阶段？
+  \begin{center}
+  \input{figures/tikz/training-comprehensive-stage}
+  \end{center}
   \item 完全非弹性碰撞后连接弹簧，碰撞和压缩两个阶段分别用什么规律？
+  \begin{center}
+  \input{figures/tikz/training-collision-spring}
+  \end{center}
   \item 带电粒子在匀强磁场中做圆周运动，若速度变为原来 2 倍，半径怎样变化？
   \item 导体棒在磁场中最终匀速，安培力与外力关系如何？
+  \begin{center}
+  \input{figures/tikz/comprehensive-em-induction}
+  \end{center}
   \item 对任意一个综合题，写出“选对象、分过程、列方程”的三句话。
 \end{enumerate}
 
@@ -290,7 +370,7 @@ r=0.80\ \Omega.
 \begin{enumerate}
   \item 光滑斜面段用机械能守恒，粗糙水平面段用动能定理。
   \item 碰撞阶段用动量守恒；压缩弹簧阶段若无摩擦用机械能守恒，有摩擦用功能关系。
-  \item 洛伦兹力提供向心力，$r=\dfrac{mv}{qB}$，速度变为 2 倍，半径也变为 2 倍。
+  \item 洛伦兹力提供向心力，$r=\dfrac{mv}{|q|B}$，速度变为 2 倍，半径也变为 2 倍。
   \item 最终匀速时安培力与外力平衡；若外力做功，能量最终转化为焦耳热。
   \item 这类题没有唯一答案，关键是把对象、阶段和规律说清楚。
 \end{enumerate}
@@ -302,7 +382,7 @@ r=0.80\ \Omega.
   \item \textbf{全过程套一个规律：} 条件变化后模型往往要变。
   \item \textbf{方程没有物理解释：} 只写公式不说明来源，容易漏项或错项。
   \item \textbf{忽略临界词：} “刚好”“最大”“最小”“恰不离开”通常对应临界条件。
-  \item \textbf{答案不检验：} 单位不对、极限荒谬的结果应及时发现。
+  \item \textbf{答案不检验：} 单位不对、极限不合理的结果应及时发现。
 \end{enumerate}
 \end{mistakebox}
 
@@ -333,9 +413,9 @@ r=0.80\ \Omega.
 \textbf{最重要的习惯：} 每一个公式都要能回答三件事：从哪里来、适用于什么条件、结果变大变小是否合理。
 \end{competitionbox}
 
-\section*{十、最后加练：复盘系统}
+\subsection*{竞赛与综合提升：复盘系统}
 
-一个月学习结束后，最容易出现的问题是“听懂了，但过两周又散了”。解决办法不是简单多刷题，而是建立复盘系统。
+一个月学习结束后，最容易出现的问题是“课堂上理解了，但隔一段时间后模型又混在一起”。解决办法不是简单多刷题，而是建立复盘系统。
 
 \begin{center}
 \input{figures/tikz/comprehensive-review-cycle}
@@ -376,19 +456,35 @@ r=0.80\ \Omega.
 
 \begin{enumerate}
   \item \textbf{力学综合：} 斜面、粗糙水平面、弹簧组合，要求写出每一阶段能量方程。
+  \begin{center}
+  \input{figures/tikz/comprehensive-spring-friction}
+  \end{center}
   \item \textbf{动量综合：} 碰撞后进入圆轨道，要求区分碰撞阶段和圆周阶段。
   \item \textbf{电场综合：} 带电粒子先加速后偏转，要求画出速度分解图。
+  \begin{center}
+  \input{figures/tikz/accelerate-deflect-model}
+  \end{center}
   \item \textbf{电磁感应综合：} 导体棒在磁场中运动，要求从 $v$ 推到 $E,I,F$。
-  \item \textbf{实验综合：} 给出一组数据，要求作图、求斜率、解释误差。
+  \begin{center}
+  \input{figures/tikz/comprehensive-em-induction}
+  \end{center}
+  \item \textbf{实验综合：} 给出一组数据，要求作图、求斜率、解释误差；也可以给出光电门或油膜法情境，要求说明直接测量量和间接量。
+  \item \textbf{光学综合：} 给出透镜、屏和物体位置，要求先画两条特殊光线，再判断像的正倒、大小和虚实。
+  \item \textbf{热学综合：} 给出一段 $p$-$V$ 过程，要求判断气体做功正负、内能变化和吸放热。
+  \item \textbf{近代物理综合：} 给出光电效应或能级跃迁数据，要求区分频率、光强、截止电压和能级差的作用。
+  \item \textbf{科学发展综合：} 选择一种能源技术（如光伏发电、核电、火力发电或风力发电），用“能量来源、转换、传输、储存、利用、损耗”六个词写出分析链条。
+  \item \textbf{数量级估算：} 估算一个家庭一天的照明用电量，写出你选取的主要物理量和近似值。
 \end{enumerate}
 
 \textbf{最后提醒：} 学完一本讲义不是终点。真正的进步发生在你能把题目讲给别人听，并能说明每一步为什么这样做。
 
-\section*{十一、今日小结}
+\section*{十、今日小结}
 \begin{enumerate}
   \item 综合题要按画图、选对象、分过程、列方程、验结果推进。
   \item 复杂题常常是多个简单模型的组合。
-  \item 机械能、动量、电场和电磁感应都要检查适用条件。
+  \item 机械能、动量、电磁、光学、热学和近代物理都要检查适用条件。
+  \item 能源技术题也要建模：先列能量链，再看守恒、效率、损耗和安全边界。
+  \item 数量级估算能帮助判断真实问题中的答案是否合理。
   \item 方程必须服务于物理过程，不能只堆符号。
   \item 后续学习要从知识点记忆转向模型复盘和错因复盘。
 \end{enumerate}

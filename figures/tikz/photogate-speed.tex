@@ -1,0 +1,21 @@
+% TikZ 图：光电门测瞬时速度
+% Day 28：高中物理实验专题
+\begin{tikzpicture}[scale=0.92,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  \draw[thick] (-0.4,0) -- (6.4,0);
+  \draw[fill=gray!12,thick] (1.0,0) rectangle (2.1,0.45);
+  \draw[fill=orange!40,thick] (1.45,0.45) rectangle (1.65,1.25);
+  \node[font=\scriptsize] at (1.55,1.48) {宽 $d$};
+  \draw[->,blue,very thick] (2.25,0.28) -- (3.10,0.28) node[midway,above] {$v$};
+
+  \draw[thick,fill=blue!5] (4.15,0.0) rectangle (4.42,1.65);
+  \draw[thick,fill=blue!5] (5.25,0.0) rectangle (5.52,1.65);
+  \draw[red,very thick] (4.42,1.08) -- (5.25,1.08);
+  \node[font=\scriptsize,red] at (4.84,1.32) {光束};
+  \node[font=\scriptsize] at (4.84,-0.28) {光电门};
+  \node[font=\scriptsize,gray] at (5.88,1.08) {记录 $\Delta t$};
+
+  \draw[dashed,gray] (1.55,0.45) -- (4.84,1.08);
+
+  \node[font=\normalsize] at (3.2,-0.78) {$\displaystyle v\approx\frac{d}{\Delta t}$};
+\end{tikzpicture}

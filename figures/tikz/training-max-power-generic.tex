@@ -1,0 +1,12 @@
+\begin{tikzpicture}[scale=0.85,>=Stealth]
+  \draw[->] (0,0) -- (4.7,0) node[right] {$R$};
+  \draw[->] (0,0) -- (0,2.45);
+  \node[left] at (0,2.45) {$P_{\text{出}}$};
+  \draw[red,thick,domain=0.12:4.3,samples=100]
+    plot (\x,{2.25*4*\x/((\x+1.35)^2)});
+  \draw[dashed] (1.35,0) -- (1.35,2.22);
+  \node[below] at (1.35,0) {$r$};
+  \node[above] at (1.35,2.25) {$R=r$};
+  \node[font=\small] at (3.25,1.75) {最大值};
+  \node[font=\small] at (2.35,-0.52) {输出功率最大条件：$R=r$};
+\end{tikzpicture}

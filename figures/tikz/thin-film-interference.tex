@@ -1,0 +1,37 @@
+\begin{tikzpicture}[scale=0.92,>=Stealth]
+  \tikzset{
+    ray/.style={very thick,blue,->},
+    rayb/.style={very thick,orange!90!black,->},
+    guide/.style={gray,dashed},
+    film/.style={fill=cyan!10,draw=cyan!60!black,thick},
+    note/.style={font=\small,align=center}
+  }
+
+  \fill[film] (-3.35,-0.55) rectangle (3.35,0.55);
+  \draw[thick] (-3.35,0.55) -- (3.35,0.55);
+  \draw[thick] (-3.35,-0.55) -- (3.35,-0.55);
+  \node[font=\small] at (-2.80,0.92) {空气};
+  \node[font=\small,cyan!60!black] at (-2.75,0) {薄膜};
+  \node[font=\small] at (-2.80,-0.92) {空气/玻璃};
+
+  \coordinate (P) at (-0.70,0.55);
+  \coordinate (Q) at (0.05,-0.55);
+  \coordinate (R) at (0.82,0.55);
+
+  \draw[ray] (-2.55,1.45) -- (P);
+  \draw[ray] (P) -- (-1.68,1.42);
+  \node[font=\scriptsize,blue] at (-1.92,1.62) {反射光 1};
+
+  \draw[rayb] (P) -- (Q);
+  \draw[rayb] (Q) -- (R);
+  \draw[rayb] (R) -- (1.84,1.42);
+  \node[font=\scriptsize,orange!90!black] at (2.05,1.62) {反射光 2};
+
+  \draw[guide] (P) -- ++(0,-1.32);
+  \draw[guide] (Q) -- ++(0,1.32);
+  \draw[<->,gray] (3.00,-0.55) -- (3.00,0.55) node[midway,right,font=\small] {$d$};
+  \node[note] at (0,-1.48)
+    {两束反射光来自薄膜上下表面，光程差约与 $2nd$ 有关};
+  \node[note] at (0,-1.95)
+    {不同颜色满足加强或减弱条件不同，于是出现彩色条纹};
+\end{tikzpicture}

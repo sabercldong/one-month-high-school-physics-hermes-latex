@@ -1,0 +1,20 @@
+\begin{tikzpicture}[xscale=1.05,yscale=0.95,>=Stealth]
+  \draw[->,thick] (-3.55,0) -- (3.75,0) node[right,font=\small] {频率升高};
+  \draw[->,thick] (3.25,-0.42) -- (-3.25,-0.42) node[left,font=\small] {波长增大};
+  \foreach \x/\lab/\col in {-2.95/无线电波/blue!55,-1.82/微波/cyan!70!black,-0.72/红外/orange!80!black,0.20/可见光/red,1.12/紫外/purple,2.08/X射线/gray!70!black,3.12/$\gamma$射线/black}{
+    \draw[thick,\col] (\x,-0.12) -- (\x,0.62);
+  }
+  \node[font=\scriptsize,align=center] at (-2.95,0.88) {无线\\电波};
+  \node[font=\scriptsize,align=center] at (-1.82,1.10) {微波};
+  \node[font=\scriptsize,align=center] at (-0.72,0.88) {红外};
+  \node[font=\scriptsize,align=center,red] at (0.20,1.12) {可见光};
+  \node[font=\scriptsize,align=center] at (1.12,0.88) {紫外};
+  \node[font=\scriptsize,align=center] at (2.08,1.10) {X 射线};
+  \node[font=\scriptsize,align=center] at (3.12,0.88) {$\gamma$ 射线};
+  \draw[red,very thick] (-0.10,0.28) -- (0.50,0.28);
+  \node[font=\scriptsize,red] at (0.20,-0.82) {人眼只看见很窄一段};
+  \node[font=\scriptsize,align=center] at (-2.40,-1.25) {通信、雷达};
+  \node[font=\scriptsize,align=center] at (-0.75,-1.25) {热成像};
+  \node[font=\scriptsize,align=center] at (2.10,-1.25) {医学成像、材料检测};
+  \node[font=\small,align=center] at (0,-1.88) {本质相同：都是真空中以光速传播的电磁波};
+\end{tikzpicture}

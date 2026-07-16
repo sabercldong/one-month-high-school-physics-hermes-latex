@@ -8,9 +8,12 @@
 \begin{enumerate}
   \item 理解光电效应的实验事实和爱因斯坦光电方程。
   \item 掌握光子能量 $E=h\nu$、逸出功和截止频率的含义。
+  \item 了解卢瑟福 $\alpha$ 粒子散射实验和原子核式结构模型。
   \item 理解原子能级跃迁与光谱的关系。
+  \item 了解玻尔氢原子模型的能级公式和电离能含义。
   \item 会配平核反应方程，掌握质量数和电荷数守恒。
-  \item 理解半衰期和质能方程的基本意义。
+  \item 理解半衰期、放射性衰变类型和质能方程的基本意义。
+  \item 初步知道相对论给出经典物理的适用边界，并理解质能关系的科学意义。
 \end{enumerate}
 
 \section*{二、初高中衔接}
@@ -21,12 +24,58 @@
 
 \section*{三、核心概念}
 
+\begin{conceptbox}{卢瑟福 $\alpha$ 粒子散射实验}
+
+在卢瑟福 $\alpha$ 粒子散射实验中，高速 $\alpha$ 粒子射向很薄的金箔。实验现象是：绝大多数 $\alpha$ 粒子几乎沿原方向穿过金箔，少数发生明显偏转，极少数甚至被大角度弹回。
+
+\begin{center}
+\input{figures/tikz/rutherford-scattering}
+
+\figcaption{卢瑟福 $\alpha$ 粒子散射：大角度偏转说明原子内部有很小而带正电的原子核}\label{fig:rutherford-scattering}
+\end{center}
+
+\textbf{物理结论：} 原子大部分空间是空旷的；原子的正电荷和几乎全部质量集中在很小的原子核内，核外是电子。这就是原子的\textbf{核式结构模型}。
+
+\textbf{认知提醒：} 这个实验不是直接“看见”原子核，而是由散射现象反推内部结构。高中物理经常用这种方式建立微观模型：看不见对象本身，就看它对可测粒子的影响。
+\end{conceptbox}
+
+\begin{conceptbox}{能量量子化与光子}
+
+经典图像中，能量常被想象成可以连续取任意数值；近代物理发现，微观系统吸收或放出能量时，常常表现出“一份一份”的特征。对光来说，每一份能量叫一个\textbf{光子}，其能量为
+\[
+\boxed{E=h\nu}.
+\]
+频率 $\nu$ 越高，单个光子的能量越大；在频率相同的比较中，光强越大，通常表示单位时间到达的光子数越多。这个区分是理解光电效应的关键。
+
+\begin{center}
+\input{figures/tikz/quantum-energy-packets}
+
+\figcaption{能量量子化与光子：频率决定单个光子能量；同频率下，光强主要影响光子数}\label{fig:quantum-energy-packets}
+\end{center}
+\end{conceptbox}
+
+\textbf{科学史补充：黑体辐射与量子化思想}
+
+能量量子化思想最早不是从光电效应开始的，而是来自黑体辐射问题。加热物体会发光，温度越高，辐射越强，辐射峰值还会向短波方向移动。经典物理若把能量交换看成完全连续，无法正确解释短波端的实验规律。普朗克提出：物质与电磁辐射交换能量时，只能按
+\[
+E=h\nu
+\]
+这样的“一份一份”进行。后来爱因斯坦把这种思想用于光电效应，进一步提出光本身也可以看作一份一份的光子。
+
+\begin{center}
+\input{figures/tikz/blackbody-quantum-origin}
+
+\figcaption{黑体辐射与量子化思想：温度升高时峰值向短波移动，经典连续图像在短波端失效}\label{fig:blackbody-quantum-origin}
+\end{center}
+
+\textbf{高中边界：} 本讲义只要求知道黑体辐射是量子化思想的重要来源，不要求计算普朗克辐射公式。
+
 \begin{conceptbox}{光电效应}
 
-用一定频率的光照射金属表面，金属中电子吸收光子能量后可能逸出，形成光电子。实验表明：能否发生光电效应主要由光的频率决定，而不是由光强单独决定。
+用一定频率的光照射金属表面，金属中电子吸收光子能量后可能逸出，形成光电子。对同一种金属而言，能否发生光电效应主要由入射光频率是否达到截止频率决定，而不是由光强单独决定。
 
 \[
-\boxed{h\nu=W_0+E_k}
+\boxed{h\nu=W_0+E_{k\max}}
 \]
 
 这条式子可以看成微观世界的能量账本：一个光子的能量先用于把电子从金属中“拉出来”，这部分能量叫逸出功；如果还有剩余，才表现为光电子的最大初动能。因此频率不够时，即使光很强，也只能增加照来的光子数，不能让单个光子具有更大的能量。
@@ -40,7 +89,7 @@
 \begin{itemize}
   \item $h\nu$：光子能量。
   \item $W_0$：金属逸出功。
-  \item $E_k$：逸出光电子的最大初动能。
+  \item $E_{k\max}$：逸出光电子的最大初动能。
   \item 截止频率满足 $h\nu_0=W_0$。
 \end{itemize}
 \end{conceptbox}
@@ -60,6 +109,10 @@
 
 \textbf{理解：} 能级不是电子绕核运动的普通轨道线，而是原子允许具有的能量状态。能级差不同，发出的光频率不同，于是形成特征光谱。
 \end{conceptbox}
+
+\clearpage
+\begingroup
+\raggedbottom
 
 \begin{conceptbox}{原子核与核反应}
 
@@ -85,7 +138,7 @@
 
 \begin{conceptbox}{半衰期}
 
-大量放射性原子核中，有一半发生衰变所需的时间叫半衰期。半衰期是统计规律，不是说某一个原子核到时间一定衰变。
+大量同种放射性原子核中，未衰变原子核数减少到原来一半所需的时间叫半衰期。半衰期是统计规律，不是说某一个原子核到时间一定衰变。
 
 \begin{center}
 \input{figures/tikz/half-life-curve}
@@ -94,21 +147,30 @@
 \end{center}
 \end{conceptbox}
 
+\clearpage
+\endgroup
+
 \section*{四、公式与适用条件}
 
 \begin{center}
-\begin{tabular}{lll}
+\begingroup
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{p{0.28\textwidth}p{0.25\textwidth}p{0.37\textwidth}}
 \toprule
 公式 & 物理意义 & 适用条件 \\
 \midrule
 $E=h\nu$ & 光子能量 & 单个光子 \\
-$h\nu=W_0+E_k$ & 光电方程 & 最大初动能 \\
-$h\nu_0=W_0$ & 截止频率 & 刚好逸出 \\
-$h\nu=|E_m-E_n|$ & 能级跃迁 & 原子吸收或放光 \\
-$E=mc^2$ & 质能关系 & 静能量 \\
-$\Delta E=\Delta mc^2$ & 核能释放 & 质量亏损 \\
+$h\nu=W_0+E_{k\max}$ & 光电方程 & 普通一光子光电效应，且 $\nu\ge\nu_0$ \\
+$h\nu_0=W_0$ & 截止频率 & 光电子刚好逸出，最大初动能为 0 \\
+$h\nu=|E_m-E_n|$ & 能级跃迁 & 单个光子吸收或发射；能量差取正值 \\
+$E_n=-\dfrac{13.6}{n^2}\ \mathrm{eV}$ & 氢原子能级 & 玻尔模型，$n=1,2,\cdots$ \\
+$E_0=mc^2$ & 静止能量 & 质量为 $m$ 的物体 \\
+$E_{\text{释放}}=\Delta m\,c^2$ & 核能释放 & $\Delta m$ 为反应前总静质量减反应后总静质量；用 kg 得 J \\
+${}^{A}_{Z}X\rightarrow{}^{A-4}_{Z-2}Y+{}^4_2\mathrm{He}$ & $\alpha$ 衰变 & 质量数减 4，电荷数减 2 \\
+${}^{A}_{Z}X\rightarrow{}^{A}_{Z+1}Y+{}^0_{-1}e+\bar{\nu}_e$ & $\beta^-$ 衰变 & 完整写法含反中微子 \\
 \bottomrule
 \end{tabular}
+\endgroup
 \end{center}
 
 \section*{五、典型模型}
@@ -117,12 +179,18 @@ $\Delta E=\Delta mc^2$ & 核能释放 & 质量亏损 \\
 
 先比较频率：
 \[
-\nu<\nu_0\Rightarrow\text{不能发生光电效应},
+\nu<\nu_0\Rightarrow\text{在高中普通光电效应模型中不能逸出光电子},
 \]
 \[
-\nu>\nu_0\Rightarrow\text{能发生光电效应}.
+\nu\ge\nu_0\Rightarrow\text{能发生光电效应；等号时光电子刚好逸出}.
 \]
-光强增大只会增加单位时间逸出电子数，不会改变单个光子的能量。
+在频率不变且已能发生光电效应时，光强增大主要增加单位时间逸出电子数，不会改变单个光子的能量。
+
+\begin{center}
+\input{figures/tikz/photoelectric-frequency-intensity}
+
+\figcaption{光电效应判断：是否逸出先看频率，光强主要影响光电子数}\label{fig:photoelectric-frequency-intensity}
+\end{center}
 
 \subsection*{模型 2：能级跃迁}
 
@@ -131,7 +199,46 @@ $\Delta E=\Delta mc^2$ & 核能释放 & 质量亏损 \\
 \nu=\frac{|E_m-E_n|}{h}.
 \]
 
-\subsection*{模型 3：核反应配平}
+\begin{center}
+\input{figures/tikz/spectral-lines-from-levels}
+
+\figcaption{能级跃迁与光谱：不同能级差对应不同频率的谱线}\label{fig:spectral-lines-from-levels}
+\end{center}
+
+\subsection*{模型 3：由散射现象反推原子结构}
+
+卢瑟福散射实验体现了一种重要建模方法：先看实验事实，再反推结构。
+\begin{itemize}
+  \item 绝大多数粒子直穿：说明原子内部大部分空间空旷。
+  \item 少数粒子明显偏转：说明原子内部存在强电场区域。
+  \item 极少数粒子大角度反弹：说明正电荷和质量集中在很小的区域内。
+\end{itemize}
+
+\textbf{模型边界：} 核式结构模型解释了原子核的存在，但不能单独解释原子稳定性和光谱线。玻尔模型进一步引入能级量子化，才解释了氢原子光谱。
+
+\subsection*{模型 4：玻尔氢原子模型}
+
+氢原子只有一个电子，是高中阶段理解原子能级最常用的模型。玻尔模型的核心不是“电子真的像行星一样沿确定轨道转”，而是给出一个可计算的能级结构：
+\[
+E_n=-\frac{13.6}{n^2}\ \mathrm{eV},\qquad n=1,2,3,\cdots
+\]
+
+\begin{center}
+\input{figures/tikz/bohr-hydrogen-levels}
+
+\figcaption{玻尔氢原子模型：能级越高越接近 $0$，跃迁能级差决定谱线}\label{fig:bohr-hydrogen-levels}
+\end{center}
+
+\begin{itemize}
+  \item $n=1$ 是基态，能量最低，$E_1=-13.6\ \mathrm{eV}$。
+  \item $n$ 越大，能级越高，能量越接近 $0$。
+  \item 从 $n=1$ 电离到自由电子，需要吸收 $13.6\ \mathrm{eV}$ 能量。
+  \item 从高能级向低能级跃迁时，放出光子；光子能量为两个能级之差。
+\end{itemize}
+
+\textbf{边界提醒：} 玻尔模型能很好解释氢原子光谱，但它不是完整的量子力学图像。高中阶段把它作为“能级量子化”的入门模型，不把图中的圆轨道理解成电子的真实路径。
+
+\subsection*{模型 5：核反应配平}
 
 未知粒子可通过质量数、电荷数分别列方程判断。例如
 \[
@@ -141,6 +248,23 @@ $\Delta E=\Delta mc^2$ & 核能释放 & 质量亏损 \\
 \[
 X={}^1_1\mathrm{H}.
 \]
+
+\subsection*{模型 6：放射性衰变与射线防护}
+
+放射性衰变是原子核自发发生的变化，常见射线可先按“带不带电、穿透强弱、核反应方程怎样变”来识别：
+\begin{itemize}
+  \item \textbf{$\alpha$ 衰变：} 放出 ${}^4_2\mathrm{He}$ 原子核，母核质量数减 4，电荷数减 2。
+  \item \textbf{$\beta^-$ 衰变：} 放出电子 ${}^0_{-1}e$，母核质量数不变，电荷数加 1。更完整地说，核内一个中子转化为质子，同时放出电子和反中微子 $\bar{\nu}_e$；反中微子的质量数和电荷数都为 0，高中配平方程时常不显式写出。
+  \item \textbf{$\gamma$ 射线：} 本质是高能光子，常伴随核反应或衰变释放，通常不改变质量数和电荷数。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/radioactive-decay-shielding}
+
+\figcaption{三种常见射线：穿透能力不同，防护材料也不同}\label{fig:radioactive-decay-shielding}
+\end{center}
+
+\textbf{科学素养提醒：} 放射性不是“只要有辐射就一定危险”。风险取决于射线类型、活度、距离、屏蔽和照射时间。医学影像、放射治疗、工业探伤和考古测年都利用了核辐射，但必须在剂量控制和防护条件下使用。
 
 \section*{六、例题精讲}
 
@@ -155,10 +279,10 @@ X={}^1_1\mathrm{H}.
 
 \textbf{解题过程：}
 \[
-E_k=h\nu-W_0=3.5-2.0=1.5\ \mathrm{eV}.
+E_{k\max}=h\nu-W_0=3.5-2.0=1.5\ \mathrm{eV}.
 \]
 
-\textbf{方法总结：} 光电效应题先看频率或光子能量是否超过逸出功，再算最大初动能。
+\textbf{方法总结：} 光电效应题先看光子能量是否达到逸出功，再算最大初动能。
 \end{examplebox}
 
 \begin{examplebox}{能级跃迁发光频率}
@@ -178,6 +302,25 @@ E_{\gamma}=E_3-E_1=(-1.5)-(-13.6)=12.1\ \mathrm{eV}.
 \textbf{方法总结：} 能级为负值时，要用高能级减低能级；放出光子能量为正。
 \end{examplebox}
 
+\begin{examplebox}{氢原子能级跃迁}
+\textbf{题意分析：} 氢原子从 $n=3$ 能级跃迁到 $n=2$ 能级，求放出光子的能量。
+
+\textbf{物理模型：} 玻尔氢原子能级公式。
+
+\textbf{解题过程：}
+\[
+E_3=-\frac{13.6}{3^2}\ \mathrm{eV}\approx-1.51\ \mathrm{eV},
+\qquad
+E_2=-\frac{13.6}{2^2}\ \mathrm{eV}=-3.40\ \mathrm{eV}.
+\]
+从高能级降到低能级，光子能量为
+\[
+E_{\gamma}=E_3-E_2=(-1.51)-(-3.40)=1.89\ \mathrm{eV}.
+\]
+
+\textbf{方法总结：} 氢原子能级是负值，越接近 $0$ 能级越高。放光时用“初能级减末能级”，结果取正。
+\end{examplebox}
+
 \begin{examplebox}{半衰期计算}
 \textbf{题意分析：} 某放射性样品初始有 $N_0$ 个未衰变原子核，半衰期为 5 天。经过 15 天后剩余多少？
 
@@ -188,11 +331,7 @@ E_{\gamma}=E_3-E_1=(-1.5)-(-13.6)=12.1\ \mathrm{eV}.
 \end{center}
 
 \textbf{解题过程：}
-15 天包含
-\[
-\frac{15}{5}=3
-\]
-个半衰期，所以
+15 天包含 $\dfrac{15}{5}=3$ 个半衰期，所以
 \[
 N=N_0\left(\frac12\right)^3=\frac{N_0}{8}.
 \]
@@ -205,26 +344,39 @@ N=N_0\left(\frac12\right)^3=\frac{N_0}{8}.
 \begin{enumerate}
   \item 某金属截止频率为 $\nu_0$，若入射光频率为 $0.8\nu_0$，能否发生光电效应？
   \item 光强增大时，光电子最大初动能是否一定增大？说明理由。
+  \item 卢瑟福散射实验中，为什么“绝大多数 $\alpha$ 粒子直穿”说明原子内部大部分空间空旷？
   \item 原子从高能级跃迁到低能级时，是吸收还是放出光子？
+  \item 氢原子从 $n=2$ 跃迁到 $n=1$ 时，放出光子能量是多少？
   \item 配平核反应：${}^{238}_{92}\mathrm{U}\rightarrow{}^{234}_{90}\mathrm{Th}+X$，判断 $X$。
+  \item 某核素发生 $\beta^-$ 衰变后，质量数和电荷数分别怎样变化？
+  \begin{center}
+  \input{figures/tikz/training-modern-summary}
+  \end{center}
 \end{enumerate}
 
 \subsection*{训练提示}
 \begin{enumerate}
   \item 不能。入射光频率低于截止频率，单个光子能量不足。
-  \item 不一定。若频率不变，最大初动能不变；光强增大主要使光电子数增多。
+  \item 不一定。在频率不变且已能发生光电效应时，最大初动能不变；光强增大主要使光电子数增多。
+  \item 若原子内部到处都是均匀物质和正电荷，高速 $\alpha$ 粒子应普遍受阻或普遍偏转；大量直穿说明原子内大部分区域几乎不阻挡它。
   \item 从高能级到低能级放出光子；从低能级到高能级吸收光子。
+  \item $E_2=-3.40\ \mathrm{eV}$，$E_1=-13.6\ \mathrm{eV}$，放出光子能量 $10.2\ \mathrm{eV}$。
   \item 质量数差为 4，电荷数差为 2，所以 $X={}^{4}_{2}\mathrm{He}$。
+  \item $\beta^-$ 衰变中质量数不变，电荷数增加 1。
 \end{enumerate}
 
 \section*{八、易错点}
 \begin{mistakebox}
 \begin{enumerate}
-  \item \textbf{认为光强越大一定能打出电子：} 是否能发生光电效应取决于频率是否超过截止频率。
-  \item \textbf{混淆光强和光子能量：} 光强增大通常意味着光子数增多，不代表单个光子能量增大。
+  \item \textbf{认为光强越大一定能打出电子：} 是否能发生光电效应取决于频率是否达到或超过截止频率。
+  \item \textbf{混淆光强和光子能量：} 在频率不变时，光强增大通常意味着光子数增多，不代表单个光子能量增大。
+  \item \textbf{把卢瑟福实验当成直接拍到原子核：} 原子核式结构是由 $\alpha$ 粒子的散射规律反推出来的模型。
   \item \textbf{能级差符号处理错误：} 光子能量取能级差的绝对值。
+  \item \textbf{把氢原子能级负号看成“能量大小为负”：} 负号表示电子被原子核束缚，能量零点取在电离后的自由电子状态；比较光子能量时看能级差。
   \item \textbf{核反应只配质量数：} 必须同时配平质量数和电荷数。
+  \item \textbf{把 $\alpha$、$\beta$、$\gamma$ 射线混为一谈：} 三者的组成、带电情况和穿透能力都不同。
   \item \textbf{把半衰期用于单个原子核：} 半衰期是大量原子核的统计规律。
+  \item \textbf{把 $E=mc^2$ 当成普通机械能公式：} 质能关系来自相对论，常用于静能量、质量亏损和核能释放，不是低速物体动能的替代公式。
 \end{enumerate}
 \end{mistakebox}
 
@@ -247,11 +399,9 @@ N=N_0\left(\frac12\right)^3=\frac{N_0}{8}.
 \textbf{连接前后知识：} 这一公式把动量 $p$、普朗克常量 $h$ 和波长 $\lambda$ 联系起来，是从经典物理走向量子物理的桥梁。
 \end{competitionbox}
 
-\section*{十、模型深化：实验图像与现代应用}
-
 \subsection*{1.\quad 光电效应实验装置}
 
-光电效应不是“看见电子飞出来”这么简单，而是通过光电流、电压和光照条件的关系来判断微观过程。实验中用光照射阴极，若有光电子逸出并到达阳极，外电路中就出现光电流。
+光电效应不能只理解为“电子飞出金属表面”，还要通过光电流、电压和光照条件的关系来判断微观过程。实验中用光照射阴极，若有光电子逸出并到达阳极，外电路中就出现光电流。
 
 \begin{center}
 \input{figures/tikz/photoelectric-experiment}
@@ -259,7 +409,7 @@ N=N_0\left(\frac12\right)^3=\frac{N_0}{8}.
 \figcaption{光电效应实验装置：用光电流和外加电压研究光电子能量}\label{fig:photoelectric-experiment}
 \end{center}
 
-\textbf{实验事实到方程：} 截止电压说明最快光电子的初动能可被反向电场刚好“耗尽”，所以
+\textbf{实验事实到方程：} 截止电压说明最快光电子的初动能可被反向电场刚好“耗尽”。若 $U_c$ 表示截止电压的大小，则
 \[
 eU_c=E_{k\max}.
 \]
@@ -279,12 +429,31 @@ h\nu=W_0+E_{k\max}.
 \end{center}
 
 \begin{itemize}
-  \item \textbf{截止电压：} 使光电流刚好为 0 的反向电压，满足 $eU_c=E_{k\max}$。
-  \item \textbf{饱和电流：} 所有逸出的光电子都被收集时的电流，反映单位时间逸出电子数。
+  \item \textbf{截止电压：} 使光电流刚好为 0 的反向电压；若 $U_c$ 取其大小，则满足 $eU_c=E_{k\max}$。
+  \item \textbf{饱和电流：} 在理想收集条件下，逸出的光电子几乎都被收集时的电流，反映单位时间逸出电子数。
   \item \textbf{光强影响：} 同频率下，光强越大，饱和电流越大；但截止电压不因光强增大而增大。
 \end{itemize}
 
-\subsection*{3.\quad 核能释放的数量级}
+\subsection*{3.\quad 相对论初步：经典物理的适用边界}
+
+牛顿力学在日常低速世界非常准确，但当速度接近光速 $c$，或者讨论核反应中的质量亏损时，经典图像就不够用了。相对论给出两个重要提醒：
+\begin{itemize}
+  \item 真空中的光速 $c$ 是自然界的重要上限，静止质量不为零的物体不能被加速到光速或超过光速。
+  \item 质量和能量不是彼此孤立的量，静止物体也具有静能量 $E=mc^2$。
+\end{itemize}
+
+\clearpage
+\begin{samepage}
+\begin{center}
+\input{figures/tikz/relativity-boundary}
+
+\figcaption{相对论视角：低速近似与高速、核能情境的分界}\label{fig:relativity-boundary}
+\end{center}
+\end{samepage}
+
+\textbf{高中边界：} 在大多数力学题中，物体速度远小于光速，可以放心使用牛顿力学和经典动能公式（$E_k=\frac12mv^2$）。在电子加速器、宇宙线、核反应等情境中，则要知道经典公式可能需要修正。本讲义只要求理解这种边界意识，不展开相对论动力学计算。
+
+\subsection*{4.\quad 核能释放的数量级}
 
 核反应中的质量亏损通常很小，但由于
 \[
@@ -294,8 +463,35 @@ c^2\approx9.0\times10^{16}\ \mathrm{m^2/s^2},
 
 \textbf{严谨提醒：} 质量亏损不是“质量消失了所以不守恒”的简单说法。更准确地说，在相对论中质量和能量共同参与守恒，核反应前后的总能量守恒。
 
+\begin{center}
+\input{figures/tikz/mass-defect-energy}
+
+\figcaption{质量亏损与核能释放：很小的质量差也可能对应很大的能量}\label{fig:mass-defect-energy}
+\end{center}
+
+\subsection*{5.\quad 核裂变与核聚变：两种释放核能的路径}
+
+质能方程说明“为什么核反应可能释放巨大能量”，但高中还需要区分两类典型核反应。
+
+\begin{center}
+\input{figures/tikz/fission-fusion-model}
+
+\figcaption{核裂变与核聚变：前者是重核分裂，后者是轻核结合}\label{fig:fission-fusion-model}
+\end{center}
+
+\begin{itemize}
+  \item \textbf{核裂变：} 重核吸收中子后分裂成较轻的原子核，同时放出若干中子和能量。若新放出的中子继续引发其他裂变，就可能形成链式反应。核电站利用可控裂变释放能量。
+  \item \textbf{核聚变：} 轻核在极高温、高压条件下结合成较重的原子核，并释放能量。太阳和恒星的能量主要来自聚变。受控核聚变的难点在于如何长时间稳定约束高温等离子体。
+\end{itemize}
+
+\textbf{统一视角：} 不论裂变还是聚变，计算释放能量时都回到质量亏损：
+\[
+E_{\text{释放}}=\Delta m\,c^2.
+\]
+核反应方程仍必须满足质量数守恒、电荷数守恒；能量释放不表示守恒失效，而是质量和能量共同参与守恒。
+
 \begin{examplebox}{截止电压与最大初动能}
-\textbf{题意分析：} 某光电管实验中，截止电压为 $1.2\ \mathrm{V}$。求光电子最大初动能（用 eV 表示）。
+\textbf{题意分析：} 某光电管实验中，截止电压大小为 $1.2\ \mathrm{V}$。求光电子最大初动能（用 eV 表示）。
 
 \textbf{物理模型：} 反向电场做功恰好阻止最快光电子到达阳极。
 
@@ -303,7 +499,7 @@ c^2\approx9.0\times10^{16}\ \mathrm{m^2/s^2},
 \[
 E_{k\max}=eU_c.
 \]
-若用电子伏特作单位，电荷量为 $e$ 的电子通过 $1\ \mathrm{V}$ 电势差对应 $1\ \mathrm{eV}$，所以
+若用电子伏特作单位，电荷量大小为 $e$ 的电子通过 $1\ \mathrm{V}$ 电势差对应 $1\ \mathrm{eV}$，所以
 \[
 E_{k\max}=1.2\ \mathrm{eV}.
 \]
@@ -336,20 +532,28 @@ X={}^1_0n.
 \textbf{方法总结：} 未知粒子先由 $A$、$Z$ 判断，再识别名称。
 \end{examplebox}
 
-\subsection*{4.\quad 分层训练}
+\subsection*{6.\quad 分层训练}
 
 \begin{enumerate}
   \item \textbf{基础：} 入射光频率增大，光电子最大初动能怎样变化？
   \item \textbf{提高：} 同频率光强增大，饱和光电流和截止电压分别怎样变化？
   \item \textbf{综合：} 某原子从 $E_4$ 跃迁到 $E_2$ 放出光子，再从 $E_2$ 跃迁到 $E_1$ 放出光子，比较两光子能量应看什么？
+  \item \textbf{拓展：} 为什么日常低速运动通常不需要相对论修正，而核反应能量却必须使用质能关系理解？
   \item \textbf{开放思考：} 为什么核聚变是太阳能量来源，却很难在地面稳定受控实现？
 \end{enumerate}
 
-\section*{十一、今日小结}
+\section*{十、今日小结}
+\enlargethispage{3\baselineskip}
 \begin{enumerate}
+  \item 能量量子化提醒我们：光子能量由频率决定，$E=h\nu$。
   \item 光电效应说明光具有粒子性，光子能量 $E=h\nu$。
-  \item 光电方程为 $h\nu=W_0+E_k$，截止频率满足 $h\nu_0=W_0$。
+  \item 光电方程为 $h\nu=W_0+E_{k\max}$，截止频率满足 $h\nu_0=W_0$。
+  \item 卢瑟福 $\alpha$ 粒子散射实验说明原子具有核式结构：正电荷和几乎全部质量集中在很小的原子核内。
   \item 原子能级跃迁满足 $h\nu=|E_m-E_n|$。
+  \item 氢原子玻尔模型中 $E_n=-13.6/n^2\ \mathrm{eV}$，基态电离能为 $13.6\ \mathrm{eV}$。
   \item 核反应方程必须满足质量数守恒和电荷数守恒。
+  \item $\alpha$、$\beta$、$\gamma$ 射线的组成和穿透能力不同，防护方式也不同。
   \item 半衰期是大量原子核衰变的统计规律。
+  \item 相对论提醒我们：牛顿力学有适用范围，质能关系 $E=mc^2$ 解释了核能数量级。
+  \item 核裂变是重核分裂，核聚变是轻核结合，二者释放能量都可用质量亏损理解。
 \end{enumerate}

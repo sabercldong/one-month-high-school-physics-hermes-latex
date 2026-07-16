@@ -1,0 +1,17 @@
+\begin{tikzpicture}[scale=0.95,>=Stealth]
+  \draw[rounded corners=5pt,thick,fill=red!8] (-3.6,0.45) rectangle (-1.7,1.35);
+  \node[font=\small] at (-2.65,0.90) {高温热源};
+  \draw[rounded corners=5pt,thick,fill=blue!8] (-3.6,-1.35) rectangle (-1.7,-0.45);
+  \node[font=\small] at (-2.65,-0.90) {低温热源};
+  \draw[->,very thick,orange!85!black] (-2.65,0.45) -- (-2.65,-0.45);
+  \node[font=\small,align=center] at (-1.20,0) {自发放热\\可发生};
+
+  \draw[rounded corners=5pt,thick,fill=blue!8] (1.4,-1.35) rectangle (3.3,-0.45);
+  \node[font=\small] at (2.35,-0.90) {低温热源};
+  \draw[rounded corners=5pt,thick,fill=red!8] (1.4,0.45) rectangle (3.3,1.35);
+  \node[font=\small] at (2.35,0.90) {高温热源};
+  \draw[->,very thick,blue] (2.35,-0.45) -- (2.35,0.45);
+  \draw[->,very thick,red] (4.65,0) -- (3.50,0);
+  \node[font=\small,red,anchor=west] at (4.05,0.42) {外界做功 $W$};
+  \node[font=\small,align=center] at (4.20,-0.72) {逆向搬热\\必须付出代价};
+\end{tikzpicture}

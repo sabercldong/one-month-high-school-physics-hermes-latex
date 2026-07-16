@@ -1,0 +1,41 @@
+% TikZ 图：油膜法估测分子大小
+% Day 26：热学基础
+\begin{tikzpicture}[scale=0.9,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  \begin{scope}
+    \node[font=\small\bfseries] at (2.4,2.95) {油滴在水面摊开};
+    \draw[rounded corners=4pt,thick,fill=cyan!6] (0,0) rectangle (4.8,2.35);
+    \node[blue!60!black] at (0.55,2.05) {水面};
+    \draw[blue!50,thick] (0.25,1.20) .. controls (1.00,1.32) and (1.65,1.08) .. (2.35,1.20)
+      .. controls (3.05,1.34) and (3.70,1.10) .. (4.55,1.22);
+
+    \fill[orange!85!black] (2.38,1.23) ellipse (0.95 and 0.28);
+    \node[orange!85!black] at (2.38,1.85) {单分子油膜};
+    \draw[->,orange!85!black] (2.38,1.67) -- (2.38,1.34);
+    \draw[<->,gray] (1.42,0.66) -- (3.34,0.66);
+    \node[gray] at (2.38,0.43) {面积 $S$};
+
+    \fill[orange!85!black] (0.95,2.05) circle (3pt) node[above left,font=\scriptsize] {$V$};
+    \draw[->,orange!85!black] (0.95,1.92) .. controls (1.32,1.60) and (1.68,1.42) .. (2.02,1.28);
+  \end{scope}
+
+  \begin{scope}[xshift=6.2cm]
+    \node[font=\small\bfseries] at (2.35,2.95) {侧面理想化模型};
+    \draw[thick,fill=cyan!6] (0,0.55) rectangle (4.7,1.05);
+    \node[blue!60!black] at (0.45,0.30) {水};
+
+    \draw[thick,fill=orange!70] (0.55,1.05) rectangle (4.15,1.30);
+    \foreach \x in {0.72,0.96,...,3.96}{
+      \fill[orange!95!black] (\x,1.18) circle (2.4pt);
+    }
+    \draw[<->,gray] (4.38,1.05) -- (4.38,1.30);
+    \node[gray,right] at (4.38,1.18) {$d$};
+
+    \draw[<->,gray] (0.55,1.62) -- (4.15,1.62);
+    \node[gray,fill=white,inner sep=1pt] at (2.35,1.83) {展开后面积 $S$};
+    \node[font=\scriptsize,align=center] at (2.35,2.45)
+      {若油膜近似单分子层\\厚度可估作分子直径};
+
+    \node[font=\normalsize] at (2.35,-0.15) {$\displaystyle d\approx \frac{V}{S}$};
+  \end{scope}
+\end{tikzpicture}

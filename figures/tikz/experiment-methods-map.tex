@@ -1,0 +1,30 @@
+% TikZ 图：高中实验常用基本方法
+% Day 28：实验专题
+\begin{tikzpicture}[scale=0.95,>=Latex]
+  \tikzset{
+    card/.style={rounded corners=5pt,thick,fill=gray!8,text width=4.05cm,minimum height=1.55cm,align=center,font=\small},
+    arrow/.style={->,thick,blue}
+  }
+
+  \node[card] (control) at (0,1.15) {
+    \textbf{控制变量法}\\[3pt]
+    只改变一个量\\
+    研究 $a$ 与 $F$、$m$ 的关系
+  };
+  \node[card] (convert) at (5.2,1.15) {
+    \textbf{转换放大法}\\[3pt]
+    把不易测的量转为易测量\\
+    纸带、光杠杆、传感器
+  };
+  \node[card] (equiv) at (0,-1.15) {
+    \textbf{等效替代法}\\[3pt]
+    用等效量替代复杂对象\\
+    等效电阻、等效电源
+  };
+  \node[card] (compare) at (5.2,-1.15) {
+    \textbf{比较法}\\[3pt]
+    与标准量或理论值比较\\
+    电桥平衡、机械能验证
+  };
+
+\end{tikzpicture}

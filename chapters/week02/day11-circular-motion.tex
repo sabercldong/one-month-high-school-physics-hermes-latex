@@ -45,6 +45,8 @@ v = \frac{\Delta s}{\Delta t} = \frac{2\pi r}{T}
 \]
 单位 $\mathrm{rad/s}$，方向用右手螺旋定则判断（高中阶段只关注大小）。
 
+\textbf{单位提醒：} 这里的角度 $\Delta\theta$ 必须用弧度。因为弧长关系 $\Delta s=r\Delta\theta$ 只有在 $\Delta\theta$ 用弧度时才直接成立。若题目给出 $30^\circ$、$60^\circ$ 等角度，代入角速度或弧长公式前要先换成弧度。
+
 \textbf{周期与频率：}
 \[
 T = \frac{1}{f},\qquad \omega = 2\pi f
@@ -112,9 +114,9 @@ a_n=v\omega=\frac{v^2}{r}=\omega^2r
 \]
 
 \begin{itemize}
-  \item 向心力不是一种新的性质力，而是\textbf{指向圆心的合力}。
+  \item 向心力不是一种新的性质力，而是\textbf{合力沿半径指向圆心的分量}。
   \item 它由重力、弹力、摩擦力等真实力的合力（或其分力）提供。
-  \item 匀速圆周运动中，合力完全提供向心力（大小恒定、方向始终指向圆心）。
+  \item 匀速圆周运动中，合力就是指向圆心的向心力（大小恒定、方向始终指向圆心）。
 \end{itemize}
 
 \textbf{常见来源举例：}
@@ -133,9 +135,9 @@ a_n=v\omega=\frac{v^2}{r}=\omega^2r
 \toprule
 公式 & 物理意义 & 适用条件 \\
 \midrule
-$v = \omega r$ & 线速度与角速度关系 & 任何圆周运动 \\
-$a_n = \dfrac{v^2}{r}$ & 向心加速度 & 匀速圆周运动（瞬时也适用于非匀速） \\
-$F_n = m\dfrac{v^2}{r}$ & 向心力 & 合力指向圆心时 \\
+$v = \omega r$ & 线速度与角速度关系 & 同一转动中心的瞬时关系 \\
+$a_n = \dfrac{v^2}{r}$ & 法向加速度大小 & 圆周运动的瞬时径向分量 \\
+$F_n = m\dfrac{v^2}{r}$ & 径向合力 & 指向圆心的合力分量 \\
 $T = \dfrac{1}{f}$ & 周期与频率 & 周期性运动 \\
 \bottomrule
 \end{tabular}
@@ -154,10 +156,10 @@ $T = \dfrac{1}{f}$ & 周期与频率 & 周期性运动 \\
 \end{center}
 
 \[
-T\sin\theta = m\omega^2 r = m\omega^2 l\sin\theta
+F_T\sin\theta = m\omega^2 r = m\omega^2 l\sin\theta
 \]
 \[
-T\cos\theta = mg
+F_T\cos\theta = mg
 \]
 解得 $\omega = \sqrt{\dfrac{g}{l\cos\theta}}$。
 
@@ -177,7 +179,70 @@ T\cos\theta = mg
 
 水平路面：静摩擦力提供向心力，$f_s = m\dfrac{v^2}{r} \leq \mu_s mg$，最大安全速度 $v_{\max} = \sqrt{\mu_s g r}$。
 
+\textbf{倾斜弯道：} 若路面向圆心一侧倾斜，支持力不再竖直，它的水平分量可以提供一部分甚至全部向心力。理想无摩擦时，
+\[
+N\sin\theta=m\frac{v^2}{r},\qquad N\cos\theta=mg,
+\]
+相除得
+\[
+\tan\theta=\frac{v^2}{rg}.
+\]
+这说明高速公路和铁路弯道常做成倾斜形状，不只是为了“防滑”，更是为了让支持力帮助物体转弯。
+
+\begin{center}
+\input{figures/tikz/banked-curve}
+
+\figcaption{倾斜弯道：支持力的水平分量可以提供向心力}\label{fig:banked-curve}
+\end{center}
+
 \section*{六、例题精讲}
+
+\begin{examplebox}{圆锥摆——竖直平衡与水平向心}
+
+\textbf{题意分析：} 质量为 $m=0.5\ \mathrm{kg}$ 的小球用长 $l=1.0\ \mathrm{m}$ 的细绳悬挂，细绳与竖直方向夹角 $\theta=30^\circ$，小球在水平面内做匀速圆周运动。取 $g=10\ \mathrm{m/s^2}$，求角速度 $\omega$ 和线速度 $v$。
+
+\textbf{物理模型：} 圆锥摆。小球竖直方向没有加速度，水平方向指向圆心的合力提供向心力。
+
+\begin{center}
+\input{figures/tikz/conical-pendulum}
+\end{center}
+
+\textbf{解题过程：}
+
+竖直方向平衡：
+\[
+F_T\cos\theta=mg.
+\]
+
+水平方向提供向心力：
+\[
+F_T\sin\theta=m\omega^2r,\qquad r=l\sin\theta.
+\]
+
+两式相除：
+\[
+\tan\theta=\frac{\omega^2r}{g}
+=\frac{\omega^2l\sin\theta}{g}.
+\]
+
+因此
+\[
+\omega^2=\frac{g}{l\cos\theta},\qquad
+\omega=\sqrt{\frac{10}{1.0\times\cos30^\circ}}
+\approx3.40\ \mathrm{rad/s}.
+\]
+
+圆周半径
+\[
+r=l\sin30^\circ=0.50\ \mathrm{m},
+\]
+所以
+\[
+v=\omega r\approx3.40\times0.50=1.70\ \mathrm{m/s}.
+\]
+
+\textbf{方法总结：} 圆锥摆不要把拉力直接写成向心力。拉力的竖直分量平衡重力，水平分量才提供向心力。
+\end{examplebox}
 
 \begin{examplebox}{水平圆周——传动装置}
 
@@ -188,6 +253,10 @@ T\cos\theta = mg
 \end{enumerate}
 
 \textbf{物理模型：} 皮带传动，两轮边缘线速度大小相等（皮带不打滑）。
+
+\begin{center}
+\input{figures/tikz/belt-drive}
+\end{center}
 
 \textbf{解题过程：}
 
@@ -210,6 +279,10 @@ T\cos\theta = mg
 
 \textbf{物理模型：} 静摩擦力提供向心力。
 
+\begin{center}
+\input{figures/tikz/car-turn}
+\end{center}
+
 \textbf{解题过程：}
 
 静摩擦力最大值 $f_{\max} = \mu_s mg$，提供向心力：
@@ -220,16 +293,16 @@ T\cos\theta = mg
 v_{\max} = \sqrt{\mu_s g r} = \sqrt{0.4 \times 10 \times 50} = \sqrt{200} \approx 14.1\ \mathrm{m/s}
 \]
 
-\textbf{方法总结：} 水平路面转弯的安全速度只与 $\mu_s$、$r$ 有关，与汽车质量无关。
+\textbf{方法总结：} 在水平路面、静摩擦提供向心力且忽略空气阻力等因素的模型中，安全速度上限只与 $\mu_s$、$r$ 有关，与汽车质量无关。
 
 \end{examplebox}
 
 \begin{examplebox}{竖直圆周——过山车}
 
-\textbf{题意分析：} 过山车在竖直圆形轨道上运行，轨道半径 $r = 8\ \mathrm{m}$，$g = 10\ \mathrm{m/s^2}$。求：
+\textbf{题意分析：} 过山车按“内侧光滑圆轨道、最高点轨道只能给向下支持力”的高中模型运行，轨道半径 $r = 8\ \mathrm{m}$，$g = 10\ \mathrm{m/s^2}$。求：
 \begin{enumerate}
   \item 过山车在最高点不掉下来的最小速度。
-  \item 若实际速度为 $v = 12\ \mathrm{m/s}$，求最高点时轨道对车的压力（$m = 500\ \mathrm{kg}$）。
+  \item 若实际速度为 $v = 12\ \mathrm{m/s}$，求最高点时轨道对车的支持力大小（$m = 500\ \mathrm{kg}$）。
 \end{enumerate}
 
 \textbf{物理模型：} 竖直圆周，最高点重力和支持力的合力提供向心力。
@@ -251,7 +324,7 @@ v_{\max} = \sqrt{\mu_s g r} = \sqrt{0.4 \times 10 \times 50} = \sqrt{200} \appro
   \]
 \end{enumerate}
 
-\textbf{方法总结：} 竖直圆周最高点的临界条件是 $N=0$、重力恰好提供向心力。速度小于临界值则会脱离轨道。
+\textbf{方法总结：} 对内侧轨道或轻绳模型，竖直圆周最高点的临界条件是 $N=0$、重力恰好提供向心力。速度小于临界值时，轨道或绳不能再提供“拉住”物体所需的约束，物体会脱离圆轨道。若是轻杆、双轨约束或带轮缘的实际装置，最高点受力和临界条件需要重新分析。
 
 \end{examplebox}
 
@@ -263,9 +336,12 @@ v_{\max} = \sqrt{\mu_s g r} = \sqrt{0.4 \times 10 \times 50} = \sqrt{200} \appro
   \item 汽车以 $v = 15\ \mathrm{m/s}$ 通过半径 $r = 30\ \mathrm{m}$ 的水平弯道，路面与轮胎间最大静摩擦因数 $\mu_s = 0.6$。问汽车是否侧滑？
   
   \item 质量为 $m$ 的小球在半径为 $r$ 的竖直光滑圆轨道内侧做圆周运动，在最高点速度为 $v$。求：
+  \begin{center}
+  \input{figures/tikz/training-vertical-circle}
+  \end{center}
   \begin{enumerate}
-    \item 轨道对小球的压力。
-    \item 若 $v = \sqrt{2gr}$，求最高点压力。
+    \item 轨道对小球的支持力大小。
+    \item 若 $v = \sqrt{2gr}$，求最高点支持力大小。
   \end{enumerate}
 \end{enumerate}
 
@@ -318,7 +394,7 @@ a = \sqrt{a_n^2 + a_t^2}
 \[
 \sum F_n=m\frac{v^2}{r},\qquad \sum F_t=ma_t
 \]
-其中 $\sum F_n$ 只负责“拐弯”，$\sum F_t$ 只负责“变快或变慢”。
+其中 $\sum F_n$ 对应速度方向改变，$\sum F_t$ 对应速率改变。
 
 \textbf{竖直圆周中的关键认识：}
 \begin{itemize}
@@ -343,7 +419,8 @@ a=a_n=\frac{v^2}{r}
 \begin{enumerate}
   \item 线速度 $v = \omega r$，向心加速度 $a_n = \dfrac{v^2}{r} = \omega^2 r$。
   \item 向心力 $F_n = m\dfrac{v^2}{r}$，由真实力的合力提供，不是独立的性质力。
-  \item 水平转弯：$f_s$ 提供向心力，$v_{\max} = \sqrt{\mu_s g r}$。
+  \item 水平路面转弯：静摩擦提供向心力，临界模型中 $v_{\max} = \sqrt{\mu_s g r}$。
+  \item 倾斜弯道中，支持力的水平分量可提供向心力，理想无摩擦时 $\tan\theta=\dfrac{v^2}{rg}$。
   \item 竖直圆周最高点临界：$v_{\min} = \sqrt{gr}$（$N=0$）。
   \item 皮带传动线速度相等，同轴转动角速度相等。
 \end{enumerate}

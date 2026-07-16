@@ -12,15 +12,17 @@
   \item 会分析串联和并联电路中 $I$、$U$、$R$ 的分配关系。
   \item 掌握电功 $W = IUt$ 和电功率 $P = IU$。
   \item 能进行简单的电路化简计算。
+  \item 认识二极管等非线性元件，知道不能机械套用欧姆定律。
+  \item 了解热敏、光敏等传感器常通过电阻变化输出电压信号。
 \end{enumerate}
 
 \section*{二、初高中衔接}
 
 初中已经学过这些基本知识——电流、电压、电阻、欧姆定律、串联并联。高中在以下方面深化：
 \begin{enumerate}
-  \item \textbf{电流的微观解释：} $I = nqSv$（$n$ 为载流子浓度）。
+  \item \textbf{电流的微观解释：} $I = n\lvert q\rvert Sv$（$n$ 为载流子浓度，$\lvert q\rvert$ 为单个载流子的电荷量大小）。
   \item \textbf{电阻定律：} $R = \rho \dfrac{l}{S}$——电阻与材料、长度、横截面积的定量关系。
-  \item \textbf{电功率的精确理解：} $P = IU$ 对任何电路成立；在纯电阻电路中，还可写成 $P = I^2R$ 或 $P = \dfrac{U^2}{R}$。
+  \item \textbf{电功率的精确理解：} 计算某个元件的端口功率时用 $P = UI$；在纯电阻元件中，还可写成 $P = I^2R$ 或 $P = \dfrac{U^2}{R}$。
   \item \textbf{电路化简和复杂计算：} 多电阻串并联的等效电阻计算。
 \end{enumerate}
 
@@ -42,7 +44,7 @@ I = \frac{\Delta Q}{\Delta t}
 \figcaption{电流的微观模型：载流子定向移动形成电流}\label{fig:current-microscopic}
 \end{center}
 
-若载流子电荷量为 $q$、数密度为 $n$、导体横截面积为 $S$、定向移动速率为 $v$，则可从“单位时间内穿过截面的载流子数”推出电流微观表达式。
+若单个载流子的电荷量大小为 $\lvert q\rvert$、数密度为 $n$、导体横截面积为 $S$、定向移动速率为 $v$，则可从“单位时间内穿过截面的载流子数”推出电流大小的微观表达式。
 
 \textbf{推导：} 在很短时间 $\Delta t$ 内，能穿过截面 $S$ 的载流子，来自截面前方长度为 $v\Delta t$ 的一段导体。这个小柱体体积为
 \[
@@ -54,11 +56,11 @@ N=nV=nSv\Delta t.
 \]
 这些载流子携带的电荷量为
 \[
-\Delta Q=Nq=nqSv\Delta t.
+\Delta Q=N\lvert q\rvert=n\lvert q\rvert Sv\Delta t.
 \]
 代入电流定义 $I=\dfrac{\Delta Q}{\Delta t}$，得到
 \[
-\boxed{I=nqSv}.
+\boxed{I=n\lvert q\rvert Sv}.
 \]
 图中采用正载流子等效示意；在金属导体中，电子实际定向移动方向与约定电流方向相反。这个公式说明电流大小不仅与载流子运动快慢有关，也与载流子多少和导体粗细有关。
 
@@ -70,7 +72,7 @@ N=nV=nSv\Delta t.
 \begin{itemize}
   \item 适用条件：线性导体，且温度等条件基本不变。
   \item 不适用于二极管、气体放电管等明显非线性元件；灯丝电阻随温度变化，严格说也不是恒定电阻。
-  \item $R$ 是导体本身的性质，与 $U$、$I$ 无关。
+  \item 对给定导体，在温度、形状和材料状态基本不变时，$R$ 是导体本身的性质，与外加 $U$、通过的 $I$ 无关。
 \end{itemize}
 
 \textbf{来源理解：} 对金属导体，电压越大，导体内部推动自由电子定向运动的电场越强；在温度基本不变时，定向移动速率与电场强度近似成正比，所以电流与电压近似成正比：
@@ -85,9 +87,9 @@ I\propto U.
 \]
 
 \begin{itemize}
-  \item $\rho$：电阻率（$\Omega \cdot \mathrm{m}$），由材料本身决定。
+  \item $\rho$：电阻率（$\Omega \cdot \mathrm{m}$），与材料和温度等状态有关。
   \item 金属的电阻率随温度升高而增大。
-  \item 超导现象：温度低于临界温度时 $\rho = 0$。
+  \item 超导现象：某些材料温度低于临界温度时，直流电阻可降为零。
 \end{itemize}
 
 \textbf{来源理解：} 导体越长，载流子在定向移动中经历的阻碍越多，电阻越大，故 $R\propto l$；导体横截面积越大，相当于可供电流通过的“通道”越宽，电阻越小，故 $R\propto \dfrac{1}{S}$。材料不同，阻碍强弱不同，用电阻率 $\rho$ 表示，于是
@@ -123,9 +125,35 @@ R=\rho\frac{l}{S}.
 
 \end{conceptbox}
 
+\begin{conceptbox}{节点与回路：电路方程的守恒思想}
+
+\begin{center}
+\input{figures/tikz/kirchhoff-circuit-laws}
+
+\figcaption{节点电流守恒与回路电压守恒}\label{fig:kirchhoff-circuit-laws}
+\end{center}
+
+串联、并联公式不是孤立记忆出来的，它们背后分别对应两条守恒思想。
+
+\textbf{节点电流守恒：} 稳恒电路中，导线交汇处不能持续积累电荷。若某节点有若干电流流入、若干电流流出，则
+\[
+\sum I_{\text{入}}=\sum I_{\text{出}}.
+\]
+并联电路中“干路电流等于各支路电流之和”，本质上就是节点处的电荷守恒。
+
+\textbf{回路电压守恒：} 一个电荷沿闭合回路走一圈又回到出发点，电势的总变化为零。电源使电势升高，电阻使电势降低，因此闭合回路中
+\[
+\sum U_{\text{升}}=\sum U_{\text{降}}.
+\]
+串联电路中“总电压等于各分电压之和”，本质上就是回路中的能量守恒。
+
+\textbf{学习要求：} 高中阶段遇到能直接化简的串并联电路，优先用串并联关系；遇到分叉较多、难以一眼化简的电路，可以先标出节点和回路，再用“电流守恒、能量守恒”的思想建立方程。
+
+\end{conceptbox}
+
 \begin{conceptbox}{电功与电功率}
 
-\textbf{电功：} 电流通过导体时做的功。
+\textbf{电功：} 电场力推动电荷通过元件时，电能转化为其他形式能的量。恒定电流通过电压为 $U$ 的元件、历时 $t$，电功为
 \[
 W = IUt
 \]
@@ -155,8 +183,8 @@ Q=P_{\text{热}}t=I^2Rt.
 \]
 
 \begin{itemize}
-  \item 纯电阻电路（如电炉、灯泡）：$P = IU = I^2R = \dfrac{U^2}{R}$。
-  \item 非纯电阻电路（如电动机）：$P = IU > I^2R$，多出的功率转化为机械能。
+  \item 纯电阻电路（如定值电阻、电炉丝；白炽灯丝只在温度近似稳定的小范围内可近似处理）：$P = IU = I^2R = \dfrac{U^2}{R}$。
+  \item 正常工作的非纯电阻用电器（如电动机）：输入电功率 $P_{\text{入}}=IU$，线圈发热功率 $P_{\text{热}}=I^2R$，通常 $P_{\text{入}}>P_{\text{热}}$，差值转化为机械能等其他形式。
 \end{itemize}
 
 \end{conceptbox}
@@ -168,12 +196,15 @@ Q=P_{\text{热}}t=I^2Rt.
 \toprule
 公式 & 物理意义 & 适用条件 \\
 \midrule
-$I = \dfrac{U}{R}$ & 欧姆定律 & 金属导体、电解液 \\
-$R = \rho\dfrac{l}{S}$ & 电阻定律 & 温度不变 \\
-$P = IU$ & 电功率 & 任何电路 \\
-$Q = I^2Rt$ & 焦耳定律 & 任何电路 \\
+$I = \dfrac{U}{R}$ & 欧姆定律 & 温度等状态不变的线性导体 \\
+$R = \rho\dfrac{l}{S}$ & 电阻定律 & 材料均匀、温度不变 \\
+$W = UIt$ & 电功 & 恒定电流，取元件两端电压和通过电流 \\
+$P = IU$ & 电功率 & 元件端口功率，取元件两端电压和通过电流 \\
+$Q = I^2Rt$ & 焦耳定律 & 有电阻发热的导体部分 \\
 串：$R = R_1 + R_2$ & 串联总电阻 & 串联 \\
 并：$\dfrac{1}{R} = \dfrac{1}{R_1} + \dfrac{1}{R_2}$ & 并联总电阻 & 并联 \\
+$\sum I_{\text{入}}=\sum I_{\text{出}}$ & 节点电流关系 & 稳恒电路 \\
+$\sum U_{\text{升}}=\sum U_{\text{降}}$ & 回路电压关系 & 闭合回路 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -212,6 +243,36 @@ U_1=4\ \mathrm{V},\qquad U_2=8\ \mathrm{V}.
 \end{center}
 
 \textbf{关键判断：} 电动机、电解槽、正在充电的电池都不是纯电阻元件。它们消耗的总电功率是 $UI$，其中只有 $I^2R$ 是线圈或内部电阻发热，不能用 $U^2/R$ 计算总功率。
+
+\subsection*{模型 4：伏安特性曲线与二极管}
+
+欧姆定律适用于线性导体，特征是 $I$-$U$ 图像近似为过原点的直线。二极管是典型的非线性元件，具有明显的\textbf{单向导电性}：正向电压达到一定程度后，电流迅速增大；反向接法时，在高中常见范围内电流很小。
+
+\begin{center}
+\input{figures/tikz/diode-iv-characteristic}
+
+\figcaption{二极管的伏安特性：非线性、单向导电，不能直接用 $R=U/I$ 当作恒定电阻}\label{fig:diode-iv-characteristic}
+\end{center}
+
+\textbf{学习边界：} 高中阶段不要求解释半导体内部的能带结构，但要会从伏安特性曲线判断元件是否满足欧姆定律。若图像不是直线，或者电阻随电压、电流明显变化，就不能把它当成恒定电阻处理。
+
+\subsection*{模型 5：传感器的分压读数}
+
+许多传感器不是直接“显示温度或光强”，而是先让某个电学量随外界条件改变。例如热敏电阻、光敏电阻和应变片的电阻会随温度、光照或形变变化。把它们接入分压电路，就能把物理量变化转化为输出电压变化。
+
+\begin{center}
+\input{figures/tikz/sensor-voltage-divider}
+
+\figcaption{传感器分压模型：外界物理量改变 $R_x$，电路把变化转化为输出电压}\label{fig:sensor-voltage-divider}
+\end{center}
+
+若输出电压取在传感器 $R_x$ 两端，则
+\[
+U_{\text{出}}=E\frac{R_x}{R_0+R_x}.
+\]
+因此 $R_x$ 增大时，$U_{\text{出}}$ 增大；$R_x$ 减小时，$U_{\text{出}}$ 减小。若输出电压取在固定电阻 $R_0$ 两端，变化方向则相反。
+
+\textbf{学习边界：} 本节只要求会把它看成“可变电阻 + 分压电路”。真实传感器还需要标定、放大和数据处理，这些会在实验与科学探究中继续出现。
 
 \section*{六、例题精讲}
 
@@ -254,7 +315,7 @@ U_1=4\ \mathrm{V},\qquad U_2=8\ \mathrm{V}.
 
 \begin{examplebox}{电功率计算}
 
-\textbf{题意分析：} 标有"$220\ \mathrm{V}$、$100\ \mathrm{W}$"的灯泡：
+\textbf{题意分析：} 标有“$220\ \mathrm{V}$、$100\ \mathrm{W}$”的灯泡：
 \begin{enumerate}
   \item 正常发光时电流和电阻是多少？
   \item 接在 $110\ \mathrm{V}$ 电源上时实际功率是多少？（假设电阻不变）
@@ -317,8 +378,18 @@ U_1=4\ \mathrm{V},\qquad U_2=8\ \mathrm{V}.
   \item $R_1 = 3\ \Omega$、$R_2 = 6\ \Omega$ 串联后接在 $U = 18\ \mathrm{V}$ 的电源上，求总电阻、电流和 $R_1$、$R_2$ 两端的电压。
   
   \item 将上题改为并联，求总电阻和干路电流。
+  \begin{center}
+  \input{figures/tikz/training-dc-series-parallel}
+  \end{center}
   
   \item 一台电动机 $R = 2\ \Omega$，$U = 110\ \mathrm{V}$，$I = 20\ \mathrm{A}$。求输入功率、发热功率和效率。
+  \begin{center}
+  \input{figures/tikz/training-motor-power}
+  \end{center}
+
+  \item 某元件的 $I$-$U$ 图像不是过原点直线，能否把 $R=U/I$ 当作该元件的恒定电阻？为什么？
+
+  \item 某传感器接成分压电路，输出电压取在传感器两端。若外界条件使传感器电阻增大，输出电压怎样变化？
 \end{enumerate}
 
 \section*{八、易错点}
@@ -333,7 +404,13 @@ U_1=4\ \mathrm{V},\qquad U_2=8\ \mathrm{V}.
   
   \item \textbf{串联分压时大电阻分大电压：} 不是大电阻分大电流（串联电流相等，不存在分电流）。
   
-  \item \textbf{误以为焦耳定律 $Q = I^2Rt$ 只适用于纯电阻电路：} 它适用于任何电路（电流的热效应总是存在的），但在非纯电阻电路中 $Q \neq IUt$。
+  \item \textbf{误以为焦耳定律 $Q = I^2Rt$ 只适用于纯电阻电路：} 对任何有电阻发热的导体部分，它都可用于计算该部分产生的电热；但在非纯电阻电路中，整个用电器消耗的电能不全变成热，通常 $Q \neq IUt$。
+
+  \item \textbf{把二极管当普通电阻：} 二极管的伏安特性是非线性的，且正反向性质不同，不能直接套串并联电阻公式。
+
+  \item \textbf{传感器题不看输出端接在哪里：} 同一个可变电阻，输出取在它两端或固定电阻两端，电压变化方向可能相反。
+
+  \item \textbf{复杂电路只凭直觉猜串并联：} 分叉较多时，先看节点电流是否守恒、闭合回路中电压升降是否平衡，再判断能否化简。
 \end{enumerate}
 \end{mistakebox}
 
@@ -372,6 +449,9 @@ R_{\text{总}} = \frac{R}{3}+\frac{R}{6}+\frac{R}{3}=\frac{5}{6}R
   \item 欧姆定律 $I = \dfrac{U}{R}$，电阻定律 $R = \rho\dfrac{l}{S}$。
   \item 串联：$I$ 相等，$U$ 分压，$R = R_1 + R_2$。
   \item 并联：$U$ 相等，$I$ 分流，$\dfrac{1}{R} = \dfrac{1}{R_1} + \dfrac{1}{R_2}$。
-  \item 电功率 $P = IU$，焦耳定律 $Q = I^2Rt$。
+  \item 节点电流守恒来自电荷守恒，回路电压守恒来自能量守恒。
+  \item 电功 $W=UIt$，电功率 $P = IU$，焦耳定律 $Q = I^2Rt$。
   \item 非纯电阻电路中 $P_{\text{电}} = UI$，$P_{\text{热}} = I^2R$，两者不等。
+  \item 二极管等非线性元件的伏安特性不是直线，不能当作恒定电阻处理。
+  \item 热敏、光敏等传感器常可看成可变电阻，借助分压电路把物理量变化转化为电压信号。
 \end{enumerate}

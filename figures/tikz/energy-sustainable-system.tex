@@ -1,0 +1,30 @@
+% TikZ 图：能源与可持续发展系统模型
+% Day 30：综合收束
+\begin{tikzpicture}[>=Latex,scale=0.88,every node/.style={font=\scriptsize}]
+  \tikzset{
+    block/.style={draw,rounded corners=2pt,minimum width=2.45cm,minimum height=1.05cm,align=center,fill=gray!6},
+    note/.style={draw,rounded corners=2pt,align=center,fill=yellow!12,inner sep=4pt},
+    flow/.style={->,thick},
+    loss/.style={->,thick,red!75},
+    info/.style={->,thick,blue!75}
+  }
+
+  \node[block,fill=green!10] (source) at (0,1.6) {一次能源\\太阳能、风能\\化石燃料、核能};
+  \node[block,fill=orange!10] (convert) at (3.2,1.6) {能量转换\\发电机、热机\\光伏电池};
+  \node[block,fill=blue!8] (grid) at (6.4,1.6) {传输与储能\\升压输电\\电池、超级电容};
+  \node[block,fill=purple!8] (use) at (9.6,1.6) {终端利用\\电动机、照明\\计算与通信};
+
+  \draw[flow] (source) -- (convert);
+  \draw[flow] (convert) -- (grid);
+  \draw[flow] (grid) -- (use);
+
+  \node[note] (law) at (3.2,-0.15) {守恒账本\\输入能量 $=$ 有用能\\$+$ 损耗能};
+  \node[note] (eta) at (6.4,-0.15) {效率意识\\$\eta=\dfrac{E_{\text{有用}}}{E_{\text{输入}}}$\\高压输电减小 $I^2R$};
+  \node[note] (risk) at (9.6,-0.15) {边界意识\\安全、环境\\成本与可靠性};
+
+  \draw[info] (convert.south) -- (law.north);
+  \draw[info] (grid.south) -- (eta.north);
+  \draw[info] (use.south) -- (risk.north);
+
+  \node[align=center,font=\tiny] at (4.8,2.85) {物理不是只算一个环节，而是检查整条能量链};
+\end{tikzpicture}

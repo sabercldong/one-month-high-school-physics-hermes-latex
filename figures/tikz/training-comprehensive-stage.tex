@@ -1,0 +1,17 @@
+\begin{tikzpicture}[scale=0.8,>=Stealth,line cap=round,line join=round]
+  \coordinate (A) at (0,2.0);
+  \coordinate (B) at (2.7,0);
+  \coordinate (C) at (5.4,0);
+  \draw[thick] (A) -- (0.66,1.51);
+  \draw[thick] (1.18,1.13) -- (B) -- (C);
+  \begin{scope}[shift={(0.92,1.32)},rotate=-36.5]
+    \draw[fill=gray!12,thick] (-0.32,0) rectangle (0.32,0.42);
+  \end{scope}
+  \draw[fill=gray!12] (3.55,0) rectangle (4.15,0.45);
+  \draw[->,blue,thick] (1.25,1.03) -- (1.85,0.58);
+  \draw[->,red,thick] (4.15,0.25) -- (3.45,0.25) node[midway,above] {$f$};
+  \node[align=center,font=\small] at (1.25,-0.72) {阶段 1\\光滑斜面};
+  \node[align=center,font=\small] at (4.45,-0.72) {阶段 2\\粗糙水平面};
+  \draw[dashed] (2.7,0) -- (2.7,1.0);
+  \node[above,font=\small] at (2.7,1.0) {模型切换};
+\end{tikzpicture}

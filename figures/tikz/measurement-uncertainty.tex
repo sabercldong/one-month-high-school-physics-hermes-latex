@@ -1,0 +1,40 @@
+\begin{tikzpicture}[scale=0.92,>=Stealth]
+  \tikzset{
+    tick/.style={thick},
+    guide/.style={gray,dashed},
+    note/.style={font=\small,align=center}
+  }
+
+  \begin{scope}
+    \node[font=\small] at (0,1.42) {模拟刻度：读数要估读到最小分度后一位};
+    \draw[thick] (-3.4,0) -- (3.4,0);
+    \foreach \x in {-3,-2,...,3}{
+      \draw[tick] (\x,0.18) -- (\x,-0.18);
+      \node[font=\scriptsize] at (\x,-0.42) {\x};
+    }
+    \foreach \x in {-2.5,-1.5,...,2.5}{
+      \draw (\x,0.12) -- (\x,-0.12);
+    }
+    \draw[red,very thick,->] (1.35,1.00) -- (1.35,0.15);
+    \node[font=\small,red] at (1.35,1.20) {读数约 $1.4$};
+    \draw[<->,blue] (0.85,-0.82) -- (1.85,-0.82);
+    \node[font=\scriptsize,blue] at (1.35,-1.10) {估计范围};
+  \end{scope}
+
+  \begin{scope}[xshift=0cm,yshift=-2.85cm]
+    \node[font=\small] at (0,1.05) {数字仪表：最后一位通常代表分辨率};
+    \draw[rounded corners=3pt,thick,fill=gray!8] (-1.95,-0.35) rectangle (1.95,0.55);
+    \node[font=\Large] at (0,0.10) {$2.36\ \mathrm{V}$};
+    \node[note] at (0,-0.90) {若分辨率为 $0.01\ \mathrm{V}$，不要随意写成 $2.3600\ \mathrm{V}$};
+  \end{scope}
+
+  \begin{scope}[xshift=0cm,yshift=-5.10cm]
+    \draw[->,thick] (-3.0,0) -- (3.0,0) node[right,font=\small] {测量值};
+    \draw[thick,red] (-0.70,0.18) -- (-0.70,-0.18);
+    \draw[thick,red] (0.70,0.18) -- (0.70,-0.18);
+    \draw[red,very thick,<->] (-0.70,0) -- (0.70,0);
+    \fill[red] (0,0) circle (1.5pt);
+    \node[font=\small,red] at (0,0.42) {$x\pm\Delta x$};
+    \node[note] at (0,-0.62) {结果表达既要有数值，也要让读者知道可信到哪一位};
+  \end{scope}
+\end{tikzpicture}

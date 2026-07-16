@@ -6,17 +6,21 @@
   \node[left] at (-4.45,0) {电子枪};
   \draw[thick] (-3.0,0.9) -- (-3.0,-0.9);
   \draw[thick] (-2.35,0.9) -- (-2.35,-0.9);
+  \node[above,font=\small] at (-3.0,0.95) {$-$};
+  \node[above,font=\small] at (-2.35,0.95) {$+$};
   \foreach \y in {-0.35,0,0.35} {
-    \draw[->,blue] (-2.9,\y) -- (-2.45,\y);
+    \draw[->,blue] (-2.45,\y) -- (-2.9,\y);
   }
   \node[below,font=\small,fill=white,inner sep=1pt] at (-2.68,-1.05) {加速区};
 
   % y 偏转板
   \draw[thick] (-1.35,0.8) -- (0.55,0.8);
   \draw[thick] (-1.35,-0.8) -- (0.55,-0.8);
+  \node[left,font=\small] at (-1.43,0.8) {$-$};
+  \node[left,font=\small] at (-1.43,-0.8) {$+$};
   \node[above,font=\small,fill=white,inner sep=1pt] at (-0.4,0.9) {$Y$偏转板};
   \foreach \x in {-1.0,-0.35,0.3} {
-    \draw[->,blue!65] (\x,0.65) -- (\x,-0.65);
+    \draw[->,blue!65] (\x,-0.65) -- (\x,0.65);
   }
 
   % x 偏转板（侧视中用窄板表示）

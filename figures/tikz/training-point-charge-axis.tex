@@ -1,0 +1,17 @@
+\begin{tikzpicture}[scale=0.95,>=Stealth,line cap=round,line join=round]
+  \path[use as bounding box] (-0.65,-0.72) rectangle (4.75,1.55);
+  \draw[->,thick] (-0.55,0) -- (4.55,0) node[right] {$x$};
+  \coordinate (A) at (0,0);
+  \coordinate (Q) at (3.0,0);
+  \draw[thick] (A) ++(0,0.08) -- ++(0,-0.16);
+  \draw[thick] (Q) ++(0,0.08) -- ++(0,-0.16);
+  \draw[fill=red!70,draw=red!80!black] (Q) circle (0.075);
+  \node[below,font=\small,align=center] at (A) {场点\\$x=0$};
+  \node[below,font=\small,align=center] at (Q) {$x=0.20\,\mathrm m$};
+  \node[above,red,font=\small] at (Q) {$Q=-2\times10^{-9}\,\mathrm C$};
+  \draw[<->,gray,thick] (0,0.82) -- (3,0.82)
+    node[midway,above,font=\small] {$r=0.20\,\mathrm m$};
+  \draw[->,blue,thick] (0,0.32) -- (1.15,0.32)
+    node[midway,above] {$\vec E$};
+  \node[font=\small] at (1.55,1.36) {负电荷产生的场强指向电荷};
+\end{tikzpicture}

@@ -1,0 +1,27 @@
+% TikZ 图：力矩与杠杆平衡
+% Day 05：力、重力、弹力、摩擦力
+\begin{tikzpicture}[scale=0.92,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  \draw[thick,fill=gray!10] (-4.3,0) rectangle (4.3,0.16);
+  \draw[thick,fill=gray!25] (-0.22,-0.08) -- (0.22,-0.08) -- (0,-0.55) -- cycle;
+  \fill[black] (0,0.08) circle (2pt);
+  \node[below] at (0,-0.58) {转轴};
+
+  \draw[red!80!black,very thick,->] (-2.9,0.16) -- (-2.9,-0.98);
+  \node[red!80!black,left] at (-2.9,-0.50) {$F_1$};
+  \draw[blue!80!black,very thick,->] (1.95,0.16) -- (1.95,-0.98);
+  \node[blue!80!black,right] at (1.95,-0.50) {$F_2$};
+
+  \draw[<->,red!80!black] (0,0.60) -- (-2.9,0.60);
+  \node[red!80!black,above] at (-1.45,0.60) {$l_1$};
+  \draw[<->,blue!80!black] (0,0.98) -- (1.95,0.98);
+  \node[blue!80!black,above] at (0.98,0.98) {$l_2$};
+
+  \draw[red!80!black,->] (-0.78,0.33) arc[start angle=150,end angle=80,radius=0.56];
+  \node[red!80!black,font=\scriptsize] at (-1.58,1.15) {逆时针力矩};
+  \draw[blue!80!black,->] (0.74,0.33) arc[start angle=30,end angle=-55,radius=0.56];
+  \node[blue!80!black,font=\scriptsize] at (1.78,1.38) {顺时针力矩};
+
+  \node[align=center] at (0,-1.72)
+    {平衡条件：$F_1l_1=F_2l_2$\\力臂是转轴到力的作用线的垂直距离};
+\end{tikzpicture}

@@ -1,0 +1,16 @@
+\begin{tikzpicture}[scale=0.85,>=Stealth]
+  \draw[thick] (0,0) -- (0,1.6) -- (1.0,1.6);
+  \draw[thick] (1.0,1.35) rectangle (1.75,1.85);
+  \draw[thick] (1.75,1.6) -- (2.65,1.6);
+  \draw[thick] (2.65,1.35) rectangle (3.55,1.85);
+  \draw[thick] (3.55,1.6) -- (4.3,1.6) -- (4.3,0) -- (0,0);
+  \draw[thick] (-0.2,0.35) -- (0.2,0.35);
+  \draw[thick] (-0.12,0.65) -- (0.12,0.65);
+  \node[left] at (-0.22,0.65) {$+$};
+  \node[left] at (-0.22,0.35) {$-$};
+  \node at (0.45,0.82) {$E$};
+  \node at (1.38,2.1) {$r$};
+  \node at (3.1,2.1) {$R$};
+  \draw[->,red,thick] (1.95,1.83) -- (2.55,1.83) node[midway,above] {$I$};
+  \node at (2.15,-0.35) {闭合电路：$E=I(R+r)$，$U=IR$};
+\end{tikzpicture}

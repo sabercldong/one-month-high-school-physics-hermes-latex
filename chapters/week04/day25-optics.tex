@@ -9,8 +9,10 @@
   \item 掌握反射定律、折射定律和折射率的含义。
   \item 会判断光从光疏介质进入光密介质时偏折方向。
   \item 理解全反射条件和临界角公式。
-  \item 会用凸透镜光路图分析成像性质。
+  \item 会用凸透镜光路图分析成像性质，并能联系照相机、人眼、放大镜等光学仪器。
+  \item 理解光的频率、波长、波速和颜色之间的基本关系。
   \item 初步理解双缝干涉中条纹间距与波长、缝距、屏距的关系。
+  \item 了解薄膜干涉、衍射和偏振体现的光的波动性。
 \end{enumerate}
 
 \section*{二、初高中衔接}
@@ -46,6 +48,22 @@
 
 \end{conceptbox}
 
+\begin{conceptbox}{光路可逆性}
+
+在同一组静止介质和光学元件中，如果光可以沿某条路径从 $A$ 到 $B$，那么从 $B$ 沿相反方向入射，也会沿原路径返回 $A$。这叫\textbf{光路可逆性}。
+
+\begin{center}
+\input{figures/tikz/optical-reversibility}
+
+\figcaption{光路可逆性：同一条折射光路反向传播时仍满足相同的折射定律}\label{fig:optical-reversibility}
+\end{center}
+
+\textbf{学习意义：} 画反射、折射和透镜成像图时，可以用光路可逆性检查图像是否合理。例如从物点到像点的光线若画对了，反向从像点出发也应沿同一路径回到物点。
+
+\textbf{边界提醒：} 光路可逆性讨论的是理想几何光学中的传播路径；遇到吸收、散射或特殊单向光学器件时，实际强度和路径可能不再简单可逆。高中阶段通常只在反射、折射、透镜和光纤等理想模型中使用。
+
+\end{conceptbox}
+
 \begin{conceptbox}{折射率}
 
 介质的绝对折射率定义为
@@ -57,13 +75,29 @@
 \begin{itemize}
   \item $n$ 越大，光在该介质中传播越慢。
   \item 真空折射率为 1，空气折射率通常近似取 1。
-  \item 折射率不是“光线弯曲程度”的直接定义，但它决定折射角。
+  \item 折射率不是“光线弯曲程度”的直接定义；折射角由两种介质的折射率和入射角共同决定。
 \end{itemize}
+
+\begin{center}
+\input{figures/tikz/refraction-speed-wavefront}
+
+\figcaption{折射率与光速：进入折射率更大的介质时，光速变小，光线靠近法线}\label{fig:refraction-speed-wavefront}
+\end{center}
+
+\textbf{频率、波长与颜色：}
+光也是波，满足
+\[
+v=\lambda f.
+\]
+同一束光从一种介质进入另一种介质时，频率 $f$ 由光源决定，通常不变；传播速度 $v$ 改变，所以波长 $\lambda$ 随之改变。进入折射率更大的介质时，$v$ 变小，$\lambda$ 也变短。可见光的颜色主要由频率决定，所以红光、蓝光在同一介质中速度和波长可以不同，但“颜色身份”对应的是频率。
+
+\textbf{认知提醒：}
+不要把“波长变短”误解为“频率变高”。跨介质传播时，频率通常不变；在同一种介质中，才常用 $v=\lambda f$ 比较不同频率光的波长。
 \end{conceptbox}
 
 \begin{conceptbox}{全反射}
 
-当光从光密介质射向光疏介质，且入射角大于临界角时，折射光消失，全部光返回原介质，这就是全反射。
+当光从光密介质射向光疏介质，且入射角大于临界角时，在理想无吸收界面的高中几何光学模型中不再画折射光，反射光全部返回原介质，这就是全反射。
 
 \[
 \boxed{\sin C=\frac{n_2}{n_1}}\qquad(n_1>n_2)
@@ -97,18 +131,24 @@
 \section*{四、公式与适用条件}
 
 \begin{center}
-\begin{tabular}{lll}
+\begingroup
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{p{0.24\textwidth}p{0.24\textwidth}p{0.42\textwidth}}
 \toprule
 公式 & 物理意义 & 适用条件 \\
 \midrule
-$i=i'$ & 反射定律 & 镜面反射 \\
-$n_1\sin i=n_2\sin r$ & 折射定律 & 两介质分界面 \\
-$n=\dfrac{c}{v}$ & 绝对折射率 & 介质中光速为 $v$ \\
+$i=i'$ & 反射定律 & 镜面反射；两角均相对于法线 \\
+像距 $=$ 物距 & 平面镜成像 & 像与物关于镜面对称 \\
+$n_1\sin i=n_2\sin r$ & 折射定律 & 两均匀介质分界面；角度均相对于法线 \\
+$n=\dfrac{c}{v}$ & 绝对折射率 & $v$ 为该介质中的光速，$c$ 为真空光速 \\
+$v=\lambda f$ & 光速、波长、频率关系 & 在同一介质内取同一束光的 $v,\lambda,f$；跨介质时 $f$ 通常不变 \\
 $\sin C=\dfrac{n_2}{n_1}$ & 临界角 & 光密到光疏，$n_1>n_2$ \\
-$\dfrac1f=\dfrac1u+\dfrac1v$ & 薄透镜成像 & 近轴光线、薄透镜 \\
-$\Delta x=\dfrac{L\lambda}{d}$ & 双缝条纹间距 & $L\gg d$ 的近似条件 \\
+$\dfrac1f=\dfrac1u+\dfrac1v$ & 薄透镜成像 & 近轴光线、薄透镜；先统一正负号 \\
+$|m|=\dfrac{|h'|}{|h|}\approx\dfrac{v}{u}$ & 横向放大率大小 & 薄透镜近轴成像，取大小关系 \\
+$\Delta x=\dfrac{L\lambda}{d}$ & 双缝条纹间距 & 单色相干光；$L\gg d$ 且满足小角度近似 \\
 \bottomrule
 \end{tabular}
+\endgroup
 \end{center}
 
 \section*{五、典型模型}
@@ -120,7 +160,23 @@ $\Delta x=\dfrac{L\lambda}{d}$ & 双缝条纹间距 & $L\gg d$ 的近似条件 \
 n_2>n_1\Rightarrow r<i,\qquad n_2<n_1\Rightarrow r>i.
 \]
 
-\subsection*{模型 2：全反射与光纤}
+\subsection*{模型 2：平面镜成像与视深}
+
+平面镜成像和水中物体“看起来变浅”都不是新的力学过程，而是光路反向延长后形成的几何结果：
+\begin{itemize}
+  \item \textbf{平面镜：} 像与物关于镜面对称，像距等于物距，成正立等大的虚像。
+  \item \textbf{视深：} 从水中射向空气的光线折射后远离法线，人眼沿空气中光线反向延长，会把水中物体看成位于较浅处的虚像。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/plane-mirror-apparent-depth}
+
+\figcaption{平面镜成像与视深：虚像来自反射光线或折射光线的反向延长}\label{fig:plane-mirror-apparent-depth}
+\end{center}
+
+\textbf{学习边界：} 高中阶段遇到平面镜和视深题，先画实际光线，再画反向延长线。不要把虚像当作真实光线会聚的位置。
+
+\subsection*{模型 3：全反射与光纤}
 
 全反射必须同时满足两个条件：
 \[
@@ -128,11 +184,63 @@ n_2>n_1\Rightarrow r<i,\qquad n_2<n_1\Rightarrow r>i.
 \]
 若只满足入射角大，但方向是从光疏到光密，不会发生全反射。
 
-\subsection*{模型 3：凸透镜成像}
+\subsection*{模型 4：凸透镜成像}
 
-物距大于 $2f$ 时，成倒立缩小实像；物距在 $f$ 与 $2f$ 之间时，成倒立放大实像；物距小于 $f$ 时，成正立放大虚像。
+物距大于 $2f$ 时，成倒立缩小实像；物距等于 $2f$ 时，成倒立等大实像；物距在 $f$ 与 $2f$ 之间时，成倒立放大实像；物距等于 $f$ 时，折射光近似平行，屏上不能得到有限距离处的清晰实像；物距小于 $f$ 时，成正立放大虚像。
 
-\subsection*{模型 4：双缝干涉}
+\begin{center}
+\input{figures/tikz/lens-object-zones}
+
+\figcaption{凸透镜成像分区：物距所在区间决定像的性质}\label{fig:lens-object-zones}
+\end{center}
+
+若要用实验测凸透镜焦距，常让物体、凸透镜和光屏共轴，移动光屏直到得到清晰实像。测出物距 $u$ 和像距 $v$ 后，由薄透镜公式
+\[
+\frac1f=\frac1u+\frac1v
+\]
+求焦距 $f$。这里的 $u,v$ 都应从透镜光心附近量起，不能从支架边缘量起。
+
+\begin{center}
+\input{figures/tikz/lens-focal-length-experiment}
+
+\figcaption{凸透镜焦距测量：调出清晰实像后，用物距和像距求焦距}\label{fig:lens-focal-length-experiment}
+\end{center}
+
+\subsection*{模型 5：光学仪器中的凸透镜}
+
+照相机、人眼、放大镜、显微镜和望远镜，本质上都在使用凸透镜成像。学生容易把“透镜成像表”背成孤立结论，但光学仪器恰好能把这些结论连起来：
+\begin{itemize}
+  \item \textbf{照相机和人眼：} 远处物体经凸透镜成倒立、缩小的实像，像必须落在胶片或视网膜上才清晰。
+  \item \textbf{放大镜：} 物体放在焦点以内，人眼看到正立、放大的虚像。
+  \item \textbf{显微镜和望远镜：} 常用两组透镜，先由物镜形成中间像，再由目镜把中间像放大供眼睛观察。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/optical-instruments-lens}
+
+\figcaption{光学仪器中的凸透镜：先判断成实像还是虚像，再判断像是否落在接收屏上}\label{fig:optical-instruments-lens}
+\end{center}
+
+\textbf{认知提醒：} 实像可以成在屏上；虚像不是实际光线会聚点，不能直接投到光屏上，需要眼睛或后续透镜系统沿反向延长线接收。这个区别比机械背“正倒、大小”更重要。
+
+\subsection*{模型 6：人眼屈光不正与矫正}
+
+人眼要看清物体，关键是晶状体把来自物体的光会聚到视网膜上。若像没有落在视网膜上，就会看不清。
+
+\begin{center}
+\input{figures/tikz/eye-defects-correction}
+
+\figcaption{近视与远视的透镜矫正：矫正镜先改变入眼光束的会聚程度}\label{fig:eye-defects-correction}
+\end{center}
+
+\begin{itemize}
+  \item \textbf{近视眼：} 远处物体的像成在视网膜前，说明眼睛会聚能力偏强，需用\textbf{凹透镜}先把光发散，使像后移到视网膜上。
+  \item \textbf{远视眼：} 近处物体的像成在视网膜后，说明眼睛会聚能力偏弱，需用\textbf{凸透镜}先把光会聚，使像前移到视网膜上。
+\end{itemize}
+
+\textbf{判断口诀：} 近视“前像后移”用凹透镜；远视“后像前移”用凸透镜。不要只背镜片名称，要先判断像相对视网膜的位置。
+
+\subsection*{模型 7：双缝干涉}
 
 光具有波动性，相干光叠加会形成明暗条纹。相邻亮纹间距为
 \[
@@ -154,6 +262,12 @@ n_2>n_1\Rightarrow r<i,\qquad n_2<n_1\Rightarrow r>i.
 \Delta x=\frac{L\lambda}{d}.
 \]
 因此，屏越远或波长越长，条纹越疏；双缝间距越大，条纹越密。
+
+\begin{center}
+\input{figures/tikz/double-slit-path-difference}
+
+\figcaption{双缝光程差：用几何关系把光程差转化为屏上距离}\label{fig:double-slit-path-difference}
+\end{center}
 
 \section*{六、例题精讲}
 
@@ -230,7 +344,15 @@ C\approx41.8^\circ.
   \item 光从水射入空气时，折射光线相对法线是靠近还是远离？
   \item 某介质中光速为 $2.0\times10^8\ \mathrm{m/s}$，求折射率。
   \item 光从折射率 $1.33$ 的水射向空气，写出临界角满足的方程。
+  \begin{center}
+  \input{figures/tikz/training-optics-critical}
+  \end{center}
+  \item 用放大镜看邮票时，邮票应放在焦点以内还是焦点以外？看到的是实像还是虚像？
+  \item 用凸透镜成像法测焦距时，若已测得物距 $u$ 和像距 $v$，应怎样求焦距？
   \item 双缝实验中，若缝距增大为原来的 2 倍，条纹间距怎样变化？
+  \begin{center}
+  \input{figures/tikz/training-double-slit-d-change}
+  \end{center}
 \end{enumerate}
 
 \subsection*{训练提示}
@@ -238,6 +360,8 @@ C\approx41.8^\circ.
   \item 水到空气是光密到光疏，折射光线远离法线；若入射角足够大，还可能全反射。
   \item 用 $n=c/v$，真空光速取 $3.0\times10^8\ \mathrm{m/s}$。
   \item 临界角满足 $\sin C=\dfrac{1}{1.33}$，不要把分子分母写反。
+  \item 放大镜成正立、放大的虚像，物体应放在焦点以内。
+  \item 由 $\dfrac1f=\dfrac1u+\dfrac1v$ 得 $f=\dfrac{uv}{u+v}$，注意 $u,v$ 要从透镜光心附近量起。
   \item 由 $\Delta x=\dfrac{L\lambda}{d}$ 可知，$d$ 增大为 2 倍，条纹间距变为原来的一半。
 \end{enumerate}
 
@@ -245,9 +369,14 @@ C\approx41.8^\circ.
 \begin{mistakebox}
 \begin{enumerate}
   \item \textbf{角度量错：} 入射角、反射角、折射角都相对于法线，不是相对于界面。
+  \item \textbf{把虚像当成真实光线交点：} 平面镜像和视深中的像都来自光线反向延长，真实光线并没有在虚像处会聚。
   \item \textbf{全反射条件不完整：} 只写 $i>C$ 不够，还必须是光密到光疏。
   \item \textbf{把折射率理解成光速变快：} 折射率越大，介质中光速越小。
+  \item \textbf{误以为光进入介质后频率改变：} 同一束光跨介质时频率通常不变，改变的是速度和波长。
   \item \textbf{凸透镜成像只背表格：} 真正稳定的方法是画两条特殊光线。
+  \item \textbf{测焦距时距离量错：} 物距、像距应从透镜光心附近到物或光屏的位置量起，不要把支架边缘当成透镜位置。
+  \item \textbf{混淆实像和虚像：} 照相机、人眼需要实像落在接收屏上；放大镜看到的是虚像，不能直接成在光屏上。
+  \item \textbf{近视远视矫正镜片记反：} 先看像在视网膜前还是后。像在前用凹透镜使像后移；像在后用凸透镜使像前移。
   \item \textbf{波动光学单位混乱：} $\lambda$ 常用纳米，$d$ 常用毫米，计算前必须换算。
 \end{enumerate}
 \end{mistakebox}
@@ -265,10 +394,8 @@ C\approx41.8^\circ.
 \[
 t=\frac{s_1}{v_1}+\frac{s_2}{v_2}+\cdots,
 \]
-再利用几何关系寻找最短时间路径。高中阶段先掌握法线、角度和折射率，竞赛阶段再把它们统一到“最短时间”思想中。
+再利用几何关系寻找传播时间取驻值的路径。高中阶段先掌握法线、角度和折射率，竞赛阶段再把它们统一到费马原理的思想中。
 \end{competitionbox}
-
-\section*{十、模型深化与现代光学}
 
 \subsection*{1.\quad 棱镜色散：折射率与波长有关}
 
@@ -316,6 +443,38 @@ t=\frac{s_1}{v_1}+\frac{s_2}{v_2}+\cdots,
 
 \textbf{公式来源直觉：} 屏越远，同样的角度差在屏上拉开的距离越大；双缝间距越大，同一位置产生的光程差变化更快，条纹就更密。这比只记公式更能防止把 $L$ 和 $d$ 的影响记反。
 
+\subsection*{4.\quad 薄膜干涉：从光程差到彩色条纹}
+
+肥皂泡、油膜和镜头镀膜常出现彩色条纹，本质上是\textbf{薄膜干涉}。入射光到达薄膜上表面时，一部分直接反射；另一部分进入薄膜，在下表面反射后再射出。两束反射光到达人眼时发生叠加。
+
+\begin{center}
+\input{figures/tikz/thin-film-interference}
+
+\figcaption{薄膜干涉：上下表面的两束反射光叠加，光程差决定加强或减弱}\label{fig:thin-film-interference}
+\end{center}
+
+\textbf{核心判断：} 薄膜厚度 $d$ 改变时，两束反射光的光程差随之改变。不同波长的光满足加强或减弱条件的位置不同，所以白光照射下会看到彩色条纹。
+
+\textbf{边界提醒：} 薄膜干涉的严格明暗条件还要考虑反射时是否发生半波损失。高中入门阶段先抓住“同一束光分成两束，再因光程差发生干涉”的模型；遇到定量题时再按题目给出的相位条件处理。
+
+\textbf{科学应用：} 镜头增透膜会设计合适厚度，使某些反射光相互削弱，从而减少反光、提高透光率。这里用到的仍然是干涉思想，而不是简单“涂一层透明材料”。
+
+\subsection*{5.\quad 衍射与偏振：光的波动性补充}
+
+高中光学题最常考几何光学和双缝干涉，但从科学发展角度看，衍射和偏振同样重要。
+\begin{itemize}
+  \item \textbf{衍射：} 光遇到小孔、窄缝或障碍物边缘时会发生绕射。孔径越接近光的波长，衍射越明显；显微镜和望远镜的分辨率最终会受到衍射限制。
+  \item \textbf{偏振：} 光是横波，振动方向可以被选择。偏振片、液晶显示和许多光学传感器都利用了偏振。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/optical-diffraction-polarization}
+
+\figcaption{光的衍射与偏振：衍射限制分辨率，偏振体现光的横波性质}\label{fig:optical-diffraction-polarization}
+\end{center}
+
+\textbf{学习边界：} 高中阶段不要求用复杂公式计算衍射图样，但要知道衍射说明光具有波动性，偏振进一步说明光是横波。遇到“为什么光学仪器不能无限放大”的问题，要想到衍射极限。
+
 \begin{examplebox}{光纤临界角与数值判断}
 \textbf{题意分析：} 某光纤芯层折射率 $n_1=1.48$，包层折射率 $n_2=1.46$。光从芯层射向包层，求临界角满足的关系，并判断临界角接近 $80^\circ$ 还是 $40^\circ$。
 
@@ -330,20 +489,26 @@ t=\frac{s_1}{v_1}+\frac{s_2}{v_2}+\cdots,
 \textbf{方法总结：} 折射率差很小时，临界角很大，光必须以较“贴近界面”的方向入射才会全反射。
 \end{examplebox}
 
-\subsection*{4.\quad 分层训练}
+\subsection*{6.\quad 分层训练}
 
 \begin{enumerate}
   \item \textbf{基础：} 光从空气进入水中，入射角为 $45^\circ$，折射角比入射角大还是小？
   \item \textbf{提高：} 某透明介质折射率为 $1.60$，光从该介质射向空气，写出临界角方程。
   \item \textbf{综合：} 双缝实验中换用波长更短的蓝光，其他条件不变，条纹间距如何变化？说明理由。
+  \item \textbf{拓展：} 肥皂泡为什么会呈现彩色条纹？从薄膜干涉角度说明。
   \item \textbf{开放思考：} 为什么显微镜和望远镜不仅要考虑几何成像，还要考虑衍射极限？
 \end{enumerate}
 
-\section*{十一、今日小结}
+\section*{十、今日小结}
 \begin{enumerate}
   \item 反射角等于入射角，折射遵循 $n_1\sin i=n_2\sin r$。
+  \item 平面镜成像满足像距等于物距；视深变浅来自折射光线的反向延长。
   \item 折射率 $n=c/v$，折射率越大，介质中光速越小。
+  \item 光满足 $v=\lambda f$；跨介质传播时频率通常不变，速度和波长改变。
   \item 全反射必须从光密介质射向光疏介质，且入射角大于临界角。
-  \item 凸透镜成像要会画特殊光线，不只背结论。
+  \item 凸透镜成像要会画特殊光线，并能解释照相机、人眼和放大镜的成像差异；测焦距时可由清晰实像的 $u,v$ 求 $f$。
+  \item 近视像在视网膜前，用凹透镜矫正；远视像在视网膜后，用凸透镜矫正。
   \item 双缝干涉说明光具有波动性，条纹间距 $\Delta x=L\lambda/d$。
+  \item 薄膜干涉来自上下表面反射光的叠加，可解释肥皂泡彩纹和增透膜。
+  \item 衍射限制光学仪器分辨率，偏振体现光的横波性质。
 \end{enumerate}

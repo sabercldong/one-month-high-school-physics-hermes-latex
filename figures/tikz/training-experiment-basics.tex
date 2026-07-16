@@ -1,0 +1,22 @@
+\begin{tikzpicture}[scale=0.88,>=Stealth,line cap=round,line join=round]
+  \begin{scope}
+    \path[use as bounding box] (-0.25,-0.78) rectangle (7.20,1.95);
+    \draw[thick] (0,0) -- (4.2,0);
+    \foreach \x in {0.25,0.55,0.9,1.3,1.75,2.25,2.8,3.4,4.05}
+      \fill (\x,0) circle (0.035);
+    \draw[<->,blue,thick] (0.25,0.35) -- (1.75,0.35)
+      node[midway,above,font=\small] {5 个时间间隔};
+    \node[font=\small] at (2.1,-0.42) {打点周期 $0.02\,\mathrm s$};
+  \end{scope}
+  \begin{scope}[xshift=5.85cm]
+    \draw[thick] (-0.75,1.7) -- (0.75,1.7);
+    \coordinate (O) at (0,1.7);
+    \coordinate (C) at (0.58,0.05);
+    \draw[thick] (O) -- (C);
+    \draw[fill=gray!20,thick] (C) circle (0.16);
+    \draw[<->,blue,thick] (-0.12,1.66) -- (0.46,0.01)
+      node[midway,left] {$l$};
+    \draw[dashed] (C) circle (0.16);
+    \node[font=\small] at (0.25,-0.42) {摆长量到球心};
+  \end{scope}
+\end{tikzpicture}

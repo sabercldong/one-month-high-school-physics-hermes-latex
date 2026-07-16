@@ -13,7 +13,7 @@
   \item 避免公式堆砌，形成可迁移的建模能力。
 \end{enumerate}
 
-\section*{二、为什么要按模型复盘}
+\section*{二、初高中衔接}
 
 初学物理时，知识按章节出现：运动学、力学、电学、磁学。真正解题时，题目往往不会告诉你“这是第几章”。例如带电粒子在电场中运动，既有电场力，又有运动学；导体棒切割磁感线，既有电磁感应，又有安培力和能量转化。按模型复盘，就是把分散知识重新组织成解题工具箱。
 
@@ -56,27 +56,31 @@
 \end{itemize}
 \end{conceptbox}
 
-\section*{四、模型总表}
+\section*{四、公式与适用条件}
 
 \begin{center}
-\begin{tabular}{lll}
+\begin{tabular}{@{}p{0.18\textwidth}p{0.31\textwidth}p{0.43\textwidth}@{}}
 \toprule
 模型 & 典型关键词 & 核心规律 \\
 \midrule
 匀变速直线运动 & 匀加速、刹车、自由落体 & $v=v_0+at$，$x=v_0t+\frac12at^2$ \\
 受力模型 & 拉力、摩擦、斜面、连接体 & $\sum F=ma$ \\
-能量模型 & 高度、弹簧、粗糙面、最远 & $W=\Delta E_k$，机械能守恒 \\
-动量模型 & 碰撞、爆炸、反冲、人船 & $p=mv$，系统动量守恒 \\
+能量模型 & 高度、弹簧、粗糙面、最远 & $W_{\text{合}}=\Delta E_k$；除重力、弹簧弹力外其他力总功为零时机械能守恒 \\
+动量模型 & 碰撞、爆炸、反冲、人船 & $p=mv$；系统外力冲量可忽略时动量守恒 \\
 圆周模型 & 轨道、转弯、卫星、绳球 & $\sum F_r=m\dfrac{v^2}{r}$ \\
-电场模型 & 电势差、加速、偏转 & $qU=\Delta E_k$，$F=qE$ \\
+电场模型 & 电势差、加速、偏转 & $\vect{F}=q\vect{E}$，$W_{\text{电}}=qU$；若只有电场力做功，才可写 $W_{\text{电}}=\Delta E_k$ \\
 电路模型 & 串并联、电源、滑变 & 欧姆定律、闭合电路欧姆定律 \\
-磁场模型 & 洛伦兹力、半径、周期 & $qvB=m\dfrac{v^2}{r}$ \\
-感应模型 & 磁通量变化、切割、楞次 & $E=n\left|\dfrac{\Delta\Phi}{\Delta t}\right|$ \\
+磁场模型 & 洛伦兹力、半径、周期 & 垂直进入匀强磁场时 $|q|vB=m\dfrac{v^2}{r}$；磁场洛伦兹力不做功 \\
+感应模型 & 磁通量变化、切割、楞次 & $E=n\left|\dfrac{\Delta\Phi}{\Delta t}\right|$；方向由楞次定律判断 \\
+光学模型 & 光路、成像、干涉 & 折射定律、薄透镜、$\Delta x=L\lambda/d$ \\
+热学模型 & 状态变化、热机、相变 & $pV/T=C$ 或 $pV=nRT$，$\Delta U=Q-W$ \\
+近代模型 & 光电效应、能级、核反应 & $E=h\nu$，能级差，质量数/电荷数守恒，$E_{\text{释放}}=\Delta m\,c^2$ \\
+实验模型 & 纸带、光电门、电桥、油膜法 & 直接测量 $\to$ 模型关系 $\to$ 间接量 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\section*{五、典型模型复盘}
+\section*{五、典型模型}
 
 \subsection*{模型 1：运动学与图像}
 
@@ -84,7 +88,7 @@
 \[
 x\text{-}t\text{ 图像斜率}=v,\qquad
 v\text{-}t\text{ 图像斜率}=a,\qquad
-v\text{-}t\text{ 面积}=x.
+v\text{-}t\text{ 有向面积}=\Delta x.
 \]
 
 \subsection*{模型 2：受力分析}
@@ -97,7 +101,7 @@ v\text{-}t\text{ 面积}=x.
 
 \subsection*{模型 4：场与电路}
 
-电场和重力场相似：电场力做功与路径无关，可引入电势能。电路题则要先化简连接关系，再分析电源内阻和外电路变化。
+静电场和重力场相似：静电力做功与路径无关，因此可以引入电势能。电路题则要先化简连接关系，再分析电源内阻和外电路变化。
 
 \subsection*{模型 5：电磁感应综合}
 
@@ -124,6 +128,38 @@ E=BLv,\qquad I=\frac{E}{R},\qquad F_A=BIL.
 \end{center}
 
 \textbf{连接量意识：} 上一阶段的结果通常不是最终答案，而是下一阶段的已知量。例如碰前速度、碰后共同速度、最大压缩量、进入磁场速度、回路电流，都可能是“接力棒”。
+
+\subsection*{模型 7：光学、热学和近代物理也要建模}
+
+后几天的光学、热学和近代物理看起来不像传统力学题，但同样要先建模型。光学题先决定用“光线模型”还是“波动模型”；热学题先区分状态量和过程量；近代物理题先看是光子账本、能级跃迁、半衰期统计，还是核反应守恒。
+
+\begin{center}
+\input{figures/tikz/model-review-late-topics}
+
+\figcaption{光学、热学和近代物理的模型语言：后段章节同样需要先建模}\label{fig:model-review-late-topics}
+\end{center}
+
+\begin{itemize}
+  \item \textbf{光学：} 几何光学先画法线、光路和像的位置；波动光学先判断光程差、波长和条纹间距。
+  \item \textbf{热学：} 先问“研究对象是哪团气体？”“物质的量是否改变？”“过程是等温、等容、等压还是绝热？”再使用状态方程和第一定律。
+  \item \textbf{近代物理：} 光电效应看单个光子能量，能级跃迁看能级差，核反应看质量数、电荷数和能量守恒。
+\end{itemize}
+
+\subsection*{模型 8：实验题的测量链条}
+
+实验题看起来像操作步骤，其实也要建模。核心不是“仪器叫什么”，而是先分清：
+\[
+\text{直接测量量}\rightarrow\text{物理关系或图像关系}\rightarrow\text{目标物理量}.
+\]
+例如光电门直接测遮光时间 $\Delta t$，要借助 $v\approx d/\Delta t$ 得到瞬时速度；油膜法直接测油膜面积 $S$，要借助 $d\approx V/S$ 估测分子直径；测电源电动势和内阻时，图像纵截距和斜率分别对应 $E$ 和 $-r$。
+
+\begin{center}
+\input{figures/tikz/experiment-model-review}
+
+\figcaption{实验模型复盘：把直接读数转化为目标物理量，并检查误差来源}\label{fig:experiment-model-review}
+\end{center}
+
+\textbf{方法提醒：} 实验综合题一定要写清“测量量是什么、公式从哪里来、斜率或面积单位是什么、主要误差会让结果偏大还是偏小”。这比背实验步骤更能迁移到新情境。
 
 \section*{六、例题精讲}
 
@@ -156,7 +192,7 @@ mgh=\frac12mv^2.
 \begin{examplebox}{碰撞后上升高度}
 \textbf{题意分析：} 质量为 $m$ 的小球以速度 $v_0$ 撞入质量为 $M$ 的木块并嵌在其中，随后整体沿光滑圆弧上升。求能上升的最大高度。
 
-\textbf{物理模型：} 完全非弹性碰撞用动量守恒，碰后上升用机械能守恒。
+\textbf{物理模型：} 碰撞时间很短，若水平方向外力冲量可忽略，完全非弹性碰撞可用动量守恒；碰后沿光滑圆弧上升用机械能守恒。
 
 \begin{center}
 \input{figures/tikz/model-review-collision-rise}
@@ -211,7 +247,7 @@ s=\frac{v_0^2}{2\mu g}.
 \end{examplebox}
 
 \begin{examplebox}{模型切换训练：电场加速后进入磁场}
-\textbf{题意分析：} 带电粒子从静止经电压 $U$ 加速后垂直进入磁感应强度为 $B$ 的匀强磁场。求磁场中圆周运动半径。
+\textbf{题意分析：} 带电粒子质量为 $m$、电荷量大小为 $q$，从静止经电压 $U$ 加速后垂直进入磁感应强度为 $B$ 的匀强磁场。求磁场中圆周运动半径。
 
 \textbf{模型拆解：} 加速区用电场力做功，磁场区用洛伦兹力提供向心力。
 
@@ -222,22 +258,22 @@ s=\frac{v_0^2}{2\mu g}.
 \textbf{解题过程：}
 加速区：
 \[
-qU=\frac12mv^2.
+|q|U=\frac12mv^2.
 \]
 磁场区：
 \[
-qvB=\frac{mv^2}{r},\qquad r=\frac{mv}{qB}.
+|q|vB=\frac{mv^2}{r},\qquad r=\frac{mv}{|q|B}.
 \]
 由第一式得
 \[
-v=\sqrt{\frac{2qU}{m}},
+v=\sqrt{\frac{2|q|U}{m}},
 \]
 代入半径式：
 \[
-r=\frac1B\sqrt{\frac{2mU}{q}}.
+r=\frac1B\sqrt{\frac{2mU}{|q|}}.
 \]
 
-\textbf{方法总结：} 电场改变速率，磁场改变方向。两个场区的物理作用不同，必须分阶段处理。
+\textbf{方法总结：} 这里用 $|q|$ 表示电荷量大小，且 $U$ 表示加速电场对粒子做正功对应的电压大小。图中轨迹以正电荷为例；若粒子带负电，偏转方向相反，但半径大小仍由同一公式给出。磁场中的洛伦兹力始终垂直速度，只改变速度方向不改变速率。两个场区的作用不同，必须分阶段处理。
 \end{examplebox}
 
 \section*{七、变式训练}
@@ -246,14 +282,23 @@ r=\frac1B\sqrt{\frac{2mU}{q}}.
   \item 追及相遇题中，什么时候应优先考虑 $v$-$t$ 图像？
   \item 粗糙斜面上滑题，为什么机械能不守恒但动能定理仍可用？
   \item 两物体通过轻绳连接运动，选整体法还是隔离法取决于什么？
+  \begin{center}
+  \input{figures/tikz/training-connected-choice}
+  \end{center}
   \item 带电粒子先加速后偏转，两个阶段分别用什么模型？
+  \begin{center}
+  \input{figures/tikz/accelerate-deflect-model}
+  \end{center}
   \item 导体棒切割磁感线达到匀速时，受力和能量分别怎样分析？
+  \begin{center}
+  \input{figures/tikz/motional-terminal-speed}
+  \end{center}
 \end{enumerate}
 
 \subsection*{训练提示}
 \begin{enumerate}
   \item 当题目涉及两车速度变化、位移差、最大距离时，$v$-$t$ 图像很直观。
-  \item 有摩擦时机械能不守恒，但动能定理仍成立，因为它统计所有力做功。
+  \item 有滑动摩擦并产生耗散时，机械能通常不守恒；但动能定理仍成立，因为它统计所有力做功。
   \item 若要求系统加速度，优先整体法；若要求绳力或相互作用力，需要隔离法。
   \item 加速区用动能定理，偏转区用类平抛分解。
   \item 匀速时合力为 0；能量上外力做功转化为电能和焦耳热。
@@ -267,6 +312,8 @@ r=\frac1B\sqrt{\frac{2mU}{q}}.
   \item \textbf{方向正负混乱：} 矢量公式必须先规定正方向。
   \item \textbf{把图像当装饰：} 图像的斜率、面积、交点、截距都有物理意义。
   \item \textbf{综合题不分段：} 条件一变，模型往往也要变。
+  \item \textbf{忽略后段章节的模型语言：} 光学不是只画图，热学不是只代公式，近代物理不是只背结论，都要先判断模型和适用条件。
+  \item \textbf{把实验当记忆题：} 实验题也要先找直接测量量和间接量，再判断图像斜率、面积或比例关系。
 \end{enumerate}
 \end{mistakebox}
 
@@ -288,10 +335,10 @@ r=\frac1B\sqrt{\frac{2mU}{q}}.
 
 得到结果后，令某个参数取极限，看结论是否合理。例如 $s=\dfrac{h}{\mu}$ 中，若 $\mu$ 越大，滑行距离越短；若 $\mu\rightarrow0$，水平面无摩擦，距离趋于无穷大，符合物理直觉。
 
-\textbf{模型意识：} 量纲检查和极限检查不能替代推导，但能快速发现许多荒谬答案。
+\textbf{模型意识：} 量纲检查和极限检查不能替代推导，但能快速发现许多不合理答案。
 \end{competitionbox}
 
-\section*{十、模型深化：适用条件比公式更重要}
+\subsection*{1.\quad 模型条件卡}
 
 很多学生会背公式，但不会判断何时能用。真正的模型能力不是“公式记得多”，而是知道公式背后的条件。
 
@@ -301,15 +348,15 @@ r=\frac1B\sqrt{\frac{2mU}{q}}.
 \figcaption{模型条件卡：每次使用模型前先检查适用条件}\label{fig:model-conditions-card}
 \end{center}
 
-\subsection*{1.\quad 三类常见“不能直接守恒”}
+\subsection*{2.\quad 三类常见“不能直接守恒”}
 
 \begin{enumerate}
-  \item \textbf{机械能不守恒：} 有摩擦、空气阻力、外力做功或非弹性碰撞。
+  \item \textbf{机械能不守恒：} 滑动摩擦耗散、空气阻力、外力做非保守功或非弹性碰撞。
   \item \textbf{动量不守恒：} 系统外力冲量不可忽略，或研究方向上外力明显。
   \item \textbf{电荷运动不能用匀速：} 存在电场力、磁场力或碰撞阻力时，速度方向或大小可能变化。
 \end{enumerate}
 
-\subsection*{2.\quad 多模型题的标注方法}
+\subsection*{3.\quad 多模型题的标注方法}
 
 建议在草稿纸上把题目过程标成
 \[
@@ -334,7 +381,7 @@ r=\frac1B\sqrt{\frac{2mU}{q}}.
 \textbf{方法总结：} 一个综合题中，机械能可能在某一段守恒，在另一段不守恒；不要用一个判断覆盖全过程。
 \end{examplebox}
 
-\subsection*{3.\quad 常见错因对照}
+\subsection*{4.\quad 常见错因对照}
 
 \begin{center}
 \begin{tabular}{lll}
@@ -343,26 +390,31 @@ r=\frac1B\sqrt{\frac{2mU}{q}}.
 \midrule
 对象错误 & 把单个物体和系统混用 & 每个方程前写研究对象 \\
 过程错误 & 碰撞前后用同一规律 & 在条件改变处画分界线 \\
-守恒误用 & 有摩擦仍套机械能守恒 & 先检查外力功和非保守力功 \\
+守恒误用 & 滑动摩擦耗散仍套机械能守恒 & 先检查外力功和非保守力功 \\
 方向错误 & 电场、磁场、摩擦方向混乱 & 先画方向，再代正负号 \\
 连接量遗漏 & 求出中间速度后忘记传给下一段 & 标出阶段间的接力物理量 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\subsection*{4.\quad 分层训练}
+\subsection*{5.\quad 分层训练}
 
 \begin{enumerate}
-  \item \textbf{基础：} 有摩擦力做功时，机械能一定不守恒吗？动能定理还能用吗？
+  \item \textbf{基础：} 固定粗糙面上的滑动摩擦做负功时，物体机械能怎样变化？若是静摩擦或把多个物体选成系统，又为什么必须重新检查研究对象和总功？
   \item \textbf{提高：} 两物体碰撞过程中，为什么常常能用动量守恒，却不能用机械能守恒？
   \item \textbf{综合：} 导体棒在磁场中由静止开始运动，外力恒定，说明速度、电动势、电流、安培力怎样相互影响。
+  \begin{center}
+  \input{figures/tikz/comprehensive-em-induction}
+  \end{center}
   \item \textbf{开放思考：} 为什么物理建模常常要先忽略一些因素，再逐步加入修正？
 \end{enumerate}
 
-\section*{十一、今日小结}
+\section*{十、今日小结}
 \begin{enumerate}
   \item 物理建模先选对象、分过程、找约束、选规律。
   \item 运动学、牛顿定律、能量、动量和场模型是高中物理主干。
+  \item 光学、热学和近代物理也要按模型处理：光路或波动、状态或过程、光子或能级或核反应。
+  \item 实验题要按“直接测量量、模型关系、间接量、误差来源”复盘。
   \item 综合题常需要多个模型按阶段接力。
   \item 守恒规律一定要检查适用条件。
   \item 量纲检查和极限检查是非常重要的答案自检方法。

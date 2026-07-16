@@ -8,14 +8,19 @@
 \begin{enumerate}
   \item 掌握纸带法求速度和加速度的基本思路。
   \item 会识别常见力学实验、电学实验的测量对象和核心公式。
+  \item 会用坐标描点和图像法处理平抛运动实验。
   \item 理解图像法中斜率、截距和面积的物理意义。
   \item 会区分系统误差和偶然误差，知道常见减小误差的方法。
   \item 形成规范实验表达：单位、有效数字、坐标轴和结论都要清楚。
+  \item 会读游标卡尺、螺旋测微器，能处理零点误差和有效数字。
+  \item 熟悉电阻率、小灯泡伏安特性、玻璃折射率、凸透镜焦距和双缝测波长等高频实验的核心关系。
+  \item 会解释多用电表欧姆挡的基本原理和读数特点。
+  \item 了解电桥测量把微小电阻变化转化为可测电压的思想。
 \end{enumerate}
 
 \section*{二、初高中衔接}
 
-初中实验多强调操作现象，高中实验更强调定量关系。例如同样是测速度，高中要知道为什么中间时刻速度可用一段位移除以对应时间近似表示；同样是测电阻，高中要知道电表内阻会带来系统误差。
+初中实验多强调操作现象，高中实验更强调定量关系。例如同样是测速度，高中要知道为什么在匀变速直线运动中，中间时刻速度等于该小段位移除以对应时间；同样是测电阻，高中要知道电表内阻会带来系统误差。
 
 \textbf{科学发展视角：} 现代科学和工程本质上依赖测量。传感器、数据采集、图像识别和自动控制都在做同一件事：把物理量转化为可记录的数据，再用模型解释数据。高中实验训练的是这种科学思维的最小闭环。
 
@@ -38,6 +43,44 @@
 \end{center}
 \end{conceptbox}
 
+\begin{conceptbox}{读数仪器与有效数字}
+
+很多实验题真正考的第一步，是能不能把仪器读数读对。读数时要先分清\textbf{仪器精度}，再决定结果保留到哪一位。
+
+\begin{center}
+\input{figures/tikz/vernier-micrometer-reading}
+
+\figcaption{常见长度测量仪器：先读固定部分，再读对齐或旋转部分}\label{fig:vernier-micrometer-reading}
+\end{center}
+
+\begin{itemize}
+  \item \textbf{游标卡尺：} 先读游标零刻度左侧的主尺读数，再加上游标与主尺对齐的格数乘以精度。
+  \item \textbf{螺旋测微器：} 先读固定刻度，再加上可动刻度读数；常见精度为 $0.01\ \mathrm{mm}$。
+  \item \textbf{零点误差：} 若仪器闭合时不读零，最后应作修正：真实读数 $=$ 仪器读数 $-$ 零点误差。
+  \item \textbf{有效数字：} 测量结果不能写得比仪器精度更“精细”。例如精度为 $0.1\ \mathrm{mm}$ 的仪器，结果不应随意写到 $0.001\ \mathrm{mm}$。
+\end{itemize}
+\end{conceptbox}
+
+\begin{conceptbox}{估读与不确定度}
+
+测量值不是“绝对真值”，而是带有一定可信范围的结果。高中阶段不要求系统学习大学实验中的不确定度理论，但要形成三个基本习惯：
+
+\begin{center}
+\input{figures/tikz/measurement-uncertainty}
+
+\figcaption{估读与不确定度：测量结果的位数应与仪器分辨能力相匹配}\label{fig:measurement-uncertainty}
+\end{center}
+
+\begin{itemize}
+  \item \textbf{模拟刻度要估读：} 直尺、电流表、电压表等有连续刻度的仪器，通常估读到最小分度值的下一位。
+  \item \textbf{数字仪表看分辨率：} 数字表显示到哪一位，通常说明它能分辨到哪一位；不要人为添加没有意义的零。
+  \item \textbf{多次测量看离散程度：} 多次测量结果越集中，偶然误差通常越小；若数据明显偏离，要先判断是否有操作或读数问题。
+\end{itemize}
+
+\textbf{表达原则：} 最终结果的有效数字应与主要测量量的精度相匹配。若仪器只能读到毫米级，却写成 $x=2.000000\ \mathrm{m}$，就等于声称自己测到了微米级精度，这是不严谨的。
+
+\end{conceptbox}
+
 \begin{conceptbox}{纸带法}
 
 打点计时器每隔相同时间打一个点。若电源频率为 $50\ \mathrm{Hz}$，相邻点时间间隔为
@@ -55,14 +98,27 @@ T=5\Delta t=0.10\ \mathrm{s}.
 \figcaption{纸带法：用相等时间内位移变化研究匀变速运动}\label{fig:ticker-tape-analysis}
 \end{center}
 
-匀变速直线运动中，某段时间中间时刻的速度可近似为
+匀变速直线运动中，某段时间中间时刻的速度等于这一小段的平均速度：
 \[
-v=\frac{x}{t}.
+v_{\text{中}}=\frac{\Delta x}{\Delta t}.
 \]
 若连续相等时间内位移差恒定，则
 \[
 \Delta x=aT^2.
 \]
+
+\textbf{光电门测速：} 现代实验常用光电门替代人工计时。让宽度为 $d$ 的遮光片通过光电门，计时器记录遮光时间 $\Delta t$。若遮光片足够窄，遮光过程中的平均速度可近似看作通过光电门时的瞬时速度：
+\[
+v\approx\frac{d}{\Delta t}.
+\]
+
+\begin{center}
+\input{figures/tikz/photogate-speed}
+
+\figcaption{光电门测速：用遮光片宽度和遮光时间估测瞬时速度}\label{fig:photogate-speed}
+\end{center}
+
+\textbf{方法边界：} 遮光片越窄，运动状态在遮光时间内变化越小，瞬时速度近似越好；若遮光片很宽或物体加速度很大，就不能把整个遮光过程简单看成同一瞬时速度。
 \end{conceptbox}
 
 \begin{conceptbox}{电学测量}
@@ -82,24 +138,106 @@ v=\frac{x}{t}.
 \end{itemize}
 \end{conceptbox}
 
+\begin{conceptbox}{电学实验中的电路选择}
+
+电学实验不仅要选内接、外接，还要会判断滑动变阻器怎样接。常见有两种：
+
+\begin{center}
+\input{figures/tikz/rheostat-limit-divider}
+
+\figcaption{滑动变阻器接法：限流接法调电流，分压接法可让电压从近似零调起}\label{fig:rheostat-limit-divider}
+\end{center}
+
+\begin{itemize}
+  \item \textbf{限流接法：} 滑动变阻器与待测电阻串联，电路简单、耗能较少，适合一般调节电流。
+  \item \textbf{分压接法：} 待测电阻接在滑片与一端之间，电压调节范围更宽，尤其适合要求电压从 $0$ 开始变化、待测电阻较大或需要多组连续数据的实验。
+  \item \textbf{判断顺序：} 先看题目是否要求“从零调起”；再看待测电阻与滑动变阻器阻值是否匹配；最后考虑安全电流和仪表量程。
+\end{itemize}
+
+表头本身能通过的最大电流很小。若要把它改装成大量程电表，需要用电阻重新分配电流或电压：
+
+\begin{center}
+\input{figures/tikz/meter-range-extension}
+
+\figcaption{电表量程扩展：并联分流改电流表，串联分压改电压表}\label{fig:meter-range-extension}
+\end{center}
+
+\begin{itemize}
+  \item 改装电流表：表头 $G$ 与小电阻 $R_s$ 并联，让大部分电流从分流电阻通过。
+  \item 改装电压表：表头 $G$ 与大电阻 $R$ 串联，让大部分电压分在串联电阻上。
+\end{itemize}
+
+若题目进一步要求测表头内阻，常见方法是\textbf{半偏法}。先用较大的保护电阻 $R_0$ 调出某一稳定偏转，再给表头并联一个可调电阻 $R_s$，调到表头偏转变为原来的一半。若 $R_0$ 足够大，使总电流近似不变，则并联电阻与表头中电流近似相等，故
+\[
+R_s \approx R_g.
+\]
+
+\begin{center}
+\begin{minipage}{0.96\linewidth}
+\centering
+\input{figures/tikz/half-deflection-galvanometer}
+
+\figcaption{半偏法测表头内阻：在总电流近似不变时，半偏电阻近似等于表头内阻}\label{fig:half-deflection-galvanometer}
+\end{minipage}
+\end{center}
+
+\textbf{误差意识：} 半偏法的结论不是无条件精确等式。并联 $R_s$ 后外电路总电阻会改变，电源电流会略变；保护电阻越大，这种变化越小，近似越好。
+\end{conceptbox}
+
 \section*{四、公式与适用条件}
 
 \begin{center}
+\small
 \begin{tabular}{lll}
 \toprule
 公式 & 用途 & 注意事项 \\
 \midrule
-$v=\dfrac{x}{t}$ & 中间时刻速度 & 匀变速或近似匀变速 \\
-$\Delta x=aT^2$ & 纸带求加速度 & 相邻相等时间段 \\
-$a=\dfrac{x_3-x_1}{2T^2}$ & 逐差法示例 & 减小偶然误差 \\
-$R=\dfrac{U}{I}$ & 伏安法测电阻 & 注意电表内阻 \\
+$v_{\text{中}}=\frac{\Delta x}{\Delta t}$ & 中间时刻速度 & 匀变速；$\Delta x$ 为该段位移 \\
+$v\approx\frac{d}{\Delta t}$ & 光电门测速 & 遮光片较窄时近似瞬时速度 \\
+$\Delta x=aT^2$ & 纸带求加速度 & 相邻相等时间内位移差 \\
+$a=\frac{x_3-x_1}{2T^2}$ & 逐差法示例 & $x_1,x_2,x_3$ 为连续等时位移 \\
+$y=\frac{g}{2v_0^2}x^2$ & 探究平抛运动 & 原点在抛出点，$x$ 水平、$y$ 向下 \\
+$R=\frac{U}{I}$ & 伏安法测电阻 & 注意电表内阻 \\
 $U=E-Ir$ & 测电源电动势和内阻 & 斜率为 $-r$ \\
-$g=\dfrac{4\pi^2l}{T^2}$ & 单摆测 $g$ & 小角度、摆长准确 \\
+$m_1v_1+m_2v_2=m_1v_1'+m_2v_2'$ & 验证动量守恒 & 水平低摩擦、外力冲量小 \\
+$g=\frac{4\pi^2l}{T^2}$ & 单摆测 $g$ & 小角度、摆长准确 \\
+$L=L_0+n\Delta$ & 游标卡尺读数 & $L_0$ 为主尺读数，$\Delta$ 为精度 \\
+$L=L_0+n\times0.01\ \mathrm{mm}$ & 螺旋测微器读数 & 常见精度为 $0.01\ \mathrm{mm}$ \\
+$L_{\text{真}}=L_{\text{读}}-\Delta L_0$ & 零点误差修正 & 零点误差带符号代入 \\
+$\rho=\frac{RS}{l}$ & 测金属丝电阻率 & $S=\pi d^2/4$ \\
+$d\approx\frac{V}{S}$ & 油膜法估测分子大小 & $V$ 为纯油酸体积 \\
+$n=\frac{\sin i}{\sin r}$ & 测玻璃折射率 & 角度相对法线测量 \\
+$\frac1f=\frac1u+\frac1v$ & 测凸透镜焦距 & 成清晰实像，量 $u,v$ \\
+$\lambda=\frac{\Delta x\,d}{L}$ & 双缝测波长 & $L\gg d$，多条纹取平均 \\
+$R_s=\frac{I_gR_g}{I-I_g}$ & 表头改电流表 & 并联分流电阻 \\
+$R=\frac{U}{I_g}-R_g$ & 表头改电压表 & 串联分压电阻 \\
+$R_s\approx R_g$ & 半偏法测表头内阻 & 保护电阻足够大时近似成立 \\
+$\frac{R_1}{R_2}=\frac{R_3}{R_x}$ & 平衡电桥 & 检流计无电流 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
+\newpage
 \section*{五、典型模型}
+
+\subsection*{模型总览：实验基本方法}
+
+高中实验题不只是考“某个装置怎么接”，更常考实验方法。遇到陌生实验，先判断它用了哪一种基本方法，再把方法翻译成具体器材和数据处理。
+
+\begin{center}
+\input{figures/tikz/experiment-methods-map}
+
+\figcaption{高中实验常用方法：控制变量、转换放大、等效替代和比较法}\label{fig:experiment-methods-map}
+\end{center}
+
+\begin{itemize}
+  \item \textbf{控制变量法：} 研究多因素关系时，一次只改变一个量。例如验证牛顿第二定律时，先保持 $m$ 不变研究 $a$ 与 $F$，再保持 $F$ 不变研究 $a$ 与 $m$。
+  \item \textbf{转换放大法：} 把难以直接测量的物理量转化为易读数据。例如用纸带点距求速度和加速度，用传感器把温度、压力、光强转化为电信号。
+  \item \textbf{等效替代法：} 用一个等效量代替复杂对象。例如把复杂电路化为等效电阻，把电源看成理想电源与内阻串联。
+  \item \textbf{比较法：} 把实验测得的量与标准值、理论关系或平衡条件比较。例如验证机械能守恒、电桥平衡测未知电阻。
+\end{itemize}
+
+\textbf{实验设计提醒：} 设计实验时先写清“采用什么方法”，再写“测哪些量、如何处理数据、误差从哪里来”。这样答案更像科学实验，而不是器材清单。
 
 \subsection*{模型 1：验证牛顿第二定律}
 
@@ -118,7 +256,51 @@ mgh\quad\text{与}\quad \frac12mv^2.
 \]
 若空气阻力、摩擦和测量误差较小，两者应近似相等。
 
-\subsection*{模型 3：测电源电动势和内阻}
+\subsection*{模型 3：探究平抛运动}
+
+平抛实验的核心，是把一个二维运动拆成两个一维关系：水平方向近似匀速，竖直方向近似自由落体。实验中通常让小球从斜槽末端水平抛出，在坐标纸上记录多个轨迹点。
+
+\begin{center}
+\input{figures/tikz/projectile-experiment}
+
+\figcaption{探究平抛运动：用描点轨迹和 $y-x^2$ 图像检验抛物线关系}\label{fig:projectile-experiment}
+\end{center}
+
+取抛出点为原点，$x$ 轴水平向右，$y$ 轴竖直向下，则
+\[
+x=v_0t,\qquad y=\frac12gt^2.
+\]
+消去时间 $t$ 得
+\[
+y=\frac{g}{2v_0^2}x^2.
+\]
+因此若作 $y-x^2$ 图像，应近似为过原点的直线；斜率
+\[
+k=\frac{g}{2v_0^2},
+\]
+可反推出
+\[
+v_0=\sqrt{\frac{g}{2k}}.
+\]
+
+\textbf{关键条件：} 斜槽末端必须水平，坐标原点应取在小球离开轨道的位置，$y$ 方向通常取向下为正。若原点选错或把竖直位移从桌面算起，$y$ 与 $x^2$ 的线性关系会被破坏。
+
+\subsection*{模型 4：验证动量守恒}
+
+碰撞实验的核心不是“看到碰撞就结束”，而是比较碰撞前后系统总动量是否近似相等。常用低摩擦轨道或气垫导轨减小外力影响，用光电门或纸带测速度：
+\[
+m_1v_1+m_2v_2\approx m_1v_1'+m_2v_2'.
+\]
+
+\begin{center}
+\input{figures/tikz/momentum-conservation-experiment}
+
+\figcaption{验证动量守恒：测出碰前、碰后速度，比较系统总动量}\label{fig:momentum-conservation-experiment}
+\end{center}
+
+\textbf{关键条件：} 研究对象要选两个碰撞物体组成的系统；轨道尽量水平、摩擦尽量小，使碰撞过程中的外力冲量可以忽略。若碰撞后粘在一起，应把共同速度作为末速度；若碰后分开，则分别测 $v_1'$ 和 $v_2'$。
+
+\subsection*{模型 5：测电源电动势和内阻}
 
 由闭合电路欧姆定律
 \[
@@ -126,13 +308,87 @@ U=E-Ir.
 \]
 作 $U$-$I$ 图像时，纵截距为 $E$，斜率绝对值为 $r$。
 
-\subsection*{模型 4：图像法}
+\subsection*{模型 6：图像法}
 
 图像法不是为了“画得好看”，而是把数据关系线性化。常见思路：
 \[
 y=kx+b.
 \]
 斜率 $k$、截距 $b$ 都必须有物理意义和单位。
+
+\subsection*{模型 7：电学实验电路选择}
+
+电学实验设计常按下面顺序判断：
+\begin{enumerate}
+  \item 先判断测量目标：测电阻、测电源、测电流还是测电压；
+  \item 再判断电表接法：大电阻优先考虑内接，小电阻优先考虑外接；
+  \item 再判断滑动变阻器接法：若要求从零开始调节或需要宽范围数据，优先考虑分压接法；
+  \item 最后检查量程：任何时候都不能让电流、电压超过仪表量程。
+\end{enumerate}
+
+\subsection*{模型 8：多用电表欧姆挡}
+
+多用电表的欧姆挡不是“直接量电阻”，而是表内电源让电流通过待测电阻，再由指针偏转反推出电阻大小。因此测电阻时，待测电阻必须与原电路断开，不能带电测量。
+
+\begin{center}
+\input{figures/tikz/multimeter-ohm-range}
+
+\figcaption{多用电表欧姆挡：内部有电源，电阻越小电流越大，指针越向右偏}\label{fig:multimeter-ohm-range}
+\end{center}
+
+使用欧姆挡要注意：
+\begin{enumerate}
+  \item 选择合适倍率后，先把两表笔短接，调到 $0\ \Omega$，这叫欧姆调零。
+  \item 欧姆刻度左大右小，左端是 $\infty$，右端是 $0$，且刻度不均匀。
+  \item 换倍率后必须重新欧姆调零；测量时手不要同时接触两表笔金属部分。
+\end{enumerate}
+
+\subsection*{模型 9：电桥测量与传感器}
+
+电桥的思想是比较两条分压支路。当中间检流计没有电流时，左右两个中点电势相等，称为\textbf{电桥平衡}。
+
+\begin{center}
+\input{figures/tikz/wheatstone-bridge}
+
+\figcaption{惠斯通电桥：平衡时检流计无电流，可由已知电阻求未知电阻}\label{fig:wheatstone-bridge}
+\end{center}
+
+平衡条件为
+\[
+\boxed{\frac{R_1}{R_2}=\frac{R_3}{R_x}}.
+\]
+若 $R_x$ 是热敏电阻、光敏电阻或应变片，外界温度、光照或形变会使 $R_x$ 改变，电桥就从平衡变为不平衡，中间支路出现电压或电流信号。现代传感器常用这种方式把“微小变化”转化为“可测电信号”。
+
+\subsection*{模型 10：典型实验的迁移识别}
+
+高中实验题常把同一套测量思想换成不同装置。不要先背实验名称，而要先识别“测量对象”和“间接关系”。
+
+\begin{center}
+\input{figures/tikz/classic-experiment-setups}
+
+\figcaption{典型实验速览：从直接读数走向物理关系}\label{fig:classic-experiment-setups}
+\end{center}
+
+\begin{center}
+\small
+\begin{tabular}{llll}
+\toprule
+实验 & 目标量 & 直接测量量 & 关键提醒 \\
+\midrule
+测金属丝电阻率 & $\rho$ & $U,I,l,d$ & 直径要多位置测量取平均 \\
+描绘小灯泡伏安特性 & $I$-$U$ 曲线 & 多组 $U,I$ & 灯丝升温，电阻不是常量 \\
+光电门测速 & $v$ & $d,\Delta t$ & 窄遮光片，$v\approx d/\Delta t$ \\
+探究平抛运动 & $v_0$ 或轨迹关系 & 多组 $x,y$ & 原点、坐标轴和水平出口要准确 \\
+验证动量守恒 & $p_{\text{前}},p_{\text{后}}$ & $m,v$ & 系统外力冲量要小 \\
+油膜法估分子大小 & $d$ & $V,S$ & $V$ 取纯油酸体积，单分子层 \\
+测玻璃折射率 & $n$ & 入射角、折射角 & 角度必须相对法线 \\
+测凸透镜焦距 & $f$ & $u,v$ & 成清晰实像，距离从透镜位置量起 \\
+双缝测波长 & $\lambda$ & $\Delta x,d,L$ & 多条亮纹间距取平均 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{认知顺序：} 先判断实验属于力学、电学、光学还是热学；再把装置图翻译成公式；最后检查误差主要来自读数、作图还是理想化假设。
 
 \section*{六、例题精讲}
 
@@ -186,21 +442,67 @@ r=0.50\ \Omega.
 \textbf{方法总结：} $U$-$I$ 图像斜率是负的，内阻取其绝对值。
 \end{examplebox}
 
+\begin{examplebox}{表头改装成电压表}
+\textbf{题意分析：} 一只表头满偏电流 $I_g=1.0\ \mathrm{mA}$，内阻 $R_g=100\ \Omega$。若要改装成量程为 $3.0\ \mathrm{V}$ 的电压表，应串联多大的电阻？
+
+\textbf{物理模型：} 表头改电压表，串联大电阻分压。
+
+\begin{center}
+\input{figures/tikz/meter-range-extension}
+\end{center}
+
+\textbf{解题过程：}
+满偏时通过表头的电流为 $I_g$，整个电压表两端电压应为 $U=3.0\ \mathrm{V}$：
+\[
+U=I_g(R_g+R).
+\]
+所以
+\[
+R=\frac{U}{I_g}-R_g
+=\frac{3.0}{1.0\times10^{-3}}-100
+=2900\ \Omega.
+\]
+
+\textbf{方法总结：} 电压表内阻越大，对被测电路影响越小；改装电压表要串联大电阻。
+\end{examplebox}
+
 \section*{七、变式训练}
 
 \begin{enumerate}
   \item 打点计时器频率为 $50\ \mathrm{Hz}$，每隔 4 个点取一个计数点，相邻计数点时间是多少？
+  \item 游标卡尺主尺读数为 $12.0\ \mathrm{mm}$，游标第 7 格与主尺刻线对齐，精度为 $0.1\ \mathrm{mm}$，读数是多少？
   \item 验证牛顿第二定律时，为什么要平衡摩擦力？
   \item 用单摆测 $g$ 时，摆长应从哪里量到哪里？
+  \begin{center}
+  \input{figures/tikz/training-experiment-basics}
+  \end{center}
   \item 伏安法测小电阻时，更适合内接法还是外接法？说明理由。
+  \begin{center}
+  \input{figures/tikz/electric-meter-circuits}
+  \end{center}
+  \item 某实验要求待测电阻两端电压从 $0$ 开始连续调节，应优先选限流接法还是分压接法？
+  \item 表头改装成大量程电流表时，应给表头串联电阻还是并联电阻？
+  \item 用欧姆挡测电阻时，为什么待测电阻不能带电？换倍率后为什么要重新欧姆调零？
+  \item 平抛实验中，若作 $y-x^2$ 图像得到斜率 $k$，如何由 $k$ 求小球的水平初速度？
+  \item 某电桥平衡时 $R_1=100\ \Omega$、$R_2=200\ \Omega$、$R_3=50\ \Omega$，求 $R_x$。
+  \item 测金属丝电阻率时，为什么金属丝直径通常要在不同位置测几次再求平均？
+  \item 描绘小灯泡伏安特性曲线时，为什么不能直接认为 $R=U/I$ 是一个恒定值？
 \end{enumerate}
 
 \subsection*{训练提示}
 \begin{enumerate}
   \item 相邻打点时间为 $0.02\ \mathrm{s}$；“每隔 4 个点取一个计数点”通常意味着相邻计数点间有 5 个时间间隔。
+  \item 读数为 $12.0+7\times0.1=12.7\ \mathrm{mm}$。
   \item 平衡摩擦力是为了让小车受到的合力更接近细线拉力。
   \item 摆长应从悬点量到摆球球心，不能只量细线长度。
   \item 小电阻更适合外接法，因为电流表分压带来的影响相对更明显，需要避免把电流表电阻算进待测电阻。
+  \item 应选分压接法，因为分压接法可以让待测电阻两端电压从近似 $0$ 开始连续变化。
+  \item 应并联小电阻分流，让大部分电流从分流电阻通过，保护表头。
+  \item 欧姆挡内部已有电源，外部带电会干扰读数甚至损坏表；换倍率后内部分压、分流关系改变，所以要重新调零。
+  \item 平抛关系为 $y=\dfrac{g}{2v_0^2}x^2$，所以 $k=\dfrac{g}{2v_0^2}$，可得 $v_0=\sqrt{\dfrac{g}{2k}}$。
+  \item 电桥平衡时 $\dfrac{R_1}{R_2}=\dfrac{R_3}{R_x}$，代入可得 $R_x=100\ \Omega$。
+  \item 金属丝可能粗细不完全均匀，直径又要平方进入截面积，直径误差会被放大，所以要多点测量取平均。
+  \item 小灯泡灯丝温度随电流增大而升高，电阻会变化，所以伏安特性曲线通常不是过原点的直线。
 \end{enumerate}
 
 \section*{八、易错点}
@@ -209,8 +511,20 @@ r=0.50\ \Omega.
   \item \textbf{把相邻点时间和计数点时间混淆：} 打点间隔常为 $0.02\ \mathrm{s}$，计数点间隔可能是它的多倍。
   \item \textbf{图像斜率没有单位：} 斜率是物理量，必须带单位。
   \item \textbf{只报结论不分析误差：} 实验题常要求解释偏大、偏小的原因。
+  \item \textbf{只背实验名称不识别方法：} 陌生实验往往只是换了装置，本质仍可能是控制变量、转换放大、等效替代或比较法。
   \item \textbf{有效数字随意写：} 结果精度不能明显超过测量仪器精度。
+  \item \textbf{写出“假精度”：} 数字写得越长不代表越准确。最终结果的小数位数要和仪器分辨率、数据离散程度相匹配。
+  \item \textbf{读数精度和小数位混淆：} 游标卡尺、螺旋测微器要按仪器精度读数；若有零点误差，还要先判断零点误差的正负。
+  \item \textbf{把小灯泡当定值电阻：} 小灯泡工作时温度变化明显，伏安特性曲线弯曲，不能用一个恒定电阻概括全过程。
+  \item \textbf{验证动量守恒时系统选错：} 应把碰撞的两个物体作为系统，并检查水平方向外力冲量是否可忽略。
+  \item \textbf{光学实验角度量错基准：} 折射定律中的角度都相对法线，不是相对界面。
   \item \textbf{电表内阻被忽略：} 内外接法选择本质上是在控制系统误差。
+  \item \textbf{把限流接法和分压接法混用：} 需要电压从零开始连续调节时，通常不能只用限流接法。
+  \item \textbf{电表改装方向记反：} 改电流表并联小电阻，改电压表串联大电阻。
+  \item \textbf{把半偏法结论当成精确等式：} $R_s\approx R_g$ 依赖总电流近似不变，保护电阻太小会带来明显系统误差。
+  \item \textbf{欧姆挡读数方向看反：} 欧姆挡右端是 $0$，左端是 $\infty$，且刻度不均匀；换倍率后要重新调零。
+  \item \textbf{电桥平衡条件写反：} 先看清哪两个电阻在同一分压支路，再写比例关系，不要机械套字母。
+  \item \textbf{平抛实验原点选错：} 平抛公式中的 $x,y$ 都应从抛出点开始量；若把桌面边缘或落地点当原点，图像斜率会失去正确物理意义。
 \end{enumerate}
 \end{mistakebox}
 
@@ -230,8 +544,6 @@ T^2=\frac{4\pi^2}{g}l.
 
 \textbf{竞赛与科研中的习惯：} 不只是“代入平均值”，而是尽量利用全部数据。作图、拟合、看残差，都是为了判断模型是否真的适合数据。高中阶段先掌握“直线斜率有物理意义”这一点，就已经抓住了实验数据处理的核心。
 \end{competitionbox}
-
-\section*{十、模型深化：从数据到结论}
 
 \subsection*{1.\quad 最佳直线不是随手连点}
 
@@ -261,7 +573,7 @@ T^2=\frac{4\pi^2}{g}l.
 \end{tabular}
 \end{center}
 
-\textbf{注意：} 误差方向不能死背，要回到实验原理判断。例如伏安法内接、外接的偏差方向，取决于电压表或电流表实际测到的是谁的电压、电流。
+\textbf{注意：} 误差方向不能机械记忆，要回到实验原理判断。例如伏安法内接、外接的偏差方向，取决于电压表或电流表实际测到的是谁的电压、电流。
 
 \subsection*{3.\quad 伏安法内接、外接的误差来源}
 
@@ -320,14 +632,29 @@ g=\frac{4\pi^2}{s}
   \item \textbf{基础：} 为什么用多次测量求平均值可以减小偶然误差？
   \item \textbf{提高：} 验证机械能守恒时，若测得动能增加量总小于重力势能减少量，可能原因有哪些？
   \item \textbf{综合：} 设计一个用图像法测弹簧劲度系数的实验，说明横轴、纵轴和斜率含义。
+  \begin{center}
+  \input{figures/tikz/experiment-linear-fit}
+  \end{center}
   \item \textbf{开放思考：} 现代手机传感器测加速度时，为什么也需要校准和误差补偿？
 \end{enumerate}
 
-\section*{十一、今日小结}
+\section*{十、今日小结}
 \begin{enumerate}
   \item 实验题先明确测量对象、直接测量量、间接公式和误差来源。
+  \item 实验设计常用控制变量、转换放大、等效替代和比较法；先识别方法，再选择器材。
   \item 纸带法通过相等时间内位移变化研究匀变速运动。
+  \item 光电门用遮光片宽度和遮光时间估测瞬时速度，本质仍是 $v\approx d/\Delta t$。
+  \item 平抛实验要先定原点和坐标轴，再用 $y$ 与 $x^2$ 的线性关系检验模型或求水平初速度。
+  \item 长度读数要看仪器精度：游标卡尺看对齐格，螺旋测微器看固定刻度和可动刻度，并注意零点误差。
+  \item 估读和不确定度提醒我们：测量结果的有效数字必须和仪器分辨能力相匹配。
+  \item 典型实验要能迁移：测电阻率、小灯泡伏安特性、玻璃折射率、凸透镜焦距和双缝测波长，本质都是“直接测量量 + 物理关系 + 误差判断”。
+  \item 验证动量守恒要选对系统，并尽量减小水平方向外力冲量。
   \item 电学实验要注意电表内阻引起的系统误差。
+  \item 滑动变阻器有限流和分压两类接法；是否需要从零调起是重要判断依据。
+  \item 表头改装遵循分流、分压思想：电流表并联小电阻，电压表串联大电阻。
+  \item 半偏法可近似测表头内阻，但要记住“总电流近似不变”这一条件。
+  \item 多用电表欧姆挡内部有电源，测前要欧姆调零，刻度左大右小且不均匀。
+  \item 电桥测量利用平衡条件比较电阻，传感器可把电阻微小变化转化为电信号。
   \item 图像法的关键是斜率、截距和面积的物理意义。
   \item 规范表达包括单位、有效数字、坐标轴、结论和误差分析。
 \end{enumerate}

@@ -11,13 +11,14 @@
   \node at (3.2,0.45) {$A$};
   \node[font=\footnotesize] at (2.05,0.7) {轻绳};
 
-  % 外力、加速度与隔离 B 时的张力。
+  % 外力、加速度与隔离 B 时的张力和摩擦力。
   \draw[->,ultra thick,red] (3.9,0.45) -- (5.05,0.45) node[midway,above] {$F$};
   \draw[->,thick,blue] (1.6,0.45) -- (2.38,0.45) node[midway,below] {$T$};
+  \draw[->,thick,red] (0.2,0.28) -- (-0.45,0.28) node[midway,above] {$f_B$};
   \draw[->,thick,blue] (1.55,1.35) -- (3.0,1.35) node[midway,above] {$a$};
 
   % 方法提示。
   \draw[dashed,rounded corners=2pt] (-0.05,-0.15) rectangle (4.15,1.1);
   \node[font=\footnotesize,align=center] at (2.05,-0.62)
-    {整体法：只算外力求 $a$；隔离 $B$：用 $T=m_Ba$ 求张力};
+    {整体法：只算外力求 $a$；隔离 $B$：用 $T-f_B=m_Ba$ 求张力};
 \end{tikzpicture}

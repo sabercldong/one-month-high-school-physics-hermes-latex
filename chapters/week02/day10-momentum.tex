@@ -12,6 +12,7 @@
   \item 理解动量守恒的条件：系统合外力的冲量为零。
   \item 掌握弹性碰撞、完全非弹性碰撞的特点和公式。
   \item 会用动量守恒解决碰撞、爆炸、反冲问题。
+  \item 理解滑块-木板模型中“动量守恒、能量损失、相对位移”的联系。
 \end{enumerate}
 
 \section*{二、初高中衔接}
@@ -22,10 +23,10 @@
 \begin{enumerate}
   \item 碰撞时间极短（通常千分之一秒）。
   \item 碰撞力极大（可达重力的几千倍）。
-  \item 因此，重力等外力在碰撞过程中可以忽略。
+  \item 若外力冲量远小于碰撞内力冲量，重力等外力的冲量通常可近似忽略。
 \end{enumerate}
 
-结论：\textbf{碰撞过程中，系统的总动量近似守恒。}
+结论：\textbf{在外力冲量可忽略的碰撞过程中，系统的总动量近似守恒。}
 
 \section*{三、核心概念}
 
@@ -47,7 +48,7 @@
 \begin{itemize}
   \item 矢量，方向与力 $F$ 方向相同。
   \item 单位：$\mathrm{N \cdot s}$（与动量单位等价）。
-  \item 冲量是力在时间上的积累效应；若力变化，$F$ 取平均力。
+  \item 冲量是力在时间上的积累效应；$I=Ft$ 严格适用于恒力。若力变化，$F$ 应理解为该时间内的等效平均力。
 \end{itemize}
 
 \end{conceptbox}
@@ -55,7 +56,11 @@
 \begin{conceptbox}{动量定理}
 
 \[
-\boxed{F_{\text{合}} t = \Delta p = p_2 - p_1 = mv_2 - mv_1}
+\boxed{I_{\text{合}}=\Delta p = p_2 - p_1 = mv_2 - mv_1}
+\]
+若合外力恒定，或用平均合外力表示，则可写成
+\[
+F_{\text{合}}t=\Delta p.
 \]
 
 \textbf{来源（牛顿第二定律的时间积累）：}
@@ -71,7 +76,7 @@ F_{\text{合}}\Delta t = m v_2 - m v_1 = \Delta p
   \item 与动能定理类似，但动量定理处理的是\textbf{时间}积累，动能定理处理的是\textbf{位移}积累。
 \end{itemize}
 
-\textbf{生活应用与工程设计：} 跳远时沙坑、汽车安全气囊、头盔、缓冲垫——都是通过延长作用时间 $t$ 来减小平均作用力 $F$（因为 $F_{\text{合}} t = \Delta p$ 恒定）。
+\textbf{生活应用与工程设计：} 跳远时沙坑、汽车安全气囊、头盔、缓冲垫——都是在动量变化 $\Delta p$ 基本相同的情况下，通过延长作用时间 $t$ 来减小平均作用力 $F$。
 
 \begin{center}
 \begin{minipage}{0.86\textwidth}
@@ -101,7 +106,7 @@ F_{\text{合}}\Delta t = m v_2 - m v_1 = \Delta p
 \begin{itemize}
   \item 系统内力（碰撞中两物体的相互作用力）不改变总动量。
   \item 动量守恒是矢量守恒——在一维问题中要规定正方向。
-  \item 碰撞、爆炸、反冲的时间极短，外力远小于内力，可近似认为动量守恒。
+  \item 碰撞、爆炸、反冲的时间极短；若这段时间内系统合外力冲量远小于系统内部相互作用的冲量，可近似认为动量守恒。
 \end{itemize}
 
 \begin{center}
@@ -129,23 +134,23 @@ F_{\text{合}}\Delta t = m v_2 - m v_1 = \Delta p
 
 \textbf{完全非弹性碰撞：}
 \begin{itemize}
-  \item 动量守恒，但动能不守恒（损失最大）。
+  \item 在同一初态、同一系统且外力冲量可忽略的一维两体碰撞模型中，动量守恒，但动能不守恒（机械能损失最大）。
   \item 碰后两物体粘在一起以共同速度运动：
   \[
   m_1 v_1 + m_2 v_2 = (m_1 + m_2) v'
   \]
 \end{itemize}
 
-\textbf{非弹性碰撞：} 介于两者之间，动量守恒，动能部分损失。
+\textbf{非弹性碰撞：} 介于两者之间；若碰撞过程中系统合外力冲量可忽略，则动量守恒，动能部分损失。
 
 \textbf{动量和动能的区别：}
 \begin{center}
-\begin{tabular}{lll}
+\begin{tabular}{@{}p{0.22\textwidth}p{0.30\textwidth}p{0.36\textwidth}@{}}
 \toprule
 物理量 & 性质 & 碰撞中的特点 \\
 \midrule
-动量 $p=mv$ & 矢量，方向与速度相同 & 系统合外力冲量为零时守恒 \\
-动能 $E_k=\frac12 mv^2$ & 标量，永远非负 & 只有弹性碰撞才守恒 \\
+动量 $p=mv$ & 矢量，方向与速度相同 & 单个物体动量可变；系统总动量需看外力冲量 \\
+动能 $E_k=\frac12 mv^2$ & 标量，非负量 & 理想弹性碰撞中守恒 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -155,15 +160,16 @@ F_{\text{合}}\Delta t = m v_2 - m v_1 = \Delta p
 \section*{四、公式与适用条件}
 
 \begin{center}
-\begin{tabular}{lll}
+\begin{tabular}{p{0.30\textwidth}p{0.20\textwidth}p{0.40\textwidth}}
 \toprule
 公式 & 意义 & 适用条件 \\
 \midrule
-$p = mv$ & 动量 & 任何运动 \\
+$p = mv$ & 动量 & 高中非相对论范围 \\
 $I = Ft$ & 冲量 & 恒力 \\
-$F_{\text{合}} t = \Delta p$ & 动量定理 & $F_{\text{合}}$ 为合外力（变力取平均） \\
-$m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'$ & 动量守恒 & 合外力冲量为零 \\
+$I_{\text{合}} = \Delta p$ & 动量定理 & 任意过程用合外力冲量；恒定合外力时 $F_{\text{合}}t=\Delta p$ \\
+$m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'$ & 动量守恒 & 系统合外力冲量为零；一维要先定正方向 \\
 $\frac12 m_1 v_1^2 = \frac12 m_1 v_1'^2 + \frac12 m_2 v_2'^2$ & 动能守恒 & 弹性碰撞，$v_2=0$ \\
+$Q=f_k s_{\text{相对}}$ & 摩擦生热 & 滑动摩擦力大小恒定 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -183,7 +189,7 @@ Q = \frac12 m v_0^2 - \frac12 (m+M) v'^2
 
 \subsection*{模型 2：爆炸/反冲}
 
-系统内力远大于外力，动量守恒，但动能增加（化学能/内能转化为动能）。
+爆炸或反冲过程中，若系统合外力冲量可忽略，则系统动量守恒；同时内部储存的化学能或内能可能转化为动能，使系统总动能增加。
 
 反冲：$0 = m_1 v_1 + m_2 v_2$（总动量守恒，初动量为零）。
 
@@ -211,6 +217,32 @@ $L=x_{\text{人}}+|x_{\text{船}}|$。
 
 \figcaption{人船模型：水平方向质心位置不变}\label{fig:human-boat-model}
 \end{center}
+
+\subsection*{模型 4：滑块-木板模型}
+
+滑块以速度 $v_0$ 滑上静止木板，地面光滑，滑块与木板之间有摩擦。把滑块和木板看成一个系统时，水平方向合外力冲量为零，因此系统水平方向动量守恒；但滑动摩擦力做功会使机械能减少，转化为内能。
+
+\begin{center}
+\input{figures/tikz/slider-plank-momentum}
+
+\figcaption{滑块-木板模型：共速由动量守恒决定，摩擦生热由相对位移决定}\label{fig:slider-plank-momentum}
+\end{center}
+
+若木板足够长，最终滑块与木板达到共同速度 $v$：
+\[
+mv_0=(m+M)v,\qquad v=\frac{m}{m+M}v_0.
+\]
+
+系统损失的机械能变为内能：
+\[
+Q=\frac12mv_0^2-\frac12(m+M)v^2.
+\]
+另一方面，摩擦生热等于滑动摩擦力乘两物体间的相对位移：
+\[
+Q=f_k s_{\text{相对}}=\mu_k mg\,s_{\text{相对}}.
+\]
+
+\textbf{认知提醒：} 滑块和木板受到的摩擦力大小相等、方向相反，所以摩擦力不改变系统总动量；但它们的作用点相对滑动，机械能会减少。不要把“内力不改变总动量”误读成“内力不做功”。
 
 \section*{六、例题精讲}
 
@@ -325,14 +357,51 @@ v_2' = \frac{2 \times 2}{2+1} \times 3 = 4\ \mathrm{m/s}
 
 \end{examplebox}
 
+\begin{examplebox}{滑块-木板——动量与能量结合}
+
+\textbf{题意分析：} 质量 $m=1\ \mathrm{kg}$ 的滑块以 $v_0=6\ \mathrm{m/s}$ 的速度滑上静止在光滑水平面上的长木板，木板质量 $M=2\ \mathrm{kg}$。滑块与木板间动摩擦因数 $\mu_k=0.3$，$g=10\ \mathrm{m/s^2}$，木板足够长。求最终共同速度和滑块相对木板滑行的距离。
+
+\textbf{物理模型：} 滑块-木板模型。水平方向系统动量守恒；机械能损失转化为摩擦生热。
+
+\textbf{解题过程：}
+
+最终共速为 $v$。动量守恒：
+\[
+mv_0=(m+M)v,\qquad 1\times6=(1+2)v,
+\]
+\[
+v=2\ \mathrm{m/s}.
+\]
+
+损失的机械能：
+\[
+Q=\frac12mv_0^2-\frac12(m+M)v^2
+=\frac12\times1\times6^2-\frac12\times3\times2^2
+=18-6=12\ \mathrm{J}.
+\]
+
+摩擦力大小 $f_k=\mu_kmg=0.3\times1\times10=3\ \mathrm{N}$，所以
+\[
+Q=f_k s_{\text{相对}},\qquad s_{\text{相对}}=\frac{12}{3}=4\ \mathrm{m}.
+\]
+
+\textbf{方法总结：} 先用动量守恒求共速，再用能量损失求相对滑动距离。若木板不够长，滑块可能先滑出木板，末态就不是共速，不能套这组结论。
+\end{examplebox}
+
 \section*{七、变式训练}
 
 \begin{enumerate}
   \item 质量为 $m = 60\ \mathrm{kg}$ 的人以 $v_0 = 5\ \mathrm{m/s}$ 的速度跳上静止在光滑水平面上的 $M = 120\ \mathrm{kg}$ 的小车。求人和小车的共同速度。若人与车之间的摩擦因数为 $\mu = 0.3$，求人相对车的滑行距离。
+  \begin{center}
+  \input{figures/tikz/training-human-cart}
+  \end{center}
   
   \item $m_1 = 4\ \mathrm{kg}$ 的小球以 $v_1 = 2\ \mathrm{m/s}$ 正面碰撞静止的 $m_2 = 2\ \mathrm{kg}$ 小球，碰后 $m_1$ 以 $v_1' = -0.5\ \mathrm{m/s}$（反向弹回）。判断碰撞类型并求 $v_2'$。
   
   \item 质量为 $M = 150\ \mathrm{kg}$ 的船上站着一个质量为 $m = 60\ \mathrm{kg}$ 的人，船长 $L = 5\ \mathrm{m}$，船静止在水面上（阻力不计）。人从船头走到船尾，求船相对于岸移动的距离。
+  \begin{center}
+  \input{figures/tikz/human-boat-model}
+  \end{center}
 \end{enumerate}
 
 \section*{八、易错点}
@@ -343,11 +412,13 @@ v_2' = \frac{2 \times 2}{2+1} \times 3 = 4\ \mathrm{m/s}
   
   \item \textbf{动量定理中 $F_{\text{合}}t = \Delta p$ 的 $F_{\text{合}}$ 是合力：} 不是某个单独的力。例如缓冲问题中，$F_{\text{合}}$ 是安全气囊对人的平均作用力减去重力。
   
-  \item \textbf{误以为碰撞中动能一定守恒：} 只有弹性碰撞动能守恒。完全非弹性碰撞动能损失最大。
+  \item \textbf{误以为碰撞中动能一定守恒：} 理想弹性碰撞中动能守恒；非弹性碰撞中部分机械能会转化为内能、声能或形变能。
   
   \item \textbf{系统选择错误：} 动量守恒的前提是系统合外力冲量为零。如果把地球也算进系统，重力就是内力了——但高中阶段一般不这么处理。
   
   \item \textbf{弹性碰撞和完全非弹性碰撞公式搞混：} 弹性碰撞碰后分开、速度不同；完全非弹性碰撞碰后粘在一起、速度相同。
+
+  \item \textbf{滑块-木板模型中把位移当相对位移：} 摩擦生热用的是两接触面之间的相对滑动距离，不是滑块对地位移，也不是木板对地位移。
 \end{enumerate}
 \end{mistakebox}
 
@@ -356,7 +427,7 @@ v_2' = \frac{2 \times 2}{2+1} \times 3 = 4\ \mathrm{m/s}
 \begin{competitionbox}
 \textbf{恢复系数}
 
-恢复系数 $e$ 描述碰撞中动能的保持程度：
+恢复系数 $e$ 描述碰撞前后沿碰撞线方向\textbf{相对速度的恢复程度}，也能反映碰撞中的机械能损失程度：
 \[
 e = \frac{v_2' - v_1'}{v_1 - v_2}
 \]
@@ -375,15 +446,17 @@ e = \frac{v_2' - v_1'}{v_1 - v_2}
 e = \frac{v_2' - v_1'}{v_1 - v_2} = \frac{0 - (-\sqrt{2gh_2})}{\sqrt{2gh_1} - 0} = \sqrt{\frac{h_2}{h_1}}
 \]
 
-\textbf{竞赛小贴士：} 恢复系数结合动量守恒，可以完全描述一维两体碰撞——两个方程两个未知数，总能解。
+\textbf{竞赛小贴士：} 在一维两体碰撞模型中，若恢复系数已知，并且碰撞过程中外力冲量可忽略，恢复系数方程可与动量守恒方程联立求碰后速度。
 \end{competitionbox}
 
 \section*{十、今日小结}
+\enlargethispage{2\baselineskip}
 
 \begin{enumerate}
-  \item 动量 $p = mv$，冲量 $I = Ft$，动量定理 $F_{\text{合}} t = \Delta p$。
+  \item 动量 $p = mv$，冲量 $I = Ft$（恒力），动量定理 $I_{\text{合}} = \Delta p$。
   \item 动量守恒条件：系统合外力冲量为零（碰撞中常可近似）。
   \item 弹性碰撞：动量守恒 $+$ 动能守恒。
-  \item 完全非弹性碰撞：动量守恒，碰后共速，动能损失最大。
+  \item 完全非弹性碰撞：在外力冲量可忽略的一维两体模型中，动量守恒，碰后共速，机械能损失最大。
   \item 反冲/爆炸：初动量为零，各部分动量矢量和为零。
+  \item 滑块-木板模型：动量守恒求共速，机械能损失等于摩擦生热 $Q=f_k s_{\text{相对}}$。
 \end{enumerate}

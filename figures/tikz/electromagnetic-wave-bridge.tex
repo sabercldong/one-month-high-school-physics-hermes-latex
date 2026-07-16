@@ -1,0 +1,20 @@
+% TikZ 图：电磁波中电场和磁场的相互垂直振荡
+% Day 24：交变电流、变压器与电磁应用
+\begin{tikzpicture}[scale=0.88,>=Latex]
+  \draw[->,thick] (0,0) -- (6.6,0) node[right] {传播方向 $c$};
+  \draw[->,thick,blue] (0.6,-1.3) -- (0.6,1.4) node[above] {$E$};
+  \draw[->,thick,red] (0.25,0) -- (-0.55,-0.8) node[left] {$B$};
+
+  \draw[blue,thick,samples=120,domain=0:6.0]
+    plot(\x,{0.9*sin(180*\x)});
+  \draw[red,thick,samples=120,domain=0:6.0]
+    plot(\x,{-0.55*sin(180*\x)-0.35});
+
+  \foreach \x in {0.5,1.5,2.5,3.5,4.5,5.5}{
+    \draw[blue!60,->] (\x,0) -- (\x,{0.9*sin(180*\x)});
+    \draw[red!60,->] (\x,0) -- ++(-0.35,{-0.35-0.55*sin(180*\x)});
+  }
+
+  \node[align=center,font=\small] at (3.35,-1.65)
+    {变化的电场和磁场相互激发，向外传播};
+\end{tikzpicture}

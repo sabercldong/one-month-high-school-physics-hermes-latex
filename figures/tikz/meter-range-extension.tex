@@ -1,0 +1,38 @@
+\begin{tikzpicture}[xscale=0.86,yscale=0.78,>=Latex,line cap=round,line join=round]
+  \begin{scope}
+    \node[font=\small] at (2.0,2.65) {改装成电流表};
+    \draw[thick] (0,1.35) -- (0.75,1.35);
+    \draw[thick] (3.25,1.35) -- (4.0,1.35);
+    \draw[thick] (0.75,1.35) -- (0.75,2.05) -- (1.45,2.05);
+    \draw[thick] (2.55,2.05) -- (3.25,2.05) -- (3.25,1.35);
+    \draw[thick] (0.75,1.35) -- (0.75,0.65) -- (1.45,0.65);
+    \draw[thick] (2.55,0.65) -- (3.25,0.65) -- (3.25,1.35);
+    \draw[thick] (2.0,2.05) circle (0.36);
+    \node at (2.0,2.05) {$G$};
+    \draw (1.45,0.38) rectangle (2.55,0.92);
+    \node at (2.0,0.65) {$R_s$};
+    \draw[->,red,thick] (0.18,1.65) -- (0.68,1.65);
+    \node[font=\scriptsize,red] at (0.38,1.95) {$I$};
+    \draw[->,blue,thick] (1.05,2.35) -- (1.52,2.35);
+    \node[font=\scriptsize,blue] at (2.00,2.42) {$I_g$};
+    \draw[->,blue,thick] (1.05,0.30) -- (1.52,0.30);
+    \node[font=\scriptsize,blue] at (2.03,0.18) {$I-I_g$};
+    \node[font=\scriptsize,align=center] at (2.0,-0.18)
+      {并联小电阻：$R_s=\dfrac{I_gR_g}{I-I_g}$};
+  \end{scope}
+
+  \begin{scope}[xshift=6.2cm]
+    \node[font=\small] at (2.0,2.65) {改装成电压表};
+    \draw[thick] (0,1.35) -- (0.85,1.35);
+    \draw[thick] (3.15,1.35) -- (4.0,1.35);
+    \draw[thick] (1.25,1.35) circle (0.36);
+    \node at (1.25,1.35) {$G$};
+    \draw (2.05,1.05) rectangle (3.05,1.65);
+    \node at (2.55,1.35) {$R$};
+    \draw[thick] (1.61,1.35) -- (2.05,1.35);
+    \draw[->,red,thick] (0.35,1.72) -- (3.65,1.72);
+    \node[font=\scriptsize,red] at (2.0,2.02) {$U$};
+    \node[font=\scriptsize,align=center] at (2.0,-0.18)
+      {串联大电阻：$R=\dfrac{U}{I_g}-R_g$};
+  \end{scope}
+\end{tikzpicture}

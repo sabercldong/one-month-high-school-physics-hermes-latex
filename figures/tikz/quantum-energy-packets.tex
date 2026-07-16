@@ -1,0 +1,27 @@
+% TikZ 图：能量量子化与光子能量
+% Day 27：近代物理与原子物理入门
+\begin{tikzpicture}[scale=0.92,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  \begin{scope}[shift={(-2.7,0)}]
+    \draw[->,thick] (0,-0.25) -- (0,2.65) node[above] {能量};
+    \foreach \y/\lab in {0.25/$0$,0.95/$h\nu$,1.65/$2h\nu$,2.35/$3h\nu$}{
+      \draw[thick,blue!65!black] (0.25,\y) -- (2.35,\y);
+      \node[left=5pt] at (0,\y) {\lab};
+    }
+    \draw[->,orange!85!black,thick] (2.70,0.25) -- (2.70,0.95);
+    \draw[->,orange!85!black,thick] (2.95,0.95) -- (2.95,1.65);
+    \node[orange!85!black,align=center] at (3.05,2.25) {一份一份\\吸收或放出};
+  \end{scope}
+
+  \begin{scope}[shift={(2.25,0.05)}]
+    \draw[fill=gray!10,draw=gray!70,rounded corners=2pt] (-1.15,0.10) rectangle (1.15,1.55);
+    \node at (0,1.25) {光子};
+    \draw[->,red!80!black,thick] (-1.75,0.82) -- (-1.15,0.82);
+    \draw[red!80!black,thick,decorate,decoration={snake,amplitude=1.6pt,segment length=7pt}]
+      (-3.00,0.82) -- (-1.75,0.82);
+    \node[red!80!black] at (-2.40,1.22) {$E=h\nu$};
+    \fill[blue!65!black] (0,0.55) circle (2.6pt);
+    \draw[->,blue!65!black,thick] (0.20,0.55) -- (1.95,0.55);
+    \node[blue!65!black,align=center] at (2.35,0.55) {光电子\\能量账本};
+  \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,26 @@
+\begin{tikzpicture}[x=1cm,y=1cm,>=Stealth]
+  \draw[->,thick] (-4.6,0) -- (4.9,0) node[right] {$f$};
+  \foreach \x/\lab in {-3.2/{20\ \mathrm{Hz}}, 1.55/{2.0\times10^4\ \mathrm{Hz}}}{
+    \draw[thick] (\x,0.16) -- (\x,-0.16);
+    \node[below,font=\scriptsize] at (\x,-0.18) {$\lab$};
+  }
+
+  \draw[very thick,blue!65] (-4.05,0.42) -- (-3.2,0.42);
+  \draw[very thick,green!55!black] (-3.2,0.42) -- (1.55,0.42);
+  \draw[very thick,red!75] (1.55,0.42) -- (4.35,0.42);
+
+  \node[font=\small,align=center,blue!65!black] at (-3.65,1.08) {次声\\低于可听范围};
+  \node[font=\small,align=center,green!45!black] at (-0.80,1.08) {可听声\\人耳大致可听};
+  \node[font=\small,align=center,red!75!black] at (3.00,1.08) {超声\\高于可听范围};
+
+  \draw[->,blue!65!black,thick] (-3.65,0.85) -- (-3.65,0.48);
+  \draw[->,green!45!black,thick] (-0.80,0.85) -- (-0.80,0.48);
+  \draw[->,red!75!black,thick] (3.00,0.85) -- (3.00,0.48);
+
+  \node[font=\scriptsize,align=center] at (-3.65,-0.88) {地震波、火山活动\\大型结构振动};
+  \node[font=\scriptsize,align=center] at (-0.80,-0.88) {语音、音乐\\日常听觉};
+  \node[font=\scriptsize,align=center] at (3.00,-0.88) {医学成像、测距\\清洗、无损检测};
+
+  \node[font=\scriptsize,align=center] at (0,-1.72)
+    {同一介质中声速主要由介质决定；频率越高，波长通常越短};
+\end{tikzpicture}

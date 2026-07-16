@@ -1,0 +1,27 @@
+% TikZ 图：带电液滴在匀强电场中悬浮
+% Day 15：电荷、电场与电场强度
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  \draw[thick] (-2.1,1.2) -- (2.1,1.2);
+  \draw[thick] (-2.1,-1.2) -- (2.1,-1.2);
+  \node[left] at (-2.1,1.2) {$+$};
+  \node[left] at (-2.1,-1.2) {$-$};
+
+  \foreach \x in {-1.55,-0.75,0.05,0.85,1.65} {
+    \draw[blue!70,->] (\x,0.85) -- (\x,-0.85);
+  }
+  \node[blue!70] at (1.95,0.12) {$\vect{E}$};
+
+  \filldraw[orange!85!black] (0,0) circle (4pt);
+  \node[orange!85!black,right] at (0.12,0.02) {$-q$};
+  \draw[very thick,red!80!black,->] (0,0) -- (0,0.92)
+    node[right] {$F_{\text{电}}=|q|E$};
+  \draw[very thick,black,->] (0,0) -- (0,-0.92)
+    node[right] {$mg$};
+
+  \draw[gray,<->] (2.42,-1.2) -- (2.42,1.2);
+  \node[gray,right] at (2.5,0) {$d$};
+
+  \node[align=center] at (0,-1.72)
+    {悬浮条件：$F_{\text{电}}=mg$，即 $|q|E=mg$};
+\end{tikzpicture}

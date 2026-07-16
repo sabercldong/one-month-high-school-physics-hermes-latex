@@ -1,0 +1,37 @@
+\begin{tikzpicture}[scale=0.92,>=Stealth]
+  \begin{scope}
+    \node[font=\small] at (0,1.75) {衍射极限};
+    \draw[thick] (-2.2,-1.25) -- (-2.2,-0.22);
+    \draw[thick] (-2.2,0.22) -- (-2.2,1.25);
+    \foreach \y in {-0.8,0,0.8}{
+      \draw[blue,->] (-3.35,\y) -- (-2.35,\y);
+    }
+    \foreach \r in {0.45,0.85,1.25,1.65}{
+      \draw[blue!65] (-2.2,0) arc (180:35:\r);
+      \draw[blue!65] (-2.2,0) arc (180:325:\r);
+    }
+    \draw[thick] (1.65,-1.25) -- (1.65,1.25);
+    \draw[red,very thick] (1.65,0) -- ++(0.55,0);
+    \draw[red!60,thick] (1.65,0.42) -- ++(0.28,0);
+    \draw[red!60,thick] (1.65,-0.42) -- ++(0.28,0);
+    \node[font=\scriptsize,align=center] at (0,-1.55) {孔径有限，像点会展开\\显微镜有分辨率上限};
+  \end{scope}
+
+  \begin{scope}[xshift=5.3cm]
+    \node[font=\small] at (0,1.75) {偏振};
+    \draw[thick] (-1.25,-1.10) rectangle (-0.75,1.10);
+    \foreach \y in {-0.75,-0.45,...,0.75}{
+      \draw[gray] (-1.20,\y) -- (-0.80,\y+0.25);
+    }
+    \node[font=\scriptsize] at (-1.0,-1.38) {偏振片};
+    \draw[->,blue,thick] (-3.0,0) -- (-1.35,0);
+    \foreach \ang in {0,30,60,90,120,150}{
+      \draw[blue!65] (-2.55,0) -- ++(\ang:0.32);
+      \draw[blue!65] (-2.55,0) -- ++(\ang+180:0.32);
+    }
+    \draw[->,red,thick] (-0.65,0) -- (1.25,0);
+    \draw[red,very thick] (0.15,-0.45) -- (0.15,0.45);
+    \draw[red,very thick] (0.75,-0.45) -- (0.75,0.45);
+    \node[font=\scriptsize,align=center] at (0.25,-1.38) {只保留某一振动方向};
+  \end{scope}
+\end{tikzpicture}

@@ -7,7 +7,7 @@
 \section*{一、学习目标}
 
 \begin{enumerate}
-  \item 理解电场力做功与电势能变化的关系：$W_{AB} = -\Delta E_p$。
+  \item 理解静电力做功与电势能变化的关系：$W_{AB} = -\Delta E_p$。
   \item 掌握电势 $\varphi = \dfrac{E_p}{q}$ 和电势差 $U_{AB} = \varphi_A - \varphi_B$。
   \item 掌握匀强电场中 $U = Ed$ 及 $E = \dfrac{U}{d}$。
   \item 理解等势面的概念和性质。
@@ -33,13 +33,13 @@
 
 这个类比只能帮助理解，不能机械套用：高度是几何量，电势是单位正电荷的电势能，且电势正负还受电荷源和零电势点影响。
 
-\textbf{科学发展视角：} 现代电子设备通常不直接说“电场力做多少功”，而是说电压、电势差和能量。电池、芯片、传感器和粒子加速器都要用电势差来描述能量转化。后面遇到电子伏特（$\mathrm{eV}$）时，本质上也是“电荷经过电势差获得或失去的能量”。
-
 \section*{三、核心概念}
 
-\begin{conceptbox}{电场力做功与电势能}
+\textbf{科学发展视角：} 现代电子设备通常不直接说“电场力做多少功”，而是说电压、电势差和能量。电池、芯片、传感器和粒子加速器都要用电势差来描述能量转化。后面遇到电子伏特（$\mathrm{eV}$）时，本质上也是“电荷经过电势差获得或失去的能量”。
 
-\textbf{先看匀强电场中的做功：} 设匀强电场方向为 $x$ 轴正方向。电荷从 $A$ 到 $B$ 可以走任意曲线路径，把路径分成很多小段 $\Delta \vect{s}$。每一小段中，电场力 $\vect{F}=q\vect{E}$ 近似不变：
+\begin{conceptbox}{静电力做功与电势能}
+
+\textbf{先看匀强静电场中的做功：} 设匀强静电场方向为 $x$ 轴正方向。电荷从 $A$ 到 $B$ 可以走任意曲线路径，把路径分成很多小段 $\Delta \vect{s}$。每一小段中，静电力 $\vect{F}=q\vect{E}$ 近似不变：
 \[
 \Delta W = \vect{F}\cdot \Delta \vect{s}=qE\Delta x
 \]
@@ -47,7 +47,7 @@
 \[
 W_{AB}=\sum \Delta W=qE\sum \Delta x=qE(x_B-x_A)
 \]
-所以在匀强电场中，电场力做功只与初末位置沿电场方向的距离有关，与路径形状无关。
+所以在匀强静电场中，静电力做功只与初末位置沿电场方向的距离有关，与路径形状无关。
 
 \begin{center}
 \input{figures/tikz/uniform-field-work-path}
@@ -97,7 +97,7 @@ W_{AB} = -\Delta E_p = E_{pA} - E_{pB}
 U_{AB} = \varphi_A - \varphi_B
 \]
 
-\textbf{电场力做功与电势差：}
+\textbf{静电力做功与电势差：}
 \[
 \boxed{W_{AB} = qU_{AB}}
 \]
@@ -131,7 +131,7 @@ U_{AB} = \varphi_A - \varphi_B
 \textbf{性质：}
 \begin{itemize}
   \item 等势面与电场线处处垂直。
-  \item 沿等势面移动电荷，电场力不做功。
+  \item 沿等势面移动电荷，静电力不做功。
   \item 等势面密集的地方场强大（与电场线疏密一致）。
   \item 不同等势面不相交。
 \end{itemize}
@@ -151,11 +151,11 @@ U_{AB} = \varphi_A - \varphi_B
 \toprule
 公式 & 物理意义 & 适用条件 \\
 \midrule
-$W_{AB} = qU_{AB}$ & 电场力做功 & 任何电场 \\
-$\varphi = \dfrac{E_p}{q}$ & 电势定义 & 任何电场 \\
-$U_{AB} = \varphi_A - \varphi_B$ & 电势差 & 任何电场 \\
-$U = Ed$ & 场强与电势差 & 匀强电场 \\
-沿电场线方向电势降低 & 电势变化规律 & 任何电场 \\
+$W_{AB} = qU_{AB}$ & 静电力做功 & 静电场 \\
+$\varphi = \dfrac{E_p}{q}$ & 电势定义 & 静电场 \\
+$U_{AB} = \varphi_A - \varphi_B$ & 电势差 & 静电场 \\
+$U = Ed$ & 场强与电势差 & 匀强静电场，$d$ 沿电场方向 \\
+沿电场线方向电势降低 & 电势变化规律 & 静电场 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -203,7 +203,7 @@ E_p(r)=k\frac{Qq}{r},\qquad
 
 \subsection*{模型 3：带电粒子在电场中的能量关系}
 
-只有电场力做功时，带电粒子的动能和电势能之和守恒：
+只有静电力做功时，带电粒子的动能和电势能之和守恒：
 \[
 \frac12 mv_1^2 + q\varphi_1 = \frac12 mv_2^2 + q\varphi_2
 \]
@@ -256,17 +256,17 @@ E_p(r)=k\frac{Qq}{r},\qquad
 
 $U_{12} = \varphi_1 - \varphi_2 = 270 - 90 = 180\ \mathrm{V}$。
 
-\textbf{方法总结：} 正点电荷周围电势为正，离电荷越近电势越高。两点间的电势差等于电势之差。
+\textbf{方法总结：} 取无穷远为零电势点时，正点电荷周围电势为正，离电荷越近电势越高。两点间的电势差等于电势之差。
 
 \end{examplebox}
 
 \newpage
 
-\begin{examplebox}{电场力做功与路径无关}
+\begin{examplebox}{静电力做功与路径无关}
 
 \textbf{题意分析：} 在匀强电场中，将 $q = +1 \times 10^{-8}\ \mathrm{C}$ 的电荷从 $A$ 沿直线移到 $B$，电场力做功 $W_1 = 3 \times 10^{-6}\ \mathrm{J}$。若从 $A$ 沿另一条路径（先向右再向上）移到 $B$，电场力做功 $W_2$ 是多少？$A$、$B$ 的电势差是多少？
 
-\textbf{物理模型：} 电场力做功与路径无关。
+\textbf{物理模型：} 静电力做功与路径无关。
 
 \textbf{解题过程：}
 
@@ -276,7 +276,7 @@ $W_2 = W_1 = 3 \times 10^{-6}\ \mathrm{J}$（与路径无关）。
 U_{AB} = \frac{W_{AB}}{q} = \frac{3 \times 10^{-6}}{1 \times 10^{-8}} = 300\ \mathrm{V}
 \]
 
-\textbf{方法总结：} 电场力做功与路径无关，只与初末位置有关。这是静电场与重力场的共同特点，都对应一个势能函数。
+\textbf{方法总结：} 静电力做功与路径无关，只与初末位置有关。这是静电场与重力场的共同特点，都对应一个势能函数。
 
 \end{examplebox}
 
@@ -288,6 +288,9 @@ U_{AB} = \frac{W_{AB}}{q} = \frac{3 \times 10^{-6}}{1 \times 10^{-8}} = 300\ \ma
   \item 点电荷 $Q = -4 \times 10^{-9}\ \mathrm{C}$，求距 $Q$ 为 $0.2\ \mathrm{m}$ 处的电势。
   
   \item 匀强电场中，$A$、$B$ 相距 $0.1\ \mathrm{m}$，连线与电场方向夹角 $60^\circ$，$U_{AB} = 20\ \mathrm{V}$。求电场强度 $E$。
+  \begin{center}
+  \input{figures/tikz/training-uniform-field-ab-angle}
+  \end{center}
 \end{enumerate}
 
 \section*{八、易错点}
@@ -296,17 +299,19 @@ U_{AB} = \frac{W_{AB}}{q} = \frac{3 \times 10^{-6}}{1 \times 10^{-8}} = 300\ \ma
 \begin{enumerate}
   \item \textbf{$U = Ed$ 中 $d$ 的含义：} $d$ 是沿电场线方向的距离，不是两点间的直线距离。如果 $A$、$B$ 的连线与电场方向夹角为 $\theta$，则 $d = AB \cdot \cos\theta$。
   
-  \item \textbf{电势的正负：} 电势是标量，有正负。正电荷周围电势为正，负电荷周围电势为负。电势的大小比较时，$+5\ \mathrm{V} > -10\ \mathrm{V}$。
+  \item \textbf{电势的正负：} 电势是标量，有正负。取无穷远为零电势点时，正点电荷周围电势为正，负点电荷周围电势为负。电势的大小比较时，$+5\ \mathrm{V} > -10\ \mathrm{V}$。
   
-  \item \textbf{电场力做功正负的判断：} 电场力做功的正负由 $q$ 和 $U$ 的符号共同决定。$W = qU$，$q$ 和 $U$ 同号则做正功。
+  \item \textbf{静电力做功正负的判断：} 静电力做功的正负由 $q$ 和 $U$ 的符号共同决定。$W = qU$，$q$ 和 $U$ 同号则做正功。
   
-  \item \textbf{零电势点的选取：} 同一问题中必须使用同一个零电势参考点。通常取大地或无穷远。
+  \item \textbf{零电势点的选取：} 比较电势值或代入 $E_p=q\varphi$ 时，要在同一零电势参考点下进行。若只求两点电势差，零点选择会相互抵消，但仍要保持符号约定一致。
   
   \item \textbf{混淆电势和电势能：} 电势 $\varphi$ 是电场的属性（与电荷无关），电势能 $E_p = q\varphi$ 是电荷在场中具有的能量（与电荷 $q$ 有关）。
 \end{enumerate}
 \end{mistakebox}
 
 \section*{九、竞赛入门补充}
+
+下面把“静电力做功与路径无关”从匀强电场推广到非匀强电场。关键仍是投影思想：真正参与做功的是沿电场方向的位移分量，与电场垂直的分量不做功。
 
 \begin{competitionbox}
 \textbf{非匀强电场中路径无关的证明}
@@ -320,12 +325,16 @@ E=k\frac{|Q|}{r^2}
 
 \begin{center}
 \input{figures/tikz/nonuniform-field-path-proof}\\[0.3em]
-\figcaption{非匀强点电荷电场：不同路径的电场力做功相同}\label{fig:nonuniform-field-path-proof}
+\figcaption{非匀强点电荷电场：不同路径的静电力做功相同}\label{fig:nonuniform-field-path-proof}
 \end{center}
 
-沿任意路径移动电荷 $q$ 时，只有径向位移 $\mathrm{d}r$ 对做功有贡献，切向位移与电场垂直，不做功。下面的 $Q$ 按带符号电荷量代入，因此
+沿任意路径移动电荷 $q$ 时，只有径向位移 $\mathrm{d}r$ 对做功有贡献，切向位移与电场垂直，不做功。若把径向向外取为正，点电荷电场的径向分量可写成
 \[
-\mathrm{d}W=qE\,\mathrm{d}r=k\frac{Qq}{r^2}\,\mathrm{d}r
+E_r=k\frac{Q}{r^2},
+\]
+这里的 $Q$ 按带符号电荷量代入。因此微元功为
+\[
+\mathrm{d}W=qE_r\,\mathrm{d}r=k\frac{Qq}{r^2}\,\mathrm{d}r
 \]
 从 $A$ 到 $B$ 的总功为
 \[
@@ -379,10 +388,10 @@ E=\frac{U_{AC}}{d}=\frac{8}{a}
 \section*{十、今日小结}
 
 \begin{enumerate}
-  \item 电场力做功 $W_{AB} = qU_{AB}$，与路径无关。
-  \item 电场力做功等于电势能变化的负值：$W_{AB}=-\Delta E_p$。
+  \item 静电场中，静电力做功 $W_{AB}=qU_{AB}$，与路径无关。
+  \item 静电力做功等于电势能变化的负值：$W_{AB}=-\Delta E_p$。
   \item 电势 $\varphi = \dfrac{E_p}{q}$，电势差 $U_{AB} = \varphi_A - \varphi_B$。
   \item 沿电场线方向电势降低。
   \item 匀强电场中 $U = Ed$，$E = \dfrac{U}{d}$。
-  \item 等势面与电场线垂直，沿等势面移动电荷电场力不做功。
+  \item 等势面与电场线垂直，沿等势面移动电荷时静电力不做功。
 \end{enumerate}

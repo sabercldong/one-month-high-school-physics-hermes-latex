@@ -1,0 +1,42 @@
+% TikZ 图：传感器分压模型
+% Day 19：恒定电流与基本电路
+\begin{tikzpicture}[scale=0.92,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-4.55,-2.15) rectangle (4.55,2.10);
+
+  \tikzset{
+    wire/.style={thick},
+    res/.style={thick,fill=white},
+    signal/.style={->,very thick,blue},
+    current/.style={->,very thick,red}
+  }
+
+  % Circuit frame: keep the circuit uncluttered; explanations are placed below.
+  \draw[wire] (-3.10,1.30) -- (-1.55,1.30);
+  \draw[res] (-1.55,1.00) rectangle (-0.35,1.60);
+  \node at (-0.95,1.30) {$R_0$};
+  \draw[wire] (-0.35,1.30) -- (1.45,1.30);
+  \draw[res] (1.45,0.18) rectangle (2.05,1.30);
+  \node at (1.75,0.74) {$R_x$};
+  \draw[wire] (1.75,0.18) -- (1.75,-0.55) -- (-3.10,-0.55);
+  \draw[wire] (-3.10,-0.55) -- (-3.10,-0.38);
+  \draw[wire] (-3.10,0.28) -- (-3.10,1.30);
+
+  % Battery
+  \draw[thick] (-3.45,0.28) -- (-2.75,0.28);
+  \draw[thick] (-3.30,-0.38) -- (-2.90,-0.38);
+  \node[left] at (-3.48,0.28) {$+$};
+  \node[left] at (-3.48,-0.38) {$-$};
+  \node[left] at (-3.52,-0.05) {$E$};
+
+  % Current and output voltage
+  \draw[current] (-2.25,1.52) -- (-1.72,1.52);
+  \node[red,font=\small] at (-2.00,1.82) {$I$};
+  \draw[signal] (2.65,0.18) -- (2.65,1.30);
+  \draw[wire] (1.75,1.30) -- (2.75,1.30);
+  \draw[wire] (1.75,0.18) -- (2.75,0.18);
+  \node[blue,right] at (2.70,0.74) {$U_{\text{出}}$};
+
+  % Input physical quantities
+  \node[font=\small,align=center] at (0,-1.20) {温度、光照、压力等改变 $R_x$};
+  \node[font=\small,align=center] at (0,-1.65) {物理量变化 $\to$ 电阻变化 $\to$ 输出电压变化};
+\end{tikzpicture}

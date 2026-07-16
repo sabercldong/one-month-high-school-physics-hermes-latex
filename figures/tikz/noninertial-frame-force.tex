@@ -1,0 +1,36 @@
+% TikZ 图：加速参考系中的惯性力
+% Day 06：牛顿运动定律
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \tikzset{
+    cart/.style={draw,thick,rounded corners=2pt,fill=gray!8},
+    force/.style={->,very thick},
+    note/.style={font=\small,align=center}
+  }
+
+  \begin{scope}[xshift=-3.3cm]
+    \draw[cart] (-1.45,-0.75) rectangle (1.45,0.55);
+    \draw[thick] (-1.05,-0.75) -- (-1.30,-1.10);
+    \draw[thick] (1.05,-0.75) -- (1.30,-1.10);
+    \draw[thick] (-1.55,-1.10) -- (1.55,-1.10);
+    \draw[thick,fill=white] (-0.35,-0.55) rectangle (0.35,0.15);
+    \node at (0,-0.20) {$m$};
+    \draw[force,red] (0.35,-0.20) -- (1.10,-0.20) node[above] {$F$};
+    \draw[force,blue] (-1.10,0.85) -- (-0.25,0.85) node[above] {$a$};
+    \node[note] at (0,-1.55) {地面惯性系\\只画真实受力};
+  \end{scope}
+
+  \begin{scope}[xshift=3.3cm]
+    \draw[cart] (-1.45,-0.75) rectangle (1.45,0.55);
+    \draw[thick] (-1.05,-0.75) -- (-1.30,-1.10);
+    \draw[thick] (1.05,-0.75) -- (1.30,-1.10);
+    \draw[thick] (-1.55,-1.10) -- (1.55,-1.10);
+    \draw[thick,fill=white] (-0.35,-0.55) rectangle (0.35,0.15);
+    \node at (0,-0.20) {$m$};
+    \draw[force,red] (0.35,-0.20) -- (1.10,-0.20) node[above] {$F$};
+    \draw[force,orange] (-0.35,-0.20) -- (-1.10,-0.20) node[above] {$F_{\text{惯}}=ma_0$};
+    \draw[force,blue] (-1.10,0.85) -- (-0.25,0.85) node[above] {$a_0$};
+    \node[note] at (0,-1.55) {随车加速系\\补一个反向惯性力};
+  \end{scope}
+
+  \node[note] at (0,1.55) {同一问题可换参考系，但要先说明是否为惯性系};
+\end{tikzpicture}

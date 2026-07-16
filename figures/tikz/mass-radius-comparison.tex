@@ -1,18 +1,19 @@
 % TikZ 图：质谱仪半径比较例题
 % Day 22：洛伦兹力
 \begin{tikzpicture}[scale=0.9,>=Latex]
-  \draw[thick,fill=blue!4] (-1.4,-1.55) rectangle (2.6,1.55);
+  \path[use as bounding box] (-2.25,-1.85) rectangle (2.75,1.95);
+  \draw[thick,fill=blue!4] (-1.4,-0.30) rectangle (2.6,1.75);
   \foreach \x in {-0.9,-0.2,0.5,1.2,1.9} {
-    \foreach \y in {-0.95,-0.25,0.45,1.15} {
+    \foreach \y in {0.05,0.55,1.05,1.50} {
       \draw[gray] (\x-0.05,\y-0.05) -- (\x+0.05,\y+0.05);
       \draw[gray] (\x-0.05,\y+0.05) -- (\x+0.05,\y-0.05);
     }
   }
-  \node[blue,font=\small] at (2.1,1.25) {$B$ 向里};
+  \node[blue,font=\small] at (2.1,1.48) {$B$ 向里};
   \draw[->,red,very thick] (-2.15,0) -- (-1.4,0) node[midway,below] {$v$};
-  \draw[red,thick,->] (-1.4,0) arc (180:15:0.72);
-  \draw[orange,thick,->] (-1.4,0) arc (180:15:1.22);
-  \node[red] at (-0.65,0.92) {$m$};
-  \node[orange] at (0.10,1.48) {$2m$};
+  \draw[red,thick,->] (-1.4,0) arc (-90:50:0.72);
+  \draw[orange,thick,->] (-1.4,0) arc (-90:32:1.22);
+  \node[red] at (-0.95,0.88) {$m$};
+  \node[orange] at (-0.02,1.28) {$2m$};
   \node[font=\small] at (0.55,-1.85) {$r_2=2r_1$};
 \end{tikzpicture}

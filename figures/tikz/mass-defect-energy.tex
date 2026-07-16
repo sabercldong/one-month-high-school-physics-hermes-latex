@@ -1,0 +1,22 @@
+\begin{tikzpicture}[scale=0.95,>=Stealth]
+  \draw[rounded corners=5pt,thick,fill=gray!8] (-3.6,-0.8) rectangle (-1.25,0.8);
+  \node[font=\small] at (-2.42,0.35) {反应前};
+  \foreach \x/\y/\c in {-3.1/0.0/red,-2.75/0.25/blue,-2.42/-0.18/red,-2.1/0.15/blue,-1.78/-0.15/red}{
+    \fill[\c] (\x,\y) circle (0.10);
+  }
+  \node[font=\small] at (-2.42,-1.05) {总质量 $m_{\text{前}}$};
+
+  \draw[->,very thick] (-0.95,0) -- (0.95,0);
+  \node[font=\small] at (0,0.42) {核反应};
+
+  \draw[rounded corners=5pt,thick,fill=blue!4] (1.25,-0.8) rectangle (3.6,0.8);
+  \node[font=\small] at (2.42,0.35) {反应后};
+  \foreach \x/\y/\c in {1.85/0.10/red,2.15/-0.18/blue,2.45/0.18/red,2.78/-0.02/blue}{
+    \fill[\c] (\x,\y) circle (0.10);
+  }
+  \node[font=\small] at (2.42,-1.05) {总质量 $m_{\text{后}}$};
+
+  \draw[->,very thick,orange!85!black] (2.9,0.85) -- (3.75,1.55);
+  \node[font=\small,orange!85!black,align=center] at (4.1,1.72) {释放能量\\$E_{\text{释放}}=\Delta m\,c^2$};
+  \node[font=\small] at (0,-1.55) {$\Delta m=m_{\text{前}}-m_{\text{后}}$，质量差对应释放的能量};
+\end{tikzpicture}

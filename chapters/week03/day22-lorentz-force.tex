@@ -8,21 +8,22 @@
 \begin{enumerate}
   \item 理解洛伦兹力是磁场对运动电荷的作用力。
   \item 掌握洛伦兹力公式 $F=|q|vB\sin\theta$ 和方向判断方法。
-  \item 理解洛伦兹力不做功，只改变速度方向，不改变速率。
+  \item 理解磁场洛伦兹力不做功，只改变速度方向，不改变速率。
   \item 掌握带电粒子在匀强磁场中的匀速圆周运动：$r=\dfrac{mv}{|q|B}$，$T=\dfrac{2\pi m}{|q|B}$。
   \item 会分析粒子进入有界磁场时的圆心、半径、偏转角和运动时间。
+  \item 了解回旋加速器中“电场加速、磁场转弯”的基本分工。
 \end{enumerate}
 
 \section*{二、初高中衔接}
 
 Day 17 中，带电粒子在匀强电场中受到电场力，可能做类平抛运动。磁场中的情况很不同：
 \begin{itemize}
-  \item 电场力方向通常沿电场方向，可能改变速率；
-  \item 洛伦兹力始终垂直于速度方向，只改变速度方向；
-  \item 电场可以给粒子加速，磁场不能单独给粒子加速。
+  \item 电场力对正电荷沿电场方向、对负电荷反向，可能改变速率；
+  \item 磁场力（高中常称洛伦兹力）始终垂直于速度方向，只改变速度方向；
+  \item 电场力可以改变粒子动能，只有磁场力单独作用时，粒子速率不变。
 \end{itemize}
 
-因此，磁场题的核心不是“加速度大小怎么变”，而是“轨迹几何怎么找”。
+因此，磁场题的核心不是“速率怎么增大”，而是“受力方向怎样转弯、轨迹几何怎么找”。
 
 \textbf{科学发展视角：} 洛伦兹力是粒子加速器、质谱仪、等离子体约束和空间辐射探测的基础。现代科学常常不是直接“看见”微观粒子，而是通过电场和磁场控制它们的轨迹，再由轨迹反推粒子的速度、质量和电荷性质。
 
@@ -53,18 +54,53 @@ Day 17 中，带电粒子在匀强电场中受到电场力，可能做类平抛�
 
 \end{conceptbox}
 
+\begin{conceptbox}{安培力的微观来源}
+
+上一节的安培力和本节的洛伦兹力不是两个互不相关的力。通电导线中有大量载流子定向移动，磁场先作用在每个运动电荷上；这些微观洛伦兹力通过导体传给整段导线，宏观上就表现为安培力。
+
+\begin{center}
+\input{figures/tikz/ampere-lorentz-micro}
+
+\figcaption{安培力可以看成许多载流子所受洛伦兹力的宏观合力}\label{fig:ampere-lorentz-micro}
+\end{center}
+
+以导线与匀强磁场垂直为例。设单位体积内载流子数为 $n$，每个载流子电荷量大小为 $|q|$，导线横截面积为 $S$，载流子定向移动速率为 $v_d$。长度为 $L$ 的导线内载流子数约为
+\[
+N=nSL.
+\]
+每个载流子受到的洛伦兹力大小为 $|q|v_dB$，所以整段导线受到的合力大小为
+\[
+F=N|q|v_dB=nSL|q|v_dB.
+\]
+又因为电流的微观表达式为
+\[
+I=n|q|Sv_d,
+\]
+于是
+\[
+F=BIL.
+\]
+若电流方向与磁场方向成角度 $\theta$，只有垂直于磁场的速度分量产生作用，因此得到一般式
+\[
+F=BIL\sin\theta.
+\]
+
+\textbf{认知提醒：} 高中计算安培力时直接用电流方向和左手定则；理解来源时，可以把电流看成大量运动电荷的定向移动。金属中真实运动的是电子，方向与约定电流相反，但用约定电流方向判断整段导线的安培力最方便。
+
+\end{conceptbox}
+
 \begin{conceptbox}{洛伦兹力不做功}
 
-洛伦兹力方向始终垂直于速度方向，因此瞬时功率
+本节所说洛伦兹力，指磁场对运动电荷的力。它的方向始终垂直于速度方向，因此瞬时功率
 \[
 P = \vect{F}\cdot \vect{v}=0
 \]
-所以洛伦兹力不做功，不改变粒子动能和速率，只改变速度方向。
+所以磁场洛伦兹力不做功，不改变粒子动能和速率，只改变速度方向。
 
 \begin{center}
 \input{figures/tikz/lorentz-no-work}
 
-\figcaption{洛伦兹力始终垂直速度：只改变方向，不改变速率}\label{fig:lorentz-no-work}
+\figcaption{磁场洛伦兹力始终垂直速度：只改变方向，不改变速率}\label{fig:lorentz-no-work}
 \end{center}
 
 \textbf{重要区别：} 电场力可以改变带电粒子的动能；磁场力单独作用时不能改变动能。
@@ -73,7 +109,7 @@ P = \vect{F}\cdot \vect{v}=0
 
 \begin{conceptbox}{匀强磁场中的圆周运动}
 
-若带电粒子以速度 $v$ 垂直进入匀强磁场，洛伦兹力始终垂直速度，提供向心力：
+若带电粒子以速度 $v$ 垂直进入匀强磁场，磁场洛伦兹力始终垂直速度，提供向心力：
 \[
 |q|vB=\frac{mv^2}{r}
 \]
@@ -91,8 +127,8 @@ P = \vect{F}\cdot \vect{v}=0
 
 \begin{itemize}
   \item 半径 $r$ 与速度 $v$ 成正比。
-  \item 周期 $T$ 与速度 $v$ 无关，只由 $m$、$q$、$B$ 决定。
-  \item 轨迹方向由电荷正负和磁场方向共同决定。
+  \item 在非相对论、匀强磁场且速度垂直磁场的圆周运动模型中，周期 $T$ 与速度 $v$ 无关，只由 $m$、$|q|$、$B$ 决定。
+  \item 轨迹方向由电荷正负、速度方向和磁场方向共同决定。
 \end{itemize}
 
 \end{conceptbox}
@@ -100,17 +136,21 @@ P = \vect{F}\cdot \vect{v}=0
 \section*{四、公式与适用条件}
 
 \begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{lll}
 \toprule
 公式 & 物理意义 & 适用条件 \\
 \midrule
 $F=|q|vB\sin\theta$ & 洛伦兹力大小 & 运动电荷在磁场中 \\
 $F=|q|vB$ & 最大洛伦兹力 & $v\perp B$ \\
+$F=BIL\sin\theta$ & 安培力宏观表达 & 直导线在匀强磁场中 \\
 $r=\dfrac{mv}{|q|B}$ & 圆周运动半径 & $v\perp B$，匀强磁场 \\
 $T=\dfrac{2\pi m}{|q|B}$ & 圆周运动周期 & $v\perp B$，匀强磁场 \\
-$t=\dfrac{\alpha}{2\pi}T$ & 磁场中运动时间 & 偏转角为 $\alpha$ \\
+$t=\dfrac{\alpha}{2\pi}T$ & 磁场中运动时间 & 圆心角为 $\alpha$（弧度制） \\
 \bottomrule
 \end{tabular}
+\endgroup
 \end{center}
 
 \section*{五、典型模型}
@@ -152,7 +192,7 @@ t=\frac{\alpha}{2\pi}T.
 
 若粒子同时进入互相垂直的电场和磁场，电场力与洛伦兹力方向相反。只有满足
 \[
-qE=qvB,\qquad \boxed{v=\frac{E}{B}}
+|q|E=|q|vB,\qquad \boxed{v=\frac{E}{B}}
 \]
 的粒子才能沿直线通过。
 
@@ -179,6 +219,35 @@ r=\frac{mv}{|q|B}
 \end{minipage}
 \end{center}
 
+\subsection*{模型 4：回旋加速器}
+
+回旋加速器把电场和磁场的作用分开使用：两个 D 形盒内主要有匀强磁场，粒子在盒内做半圆运动；两个盒之间的窄缝中有交变电场，粒子每次经过窄缝时都被加速一次。速度变大后，由
+\[
+r=\frac{mv}{|q|B}
+\]
+可知轨道半径也变大，于是粒子从中心附近一圈圈向外运动。
+
+\begin{center}
+\input{figures/tikz/cyclotron-model}
+
+\figcaption{回旋加速器：磁场负责转弯，缝隙中的交变电场负责加速}\label{fig:cyclotron-model}
+\end{center}
+
+由
+\[
+T=\frac{2\pi m}{|q|B}
+\]
+可知，在非相对论、匀强磁场的回旋模型中，回旋周期与速度大小无关。因此只要交变电压频率满足
+\[
+\boxed{f=\frac{1}{T}=\frac{|q|B}{2\pi m}},
+\]
+粒子每次回到窄缝时都能遇到合适方向的电场而继续加速。若最大轨道半径为 $R$，则射出速度和最大动能近似为
+\[
+v_{\max}=\frac{|q|BR}{m},\qquad E_{k\max}=\frac{q^2B^2R^2}{2m}.
+\]
+
+\textbf{认知提醒：} 磁场不做功，不能直接增加粒子的动能；真正做功的是窄缝中的电场。磁场的作用是让粒子不断转回窄缝，使电场可以一次次做功。
+
 \section*{六、例题精讲}
 
 \begin{examplebox}{带电粒子的圆周运动}
@@ -192,7 +261,7 @@ r=\frac{mv}{|q|B}
 
 \textbf{解题过程：}
 \[
-r=\frac{mv}{qB}
+r=\frac{mv}{|q|B}
 =\frac{1.67\times10^{-27}\times2.0\times10^6}
 {1.60\times10^{-19}\times0.50}
 \approx 4.2\times10^{-2}\ \mathrm{m}
@@ -214,11 +283,11 @@ r=\frac{mv}{qB}
 
 完整周期为
 \[
-T=\frac{2\pi m}{qB}
+T=\frac{2\pi m}{|q|B}
 \]
 半圆对应圆心角 $\pi$，所以时间为半个周期：
 \[
-t=\frac{T}{2}=\frac{\pi m}{qB}
+t=\frac{T}{2}=\frac{\pi m}{|q|B}
 \]
 
 \textbf{方法总结：} 有界磁场时间题看“圆弧对应圆心角”，不是看弧长直观长短。
@@ -227,7 +296,7 @@ t=\frac{T}{2}=\frac{\pi m}{qB}
 \begin{examplebox}{速度选择器能通过的速度}
 \textbf{题意分析：} 速度选择器中匀强电场强度 $E=3.0\times10^4\ \mathrm{N/C}$，匀强磁场 $B=0.20\ \mathrm{T}$，电场力和洛伦兹力方向相反。求能沿直线通过的粒子速度。
 
-\textbf{物理模型：} 直线通过意味着合力为零。
+\textbf{物理模型：} 理想速度选择器中电场、磁场均匀且相互垂直；粒子直线通过意味着合力为零。
 
 \begin{center}
 \input{figures/tikz/velocity-selector-example}
@@ -235,9 +304,9 @@ t=\frac{T}{2}=\frac{\pi m}{qB}
 
 \textbf{解题过程：}
 \[
-qE=qvB.
+|q|E=|q|vB.
 \]
-两边都有 $q$，所以能通过的速度与粒子电荷量大小无关：
+两边都有 $|q|$，所以在这个理想正交场模型中，能通过的速度与粒子电荷量大小无关：
 \[
 v=\frac{E}{B}
 =\frac{3.0\times10^4}{0.20}
@@ -258,15 +327,15 @@ v=\frac{E}{B}
 
 \textbf{解题过程：}
 \[
-r=\frac{mv}{qB}.
+r=\frac{mv}{|q|B}.
 \]
 对质量为 $m$ 的离子：
 \[
-r_1=\frac{mv}{qB}.
+r_1=\frac{mv}{|q|B}.
 \]
 对质量为 $2m$ 的离子：
 \[
-r_2=\frac{2mv}{qB}=2r_1.
+r_2=\frac{2mv}{|q|B}=2r_1.
 \]
 
 \textbf{方法总结：} 质谱仪的核心是把“看不见的质量差异”转化为“看得见的轨迹半径差异”。
@@ -276,9 +345,18 @@ r_2=\frac{2mv}{qB}=2r_1.
 
 \begin{enumerate}
   \item 电子以速度 $v$ 垂直进入匀强磁场，若磁场增强为原来的 2 倍，轨道半径如何变化？
-  \item 一个带电粒子在匀强磁场中运动半径为 $0.20\ \mathrm{m}$，速度为 $1.0\times10^6\ \mathrm{m/s}$。若 $B=0.10\ \mathrm{T}$，求其比荷 $q/m$。
+  \begin{center}
+  \input{figures/tikz/training-magnetic-radius-change}
+  \end{center}
+  \item 一个带电粒子在匀强磁场中运动半径为 $0.20\ \mathrm{m}$，速度为 $1.0\times10^6\ \mathrm{m/s}$。若 $B=0.10\ \mathrm{T}$，求其比荷大小 $|q|/m$。
   \item 粒子在磁场中偏转 $90^\circ$ 后射出，求其在磁场中运动时间与周期的关系。
+  \begin{center}
+  \input{figures/tikz/magnetic-boundary-arc}
+  \end{center}
   \item 速度选择器中 $E=2.0\times10^4\ \mathrm{N/C}$，$B=0.20\ \mathrm{T}$，能直线通过的粒子速度是多少？
+  \begin{center}
+  \input{figures/tikz/velocity-selector}
+  \end{center}
 \end{enumerate}
 
 \section*{八、易错点}
@@ -286,9 +364,10 @@ r_2=\frac{2mv}{qB}=2r_1.
 \begin{mistakebox}
 \begin{enumerate}
   \item \textbf{负电荷方向忘记反向：} 左手定则直接给出正电荷受力方向，负电荷要反向。
-  \item \textbf{认为磁场能使粒子加速：} 洛伦兹力不做功，不能改变速率，只改变速度方向。
+  \item \textbf{把“有加速度”和“速率增大”混为一谈：} 洛伦兹力可以提供向心加速度、改变速度方向，但磁场力不做功，不能单独改变速率。
+  \item \textbf{把安培力和洛伦兹力割裂开：} 安培力是大量载流子所受洛伦兹力的宏观合力，二者描述的是同一磁场作用的不同层次。
   \item \textbf{把半径公式写成 $r=\dfrac{qB}{mv}$：} 半径应为 $r=\dfrac{mv}{|q|B}$。
-  \item \textbf{周期误以为与速度有关：} $T=\dfrac{2\pi m}{|q|B}$，与速度大小无关。
+  \item \textbf{周期误以为与速度有关：} 在非相对论、匀强磁场且垂直磁场的圆周运动模型中，$T=\dfrac{2\pi m}{|q|B}$，与速度大小无关。
   \item \textbf{边界题不找圆心：} 只画轨迹不找圆心，几何关系往往会错。
 \end{enumerate}
 \end{mistakebox}
@@ -324,7 +403,19 @@ r=\frac{mv_\perp}{|q|B},\qquad h=v_\parallel T
 \textbf{严谨提醒：} 螺旋运动中磁场仍然不做功，总速率不变；只是把运动分解后，平行分量保持匀速，垂直分量不断改变方向。
 \end{competitionbox}
 
-\subsection*{补充训练：磁场边界题的三问}
+\subsection*{1.\quad 霍尔效应：用洛伦兹力测磁场}
+
+霍尔效应是洛伦兹力在现代传感器中的典型应用。导体或半导体中有电流通过时，载流子具有定向速度；若再加一个垂直于电流方向的磁场，载流子受到洛伦兹力向一侧偏转，导体两侧积累异号电荷，形成横向电势差，叫\textbf{霍尔电压}。下图按正载流子等效模型作图；若讨论金属中的电子，电子速度方向与约定电流方向相反，受力方向还要再考虑负电荷反向。
+
+\begin{center}
+\input{figures/tikz/hall-effect-model}
+
+\figcaption{霍尔效应：载流子受洛伦兹力偏转，横向电荷分离形成霍尔电压}\label{fig:hall-effect-model}
+\end{center}
+
+\textbf{模型意义：} 霍尔传感器可以测磁场强弱，也能用于无接触测速、测电机转角和手机姿态检测。做题时仍然回到一句话：先判断载流子速度方向，再用洛伦兹力判断偏转方向，最后由电场力与磁场力平衡理解稳定电压。
+
+\subsection*{2.\quad 补充训练：磁场边界题的三问}
 
 遇到有界磁场，不要先代公式，先回答三问：
 \begin{enumerate}
@@ -338,8 +429,11 @@ r=\frac{mv_\perp}{|q|B},\qquad h=v_\parallel T
 
 \begin{enumerate}
   \item 洛伦兹力大小 $F=|q|vB\sin\theta$，方向与电荷正负有关。
-  \item 洛伦兹力始终垂直速度，因此不做功、不改变速率。
+  \item 安培力可以看成大量载流子所受洛伦兹力的宏观合力，垂直磁场时由 $I=n|q|Sv_d$ 可得 $F=BIL$。
+  \item 磁场洛伦兹力始终垂直速度，因此不做功、不改变速率。
   \item 垂直进入匀强磁场时，粒子做匀速圆周运动。
   \item 半径 $r=\dfrac{mv}{|q|B}$，周期 $T=\dfrac{2\pi m}{|q|B}$。
   \item 有界磁场题先找圆心，再用几何关系求半径、角度和时间。
+  \item 回旋加速器中磁场负责转弯，电场负责加速；非相对论下回旋周期与速度无关。
+  \item 霍尔效应把洛伦兹力转化为可测电压，是磁传感器的重要模型。
 \end{enumerate}

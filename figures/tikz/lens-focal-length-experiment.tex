@@ -1,0 +1,35 @@
+\begin{tikzpicture}[>=Latex,scale=0.95,every node/.style={font=\scriptsize}]
+  % Optical bench and principal axis
+  \draw[thick] (-3.8,0) -- (4.5,0);
+  \node[below] at (0,-0.03) {光具座主轴};
+
+  % Lens
+  \draw[blue,very thick] (0,-1.35) .. controls (0.28,-0.55) and (0.28,0.55) .. (0,1.35);
+  \draw[blue,very thick] (0,-1.35) .. controls (-0.28,-0.55) and (-0.28,0.55) .. (0,1.35);
+  \node[above,blue] at (0,1.42) {凸透镜};
+
+  % Object and image/screen
+  \draw[->,red,very thick] (-3.0,0) -- (-3.0,1.15) node[above] {物};
+  \draw[gray,thick] (3.0,-1.55) -- (3.0,1.55);
+  \node[above] at (3.0,1.55) {光屏};
+  \draw[->,red,very thick] (3.0,0) -- (3.0,-1.15) node[below] {清晰像};
+
+  % Focal points
+  \fill (-1.05,0) circle (1.3pt) node[below] {$F$};
+  \fill (1.05,0) circle (1.3pt) node[below] {$F'$};
+
+  % Rays
+  \draw[orange,thick,->] (-3.0,1.15) -- (0,1.15);
+  \draw[orange,thick,->] (0,1.15) -- (3.0,-1.15);
+  \draw[orange,thick,->] (-3.0,1.15) -- (3.0,-1.15);
+
+  % Distance marks
+  \draw[<->] (-3.0,-0.55) -- (0,-0.55) node[midway,below] {$u$};
+  \draw[<->] (0,-0.55) -- (3.0,-0.55) node[midway,below] {$v$};
+  \draw[dashed] (-3.0,0) -- (-3.0,-0.62);
+  \draw[dashed] (0,0) -- (0,-0.62);
+  \draw[dashed] (3.0,0) -- (3.0,-0.62);
+
+  \node[align=center] at (0,-1.85)
+    {成清晰实像后测 $u,v$，由 $\dfrac1f=\dfrac1u+\dfrac1v$ 求 $f$};
+\end{tikzpicture}

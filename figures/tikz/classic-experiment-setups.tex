@@ -1,0 +1,53 @@
+% TikZ 图：高中常见实验装置速览
+% Day 28：实验专题
+\begin{tikzpicture}[>=Latex,scale=0.82,every node/.style={font=\scriptsize}]
+  \begin{scope}
+    \node[font=\small\bfseries] at (2.7,3.35) {测金属丝电阻率};
+    \draw[thick] (0.3,2.55) -- (5.1,2.55);
+    \draw[very thick,orange] (1.0,2.55) -- (4.4,2.55);
+    \draw[<->] (1.0,2.95) -- (4.4,2.95);
+    \node[above] at (2.7,2.95) {$l$};
+    \draw[blue,thick,<->] (4.7,2.40) -- (4.7,2.70);
+    \node[blue,right] at (4.7,2.55) {$d$};
+
+    \draw[thick] (0.8,1.25) rectangle (4.6,2.05);
+    \draw[thick] (1.0,1.65) -- (1.55,1.65);
+    \draw[thick] (1.55,1.42) rectangle (2.15,1.88) node[midway] {$R_x$};
+    \draw[thick] (2.15,1.65) -- (2.65,1.65);
+    \draw[thick] (2.65,1.65) circle (0.23) node {$A$};
+    \draw[thick] (2.88,1.65) -- (4.4,1.65);
+    \draw[thick] (1.55,1.42) -- (1.55,1.05) -- (2.15,1.05) -- (2.15,1.42);
+    \draw[thick] (1.85,1.05) circle (0.20) node {$V$};
+    \node[align=center] at (2.7,0.45) {$R=U/I$，$S=\pi d^2/4$\\$\rho=RS/l$};
+  \end{scope}
+
+  \begin{scope}[xshift=6.1cm]
+    \node[font=\small\bfseries] at (2.35,3.35) {小灯泡伏安特性};
+    \draw[->,thick] (0.35,0.75) -- (0.35,3.0) node[above] {$I$};
+    \draw[->,thick] (0.35,0.75) -- (3.35,0.75) node[right] {$U$};
+    \draw[red,very thick] plot[smooth] coordinates {(0.35,0.75) (0.9,1.45) (1.55,1.95) (2.25,2.28) (3.0,2.48)};
+    \node[red,align=left,font=\tiny,anchor=west] at (1.65,2.63) {斜率变小\\电阻变大};
+
+    \draw[thick] (3.65,1.05) rectangle (5.0,2.35);
+    \draw[thick] (3.85,1.70) circle (0.28);
+    \draw[thick] (3.65,1.70) -- (3.57,1.70);
+    \draw[thick] (4.13,1.70) -- (4.35,1.70);
+    \node at (4.35,1.70) {$L$};
+    \node[align=center] at (2.65,0.35) {分压接法取多组 $U,I$\\描点画曲线，不强行套恒阻};
+  \end{scope}
+
+  \begin{scope}[xshift=12.0cm]
+    \node[font=\small\bfseries] at (2.45,3.35) {玻璃折射率};
+    \fill[blue!6] (1.1,0.95) rectangle (3.8,2.7);
+    \draw[thick] (1.1,0.95) rectangle (3.8,2.7);
+    \draw[dashed] (2.45,0.65) -- (2.45,3.0);
+    \draw[blue,very thick,->] (0.4,2.95) -- (2.45,1.95);
+    \draw[blue,very thick,->] (2.45,1.95) -- (3.65,1.25);
+    \draw[blue,very thick,->] (3.65,1.25) -- (4.75,0.75);
+    \draw[thin] (1.75,2.28) arc[start angle=155,end angle=90,radius=0.75];
+    \draw[thin] (2.72,1.78) arc[start angle=-35,end angle=-90,radius=0.45];
+    \node at (2.0,2.55) {$i$};
+    \node at (2.82,1.28) {$r$};
+    \node[align=center] at (2.55,0.30) {画法线，量角度\\$n=\sin i/\sin r$};
+  \end{scope}
+\end{tikzpicture}

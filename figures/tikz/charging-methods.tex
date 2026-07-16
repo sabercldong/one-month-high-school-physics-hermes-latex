@@ -1,0 +1,42 @@
+\begin{tikzpicture}[x=1cm,y=1cm,>=Stealth]
+  \begin{scope}
+    \node[font=\small\bfseries] at (-3.65,1.45) {摩擦起电};
+    \draw[rounded corners=4pt,thick,fill=blue!8] (-4.85,-0.25) rectangle (-3.75,0.35);
+    \draw[rounded corners=4pt,thick,fill=orange!12] (-3.45,-0.25) rectangle (-2.35,0.35);
+    \draw[->,thick] (-4.05,0.62) -- (-3.15,0.62);
+    \draw[->,thick] (-3.15,-0.52) -- (-4.05,-0.52);
+    \foreach \x in {-4.55,-4.25,-3.95}{\node[blue] at (\x,0.05) {$-$};}
+    \foreach \x in {-3.15,-2.85,-2.55}{\node[red] at (\x,0.05) {$+$};}
+    \node[font=\scriptsize,align=center] at (-3.60,-1.05) {电子在摩擦中转移\\两物体带异种电荷};
+  \end{scope}
+
+  \begin{scope}
+    \node[font=\small\bfseries] at (0,1.45) {接触起电};
+    \draw[thick,fill=blue!8] (-1.05,0.05) circle (0.38);
+    \draw[thick,fill=gray!10] (0.05,0.05) circle (0.38);
+    \node[blue] at (-1.05,0.05) {$-$};
+    \draw[->,thick] (-0.58,0.05) -- (-0.32,0.05);
+    \draw[thick,fill=blue!8] (0.90,0.05) circle (0.38);
+    \draw[thick,fill=blue!8] (1.72,0.05) circle (0.38);
+    \node[blue] at (0.90,0.05) {$-$};
+    \node[blue] at (1.72,0.05) {$-$};
+    \node[font=\scriptsize,align=center] at (0.35,-1.05) {带电体接触导体\\电荷重新分配};
+  \end{scope}
+
+  \begin{scope}
+    \node[font=\small\bfseries] at (4.05,1.45) {感应起电};
+    \draw[thick,fill=red!8] (2.70,0.05) circle (0.34);
+    \node[red] at (2.70,0.05) {$+$};
+    \draw[thick,rounded corners=10pt,fill=gray!10] (3.45,-0.28) rectangle (5.05,0.38);
+    \node[blue] at (3.75,0.06) {$-$};
+    \node[blue] at (4.08,0.06) {$-$};
+    \node[red] at (4.58,0.06) {$+$};
+    \node[red] at (4.86,0.06) {$+$};
+    \draw[->,thick] (4.95,-0.50) -- (4.95,-0.95);
+    \node[font=\scriptsize] at (5.50,-0.75) {接地或分开};
+    \node[font=\scriptsize,align=center] at (4.05,-1.35) {不接触也能使导体\\电荷重新分布};
+  \end{scope}
+
+  \node[font=\scriptsize,align=center] at (0,-2.15)
+    {三种起电都不是创造电荷，而是电子转移或电荷重新分布，系统总电荷守恒};
+\end{tikzpicture}

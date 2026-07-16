@@ -1,0 +1,30 @@
+\begin{tikzpicture}[scale=0.92,>=Stealth]
+  \begin{scope}
+    \node[font=\small] at (0,1.65) {自感};
+    \draw[thick] (-2.3,0) -- (-1.25,0);
+    \draw[thick] (-1.25,0) -- (-0.90,0.35);
+    \draw[thick] (-0.65,0) -- (0.0,0);
+    \draw[decorate,decoration={coil,aspect=0.45,segment length=4pt,amplitude=4pt},thick] (0,0) -- (1.2,0);
+    \draw[thick] (1.2,0) -- (2.25,0);
+    \draw[->,red,very thick] (-2.1,0.35) -- (-1.15,0.35);
+    \node[font=\scriptsize,red] at (-1.55,0.67) {$I$ 增大};
+    \draw[->,blue,very thick] (1.70,-0.38) -- (0.70,-0.38);
+    \node[font=\scriptsize,blue] at (1.35,-0.72) {感应电动势阻碍变化};
+  \end{scope}
+
+  \begin{scope}[xshift=5.4cm]
+    \node[font=\small] at (0,1.65) {涡流与电磁阻尼};
+    \draw[thick,fill=gray!10] (-1.1,-1.0) rectangle (1.1,1.0);
+    \foreach \x in {-0.75,0,0.75}{
+      \foreach \y in {-0.55,0.25}{
+        \node[font=\large] at (\x,\y) {$\times$};
+      }
+    }
+    \draw[red,thick,->] (-0.45,0.15) arc (140:-180:0.42);
+    \draw[red,thick,->] (0.55,-0.25) arc (-40:280:0.42);
+    \draw[->,very thick,orange!85!black] (-1.65,0) -- (-1.12,0);
+    \node[font=\scriptsize,orange!85!black] at (-1.60,0.34) {金属板运动};
+    \draw[->,very thick,blue] (1.45,0) -- (0.95,0);
+    \node[font=\scriptsize,blue,anchor=west] at (1.66,0.34) {阻尼力};
+  \end{scope}
+\end{tikzpicture}

@@ -1,0 +1,41 @@
+% TikZ 图：半偏法测表头内阻
+% Day 28：实验专题
+\begin{tikzpicture}[>=Latex,scale=0.92,every node/.style={font=\scriptsize}]
+  \begin{scope}
+    \node[font=\small\bfseries] at (2.4,2.75) {第一步：调到原偏转};
+    \draw[thick] (0.35,0.7) rectangle (4.45,2.2);
+    \draw[thick] (0.75,1.45) -- (1.05,1.45);
+    \draw[thick] (1.05,1.25) rectangle (1.85,1.65) node[midway] {$R_0$};
+    \draw[thick] (1.85,1.45) -- (2.55,1.45);
+    \draw[thick] (2.95,1.45) circle (0.32) node {$G$};
+    \draw[thick] (2.55,1.45) -- (2.63,1.45);
+    \draw[thick] (3.27,1.45) -- (4.05,1.45);
+    \draw[thick] (4.05,1.45) -- (4.05,0.95) -- (0.75,0.95) -- (0.75,1.45);
+    \draw[thick] (0.95,0.95) -- (0.95,0.70);
+    \draw[thick] (1.15,0.80) -- (1.15,1.10);
+    \node[below] at (1.05,0.66) {$E$};
+    \draw[red,->,thick] (2.25,1.82) -- (2.65,1.82);
+    \node[red,above] at (2.45,1.82) {$I_0$};
+  \end{scope}
+
+  \begin{scope}[xshift=5.6cm]
+    \node[font=\small\bfseries] at (2.7,2.75) {第二步：并联电阻使半偏};
+    \draw[thick] (0.35,0.7) rectangle (5.05,2.2);
+    \draw[thick] (0.75,1.45) -- (1.05,1.45);
+    \draw[thick] (1.05,1.25) rectangle (1.85,1.65) node[midway] {$R_0$};
+    \draw[thick] (1.85,1.45) -- (2.35,1.45);
+    \draw[thick] (2.75,1.45) circle (0.32) node {$G$};
+    \draw[thick] (2.35,1.45) -- (2.43,1.45);
+    \draw[thick] (3.07,1.45) -- (3.55,1.45);
+    \draw[thick] (2.35,1.45) -- (2.35,0.95) -- (3.55,0.95) -- (3.55,1.45);
+    \draw[thick] (2.55,0.75) rectangle (3.35,1.15) node[midway] {$R_s$};
+    \draw[thick] (3.55,1.45) -- (4.55,1.45) -- (4.55,0.95) -- (0.75,0.95) -- (0.75,1.45);
+    \draw[thick] (0.95,0.95) -- (0.95,0.70);
+    \draw[thick] (1.15,0.80) -- (1.15,1.10);
+    \node[below] at (1.05,0.66) {$E$};
+    \draw[red,->,thick] (2.05,1.82) -- (2.45,1.82);
+    \node[red,above] at (2.25,1.82) {$I_0/2$};
+    \draw[blue,->,thick] (2.25,0.75) -- (2.75,0.75);
+    \node[blue,below] at (2.50,0.75) {$\approx I_0/2$};
+  \end{scope}
+\end{tikzpicture}

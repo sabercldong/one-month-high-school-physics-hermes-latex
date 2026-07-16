@@ -1,0 +1,18 @@
+\begin{tikzpicture}[scale=0.95,>=Stealth]
+  \draw[->,thick] (0,0) -- (5.4,0) node[right,font=\small] {驱动频率 $f$};
+  \draw[->,thick] (0,0) -- (0,3.0) node[above,font=\small] {振幅 $A$};
+  \draw[blue,very thick] (0.25,0.35) .. controls (1.15,0.50) and (1.70,1.25) .. (2.45,2.65)
+    .. controls (3.00,1.15) and (3.75,0.55) .. (5.05,0.38);
+  \draw[dashed] (2.45,0) -- (2.45,2.65);
+  \node[font=\small] at (2.45,-0.28) {$f_0$};
+  \node[font=\small,red] at (1.92,2.52) {共振};
+  \draw[->,red,thick] (2.12,2.42) -- (2.43,2.55);
+
+  \begin{scope}[xshift=0.75cm,yshift=1.95cm]
+    \draw[thick] (-0.45,0.30) -- (0.45,0.30);
+    \draw[decorate,decoration={coil,aspect=0.45,segment length=3pt,amplitude=3pt},thick] (0,0.30) -- (0,-0.35);
+    \draw[thick,fill=gray!15] (-0.18,-0.70) rectangle (0.18,-0.35);
+    \draw[<->,orange!85!black,thick] (0.45,-0.72) -- (0.45,-0.18);
+  \end{scope}
+  \node[font=\scriptsize,align=left,anchor=west] at (3.05,2.42) {驱动频率接近\\固有频率时\\振幅显著增大};
+\end{tikzpicture}

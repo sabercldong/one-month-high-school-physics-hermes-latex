@@ -1,0 +1,27 @@
+\begin{tikzpicture}[scale=0.95,>=Stealth]
+  \draw[->,thick] (0,0) -- (4.65,0) node[right,font=\small] {$V$};
+  \draw[->,thick] (0,0) -- (0,3.2) node[above,font=\small] {$p$};
+
+  \fill[gray!16] (1.00,0) rectangle (3.65,1.35);
+  \draw[dashed] (1.00,0) -- (1.00,1.35);
+  \draw[dashed] (3.65,0) -- (3.65,1.35);
+  \draw[red,very thick,->] (1.00,1.35) -- (3.65,1.35);
+  \node[font=\small,red] at (2.32,1.68) {等压};
+
+  \draw[purple,very thick,->] (0.85,0.55) -- (0.85,2.55);
+  \node[font=\small,purple,left] at (0.82,2.25) {等容};
+
+  \draw[blue,very thick] (0.72,2.55) .. controls (1.45,1.70) and (2.55,1.08) .. (4.15,0.72);
+  \draw[orange!85!black,very thick] (0.72,2.85) .. controls (1.35,1.45) and (2.55,0.82) .. (4.15,0.48);
+
+  \begin{scope}[xshift=5.05cm,yshift=2.65cm]
+    \draw[blue,very thick] (0,0) -- (0.45,0);
+    \node[font=\small,right] at (0.50,0) {等温 $pV=C$};
+    \draw[orange!85!black,very thick] (0,-0.45) -- (0.45,-0.45);
+    \node[font=\small,right] at (0.50,-0.45) {绝热曲线更陡};
+    \draw[red,very thick,->] (0,-0.90) -- (0.45,-0.90);
+    \node[font=\small,right] at (0.50,-0.90) {体积增大，$W>0$};
+  \end{scope}
+
+  \node[font=\small,align=center] at (2.5,-0.55) {先判断过程类型，再判断 $Q,W,\Delta U$};
+\end{tikzpicture}

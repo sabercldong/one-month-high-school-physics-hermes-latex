@@ -1,0 +1,31 @@
+% TikZ 图：竖直上抛运动
+% Day 03：加速度
+\begin{tikzpicture}[scale=0.95,>=Latex]
+  \tikzset{
+    axis/.style={->,thick},
+    path/.style={very thick,blue},
+    vel/.style={->,thick,red},
+    acc/.style={->,thick,orange!85!black},
+    note/.style={font=\small,align=center}
+  }
+
+  \draw[axis] (-1.1,0) -- (-1.1,4.15) node[above] {$y$};
+  \node[left] at (-1.1,0) {$O$};
+
+  \draw[path] (0,0) -- (0,3.45);
+  \fill[black] (0,0) circle (1.7pt);
+  \fill[black] (0,3.45) circle (1.7pt);
+  \node[right] at (0.08,0) {抛出点};
+  \node[right=8pt] at (0,3.45) {最高点};
+
+  \draw[vel] (0,0.42) -- (0,1.35) node[midway,right=3pt] {$v_0$};
+  \draw[acc] (0.62,3.15) -- (0.62,2.25) node[midway,right=3pt] {$g$};
+  \node[red] at (-0.62,3.72) {$v=0$};
+
+  \draw[dashed] (-0.38,3.45) -- (-0.38,0);
+  \draw[<->,thick] (-0.62,0) -- (-0.62,3.45)
+    node[midway,left] {$H$};
+
+  \node[note] at (3.0,2.55) {取竖直向上为正：\\$a=-g$ 全程不变};
+  \node[note] at (3.0,1.20) {最高点只是瞬时速度为零，\\不是静止一段时间};
+\end{tikzpicture}

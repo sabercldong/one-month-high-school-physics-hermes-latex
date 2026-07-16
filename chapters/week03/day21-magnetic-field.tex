@@ -9,6 +9,7 @@
   \item 理解磁场是客观存在的物质，能对磁体、电流和运动电荷产生作用。
   \item 掌握磁感应强度 $B$ 的物理意义和单位特斯拉（$\mathrm{T}$）。
   \item 会判断直线电流、环形电流和通电螺线管周围磁场方向。
+  \item 了解磁化、铁磁性材料和电磁铁的基本物理图像。
   \item 掌握安培力公式 $F = BIL\sin\theta$，明确公式的适用条件。
   \item 会用左手定则判断安培力方向，并能进行简单平衡与运动分析。
 \end{enumerate}
@@ -48,6 +49,20 @@
 
 \end{conceptbox}
 
+\begin{conceptbox}{地磁场与指南针}
+
+地球本身也有磁场，指南针能指示方向，正是因为小磁针会沿当地磁场方向转动。要注意：指南针的 $N$ 极指向地理北方，但地理北极附近在磁性上相当于\textbf{地磁 $S$ 极}，否则不会吸引指南针的 $N$ 极。
+
+\begin{center}
+\input{figures/tikz/earth-magnetic-field}
+
+\figcaption{地磁场模型：指南针 $N$ 极沿当地磁场方向，指向地理北方附近}\label{fig:earth-magnetic-field}
+\end{center}
+
+\textbf{认知提醒：} 地磁场并不完全等同于一个理想条形磁体，磁轴和地理自转轴也不完全重合。高中阶段先用“近似条形磁体”模型理解方向，再在地理和现代导航中认识磁偏角等实际修正。
+
+\end{conceptbox}
+
 \begin{conceptbox}{磁感应强度 $B$}
 
 磁感应强度 $B$ 是描述磁场强弱和方向的物理量。
@@ -83,10 +98,32 @@
 \begin{center}
 \input{figures/tikz/current-magnetic-field}
 
-\figcaption{右手螺旋定则：拇指指电流方向，四指环绕方向为磁场方向}\label{fig:current-magnetic-field}
+\figcaption{直线电流的右手螺旋定则：拇指指电流方向，四指环绕方向为磁场方向}\label{fig:current-magnetic-field}
 \end{center}
 
+\textbf{方向规则要分清：} 对直线电流，拇指沿电流方向，四指环绕方向就是磁场方向；对环形电流和通电螺线管，四指沿电流环绕方向，拇指所指方向是中心轴线附近的磁场方向，也对应螺线管的 $N$ 极方向。
+
 \textbf{认知提醒：} 判断电流产生的磁场用右手；判断通电导线受安培力用左手。两种定则解决的问题不同，不要混用。
+
+\end{conceptbox}
+
+\begin{conceptbox}{磁介质、磁化与电磁铁}
+
+铁、钴、镍等材料容易被磁化，称为铁磁性材料。把软铁芯插入通电螺线管后，软铁芯被磁化，内部许多微小磁性区域的取向趋于一致，使螺线管的磁场明显增强，这就是电磁铁的基本原理。
+
+\begin{center}
+\input{figures/tikz/magnetic-material-electromagnet}
+
+\figcaption{电磁铁：通电螺线管插入软铁芯后，磁场被增强且可由电流控制}\label{fig:magnetic-material-electromagnet}
+\end{center}
+
+\begin{itemize}
+  \item 电磁铁的强弱通常与电流大小、线圈匝数、铁芯材料有关。
+  \item 软铁断电后磁性大多迅速减弱，适合做电磁铁；钢能较久保持磁性，适合做永久磁体。
+  \item 高中阶段只作定性理解：铁芯不是“提供电流”，而是被磁化后增强原来的磁场。
+\end{itemize}
+
+\textbf{科学发展视角：} 电磁铁可用电流控制磁场强弱，是继电器、电磁起重机、扬声器、电磁阀和许多自动控制装置的基础。
 
 \end{conceptbox}
 
@@ -248,7 +285,14 @@ a=\frac{F_A}{m}=\frac{0.60}{0.060}=10\ \mathrm{m/s^2}.
   \item 长 $0.30\ \mathrm{m}$ 的导线中通有 $2.0\ \mathrm{A}$ 电流，垂直放入 $0.40\ \mathrm{T}$ 的匀强磁场中，求安培力大小。
   \item 若上题中导线与磁场夹角为 $30^\circ$，安培力变为多少？
   \item 一根质量 $0.05\ \mathrm{kg}$、长 $0.25\ \mathrm{m}$ 的水平导线悬挂在匀强磁场中，若电流为 $4\ \mathrm{A}$ 时恰好平衡，求磁感应强度大小。
+  \begin{center}
+  \input{figures/tikz/ampere-balance}
+  \end{center}
   \item 判断：磁场垂直纸面向外，导线中电流向右，则安培力方向是向上还是向下？
+  \begin{center}
+  \input{figures/tikz/training-ampere-wire}
+  \end{center}
+  \item 通电螺线管中插入软铁芯后，磁场强弱如何变化？断电后为什么常选软铁制作电磁铁铁芯？
 \end{enumerate}
 
 \section*{八、易错点}
@@ -259,7 +303,9 @@ a=\frac{F_A}{m}=\frac{0.60}{0.060}=10\ \mathrm{m/s^2}.
   \item \textbf{混用左右手定则：} 电流产生磁场用右手；磁场对电流的力用左手。
   \item \textbf{忘记夹角：} $F=BIL$ 只适用于电流与磁场垂直；一般式是 $F=BIL\sin\theta$。
   \item \textbf{把 $L$ 当成整根导线长度：} $L$ 是处在磁场中的有效长度。
-  \item \textbf{忽略安培力方向：} 安培力方向一定同时垂直于电流方向和磁场方向。
+  \item \textbf{忽略安培力方向：} 当电流方向与磁场方向不平行、安培力不为零时，安培力方向同时垂直于电流方向和磁场方向；若二者平行，则 $F=0$，不再讨论力的方向。
+  \item \textbf{把地理北极当成地磁 $N$ 极：} 指南针 $N$ 极指向地理北方，说明地理北极附近在磁性上相当于地磁 $S$ 极。
+  \item \textbf{误以为铁芯自己产生电流：} 铁芯被磁化后增强螺线管磁场，但电磁铁的可控性仍来自线圈中的电流。
 \end{enumerate}
 \end{mistakebox}
 
@@ -276,7 +322,7 @@ a=\frac{F_A}{m}=\frac{0.60}{0.060}=10\ \mathrm{m/s^2}.
 \figcaption{通电线圈在磁场中受力形成力矩：电能转化为机械能}\label{fig:motor-coil-torque}
 \end{center}
 
-竞赛入门阶段要注意一个观点：安培力公式 $F=BIL$ 可以看成许多运动电荷受洛伦兹力的宏观合力。下一节学习洛伦兹力后，会看到磁场对“单个运动电荷”和“整段电流”的描述其实是同一件事的两个层次。
+竞赛入门阶段要注意一个观点：安培力公式 $F=BIL$ 可以看成许多运动电荷受磁场力的宏观合力。磁场对“单个运动电荷”和“整段电流”的描述，其实是同一件事的两个层次。
 
 \textbf{进一步理解：} 若线圈平面与磁场方向夹角变化，线圈所受力矩也会变化。真实电动机需要换向器或电子控制，让线圈持续受到同向转动效果。这也是从“安培力公式”走向“电动机模型”的关键一步。
 \end{competitionbox}
@@ -300,8 +346,10 @@ a=\frac{F_A}{m}=\frac{0.60}{0.060}=10\ \mathrm{m/s^2}.
 
 \begin{enumerate}
   \item 磁场方向规定为小磁针静止时 $N$ 极所指方向。
+  \item 地磁场可近似看成条形磁体磁场，地理北极附近相当于地磁 $S$ 极。
   \item 磁感应强度 $B$ 描述磁场强弱和方向，单位是 $\mathrm{T}$。
   \item 电流产生磁场用右手螺旋定则。
+  \item 铁磁性材料容易被磁化；通电螺线管插入软铁芯可形成电磁铁。
   \item 通电导线在磁场中受安培力：$F=BIL\sin\theta$。
   \item 判断安培力方向用左手定则，并把安培力纳入力学受力分析。
 \end{enumerate}

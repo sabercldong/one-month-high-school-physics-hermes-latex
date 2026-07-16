@@ -1,0 +1,29 @@
+% TikZ 图：验证动量守恒实验
+% Day 28：实验专题
+\begin{tikzpicture}[>=Latex,scale=1.05,every node/.style={font=\scriptsize}]
+  \draw[thick] (0,0) -- (8.2,0);
+  \draw[gray!60,thick] (0.15,-0.08) -- (8.05,-0.08);
+  \node[below] at (4.1,-0.08) {水平气垫导轨/低摩擦轨道};
+
+  \draw[thick,fill=blue!10] (0.75,0.10) rectangle (1.75,0.62);
+  \node at (1.25,0.36) {$m_1$};
+  \draw[thick] (0.98,0.10) circle (0.075);
+  \draw[thick] (1.52,0.10) circle (0.075);
+  \draw[->,red,thick] (1.90,0.42) -- (2.95,0.42) node[midway,above] {$v_1$};
+
+  \draw[thick,fill=orange!12] (3.55,0.10) rectangle (4.55,0.62);
+  \node at (4.05,0.36) {$m_2$};
+  \draw[thick] (3.78,0.10) circle (0.075);
+  \draw[thick] (4.32,0.10) circle (0.075);
+  \node[above] at (4.05,0.70) {碰前可静止};
+
+  \draw[dashed,thick] (2.35,-0.05) -- (2.35,1.15);
+  \draw[dashed,thick] (6.15,-0.05) -- (6.15,1.15);
+  \node[above] at (2.35,1.15) {光电门 1};
+  \node[above] at (6.15,1.15) {光电门 2};
+
+  \draw[->,blue,thick] (4.75,0.28) -- (5.75,0.28) node[midway,below] {$v_1'$};
+  \draw[->,orange!80!black,thick] (4.75,0.58) -- (5.85,0.58) node[midway,above] {$v_2'$};
+
+  \node[align=center] at (4.15,1.78) {碰前、碰后分别测速度；再比较系统总动量};
+\end{tikzpicture}

@@ -8,7 +8,7 @@
 \section*{一、学习目标}
 
 \begin{enumerate}
-  \item 掌握带电粒子在加速电场中的运动：$qU = \dfrac12 mv^2$。
+  \item 掌握带电粒子在加速电场中的运动：从静止出发且电场力做正功时，$\lvert q\rvert U = \dfrac12 mv^2$。
   \item 掌握带电粒子在偏转电场中的类平抛运动分析。
   \item 会计算粒子的偏转位移和偏转角。
   \item 理解示波管的基本原理。
@@ -35,25 +35,25 @@
 \begin{center}
 \input{figures/tikz/accelerating-field}
 
-\figcaption{加速电场：$qU = \dfrac12 mv^2$}\label{fig:accelerating-field}
+\figcaption{加速电场：电场力做功转化为粒子动能}\label{fig:accelerating-field}
 \end{center}
 
 \textbf{核心公式（初速为零，电场力做正功）：}
 \[
-\boxed{qU = \frac12 mv^2}
+\boxed{\lvert q\rvert U = \frac12 mv^2}
 \]
 
 \begin{itemize}
   \item $U$：加速电压。
-  \item $q$：粒子电荷量大小。若使用带符号电荷量，应先判断电场力做功正负。
-  \item 粒子的末速度 $v = \sqrt{\dfrac{2qU}{m}}$ 与加速距离无关。
+  \item $\lvert q\rvert$：粒子电荷量大小。若使用带符号电荷量，应先判断电场力做功正负。
+  \item 在只看电场力做功、忽略碰撞和相对论效应的模型中，粒子的末速度 $v = \sqrt{\dfrac{2\lvert q\rvert U}{m}}$ 与加速距离无关。
 \end{itemize}
 
 如果粒子有初速度 $v_0$：
 \[
-qU = \frac12 mv^2 - \frac12 mv_0^2
+\lvert q\rvert U = \frac12 mv^2 - \frac12 mv_0^2
 \]
-这里的 $qU$ 表示电场力做的正功；若电场力做负功，粒子动能减少。
+这里的 $\lvert q\rvert U$ 表示电场力做的正功；若电场力做负功，粒子动能减少，应改用带符号的 $W_{\text{电}}=\Delta E_k$。
 
 \end{conceptbox}
 
@@ -70,10 +70,10 @@ qU = \frac12 mv^2 - \frac12 mv_0^2
 \textbf{分析方法：} 正交分解
 \begin{itemize}
   \item $x$ 方向（匀速）：$x = v_0 t$。
-  \item $y$ 方向（匀加速）：$a = \dfrac{qE}{m} = \dfrac{qU}{md}$，$y = \dfrac12 a t^2$。这里先按电荷量大小求加速度大小，偏转方向另由电荷正负和电场方向判断。
+  \item $y$ 方向（匀加速）：若 $q$ 带符号，$a_y = \dfrac{qE}{m} = \dfrac{qU}{md}$，$y = \dfrac12 a_y t^2$ 可直接表示偏转方向；若只求大小，则用 $\lvert a_y\rvert=\dfrac{|q|E}{m}$。
 \end{itemize}
 
-\textbf{偏转位移（极板长 $L$，粒子从极板中心射入）：}
+\textbf{偏转位移（极板长 $L$，粒子从极板中心射入，忽略重力和边缘场）：}
 \[
 y = \frac12 \cdot \frac{qU}{md} \cdot \left(\frac{L}{v_0}\right)^2
 \]
@@ -88,18 +88,21 @@ y = \frac12 \cdot \frac{qU}{md} \cdot \left(\frac{L}{v_0}\right)^2
 \section*{四、公式与适用条件}
 
 \begin{center}
-\begin{tabular}{lll}
+\small
+\begin{tabular}{>{\centering\arraybackslash}p{0.31\textwidth}p{0.20\textwidth}p{0.36\textwidth}}
 \toprule
 公式 & 物理意义 & 适用条件 \\
 \midrule
-$qU = \frac12 mv^2$ & 加速电场 & 初速为零 \\
-$a = \dfrac{qE}{m} = \dfrac{qU}{md}$ & 电场中加速度 & 匀强电场 \\
-$y = \frac12 \dfrac{qU}{md}\left(\dfrac{L}{v_0}\right)^2$ & 偏转位移 & 垂直射入匀强电场 \\
+$W_{\text{电}}=\Delta E_k$ & 电场加速通式 & 只有电场力做功或其他功已单独计入；写 $qU$ 时要明确符号 \\
+$\lvert q\rvert U = \frac12 mv^2$ & 特例：从静止加速 & 电场力做正功，$U$ 取电压大小 \\
+$a = \dfrac{qE}{m} = \dfrac{qU}{md}$ & 电场中加速度 & 匀强电场，$q$ 可带符号 \\
+$y = \frac12 \dfrac{qU}{md}\left(\dfrac{L}{v_0}\right)^2$ & 偏转位移 & 垂直射入，方向先判断 \\
 $\tan\theta = \dfrac{qUL}{mdv_0^2}$ & 偏转角 & 同上 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
+\clearpage
 \section*{五、典型模型}
 
 \subsection*{模型 1：先加速后偏转}
@@ -112,13 +115,13 @@ $\tan\theta = \dfrac{qUL}{mdv_0^2}$ & 偏转角 & 同上 \\
 \figcaption{先加速后偏转模型：$U_1$ 决定入射速度，$U_2$ 决定偏转大小}\label{fig:accelerate-deflect-model}
 \end{center}
 
-加速：$qU_1 = \frac12 mv_0^2 \;\Rightarrow\; v_0^2 = \frac{2qU_1}{m}$
+加速：$\lvert q\rvert U_1 = \frac12 mv_0^2 \;\Rightarrow\; v_0^2 = \frac{2\lvert q\rvert U_1}{m}$
 
 偏转位移：
 \[
 y = \frac{U_2 L^2}{4U_1 d}
 \]
-偏转位移与 $q$、$m$ 无关，这是示波管能工作的核心原因。
+在粒子从静止经同一加速电压加速、进入同一理想偏转电场并忽略重力和相对论效应时，偏转位移与 $q$、$m$ 无关，这是示波管能工作的核心原因。
 
 \subsection*{模型 2：示波管}
 
@@ -131,7 +134,7 @@ y = \frac{U_2 L^2}{4U_1 d}
 \end{center}
 
 \begin{itemize}
-  \item \textbf{加速电场：} 决定电子进入偏转系统前的速度 $v_0$。
+  \item \textbf{加速电场：} 决定电子进入偏转系统前的速度 $v_0$。电子带负电，受力方向与电场方向相反。
   \item \textbf{$Y$ 偏转板：} 控制亮点的上下位置，通常接入待观测的信号电压。
   \item \textbf{$X$ 偏转板：} 控制亮点的左右位置，常接扫描电压。
   \item \textbf{荧光屏：} 电子打到屏上形成亮点，亮点随时间移动就形成图像。
@@ -159,7 +162,7 @@ Y = y_1 + y_2
 
 \textbf{题意分析：} 一个电子从静止开始被 $U = 500\ \mathrm{V}$ 的电压加速。已知 $e = 1.6 \times 10^{-19}\ \mathrm{C}$，$m_e = 9.1 \times 10^{-31}\ \mathrm{kg}$。求电子加速后的速度。
 
-\textbf{物理模型：} 加速电场，$qU = \frac12 mv^2$。
+\textbf{物理模型：} 加速电场，$\lvert q\rvert U = \frac12 mv^2$。
 
 \textbf{解题过程：}
 
@@ -201,7 +204,7 @@ v &= \sqrt{\frac{2eU}{m}}
   $\theta \approx \arctan 0.117 \approx 6.7^\circ$
 \end{enumerate}
 
-\textbf{方法总结：} 偏转电场的关键是把运动分解为匀速和匀加速两个方向分别处理，与平抛运动的思路完全一致。
+\textbf{方法总结：} 偏转电场的关键是把运动分解为匀速和匀加速两个方向分别处理，数学处理与平抛运动相同，但加速度方向要由电荷正负和电场方向判断。
 
 \end{examplebox}
 
@@ -243,8 +246,14 @@ y = \frac{100 \times (0.05)^2}{4 \times 1000 \times 0.01} = \frac{100 \times 0.0
   \item 质子（$m_p = 1.67 \times 10^{-27}\ \mathrm{kg}$，$q = e$）从静止经 $U = 1000\ \mathrm{V}$ 加速，求末速度。
   
   \item 电子以 $v_0 = 2 \times 10^7\ \mathrm{m/s}$ 射入偏转电场，$L = 0.04\ \mathrm{m}$，$d = 0.01\ \mathrm{m}$，$U = 150\ \mathrm{V}$。求偏转位移和偏转角。
+  \begin{center}
+  \input{figures/tikz/training-deflection-field}
+  \end{center}
   
   \item 质子和 $\alpha$ 粒子（$m_\alpha = 4m_p$，$q_\alpha = 2e$）经过同一加速电压 $U_1$ 加速后进入同一偏转电场，比较它们的偏转位移和偏转角。
+  \begin{center}
+  \input{figures/tikz/accelerate-deflect-model}
+  \end{center}
 \end{enumerate}
 
 \section*{八、易错点}
@@ -256,6 +265,8 @@ y = \frac{100 \times (0.05)^2}{4 \times 1000 \times 0.01} = \frac{100 \times 0.0
   \item \textbf{偏转电场中忘记 $x$ 方向是匀速运动：} $x$ 方向不受力（重力一般忽略），是匀速直线运动，不能写成匀加速。
   
   \item \textbf{混淆加速电压和偏转电压：} 加速 $U_1$ 决定 $v_0$ 的大小，偏转 $U_2$ 决定偏转位移。两者互不干扰。
+
+  \item \textbf{有初速度时仍套 $\lvert q\rvert U=\frac12mv^2$：} 这个式子只适用于从静止开始、且电场力做正功的情形。若粒子已有初速度，应写成 $W_{\text{电}}=\Delta E_k=\frac12mv^2-\frac12mv_0^2$，并先判断电场力做功正负。
   
   \item \textbf{忽略重力的条件：} 微观粒子（电子、质子、离子）在电场中通常忽略重力。但带电液滴、带电小球不能忽略。
   
@@ -290,9 +301,9 @@ y = \frac{100 \times (0.05)^2}{4 \times 1000 \times 0.01} = \frac{100 \times 0.0
 \section*{十、今日小结}
 
 \begin{enumerate}
-  \item 加速电场：$qU = \frac12 mv^2$，粒子获得的速度与 $U^{1/2}$ 成正比。
+  \item 加速电场的通式是 $W_{\text{电}}=\Delta E_k$；从静止开始且电场力做正功时，才化为 $\lvert q\rvert U = \frac12 mv^2$。
   \item 偏转电场：类平抛运动，$x$ 方向匀速 $x = v_0 t$，$y$ 方向匀加速 $a = \dfrac{qE}{m}$。
   \item 偏转位移 $y = \dfrac12 \dfrac{qU}{md}\left(\dfrac{L}{v_0}\right)^2$，与 $q$、$m$ 有关。
-  \item 先加速后偏转：$y = \dfrac{U_2 L^2}{4 U_1 d}$，与 $q$、$m$ 无关。
+  \item 先加速后偏转：在从静止加速、同一偏转电场且忽略重力和相对论效应时，$y = \dfrac{U_2 L^2}{4 U_1 d}$，与 $q$、$m$ 无关。
   \item 微观粒子忽略重力，宏观带电物体要考虑重力。
 \end{enumerate}

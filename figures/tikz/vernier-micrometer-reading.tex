@@ -1,0 +1,56 @@
+% TikZ 图：游标卡尺与螺旋测微器读数
+% Day 28：实验专题
+\begin{tikzpicture}[>=Latex,scale=0.82,every node/.style={font=\scriptsize}]
+  \begin{scope}
+    \node[font=\small\bfseries] at (2.55,3.18) {游标卡尺};
+
+    \draw[thick,fill=gray!8] (0,2.15) rectangle (5.1,2.55);
+    \foreach \i in {0,...,12}{
+      \pgfmathsetmacro{\x}{0.25+0.38*\i}
+      \draw[thick] (\x,2.15) -- (\x,2.48);
+    }
+    \node[above] at (0.25,2.55) {$12$};
+    \node[above] at (2.15,2.55) {$13$};
+    \node[above] at (4.05,2.55) {$14$};
+    \node[right] at (5.1,2.55) {主尺/mm};
+
+    \draw[thick,fill=blue!6] (0.72,1.25) rectangle (4.05,1.72);
+    \foreach \i in {0,...,10}{
+      \pgfmathsetmacro{\x}{0.88+0.30*\i}
+      \draw[thick] (\x,1.72) -- (\x,1.38);
+    }
+    \node[left] at (0.72,1.48) {游标};
+    \draw[red,very thick] (2.98,1.12) -- (2.98,2.65);
+    \node[red,below] at (3.35,1.02) {第 $n$ 格对齐};
+
+    \draw[orange,thick,<->] (0.25,0.78) -- (0.88,0.78);
+    \node[orange,below] at (0.56,0.70) {主尺读数};
+    \node[align=center] at (2.55,0.05) {读数 $=$ 主尺读数 $+$ 对齐格数 $\times$ 精度};
+  \end{scope}
+
+  \begin{scope}[xshift=7.4cm]
+    \node[font=\small\bfseries] at (2.5,3.18) {螺旋测微器};
+
+    \draw[thick,fill=gray!8] (0,1.75) rectangle (3.1,2.35);
+    \draw[thick] (0.2,2.05) -- (4.75,2.05);
+    \foreach \i in {0,...,6}{
+      \pgfmathsetmacro{\x}{0.35+0.38*\i}
+      \draw[thick] (\x,1.75) -- (\x,2.32);
+    }
+    \node[above] at (0.35,2.35) {$5$};
+    \node[above] at (1.49,2.35) {$6$};
+    \node[above] at (2.63,2.35) {$7$};
+    \node[left] at (0,2.35) {固定刻度};
+
+    \draw[thick,fill=blue!6] (3.1,1.35) rectangle (4.75,2.75);
+    \foreach \j in {0,...,6}{
+      \pgfmathsetmacro{\y}{1.45+0.18*\j}
+      \draw[thick] (3.1,\y) -- (3.48,\y);
+    }
+    \draw[red,very thick] (3.0,2.05) -- (4.85,2.05);
+    \node[red,right] at (4.85,2.18) {对齐刻度};
+    \node[below] at (3.95,1.22) {可动刻度};
+
+    \node[align=center] at (2.5,0.25) {读数 $=$ 固定刻度\\$+$ 可动刻度 $\times 0.01\ \mathrm{mm}$};
+  \end{scope}
+\end{tikzpicture}

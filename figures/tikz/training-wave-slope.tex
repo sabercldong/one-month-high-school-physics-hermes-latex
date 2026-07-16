@@ -1,0 +1,15 @@
+\begin{tikzpicture}[scale=0.74,>=Stealth]
+  \draw[->] (0,0) -- (6.0,0) node[right] {$x$};
+  \draw[->] (0,-1.45) -- (0,1.35) node[above] {$y$};
+  \draw[thick,blue,domain=0:5.7,samples=100] plot (\x,{0.8*sin(90*\x)});
+  \coordinate (A) at (0.45,0.52);
+  \coordinate (B) at (1.55,0.52);
+  \fill[red] (A) circle (1.6pt) node[above left] {$A$};
+  \fill[red] (B) circle (1.6pt) node[above right] {$B$};
+  \draw[red,thick] (0.12,0.22) -- (0.78,0.82);
+  \draw[red,thick] (1.22,0.82) -- (1.88,0.22);
+  \node[font=\small] at (0.78,-0.72) {斜率正};
+  \node[font=\small] at (2.15,-1.02) {斜率负};
+  \node[font=\small] at (4.45,1.0) {波向右传播};
+  \draw[->,black] (4.05,0.72) -- (5.1,0.72);
+\end{tikzpicture}

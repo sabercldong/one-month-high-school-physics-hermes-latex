@@ -1,0 +1,38 @@
+% TikZ 图：同步卫星模型
+% Day 12：万有引力与天体运动
+\begin{tikzpicture}[scale=0.82,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  \coordinate (O) at (0,0);
+
+  % Earth and equator.
+  \filldraw[blue!18,draw=blue!70!black,thick] (O) circle (1.05);
+  \draw[blue!70!black,thick] (-1.05,0) arc[start angle=180,end angle=360,x radius=1.05,y radius=0.28];
+  \draw[blue!70!black,dashed] (1.05,0) arc[start angle=0,end angle=180,x radius=1.05,y radius=0.28];
+  \node at (0,0.18) {地球};
+  \node[blue!70!black] at (-1.80,0.28) {赤道平面};
+
+  % Geostationary orbit.
+  \draw[dashed,thick,gray!70] (O) circle (3.25);
+  \draw[->,thick,gray!80] (120:3.25) arc[start angle=120,end angle=82,radius=3.25];
+  \node[gray!80] at (1.15,3.30) {同向转动};
+
+  % Satellite and fixed ground point.
+  \filldraw[red!80!black] (0:3.25) circle (3pt);
+  \node[red!80!black,right=3pt] at (0:3.25) {同步卫星};
+  \filldraw[black] (0:1.05) circle (1.5pt);
+  \node[below left=4pt] at (0:1.05) {地面点};
+  \draw[densely dashed] (0:1.05) -- (0:3.25);
+
+  % Radius and height.
+  \draw[->,thick] (O) -- (0:3.25);
+  \node[above=4pt] at (1.75,0) {$r$};
+  \draw[orange!85!black,thick] (1.05,-0.20) -- (1.05,-0.38);
+  \draw[orange!85!black,thick] (3.25,-0.20) -- (3.25,-0.38);
+  \draw[<->,orange!85!black,thick] (1.05,-0.32) -- (3.25,-0.32);
+  \node[orange!85!black,below=4pt] at (2.15,-0.32) {$h$};
+
+  % Period relation.
+  \node[align=center] at (0,-3.85)
+    {$T_{\text{卫星}}=T_{\text{地球自转}}\approx24\ \mathrm{h}$\\
+     $r\approx4.2\times10^4\ \mathrm{km}$，$h\approx3.6\times10^4\ \mathrm{km}$};
+\end{tikzpicture}

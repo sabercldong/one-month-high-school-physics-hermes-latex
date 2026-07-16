@@ -1,0 +1,23 @@
+\begin{tikzpicture}[scale=0.95,>=Stealth]
+  \draw[rounded corners=4pt,thick,fill=blue!4] (-2.4,-0.85) rectangle (2.4,0.85);
+  \draw[->,very thick,red] (-2.95,0) -- (-2.42,0);
+  \draw[->,very thick,red] (2.42,0) -- (2.95,0);
+  \node[font=\small,red] at (0,-1.25) {正载流子等效：$v_d$ 与 $I$ 同向};
+
+  \foreach \x in {-1.7,-0.9,-0.1,0.7,1.5}{
+    \node[font=\small,blue] at (\x,0.42) {$+$};
+    \node[font=\small,blue] at (\x,-0.42) {$-$};
+  }
+  \draw[<->,thick,blue] (2.75,-0.78) -- (2.75,0.78);
+  \node[font=\small,blue,right] at (2.75,0) {$U_H$};
+
+  \foreach \x in {-1.8,-1.2,-0.6,0,0.6,1.2,1.8}{
+    \node[font=\large] at (\x,1.32) {$\times$};
+    \node[font=\large] at (\x,-1.70) {$\times$};
+  }
+  \node[font=\small] at (0,1.70) {$B$ 垂直纸面向里};
+  \draw[->,orange!85!black,very thick] (-0.35,0) -- (-0.35,0.55);
+  \node[font=\small,orange!85!black,left] at (-0.35,0.32) {$F_L$};
+  \draw[->,purple,thick] (0.35,0.42) -- (0.35,-0.42);
+  \node[font=\small,purple,right] at (0.35,0) {$E_H$};
+\end{tikzpicture}

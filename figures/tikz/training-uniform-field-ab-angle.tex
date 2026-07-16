@@ -1,0 +1,17 @@
+\begin{tikzpicture}[scale=0.78,>=Stealth]
+  \foreach \y in {0,0.7,1.4,2.1} {
+    \draw[->,blue] (0,\y) -- (4.8,\y);
+  }
+  \coordinate (A) at (1.3,0.28);
+  \coordinate (B) at (2.3,2.01);
+  \fill (A) circle (1.8pt) node[below left] {$A$};
+  \fill (B) circle (1.8pt) node[above] {$B$};
+  \draw[thick] (A) -- (B);
+  \node[left] at (1.18,1.15) {$AB=0.1\ \mathrm{m}$};
+  \draw[dashed] (A) -- ++(1.45,0);
+  \draw[<->,orange,thick] (1.3,-0.18) -- (2.8,-0.18) node[midway,below] {$d$};
+  \draw (1.88,0.28) arc[start angle=0,end angle=60,radius=0.58];
+  \node at (2.12,0.72) {$60^\circ$};
+  \node[right,blue] at (4.8,2.1) {$E$};
+  \node[font=\small] at (2.45,-0.82) {沿电场方向的投影参与 $U=Ed$};
+\end{tikzpicture}

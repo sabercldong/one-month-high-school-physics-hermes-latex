@@ -1,0 +1,24 @@
+\begin{tikzpicture}[scale=0.8,>=Stealth]
+  \draw[thick] (0,-0.65) -- (0,0.65);
+  \fill (0,0.25) circle (1.2pt);
+  \fill (0,-0.25) circle (1.2pt);
+  \node[left=6pt] at (0,0.25) {$S_1$};
+  \node[left=6pt] at (0,-0.25) {$S_2$};
+  \draw[<->] (0.25,-0.25) -- (0.25,0.25) node[midway,right] {$d$};
+  \draw[thick] (2.4,-0.9) -- (2.4,0.9);
+  \foreach \y in {-0.5,0,0.5} \draw[red] (2.4,\y) -- (2.6,\y);
+  \draw[<->,orange,thick] (2.75,0) -- (2.75,0.5) node[midway,right] {$\Delta x$};
+  \node at (1.2,-1.2) {原来};
+  \begin{scope}[xshift=4.2cm]
+    \draw[thick] (0,-0.85) -- (0,0.85);
+    \fill (0,0.5) circle (1.2pt);
+    \fill (0,-0.5) circle (1.2pt);
+    \node[left=6pt] at (0,0.5) {$S_1$};
+    \node[left=6pt] at (0,-0.5) {$S_2$};
+    \draw[<->] (0.25,-0.5) -- (0.25,0.5) node[midway,right] {$2d$};
+    \draw[thick] (2.4,-0.9) -- (2.4,0.9);
+    \foreach \y in {-0.25,0,0.25} \draw[red] (2.4,\y) -- (2.6,\y);
+    \draw[<->,orange,thick] (2.75,0) -- (2.75,0.25) node[midway,right] {$\Delta x/2$};
+    \node at (1.2,-1.2) {缝距加倍};
+  \end{scope}
+\end{tikzpicture}

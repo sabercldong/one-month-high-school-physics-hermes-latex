@@ -1,0 +1,16 @@
+\begin{tikzpicture}[scale=0.95,>=Stealth]
+  \draw[thick,fill=blue!3] (-2.2,-1.35) rectangle (2.2,1.35);
+  \node[font=\small] at (0,1.65) {大量分子无规则运动};
+  \foreach \x/\y/\dx/\dy in {-1.5/0.7/0.55/0.25,-0.9/-0.4/0.6/-0.25,-0.2/0.35/-0.45/0.35,0.55/-0.65/0.55/0.30,1.25/0.45/0.45/-0.25}{
+    \fill[blue] (\x,\y) circle (0.04);
+    \draw[blue,->] (\x,\y) -- ++(\dx,\dy);
+  }
+  \draw[red,very thick,->] (1.45,0.25) -- (2.12,0.25);
+  \draw[red,very thick,->] (1.25,-0.45) -- (2.12,-0.45);
+  \node[font=\small,red,align=left,anchor=west] at (2.75,-0.20) {碰撞器壁\\产生平均压力};
+  \draw[thick] (2.45,-1.20) -- (2.45,1.20);
+  \draw[thick] (2.35,-1.20) -- (2.55,-1.20);
+  \draw[thick] (2.35,1.20) -- (2.55,1.20);
+  \node[font=\small,anchor=west] at (2.65,1.18) {面积 $S$};
+  \node[font=\small,align=center] at (0,-1.85) {压强 $p=\dfrac{F}{S}$，来自大量分子碰撞的统计平均};
+\end{tikzpicture}

@@ -1,0 +1,24 @@
+% TikZ 图：经典物理与相对论适用边界
+% Day 27：近代物理
+\begin{tikzpicture}[>=Latex,scale=0.9,every node/.style={font=\small}]
+  \draw[->,thick] (0,0) -- (8.4,0) node[right] {$v$};
+  \draw[thick] (0,0.10) -- (0,-0.10) node[below] {$0$};
+  \draw[thick] (6.9,0.10) -- (6.9,-0.10) node[below] {$c$};
+  \draw[blue,very thick] (0.25,0) -- (3.7,0);
+  \draw[orange,very thick] (3.7,0) -- (6.75,0);
+  \node[blue,align=center] at (1.95,0.65) {低速范围\\$v\ll c$};
+  \node[orange,align=center] at (5.25,0.72) {高速范围\\$v$ 接近 $c$};
+  \node[align=center,font=\scriptsize] at (1.85,-0.78) {牛顿力学近似很好\\$E_k\approx \frac12mv^2$};
+  \node[align=center,font=\scriptsize] at (5.45,-0.78) {需要相对论修正\\速度不能超过光速};
+
+  \draw[dashed,gray] (3.7,-1.25) -- (3.7,1.15);
+  \node[gray] at (3.7,1.38) {适用边界逐渐显现};
+
+  \begin{scope}[xshift=9.05cm,yshift=-0.1cm]
+    \node[draw,rounded corners=4pt,fill=blue!6,minimum width=2.15cm,minimum height=0.95cm] (mass) at (0,0.68) {质量};
+    \node[draw,rounded corners=4pt,fill=orange!8,minimum width=2.15cm,minimum height=0.95cm] (energy) at (0,-0.78) {能量};
+    \draw[->,very thick,red] (mass) -- (energy);
+    \node[red,right] at (0.33,-0.06) {$E=mc^2$};
+    \node[align=center,font=\scriptsize] at (0,-1.72) {核反应中很小质量亏损\\也对应很大能量};
+  \end{scope}
+\end{tikzpicture}

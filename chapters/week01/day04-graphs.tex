@@ -116,13 +116,14 @@ s(t)=x_{\text{前}}(t)-x_{\text{后}}(t)
 追及问题不要一上来套公式，先画清四个节点：初始距离、速度相等时刻、可能停车时刻、追上时刻。速度相等通常是距离取极值的时刻；是否真的追上，还要回到位移关系判断。
 
 \begin{center}
-\begin{tabular}{p{0.18\textwidth}p{0.30\textwidth}p{0.38\textwidth}}
+\renewcommand{\arraystretch}{1.18}
+\begin{tabular}{p{0.18\textwidth}p{0.32\textwidth}p{0.36\textwidth}}
 \toprule
 模型 & 关键判断 & 方程入口 \\
 \midrule
 匀速追匀速 & 后车速度更大才可能追上 & $(v_A-v_B)t=\Delta x$ \\
 匀加速追匀速 & 先距离增大，$v_A=v_B$ 时距离最大，之后缩短 & 追上：$\frac12 at^2=v_Bt+\Delta x$ \\
-匀速追匀减速 & 先判断前车停车前能否追上；若不能，再分停车后继续追 & 停车时间 $t_0=v_B/a$；分别比较 $0\sim t_0$ 与 $t>t_0$ 的位移 \\
+匀速追匀减速 & 先判停车前能否追上；否则看停车后 & $t_0=v_B/a$；分段比较相对位移 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -254,12 +255,18 @@ x_B = v_B t = 10 \times 5 = 50\ \mathrm{m}
   \item 甲车以 $v_{\text{甲}} = 15\ \mathrm{m/s}$ 匀速行驶，发现前方 $L = 40\ \mathrm{m}$ 处乙车以 $v_{\text{乙}} = 10\ \mathrm{m/s}$ 匀速行驶，甲立即以减速度大小 $a = 1\ \mathrm{m/s^2}$ 匀减速。通过计算判断是否相撞。
   
   \item 在平直公路上，$A$ 车在前以 $v_A = 8\ \mathrm{m/s}$ 匀速行驶，$B$ 车在后以 $v_B = 20\ \mathrm{m/s}$ 匀速行驶。当两车相距 $d = 100\ \mathrm{m}$ 时，$B$ 开始以减速度大小 $a = 2\ \mathrm{m/s^2}$ 匀减速。求：
+  \begin{center}
+  \input{figures/tikz/training-chase-cars}
+  \end{center}
   \begin{enumerate}
     \item $B$ 车能否追上 $A$？
     \item 若能，何时追上？若不能，最近距离是多少？
   \end{enumerate}
   
   \item 一质点沿 $x$ 轴运动，其 $v$-$t$ 图线为：$0-2\ \mathrm{s}$ 内匀速 $v = 4\ \mathrm{m/s}$，$2-4\ \mathrm{s}$ 内匀减速 $v = 4 - 2(t-2)$（从 $4$ 减到 $0$），$4-6\ \mathrm{s}$ 内反向匀加速 $v = -2(t-4)$（从 $0$ 反向加速到 $-4$）。求全程的位移和路程。
+  \begin{center}
+  \input{figures/tikz/training-vt-piecewise}
+  \end{center}
 \end{enumerate}
 
 \section*{八、易错点}

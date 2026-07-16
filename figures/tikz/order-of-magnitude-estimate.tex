@@ -1,0 +1,23 @@
+% TikZ 图：数量级估算模型
+% Day 30：综合收束
+\begin{tikzpicture}[>=Latex,scale=0.9,every node/.style={font=\scriptsize}]
+  \tikzset{
+    estep/.style={draw,rounded corners=2pt,minimum width=2.05cm,minimum height=0.86cm,align=center,fill=blue!7},
+    check/.style={draw,rounded corners=2pt,minimum width=2.35cm,minimum height=0.86cm,align=center,fill=orange!10},
+    arrow/.style={->,thick}
+  }
+
+  \node[estep] (scene) at (0,0) {真实情境\\先画草图};
+  \node[estep] (main) at (2.65,0) {抓主要量\\忽略次要细节};
+  \node[estep] (value) at (5.3,0) {取近似值\\一位有效数字};
+  \node[estep] (calc) at (7.95,0) {代入估算\\保留量级};
+  \node[check] (test) at (10.75,0) {检查结果\\单位、极限、常识};
+
+  \foreach \a/\b in {scene/main,main/value,value/calc,calc/test}{
+    \draw[arrow] (\a) -- (\b);
+  }
+
+  \node[draw,rounded corners=2pt,fill=gray!6,align=left,inner sep=5pt] at (5.35,-1.55)
+    {例：估算一天用电量，不必先知道每个电器的精确功率，\\
+     先列主要用电器，再用 $E=Pt$ 判断数量级是否合理。};
+\end{tikzpicture}

@@ -1,0 +1,30 @@
+% TikZ 图：斜抛运动的横竖分解
+% Day 03：加速度
+\begin{tikzpicture}[scale=0.72,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  \draw[->,thick] (-0.25,0) -- (8.6,0) node[right] {$x$};
+  \draw[->,thick] (0,-0.25) -- (0,3.35) node[above] {$y$};
+  \filldraw[black] (0,0) circle (2pt);
+  \node[below left,xshift=-9pt,yshift=-4pt] at (0,0) {抛出点};
+
+  \draw[thick,domain=0:8,samples=100]
+    plot(\x,{0.88*\x-0.11*\x*\x});
+  \filldraw[black] (4,1.76) circle (1.7pt);
+  \draw[dashed] (4,0) -- (4,1.76);
+  \draw[dashed] (0,1.76) -- (4,1.76);
+
+  \draw[->,red!80!black,thick] (0,0) -- (1.55,1.36)
+    node[above right] {$v_0$};
+  \draw[->,blue!75!black,thick] (0,0) -- (1.55,0);
+  \node[blue!75!black,anchor=west] at (1.70,-0.28) {$v_0\cos\theta$};
+  \draw[->,blue!75!black,thick] (1.55,0) -- (1.55,1.36)
+    node[midway,right] {$v_0\sin\theta$};
+  \draw (0.55,0) arc[start angle=0,end angle=41,radius=0.55];
+  \node at (0.78,0.24) {$\theta$};
+
+  \draw[->,blue!75!black] (7.05,1.05) -- (7.05,0.35)
+    node[midway,right] {$g$};
+  \draw[<->] (0,-0.62) -- (8,-0.62) node[midway,below] {$R$};
+  \draw[<->] (-0.35,0) -- (-0.35,1.76) node[midway,left] {$H$};
+  \node[align=center] at (6.35,2.25) {水平方向匀速\\竖直方向匀变速};
+\end{tikzpicture}

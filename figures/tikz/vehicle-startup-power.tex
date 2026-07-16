@@ -1,0 +1,34 @@
+% TikZ 图：机车启动中的牵引力、功率和速度
+% Day 08：功率模型
+\begin{tikzpicture}[>=Latex,scale=0.9,every node/.style={font=\scriptsize}]
+  \draw[->,thick] (0,0) -- (7.1,0) node[right] {$v$};
+  \draw[->,thick] (0,0) -- (0,4.0) node[above] {$F$};
+
+  \draw[dashed] (0,1.05) -- (6.7,1.05);
+  \node[left] at (0,1.05) {$f$};
+
+  \draw[red,very thick] (0,3.1) -- (2.25,3.1);
+  \node[red,above] at (1.15,3.1) {恒牵引力 $F_0$};
+
+  \draw[blue,very thick,domain=2.25:6.25,samples=80] plot(\x,{7.0/\x});
+  \node[blue,above right] at (4.0,1.75) {$F=\dfrac{P_{\text{额}}}{v}$};
+
+  \draw[densely dashed] (2.25,0) -- (2.25,3.1);
+  \node[below] at (2.25,0) {$v_1$};
+  \node[align=center,below] at (2.25,-0.42) {$P_{\text{额}}=F_0v_1$};
+
+  \draw[densely dashed] (6.67,0) -- (6.67,1.05);
+  \node[below] at (6.67,0) {$v_{\max}$};
+  \node[align=center,below] at (6.1,-0.86) {$v_{\max}=\dfrac{P_{\text{额}}}{f}$};
+
+  \fill (2.25,3.1) circle (1.4pt);
+  \fill (6.67,1.05) circle (1.4pt);
+
+  \draw[->,orange,thick] (0.55,0.55) -- (1.65,0.55);
+  \node[orange,below] at (1.1,0.55) {$a=\dfrac{F_0-f}{m}$ 恒定};
+
+  \draw[->,orange,thick] (3.0,0.55) -- (5.6,0.55);
+  \node[orange,below] at (4.35,0.55) {$F$ 变小，$a$ 逐渐减小};
+
+  \node[align=center] at (3.55,3.72) {先恒牵引力，后恒额定功率};
+\end{tikzpicture}

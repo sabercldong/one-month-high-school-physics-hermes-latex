@@ -1,0 +1,29 @@
+\begin{tikzpicture}[scale=0.92,>=Stealth]
+  \tikzset{
+    field/.style={blue,thick,->},
+    axis/.style={gray,dashed},
+    note/.style={font=\small,align=center}
+  }
+
+  \shade[ball color=blue!12] (0,0) circle (1.25);
+  \draw[thick] (0,0) circle (1.25);
+  \draw[axis] (0,-1.62) -- (0,1.62);
+  \node[font=\small] at (0,1.88) {地理北极附近};
+  \node[font=\small] at (0,-1.88) {地理南极附近};
+
+  \node[font=\small,red] at (1.15,1.12) {磁 $S$};
+  \node[font=\small,red] at (1.15,-1.12) {磁 $N$};
+
+  \draw[field] (0,-1.30) .. controls (-2.05,-0.70) and (-2.05,0.70) .. (0,1.30);
+  \draw[field] (0,-1.30) .. controls (2.05,-0.70) and (2.05,0.70) .. (0,1.30);
+  \draw[field] (0,-1.18) .. controls (-1.30,-0.52) and (-1.30,0.52) .. (0,1.18);
+  \draw[field] (0,-1.18) .. controls (1.30,-0.52) and (1.30,0.52) .. (0,1.18);
+
+  \draw[thick,orange!90!black,->] (-2.45,0.10) -- (-1.72,0.55);
+  \draw[thick,orange!90!black] (-2.45,0.10) -- (-2.86,-0.16);
+  \node[font=\scriptsize,orange!90!black] at (-3.08,-0.32) {指南针 $N$ 极};
+  \node[font=\scriptsize,blue] at (-2.04,0.90) {沿当地磁场方向};
+
+  \node[note] at (0,-2.42)
+    {外部磁感线从磁 $N$ 极出发，进入磁 $S$ 极};
+\end{tikzpicture}

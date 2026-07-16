@@ -1,0 +1,59 @@
+% TikZ 图：节点电流守恒与回路电压守恒
+% Day 19：直流电路
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \tikzset{
+    wire/.style={thick},
+    current/.style={->,very thick,red},
+    volt/.style={->,thick,blue},
+    res/.style={thick,fill=white},
+    note/.style={font=\small}
+  }
+
+  % 左：节点电流守恒
+  \begin{scope}
+    \node[font=\bfseries] at (1.9,1.75) {节点电流守恒};
+    \coordinate (O) at (2,0);
+    \filldraw[black] (O) circle (2.2pt);
+
+    \draw[wire] (-0.2,1.0) -- (O);
+    \draw[wire] (-0.2,-1.0) -- (O);
+    \draw[wire] (O) -- (4.2,0);
+
+    \draw[current] (0.15,0.82) -- (1.25,0.27);
+    \node[red,above left] at (0.50,0.88) {$I_1$};
+    \draw[current] (0.15,-0.82) -- (1.25,-0.27);
+    \node[red,below left] at (0.50,-0.88) {$I_2$};
+    \draw[current] (2.45,0.22) -- (3.55,0.22);
+    \node[red,above] at (3.00,0.24) {$I_3$};
+
+    \node[note,align=center] at (2,-1.55) {节点不积累电荷\\[2pt]$I_1+I_2=I_3$};
+  \end{scope}
+
+  % 右：回路电压守恒
+  \begin{scope}[xshift=5.6cm]
+    \node[font=\bfseries] at (2.45,2.05) {回路电压守恒};
+
+    \draw[wire] (0,0) -- (0,1.15) -- (1.0,1.15);
+    \draw[res] (1.0,0.85) rectangle (2.0,1.45);
+    \node at (1.5,1.15) {$R_1$};
+    \draw[wire] (2.0,1.15) -- (3.1,1.15);
+    \draw[res] (3.1,0.85) rectangle (4.1,1.45);
+    \node at (3.6,1.15) {$R_2$};
+    \draw[wire] (4.1,1.15) -- (5.0,1.15) -- (5.0,-1.05) -- (0,-1.05) -- (0,-0.25);
+
+    % 电源
+    \draw[wire] (0,-0.25) -- (0,-0.58);
+    \draw[thick] (-0.28,-0.58) -- (0.28,-0.58);
+    \draw[thick] (-0.45,-0.82) -- (0.45,-0.82);
+    \draw[wire] (0,-0.82) -- (0,-1.05);
+    \node[left] at (-0.45,-0.70) {$E$};
+    \node[note,anchor=west] at (0.48,-0.43) {升高电势};
+
+    \draw[volt] (1.0,0.63) -- (2.0,0.63);
+    \node[blue,below] at (1.5,0.58) {$U_1$};
+    \draw[volt] (3.1,0.63) -- (4.1,0.63);
+    \node[blue,below] at (3.6,0.58) {$U_2$};
+
+    \node[note,align=center] at (2.55,-1.70) {绕一圈回到原点\\[2pt]$E=U_1+U_2$};
+  \end{scope}
+\end{tikzpicture}

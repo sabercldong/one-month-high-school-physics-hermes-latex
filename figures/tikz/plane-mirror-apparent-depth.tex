@@ -1,0 +1,63 @@
+\begin{tikzpicture}[scale=0.9,>=Stealth]
+  \tikzset{
+    ray/.style={very thick,blue,->},
+    ext/.style={blue!60,dashed,thick},
+    guide/.style={gray,dashed},
+    label/.style={font=\small}
+  }
+
+  \begin{scope}[xshift=-3.6cm]
+    \draw[thick] (0,-1.35) -- (0,1.35);
+    \foreach \y in {-1.25,-1.0,...,1.25}
+      \draw[gray!60] (-0.08,\y) -- (0.08,\y+0.10);
+    \node[label] at (0,1.65) {平面镜};
+
+    \coordinate (O) at (-1.7,0.55);
+    \coordinate (I) at (1.7,0.55);
+    \fill[red] (O) circle (1.7pt) node[left,label] {物点 $O$};
+    \fill[red!50] (I) circle (1.5pt) node[right,label] {虚像 $O'$};
+
+    \draw[ray] (O) -- (0,0.95) -- (-1.05,1.25);
+    \draw[ray] (O) -- (0,0.10) -- (-1.20,-0.42);
+    \draw[ext] (0,0.95) -- (I);
+    \draw[ext] (0,0.10) -- (I);
+
+    \draw[guide,<->] (-1.7,-1.02) -- (0,-1.02);
+    \draw[guide,<->] (0,-1.02) -- (1.7,-1.02);
+    \node[label] at (-0.85,-1.25) {$d$};
+    \node[label] at (0.85,-1.25) {$d$};
+    \node[font=\scriptsize,align=center] at (0,-1.72) {像与物关于镜面对称\\像距等于物距};
+  \end{scope}
+
+  \begin{scope}[xshift=3.25cm]
+    \fill[blue!4] (-2.4,0) rectangle (2.4,1.45);
+    \fill[cyan!8] (-2.4,-1.75) rectangle (2.4,0);
+    \draw[thick] (-2.4,0) -- (2.4,0);
+    \node[label] at (-1.75,1.18) {空气};
+    \node[label] at (-1.75,-1.45) {水};
+
+    \coordinate (O) at (0,-1.20);
+    \coordinate (A) at (-0.78,0);
+    \coordinate (B) at (0.74,0);
+    \coordinate (Eye) at (1.85,1.08);
+    \coordinate (Op) at (0,-0.48);
+
+    \fill[red] (O) circle (1.7pt) node[below right,label] {$O$};
+    \fill[red!50] (Op) circle (1.4pt) node[left,label] {虚像 $O'$};
+    \node[label] at (Eye) {眼};
+    \draw[thick] (1.63,0.93) ellipse (0.17 and 0.10);
+
+    \draw[blue,very thick] (O) -- (A);
+    \draw[ray] (A) -- (Eye);
+    \draw[blue,very thick] (O) -- (B);
+    \draw[ray] (B) -- (Eye);
+    \draw[ext] (A) -- (Op);
+    \draw[ext] (B) -- (Op);
+
+    \draw[guide] (0,-1.55) -- (0,0.25);
+    \draw[<->,gray] (-0.52,0) -- (-0.52,-0.48);
+    \node[font=\scriptsize,gray,left] at (-0.52,-0.24) {视深};
+    \draw[<->,gray] (0.52,0) -- (0.52,-1.20);
+    \node[font=\scriptsize,gray,right] at (0.52,-0.88) {实深};
+  \end{scope}
+\end{tikzpicture}

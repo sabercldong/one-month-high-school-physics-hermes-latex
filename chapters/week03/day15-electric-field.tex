@@ -7,11 +7,13 @@
 \section*{一、学习目标}
 
 \begin{enumerate}
-  \item 理解电荷守恒定律和库仑定律 $F = k\dfrac{|Q_1 Q_2|}{r^2}$。
-  \item 理解电场强度的定义 $E = \dfrac{F}{q}$，能用电场线描述电场。
+  \item 理解电荷守恒定律、常见起电方式和库仑定律 $F = k\dfrac{|Q_1 Q_2|}{r^2}$。
+  \item 理解电场强度的定义 $E = \dfrac{F}{q_0}$（$q_0$ 为正试探电荷），能用电场线描述电场。
   \item 掌握点电荷的电场强度大小 $E = k\dfrac{|Q|}{r^2}$，并能判断方向。
   \item 掌握电场叠加原理，能计算多个点电荷的合场强。
   \item 区分匀强电场和非匀强电场的特点。
+  \item 了解导体静电平衡和静电屏蔽的基本结论。
+  \item 会把电场力与重力等恒力合成，初步建立“等效重力场”模型。
 \end{enumerate}
 
 \section*{二、初高中衔接}
@@ -29,16 +31,34 @@
 
 \section*{三、核心概念}
 
-\begin{conceptbox}{电荷与库仑定律}
+\begin{conceptbox}{电荷、起电与电荷守恒}
 
 \textbf{电荷：}
 \begin{itemize}
   \item 正电荷（$+$）和负电荷（$-$），同种相斥、异种相吸。
   \item 电荷量 $Q$ 的单位：库仑（$\mathrm{C}$）。
   \item 元电荷 $e = 1.60 \times 10^{-19}\ \mathrm{C}$。
-  \item 电荷守恒定律：电荷既不能创造、也不能消灭，只能从一个物体转移到另一个物体。
+  \item 电荷量具有量子化特征：带电体的净电荷量是元电荷的整数倍，即 $Q=ne$（$n$ 为整数）。
+  \item 电荷守恒定律：孤立系统的总电荷量保持不变。高中常见起电现象本质上是电荷转移或重新分布，而不是凭空产生净电荷。
 \end{itemize}
 
+\textbf{常见起电方式：}
+\begin{itemize}
+  \item \textbf{摩擦起电：} 两种物体摩擦时，电子从一个物体转移到另一个物体，两个物体常带异种电荷。
+  \item \textbf{接触起电：} 带电体接触导体后，电荷在接触的导体间重新分配。
+  \item \textbf{感应起电：} 带电体靠近导体时，导体内部自由电荷重新分布；若配合接地或分开导体，可使导体带电。
+\end{itemize}
+
+\begin{center}
+\input{figures/tikz/charging-methods}
+
+\figcaption{三种起电方式：本质是电子转移或电荷重新分布}\label{fig:charging-methods}
+\end{center}
+
+\textbf{认知提醒：} 起电不是“产生了新的电荷”。例如摩擦起电中，一个物体失去电子带正电，另一个物体得到电子带负电；若把两物体看成一个系统，总电荷仍守恒。
+\end{conceptbox}
+
+\begin{conceptbox}{库仑定律}
 \textbf{库仑定律：}
 \[
 \boxed{F = k\frac{|Q_1 Q_2|}{r^2}}
@@ -64,13 +84,13 @@
 
 \textbf{电场强度（定义式）：}
 \[
-\boxed{E = \frac{F}{q}}
+\boxed{E = \frac{F}{q_0}}\quad(q_0>0)
 \]
 
 \begin{itemize}
   \item 矢量，方向与正电荷在该点受到的电场力方向相同。
   \item 单位：$\mathrm{N/C}$ 或 $\mathrm{V/m}$。
-  \item 由电场本身决定，与试探电荷 $q$ 无关。
+  \item 由电场本身决定，与正试探电荷 $q_0$ 无关。
   \item 试探电荷应足够小，放入后不能明显改变原来的电场分布。
 \end{itemize}
 
@@ -83,6 +103,7 @@ E = k\frac{|Q|}{r^2}
 
 \end{conceptbox}
 
+\newpage
 \begin{conceptbox}{电场叠加原理}
 
 多个点电荷在某点产生的合场强等于各点电荷单独在该点产生的场强的矢量和。
@@ -125,10 +146,12 @@ E = k\frac{|Q|}{r^2}
 \toprule
 公式 & 物理意义 & 适用条件 \\
 \midrule
+$Q=ne$ & 电荷量子化 & $n$ 为整数，$e$ 为元电荷 \\
 $F = k\dfrac{|Q_1 Q_2|}{r^2}$ & 库仑力大小 & 真空点电荷 \\
-$E = \dfrac{F}{q}$ & 电场强度定义 & 任何电场 \\
+$E = \dfrac{F}{q_0}$ & 场强大小定义 & 正试探电荷 $q_0>0$ \\
+$F=qE$ & 电场力 & 电荷在电场中受力，方向看电荷正负 \\
 $E = k\dfrac{|Q|}{r^2}$ & 点电荷场强大小 & 点电荷周围 \\
-$\vect{E} = \sum \vect{E}_i$ & 电场叠加 & 任何电场 \\
+$\vect{E} = \sum \vect{E}_i$ & 电场叠加 & 多个场源共同作用时的矢量和 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -165,6 +188,74 @@ $E = \dfrac{U}{d}$（$U$ 为两板间电压，$d$ 为间距）。
 
 \figcaption{平行板间的匀强电场线：中部区域近似平行等距}\label{fig:parallel-plate-field-lines}
 \end{center}
+
+\subsection*{模型 4：静电平衡与静电屏蔽}
+
+导体中有可以自由移动的电荷。把导体放入外电场后，自由电荷会重新分布，直到导体内部的合电场为零，这种状态叫\textbf{静电平衡}。
+
+\begin{center}
+\input{figures/tikz/electrostatic-shielding}
+
+\figcaption{静电屏蔽：导体静电平衡时内部电场为零，空腔可隔离外电场影响}\label{fig:electrostatic-shielding}
+\end{center}
+
+高中阶段需要掌握三条结论：
+\begin{enumerate}
+  \item 静电平衡时，导体内部电场强度为零。
+  \item 净电荷只分布在导体表面，导体整体是等势体。
+  \item 导体表面附近的电场方向垂直于表面；否则电荷还会沿表面移动，说明尚未平衡。
+\end{enumerate}
+
+\textbf{应用理解：} 金属外壳、屏蔽线、汽车车厢和法拉第笼都利用静电屏蔽保护内部区域。这里不是“外面没有电场”，而是导体表面感应电荷产生的附加电场抵消了导体内部的外电场。
+
+\textbf{尖端放电与避雷针：} 导体静电平衡时，净电荷分布在表面；在尖锐位置，电荷更容易集中，附近电场更强。当电场强到足以使空气电离时，空气由绝缘状态变得能导电，就会发生尖端放电。避雷针利用尖端和接地通路，使建筑附近的电荷更容易通过安全路径转移，降低强电场带来的危险。
+
+\begin{center}
+\input{figures/tikz/point-discharge-lightning-rod}
+
+\figcaption{尖端放电：尖端附近电场更强，避雷针提供接地通路}\label{fig:point-discharge-lightning-rod}
+\end{center}
+
+\subsection*{模型 5：匀强电场中的等效重力场}
+
+若带电物体同时受到重力和匀强电场力，且两个力在整个运动区域内大小、方向都不变，就可以把它们先合成为一个恒力。对质量为 $m$、电荷量为 $q$ 的物体：
+\[
+\vect{F}_{\text{合}}=m\vect{g}+q\vect{E}=m\vect{g'} .
+\]
+这里的 $\vect{g'}$ 叫等效重力场强度，它不是新的真实重力，而是“重力和电场力合起来的效果”。若 $\vect{E}$ 水平向右且 $q>0$，则
+\[
+g'=\sqrt{g^2+\left(\frac{qE}{m}\right)^2},\qquad
+\tan\theta=\frac{qE}{mg}.
+\]
+
+\begin{center}
+\input{figures/tikz/equivalent-gravity-field}
+
+\figcaption{等效重力场：把重力和电场力先合成，再按力学模型处理}\label{fig:equivalent-gravity-field}
+\end{center}
+
+\textbf{模型价值：} 带电小球悬挂在匀强电场中、带电小球沿斜面运动、复合场中的平衡问题，都可以先判断电场力方向，再与重力合成。平衡时，绳的拉力、支持力等约束力只需要平衡这个合力即可。
+
+\textbf{严谨边界：} 只有电场近似匀强、重力近似恒定时，才能把合力看成固定方向的等效重力。若电场来自点电荷，方向和大小随位置变化，就不能简单用一个固定的 $g'$ 代替。
+
+\subsection*{模型 6：带电液滴的悬浮}
+
+宏观带电小球、带电液滴和尘埃颗粒在电场中运动时，重力通常不能忽略。若它在平行板间保持静止或匀速直线运动，就说明合力为零。最常见的悬浮条件是
+\[
+|q|E=mg.
+\]
+若两板间电压为 $U$、板间距为 $d$，还可写成
+\[
+|q|\frac{U}{d}=mg.
+\]
+
+\begin{center}
+\input{figures/tikz/charged-droplet-suspension}
+
+\figcaption{带电液滴悬浮：电场力与重力平衡，电荷正负决定电场力方向}\label{fig:charged-droplet-suspension}
+\end{center}
+
+\textbf{认知提醒：} 先由电场方向和电荷正负判断电场力方向，再列平衡方程。若图中电场向下，负电荷所受电场力向上；正电荷则受力向下，不能悬浮在这个方向的电场中。
 
 \section*{六、例题精讲}
 
@@ -218,7 +309,7 @@ E_2 = k\frac{|Q_2|}{r^2} = 3600\ \mathrm{N/C}\ (\text{方向向右})
 \textbf{题意分析：} 一个正电荷仅在电场力作用下从静止释放，它会沿电场线运动吗？
 
 \textbf{解题过程：}
-不一定。如果电场线是直线（匀强电场、点电荷的径向电场），正电荷会沿电场线运动。但如果电场线是曲线，正电荷不会沿电场线运动——因为电场力的方向沿切线方向，而惯性会使电荷偏离曲线。
+不一定。即使电场线是直线，也要看初速度：若正电荷从静止释放，或初速度沿这条直线方向，它才会沿直线电场线运动；若初速度带有横向分量，轨迹就会偏离电场线。若电场线本身是曲线，正电荷一般也不会沿电场线运动——因为电场力只给出瞬时加速度方向，而粒子的速度还受先前运动状态影响。
 
 \textbf{方法总结：} 电场线不是电荷的运动轨迹。只有在电场线是直线且电荷初速度为零（或沿电场线方向）时，电荷才沿电场线运动。
 
@@ -230,8 +321,16 @@ E_2 = k\frac{|Q_2|}{r^2} = 3600\ \mathrm{N/C}\ (\text{方向向右})
   \item 两个点电荷 $Q_1 = 3 \times 10^{-8}\ \mathrm{C}$、$Q_2 = 5 \times 10^{-8}\ \mathrm{C}$ 相距 $0.2\ \mathrm{m}$，求库仑力大小。
   
   \item 在 $x$ 轴上 $x = 0.2\ \mathrm{m}$ 处有一个 $Q = -2 \times 10^{-9}\ \mathrm{C}$ 的点电荷。求 $x = 0$ 处的电场强度大小和方向。
+  \begin{center}
+  \input{figures/tikz/training-point-charge-axis}
+  \end{center}
   
   \item 等量同种正电荷 $+Q$ 相距 $2a$，求它们连线中点处的电场强度。
+  \begin{center}
+  \input{figures/tikz/equal-like-field-lines}
+  \end{center}
+
+  \item 质量为 $m$、电荷量为 $+q$ 的小球用细线悬挂在水平向右的匀强电场中，静止时细线与竖直方向成角 $\theta$。写出 $\tan\theta$ 与 $E$、$m$、$q$、$g$ 的关系。
 \end{enumerate}
 
 \section*{八、易错点}
@@ -239,14 +338,22 @@ E_2 = k\frac{|Q_2|}{r^2} = 3600\ \mathrm{N/C}\ (\text{方向向右})
 \begin{mistakebox}
 \begin{enumerate}
   \item \textbf{库仑定律中 $r$ 取距离不是间距的平方：} 分母是 $r^2$，不是 $r$。
+
+  \item \textbf{误以为摩擦能创造电荷：} 起电过程本质是电子转移或电荷重新分布，总电荷守恒。
   
-  \item \textbf{混淆 $E = F/q$ 和 $E = k|Q|/r^2$：} 前者是定义式（任何电场），后者是点电荷的场强大小公式（只适用于点电荷），方向还要单独判断。
+  \item \textbf{混淆 $E = F/q_0$ 和 $E = k|Q|/r^2$：} 前者是定义式（用正试探电荷定义任意电场），后者是点电荷的场强大小公式（只适用于点电荷），方向还要单独判断。
   
   \item \textbf{用试探电荷 $q$ 的正负判断场强方向：} 场强方向定义为正电荷所受电场力的方向，与负电荷受力方向相反。
   
   \item \textbf{电场叠加时忘了 $E$ 的方向：} $E$ 是矢量，叠加要用平行四边形定则，不能直接代数和。
   
   \item \textbf{认为电场线是电荷的轨迹：} 电场线只是描述工具，不是运动轨迹。
+
+  \item \textbf{误以为静电屏蔽会消灭外电场：} 静电屏蔽是导体表面感应电荷重新分布，使导体内部或空腔内的合电场为零，并不是让外部电场消失。
+
+  \item \textbf{把避雷针理解成“吸引雷电”：} 更准确地说，避雷针利用尖端放电和接地通路，帮助电荷安全转移，并在雷击发生时提供低阻通路。
+
+  \item \textbf{等效重力场中忘记电荷正负：} $q>0$ 时电场力沿电场方向，$q<0$ 时电场力反向。先判力的方向，再合成。
 \end{enumerate}
 \end{mistakebox}
 
@@ -320,9 +427,12 @@ E = \frac{2kq}{a^2}
 \section*{十、今日小结}
 
 \begin{enumerate}
+  \item 电荷有正、负两种；摩擦起电、接触起电和感应起电都遵循总电荷守恒。
   \item 库仑力大小 $F = k\dfrac{|Q_1 Q_2|}{r^2}$，$k = 9 \times 10^9$。
-  \item 电场强度 $E = \dfrac{F}{q}$（定义式），点电荷场强大小 $E = k\dfrac{|Q|}{r^2}$。
+  \item 电场强度 $E = \dfrac{F}{q_0}$（定义式，$q_0$ 为正试探电荷），点电荷场强大小 $E = k\dfrac{|Q|}{r^2}$。
   \item 电场强度是矢量，遵循叠加原理。
   \item 电场线：从正电荷或无穷远出发，终止于负电荷或无穷远；疏密表示强弱，切线表示方向。
-  \item 匀强电场中 $E = \dfrac{U}{d}$（下节从电势差角度解释）。
+  \item 匀强电场中 $E = \dfrac{U}{d}$，其中 $d$ 是沿电场方向的距离。
+  \item 导体静电平衡时内部电场为零，静电屏蔽来自感应电荷对外电场的抵消；尖端附近电场更强，容易发生尖端放电。
+  \item 匀强电场中的带电物体可把 $mg$ 与 $qE$ 先合成为等效重力；带电液滴悬浮时常用 $|q|E=mg$。
 \end{enumerate}

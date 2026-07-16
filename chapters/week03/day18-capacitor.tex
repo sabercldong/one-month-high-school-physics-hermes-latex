@@ -7,7 +7,7 @@
 \section*{一、学习目标}
 
 \begin{enumerate}
-  \item 理解电容的定义 $C = \dfrac{Q}{U}$，单位法拉（$\mathrm{F}$）。
+  \item 理解电容的定义 $C = \dfrac{Q}{U}$：其中 $Q$ 是单个极板所带电荷量的大小，单位法拉（$\mathrm{F}$）。
   \item 掌握平行板电容器的决定式 $C = \dfrac{\varepsilon_r S}{4\pi k d}$。
   \item 理解电容器充放电过程中 $Q$、$U$、$E$ 的变化。
   \item 能分析电容器在电路中的两种典型情形（电源接通/断开）。
@@ -31,7 +31,7 @@
 
 \begin{conceptbox}{电容}
 
-\textbf{定义：} 电容器所带电荷量 $Q$ 与两极板间电势差 $U$ 的比值。
+\textbf{定义：} 电容器单个极板所带电荷量的大小 $Q$ 与两极板间电势差 $U$ 的比值。
 \[
 \boxed{C = \frac{Q}{U}}
 \]
@@ -39,7 +39,7 @@
 \begin{itemize}
   \item 单位：法拉（$\mathrm{F}$），$1\ \mathrm{F} = 1\ \mathrm{C/V}$。
   \item 常用单位：$1\ \mu\mathrm{F} = 10^{-6}\ \mathrm{F}$，$1\ \mathrm{pF} = 10^{-12}\ \mathrm{F}$。
-  \item $C$ 由电容器本身结构决定，与 $Q$、$U$ 无关。
+  \item 对结构和介质确定的电容器，$C$ 由电容器本身决定，与已带电荷量 $Q$ 和两端电压 $U$ 无关。
 \end{itemize}
 
 \textbf{平行板电容器的决定式：}
@@ -54,7 +54,7 @@
   \item $k = 9.0 \times 10^9$（静电力常量）。
 \end{itemize}
 
-\textbf{决定式的来源：} 平行板间的电场近似为匀强电场。若两板带电量为 $\pm Q$，正对面积为 $S$，板间充满相对介电常数为 $\varepsilon_r$ 的介质，则板间场强可写成
+\textbf{决定式的来源：} 对理想平行板电容器，若极板足够大、板间距远小于极板尺寸并忽略边缘效应，板间电场可近似为匀强电场。若两板分别带电 $\pm Q$（$Q$ 表示单个极板电荷量的大小），正对面积为 $S$，板间充满均匀介质（相对介电常数为 $\varepsilon_r$），则板间场强可写成
 \[
 E=\frac{4\pi kQ}{\varepsilon_r S}.
 \]
@@ -138,7 +138,24 @@ C=\frac{Q}{U}=\frac{\varepsilon_r S}{4\pi k d}.
   \item $S \uparrow \Rightarrow C \uparrow \Rightarrow U \downarrow \Rightarrow E \downarrow$。
 \end{itemize}
 
-\textbf{关键结论：} $E = \dfrac{U}{d} = \dfrac{4\pi k Q}{\varepsilon_r S}$。$Q$ 不变时，$E$ 与 $d$ 无关，只与 $Q$、$S$ 和介质有关。
+\textbf{关键结论：} 在上述理想平行板模型中，$E = \dfrac{U}{d} = \dfrac{4\pi k Q}{\varepsilon_r S}$。$Q$ 不变时，板间中部的匀强场强与 $d$ 无关，只与 $Q$、$S$ 和介质有关。
+
+\textbf{插入电介质的特殊判断：} 若 $S$、$d$ 不变，只把空气换成相对介电常数 $\varepsilon_r>1$ 的电介质，则
+\[
+C'=\varepsilon_r C.
+\]
+\begin{center}
+\input{figures/tikz/capacitor-dielectric-insertion}
+
+\figcaption{插入电介质：结构不变时电容增大，仍先判断 $U$ 不变还是 $Q$ 不变}\label{fig:capacitor-dielectric-insertion}
+\end{center}
+
+\begin{itemize}
+  \item \textbf{接电源：} $U$ 不变，$C$ 增大，所以 $Q=CU$ 增大；若 $d$ 不变，$E=U/d$ 不变。
+  \item \textbf{断电源：} $Q$ 不变，$C$ 增大，所以 $U=Q/C$ 减小；若 $d$ 不变，$E=U/d$ 减小。
+\end{itemize}
+
+\textbf{方法提醒：} 介质问题不要只背“电容变大”。真正做题时仍按同一条路线：先定不变量，再由 $C=\dfrac{\varepsilon_r S}{4\pi kd}$、$Q=CU$、$E=U/d$ 推出变化。
 
 \end{conceptbox}
 
@@ -170,10 +187,10 @@ C=\frac{Q}{U}=\frac{\varepsilon_r S}{4\pi k d}.
 \toprule
 公式 & 物理意义 & 适用条件 \\
 \midrule
-$C = \dfrac{Q}{U}$ & 电容定义 & 任何电容器 \\
+$C = \dfrac{Q}{U}$ & 电容定义 & 线性电容器或高中理想电容模型 \\
 $C = \dfrac{\varepsilon_r S}{4\pi k d}$ & 平行板电容 & 平行板电容器 \\
 $E = \dfrac{U}{d}$ & 板间场强 & 匀强电场近似 \\
-$E_C = \dfrac12 CU^2$ & 电场能量 & 任何电容器 \\
+$E_C = \dfrac12 CU^2$ & 电场能量 & 线性电容器模型 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -182,7 +199,15 @@ $E_C = \dfrac12 CU^2$ & 电场能量 & 任何电容器 \\
 
 \subsection*{模型 1：平行板电容器的动态分析}
 
-记住两类情况的"不变量"：接电源则 $U$ 不变，断电源则 $Q$ 不变。由 $C$ 的变化推出 $Q$（或 $U$）的变化。
+记住两类情况的“不变量”：接电源则 $U$ 不变，断电源则 $Q$ 不变。由 $C$ 的变化推出 $Q$（或 $U$）的变化。
+
+\textbf{三类变化都按同一顺序处理：}
+\[
+d,\ S,\ \varepsilon_r \quad\Longrightarrow\quad C
+\quad\Longrightarrow\quad Q\text{ 或 }U
+\quad\Longrightarrow\quad E .
+\]
+其中插入电介质对应 $\varepsilon_r$ 增大，电容增大。
 
 \subsection*{模型 2：电容器与力学综合}
 
@@ -217,11 +242,12 @@ U=U_1+U_2=\frac{Q}{C_1}+\frac{Q}{C_2}
 
 \textbf{记忆方式：} 电容器并联相当于增大正对面积，电容变大；电容器串联相当于增大等效板间距，电容变小。
 
+\clearpage
 \section*{六、例题精讲}
 
 \begin{examplebox}{电容的计算}
 
-\textbf{题意分析：} 一个平行板电容器，极板面积 $S = 0.02\ \mathrm{m^2}$，间距 $d = 0.001\ \mathrm{m}$，真空介电常数 $\varepsilon_0 = \dfrac{1}{4\pi k}$。求电容 $C$。
+\textbf{题意分析：} 一个平行板电容器，极板面积 $S = 0.02\ \mathrm{m^2}$，间距 $d = 0.001\ \mathrm{m}$，真空介电常数 $\varepsilon_0 = 1/(4\pi k)$。求电容 $C$。
 
 \textbf{物理模型：} 平行板电容器。
 
@@ -271,9 +297,9 @@ $d' = 2d$，$C' = C/2$（与上题相同）。
 
 $U = \dfrac{Q}{C}$，$Q$ 不变，$C$ 减半，所以 $U' = 2U$。
 
-$E = \dfrac{U}{d} = \dfrac{4\pi k Q}{\varepsilon S}$，与 $d$ 无关，所以 $E' = E$。
+$E = \dfrac{U}{d} = \dfrac{4\pi k Q}{\varepsilon_r S}$，在理想平行板模型中与 $d$ 无关，所以 $E' = E$。
 
-\textbf{方法总结：} 断开电源后 $Q$ 不变，$E$ 与 $d$ 无关。$d$ 变化不影响板间场强！
+\textbf{方法总结：} 断开电源后 $Q$ 不变；在理想平行板且忽略边缘效应时，改变 $d$ 不改变板间中部的场强。
 
 \end{examplebox}
 
@@ -283,23 +309,30 @@ $E = \dfrac{U}{d} = \dfrac{4\pi k Q}{\varepsilon S}$，与 $d$ 无关，所以 $
   \item 平行板电容器 $S = 0.01\ \mathrm{m^2}$，$d = 2\ \mathrm{mm}$，接入 $U = 100\ \mathrm{V}$ 的电源。求电容 $C$、电荷量 $Q$ 和板间场强 $E$。
   
   \item 上题中若将极板间距增大到 $4\ \mathrm{mm}$（电源仍接通），求 $C$、$Q$、$E$ 的变化。
+  \begin{center}
+  \input{figures/tikz/training-capacitor-change}
+  \end{center}
   
   \item 电容器充电后断开电源，将极板正对面积减为一半，问 $C$、$U$、$E$ 如何变化？
+
+  \item 平行板电容器充电后断开电源，保持 $S$、$d$ 不变，在两板间插入相对介电常数 $\varepsilon_r=4$ 的电介质。判断 $C$、$U$、$E$ 如何变化。
 \end{enumerate}
 
 \section*{八、易错点}
 
 \begin{mistakebox}
 \begin{enumerate}
-  \item \textbf{电容 $C$ 由 $Q$、$U$ 决定还是由电容器本身决定：} $C = \dfrac{Q}{U}$ 是量度式，$C$ 的大小由极板面积、间距、介质决定，与 $Q$、$U$ 无关。
+  \item \textbf{电容 $C$ 由 $Q$、$U$ 决定还是由电容器本身决定：} $C = \dfrac{Q}{U}$ 是量度式；在结构和介质确定时，$C$ 的大小由极板面积、间距、介质决定，与 $Q$、$U$ 无关。
   
   \item \textbf{动态分析中搞不清 $U$ 不变还是 $Q$ 不变：} 接电源则 $U$ 不变，断电源则 $Q$ 不变。这是解题的第一步。
   
-  \item \textbf{误以为 $E = \dfrac{U}{d}$ 在所有情况下都与 $d$ 有关：} 在 $Q$ 不变时，$E$ 与 $d$ 无关——因为 $U$ 和 $d$ 成比例变化抵消了。
+  \item \textbf{误以为 $E = \dfrac{U}{d}$ 在所有情况下都与 $d$ 有关：} 在理想平行板且 $Q$ 不变时，$E$ 与 $d$ 无关——因为 $U$ 和 $d$ 成比例变化抵消了。
   
   \item \textbf{单位换算错误：} $1\ \mu\mathrm{F} = 10^{-6}\ \mathrm{F}$，$1\ \mathrm{pF} = 10^{-12}\ \mathrm{F}$。计算前先统一单位。
   
   \item \textbf{忽略介电常数 $\varepsilon_r$：} 插入电介质（$\varepsilon_r > 1$）会使电容增大。真空或空气中 $\varepsilon_r \approx 1$。
+
+  \item \textbf{插入介质后忘记不变量：} 接电源时 $U$ 不变，断电源时 $Q$ 不变；不能只说“电容变大”就结束。
 \end{enumerate}
 \end{mistakebox}
 
@@ -320,7 +353,7 @@ E_C = \frac{Q^2}{2C} = \frac{2\pi k Q^2 d}{\varepsilon_r S}
 \[
 F_{\text{引}} = \left|\frac{dE_C}{dd}\right| = \frac{2\pi k Q^2}{\varepsilon_r S}
 \]
-极板间为引力，大小与 $d$ 无关。
+在理想平行板、$Q$ 不变且忽略边缘效应时，极板间为引力，大小与 $d$ 无关。
 
 \textbf{竞赛小贴士：} 处理电容器极板受力问题时，用虚功原理（能量法）比直接用 $F = QE$ 更可靠——因为某一极板受力只来自另一极板产生的电场，不能把两板间的合场强直接代入。
 \end{competitionbox}
@@ -330,7 +363,8 @@ F_{\text{引}} = \left|\frac{dE_C}{dd}\right| = \frac{2\pi k Q^2}{\varepsilon_r 
 \begin{enumerate}
   \item 电容 $C = \dfrac{Q}{U}$，平行板电容器 $C \propto \dfrac{S}{d}$，与介质有关。
   \item 接电源 $\to$ $U$ 不变；断电源 $\to$ $Q$ 不变。
-  \item $Q$ 不变时板间场强 $E$ 与 $d$ 无关。
+  \item 插入电介质使 $\varepsilon_r$ 增大，从而使 $C$ 增大；再按不变量判断 $Q$、$U$、$E$。
+  \item 理想平行板电容器断电后 $Q$ 不变；忽略边缘效应时，板间中部场强 $E$ 与 $d$ 无关。
   \item 电容器储存电场能量 $E_C = \dfrac12 CU^2$。
   \item 电容器串并联计算方法与电阻相反。
 \end{enumerate}

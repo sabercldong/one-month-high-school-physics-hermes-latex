@@ -1,0 +1,46 @@
+% TikZ 图：斜拉绳的速度约束
+% Day 07：连接体、斜面与摩擦综合
+\begin{tikzpicture}[scale=0.95,>=Latex]
+  \path[use as bounding box] (-0.75,-1.35) rectangle (5.15,2.25);
+
+  \coordinate (P) at (0.15,0);
+  \coordinate (R) at (4.05,1.55);
+  \coordinate (Q) at (1.20,0.42);
+  \coordinate (H) at (1.35,0);
+
+  % Ground / waterline and fixed point.
+  \draw[thick] (-0.55,-0.36) -- (2.35,-0.36);
+  \foreach \x in {-0.40,-0.05,...,2.20} {
+    \draw[gray!60] (\x,-0.36) -- ++(-0.16,-0.12);
+  }
+  \draw[thick] (4.05,0.55) -- (4.05,2.05);
+  \foreach \y in {0.65,0.98,...,1.95} {
+    \draw[gray!60] (4.05,\y) -- ++(0.15,0.10);
+  }
+  \draw[fill=white,thick] (R) circle (0.12);
+  \node[above right=2pt] at (R) {固定点};
+
+  % Block and rope.
+  \draw[fill=white,thick] (-0.23,-0.02) rectangle (0.53,0.42);
+  \node at (0.15,0.20) {$m$};
+  \draw[thick] (P) -- (R);
+
+  % Horizontal velocity and reference line.
+  \draw[dashed,gray] (P) -- (1.75,0);
+  \draw[->,thick,blue] (0.15,-0.63) -- (1.45,-0.63)
+    node[midway,below] {$v$};
+
+  % Projection along the rope.
+  \draw[->,very thick,orange] (P) -- (Q)
+    node[pos=0.58,above left=2pt] {$v_{\parallel}=v\cos\theta$};
+  \draw[->,thick,red] (3.05,1.15) -- (3.70,1.41)
+    node[midway,below right=1pt] {$u$};
+
+  % Angle marker.
+  \draw (0.56,0) arc[start angle=0,end angle=21.7,radius=0.41];
+  \node at (0.86,0.16) {$\theta$};
+
+  % Short explanatory formula.
+  \node[align=center] at (2.35,-1.02)
+    {绳长变化只看沿绳方向的分量：\quad $u=v\cos\theta$};
+\end{tikzpicture}

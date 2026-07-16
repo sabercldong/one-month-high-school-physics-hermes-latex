@@ -1,0 +1,29 @@
+\begin{tikzpicture}[scale=0.95,>=Stealth]
+  \coordinate (A) at (-3.0,-0.55);
+  \coordinate (B) at (2.9,0.55);
+  \draw[very thick] (A) -- (B);
+  \draw[thick] (-3.0,-0.95) -- (2.9,0.15);
+  \draw[dashed] (-2.7,-0.55) -- (2.6,-0.55);
+  \draw[->] (-1.8,-0.55) arc (0:10.6:1.05);
+  \node[font=\small] at (-0.72,-0.33) {$\theta$};
+
+  \begin{scope}[shift={(0,0)},rotate=10.6]
+    \draw[thick,fill=gray!12] (-0.42,0) rectangle (0.42,0.35);
+    \draw[thick] (-0.34,0) circle (0.07);
+    \draw[thick] (0.34,0) circle (0.07);
+    \node[font=\scriptsize] at (0,0.20) {车};
+  \end{scope}
+
+  \draw[->,very thick,blue] (0,0.18) -- (-0.34,1.95);
+  \node[font=\small,blue] at (-0.60,1.94) {$N$};
+  \draw[->,very thick] (0,0.18) -- (0,-1.35);
+  \node[font=\small,right] at (0,-1.17) {$mg$};
+  \draw[->,very thick,red] (0,0.18) -- (-1.70,0.18);
+  \node[font=\small,red] at (-1.78,0.47) {指向圆心};
+
+  \draw[dashed,blue!60] (-0.34,1.95) -- (-0.34,0.18);
+  \draw[dashed,blue!60] (-0.34,0.18) -- (-1.70,0.18);
+  \node[font=\scriptsize,blue] at (-0.55,0.95) {$N\cos\theta$};
+  \node[font=\scriptsize,red] at (-1.03,-0.04) {$N\sin\theta$};
+  \node[font=\small,align=center] at (1.55,1.55) {无摩擦理想情形：\\$N\sin\theta=m v^2/r$\\$N\cos\theta=mg$};
+\end{tikzpicture}

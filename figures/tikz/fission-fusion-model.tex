@@ -1,0 +1,53 @@
+% TikZ 图：核裂变与核聚变模型
+% Day 27：近代物理
+\begin{tikzpicture}[scale=0.95,>=Latex]
+  \tikzset{
+    nucleus/.style={circle,draw=black,thick,fill=gray!12,minimum size=0.62cm},
+    neutron/.style={circle,draw=blue!70!black,fill=blue!18,minimum size=0.24cm,inner sep=0pt},
+    ray/.style={->,thick},
+    energy/.style={->,very thick,orange!90!black},
+    note/.style={font=\small}
+  }
+
+  % 裂变
+  \begin{scope}
+    \node[font=\bfseries] at (2.7,1.85) {核裂变：重核分裂};
+    \node[neutron,label=below:{\scriptsize 中子}] (n0) at (0.2,0) {};
+    \node[nucleus,minimum size=1.05cm] (u) at (1.55,0) {$^{235}\mathrm{U}$};
+    \draw[ray,blue!70!black] (n0) -- (u);
+
+    \node[nucleus] (a) at (3.25,0.55) {碎片};
+    \node[nucleus] (b) at (3.25,-0.55) {碎片};
+    \draw[ray] (u) -- (a);
+    \draw[ray] (u) -- (b);
+
+    \foreach \x/\y in {4.35/0.80,4.55/0.10,4.20/-0.65} {
+      \node[neutron] at (\x,\y) {};
+      \draw[ray,blue!70!black] (3.62,0) -- (\x,\y);
+    }
+    \draw[energy] (2.45,1.15) -- (3.35,1.15);
+    \node[orange!90!black,above] at (2.90,1.15) {释放能量};
+
+    \node[note,align=center] at (2.65,-1.55) {中子诱发重核分裂\\新中子可能继续引发链式反应};
+  \end{scope}
+
+  % 分隔线
+  \draw[gray!55,dashed] (5.15,-1.85) -- (5.15,2.05);
+
+  % 聚变
+  \begin{scope}[xshift=5.8cm]
+    \node[font=\bfseries] at (2.35,1.85) {核聚变：轻核结合};
+    \node[nucleus] (d) at (0.55,0.45) {$^2\mathrm{H}$};
+    \node[nucleus] (t) at (0.55,-0.45) {$^3\mathrm{H}$};
+    \draw[ray,red] (d) -- (1.45,0.12);
+    \draw[ray,red] (t) -- (1.45,-0.12);
+
+    \node[nucleus,minimum size=0.9cm] (he) at (2.35,0) {$^4\mathrm{He}$};
+    \node[neutron,label=right:{\scriptsize 中子}] (n1) at (3.55,0.55) {};
+    \draw[ray] (he) -- (n1);
+    \draw[energy] (2.95,-0.55) -- (3.75,-0.95);
+    \node[orange!90!black,right] at (3.55,-0.86) {能量};
+
+    \node[note,align=center] at (2.35,-1.55) {太阳能量主要来自聚变\\受控聚变需要高温高压约束};
+  \end{scope}
+\end{tikzpicture}

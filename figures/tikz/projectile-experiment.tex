@@ -1,0 +1,48 @@
+\begin{tikzpicture}[>=Latex,scale=0.92,every node/.style={font=\scriptsize}]
+  % Launch table and coordinate system
+  \draw[thick] (-1.0,0.24) -- (0,0.24);
+  \draw[thick] (0,0.24) -- (0,0);
+  \draw[thick] (-1.0,0.24) -- (-1.0,-0.30);
+  \node[above] at (-0.55,0.24) {水平出口};
+
+  \draw[->,thick] (0,0) -- (6.55,0) node[right] {$x$};
+  \draw[->,thick] (0,0) -- (0,-3.35) node[below] {$y$};
+  \node[above left] at (0,0) {$O$};
+
+  \fill[red] (0,0) circle (2pt);
+  \draw[->,red,thick] (0,0) -- (0.95,0) node[above] {$v_0$};
+  \node[above right,red] at (0.03,0.05) {抛出点};
+
+  % Projectile trace
+  \draw[blue,very thick,domain=0:5.75,samples=80] plot(\x,{-0.095*\x*\x});
+  \foreach \x in {1.1,2.0,2.9,3.8,4.7,5.5} {
+    \pgfmathsetmacro{\y}{-0.095*\x*\x}
+    \fill[blue] (\x,\y) circle (1.5pt);
+  }
+  \node[blue,below right] at (4.35,-1.80) {描点轨迹};
+
+  % A measured point
+  \pgfmathsetmacro{\xp}{3.45}
+  \pgfmathsetmacro{\yp}{-0.095*\xp*\xp}
+  \draw[dashed] (\xp,0) -- (\xp,\yp) -- (0,\yp);
+  \draw[<->] (0,-0.28) -- (\xp,-0.28) node[midway,below] {$x$};
+  \draw[<->] (-0.28,0) -- (-0.28,\yp) node[midway,left] {$y$};
+  \fill[blue] (\xp,\yp) circle (2pt);
+  \node[right] at (\xp,\yp) {$P(x,y)$};
+
+  % y-x^2 plot inset
+  \begin{scope}[shift={(6.85,-0.30)},scale=0.62]
+    \draw[rounded corners=2pt,gray] (-0.35,0.40) rectangle (3.25,-2.95);
+    \draw[->] (0,-2.45) -- (2.75,-2.45) node[right] {$x^2$};
+    \draw[->] (0,-2.45) -- (0,0.05) node[above] {$y$};
+    \draw[red,thick] (0.28,-2.18) -- (2.45,-0.40);
+    \foreach \p in {(0.55,-1.95),(0.95,-1.63),(1.35,-1.30),(1.78,-0.94),(2.18,-0.62)} {
+      \fill[red] \p circle (1.6pt);
+    }
+    \node[align=center] at (1.60,-2.78) {$y-x^2$ 图\\近似直线};
+  \end{scope}
+
+  \node[align=left] at (3.05,-3.10)
+    {$x=v_0t,\quad y=\frac12gt^2$\\[-1pt]
+     $\Rightarrow\ y=\dfrac{g}{2v_0^2}x^2$};
+\end{tikzpicture}

@@ -1,0 +1,31 @@
+\begin{tikzpicture}[scale=0.95,>=Stealth]
+  \draw[->,thick] (-5.0,0) -- (0.8,0);
+  \foreach \x/\lab in {-4/$2f$,-2/$f$}{
+    \draw[thick] (\x,0.12) -- (\x,-0.12);
+    \node[font=\small] at (\x,-0.38) {\lab};
+  }
+  \draw[thick] (0,0.12) -- (0,-0.12);
+  \draw[very thick,blue] (0,-0.9) -- (0,0.9);
+  \node[font=\small,blue] at (0,1.15) {凸透镜};
+  \node[font=\small] at (0,-0.45) {透镜};
+
+  \draw[red,very thick,<->] (-5.0,0.55) -- (-4.05,0.55);
+  \node[font=\scriptsize,red] at (-4.52,0.88) {$u>2f$};
+  \draw[orange!85!black,very thick,<->] (-3.95,0.55) -- (-2.05,0.55);
+  \node[font=\scriptsize,orange!85!black] at (-3.00,0.88) {$f<u<2f$};
+  \draw[purple,very thick,<->] (-1.95,0.55) -- (-0.15,0.55);
+  \node[font=\scriptsize,purple] at (-1.05,0.88) {$u<f$};
+
+  \draw[red,very thick,->] (-4.55,0) -- (-4.55,0.38);
+  \draw[orange!85!black,very thick,->] (-3.00,0) -- (-3.00,0.38);
+  \draw[purple,very thick,->] (-1.05,0) -- (-1.05,0.38);
+
+  \draw[rounded corners=5pt,thick,red!70,fill=red!5] (1.35,0.68) rectangle (4.90,1.55);
+  \node[font=\small,red,align=center] at (3.12,1.12) {倒立、缩小、实像};
+  \draw[rounded corners=5pt,thick,orange!80!black,fill=orange!8] (1.35,-0.05) rectangle (4.90,0.82);
+  \node[font=\small,orange!85!black,align=center] at (3.12,0.38) {倒立、放大、实像};
+  \draw[rounded corners=5pt,thick,purple!80,fill=purple!6] (1.35,-0.78) rectangle (4.90,0.09);
+  \node[font=\small,purple,align=center] at (3.12,-0.35) {正立、放大、虚像};
+
+  \node[font=\small,align=center] at (0,-1.35) {做题顺序：先确定物距区间，再判断像的正倒、大小和虚实};
+\end{tikzpicture}

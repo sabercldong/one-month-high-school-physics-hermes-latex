@@ -11,7 +11,7 @@
   \item 会用整体法求连接体的加速度，用隔离法求内力（绳中张力）。
   \item 掌握斜面摩擦临界条件 $\tan\theta = \mu_s$ 的推导和应用。
   \item 理解水平传送带模型中摩擦力的方向变化。
-  \item 能综合运用受力分析和牛顿定律解决多物体问题。
+  \item 能综合运用受力分析、约束关系和牛顿定律解决多物体问题。
 \end{enumerate}
 
 \section*{二、初高中衔接}
@@ -51,7 +51,7 @@
   \item 各物体加速度方向或大小不同 $\to$ 不能直接把所有质量相加套一个方向的整体法，通常要逐个隔离。
 \end{itemize}
 
-\textbf{约束关系从哪里来：} 轻绳不伸长，所以绳长是常量。写出绳长关系，才能判断两个物体的速度、加速度大小是否相等。
+\textbf{约束关系从哪里来：} 轻绳不伸长，所以绳长是常量。写出绳长关系，才能判断两个物体的速度、加速度大小是否相等。若绳子斜拉物体，绳长的变化只由物体速度沿绳方向的分量决定，不能直接把物体速度等同于绳端速度。
 
 \begin{center}
 \input{figures/tikz/rope-constraint}
@@ -74,7 +74,7 @@ mg\sin\theta = f_{\max} = \mu_s mg\cos\theta
 \]
 
 \begin{itemize}
-  \item $\theta < \arctan\mu_s$：物块静止（$f_s = mg\sin\theta < f_{\max}$）。
+  \item $\theta < \arctan\mu_s$：若物块初始静止，则可保持静止（$f_s = mg\sin\theta < f_{\max}$）。
   \item $\theta = \arctan\mu_s$：临界，刚好要下滑。
   \item $\theta > \arctan\mu_s$：物块下滑（滑动摩擦力 $f_k = \mu_k mg\cos\theta$）。
 \end{itemize}
@@ -280,6 +280,9 @@ mg\sin\theta = f_{\max} = \mu_s mg\cos\theta
   \end{enumerate}
   
   \item 水平传送带长 $L = 10\ \mathrm{m}$，以 $v = 6\ \mathrm{m/s}$ 运行，$\mu_k = 0.3$，$g = 10\ \mathrm{m/s^2}$。物块从传送带左端轻放，能否到达右端？若能，需要多长时间？
+  \begin{center}
+  \input{figures/tikz/training-conveyor}
+  \end{center}
 \end{enumerate}
 
 \section*{八、易错点}
@@ -295,6 +298,8 @@ mg\sin\theta = f_{\max} = \mu_s mg\cos\theta
   \item \textbf{临界条件记反：} $\tan\theta > \mu_s$ 是下滑，$\tan\theta < \mu_s$ 是静止，$\tan\theta = \mu_s$ 是临界。不是反过来。
   
   \item \textbf{匀速上滑时把摩擦力方向画反：} 匀速上滑时物体相对斜面向上运动，摩擦力沿斜面向下（阻力），不是向上。
+
+  \item \textbf{斜拉绳时直接写 $u=v$：} 只有物体速度沿绳方向时，绳端速度才等于物体速度大小；若速度与绳成角 $\theta$，要取沿绳方向的分量。
 \end{enumerate}
 \end{mistakebox}
 
@@ -329,6 +334,25 @@ a = \frac{m_B}{m_A + m_B} g,\qquad T = \frac{m_A m_B}{m_A + m_B} g
 \textbf{竞赛小贴士：} 滑轮连接体中，绳中各处的张力大小相等（轻绳、光滑滑轮），这是解题的关键条件。
 \end{competitionbox}
 
+\begin{competitionbox}
+\textbf{速度约束：只看沿绳方向的分量}
+
+有些连接体题中，绳子不是沿物体运动方向拉动物体。此时不要急着写“绳速等于物体速度”，而要先问：\textbf{哪一段绳长正在变化？物体速度在这段绳方向上的分量是多少？}
+
+\begin{center}
+\input{figures/tikz/rope-velocity-projection}
+
+\figcaption{斜拉绳的速度约束：绳长变化只由沿绳方向的速度分量决定}\label{fig:rope-velocity-projection}
+\end{center}
+
+如图，物体水平运动速度为 $v$，绳与速度方向夹角为 $\theta$，绳端收短速度为 $u$。瞬时绳长减少的快慢只等于物体速度在绳方向上的投影：
+\[
+u = v\cos\theta
+\]
+
+\textbf{理解边界：} 若绳与物体速度方向相同，$\theta=0$，则 $u=v$；若绳与物体速度方向垂直，$\theta=90^\circ$，这一瞬间物体运动不改变绳长，$u=0$。这就是“斜拉看投影”的来源。
+\end{competitionbox}
+
 \section*{十、今日小结}
 
 \begin{enumerate}
@@ -337,4 +361,5 @@ a = \frac{m_B}{m_A + m_B} g,\qquad T = \frac{m_A m_B}{m_A + m_B} g
   \item 斜面临界：无其他沿斜面外力时，$\tan\theta = \mu_s$ 是刚好下滑的临界条件。
   \item 传送带：物块刚放上时受滑动摩擦力加速；若无其他水平外力，共速后无摩擦。
   \item 注意摩擦方向的判断——与相对运动（趋势）方向相反，不是与运动方向相反。
+  \item 斜拉绳的速度约束要看沿绳方向的分量，不能把物体速度直接等同于绳端速度。
 \end{enumerate}

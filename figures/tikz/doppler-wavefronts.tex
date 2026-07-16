@@ -1,0 +1,20 @@
+\begin{tikzpicture}[scale=0.95,>=Stealth]
+  \coordinate (S) at (0,0);
+  \foreach \cx/\r in {-0.12/0.45,-0.32/0.85,-0.58/1.25,-0.88/1.65,-1.22/2.05}{
+    \draw[blue!55] (\cx,0) circle (\r);
+  }
+  \fill[red] (S) circle (0.07);
+  \node[font=\small,red,above] at (S) {声源};
+  \draw[->,very thick,red] (0.15,0) -- (1.25,0);
+  \node[font=\small,red,above] at (0.85,0.05) {$v_s$};
+
+  \draw[->,thick] (2.55,0.55) -- (2.15,0.25);
+  \node[font=\small,align=center] at (3.10,0.82) {前方波面密\\听到频率较高};
+  \draw[->,thick] (-2.55,-0.55) -- (-2.05,-0.25);
+  \node[font=\small,align=center] at (-3.10,-0.90) {后方波面疏\\听到频率较低};
+
+  \draw[thick,fill=gray!10] (2.10,-1.15) circle (0.12);
+  \node[font=\scriptsize] at (2.10,-1.45) {观察者};
+  \draw[thick,fill=gray!10] (-2.10,1.15) circle (0.12);
+  \node[font=\scriptsize] at (-2.10,1.45) {观察者};
+\end{tikzpicture}

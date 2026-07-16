@@ -1,0 +1,39 @@
+% TikZ 图：感应电荷量与 I-t 图像面积
+% Day 23：电磁感应
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \tikzset{
+    axis/.style={->,thick},
+    curve/.style={very thick,blue},
+    shadearea/.style={fill=blue!18,draw=none},
+    note/.style={font=\small,align=center}
+  }
+
+  \begin{scope}[xshift=-3.1cm]
+    \draw[axis] (0,0) -- (2.8,0) node[right] {$t$};
+    \draw[axis] (0,0) -- (0,2.1) node[above] {$I$};
+    \path[shadearea] (0.35,0) -- (0.35,1.7)
+      .. controls (0.65,1.95) and (1.05,1.95) .. (1.35,1.7)
+      -- (1.35,0) -- cycle;
+    \draw[curve] (0.35,0) -- (0.35,1.7)
+      .. controls (0.65,1.95) and (1.05,1.95) .. (1.35,1.7)
+      -- (1.35,0);
+    \node[note] at (1.35,-0.48) {变化快\\电流大、时间短};
+    \node[blue,font=\small] at (1.85,1.25) {$q=$面积};
+  \end{scope}
+
+  \begin{scope}[xshift=3.1cm]
+    \draw[axis] (0,0) -- (2.8,0) node[right] {$t$};
+    \draw[axis] (0,0) -- (0,2.1) node[above] {$I$};
+    \path[shadearea] (0.35,0) -- (0.35,0.9)
+      .. controls (0.95,1.10) and (1.95,1.10) .. (2.55,0.9)
+      -- (2.55,0) -- cycle;
+    \draw[curve] (0.35,0) -- (0.35,0.9)
+      .. controls (0.95,1.10) and (1.95,1.10) .. (2.55,0.9)
+      -- (2.55,0);
+    \node[note] at (1.45,-0.48) {变化慢\\电流小、时间长};
+    \node[blue,font=\small] at (1.85,0.63) {$q=$面积};
+  \end{scope}
+
+  \node[note] at (0,2.55) {若 $\Delta\Phi$ 相同且 $R$ 不变，两图面积相同};
+  \node[note] at (0,-1.18) {$q=\bar I\Delta t=\dfrac{n|\Delta\Phi|}{R}$};
+\end{tikzpicture}

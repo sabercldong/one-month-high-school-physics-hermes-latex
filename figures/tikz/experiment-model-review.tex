@@ -1,0 +1,36 @@
+% TikZ 图：实验模型复盘
+% Day 29：把实验题转化为测量链条
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \tikzset{
+    card/.style={draw,rounded corners=4pt,thick,fill=gray!6,
+      minimum width=3.05cm,minimum height=2.05cm,
+      text width=2.68cm,align=center,font=\small},
+    arrow/.style={->,thick},
+    note/.style={font=\scriptsize,align=center}
+  }
+
+  \node[card] (direct) at (0,0) {
+    \textbf{直接测量}\\[3pt]
+    长度、时间\\
+    电压、电流\\
+    面积
+  };
+  \node[card] (model) at (3.85,0) {
+    \textbf{模型关系}\\[3pt]
+    $v\approx d/\Delta t$\\
+    $d\approx V/S$\\
+    $U=E-Ir$
+  };
+  \node[card] (target) at (7.70,0) {
+    \textbf{间接量}\\[3pt]
+    速度、加速度\\
+    内阻\\
+    分子大小
+  };
+
+  \draw[arrow] (direct) -- (model);
+  \draw[arrow] (model) -- (target);
+
+  \node[note,orange!85!black] at (3.85,-1.55)
+    {读数后还要检查单位、有效数字和误差方向};
+\end{tikzpicture}

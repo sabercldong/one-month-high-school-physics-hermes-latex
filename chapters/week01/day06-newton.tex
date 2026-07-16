@@ -1,7 +1,7 @@
 \daytitle{6}{牛顿运动定律}
 
 \begin{learningbox}{本讲义大致内容}
-牛顿三大定律是整个经典力学的基石。今天重点掌握牛顿第二定律 $F_{\text{合}} = ma$——它把受力分析和运动学联系起来了。学会先画受力图，再列动力学方程，解决水平面、斜面和连接体问题。
+牛顿三大定律是整个经典力学的基石。今天重点掌握牛顿第二定律 $F_{\text{合}} = ma$——它把受力分析和运动学联系起来了。学会先画受力图，再列动力学方程，解决水平面、斜面、连接体以及升降机中的超重失重问题。
 \end{learningbox}
 
 \section*{一、学习目标}
@@ -11,7 +11,7 @@
   \item 掌握牛顿第二定律 $F_{\text{合}} = ma$，知道 $F_{\text{合}}$ 是物体所受的合力。
   \item 理解牛顿第三定律：作用力与反作用力等大反向、同生同灭。
   \item 会用正交分解法列动力学方程。
-  \item 能解决水平面、斜面上的动力学问题。
+  \item 能解决水平面、斜面、连接体和竖直升降中的动力学问题。
 \end{enumerate}
 
 \section*{二、初高中衔接}
@@ -31,7 +31,7 @@
 
 \begin{conceptbox}{牛顿第一定律（惯性定律）}
 
-\textbf{内容：} 一切物体在不受外力作用（或合力为零）时，总保持匀速直线运动状态或静止状态。
+\textbf{内容：} 在惯性参考系中，一切物体在不受外力作用（或合力为零）时，总保持匀速直线运动状态或静止状态。
 
 \textbf{惯性：} 物体保持原有运动状态不变的性质。
 \begin{itemize}
@@ -47,7 +47,7 @@
 \figcaption{伽利略理想斜面：无摩擦时，运动不需要持续外力维持}\label{fig:newton-first-ideal}
 \end{center}
 
-\textbf{注意：} 牛顿第一定律不能直接用实验验证（无法完全消除外力），它是由实验和推理得出的。
+\textbf{注意：} 牛顿第一定律不能直接用实验验证（无法完全消除外力），它是由实验和推理得出的。它同时揭示了什么样的参考系可近似看作惯性参考系：在这样的参考系中，不受合外力的物体会保持静止或匀速直线运动。
 
 \end{conceptbox}
 
@@ -61,7 +61,7 @@
 
 \begin{itemize}
   \item \textbf{矢量性：} $F_{\text{合}}$ 和 $a$ 方向相同。
-  \item \textbf{瞬时性：} 力一旦产生，加速度立即产生（同时性）。
+  \item \textbf{瞬时性：} 在高中牛顿力学模型中，合力一旦改变，加速度立即随之改变（同时性）。
   \item \textbf{叠加性：} 各个力的作用可以按矢量叠加，最终由合力决定物体的加速度。
 \end{itemize}
 
@@ -139,6 +139,8 @@
   \item $a$ 与 $F_{\text{合}}$ 瞬时对应。
 \end{itemize}
 
+\textbf{参考系提醒：} 本讲义默认在地面等近似惯性参考系中列牛顿第二定律。若题目主动要求“站在加速车厢中看”，就进入非惯性参考系，需要额外处理惯性力；初学阶段优先选惯性参考系，避免把惯性力当成真实相互作用力。
+
 \subsection*{正交分解法}
 
 当物体受力不在同一直线上时，把力分解到两个互相垂直的方向上。分解前先规定正方向；列方程时把每个力的分量带正负号代入。
@@ -157,7 +159,7 @@ F_{y,\text{合}} = ma_y
 \end{cases}
 \]
 
-通常取加速度方向为 $x$ 轴正方向，则 $a_y = 0$，$y$ 方向合力为零（平衡）。
+若已知物体被约束在某一方向运动，常把该方向取为 $x$ 轴；垂直于运动方向没有加速度时，才有 $a_y = 0$，从而 $y$ 方向合力为零。若物体做曲线运动或竖直方向也在加速，就不能直接写 $a_y=0$。
 
 \section*{五、典型模型}
 
@@ -202,7 +204,7 @@ a_{\text{上滑}} = -\,(g\sin\theta + \mu_k g\cos\theta)
 
 \subsection*{模型 3：连接体问题（基础）}
 
-两个物体用轻绳连接，在拉力下一起运动。先用整体法求加速度：
+两个物体用轻绳连接，在水平拉力作用下一起沿水平面运动。若水平方向的外力只有拉力和各物体受到的摩擦力，先用整体法求加速度：
 \[
 F - f_{\text{总}} = (m_1 + m_2) a
 \]
@@ -214,6 +216,28 @@ F - f_{\text{总}} = (m_1 + m_2) a
 \figcaption{连接体：整体法求共同加速度，隔离法求内力}\label{fig:connected-body-newton}
 \end{center}
 
+\subsection*{模型 4：超重与失重}
+
+超重和失重说的是\textbf{视重}变化，不是重力 $mg$ 本身改变。以升降机中的人为例，支持力 $N$ 是人对秤的压力读数对应的力，也是人的视重。
+
+\begin{center}
+\input{figures/tikz/apparent-weight-elevator}
+
+\figcaption{升降机中的视重：支持力 $N$ 随竖直加速度改变}\label{fig:apparent-weight-elevator}
+\end{center}
+
+取竖直向上为正方向：
+\[
+N-mg=ma,\qquad N=m(g+a).
+\]
+
+\begin{itemize}
+  \item 向上加速或向下减速：$a>0$，$N>mg$，表现为超重。
+  \item 向下加速或向上减速：$a<0$，$N<mg$，表现为失重。
+  \item 自由下落：$a=-g$，$N=0$，表现为完全失重。
+\end{itemize}
+
+\newpage
 \section*{六、例题精讲}
 
 \begin{examplebox}{水平面上的牛顿第二定律}
@@ -234,7 +258,7 @@ F - f_{\text{总}} = (m_1 + m_2) a
 a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
 \]
 
-\textbf{方法总结：} 水平面上先算 $N = mg$，再算 $f_k = \mu_k N$，然后用 $F - f_k = ma$。
+\textbf{方法总结：} 本题拉力水平，竖直方向没有其他分量，所以 $N = mg$；再算 $f_k = \mu_k N$，最后用 $F - f_k = ma$。若拉力或推力有竖直分量，必须重新求 $N$。
 
 \end{examplebox}
 
@@ -309,16 +333,41 @@ a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
 
 \end{examplebox}
 
+\begin{examplebox}{升降机中的超重与失重}
+
+\textbf{题意分析：} 质量为 $60\ \mathrm{kg}$ 的人站在电梯中的体重计上，取 $g=10\ \mathrm{m/s^2}$。若电梯以 $2\ \mathrm{m/s^2}$ 的加速度向上启动，体重计示数对应的支持力是多少？
+
+\textbf{物理模型：} 竖直方向牛顿第二定律，支持力 $N$ 就是视重。
+
+\textbf{解题过程：} 取竖直向上为正方向，
+\[
+N-mg=ma.
+\]
+\[
+N=m(g+a)=60\times(10+2)=720\ \mathrm{N}.
+\]
+
+\textbf{方法总结：} 体重计读数变大并不是人的重力变大，而是地面对人的支持力变大。若电梯向下加速，同样公式中 $a$ 取负值。
+\end{examplebox}
+
 \section*{七、变式训练}
 
 \begin{enumerate}
   \item 质量为 $m = 5\ \mathrm{kg}$ 的物体在水平面上，受水平拉力 $F = 25\ \mathrm{N}$，动摩擦因数 $\mu_k = 0.4$，$g = 10\ \mathrm{m/s^2}$。求加速度。
   
   \item 一个物体以 $v_0 = 10\ \mathrm{m/s}$ 的初速度沿倾角 $\theta = 30^\circ$ 的粗糙斜面向上滑行，动摩擦因数 $\mu_k = 0.2$，$g = 10\ \mathrm{m/s^2}$。求：
+  \begin{center}
+  \input{figures/tikz/training-incline-friction}
+  \end{center}
   \begin{enumerate}
     \item 物体上滑的加速度大小和方向。
     \item 物体上滑的最大距离。
   \end{enumerate}
+  
+  \item 质量为 $50\ \mathrm{kg}$ 的人站在电梯中。若电梯以 $1.5\ \mathrm{m/s^2}$ 的加速度向下启动，取 $g=10\ \mathrm{m/s^2}$，求体重计示数对应的支持力。
+  \begin{center}
+  \input{figures/tikz/apparent-weight-elevator}
+  \end{center}
 \end{enumerate}
 
 \section*{八、易错点}
@@ -334,6 +383,10 @@ a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
   \item \textbf{牛顿第二定律的瞬时性：} 某个力消失，加速度立即改变。常见陷阱是绳断瞬间的受力突变。
   
   \item \textbf{连接体问题中内力不等于外力：} 很多人误以为绳中张力等于外部拉力，这是错的。张力需要通过隔离法求出。
+  
+  \item \textbf{把超重理解成重力变大：} 超重、失重改变的是支持力或悬绳拉力等视重，重力 $mg$ 在近地范围内近似不变。
+
+  \item \textbf{有明显空气阻力时仍套自由落体：} 若阻力随速度增大，合力和加速度会随时间变化，不能直接用匀加速公式贯穿全过程。
 \end{enumerate}
 \end{mistakebox}
 
@@ -365,14 +418,70 @@ a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
 \end{itemize}
 
 \textbf{结论：} 弹簧弹力在瞬间保持不变，绳子拉力可以突变。若 $m_A = m_B = m$，则剪断瞬间 $a_A = 2g$（向下），$a_B = 0$。
+
+\medskip
+\textbf{速度相关阻力与终端速度}
+
+现实中的雨滴、降落伞和高速运动物体常受到空气阻力。阻力通常随速度增大而增大。为了建立最简单的模型，可以先假设阻力大小近似为
+\[
+f=kv,
+\]
+方向与速度相反。若物体竖直下落，取向下为正方向，则
+\[
+mg-kv=ma.
+\]
+刚释放时 $v=0$，阻力很小，加速度接近 $g$；速度增大后，阻力变大，合力变小，加速度也变小。当
+\[
+mg=kv_t
+\]
+时，加速度变为 0，物体达到稳定速度
+\[
+v_t=\frac{mg}{k},
+\]
+这叫\textbf{终端速度}。
+
+\begin{center}
+\input{figures/tikz/drag-terminal-velocity}
+
+\figcaption{速度相关阻力：速度越大阻力越大，最终可能达到终端速度}\label{fig:drag-terminal-velocity}
+\end{center}
+
+\textbf{模型边界：} 这里的 $f=kv$ 只是入门近似。真实空气阻力可能与 $v^2$ 更接近，也会受形状和空气密度影响。高中阶段的重点是理解：只要阻力随速度改变，加速度就不再恒定，不能机械套匀变速公式。
+
+\pagebreak[4]
+\medskip
+\textbf{非惯性参考系与惯性力}
+
+牛顿第二定律最直接适用于惯性参考系。若参考系本身正在加速，例如随一辆向右加速的车厢一起观察，车厢中的物体看起来会“向后偏”。这不是因为多了某个真实物体在向后拉它，而是因为观察者选了加速参考系。
+
+\begin{center}
+\input{figures/tikz/noninertial-frame-force}
+
+\figcaption{非惯性参考系：随车观察时可引入与参考系加速度相反的惯性力}\label{fig:noninertial-frame-force}
+\end{center}
+
+\textbf{使用规则：} 若参考系以加速度 $\vect{a}_0$ 相对惯性系运动，在这个非惯性系中可给每个质量为 $m$ 的物体补一个
+\[
+\vect{F}_{\text{惯}}=-m\vect{a}_0.
+\]
+这样可以把物体在非惯性系中的“平衡”问题写成
+\[
+\sum \vect{F}_{\text{真实}}+\vect{F}_{\text{惯}}=0.
+\]
+
+\textbf{边界提醒：} 惯性力不是物体间真实相互作用力，没有反作用力对象。高中常规题优先在地面惯性系中分析；竞赛入门题中，加速车厢、转动圆盘和离心现象可以用惯性力作为辅助工具，但必须先说明参考系。
 \end{competitionbox}
 
 \section*{十、今日小结}
+\enlargethispage{3\baselineskip}
 
 \begin{enumerate}
   \item 牛顿第一定律：力是改变运动状态的原因（不是维持运动的原因）。
   \item 牛顿第二定律 $F_{\text{合}} = ma$：受力分析 $\to$ 求合力 $\to$ 算加速度 $\to$ 运动学求解。
   \item 牛顿第三定律：作用力与反作用力等大反向、同生同灭，但作用在不同物体上。
-  \item 正交分解法：取加速度方向为 $x$ 轴，$y$ 方向合力为零。
+  \item 正交分解法：先选方便的坐标轴，常把一轴取在加速度或运动方向上；若某方向无加速度，该方向合力为零。
   \item 连接体思路：整体法求加速度，隔离法求内力（Day 07 专题深入）。
+  \item 超重、失重看视重变化，本质是竖直方向牛顿第二定律。
+  \item 有速度相关阻力时，合力和加速度会随速度改变；终端速度来自合力为零。
+  \item 牛顿第二定律默认在惯性参考系中使用；非惯性系可引入惯性力，但它不是一对真实相互作用力。
 \end{enumerate}

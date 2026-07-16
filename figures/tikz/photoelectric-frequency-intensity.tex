@@ -1,0 +1,26 @@
+\begin{tikzpicture}[scale=0.9,>=Stealth]
+  \begin{scope}[xshift=-3.0cm]
+    \draw[thick,fill=gray!15] (-1.2,-0.65) rectangle (1.2,-0.35);
+    \node[font=\small] at (0,-0.95) {金属};
+    \foreach \x in {-1.0,-0.6,-0.2,0.2,0.6,1.0}
+      \draw[->,red,thick] (\x,1.10) -- (\x,0.02);
+    \node[font=\small,red] at (0,1.35) {低频强光};
+    \node[font=\small] at (0,0.55) {$\nu<\nu_0$};
+    \node[font=\small,align=center] at (0,-1.45) {单个光子能量不足\\没有光电子逸出};
+    \draw[red,thick] (-0.35,-0.35) .. controls (-0.15,0.02) and (0.10,0.02) .. (0.35,-0.35);
+  \end{scope}
+
+  \begin{scope}[xshift=3.0cm]
+    \draw[thick,fill=gray!15] (-1.2,-0.65) rectangle (1.2,-0.35);
+    \node[font=\small] at (0,-0.95) {金属};
+    \foreach \x in {-0.65,0,0.65}
+      \draw[->,blue,thick] (\x,1.10) -- (\x,0.02);
+    \draw[->,orange!85!black,thick] (-0.55,-0.32) -- (-1.05,0.65);
+    \draw[->,orange!85!black,thick] (0.25,-0.32) -- (0.85,0.55);
+    \node[font=\small,blue] at (0,1.35) {高频弱光};
+    \node[font=\small] at (0,0.55) {$\nu>\nu_0$};
+    \node[font=\small,align=center] at (0,-1.45) {单个光子能量足够\\可逸出光电子};
+  \end{scope}
+
+  \draw[dashed] (0,-1.75) -- (0,1.55);
+\end{tikzpicture}

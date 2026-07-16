@@ -1,0 +1,14 @@
+\begin{tikzpicture}[scale=0.72,>=Stealth]
+  \draw[->] (0,-1.8) -- (0,2.3) node[above] {$v$};
+  \draw[->] (0,0) -- (5.4,0) node[right] {$t$};
+  \fill[blue!10] (0,0) -- (0,1.6) -- (1.7,1.6) -- (3.4,0) -- cycle;
+  \fill[red!10] (3.4,0) -- (5.1,-1.6) -- (5.1,0) -- cycle;
+  \draw[thick,blue] (0,1.6) -- (1.7,1.6) -- (3.4,0) -- (5.1,-1.6);
+  \draw[dashed] (1.7,0) -- (1.7,1.6) node[above] {$2$};
+  \draw[dashed] (3.4,0) -- (3.4,0.1) node[above right] {$4$};
+  \draw[dashed] (5.1,0) -- (5.1,-1.6) node[below] {$6$};
+  \node[left] at (0,1.6) {$4$};
+  \node[left] at (0,-1.6) {$-4$};
+  \node[font=\small] at (1.15,0.55) {正面积};
+  \node[font=\small] at (4.35,-0.55) {负面积};
+\end{tikzpicture}

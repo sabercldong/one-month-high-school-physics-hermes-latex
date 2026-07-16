@@ -3,11 +3,13 @@
 \begin{tikzpicture}[scale=0.9,>=Latex]
   \draw[->,thick] (-2.4,0) -- (4.0,0) node[right] {$U$};
   \draw[->,thick] (0,0) -- (0,3.0) node[above] {$I$};
-  \draw[blue,thick] (-1.55,0) .. controls (-0.8,1.1) and (0.4,2.15) .. (3.3,2.25);
-  \draw[red,thick] (-0.85,0) .. controls (-0.25,0.9) and (0.85,1.55) .. (3.3,1.65);
-  \draw[dashed] (-1.55,0) -- (-1.55,-0.34);
-  \node[below] at (-1.55,-0.34) {$-U_c$};
+  \coordinate (Uc) at (-1.35,0);
+  \draw[blue,thick] (Uc) .. controls (-0.72,1.08) and (0.45,2.15) .. (3.3,2.25);
+  \draw[red,thick] (Uc) .. controls (-0.55,0.72) and (0.65,1.48) .. (3.3,1.62);
+  \draw[dashed] (Uc) -- (-1.35,-0.34);
+  \node[below] at (-1.35,-0.34) {$-U_c$};
   \node[blue] at (3.55,2.25) {强光};
   \node[red] at (3.55,1.65) {弱光};
-  \node[font=\small,align=center] at (1.65,-1.05) {截止电压反映最大初动能；饱和电流反映光电子数};
+  \node[font=\small,align=center] at (2.05,2.75) {同频率、不同光强};
+  \node[font=\small,align=center] at (1.65,-1.05) {同频率时截止电压相同；饱和电流反映光电子数};
 \end{tikzpicture}

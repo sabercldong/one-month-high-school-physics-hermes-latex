@@ -1,0 +1,29 @@
+\begin{tikzpicture}[scale=0.82,>=Stealth,line cap=round,line join=round]
+  \path[use as bounding box] (-0.25,-1.10) rectangle (9.85,1.85);
+  \begin{scope}
+    \draw[thick] (0,0) -- (2.25,0);
+    \draw[fill=gray!18,thick] (0.15,0) rectangle (2.10,-0.22);
+    \draw[->,blue,thick] (0.30,0.85) -- (0.80,0.12) node[midway,left] {$h\nu$};
+    \draw[->,red,thick] (1.32,0.08) -- (1.95,0.65) node[right] {$e^-$};
+    \node[font=\scriptsize] at (1.25,-0.56) {光电效应};
+    \node[font=\scriptsize] at (1.25,-0.88) {先比 $\nu$ 与 $\nu_0$};
+  \end{scope}
+  \begin{scope}[xshift=3.75cm]
+    \draw[thick] (0,0) -- (2.15,0) node[right,font=\small] {$E_1$};
+    \draw[thick] (0,0.8) -- (2.15,0.8) node[right,font=\small] {$E_2$};
+    \draw[thick] (0,1.55) -- (2.15,1.55) node[right,font=\small] {$E_3$};
+    \draw[->,red,thick] (0.65,1.55) -- (0.65,0.8);
+    \draw[->,red,thick] (1.45,1.55) -- (1.45,0);
+    \node[font=\scriptsize] at (1.08,-0.56) {向下跃迁};
+    \node[font=\scriptsize] at (1.08,-0.88) {放出光子};
+  \end{scope}
+  \begin{scope}[xshift=7.35cm]
+    \node[red,font=\large] at (0,0.85) {${}^{238}_{92}\mathrm U$};
+    \draw[->,thick] (0.78,0.85) -- (1.33,0.85);
+    \node[blue,font=\large] at (2.05,1.18) {${}^{234}_{90}\mathrm{Th}$};
+    \node[font=\large] at (2.05,0.75) {$+$};
+    \node[orange,font=\large] at (2.05,0.28) {${}^{4}_{2}\mathrm{He}$};
+    \node[font=\scriptsize] at (1.25,-0.56) {核反应配平};
+    \node[font=\scriptsize] at (1.25,-0.88) {质量数、电荷数守恒};
+  \end{scope}
+\end{tikzpicture}
