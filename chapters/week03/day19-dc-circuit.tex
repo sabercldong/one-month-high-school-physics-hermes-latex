@@ -221,6 +221,16 @@ $\sum U_{\text{升}}=\sum U_{\text{降}}$ & 回路电压关系 & 闭合回路 \\
 \end{tabular}
 \end{center}
 
+\begin{learningbox}{电路题的对象账本}
+电路题中的 $U$、$I$、$R$、$P$ 都必须带着“对象”使用。列式前先在图上或草稿中写清：
+\begin{enumerate}
+  \item \textbf{整段电路：} 用 $U_{\text{总}}$、$I_{\text{总}}$、$R_{\text{总}}$，适合先求等效电阻和干路电流。
+  \item \textbf{某个支路：} 并联支路常共用同一个电压，但支路电流不同；不要把干路电流直接代入支路电阻。
+  \item \textbf{某个元件：} $P=UI$ 中的 $U$、$I$ 必须是同一个元件两端的电压和通过它的电流。
+\end{enumerate}
+如果对象是电动机、二极管、传感器等非纯电阻元件，先判断它是否还能用欧姆定律；不能确认时，优先使用题目给出的伏安关系或图像关系。
+\end{learningbox}
+
 \section*{五、典型模型}
 
 \subsection*{模型 1：串联分压 / 并联分流}
