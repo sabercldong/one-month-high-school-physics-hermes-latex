@@ -225,6 +225,13 @@ d,\ S,\ \varepsilon_r \quad\Longrightarrow\quad C
 
 带电粒子在平行板电容器间的运动（结合 Day 17 的偏转知识）。改变电容器参数会影响粒子的偏转位移。
 
+\textbf{建模接口：} 先由电容器状态确定板间场强，再把它交给力学模型：
+\[
+\text{接电源： } E=\frac{U}{d},\qquad
+\text{断电源： } E=\frac{4\pi kQ}{\varepsilon_r S}.
+\]
+然后用 $a=\dfrac{qE}{m}$ 判断带电粒子的加速度方向和大小。也就是说，电容器题先解决“场从哪里来”，粒子运动题再解决“受力后怎样运动”。
+
 \subsection*{模型 3：电容器的串并联}
 
 \begin{center}
@@ -254,7 +261,7 @@ U=U_1+U_2=\frac{Q}{C_1}+\frac{Q}{C_2}
 
 \textbf{记忆方式：} 电容器并联相当于增大正对面积，电容变大；电容器串联相当于增大等效板间距，电容变小。
 
-\clearpage
+\pagebreak[3]
 \section*{六、例题精讲}
 
 \begin{examplebox}{电容的计算}
