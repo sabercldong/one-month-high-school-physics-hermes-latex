@@ -125,6 +125,16 @@ $c=\lambda f$ & 电磁波波速关系 & 真空中传播，$c\approx3.0\times10^8
 \end{tabular}
 \end{center}
 
+\begin{learningbox}{交流电与变压器的三层账本}
+交流电和变压器题先分层，不要把峰值、有效值、电压比和功率关系混在一起：
+\begin{enumerate}
+  \item \textbf{读数层：} 先判断题目给的是瞬时值、最大值还是有效值。电表读数、铭牌电压和“$220\ \mathrm{V}$ 交流电”通常指有效值；正弦函数前的系数通常是最大值。
+  \item \textbf{变压层：} 理想变压器先用 $\dfrac{U_2}{U_1}=\dfrac{n_2}{n_1}$ 定电压；升压、降压只看匝数比，不先猜电流。
+  \item \textbf{负载层：} 副线圈电流由负载决定，再用功率近似守恒反推原线圈电流；输电题则先固定输送功率，再由 $I=\dfrac{P}{U}$ 和 $P_{\text{损}}=I^2R$ 判断损耗。
+\end{enumerate}
+一句话：交流题先定“哪个值”，变压器题先定“哪个电压”，功率和电流要等负载关系清楚后再算。
+\end{learningbox}
+
 \section*{五、典型模型}
 
 \subsection*{模型 1：交流电读数模型}
