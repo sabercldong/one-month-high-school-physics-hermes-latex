@@ -3,13 +3,13 @@
 \begin{tikzpicture}[scale=0.9,>=Latex]
   \draw[thick] (-2.1,0) circle (0.20);
   \fill[red] (-2.1,0) circle (0.055);
-  \node[below] at (-2.1,-0.25) {$I_1$ 向外};
+  \node[font=\small] at (-3.05,-0.05) {$I_1$ 向外};
   \draw[blue,thick,->] (-2.1,0.65) arc (90:380:0.65);
 
   \draw[thick] (2.1,0) circle (0.20);
   \draw[red,thick] (1.98,-0.12) -- (2.22,0.12);
   \draw[red,thick] (1.98,0.12) -- (2.22,-0.12);
-  \node[below] at (2.1,-0.25) {$I_2$ 向里};
+  \node[font=\small] at (3.05,-0.05) {$I_2$ 向里};
   \draw[blue,thick,->] (2.1,0.65) arc (90:-200:0.65);
 
   \fill[red] (0,1.15) circle (2pt) node[above=2pt] {$P$};
@@ -17,6 +17,6 @@
   \draw[->,blue,thick] (0,1.15) -- (0.82,1.72) node[right] {$B_2$};
   \draw[->,red,very thick] (0,1.15) -- (0,2.18) node[above] {$B_{\text{合}}$};
 
-  \node[font=\small,align=center] at (0,-1.15)
+  \node[font=\small,align=center] at (0,-1.25)
     {先分别判断 $B_1,B_2$，再按平行四边形法则叠加};
 \end{tikzpicture}
