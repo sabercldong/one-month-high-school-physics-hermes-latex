@@ -1,13 +1,16 @@
 % TikZ 图：后续学习路线
 % Day 30：学习路线
-\begin{tikzpicture}[scale=0.86,>=Latex]
-  \node[draw,rounded corners=2pt,fill=green!10,minimum width=1.6cm] (basic) at (0,0) {课内基础};
-  \node[draw,rounded corners=2pt,fill=blue!8,minimum width=1.6cm] (model) at (3.0,0) {模型熟练};
-  \node[draw,rounded corners=2pt,fill=orange!12,minimum width=1.8cm] (exp) at (6.1,0) {实验与图像};
-  \node[draw,rounded corners=2pt,fill=red!8,minimum width=1.8cm] (comp) at (9.3,0) {综合与竞赛};
-  \foreach \a/\b in {basic/model,model/exp,exp/comp}{\draw[->,thick] (\a) -- (\b);}
+\begin{tikzpicture}[scale=0.82,>=Latex]
+  \tikzset{routebox/.style={draw,rounded corners=2pt,minimum width=2.15cm,minimum height=0.55cm,inner xsep=6pt}}
+  \node[routebox,fill=green!10] (basic) at (0,0) {课内基础};
+  \node[routebox,fill=blue!8] (model) at (3.6,0) {模型熟练};
+  \node[routebox,fill=orange!12] (exp) at (7.2,0) {实验图像};
+  \node[routebox,fill=red!8] (comp) at (10.8,0) {综合提升};
+  \node[font=\large] at (1.8,0) {$\Rightarrow$};
+  \node[font=\large] at (5.4,0) {$\Rightarrow$};
+  \node[font=\large] at (9.0,0) {$\Rightarrow$};
   \node[font=\small,align=center] at (0,-0.8) {定义\\单位\\方向};
-  \node[font=\small,align=center] at (3.0,-0.8) {受力\\能量\\动量};
-  \node[font=\small,align=center] at (6.1,-0.8) {数据\\误差\\斜率};
-  \node[font=\small,align=center] at (9.3,-0.8) {分段\\近似\\推广};
+  \node[font=\small,align=center] at (3.6,-0.8) {受力\\能量\\动量};
+  \node[font=\small,align=center] at (7.2,-0.8) {数据\\误差\\斜率};
+  \node[font=\small,align=center] at (10.8,-0.8) {分段\\近似\\推广};
 \end{tikzpicture}
