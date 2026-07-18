@@ -336,7 +336,7 @@ U_2 = 6 - 4 \times 0.5 = 4\ \mathrm{V}
   
   \item \textbf{短路电流的计算忘记内阻：} 短路时 $R = 0$，$I = \dfrac{E}{r}$，不是 $\infty$。内阻越小短路电流越大。
   
-  \item \textbf{动态分析中 $U$、$I$ 的变化方向判断错：} 记住 $R \uparrow \to I \downarrow \to U \uparrow$ 的顺序。
+  \item \textbf{动态分析中 $U$、$I$ 的变化方向判断错：} 不要只背箭头。先由 $I=\dfrac{E}{R+r}$ 判断总电流变化，再由 $U=E-Ir$ 判断路端电压变化；例如 $R\uparrow$ 时，$I\downarrow$，内电压 $Ir\downarrow$，所以 $U\uparrow$。
   
   \item \textbf{最大功率的条件写反：} 最大输出功率是 $R = r$，不是 $R$ 越大越好。$R > r$ 时功率反而减小。
   
