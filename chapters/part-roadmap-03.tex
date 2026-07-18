@@ -8,6 +8,22 @@
 
 \textbf{进入本部分前先问：} 哪些量有方向？能量从哪里来、到哪里去？电路或场区有没有理想化条件？电磁学的难点常不在公式本身，而在方向、路径和变化没有先画清。
 
+\begin{center}
+\begin{tikzpicture}[
+  stepbox/.style={draw=black!65, rounded corners=2pt, fill=blue!5, minimum width=2.8cm, minimum height=0.95cm, align=center, font=\small},
+  arrow/.style={-{Latex[length=2.2mm]}, thick}
+]
+\node[stepbox] (field) at (0,0) {Day 15--17\\电场与带电粒子};
+\node[stepbox, fill=green!6] (circuit) at (3.6,0) {Day 18--20\\电容、电流、电源};
+\node[stepbox, fill=yellow!10] (mag) at (7.2,0) {Day 21--22\\磁场作用};
+\node[stepbox, fill=red!5] (induce) at (10.8,0) {Day 23--24\\电磁感应与交流};
+\draw[arrow] (field) -- (circuit);
+\draw[arrow] (circuit) -- (mag);
+\draw[arrow] (mag) -- (induce);
+\node[font=\small, black!70] at (5.4,-1.0) {先画方向和路径，再讨论能量转化和磁通量变化};
+\end{tikzpicture}
+\end{center}
+
 \section*{一、这一部分的四层结构}
 
 \begin{enumerate}[itemsep=0.2em]

@@ -8,6 +8,22 @@
 
 \textbf{进入本部分前先问：} 这道题最需要哪张图？结论来自模型推导，还是来自实验事实？测量和计算之间隔了哪些中间量？后半部分尤其要先把图像、事实和数据关系摆清楚。
 
+\begin{center}
+\begin{tikzpicture}[
+  stepbox/.style={draw=black!65, rounded corners=2pt, fill=blue!5, minimum width=2.7cm, minimum height=0.95cm, align=center, font=\small},
+  arrow/.style={-{Latex[length=2.2mm]}, thick}
+]
+\node[stepbox] (optics) at (0,0) {Day 25\\光路与成像};
+\node[stepbox, fill=green!6] (thermal) at (3.45,0) {Day 26\\热学状态图};
+\node[stepbox, fill=yellow!10] (modern) at (6.9,0) {Day 27\\实验事实与原子};
+\node[stepbox, fill=red!5] (exp) at (10.35,0) {Day 28--30\\实验与综合};
+\draw[arrow] (optics) -- (thermal);
+\draw[arrow] (thermal) -- (modern);
+\draw[arrow] (modern) -- (exp);
+\node[font=\small, black!70] at (5.2,-1.0) {从可见图像走向微观模型，最后回到实验和综合表达};
+\end{tikzpicture}
+\end{center}
+
 \section*{一、这一部分的阅读顺序}
 
 \begin{enumerate}[itemsep=0.2em]

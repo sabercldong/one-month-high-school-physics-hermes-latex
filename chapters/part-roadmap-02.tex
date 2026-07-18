@@ -8,6 +8,22 @@
 
 \textbf{进入本部分前先问：} 题目更关心过程中的力，还是前后状态的变化？研究对象是单个物体，还是多个物体组成的系统？先回答这两问，才能在牛顿定律、能量和动量之间选对工具。
 
+\begin{center}
+\begin{tikzpicture}[
+  stepbox/.style={draw=black!65, rounded corners=2pt, fill=blue!5, minimum width=2.8cm, minimum height=0.95cm, align=center, font=\small},
+  arrow/.style={-{Latex[length=2.2mm]}, thick}
+]
+\node[stepbox] (energy) at (0,0) {Day 08--09\\功和能量};
+\node[stepbox, fill=green!6] (momentum) at (3.6,0) {Day 10\\动量与系统};
+\node[stepbox, fill=yellow!10] (circle) at (7.2,0) {Day 11--12\\圆周与天体};
+\node[stepbox, fill=red!5] (wave) at (10.8,0) {Day 13--14\\振动与波};
+\draw[arrow] (energy) -- (momentum);
+\draw[arrow] (momentum) -- (circle);
+\draw[arrow] (circle) -- (wave);
+\node[font=\small, black!70] at (5.4,-1.0) {从力的过程分析，逐步过渡到状态、系统和周期模型};
+\end{tikzpicture}
+\end{center}
+
 \section*{一、先分清三类方法}
 
 \begin{enumerate}[itemsep=0.2em]
