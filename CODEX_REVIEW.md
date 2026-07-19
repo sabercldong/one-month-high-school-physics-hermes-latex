@@ -2,7 +2,7 @@
 
 ## 1. 编译检查
 
-- [ ] `latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex` 能否成功运行？
+- [ ] `xelatex -interaction=nonstopmode -halt-on-error main.tex` 能否成功运行？（本项目不依赖 `latexmk`。）
 - [ ] 是否缺失图片？
 - [ ] 是否有公式语法错误？
 - [ ] 是否有交叉引用、编号、目录错误？

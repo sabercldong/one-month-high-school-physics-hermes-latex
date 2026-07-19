@@ -32,13 +32,7 @@ git commit -m "初始化《一个月打通高中物理》LaTeX/TikZ 项目"
 编译：
 
 ```bash
-latexmk -xelatex -interaction=nonstopmode -halt-on-error main.tex
-```
-
-如果没有 latexmk，可用：
-
-```bash
-xelatex main.tex
+xelatex -interaction=nonstopmode -halt-on-error main.tex
 ```
 
 ## Hermes 启动后固定提示
