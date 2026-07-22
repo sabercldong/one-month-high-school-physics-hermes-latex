@@ -2,8 +2,8 @@
   \coordinate (A) at (0,2.1);
   \coordinate (B) at (3.4,0);
   \coordinate (C) at (6.2,0);
-  \draw[thick] (A) -- (0.96,1.51);
-  \draw[thick] (1.54,1.15) -- (B) -- (C);
+  % 连续斜面画在物块下方，避免断开的轮廓被误看成悬空线段。
+  \draw[thick] (A) -- (B) -- (C);
   \draw[dashed] (0,0) -- (A);
   \draw[<->] (-0.35,0) -- (-0.35,2.1) node[midway,left] {$h$};
   \begin{scope}[shift={(1.25,1.33)},rotate=-31.7]

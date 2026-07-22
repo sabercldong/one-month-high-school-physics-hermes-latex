@@ -2,8 +2,8 @@
   \coordinate (A) at (0,2.0);
   \coordinate (B) at (2.7,0);
   \coordinate (C) at (5.4,0);
-  \draw[thick] (A) -- (0.66,1.51);
-  \draw[thick] (1.18,1.13) -- (B) -- (C);
+  % 连续接触面画在物块下方，避免断线被误读为悬空斜面。
+  \draw[thick] (A) -- (B) -- (C);
   \begin{scope}[shift={(0.92,1.32)},rotate=-36.5]
     \draw[fill=gray!12,thick] (-0.32,0) rectangle (0.32,0.42);
   \end{scope}
