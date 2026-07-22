@@ -2,8 +2,8 @@
   \coordinate (A) at (0,0);
   \coordinate (B) at (4.2,0);
   \coordinate (C) at (4.2,2.2);
-  \draw[thick] (A) -- (1.80,0.94);
-  \draw[thick] (2.60,1.36) -- (C) -- (B) -- cycle;
+  % 连续斜面先画在物块下方，避免右侧轮廓看成“小旗子”。
+  \draw[thick] (A) -- (C) -- (B) -- cycle;
   \begin{scope}[shift={(2.2,1.15)},rotate=27.6]
     \draw[fill=gray!10,thick] (-0.45,0) rectangle (0.45,0.5);
   \end{scope}
