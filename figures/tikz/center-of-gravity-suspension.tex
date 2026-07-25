@@ -1,0 +1,38 @@
+% TikZ 图：悬挂法找二维平面薄板重心
+% Day 05：力、重力、弹力、摩擦力
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  % 左右两图分别表示从两个小孔自由悬挂时，铅垂线均通过重心。
+  \begin{scope}
+    \filldraw[fill=gray!12,draw=black!75,thick]
+      (0,0) -- (2.15,0.18) -- (2.45,1.30) -- (1.25,2.05) -- (-0.15,1.38) -- cycle;
+    \fill (0.18,1.42) circle (1.4pt);
+    \draw[gray!65] (0.18,1.42) -- (0.18,-0.65);
+    \draw[->,blue!75!black,thick] (0.18,0.10) -- (0.18,-0.48) node[right] {$G$};
+    \node[above left] at (0.18,1.42) {$A$};
+    \node[below] at (1.1,-1.00) {从孔 $A$ 悬挂};
+  \end{scope}
+
+  \begin{scope}[shift={(4.2,0)}]
+    \filldraw[fill=gray!12,draw=black!75,thick]
+      (0,0) -- (2.15,0.18) -- (2.45,1.30) -- (1.25,2.05) -- (-0.15,1.38) -- cycle;
+    \fill (2.12,0.22) circle (1.4pt);
+    \draw[gray!65] (2.12,0.22) -- (2.12,-0.65);
+    \draw[->,blue!75!black,thick] (2.12,0.98) -- (2.12,0.38) node[right] {$G$};
+    \node[above right] at (2.12,0.22) {$B$};
+    \node[below] at (1.1,-1.00) {从孔 $B$ 悬挂};
+  \end{scope}
+
+  % 将两次在薄板上画出的铅垂线叠加，交点为重心。
+  \begin{scope}[shift={(2.15,-3.05)}]
+    \filldraw[fill=gray!12,draw=black!75,thick]
+      (0,0) -- (2.15,0.18) -- (2.45,1.30) -- (1.25,2.05) -- (-0.15,1.38) -- cycle;
+    \fill (0.18,1.42) circle (1.2pt) node[above left] {$A$};
+    \fill (2.12,0.22) circle (1.2pt) node[below right] {$B$};
+    \draw[dashed,red!75!black,thick] (0.18,1.42) -- (1.72,0.24);
+    \draw[dashed,red!75!black,thick] (2.12,0.22) -- (0.42,0.95);
+    \filldraw[fill=red!85!black,draw=red!85!black] (1.28,0.58) circle (2.2pt);
+    \node[red!75!black,below] at (1.28,0.55) {重心};
+    \node[align=center] at (1.15,-0.78) {在同一薄板上画出两次铅垂线，\\交点即为重心};
+  \end{scope}
+\end{tikzpicture}

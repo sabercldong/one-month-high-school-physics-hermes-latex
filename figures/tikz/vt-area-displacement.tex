@@ -1,0 +1,21 @@
+% TikZ 图：v-t 图面积由小矩形累加为位移
+% Day 03：加速度
+\begin{tikzpicture}[scale=0.86,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  \draw[->] (-0.25,0) -- (6.0,0) node[right] {$t$};
+  \draw[->] (0,-0.25) -- (0,3.8) node[above] {$v$};
+  \node[below left] at (0,0) {$O$};
+
+  % 用窄矩形近似曲线下的面积。
+  \foreach \x/\h in {0.15/0.42,0.75/0.72,1.35/1.05,1.95/1.38,2.55/1.72,3.15/2.08,3.75/2.46,4.35/2.85,4.95/3.25} {
+    \fill[blue!12] (\x,0) rectangle +(0.58,\h);
+    \draw[blue!45] (\x,0) rectangle +(0.58,\h);
+  }
+  \draw[very thick,red!75!black,domain=0:5.55,samples=80]
+    plot(\x,{0.28+0.34*\x+0.035*\x*\x});
+  \draw[<->,black!65] (4.98,-0.55) -- (5.56,-0.55)
+    node[midway,below] {$\Delta t$};
+  \node[blue!70!black,align=center] at (1.35,2.85) {每个小矩形面积\\$\approx v_i\Delta t$};
+  \node[red!75!black,above left] at (4.8,3.1) {$v(t)$};
+  \node[align=center] at (3.0,-1.15) {全部小矩形面积相加 $\longrightarrow$ 总位移 $\Delta x$};
+\end{tikzpicture}

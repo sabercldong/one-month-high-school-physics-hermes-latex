@@ -9,14 +9,17 @@
     \draw[thick] (-1.85,-1.15) -- (1.85,-1.15);
     \node[left] at (-1.85,1.15) {对岸};
     \node[left] at (-1.85,-1.15) {出发岸};
-    \draw[->,blue!75!black,thick] (-1.45,-0.78) -- (-0.55,-0.78)
-      node[midway,below] {$v_{\text{水}}$};
     \coordinate (O) at (-0.40,-0.75);
-    \draw[->,red!80!black,thick] (O) -- ++(0,1.50)
+    \coordinate (W) at ($(O)+(0.90,0)$);
+    \coordinate (S) at ($(O)+(0,1.50)$);
+    \coordinate (R) at ($(O)+(0.90,1.50)$);
+    \draw[->,blue!75!black,thick] (O) -- (W)
+      node[midway,below] {$v_{\text{水}}$};
+    \draw[->,red!80!black,thick] (O) -- (S)
       node[midway,left] {$v_{\text{船对水}}$};
-    \draw[->,orange!85!black,thick] (O) -- ++(0.75,1.50)
+    \draw[->,orange!85!black,thick] (O) -- (R)
       node[pos=0.62,right,xshift=1pt] {$v_{\text{船对地}}$};
-    \draw[dashed,orange!85!black] (O) -- (0.55,1.15);
+    \draw[dashed,red!80!black] (W) -- (R);
     \node[align=center] at (0,-1.70) {船头垂直河岸\\过河时间最短};
   \end{scope}
 
@@ -27,15 +30,18 @@
     \draw[thick] (-1.85,-1.15) -- (1.85,-1.15);
     \node[left] at (-1.85,1.15) {对岸};
     \node[left] at (-1.85,-1.15) {出发岸};
-    \draw[->,blue!75!black,thick] (-1.45,-0.78) -- (-0.55,-0.78)
-      node[midway,below] {$v_{\text{水}}$};
     \coordinate (P) at (-0.20,-0.75);
-    \draw[->,red!80!black,thick] (P) -- ++(-0.72,1.45)
+    \coordinate (W) at ($(P)+(0.72,0)$);
+    \coordinate (S) at ($(P)+(-0.72,1.45)$);
+    \coordinate (R) at ($(P)+(0,1.45)$);
+    \draw[->,blue!75!black,thick] (P) -- (W)
+      node[midway,below] {$v_{\text{水}}$};
+    \draw[->,red!80!black,thick] (P) -- (S)
       node[midway,left] {$v_{\text{船对水}}$};
-    \draw[->,orange!85!black,thick] (P) -- ++(0,1.45)
+    \draw[->,orange!85!black,thick] (P) -- (R)
       node[midway,right] {$v_{\text{船对地}}$};
+    \draw[dashed,red!80!black] (W) -- (R);
     \draw[dashed,gray] (-0.20,-1.15) -- (-0.20,1.15);
-    \draw[dashed,orange!85!black] (P) -- (-0.20,1.15);
     \node[align=center] at (0,-1.70) {抵消水流分量\\位移最短};
   \end{scope}
 \end{tikzpicture}

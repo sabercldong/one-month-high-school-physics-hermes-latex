@@ -1,0 +1,27 @@
+% TikZ 图：位移合成的平行四边形法则与三角形法则
+% Day 02：质点、参考系、位移与速度
+\begin{tikzpicture}[scale=0.9,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  \begin{scope}
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (2.25,0);
+    \coordinate (B) at (0,1.45);
+    \coordinate (C) at (2.25,1.45);
+    \draw[->,very thick,blue!75!black] (O) -- (A) node[midway,below=2pt] {$\Delta\vect{x}_1$};
+    \draw[->,very thick,red!75!black] (O) -- (B) node[midway,left] {$\Delta\vect{x}_2$};
+    \draw[dashed,blue!70!black] (B) -- (C);
+    \draw[dashed,red!70!black] (A) -- (C);
+    \draw[->,very thick,orange!85!black] (O) -- (C) node[midway,above left] {$\Delta\vect{x}$};
+  \end{scope}
+
+  \begin{scope}[shift={(5.0,0)}]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (2.25,0);
+    \coordinate (C) at (2.25,1.45);
+    \draw[->,very thick,blue!75!black] (O) -- (A) node[midway,below=2pt] {$\Delta\vect{x}_1$};
+    \draw[->,very thick,red!75!black] (A) -- (C) node[midway,right] {$\Delta\vect{x}_2$};
+    \draw[->,very thick,orange!85!black] (O) -- (C) node[midway,above left] {$\Delta\vect{x}$};
+    \fill (O) circle (1.2pt) node[below left] {起点};
+    \fill (C) circle (1.2pt) node[above right] {终点};
+  \end{scope}
+\end{tikzpicture}

@@ -6,7 +6,7 @@
   \filldraw[black] (0,0) circle (2pt) node[above left] {抛出点};
 
   \draw[red,thick,->] (0,0) -- (1.4,0) node[above] {$v_0$};
-  \draw[blue,thick,->] (4.5,-0.4) -- (4.5,-2.1) node[midway,right] {$g$};
+  \draw[blue,thick,->] (5.05,-0.35) -- (5.05,-1.50) node[midway,right,xshift=2pt] {$g$};
 
   \draw[thick,domain=0:4.6,samples=80]
     plot(\x,{-0.14*\x*\x});
@@ -16,6 +16,6 @@
 
   \draw[->,blue] (0.15,-2.85) -- (4.2,-2.85)
     node[midway,below] {$x=v_0t$};
-  \draw[->,red] (4.65,0) -- (4.65,-2.47)
-    node[midway,right] {$y=\frac12gt^2$};
+  \draw[->,red] (4.55,-0.05) -- (4.55,-2.47)
+    node[midway,left,xshift=-2pt] {$y=\frac12gt^2$};
 \end{tikzpicture}
