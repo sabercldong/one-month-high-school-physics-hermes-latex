@@ -9,7 +9,7 @@
 \section*{一、学习目标}
 
 \begin{enumerate}
-  \item 能用回复力 $F = -kx$ 判断一个运动是否可近似看作简谐运动。
+  \item 能用回复力 $F = -Kx$ 判断一个运动是否可近似看作简谐运动，并区分一般回复系数 $K$ 与弹簧劲度系数 $k$。
   \item 能说明弹簧振子周期 $T = 2\pi\sqrt{\dfrac{m}{k}}$ 与惯性大小、回复强弱的关系。
   \item 能说明理想单摆周期 $T = 2\pi\sqrt{\dfrac{l}{g}}$ 的小角度适用条件。
   \item 能读懂简谐运动的 $x$-$t$ 图像，知道 $A$、$T$、$\omega$ 的物理意义。
@@ -32,14 +32,16 @@
 
 \textbf{回复力：}
 \[
-\boxed{F = -kx}
+\boxed{F = -Kx}
 \]
 
 \begin{itemize}
-  \item $k$：比例系数（弹簧振子中为劲度系数）。
+  \item $K$：回复力大小与位移大小的比例系数，单位为 $\mathrm{N/m}$；它由具体振动系统决定。
   \item $x$：偏离平衡位置的位移。
   \item 负号表示回复力方向始终与位移方向相反（指向平衡位置）。
 \end{itemize}
+
+\textbf{符号说明：} 对水平弹簧振子，回复系数 $K$ 就是弹簧的劲度系数 $k$；对其他简谐运动模型，$K$ 不一定表示某根弹簧的劲度系数。
 
 \textbf{描述振动的物理量：}
 \begin{itemize}
@@ -65,7 +67,7 @@
 \boxed{T = 2\pi\sqrt{\frac{m}{k}}}
 \]
 
-\textbf{公式来源（定性推导）：}
+\textbf{公式来源：}
 弹簧振子偏离平衡位置 $x$ 时，合力为
 \[
 F=-kx.
@@ -74,13 +76,17 @@ F=-kx.
 \[
 a=-\frac{k}{m}x.
 \]
-负号表示加速度总指向平衡位置，比例系数 $\dfrac{k}{m}$ 表示“偏离同样远时恢复得多快”。若把 $a$ 看成位移对时间的二阶变化，运动方程可写成简谐运动的标准形式；其中 $\dfrac{k}{m}$ 决定振动的“快慢节奏”，角频率满足
+把加速度写成位移对时间的二阶变化，运动方程为
+\[
+\frac{\mathrm d^2x}{\mathrm dt^2}+\frac{k}{m}x=0.
+\]
+不要求在这里求解这个微分方程。把 $x=A\cos(\omega t+\varphi_0)$ 代入上式可以验证：它能成立的条件是
 \[
 \omega^2=\frac{k}{m},\qquad T=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{m}{k}}.
 \]
-因此弹簧越硬（$k$ 越大）振得越快，物体越重（$m$ 越大）振得越慢。
+负号表示加速度总指向平衡位置；$\dfrac{k}{m}$ 决定振动的快慢。因此弹簧越硬（$k$ 越大）振得越快，物体质量越大（$m$ 越大）振得越慢。
 
-\textbf{学习边界：} 这里不要求会用微积分。对一维、质量不变、阻尼可忽略的理想模型，回复力满足 $F=-kx$ 时，系统做简谐运动；周期由“惯性大小” $m$ 和“回复强弱” $k$ 共同决定。真实振动若阻尼明显、回复力不再与位移成正比，就不能直接套这一结论。
+\textbf{学习边界：} 这里不要求会求解微分方程。对一维、质量不变、阻尼可忽略的理想模型，回复力满足 $F=-Kx$ 时，系统做简谐运动；周期由惯性大小和回复强弱共同决定。真实振动若阻尼明显、回复力不再与位移成正比，就不能直接套用简谐运动结论。
 
 \begin{itemize}
   \item $m$：振子质量。
@@ -92,12 +98,12 @@ a=-\frac{k}{m}x.
 
 \begin{conceptbox}{单摆}
 
-在摆角很小（$\theta < 5^\circ$）时，单摆做简谐运动。
+在摆角很小时，单摆的运动可\textbf{近似}看作简谐运动。中学测量实验通常把摆角控制在 $5^\circ$ 以内；可接受的最大摆角取决于实验精度要求，$5^\circ$ 不是绝对分界。
 
 \begin{center}
 \input{figures/tikz/pendulum}
 
-\figcaption{单摆：回复力 $F = -mg\sin\theta \approx -mg\theta = -\dfrac{mg}{l}x$}\label{fig:pendulum}
+\figcaption{单摆：以沿圆弧方向、偏离平衡位置的弧长为 $x$，小角度时 $F_\tau\approx-\dfrac{mg}{l}x$}\label{fig:pendulum}
 \end{center}
 
 \textbf{周期公式：}
@@ -110,7 +116,7 @@ a=-\frac{k}{m}x.
 \[
 F_{\tau}=-mg\sin\theta.
 \]
-当摆角很小时，$\sin\theta\approx\theta$，且弧长位移 $x\approx l\theta$，所以
+若用弧长 $x$ 描述摆球偏离平衡位置的程度，角度用弧度表示时有准确关系 $x=l\theta$。当摆角很小时，近似关系 $\sin\theta\approx\theta$ 成立，所以
 \[
 F_{\tau}\approx-mg\theta=-\frac{mg}{l}x.
 \]
@@ -125,7 +131,7 @@ T=2\pi\sqrt{\frac{m}{mg/l}}=2\pi\sqrt{\frac{l}{g}}.
 这也解释了单摆周期为什么与摆球质量无关。
 
 \begin{itemize}
-  \item $l$：摆长，指悬点到摆球球心的距离，不是绳长的裸数值或摆球最低点到悬点的距离。
+  \item $l$：摆长，指悬点到摆球重心的距离。摆球可视为均匀小球时，其重心在球心，因此摆长应量到球心，不能只把绳长作为摆长。
   \item $g$：当地重力加速度。
   \item 在理想单摆、小角度近似下，周期与摆球质量无关，并近似与振幅无关——这是惠更斯的重要发现。
   \item 利用单摆可以测量当地的重力加速度。
@@ -141,13 +147,30 @@ T=2\pi\sqrt{\frac{m}{mg/l}}=2\pi\sqrt{\frac{l}{g}}.
 \figcaption{简谐运动的位移-时间图像为正弦（或余弦）曲线}\label{fig:sh-motion-graph}
 \end{center}
 
-表达式：
+图中选择 $t=0$ 时振子位于正向最大位移处，因此初相位为 $\varphi_0=0$，表达式为
 \[
-x = A\cos(\omega t + \varphi_0)
+x=A\cos\omega t.
 \]
-其中 $\omega = \dfrac{2\pi}{T}$ 为角频率，$\varphi_0$ 为初相位。
+若计时起点不同，更一般地写成
+\[
+x=A\cos(\omega t+\varphi_0),
+\]
+其中 $\omega=\dfrac{2\pi}{T}$ 为角频率，$\varphi_0$ 描述开始计时时振子处于振动过程中的哪个状态。
 
-\textbf{读图要点：} 初学阶段先不急着使用相位表达式，先从图上读出振幅 $A$、周期 $T$ 和 $t=0$ 时的位置；初相位只是用来描述“从振动过程中的哪个位置开始计时”。
+\textbf{由位移得到速度和加速度：} 位移对时间的变化率是速度，速度对时间的变化率是加速度，因此
+\[
+v=\frac{\mathrm dx}{\mathrm dt}
+  =-A\omega\sin(\omega t+\varphi_0),\qquad
+a=\frac{\mathrm dv}{\mathrm dt}
+  =-\omega^2x.
+\]
+由 $|\sin(\omega t+\varphi_0)|\leqslant 1$ 可得
+\[
+\boxed{v_{\max}=\omega A}.
+\]
+初学阶段不要求独立完成求导，但要会使用图像斜率判断速度，并理解：在平衡位置速度大小最大，在两端速度为零。
+
+\textbf{读图要点：} 先从图上读出振幅 $A$、周期 $T$ 和 $t=0$ 时的位置；再看曲线上该点切线的斜率，斜率就是瞬时速度 $v=\dfrac{\mathrm dx}{\mathrm dt}$。
 
 \end{conceptbox}
 
@@ -166,7 +189,7 @@ x = A\cos(\omega t + \varphi_0)
 \toprule
 公式 & 物理意义 & 适用条件 \\
 \midrule
-$F = -kx$ & 回复力 & 位移从平衡位置计，线性回复力 \\
+$F = -Kx$ & 简谐运动的回复力 & 位移从平衡位置计，线性回复力 \\
 $T = 2\pi\sqrt{\dfrac{m}{k}}$ & 弹簧振子周期 & 轻弹簧、线性范围、忽略阻尼 \\
 $T = 2\pi\sqrt{\dfrac{l}{g}}$ & 单摆周期 & 理想单摆，小角度近似 \\
 $x = A\cos(\omega t + \varphi_0)$ & 振动方程 & 简谐运动 \\
@@ -190,7 +213,7 @@ $x=\pm A$ 端点 & 瞬时速度为零 & 加速度大小最大，方向指向平�
 \bottomrule
 \end{tabular}
 \end{center}
-\textbf{读图提醒：} $x$-$t$ 图像斜率表示速度的正负和大小趋势；曲线离平衡位置越远，回复力和加速度大小越大。
+\textbf{读图提醒：} $x$-$t$ 图像上某点切线的斜率就是该时刻的瞬时速度；曲线离平衡位置越远，回复力和加速度的大小越大。
 \end{learningbox}
 
 \section*{五、典型模型}
@@ -211,10 +234,12 @@ $x=\pm A$ 端点 & 瞬时速度为零 & 加速度大小最大，方向指向平�
 \[
 T^2=\frac{4\pi^2}{g}l.
 \]
-以 $l$ 为横轴、$T^2$ 为纵轴作图，应得到一条过原点附近的直线。若直线斜率为 $s$，则
+以 $l$ 为横轴、$T^2$ 为纵轴作图，理想关系是一条过原点的直线；实验数据有随机误差时，各点会分布在最佳拟合直线附近。若拟合直线斜率为 $s$，则
 \[
-s=\frac{4\pi^2}{g},\qquad g=\frac{4\pi^2}{s}.
+s=\frac{4\pi^2}{g},\qquad [s]=\mathrm{s^2/m},\qquad
+g=\frac{4\pi^2}{s}.
 \]
+若最佳拟合直线具有明显非零截距，应检查摆长零点、计时起止位置等系统误差，不能只凭任意两点连线求斜率。
 
 \begin{center}
 \input{figures/tikz/pendulum-data-plot}
@@ -224,11 +249,11 @@ s=\frac{4\pi^2}{g},\qquad g=\frac{4\pi^2}{s}.
 
 \subsection*{模型 3：简谐运动的能量}
 
-对满足 $F=-kx$ 的理想线性简谐模型，若 $k$ 表示回复力与位移的比例系数，则总机械能可写为
+对满足 $F=-Kx$ 的理想线性简谐模型，总机械能可写为
 \[
-E=\frac12 kA^2.
+E=\frac12 KA^2.
 \]
-对水平弹簧振子，这里的 $k$ 就是弹簧劲度系数；对单摆小角度振动，可理解为沿切向位移的等效比例系数。动能和势能不断相互转化，总和守恒。
+对水平弹簧振子，$K=k$；对单摆小角度振动，$K=mg/l$。动能和势能不断相互转化，总和守恒。
 
 \begin{center}
 \input{figures/tikz/shm-energy}
@@ -259,7 +284,7 @@ E=\frac12 kA^2.
   \[
   f = \frac{1}{T} \approx 1.59\ \mathrm{Hz}
   \]
-  
+
   \item 总机械能等于最大弹性势能：
   \[
   E = \frac12 k A^2 = \frac12 \times 50 \times 0.1^2 = 0.25\ \mathrm{J}
@@ -267,28 +292,6 @@ E=\frac12 kA^2.
 \end{enumerate}
 
 \textbf{方法总结：} 弹簧振子题先做条件检查：轻弹簧、线性范围、阻尼可忽略。满足这些条件时，周期只由 $m$ 和 $k$ 决定；若题目问能量，再看是否给出振幅或最大速度，分别用 $\frac12 kA^2$ 或 $\frac12 mv_{\max}^2$。
-
-\end{examplebox}
-
-\begin{examplebox}{单摆周期的计算}
-
-\textbf{题意分析：} 一个单摆摆长 $l = 1\ \mathrm{m}$，$g = 10\ \mathrm{m/s^2}$，$\pi^2 \approx 10$。求：
-\begin{enumerate}
-  \item 单摆的周期。
-  \item 若将摆长改为 $0.25\ \mathrm{m}$，周期变为原来的多少倍？
-\end{enumerate}
-
-\textbf{物理模型：} 单摆简谐运动。
-
-\textbf{解题过程：}
-
-\begin{enumerate}
-  \item $T = 2\pi\sqrt{\frac{l}{g}} = 2\pi\sqrt{\frac{1}{10}} = 2\pi \times \sqrt{0.1} \approx 2\ \mathrm{s}$（用 $\pi^2 \approx 10$）。
-  
-  \item $T' = 2\pi\sqrt{\frac{l'}{g}} = 2\pi\sqrt{\frac{0.25}{10}} = 2\pi \times \sqrt{0.025} = 2\pi \times \frac12\sqrt{0.1} = \frac12 T = 1\ \mathrm{s}$
-\end{enumerate}
-
-\textbf{方法总结：} 单摆周期比较题先确认 $g$ 不变，再看 $T\propto\sqrt{l}$。摆长减为 $\frac14$，周期减半。
 
 \end{examplebox}
 
@@ -311,45 +314,75 @@ g = \frac{4\pi^2 l}{T^2} = \frac{4 \times 3.14^2 \times 0.992}{1.99^2} \approx \
 
 \end{examplebox}
 
+\begin{examplebox}{由振动状态判断速度、加速度和能量}
+
+\textbf{题意分析：} 一个水平弹簧振子从正向最大位移处由静止释放，满足
+\[
+x=A\cos\frac{2\pi}{T}t.
+\]
+求 $t=\dfrac{T}{3}$ 时的位移、速度方向、加速度方向，以及动能和总机械能之比。
+
+\textbf{物理模型：} 简谐运动的图像、状态与能量对应。
+
+\textbf{解题过程：} 代入 $t=\dfrac{T}{3}$，
+\[
+x=A\cos\frac{2\pi}{3}=-\frac{A}{2}.
+\]
+此时振子位于平衡位置左侧。由
+\[
+v=-A\omega\sin\omega t,\qquad a=-\omega^2x
+\]
+可知 $v<0$，振子仍向负方向运动；$a>0$，加速度指向平衡位置。弹性势能为
+\[
+E_p=\frac12kx^2
+   =\frac14\left(\frac12kA^2\right)
+   =\frac14E,
+\]
+所以
+\[
+\boxed{\frac{E_k}{E}=1-\frac{E_p}{E}=\frac34}.
+\]
+
+\textbf{方法总结：} 先由 $x$ 确定位置，再由图像斜率或速度表达式判断运动方向；加速度始终满足 $a=-\omega^2x$。能量问题可直接使用 $E_p/E=x^2/A^2$。
+
+\end{examplebox}
+
 \section*{七、变式训练}
 
 \begin{enumerate}
   \item 弹簧振子 $m = 0.2\ \mathrm{kg}$，$k = 80\ \mathrm{N/m}$，振幅 $A = 0.05\ \mathrm{m}$。求周期、频率和最大速度。
-  
+
   \item 单摆摆长 $l = 2\ \mathrm{m}$，$g = 9.8\ \mathrm{m/s^2}$。求周期。若想让周期变为 $3\ \mathrm{s}$，应如何调整摆长？
   \begin{center}
   \input{figures/tikz/training-oscillation-basics}
   \end{center}
-  
+
   \item 某同学用单摆测重力加速度，摆长 $l = 1.0\ \mathrm{m}$，测得 40 次全振动的时间 $t = 80.0\ \mathrm{s}$。求 $g$。
 
   \item 两根轻弹簧劲度系数分别为 $k_1$、$k_2$。若并联后连接同一物体做水平振动，等效劲度系数是多少？若串联后连接同一物体，等效劲度系数满足什么关系？
 \end{enumerate}
 
-\section*{八、易错点}
-
-\begin{mistakebox}
-\begin{enumerate}
-  \item \textbf{混淆振幅和位移：} 先找平衡位置。振幅 $A$ 是最大位移的绝对值，是常数；位移 $x$ 是随时间变化的量。
-  
-  \item \textbf{单摆公式 $T = 2\pi\sqrt{\dfrac{l}{g}}$ 的适用条件：} 套公式前先检查小角度和单摆条件：摆角较小，摆球直径远小于摆长。
-  
-  \item \textbf{弹簧振子中误认为质量不计：} 代入 $T=2\pi\sqrt{m/k}$ 前，先在图上圈出实际振动的物块或小球；它的质量就是式中的 $m$，不能省去。题设“轻弹簧”仅表示弹簧自身质量可忽略，并不表示振子质量为零。
-  
-  \item \textbf{回复力不是新力：} 先画真实力，再看合力或分力是否指向平衡位置；回复力是效果力，不是一种新力。
-  
-  \item \textbf{单摆周期与质量无关：} 先检查是不是理想单摆、小角度摆动；条件满足时，公式中没有 $m$，周期与质量无关。若摆角很大、摆线有质量或空气阻力明显，就不能只凭这个结论判断。
-
-  \item \textbf{把串联、并联弹簧公式记反：} 并联弹簧形变量相同、弹力相加；串联弹簧拉力相同、形变量相加。
+\begin{learningbox}{变式训练参考结果}
+\begin{enumerate}[itemsep=0.45em,topsep=0.3em,parsep=0pt]
+  \item $\omega=\sqrt{k/m}=20\ \mathrm{rad/s}$，
+  $T=2\pi/\omega\approx0.314\ \mathrm s$，
+  $f=1/T\approx3.18\ \mathrm{Hz}$，$v_{\max}=\omega A=1.0\ \mathrm{m/s}$。
+  \item 原周期 $T=2\pi\sqrt{l/g}\approx2.84\ \mathrm s$。要使周期为
+  $3.0\ \mathrm s$，应将摆长增大到
+  $l'=g(3/2\pi)^2\approx2.23\ \mathrm m$。
+  \item 单摆周期为 $T=t/40=2.00\ \mathrm s$，故
+  $g=4\pi^2l/T^2=\pi^2\ \mathrm{m/s^2}\approx9.87\ \mathrm{m/s^2}$。
+  \item 并联时 $k_{\text{并}}=k_1+k_2$；串联时
+  $\displaystyle 1/k_{\text{串}}=1/k_1+1/k_2$。
 \end{enumerate}
-\end{mistakebox}
+\end{learningbox}
 
-\section*{九、竞赛入门补充}
+\section*{八、竞赛入门补充}
 
 \begin{competitionbox}
 \textbf{简谐运动的证明}
 
-判断一个运动是否是简谐运动的标准：看回复力是否满足 $F = -kx$。
+判断一个运动是否是简谐运动的标准：以平衡位置为位移原点，看振动方向上的合力是否满足 $F=-Kx$。
 
 \textbf{例题：} 竖直方向的弹簧振子。弹簧原长 $l_0$，挂上质量为 $m$ 的物体后伸长 $\Delta l$ 静止（平衡位置）。证明物体在竖直方向做简谐运动。
 
@@ -358,8 +391,6 @@ g = \frac{4\pi^2 l}{T^2} = \frac{4 \times 3.14^2 \times 0.992}{1.99^2} \approx \
 
 \figcaption{竖直弹簧振子：以平衡位置为参考，重力项被平衡条件抵消}\label{fig:vertical-spring-shm}
 \end{center}
-
-\pagebreak[4]
 
 \textbf{证明：} 取平衡位置向下为正方向。
 \begin{enumerate}
@@ -376,11 +407,10 @@ g = \frac{4\pi^2 l}{T^2} = \frac{4 \times 3.14^2 \times 0.992}{1.99^2} \approx \
 
 \textbf{竞赛提示：} 证明简谐运动的关键是找到平衡位置，然后看合力是否与偏离量成正比且指向平衡位置。
 
-\pagebreak[3]
 \medskip
 \textbf{等效弹簧：多个弹簧先化成一个 $k$}
 
-弹簧振子周期公式中的 $k$，表示“物体偏离平衡位置 $x$ 时，回复力大小与 $x$ 的比例系数”。若物体同时连接多个弹簧，先求等效劲度系数 $k_{\text{等效}}$，再代入
+以下推导要求弹簧质量和中间连接件质量可以忽略，弹簧处于弹性限度内，并且只研究共同轴线方向的形变。若物体同时连接多个弹簧，先求等效劲度系数 $k_{\text{等效}}$，再代入
 \[
 T=2\pi\sqrt{\frac{m}{k_{\text{等效}}}}.
 \]
@@ -418,7 +448,7 @@ x=x_1+x_2=F\left(\frac1{k_1}+\frac1{k_2}\right).
 \medskip
 \textbf{参考圆法：用匀速圆周运动理解简谐运动}
 
-简谐运动可以看成匀速圆周运动在一条直径上的投影。若圆半径为 $A$，角速度为 $\omega$，从最右端开始计时，则投影满足
+简谐运动可以用匀速圆周运动在一条直径上的投影进行数学描述，这称为参考圆法；它不表示振子实际在做圆周运动。若参考圆半径为 $A$，角速度为 $\omega$，从最右端开始计时，则投影满足
 \[
 x=A\cos\omega t.
 \]
@@ -426,7 +456,7 @@ x=A\cos\omega t.
 \begin{center}
 \input{figures/tikz/reference-circle-shm}
 
-\figcaption{参考圆法：圆周运动在直径上的投影就是简谐运动}\label{fig:reference-circle-shm}
+\figcaption{参考圆法：用匀速圆周运动的投影描述简谐运动的相位变化}\label{fig:reference-circle-shm}
 \end{center}
 
 \textbf{例：从最大位移到振幅一半位置要多久？}
@@ -446,24 +476,42 @@ t=\frac{\pi/3}{2\pi/T}=\frac{T}{6}.
 \medskip
 \textbf{受迫振动与共振}
 
-真实系统常受到外界周期性驱动，例如秋千被人周期性推动，桥梁受到周期性风力或人群步伐作用。外力频率叫\textbf{驱动频率}，系统本身最容易振动的频率叫\textbf{固有频率}。当驱动频率接近固有频率时，振幅会显著增大，这就是\textbf{共振}。
+真实系统常受到外界周期性驱动，例如秋千被人周期性推动，桥梁受到周期性风力或人群步伐作用。外力频率叫\textbf{驱动频率}，系统自由振动时由自身结构决定的频率叫\textbf{固有频率}。当驱动频率接近固有频率时，系统容易从外界持续获得能量，稳定振幅会显著增大，这就是\textbf{共振}。
 
 \begin{center}
 \input{figures/tikz/resonance-curve}
 
-\figcaption{共振曲线：驱动频率接近固有频率时，振幅显著增大}\label{fig:resonance-curve}
+\figcaption{共振曲线：驱动频率接近固有频率时振幅显著增大，阻尼越小共振峰越高、越尖}\label{fig:resonance-curve}
 \end{center}
 
-\textbf{模型意识：} 判断是否接近共振，先比较驱动频率和系统固有频率，再看阻尼大小。共振不是“外力越大越容易发生”，而是频率匹配使外力能够持续有效输入能量；阻尼越小，振幅峰越尖锐。工程上既会利用共振（乐器、石英振荡器），也要避免危险共振（桥梁、机器、建筑结构）。
+\textbf{模型意识：} 判断是否接近共振，先比较驱动频率和系统固有频率，再看阻尼大小。共振不是“外力越大越容易发生”，而是频率接近时外力能够持续有效地向系统输入能量；阻尼越小，共振峰通常越高、越尖。图中把峰值画在 $f_0$ 附近，强调的是中学阶段的近似规律。工程上既会利用共振（乐器、石英振荡器），也要避免危险共振（桥梁、机器、建筑结构）。
 \end{competitionbox}
+
+\section*{九、易错点}
+
+\begin{mistakebox}
+\begin{enumerate}
+  \item \textbf{混淆振幅和位移：} 先找平衡位置。振幅 $A$ 是最大位移的绝对值，是常数；位移 $x$ 是随时间变化的量。
+
+  \item \textbf{单摆公式 $T = 2\pi\sqrt{\dfrac{l}{g}}$ 的适用条件：} 套公式前先检查小角度和单摆条件：摆角较小，摆球直径远小于摆长。
+
+  \item \textbf{弹簧振子中误认为质量不计：} 代入 $T=2\pi\sqrt{m/k}$ 前，先在图上圈出实际振动的物块或小球；它的质量就是式中的 $m$，不能省去。题设“轻弹簧”仅表示弹簧自身质量可忽略，并不表示振子质量为零。
+
+  \item \textbf{回复力不是新力：} 先画真实力，再看合力或分力是否指向平衡位置；回复力是效果力，不是一种新力。
+
+  \item \textbf{单摆周期与质量无关：} 先检查是不是理想单摆、小角度摆动；条件满足时，公式中没有 $m$，周期与质量无关。若摆角很大、摆线有质量或空气阻力明显，就不能只凭这个结论判断。
+
+  \item \textbf{把串联、并联弹簧公式记反：} 并联弹簧形变量相同、弹力相加；串联弹簧拉力相同、形变量相加。
+\end{enumerate}
+\end{mistakebox}
 
 \section*{十、今日小结}
 
 \begin{enumerate}
-  \item 简谐运动回复力 $F = -kx$。
+  \item 简谐运动回复力 $F=-Kx$；对弹簧振子，回复系数 $K$ 就是劲度系数 $k$。
   \item 理想轻弹簧振子周期 $T = 2\pi\sqrt{\dfrac{m}{k}}$，在线性范围内与振幅无关。
   \item 单摆周期 $T = 2\pi\sqrt{\dfrac{l}{g}}$，理想小角度近似下与质量无关，并近似与振幅无关。
-  \item 简谐运动 $x$-$t$ 图像为正弦曲线，$x = A\cos(\omega t + \varphi_0)$。
+  \item 简谐运动 $x$-$t$ 图像为正弦或余弦曲线，$x=A\cos(\omega t+\varphi_0)$，且 $v_{\max}=\omega A$、$a=-\omega^2x$。
   \item 理想无阻尼简谐运动中机械能守恒，弹簧振子 $E = \frac12 kA^2$。
   \item 多根弹簧先求等效劲度系数：并联 $k$ 相加，串联倒数相加。
   \item 共振发生在驱动频率接近固有频率时，关键是频率匹配。

@@ -1,0 +1,27 @@
+% Day 08 例题 1：斜向拉动物块
+\begin{tikzpicture}[scale=0.92,>=Latex]
+  \coordinate (P) at (0,0.42);
+
+  \draw[thick] (-2.35,0) -- (3.05,0);
+  \foreach \x in {-2.10,-1.70,...,2.70}
+    \draw[gray!65] (\x,0) -- ++(-0.14,-0.13);
+
+  \draw[fill=gray!12,thick] (-0.52,0) rectangle (0.52,0.84);
+  \node at (P) {$m$};
+
+  \draw[->,very thick,blue] (P) -- ++(37:1.55)
+    node[above right=1pt,fill=white,inner sep=1pt] {$F=50\ \mathrm{N}$};
+  \draw[->,thick,red] (P) -- ++(-1.22,0)
+    node[left=2pt,fill=white,inner sep=1pt] {$f$};
+  \draw[->,thick] (P) -- ++(0,1.22)
+    node[above=2pt,fill=white,inner sep=1pt] {$N$};
+  \draw[->,thick] (P) -- ++(0,-0.98)
+    node[below left=2pt,fill=white,inner sep=1pt] {$mg$};
+
+  \draw[densely dashed,gray] (P) -- ++(1.65,0);
+  \draw (0.65,0.42) arc[start angle=0,end angle=37,radius=0.65];
+  \node[fill=white,inner sep=1pt] at (0.86,0.64) {$37^\circ$};
+
+  \draw[->,very thick] (-1.75,-1.16) -- (2.30,-1.16)
+    node[midway,below=2pt,fill=white,inner sep=1pt] {$x=10\ \mathrm{m}$};
+\end{tikzpicture}

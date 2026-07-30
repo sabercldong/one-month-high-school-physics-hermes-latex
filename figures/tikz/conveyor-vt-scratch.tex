@@ -1,0 +1,17 @@
+% Day 07：传送带相对位移的 v-t 图
+\begin{tikzpicture}[scale=0.76,>=Latex]
+  \draw[->] (0,0) -- (5.45,0) node[right] {$t$};
+  \draw[->] (0,0) -- (0,3.40) node[above] {$v$};
+  \draw[very thick,blue] (0,2.55) -- (4.85,2.55)
+    node[above right] {$v_{\text{带}}=4$};
+  \draw[very thick,red] (0,0) -- (2.25,2.55)
+    node[above left] {$v_{\text{物}}=4t$};
+  \fill[orange!25] (0,0) -- (0,2.55) -- (2.25,2.55) -- cycle;
+  \draw[orange!75!black,thick] (0,0) -- (0,2.55) -- (2.25,2.55);
+  \draw[dashed] (2.25,0) -- (2.25,2.55);
+  \node[below] at (2.25,0) {$1\ \mathrm{s}$};
+  \node[font=\footnotesize,blue!70!black] at (3.55,2.22)
+    {$t\ge1\ \mathrm{s}$ 时两者共速};
+  \node[orange!85!black,align=center,font=\footnotesize] at (0.82,1.55)
+    {$s_{\text{相对}}$\\$=\frac12\times1\times4$};
+\end{tikzpicture}

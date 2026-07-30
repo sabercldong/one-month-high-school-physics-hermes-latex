@@ -6,12 +6,11 @@
   % 物体（方块）
   \draw[thick] (0.5,0) rectangle (2.5,1.5);
   \node at (1.5,0.75) {$m$};
-  % 拉力 F
-  \draw[->,thick,red] (2.5,0.75) -- (4,0.75) node[above] {$F$};
-  % 重力 G
-  \draw[->,thick,blue] (1.5,0) -- (1.5,-1.2) node[right] {$G$};
-  % 支持力 N
-  \draw[->,thick,blue] (1.5,1.5) -- (1.5,2.7) node[right] {$N$};
-  % 摩擦力 f（未滑动时静摩擦）
-  \draw[->,thick,red] (0.5,0.75) -- (-0.8,0.75) node[above] {$f$};
+  % 质点化后把四个力统一画成共点力。
+  \coordinate (O) at (1.5,0.75);
+  \fill (O) circle (1.1pt);
+  \draw[->,thick,red] (O) -- (3.75,0.75) node[above] {$F$};
+  \draw[->,thick,red] (O) -- (-0.55,0.75) node[above] {$f$};
+  \draw[->,thick,blue] (O) -- (1.5,-1.15) node[right] {$G$};
+  \draw[->,thick,blue] (O) -- (1.5,2.65) node[right] {$N$};
 \end{tikzpicture}

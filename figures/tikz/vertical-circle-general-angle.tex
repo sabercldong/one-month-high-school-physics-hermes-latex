@@ -1,0 +1,26 @@
+\begin{tikzpicture}[scale=0.82,>=Stealth]
+  \coordinate (O) at (-2.0,0);
+  \coordinate (B) at (-2.0,-2.05);
+  \coordinate (P) at ($(O)+(-42:2.05)$);
+  \draw[thick] (O) circle (2.05);
+  \fill (O) circle (1.6pt) node[above left] {$O$};
+  \draw[dashed] (O) -- (B);
+  \draw[thick] (O) -- (P) node[midway,above right=1pt] {$r$};
+  \draw ($(O)+(-90:0.60)$) arc[start angle=-90,end angle=-42,radius=0.60];
+  \node at ($(O)+(-66:0.88)$) {$\varphi$};
+  \filldraw[blue] (B) circle (2.5pt);
+  \draw[->,very thick,blue] (B) -- ++(0:0.92)
+    node[above] {$v_0$};
+  \filldraw[red] (P) circle (2.8pt);
+  \draw[->,very thick,blue] (P) -- ++(48:1.02)
+    node[above right] {$v$};
+  \draw[->,thick,orange] (P) -- ($(P)!0.56!(O)$)
+    node[midway,above left=1pt] {$N$};
+  \draw[->,thick,red] (P) -- ++(0,-1.10)
+    node[midway,right=2pt] {$mg$};
+  \draw[dashed] (P) -- ++(48:1.28);
+  \node[anchor=west,font=\small,align=left] at (0.55,0.52)
+    {径向：$N-mg\cos\varphi=m\dfrac{v^2}{r}$\\[6pt]
+     切向：$a_t=-g\sin\varphi$\\[6pt]
+     高度：$h=r(1-\cos\varphi)$};
+\end{tikzpicture}

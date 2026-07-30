@@ -1,13 +1,19 @@
-\begin{tikzpicture}[scale=0.78,>=Stealth]
+\begin{tikzpicture}[scale=0.78,>=Stealth,font=\small]
   \draw[thick] (0,1.45) -- (4.4,1.45);
   \draw[thick] (0,0) -- (4.4,0);
   \node[left] at (0,1.45) {$-$};
   \node[left] at (0,0) {$+$};
-  \foreach \x in {0.7,1.5,2.3,3.1,3.9}
+  \foreach \x in {0.7,1.5,2.3,3.1,3.9} {
     \draw[->,blue] (\x,0.25) -- (\x,1.25);
-  \draw[->,red,thick] (-0.55,0.72) -- (0.35,0.72) node[midway,above] {$v_0$};
-  \node[red,left] at (-0.55,0.72) {$e^-$};
-  \draw[red,thick,dashed,domain=0.35:4.25,samples=80] plot (\x,{0.72-0.035*(\x-0.35)^2});
+  }
+  \filldraw[red] (-0.55,0.725) circle (2pt);
+  \node[red,left] at (-0.55,0.725) {$e^-$};
+  \draw[->,red,thick] (-0.42,0.725) -- (0.38,0.725);
+  \node[red,above] at (-0.02,0.725) {$\vect v_0$};
+  \draw[red,thick,dashed,domain=0:4.29,samples=90]
+    plot (\x,{0.725-0.0394*\x*\x});
+  \filldraw[red] (4.29,0) circle (2.2pt);
+  \node[red,above left] at (4.29,0) {碰撞点};
   \draw[<->] (0,-0.35) -- (4.4,-0.35) node[midway,below] {$L$};
-  \draw[<->] (4.7,0) -- (4.7,1.45) node[midway,right] {$d$};
+  \draw[<->] (4.72,0) -- (4.72,1.45) node[midway,right] {$d$};
 \end{tikzpicture}

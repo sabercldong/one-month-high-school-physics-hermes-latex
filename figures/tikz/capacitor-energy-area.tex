@@ -8,9 +8,13 @@
   \draw[very thick,blue] (0,0) -- (4,2.6)
     node[pos=0.72,above left] {$U=\dfrac{Q}{C}$};
   \fill[blue!12] (0,0) -- (4,0) -- (4,2.6) -- cycle;
+  \fill[orange!35] (2.62,0) rectangle (2.76,1.79);
+  \draw[orange!80!black,thick] (2.62,0) rectangle (2.76,1.79);
+  \node[font=\small,orange!80!black,anchor=west] at (2.82,1.48)
+    {$dE_C=u\,dq$};
   \draw[dashed] (4,0) -- (4,2.6);
   \draw[dashed] (0,2.6) -- (4,2.6);
   \node[below] at (4,0) {$Q$};
   \node[left] at (0,2.6) {$U$};
-  \node[align=center] at (2.55,0.9) {$E_C=$ 面积\\$=\dfrac12 QU$};
+  \node[align=center] at (1.55,0.72) {$E_C=$ 面积\\$=\dfrac12 QU$};
 \end{tikzpicture}

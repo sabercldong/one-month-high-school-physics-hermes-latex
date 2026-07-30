@@ -7,8 +7,8 @@
       \draw[blue,->] (-3.35,\y) -- (-2.35,\y);
     }
     \foreach \r in {0.45,0.85,1.25,1.65}{
-      \draw[blue!65] (-2.2,0) arc (180:35:\r);
-      \draw[blue!65] (-2.2,0) arc (180:325:\r);
+      \draw[blue!65] (-2.2,0) ++(-70:\r)
+        arc[start angle=-70,end angle=70,radius=\r];
     }
     \draw[thick] (1.65,-1.25) -- (1.65,1.25);
     \draw[red,very thick] (1.65,0) -- ++(0.55,0);

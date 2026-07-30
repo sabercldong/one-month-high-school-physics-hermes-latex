@@ -1,36 +1,62 @@
-\begin{tikzpicture}[scale=0.92,>=Stealth]
+\begin{tikzpicture}[scale=0.92,>=Stealth,line cap=round,line join=round]
+  % 左图：同相双波源。中央垂直平分线为相长线，相消线是等程差曲线。
   \begin{scope}
-    \node[font=\small] at (0,1.85) {两波源干涉};
-    \fill[blue] (-0.55,0.35) circle (0.055);
-    \fill[blue] (-0.55,-0.35) circle (0.055);
-    \node[font=\scriptsize,left] at (-0.60,0.35) {$S_1$};
-    \node[font=\scriptsize,left] at (-0.60,-0.35) {$S_2$};
-    \foreach \r in {0.45,0.90,1.35,1.80}{
-      \draw[blue!45] (-0.55,0.35) circle (\r);
-      \draw[blue!45] (-0.55,-0.35) circle (\r);
-    }
-    \draw[red,thick] (-0.55,0) -- (2.05,0);
-    \draw[orange!85!black,thick,dashed] (-0.55,0.35) -- (1.80,1.35);
-    \draw[orange!85!black,thick,dashed] (-0.55,-0.35) -- (1.80,-1.35);
-    \node[font=\scriptsize,red] at (1.10,0.36) {相长};
-    \node[font=\scriptsize,orange!85!black] at (1.85,1.52) {相消线附近};
+    \node[font=\small] at (0.15,1.72) {同相双波源干涉};
+    \coordinate (Sone) at (-1.20,0.42);
+    \coordinate (Stwo) at (-1.20,-0.42);
+
+    \begin{scope}
+      \clip (-2.05,-1.32) rectangle (2.02,1.32);
+      \foreach \r in {0.32,0.64,0.96,1.28,1.60,1.92}{
+        \draw[blue!32] (Sone) circle (\r);
+        \draw[blue!32] (Stwo) circle (\r);
+      }
+      \draw[red,very thick] (-1.20,0) -- (1.95,0);
+      % 对焦点位于 S_1、S_2 的双曲线，程差保持不变。
+      \draw[orange!85!black,very thick,dashed,samples=90,domain=0:3.05]
+        plot ({-1.20+\x},{0.08*sqrt(1+(\x/0.412)^2)});
+      \draw[orange!85!black,very thick,dashed,samples=90,domain=0:3.05]
+        plot ({-1.20+\x},{-0.08*sqrt(1+(\x/0.412)^2)});
+    \end{scope}
+
+    \fill[blue!80!black] (Sone) circle (0.06);
+    \fill[blue!80!black] (Stwo) circle (0.06);
+    \node[font=\scriptsize,left] at (Sone) {$S_1$};
+    \node[font=\scriptsize,left] at (Stwo) {$S_2$};
+
+    \draw[red,very thick] (-1.72,-1.43) -- (-1.28,-1.43);
+    \node[font=\scriptsize,anchor=west] at (-1.22,-1.43)
+      {中央相长线：$\Delta r=0$};
+    \draw[orange!85!black,very thick,dashed] (-1.72,-1.72) -- (-1.28,-1.72);
+    \node[font=\scriptsize,anchor=west] at (-1.22,-1.72)
+      {相消线：$\Delta r=(k+\tfrac12)\lambda$};
   \end{scope}
 
-  \begin{scope}[xshift=5.2cm]
-    \node[font=\small] at (0,1.85) {小孔/窄缝衍射};
-    \draw[thick] (-1.95,-1.35) -- (-1.95,-0.28);
-    \draw[thick] (-1.95,0.28) -- (-1.95,1.35);
-    \draw[<->] (-2.22,-0.28) -- (-2.22,0.28);
-    \node[font=\scriptsize,left] at (-2.22,0) {$a$};
-    \foreach \x in {-3.15,-2.75,-2.35}{
-      \draw[blue,->] (\x,-1.0) -- (\x+0.55,-1.0);
-      \draw[blue,->] (\x,0) -- (\x+0.55,0);
-      \draw[blue,->] (\x,1.0) -- (\x+0.55,1.0);
+  % 右图：孔径与波长相当或更小时，孔后波面近似向各方向展开。
+  \begin{scope}[xshift=5.45cm]
+    \node[font=\small] at (0,1.82) {小孔（窄缝）衍射};
+    \coordinate (A) at (-1.55,0);
+
+    \draw[thick] (-1.55,-1.38) -- (-1.55,-0.30);
+    \draw[thick] (-1.55,0.30) -- (-1.55,1.38);
+    \draw[<->] (-1.84,-0.30) -- (-1.84,0.30);
+    \node[font=\scriptsize,left] at (-1.84,0) {$a$};
+    \fill[red!75!black] (A) circle (0.045);
+    \node[font=\scriptsize,above right] at (A) {孔};
+
+    \foreach \x in {-3.15,-2.78,-2.41,-2.04}{
+      \draw[blue!65] (\x,-1.24) -- (\x,1.24);
     }
-    \foreach \r in {0.45,0.85,1.25,1.65}{
-      \draw[red!70] (-1.95,0) arc (180:30:\r);
-      \draw[red!70] (-1.95,0) arc (180:330:\r);
+    \draw[->,thick,blue!75!black] (-3.12,0.86) -- (-2.18,0.86)
+      node[midway,above,font=\scriptsize] {传播方向};
+
+    \foreach \r in {0.42,0.78,1.14,1.50}{
+      \draw[red!70,thick] ($(A)+(0,\r)$)
+        arc[start angle=90,end angle=-90,radius=\r];
     }
-    \node[font=\scriptsize,align=center] at (0.55,-1.55) {$a$ 与 $\lambda$ 可比时\\绕射更明显};
+    \draw[->,red!75!black,thick] (A) -- (0.06,0.80);
+    \draw[->,red!75!black,thick] (A) -- (0.06,-0.80);
+    \node[font=\scriptsize,align=center] at (0.48,-1.55)
+      {$a\lesssim\lambda$ 时\\衍射较明显};
   \end{scope}
 \end{tikzpicture}

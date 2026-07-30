@@ -1,0 +1,41 @@
+% TikZ 图：环形电流与通电螺线管的磁场方向
+% Day 21：磁场与安培力
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-5.10,-2.05) rectangle (5.10,2.05);
+
+  % 左图：正视环形电流，逆时针电流在中心产生向外的磁场。
+  \begin{scope}[shift={(-2.65,0)}]
+    \node[font=\small] at (0,1.70) {环形电流：此面为 $N$ 极};
+    \draw[red,very thick] (0,0) circle (1.12);
+    \draw[red,very thick,->] (1.12,0) arc (0:72:1.12);
+    \draw[red,very thick,->] (-1.12,0) arc (180:252:1.12);
+    \node[red,font=\small] at (0,-1.45) {$I$ 沿逆时针方向};
+
+    \draw[blue,thick] (0,0) circle (0.18);
+    \fill[blue] (0,0) circle (0.052);
+    \node[blue,font=\small] at (0,0.42) {$B$ 向外};
+  \end{scope}
+
+  % 右图：从左端看电流逆时针，因此左端为 N 极，管内磁场向左。
+  \begin{scope}[shift={(2.55,0)}]
+    \node[font=\small] at (0,1.70) {通电螺线管};
+    \draw[thick] (-1.65,-0.52) rectangle (1.65,0.52);
+    \foreach \x in {-1.45,-1.10,-0.75,-0.40,-0.05,0.30,0.65,1.00,1.35} {
+      \draw[red,thick] (\x,-0.68)
+        .. controls (\x+0.20,-0.24) and (\x+0.20,0.24) .. (\x,0.68);
+    }
+
+    \node[font=\small] at (-1.93,0) {$N$};
+    \node[font=\small] at (1.93,0) {$S$};
+    \draw[blue,very thick,->] (1.35,0) -- (-1.35,0);
+    \node[blue,font=\small] at (0,0.30) {管内 $B$};
+
+    \draw[blue,thick,->] (-1.55,0.82)
+      .. controls (-0.45,1.35) and (0.45,1.35) .. (1.55,0.82);
+    \draw[blue,thick,->] (-1.55,-0.82)
+      .. controls (-0.45,-1.35) and (0.45,-1.35) .. (1.55,-0.82);
+
+    \node[red,font=\scriptsize,align=center] at (0,-1.58)
+      {从左端看电流逆时针\\四指沿电流，拇指指向左端};
+  \end{scope}
+\end{tikzpicture}

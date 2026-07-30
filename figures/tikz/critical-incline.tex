@@ -1,28 +1,45 @@
-% TikZ 图：斜面摩擦临界
+% TikZ 图：斜面摩擦临界的真实受力与重力分解
 % Day 07：连接体、斜面与摩擦综合
-\begin{tikzpicture}[scale=0.92,>=Latex]
-  % 斜面：右下方为可能下滑方向。
-  \draw[thick] (0,0) -- (5,0) -- (0,2) -- cycle;
-  \draw[thick] (0,2) -- (5,0);
-  \draw (4.25,0) arc (180:158.2:0.75);
-  \node at (4.1,0.25) {$\theta$};
+\begin{tikzpicture}[scale=0.86,>=Latex,line cap=round,line join=round]
+  \def\ang{22}
 
-  \coordinate (P) at (2.35,1.06);
-  \coordinate (C) at ($(P)+(68.2:0.42)$);
+  % 左图：只画真实力。
+  \begin{scope}
+    \node[font=\small\bfseries,anchor=west] at (0.20,2.45) {真实受力};
+    \draw[thick] (0,1.68) -- (4.20,0) -- (0,0) -- cycle;
+    \draw (3.36,0) arc[start angle=180,end angle=158,radius=0.62];
+    \node at (3.27,0.24) {$\theta$};
 
-  \begin{scope}[shift={(P)},rotate=-21.8]
-    \draw[thick] (-0.6,0) rectangle (0.6,0.85);
-    \node at (0,0.43) {$m$};
+    \coordinate (P) at (2.02,0.87);
+    \coordinate (C) at ($(P)+(68:0.40)$);
+    \begin{scope}[shift={(P)},rotate=-22]
+      \draw[fill=white,thick] (-0.55,0) rectangle (0.55,0.80);
+      \node at (0.27,0.53) {$m$};
+    \end{scope}
+
+    \draw[->,very thick,blue] (C) -- ++(0,-1.20)
+      node[below right=1pt] {$G$};
+    \draw[->,very thick,blue] (C) -- ++(68:1.05)
+      node[above right=1pt] {$N$};
+    \draw[->,very thick,red] (C) -- ++(158:1.16)
+      node[above left=1pt] {$f_s=f_{\max}$};
   \end{scope}
 
-  % 真实力
-  \draw[->,thick,blue] (C) -- ++(0,-1.25) node[below] {$G$};
-  \draw[->,thick,blue] (C) -- ++(68.2:1.05) node[above] {$N$};
-  \draw[->,thick,red] (C) -- ++(158.2:1.15) node[above] {$f_s=f_{\max}$};
+  % 右图：单独画重力在斜面方向与法线方向的分量。
+  \begin{scope}[shift={(5.55,0)}]
+    \node[font=\small\bfseries] at (1.72,2.45) {重力分解};
+    \coordinate (Q) at (1.72,1.92);
 
-  % 分力
-  \draw[->,thick,red,dashed] (C) -- ++(-21.8:1.25) node[right] {$G\sin\theta$};
-  \draw[->,thick,blue,dashed] (C) -- ++(-111.8:0.85) node[left] {$G\cos\theta$};
+    % 灰色虚线只提示两个分解方向，避免与向量标签争抢空间。
+    \draw[dashed,gray] ($(Q)+(158:1.20)$) -- ($(Q)+(-22:1.55)$);
+    \draw[dashed,gray] ($(Q)+(68:0.85)$) -- ($(Q)+(-112:1.50)$);
 
-  \node[font=\footnotesize] at (2.65,-0.45) {临界：$G\sin\theta=\mu_s N$};
+    \draw[->,very thick,black] (Q) -- ++(0,-1.66)
+      node[below right=1pt] {$G$};
+    \draw[->,very thick,red] (Q) -- ++(-22:1.40)
+      node[right=4pt] {$G\sin\theta$};
+    \draw[->,very thick,blue] (Q) -- ++(-112:1.26)
+      node[left=4pt] {$G\cos\theta$};
+
+  \end{scope}
 \end{tikzpicture}

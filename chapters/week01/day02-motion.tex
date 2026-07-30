@@ -12,21 +12,23 @@
   \item 能指出题目所选参考系，并说明同一物体在不同参考系下描述可能不同。
   \item 严格区分位移和路程：位移是矢量，路程是标量。
   \item 能区分平均速度和瞬时速度，并用时间间隔变化说明二者联系。
-  \item 能从位移与时间的关系写出 $v = \dfrac{\Delta x}{\Delta t}$，并在匀速直线运动（$t_0=0$）中使用 $v=\dfrac{x-x_0}{t}$。
+  \item 能从位移与时间的关系写出 $\bar v = \dfrac{\Delta x}{\Delta t}$，并在匀速直线运动（$t_0=0$）中使用 $v=\dfrac{x-x_0}{t}$。
   \item 能说明高中物理中“速度”通常指瞬时速度，“速率”指速度大小。
   \item 初步会用速度矢量合成处理相对运动和小船过河模型。
 \end{enumerate}
 
 \section*{二、初高中衔接}
 
-初中学过“速度 = 路程 $\div$ 时间”，这个公式在初中够用，但在高中有一个重要缺陷：\textbf{它分不清方向}。
+初中常用“路程 $\div$ 时间”描述物体运动的平均快慢；更准确地说，这个量是\textbf{平均速率}，它没有方向。高中还要回答“整体向哪里运动”，因此需要引入由位移和时间定义的\textbf{平均速度}。
 
+\begin{samepage}
 看一个例子：
 \begin{itemize}
-  \item 小明从家向东走 $100\ \mathrm{m}$ 到学校，用了 $50\ \mathrm{s}$。初中的算法：$v = 100 / 50 = 2\ \mathrm{m/s}$。
-  \item 放学后，小明从学校向西走 $100\ \mathrm{m}$ 回到家，也用了 $50\ \mathrm{s}$。初中的算法：还是 $2\ \mathrm{m/s}$。
+  \item 小明从家向东走 $100\ \mathrm{m}$ 到学校，用了 $50\ \mathrm{s}$，平均速率为 $2\ \mathrm{m/s}$。
+  \item 放学后，小明从学校向西走 $100\ \mathrm{m}$ 回到家，也用了 $50\ \mathrm{s}$，平均速率仍为 $2\ \mathrm{m/s}$。
 \end{itemize}
-两个过程速度数值相同，但方向相反。初中阶段常不区分方向，高中必须把方向写进物理量。这就是为什么高中要引入\textbf{位移}代替路程，用\textbf{矢量}代替标量。
+两个过程的平均速率相同，但平均速度方向相反。高中并不是用位移“替代”路程，而是在保留路程和速率的同时，引入位移和速度：前者描述实际路径及沿路径运动的快慢，后者描述位置变化及其方向。
+\end{samepage}
 
 另外，初中通常默认“大地是静止的”，高中阶段要进一步意识到：\textbf{静止是相对的}——这就是\textbf{参考系}。
 
@@ -53,7 +55,7 @@
 
 Day 01 已经介绍过，质点是有质量但忽略大小形状的点。本节正式开始用质点模型来描述运动。
 
-研究一个物体从 A 到 B 的运动时，只关心它的\textbf{位置变化}，不关心它自身如何旋转、是否变形。这时物体可以抽象为一个质点，用一条有向线段表示它的运动。
+研究一个物体从 A 到 B 的运动时，只关心它的\textbf{位置变化}，不关心它自身如何旋转、是否变形。这时物体可以抽象为一个质点；实际路径表示运动轨迹，从 A 指向 B 的有向线段表示位移。
 
 \pagebreak
 \begin{center}
@@ -146,6 +148,7 @@ Day 01 已经介绍过，质点是有质量但忽略大小形状的点。本节�
   \item 矢量，描述物体在\textbf{某一时刻（或某一位置）}的运动快慢和方向。
   \item 高中物理中说“速度”，\textbf{默认指瞬时速度}；高中阶段会用极短时间内的平均速度来近似理解它，不要求进行极限计算。
   \item 瞬时速度的大小叫做\textbf{速率}（标量）。
+  \item 做曲线运动时，瞬时速度方向沿该点轨迹的切线方向，并指向物体继续运动的一侧。
 \end{itemize}
 
 \textbf{常见误用：}
@@ -189,7 +192,7 @@ Day 01 已经介绍过，质点是有质量但忽略大小形状的点。本节�
     \item 适用条件：物体做匀速直线运动（速度大小方向都不变）。
     \item 物理意义：单位时间内的位移。
     \item 符号提醒：$x$ 是末位置坐标，$x_0$ 是初位置坐标，$x-x_0$ 才是位移。只有当计时起点 $t=0$ 时物体在原点 $x_0=0$，才可简写为 $v=x/t$。
-    \item 常见误用：不能把匀加速运动的平均速度公式 $\bar{v} = (v_0+v)/2$ 与这个公式混淆。
+    \item 常见误用：不能把任意一段运动的平均速度直接当成某一时刻的瞬时速度；只有匀速直线运动中，任意时间段的平均速度才等于不变的瞬时速度。
   \end{itemize}
 
   \item \textbf{瞬时速度的极限定义：}
@@ -204,7 +207,9 @@ Day 01 已经介绍过，质点是有质量但忽略大小形状的点。本节�
 
 \section*{五、典型模型}
 
-\textbf{直线运动模型：} 物体沿一条直线运动。这是高中物理最常见的模型，也是初学者最先建立的运动模型。
+\subsection*{模型 1：一维直线运动}
+
+物体沿一条直线运动。这是高中物理最常见的模型，也是初学者最先建立的运动模型。
 
 在一维直线运动中，位移、速度的方向用\textbf{正负号}表示——设定一个正方向，与正方向同向为正，反向为负。
 
@@ -215,6 +220,51 @@ Day 01 已经介绍过，质点是有质量但忽略大小形状的点。本节�
 \end{center}
 
 在这个坐标系中，正方向向右。位移 $\Delta x > 0$ 表示位置变化向右，$\Delta x < 0$ 表示位置变化向左。
+
+\subsection*{模型 2：相对运动与速度合成}
+
+同一个物体相对于不同参考系可以有不同速度。若 $A$、$B$ 相对于地面的速度分别为
+$\vect v_A$、$\vect v_B$，则 $A$ 相对于 $B$ 的速度为
+\[
+\vect v_{A\text{对}B}=\vect v_A-\vect v_B.
+\]
+这个式子是矢量关系。两物体同向运动时可以先规定正方向再作代数运算；速度不共线时，要按三角形法则作矢量减法。
+
+\textbf{基础例子：} 汽车和摩托车都向东行驶，速度分别为
+$20\ \mathrm{m/s}$ 和 $30\ \mathrm{m/s}$。摩托车相对于汽车的速度为
+$10\ \mathrm{m/s}$，方向向东；汽车相对于摩托车的速度则为
+$10\ \mathrm{m/s}$，方向向西。
+
+\subsection*{模型 3：小船过河}
+
+若以地面为参考系，小船的速度满足
+\[
+\vect v_{\text{船对地}}
+=\vect v_{\text{船对水}}+\vect v_{\text{水对地}}.
+\]
+船头朝向决定 $\vect v_{\text{船对水}}$，河水流向决定
+$\vect v_{\text{水对地}}$，真正决定小船轨迹的是合速度
+$\vect v_{\text{船对地}}$。
+
+\begin{center}
+\input{figures/tikz/boat-river-crossing}
+
+\figcaption{小船过河：用平行四边形法则合成船对水速度与水流速度}\label{fig:boat-river-crossing}
+\end{center}
+
+设河宽为 $d$，水流速度大小为 $u$，船对水速度大小为 $v$。
+\begin{enumerate}
+  \item \textbf{过河时间最短：} 船头垂直河岸，使垂直河岸方向的速度达到最大值 $v$，故
+  \[
+  t_{\min}=\frac{d}{v}.
+  \]
+  此时小船会向下游漂移 $ut_{\min}$。
+
+  \item \textbf{渡河位移最短：} 当 $v>u$ 时，可让船头偏向上游，使船对水速度的上游分量抵消水流。此时船对地速度垂直河岸，渡河位移大小等于河宽 $d$。若 $v\leq u$，小船不能以垂直河岸的合速度过河，需另行比较不同船头方向，见本节竞赛补充。
+\end{enumerate}
+
+\textbf{认知提醒：} “船头指向”对应 $\vect v_{\text{船对水}}$，实际运动方向对应
+$\vect v_{\text{船对地}}$，二者通常不同。
 
 \nopagebreak[4]
 \section*{六、例题精讲}
@@ -234,15 +284,15 @@ Day 01 已经介绍过，质点是有质量但忽略大小形状的点。本节�
 
 \begin{enumerate}
   \item 总路程 $s = AB + BC = 300 + 400 = 700\ \mathrm{m}$。
-  
+
   \item 位移是从起点 $A$ 指向终点 $C$ 的有向线段。
   \[
   |\Delta\vect{x}| = \sqrt{AB^2 + BC^2} = \sqrt{300^2 + 400^2} = 500\ \mathrm{m}
   \]
   方向：东偏北 $\theta$ 角，其中 $\tan\theta = \dfrac{400}{300} = \dfrac{4}{3}$，$\theta \approx 53^\circ$。
-  
+
   \item 平均速度大小：$|\bar{\vect{v}}| = \dfrac{|\Delta\vect{x}|}{\Delta t} = \dfrac{500}{250} = 2.0\ \mathrm{m/s}$，方向东偏北 $53^\circ$。
-  
+
   平均速率：$\bar{v}_{\text{速率}} = \dfrac{s}{\Delta t} = \dfrac{700}{250} = 2.8\ \mathrm{m/s}$。
 \end{enumerate}
 
@@ -294,11 +344,48 @@ t_1 = \frac{x}{v_1},\qquad t_2 = \frac{x}{v_2}
 
 \end{examplebox}
 
+\begin{examplebox}{小船过河的两个常见目标}
+
+\textbf{题意分析：} 河宽 $d=120\ \mathrm m$，水流速度大小
+$u=3.0\ \mathrm{m/s}$，船对水速度大小 $v=5.0\ \mathrm{m/s}$。分别求：
+\begin{enumerate}
+  \item 过河时间最短时的时间和向下游漂移量。
+  \item 渡河位移最短时船头方向和过河时间。
+\end{enumerate}
+
+\textbf{解题过程：}
+\begin{enumerate}
+  \item 船头垂直河岸时，垂直河岸方向的速度最大：
+  \[
+  t_{\min}=\frac{d}{v}=\frac{120}{5}=24\ \mathrm s.
+  \]
+  向下游漂移
+  \[
+  x=ut_{\min}=3\times24=72\ \mathrm m.
+  \]
+
+  \item 要使渡河位移最短，应使船对地速度垂直河岸。设船头向上游偏离垂直河岸方向的角度为 $\alpha$，则
+  \[
+  v\sin\alpha=u,\qquad
+  \sin\alpha=\frac35,\qquad
+  \alpha\approx36.9^\circ.
+  \]
+  垂直河岸方向的速度为
+  \[
+  v_\perp=v\cos\alpha=4.0\ \mathrm{m/s},
+  \]
+  因而过河时间为 $t=d/v_\perp=30\ \mathrm s$，渡河位移大小就是河宽
+  $120\ \mathrm m$。
+\end{enumerate}
+
+\textbf{方法总结：} “时间最短”要让垂直河岸的速度分量最大；“位移最短”要让船对地合速度垂直河岸。先辨认目标，再确定船头方向。
+\end{examplebox}
+
 \section*{七、变式训练}
 
 \begin{enumerate}
   \item 某人骑自行车沿直线从 $A$ 到 $B$，前 $1/3$ 路程的速度为 $4\ \mathrm{m/s}$，中间 $1/3$ 路程的速度为 $6\ \mathrm{m/s}$，最后 $1/3$ 路程的速度为 $12\ \mathrm{m/s}$。求全程的平均速度。（提示：不能直接对三段速度取算术平均。）
-  
+
   \item 一质点沿半径为 $R = 10\ \mathrm{m}$ 的圆形轨道运动了半圈，用时 $5\ \mathrm{s}$。求：
   \begin{center}
   \input{figures/tikz/training-half-circle}
@@ -307,85 +394,100 @@ t_1 = \frac{x}{v_1},\qquad t_2 = \frac{x}{v_2}
     \item 位移大小和路程。
     \item 平均速度大小和平均速率。
   \end{enumerate}
-  
+
   \item 汽车从静止开始沿直线行驶，第 $1\ \mathrm{s}$ 内位移 $2\ \mathrm{m}$，第 $2\ \mathrm{s}$ 内位移 $4\ \mathrm{m}$，第 $3\ \mathrm{s}$ 内位移 $6\ \mathrm{m}$。求：
   \begin{enumerate}
     \item 前 $2\ \mathrm{s}$ 的平均速度。
     \item 第 $3\ \mathrm{s}$ 内的平均速度。
     \item 全程 $3\ \mathrm{s}$ 的平均速度。
   \end{enumerate}
+
+  \item 河宽 $d=150\ \mathrm m$，水流速度大小 $u=3.0\ \mathrm{m/s}$，
+  船对水速度大小 $v=5.0\ \mathrm{m/s}$。求：
+  \begin{enumerate}
+    \item 过河时间最短时的时间和向下游漂移量。
+    \item 渡河位移最短时船头向上游偏离垂直河岸方向的角度和过河时间。
+  \end{enumerate}
 \end{enumerate}
 
-\section*{八、易错点}
+\begin{learningbox}{变式训练参考结果}
+\begin{enumerate}[itemsep=0.45em,topsep=0.3em,parsep=0pt]
+  \item 设全程为 $3s$，则
+  \[
+  \bar v=\frac{3s}{s/4+s/6+s/12}=6\ \mathrm{m/s}.
+  \]
+  平均速度方向由 $A$ 指向 $B$。
+  \item 位移大小为直径 $2R=20\ \mathrm m$，路程为 $\pi R=10\pi\ \mathrm m$；平均速度大小为 $4\ \mathrm{m/s}$，平均速率为 $2\pi\ \mathrm{m/s}$。
+  \item 前 $2\ \mathrm s$ 的平均速度为 $3\ \mathrm{m/s}$；第 $3\ \mathrm s$ 内为 $6\ \mathrm{m/s}$；全程平均速度为 $4\ \mathrm{m/s}$，方向均沿汽车运动方向。
+  \item 时间最短时 $t_{\min}=d/v=30\ \mathrm s$，向下游漂移
+  $ut_{\min}=90\ \mathrm m$。位移最短时
+  $\sin\alpha=u/v=3/5$，故 $\alpha\approx36.9^\circ$；
+  垂直河岸速度为 $4.0\ \mathrm{m/s}$，过河时间为 $37.5\ \mathrm s$。
+\end{enumerate}
+\end{learningbox}
+
+\section*{八、竞赛入门补充}
+
+\begin{competitionbox}
+\textbf{强水流中怎样使渡河位移最短？}
+
+当水流速度 $u$ 大于船对水速度 $v$ 时，船无法用上游分量完全抵消水流，但仍可选择一个最优船头方向，使向下游漂移尽可能小。
+
+设船头向上游偏离垂直河岸方向的角度为 $\alpha$。取
+$0\leqslant\alpha<90^\circ$，以保证船仍有指向对岸的速度分量。船对地速度的下游分量和垂直河岸分量分别为
+\[
+v_x=u-v\sin\alpha,\qquad
+v_y=v\cos\alpha.
+\]
+渡河时间 $t=d/v_y$，所以向下游漂移量
+\[
+x=v_xt
+=d\frac{u-v\sin\alpha}{v\cos\alpha}.
+\]
+令 $k=u/v>1$，则
+\[
+\frac{x}{d}=\frac{k-\sin\alpha}{\cos\alpha}.
+\]
+由
+\[
+(k-\sin\alpha)^2-(k^2-1)\cos^2\alpha
+=(k\sin\alpha-1)^2\geq0
+\]
+可知
+\[
+\frac{x}{d}\geq\sqrt{k^2-1}.
+\]
+等号在 $\sin\alpha=1/k=v/u$ 时成立。因此
+\[
+x_{\min}=d\frac{\sqrt{u^2-v^2}}{v},
+\qquad
+s_{\min}=\sqrt{d^2+x_{\min}^2}=\frac{du}{v}.
+\]
+
+\textbf{例题：} 若 $u=5.0\ \mathrm{m/s}$、$v=3.0\ \mathrm{m/s}$、河宽
+$d=120\ \mathrm m$，则最优方向满足
+$\sin\alpha=3/5$，即 $\alpha\approx36.9^\circ$；最小下游漂移量为
+$160\ \mathrm m$，最短渡河位移为 $200\ \mathrm m$。
+
+\textbf{方法提升：} 弱水流 $v>u$ 时可以完全抵消水流；强水流 $u>v$ 时不能抵消，只能通过比较速度分量寻找最优方向。先判断速度大小关系，再谈“位移最短”。
+\end{competitionbox}
+
+\section*{九、易错点}
 
 \begin{mistakebox}
 \begin{enumerate}
-  \item \textbf{把路程当位移代入速度公式：} 先判断题目问平均速度还是平均速率。$v = \Delta x / \Delta t$ 中的分子是位移；若问平均速率，才用路程除以时间。
-  
+  \item \textbf{把路程当位移代入速度公式：} 先判断题目问平均速度还是平均速率。$\bar v = \Delta x / \Delta t$ 中的分子是位移；若问平均速率，才用路程除以时间。
+
   \item \textbf{平均速度和“速度的平均”混为一谈：} 先把全过程的总位移和总时间写出来。平均速度是总位移除以总时间，不是各段速度的算术平均。
-  
+
   \item \textbf{忽略参考系的选择：} 写速度前先补一句“相对于谁”。题目不说明通常以地面为参考系；相对运动题要分别写出相对于船、车或地面的速度。
-  
+
   \item \textbf{正负号只表示方向：} 在一维直线运动中，速度的正负只表示方向，不表示大小。$v = -10\ \mathrm{m/s}$ 和 $v = 5\ \mathrm{m/s}$ 相比，$|-10| > |5|$，前者更快。
-  
+
   \item \textbf{混淆位移和路程：} 位移大小 $\leq$ 路程。单向直线运动时两者大小相等，但只要折返或走曲线，位移大小就小于路程。特别要注意“回到原点”时位移为零但路程不为零。
 
 \end{enumerate}
 \end{mistakebox}
-
-\section*{九、竞赛入门补充}
-
-\begin{competitionbox}
-\textbf{相对运动的概念}
-
-在竞赛中，参考系的选取可以减少运动关系的复杂度。一个常用方法是：选择运动的物体作为参考系，把多个物体的运动转化为单个物体相对另一个物体的运动。核心不是换一套符号，而是始终问清“谁相对谁运动”。
-
-\textbf{例题：} 一辆汽车以 $v_1 = 20\ \mathrm{m/s}$ 向东行驶，一辆摩托车以 $v_2 = 30\ \mathrm{m/s}$ 向东行驶。求摩托车相对于汽车的速度。
-
-\textbf{解：} 取汽车为参考系。在汽车看来，地面以 $20\ \mathrm{m/s}$ 向西运动，摩托车相对于地面的速度是 $30\ \mathrm{m/s}$ 向东。因此摩托车相对于汽车的速度：
-\[
-\vect{v}_{2\text{对}1} = \vect{v}_2 - \vect{v}_1 = 30 - 20 = 10\ \mathrm{m/s}\ (\text{向东})
-\]
-
-更一般地，相对速度公式为：
-\[
-\vect{v}_{AB} = \vect{v}_A - \vect{v}_B
-\]
-其中 $\vect{v}_{AB}$ 表示 $A$ 相对于 $B$ 的速度。
-
-\textbf{推广到二维：}
-如果两辆车速度不共线，比如汽车向东 $20\ \mathrm{m/s}$，摩托车向北 $30\ \mathrm{m/s}$，则摩托车相对于汽车的速度：
-\[
-\vect{v}_{m\text{对}c} = \vect{v}_m - \vect{v}_c
-\]
-矢量减法用三角形法则计算，大小 $|\vect{v}_{m\text{对}c}| = \sqrt{20^2 + 30^2} \approx 36.1\ \mathrm{m/s}$，方向北偏西约 $33.7^\circ$。
-
-这个思想在后续的追及相遇问题、抛体运动问题中会反复用到。
-
-\medskip
-\textbf{小船过河：速度合成的经典模型}
-
-小船过河题可以看作相对速度的二维合成。若以地面为参考系：
-\[
-\vect{v}_{\text{船对地}}
-=\vect{v}_{\text{船对水}}+\vect{v}_{\text{水对地}}.
-\]
-其中 $\vect{v}_{\text{船对水}}$ 由船头朝向和发动机决定，$\vect{v}_{\text{水对地}}$ 是水流速度，真正决定小船轨迹的是合速度 $\vect{v}_{\text{船对地}}$。
-
-\begin{center}
-\input{figures/tikz/boat-river-crossing}
-
-\figcaption{小船过河：船对地速度由船对水速度与水流速度合成}\label{fig:boat-river-crossing}
-\end{center}
-
-\textbf{两个常见目标：}
-\begin{enumerate}
-  \item \textbf{过河时间最短：} 船头垂直河岸，让垂直河岸方向的速度最大。若河宽为 $d$，船相对水速度大小为 $v$，则 $t_{\min}=d/v$，但会被水流冲到下游。
-  \item \textbf{位移最短：} 希望船相对地的合速度垂直河岸，就要让船头略向上游，使船速的上游分量抵消水流。若船速不足以抵消水流，则不能垂直到达对岸。
-\end{enumerate}
-
-\textbf{认知提醒：} “船头指向”不一定是“运动方向”。船头方向对应 $\vect{v}_{\text{船对水}}$，实际轨迹方向对应 $\vect{v}_{\text{船对地}}$。
-\end{competitionbox}
 
 \section*{十、今日小结}
 

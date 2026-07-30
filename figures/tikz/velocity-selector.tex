@@ -1,24 +1,34 @@
 % TikZ 图：速度选择器
 % Day 22：洛伦兹力
-\begin{tikzpicture}[scale=0.92,>=Latex]
-  \draw[thick] (-2,1.15) -- (2,1.15);
-  \node[above] at (-1.8,1.15) {$+$};
-  \draw[thick] (-2,-1.15) -- (2,-1.15);
-  \node[below] at (-1.8,-1.15) {$-$};
-  \foreach \x in {-1.4,-0.7,0,0.7,1.4} {
-    \draw[->,blue,thick] (\x,0.9) -- (\x,-0.9);
+\begin{tikzpicture}[scale=0.92,>=Latex,line cap=round]
+  \path[use as bounding box] (-2.85,-1.90) rectangle (3.10,1.70);
+  \draw[thick] (-2.20,1.15) -- (2.20,1.15);
+  \draw[thick] (-2.20,-1.15) -- (2.20,-1.15);
+  \node[above] at (-2.00,1.15) {$+$};
+  \node[below] at (-2.00,-1.15) {$-$};
+
+  \foreach \x in {-1.25,-0.42,0.42,1.25} {
+    \draw[->,blue,thick] (\x,0.90) -- (\x,-0.90);
   }
-  \foreach \x in {-1.5,-0.75,0,0.75,1.5} {
-    \foreach \y in {-0.55,0.25} {
-      \draw[gray,thick] (\x-0.06,\y-0.06) -- (\x+0.06,\y+0.06);
-      \draw[gray,thick] (\x-0.06,\y+0.06) -- (\x+0.06,\y-0.06);
+  \foreach \x in {-1.55,-0.78,0,0.78,1.55} {
+    \foreach \y in {-0.48,0.48} {
+      \draw[gray,thick] (\x-0.055,\y-0.055) -- (\x+0.055,\y+0.055);
+      \draw[gray,thick] (\x-0.055,\y+0.055) -- (\x+0.055,\y-0.055);
     }
   }
-  \fill[red] (-1.8,0) circle (2pt);
-  \draw[->,red,very thick] (-1.8,0) -- (1.8,0) node[right] {$v$};
-  \draw[->,purple,thick] (-0.3,0) -- (-0.3,-0.85);
-  \node[purple,font=\small] at (-0.78,-0.55) {$|q|E$};
-  \draw[->,orange,thick] (0.25,0) -- (0.25,0.85);
-  \node[orange,font=\small] at (0.78,0.58) {$|q|vB$};
-  \node at (0,-1.62) {$|q|E=|q|vB\Rightarrow v=E/B$};
+  \node[blue,font=\small,align=left] at (2.65,0.74) {$E$ 向下};
+  \node[gray,font=\small,align=left] at (2.65,-0.58) {$B$ 向里};
+
+  \coordinate (P) at (-1.88,0);
+  \fill[red] (P) circle (2.2pt);
+  \node[red,left=4pt] at (P) {$+q$};
+  \draw[->,red,very thick] (P) -- (1.92,0);
+  \node[red,right] at (1.92,0) {$v$};
+  \draw[->,purple,very thick] (P) -- ++(0,-0.80);
+  \node[purple,left=3pt,font=\small] at (-1.88,-0.58) {$F_E$};
+  \draw[->,orange!85!black,very thick] (P) -- ++(0,0.80);
+  \node[orange!85!black,left=3pt,font=\small] at (-1.88,0.58) {$F_B$};
+
+  \node[font=\small] at (0,-1.62)
+    {$F_E=F_B\Rightarrow v=E/B$（负电荷时两力同时反向）};
 \end{tikzpicture}

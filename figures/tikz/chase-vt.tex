@@ -22,10 +22,11 @@
   % 速度相等与追上时刻
   \draw[dashed] (2,0) -- (TOne);
   \node[below] at (2,0) {$t_1$};
-  \node[anchor=south west,fill=white,inner sep=1pt] at (2.08,1.72) {$v_A=v_B$};
+  \fill (TOne) circle (1.7pt);
+  \node[above] at (2,2.02) {$v_A=v_B$};
   \draw[dashed] (5.46,0) -- (TZeroB);
   \node[below] at (5.46,0) {$t_0$};
 
-  \node[red!70!black,fill=white,inner sep=1pt] at (0.82,0.78) {\scriptsize 红色：$A$ 多走};
-  \node[blue!70!black,fill=white,inner sep=1pt] at (4.35,3.05) {\scriptsize 蓝色：$B$ 多追};
+  \node[red!70!black] at (0.73,0.73) {\scriptsize $A$ 多走};
+  \node[blue!70!black] at (4.32,2.88) {\scriptsize $B$ 多追};
 \end{tikzpicture}

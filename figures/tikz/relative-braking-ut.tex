@@ -1,0 +1,23 @@
+% TikZ 图：两车同时制动时的分段相对速度 u-t 图
+\begin{tikzpicture}[scale=0.8,>=Latex,line cap=round,line join=round]
+  \draw[->] (-0.25,0) -- (6.85,0) node[right] {$t/\mathrm{s}$};
+  \draw[->] (0,-0.2) -- (0,3.55) node[above] {$u/(\mathrm{m\,s^{-1}})$};
+  \node[below left] at (0,0) {$O$};
+
+  \fill[orange!18] (0,0) -- (0,1.5) -- (3,3) -- (3,0) -- cycle;
+  \fill[blue!14] (3,0) -- (3,3) -- (6,0) -- cycle;
+  \draw[very thick,orange!85!black] (0,1.5) -- (3,3);
+  \draw[very thick,blue!75!black] (3,3) -- (6,0);
+
+  \draw[dashed,gray!75] (3,0) -- (3,3);
+  \draw[dashed,gray!75] (0,1.5) -- (0.35,1.5);
+  \draw[dashed,gray!75] (0,3) -- (3,3);
+  \node[left] at (0,1.5) {$6$};
+  \node[left] at (0,3) {$12$};
+  \node[below] at (3,0) {$3$};
+  \node[below] at (6,0) {$6$};
+  \node[above] at (3,3) {前车停车};
+  \node[anchor=north] at (6,-0.42) {后车停车};
+  \node[orange!80!black] at (1.55,0.78) {$\Delta x_1$};
+  \node[blue!70!black] at (4.15,0.82) {$\Delta x_2$};
+\end{tikzpicture}

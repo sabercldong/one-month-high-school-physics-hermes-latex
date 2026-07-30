@@ -1,24 +1,36 @@
-% TikZ 图：互感
-% Day 23：电磁感应
-\begin{tikzpicture}[>=Latex,scale=0.95,every node/.style={font=\scriptsize}]
-  \draw[rounded corners=3pt,fill=gray!12,draw=gray!60,thick] (0.7,0.45) rectangle (6.8,2.05);
-  \node[gray!70!black] at (3.75,2.28) {共同铁芯/共同磁通};
+\begin{tikzpicture}[>=Latex,scale=0.88,line cap=round,line join=round,
+  every node/.style={font=\scriptsize}]
+  \path[use as bounding box] (-4.50,-2.35) rectangle (4.50,2.35);
 
-  \foreach \x in {1.25,1.55,1.85,2.15,2.45} {
-    \draw[blue,thick] (\x,0.50) .. controls +(0,0.55) and +(0,-0.55) .. (\x+0.18,2.00);
-  }
-  \node[blue] at (1.95,0.10) {原线圈};
+  % Closed laminated core.
+  \draw[rounded corners=4pt,line width=17pt,gray!38]
+    (-2.25,-1.25) rectangle (2.25,1.25);
+  \draw[rounded corners=4pt,thick,gray!70]
+    (-2.25,-1.25) rectangle (2.25,1.25);
+  \node[gray!70!black] at (0,1.78) {闭合铁芯中的交变磁通};
+  \draw[->,orange!85!black,very thick] (-0.85,1.25) -- (0.85,1.25)
+    node[midway,above] {$\Phi(t)$};
 
-  \foreach \x in {4.95,5.25,5.55,5.85,6.15} {
-    \draw[red,thick] (\x,0.50) .. controls +(0,0.55) and +(0,-0.55) .. (\x+0.18,2.00);
-  }
-  \node[red] at (5.65,0.10) {副线圈};
+  % Windings on the two limbs.
+  \draw[blue,very thick,decorate,
+    decoration={coil,aspect=0.55,segment length=4.4pt,amplitude=7pt}]
+    (-2.25,-0.82) -- (-2.25,0.82);
+  \draw[red,very thick,decorate,
+    decoration={coil,aspect=0.55,segment length=4.4pt,amplitude=7pt}]
+    (2.25,0.82) -- (2.25,-0.82);
 
-  \draw[->,blue,very thick] (0.35,1.25) -- (1.05,1.25) node[midway,above] {$I_1$ 变化};
-  \draw[->,red,very thick] (6.85,1.25) -- (7.55,1.25) node[midway,above] {$E_2$};
+  % Primary closed circuit with AC source.
+  \draw[blue,thick] (-2.25,0.82) -- (-3.55,0.82) -- (-3.55,0.42);
+  \draw[blue,thick] (-3.55,-0.42) -- (-3.55,-0.82) -- (-2.25,-0.82);
+  \draw[blue,thick] (-3.55,0) circle (0.42);
+  \node[blue,font=\small] at (-3.55,0) {$\sim$};
 
-  \draw[->,orange,thick] (2.8,1.25) -- (4.55,1.25);
-  \node[orange,above] at (3.68,1.25) {$\Delta\Phi$};
+  % Secondary closed circuit with galvanometer/load.
+  \draw[red,thick] (2.25,0.82) -- (3.55,0.82) -- (3.55,0.42);
+  \draw[red,thick] (3.55,-0.42) -- (3.55,-0.82) -- (2.25,-0.82);
+  \draw[red,thick] (3.55,0) circle (0.42);
+  \node[red,font=\small] at (3.55,0) {$G$};
 
-  \node[align=center] at (3.75,-0.55) {原线圈电流变化 $\rightarrow$ 磁通量变化 $\rightarrow$ 副线圈产生感应电动势};
+  \node[blue] at (-2.25,-1.78) {原线圈：$I_1(t)$};
+  \node[red] at (2.25,-1.78) {副线圈：产生 $\mathcal E_2$};
 \end{tikzpicture}

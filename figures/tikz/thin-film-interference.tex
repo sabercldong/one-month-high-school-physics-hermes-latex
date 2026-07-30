@@ -19,19 +19,21 @@
   \coordinate (R) at (0.82,0.55);
 
   \draw[ray] (-2.55,1.45) -- (P);
-  \draw[ray] (P) -- (-1.68,1.42);
-  \node[font=\scriptsize,blue] at (-1.92,1.62) {反射光 1};
+  \draw[ray] (P) -- (1.84,1.42);
+  \node[font=\scriptsize,blue] at (1.15,1.64) {反射光 1};
 
   \draw[rayb] (P) -- (Q);
   \draw[rayb] (Q) -- (R);
-  \draw[rayb] (R) -- (1.84,1.42);
-  \node[font=\scriptsize,orange!90!black] at (2.05,1.62) {反射光 2};
+  \draw[rayb] (R) -- (3.36,1.42);
+  \node[font=\scriptsize,orange!90!black] at (2.72,1.64) {反射光 2};
 
   \draw[guide] (P) -- ++(0,-1.32);
   \draw[guide] (Q) -- ++(0,1.32);
   \draw[<->,gray] (3.00,-0.55) -- (3.00,0.55) node[midway,right,font=\small] {$d$};
+  \draw[guide,->] (1.25,1.16) -- (3.65,1.98)
+    node[right,font=\scriptsize] {同向射出，远处叠加};
   \node[note] at (0,-1.48)
-    {两束反射光来自薄膜上下表面，光程差约与 $2nd$ 有关};
+    {两束反射光来自薄膜上下表面，光程差随膜厚 $d$ 改变};
   \node[note] at (0,-1.95)
     {不同颜色满足加强或减弱条件不同，于是出现彩色条纹};
 \end{tikzpicture}

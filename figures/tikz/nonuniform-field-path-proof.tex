@@ -1,19 +1,46 @@
-% TikZ 图：非匀强电场中路径无关的径向积分思路
-% Day 16：电势能、电势与电势差
-\begin{tikzpicture}[scale=0.82,>=Latex]
-  \filldraw[red] (0,0) circle (4pt);
-  \node[below] at (0,0) {$Q$};
-  \coordinate (A) at (1.2,0.95);
-  \coordinate (B) at (2.75,-0.55);
-  \filldraw[black] (A) circle (2pt) node[above] {$A$};
-  \filldraw[black] (B) circle (2pt) node[right] {$B$};
+% TikZ 图：点电荷电场中任意路径微元的径向投影
+\begin{tikzpicture}[scale=0.88,>=Latex,font=\small]
+  \coordinate (Q) at (0,0);
+  \coordinate (A) at (1.05,0.82);
+  \coordinate (B) at (4.25,-0.72);
+  \coordinate (S) at (2.12,1.22);
+  \coordinate (T) at (2.46,1.04);
+  \coordinate (R) at (2.30,1.33);
 
-  \draw[thick] (A) .. controls (1.9,1.45) and (2.9,0.65) .. (B);
-  \draw[thick,dashed] (A) .. controls (0.95,0.05) and (1.75,-1.1) .. (B);
-  \draw[dashed,gray] (0,0) -- (A);
-  \draw[dashed,gray] (0,0) -- (B);
-  \node[left] at (0.62,0.48) {$r_A$};
-  \node[below] at (1.35,-0.26) {$r_B$};
+  \filldraw[red] (Q) circle (3.6pt);
+  \node[below left=1pt] at (Q) {$+Q$};
+  \filldraw (A) circle (2pt) node[above left] {$A$};
+  \filldraw (B) circle (2pt) node[right] {$B$};
 
-  \draw[->,blue] (1.4,0) -- (2.0,0) node[midway,above] {$\vect{E}$};
+  \draw[thick]
+    (A) .. controls (1.45,1.24) and (1.80,1.30) .. (S)
+    .. controls (2.23,1.18) and (2.34,1.10) .. (T)
+    .. controls (3.15,0.55) and (3.75,-0.20) .. (B);
+  \draw[thick,dashed]
+    (A) .. controls (1.35,-0.10) and (2.90,-1.25) .. (B);
+
+  \draw[dashed,gray] (Q) -- (A);
+  \draw[dashed,gray] (Q) -- (B);
+  \draw[dashed,gray] (Q) -- (2.95,1.70);
+  \node[left] at (0.52,0.39) {$r_A$};
+  \node[below] at (2.15,-0.36) {$r_B$};
+
+  % 被截取的路径微元及其径向投影
+  \draw[orange!85!black,very thick,->] (S) -- (T);
+  \node[orange!85!black,fill=white,inner sep=1pt,below right=1pt] at (2.28,1.13)
+    {$\mathrm d\vect s$};
+  \draw[orange!85!black,very thick,->] (S) -- (R);
+  \node[orange!85!black,fill=white,inner sep=1pt,above left=1pt] at (2.22,1.30)
+    {$\mathrm dr$};
+  \draw[dashed,gray] (T) -- (R);
+  \draw[gray] (2.30,1.28) -- (2.25,1.25) -- (2.29,1.20);
+
+  % 局部电场沿径向
+  \draw[->,blue,thick] (S) -- (2.90,1.67);
+  \node[blue,fill=white,inner sep=1pt,above] at (2.72,1.55) {$\vect E$};
+
+  \node[align=left] at (5.35,0.92)
+    {$\mathrm dW=q\vect E\cdot\mathrm d\vect s$\\[1pt]
+     $\phantom{\mathrm dW}=qE_r\,\mathrm dr$};
+  \node[gray] at (3.10,-1.10) {实线、虚线路径的端点相同};
 \end{tikzpicture}

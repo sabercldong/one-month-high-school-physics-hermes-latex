@@ -1,16 +1,22 @@
 \begin{tikzpicture}[scale=0.9,>=Stealth,line cap=round,line join=round]
   \begin{scope}
     \path[use as bounding box] (-0.3,-1.05) rectangle (6.5,1.9);
-    \draw[thick] (-0.2,0) -- (3.0,0);
+    \draw[thick] (-0.2,0) -- (3.45,0);
+    \draw[thick] (0,0) -- (0,1.25);
+    \foreach \y in {0.12,0.42,0.72,1.02} {
+      \draw[gray] (0,\y) -- ++(-0.16,-0.14);
+    }
     \draw[decorate,decoration={zigzag,segment length=5pt,amplitude=2pt},thick]
-      (0.2,0.55) -- (1.35,0.55);
-    \draw[fill=gray!12,thick] (1.35,0.22) rectangle (2.0,0.88);
-    \draw[dashed] (1.675,0.05) -- (1.675,1.08);
-    \draw[<->,blue,thick] (1.675,1.18) -- (2.55,1.18) node[midway,above] {$A$};
+      (0,0.55) -- (2.35,0.55);
+    \draw[fill=gray!12,thick] (2.35,0.22) rectangle (3.05,0.88);
+    \node at (2.70,0.55) {$m$};
+    \draw[dashed,gray] (2.00,0.05) -- (2.00,1.28);
+    \node[font=\scriptsize,above] at (2.00,1.28) {平衡位置 $O$};
+    \draw[<->,blue,thick] (2.00,1.08) -- (2.70,1.08)
+      node[midway,above] {$A$};
     \node[font=\small] at (1.5,-0.36) {弹簧振子};
     \node[font=\small] at (1.5,-0.76) {$T=2\pi\sqrt{m/k}$};
-    \node[font=\small] at (0.55,0.92) {$k$};
-    \node[font=\small] at (1.68,0.55) {$m$};
+    \node[font=\small] at (0.95,0.90) {$k$};
   \end{scope}
   \begin{scope}[xshift=4.95cm]
     \draw[thick] (-0.7,1.55) -- (0.7,1.55);

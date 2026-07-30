@@ -1,28 +1,35 @@
 % TikZ 图：有界磁场圆弧
 % Day 22：洛伦兹力
 \begin{tikzpicture}[scale=1.02,>=Latex,line cap=round,line join=round]
-  \path[use as bounding box] (-1.65,-2.05) rectangle (3.65,2.00);
+  \path[use as bounding box] (-1.75,-2.05) rectangle (3.65,2.00);
   \draw[thick,fill=blue!4] (0,-1.48) rectangle (2.75,1.48);
   \foreach \x in {0.45,1.10,1.75,2.40} {
     \foreach \y in {-1.02,-0.34,0.34,1.02} {
-      \draw[blue,thick] (\x-0.055,\y-0.055) -- (\x+0.055,\y+0.055);
-      \draw[blue,thick] (\x-0.055,\y+0.055) -- (\x+0.055,\y-0.055);
+      \draw[blue!70!black,thick] (\x-0.055,\y-0.055) -- (\x+0.055,\y+0.055);
+      \draw[blue!70!black,thick] (\x-0.055,\y+0.055) -- (\x+0.055,\y-0.055);
     }
   }
+  \node[blue!70!black,font=\small] at (2.13,1.13) {$B$ 向里};
 
   \coordinate (O) at (0,0.35);
   \coordinate (A) at (0,-1.05);
   \coordinate (C) at (1.21,-0.35);
-  \draw[->,red,very thick] (-1.25,-1.05) -- (A) node[midway,below] {$v_1$};
-  \draw[red,thick,->] (A) arc (-90:-30:1.40);
+  \draw[->,red,very thick] (-1.30,-1.05) -- (A);
+  \node[red,below] at (-0.68,-1.05) {$v_1$};
+  \draw[red,very thick,->] (A) arc (-90:-30:1.40);
   \draw[->,red,very thick] (C) -- ++(0.72,1.25);
-  \node[red] at (1.72,0.80) {$v_2$};
+  \node[red,right] at (1.70,0.58) {$v_2$};
 
-  \fill[red] (A) circle (2pt) node[below left] {$A$};
+  \fill[red] (A) circle (2pt);
+  \node[red,below left=2pt] at (A) {$A$};
+  \node[red] at (0.35,-1.30) {$+q$};
   \fill[red] (C) circle (2pt);
-  \node[red] at (1.45,-0.52) {$C$};
-  \fill[black] (O) circle (1.6pt) node[left=2pt] {$O$};
-  \draw[gray,dashed] (O) -- (A) node[midway,left] {$r$};
-  \draw[gray,dashed] (O) -- (C) node[midway,above=2pt] {$r$};
-  \node[font=\small] at (1.38,-1.78) {入射、出射速度的垂线相交于圆心};
+  \node[red,below right=2pt] at (C) {$C$};
+  \fill (O) circle (1.6pt) node[left=3pt] {$O$};
+  \draw[gray,dashed,thick] (O) -- (A);
+  \node[gray,left] at (0,-0.35) {$r$};
+  \draw[gray,dashed,thick] (O) -- (C);
+  \node[gray,above right] at (0.58,0.02) {$r$};
+  \node[font=\small] at (1.35,-1.78)
+    {入射、出射速度的垂线相交于圆心};
 \end{tikzpicture}

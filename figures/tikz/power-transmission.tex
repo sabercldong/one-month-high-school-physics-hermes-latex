@@ -10,9 +10,11 @@
   \draw[rounded corners=2pt,fill=red!8] (8.1,0) rectangle (9.6,1.0);
   \node at (8.85,0.5) {用户};
   \draw[->,thick] (1.5,0.5) -- (2.4,0.5);
-  \draw[->,thick] (3.5,0.65) -- (6.2,0.65) node[midway,above] {高压低流};
+  \draw[->,thick] (3.5,0.65) -- (6.2,0.65) node[midway,above] {高压、低电流};
   \draw[->,thick] (6.2,0.35) -- (3.5,0.35);
   \draw[->,thick] (7.3,0.5) -- (8.1,0.5);
-  \node[font=\small,align=center] at (4.85,-0.78) {输电线损耗\\$P_{\text{损}}=I^2R$};
+  \node[font=\small,align=center] at (4.85,-0.92)
+    {$U_{\text{损}}=IR_{\text{线}}$\\
+     $P_{\text{损}}=I^2R_{\text{线}}$};
   \draw[red,thick,->] (4.85,0.18) -- (4.85,-0.35);
 \end{tikzpicture}

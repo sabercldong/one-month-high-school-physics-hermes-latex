@@ -1,0 +1,50 @@
+% TikZ 图：有界磁场完整几何例题
+% Day 22：洛伦兹力
+\begin{tikzpicture}[scale=0.92,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-1.35,-0.95) rectangle (4.35,4.35);
+
+  % 矩形有界磁场
+  \draw[thick,fill=blue!3] (0,-0.55) rectangle (2.00,4.15);
+  \foreach \x in {0.35,1.00,1.65} {
+    \foreach \y in {0.15,0.85,1.55,2.25,2.95,3.65} {
+      \draw[blue!65!black,thick]
+        (\x-0.055,\y-0.055) -- (\x+0.055,\y+0.055)
+        (\x-0.055,\y+0.055) -- (\x+0.055,\y-0.055);
+    }
+  }
+  \node[blue!70!black,align=center] at (3.05,2.80)
+    {$B$ 垂直纸面\\向里};
+
+  % 几何点：取 r=4，alpha=30 度，横向投影 d=2
+  \coordinate (A) at (0,0);
+  \coordinate (O) at (0,4);
+  \coordinate (C) at (2,0.536);
+
+  % 轨迹、速度和半径
+  \draw[red,very thick,->] (A) arc (-90:-60:4);
+  \fill[red] (A) circle (2.2pt);
+  \fill[red] (C) circle (2.2pt);
+  \node[red,left] at (A) {$A$};
+  \node[red,right] at (C) {$C$};
+  \node[red,below left] at (-0.02,-0.03) {$+q$};
+  \draw[->,red,very thick] (A) -- (1.30,0) node[below] {$v$};
+  \draw[->,red,very thick] (C) -- ++(1.18,0.68) node[right] {$v_C$};
+
+  \draw[gray!75,dashed,thick] (A) -- (O);
+  \draw[gray!75,dashed,thick] (C) -- (O);
+  \fill (O) circle (1.8pt);
+  \node[above left=1pt] at (O) {$O$};
+  \node[left] at (0,2.15) {$r$};
+  \node[gray!70!black] at (1.18,2.45) {$r$};
+  \draw[orange!90!black,thick,->]
+    (0,3.18) arc (-90:-60:0.82);
+  \node[orange!90!black,right] at (0.36,3.45) {$30^\circ$};
+
+  % 两边界间距
+  \draw[gray,dashed] (0,-0.55) -- (0,-0.85);
+  \draw[gray,dashed] (2.00,-0.55) -- (2.00,-0.85);
+  \draw[<->,thick] (0,-0.78) -- (2.00,-0.78)
+    node[midway,fill=white,inner sep=1pt] {$d$};
+  \node[font=\small,rotate=90] at (-0.38,2.10) {左边界};
+  \node[font=\small,rotate=90] at (2.34,2.10) {右边界};
+\end{tikzpicture}

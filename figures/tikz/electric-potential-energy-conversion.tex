@@ -1,0 +1,25 @@
+% TikZ 图：带正电粒子在匀强电场中的能量转化
+\begin{tikzpicture}[scale=0.88,>=Latex,font=\small]
+  \draw[thick] (-2.7,1.35) -- (-2.7,-1.25);
+  \node[left] at (-2.7,0) {$+$};
+  \draw[thick] (2.7,1.35) -- (2.7,-1.25);
+  \node[right] at (2.7,0) {$-$};
+  \foreach \y in {-0.85,-0.28,0.28,0.85} {
+    \draw[->,blue] (-2.45,\y) -- (2.45,\y);
+  }
+  \node[blue,above] at (0,0.85) {$\vect E$};
+
+  \filldraw[red] (-1.55,0) circle (3pt);
+  \node[red,above=3pt] at (-1.55,0) {$+q,\ A$};
+  \draw[->,red,thick] (-1.40,-0.42) -- (-0.72,-0.42)
+    node[midway,below] {$v_A$};
+
+  \filldraw[red] (1.10,0) circle (3pt);
+  \node[red,above=3pt] at (1.10,0) {$B$};
+  \draw[->,red,thick] (1.25,-0.42) -- (2.22,-0.42)
+    node[midway,below] {$v_B$};
+
+  \node[align=center] at (0,-1.72)
+    {$U_{AB}>0,\quad qU_{AB}=\Delta E_k$\\
+     $E_p\text{ 减少}\quad\longrightarrow\quad E_k\text{ 增加}$};
+\end{tikzpicture}

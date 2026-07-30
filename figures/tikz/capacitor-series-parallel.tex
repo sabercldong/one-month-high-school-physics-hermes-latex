@@ -21,18 +21,23 @@
   \end{scope}
 
   \begin{scope}[xshift=6.5cm]
-    \node[font=\bfseries] at (2.35,1.25) {串联：各电容电荷量相同};
+    \node[font=\small\bfseries,align=center] at (2.35,1.42)
+      {串联：中间节点初始不带净电荷时\\各电容器电荷量大小相同};
     \draw[wire] (0,0) -- (1.1,0);
     \draw[capplate] (1.1,0.35) -- (1.1,-0.35);
     \draw[capplate] (1.7,0.35) -- (1.7,-0.35);
     \node[above] at (1.4,0.45) {$C_1$};
+    \node[below,font=\scriptsize] at (1.02,-0.42) {$+Q$};
+    \node[below,font=\scriptsize] at (1.78,-0.42) {$-Q$};
     \draw[wire] (1.7,0) -- (3.0,0);
     \draw[capplate] (3.0,0.35) -- (3.0,-0.35);
     \draw[capplate] (3.6,0.35) -- (3.6,-0.35);
     \node[above] at (3.3,0.45) {$C_2$};
+    \node[below,font=\scriptsize] at (2.92,-0.42) {$+Q$};
+    \node[below,font=\scriptsize] at (3.68,-0.42) {$-Q$};
     \draw[wire] (3.6,0) -- (4.7,0);
     \node[below] at (0,0) {$+$};
     \node[below] at (4.7,0) {$-$};
-    \node[font=\small,align=center] at (2.35,-1.15) {$U=U_1+U_2$\\$Q_1=Q_2=Q$};
+    \node[font=\small,align=center] at (2.35,-1.35) {$U=U_1+U_2$\\$Q_1=Q_2=Q$};
   \end{scope}
 \end{tikzpicture}

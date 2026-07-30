@@ -19,8 +19,8 @@
     \draw[inc] (-2.55,0.88) -- (-1.35,0.88) node[midway,above,font=\scriptsize] {入射脉冲};
     \draw[orange!90!black,thick,samples=80,domain=0.05:2.25]
       plot(\x,{-0.62*exp(-2.4*(\x-1.15)^2)});
-    \draw[ref] (2.10,-0.86) -- (0.95,-0.86) node[midway,below,font=\scriptsize] {反射脉冲};
-    \node[note] at (0,-1.65) {反射后倒相\\端点位移始终为 $0$，形成波节};
+    \draw[ref] (2.10,-1.02) -- (0.95,-1.02) node[midway,below,font=\scriptsize] {反射脉冲};
+    \node[note] at (0,-1.76) {反射后倒相\\端点位移始终为 $0$，形成波节};
   \end{scope}
 
   \begin{scope}[xshift=7.10cm]
@@ -36,7 +36,4 @@
     \draw[ref] (2.10,0.86) -- (0.95,0.86) node[midway,above,font=\scriptsize] {反射脉冲};
     \node[note] at (0,-1.65) {反射后不倒相\\端点振幅最大，形成波腹};
   \end{scope}
-
-  \node[note] at (3.55,-2.38)
-    {边界条件决定反射相位：固定端是波节，自由端是波腹};
 \end{tikzpicture}

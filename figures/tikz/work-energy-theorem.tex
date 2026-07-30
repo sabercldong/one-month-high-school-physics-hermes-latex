@@ -10,8 +10,11 @@
   \draw[thick] (5,0) rectangle (6.5,1.2);
   \node at (5.75,0.6) {$m$};
   \draw[->,thick,blue] (5.20,1.45) -- (6.30,1.45) node[midway,above] {$v_2$};
-  % 合力
-  \draw[->,ultra thick,red] (1.5,0.6) -- (5,0.6) node[midway,above] {$F_{\text{合}}$};
+  % 恒定合力画在物块上，避免误看成连接两个状态的连线。
+  \draw[->,ultra thick,red] (0.75,0.6) -- (2.25,0.6)
+    node[midway,above] {$F_{\text{合}}$};
+  \draw[->,thick,gray] (2.55,0.6) -- (4.45,0.6)
+    node[midway,above,font=\small] {运动过程};
   % 位移
   \draw[<->] (0,-0.6) -- (6.5,-0.6) node[midway,below] {$x$};
   % 动能定理

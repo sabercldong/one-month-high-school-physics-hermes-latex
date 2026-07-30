@@ -1,0 +1,18 @@
+\begin{tikzpicture}[x=1cm,y=1cm,>=Stealth,line cap=round,line join=round]
+  \coordinate (A) at (-2.15,0);
+  \coordinate (B) at (2.15,0);
+
+  \fill[red!80!black] (A) circle (0.075);
+  \fill[blue!75!black] (B) circle (0.075);
+  \node[above=5pt,red!80!black] at (A) {$Q_1>0$};
+  \node[above=5pt,blue!75!black] at (B) {$Q_2<0$};
+
+  \draw[->,very thick,red!80!black] ($(A)+(0.18,0)$) -- ($(A)+(1.15,0)$);
+  \node[below=3pt,red!80!black] at (-1.47,0) {$\vect F_{12}$};
+  \draw[->,very thick,blue!75!black] ($(B)+(-0.18,0)$) -- ($(B)+(-1.15,0)$);
+  \node[below=3pt,blue!75!black] at (1.47,0) {$\vect F_{21}$};
+
+  \draw[<->,gray,thick] (-2.15,-0.72) -- (2.15,-0.72)
+    node[midway,below] {$r$};
+  \node[font=\scriptsize] at (0,0.58) {异种电荷相互吸引};
+\end{tikzpicture}

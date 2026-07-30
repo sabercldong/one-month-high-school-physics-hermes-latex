@@ -1,0 +1,41 @@
+\begin{tikzpicture}[scale=0.82,>=Stealth]
+  % Left: two nearby positions on a circle
+  \begin{scope}[shift={(-3.0,0)}]
+    \coordinate (O) at (0,0);
+    \coordinate (Pone) at (5:1.55);
+    \coordinate (Ptwo) at (35:1.55);
+    \draw[thick] (O) circle (1.55);
+    \fill (O) circle (1.5pt) node[below left] {$O$};
+    \draw[thin] (O) -- (Pone);
+    \draw[thin] (O) -- (Ptwo);
+    \filldraw[red] (Pone) circle (2.2pt) node[right=2pt] {$P_1$};
+    \filldraw[red] (Ptwo) circle (2.2pt) node[above right=1pt] {$P_2$};
+    \draw[->,very thick,blue] (Pone) -- ++(95:0.95)
+      node[right=2pt] {$\vec v_1$};
+    \draw[->,very thick,blue] (Ptwo) -- ++(125:0.95)
+      node[above left=1pt] {$\vec v_2$};
+    \draw (5:0.50) arc[start angle=5,end angle=35,radius=0.50];
+    \node at (20:0.76) {$\Delta\theta$};
+    \node[font=\small] at (0,-2.02) {半径转过 $\Delta\theta$};
+  \end{scope}
+
+  % Right: velocity triangle after translation
+  \begin{scope}[shift={(1.35,-0.55)}]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (0,1.75);
+    \coordinate (C) at (-0.875,1.516);
+    \fill (A) circle (1.4pt) node[below right] {$A$};
+    \draw[->,very thick,blue] (A) -- (B)
+      node[pos=0.43,right=4pt] {$\vec v_1$};
+    \draw[->,very thick,blue] (A) -- (C)
+      node[pos=0.43,left=4pt] {$\vec v_2$};
+    \draw[->,very thick,red] (B) -- (C)
+      node[midway,above=4pt] {$\Delta\vec v$};
+    \draw (90:0.38) arc[start angle=90,end angle=120,radius=0.38];
+    \node at (105:0.64) {$\Delta\theta$};
+    \node[font=\small] at (-0.44,-0.50) {速度三角形};
+    \node[anchor=west,font=\small,align=left] at (1.10,0.72)
+      {$|\Delta\vec v|=2v\sin\dfrac{\Delta\theta}{2}$\\[5pt]
+       $\Delta\theta\to0$ 时指向圆心};
+  \end{scope}
+\end{tikzpicture}

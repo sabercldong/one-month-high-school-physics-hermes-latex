@@ -1,0 +1,24 @@
+% TikZ 图：楞次定律方向判断例题
+% Day 23：电磁感应
+\begin{tikzpicture}[scale=0.92,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-3.25,-1.85) rectangle (3.25,1.95);
+
+  \foreach \x in {-2.35,-1.55,-0.75,0.75,1.55,2.35} {
+    \foreach \y in {-0.95,0,0.95} {
+      \draw[blue,thick] (\x-0.07,\y-0.07) -- (\x+0.07,\y+0.07);
+      \draw[blue,thick] (\x-0.07,\y+0.07) -- (\x+0.07,\y-0.07);
+    }
+  }
+  \node[blue,fill=white,inner sep=1pt] at (-2.25,1.55)
+    {原磁场向里且增强};
+
+  \draw[very thick] (0,0) circle (1.35);
+  \draw[->,red,very thick] (12:1.35) arc (12:305:1.35);
+  \node[red,fill=white,inner sep=1pt] at (1.85,-1.30)
+    {$I_{\text{感}}$ 逆时针};
+
+  \fill[orange!85!black] (0,0) circle (2.4pt);
+  \draw[orange!85!black,thick] (0,0) circle (6.5pt);
+  \node[orange!85!black,fill=white,inner sep=1pt] at (0.15,0.42)
+    {$\vec B_{\text{感}}$ 向外};
+\end{tikzpicture}

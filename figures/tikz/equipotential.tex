@@ -1,17 +1,32 @@
-% TikZ 图：等势面与电场线
-% Day 16：电势能、电势与电势差
-\begin{tikzpicture}[scale=0.8,>=Latex]
-  % 正电荷
-  \filldraw[red] (0,0) circle (3pt);
-  \node[above right] at (0,0) {$+Q$};
-  % 电场线（含结束箭头）
-  \foreach \angle in {0,45,90,135,180,225,270,315} {
-    \draw[->,thick] (0,0) -- (\angle:1.2);
-    \draw[->,thick] (\angle:1.2) -- (\angle:2.4);
-  }
-  % 等势面（虚线圆）
-  \draw[dashed,thick] (0,0) circle (1.0);
-  \draw[dashed,thick] (0,0) circle (1.8);
-  \draw[dashed,thick] (0,0) circle (2.6);
-  \node[below right] at (1.8,0) {等势面};
+% TikZ 图：点电荷与静电平衡导体的等势特征
+\begin{tikzpicture}[scale=0.78,>=Latex,font=\small]
+  % 左图：点电荷等势球面的平面截线
+  \begin{scope}[xshift=-3.2cm]
+    \foreach \a in {0,45,...,315} {
+      \draw[->,blue,thick] (\a:0.28) -- (\a:2.35);
+    }
+    \foreach \r in {0.85,1.48,2.10} {
+      \draw[dashed,gray,thick] (0,0) circle (\r);
+    }
+    \filldraw[red] (0,0) circle (3pt);
+    \node[fill=white,inner sep=1pt,above right=2pt] at (0,0) {$+Q$};
+    \node[align=center] at (0,-2.65) {平面截面中的等势线\\（三维中为同心球面）};
+  \end{scope}
+
+  % 右图：静电平衡导体
+  \begin{scope}[xshift=3.15cm]
+    \draw[thick,fill=gray!14]
+      plot[smooth cycle,tension=0.75] coordinates
+      {(-1.55,-0.65) (-1.20,0.80) (0.10,1.20)
+       (1.55,0.55) (1.35,-0.75) (0.05,-1.10)};
+    \node[align=center] at (0,0) {$\vect E=0$\\$\varphi=\varphi_0$};
+
+    \draw[->,blue,thick] (-1.35,0.65) -- (-2.15,1.05);
+    \draw[->,blue,thick] (-0.10,1.16) -- (-0.15,2.05);
+    \draw[->,blue,thick] (1.35,0.55) -- (2.15,0.90);
+    \draw[->,blue,thick] (1.22,-0.72) -- (1.88,-1.33);
+    \draw[->,blue,thick] (-0.42,-1.04) -- (-0.68,-1.92);
+    \node[blue,fill=white,inner sep=1pt] at (1.95,1.22) {$\vect E\perp$ 表面};
+    \node[align=center] at (0,-2.35) {静电平衡导体\\整体及表面等势};
+  \end{scope}
 \end{tikzpicture}

@@ -1,7 +1,7 @@
 % TikZ 图：磁化与电磁铁
 % Day 21：磁场与安培力
-\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round]
-  \path[use as bounding box] (-5.15,-2.10) rectangle (5.15,2.15);
+\begin{tikzpicture}[scale=0.78,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-5.15,-1.88) rectangle (5.15,1.96);
 
   \begin{scope}[shift={(-2.55,0)}]
     \node[font=\small] at (0,1.78) {空心螺线管};
@@ -15,7 +15,7 @@
     \foreach \y in {-0.22,0.22} {
       \draw[blue,thick,->] (-1.85,\y) -- (1.85,\y);
     }
-    \draw[blue,thick,->] (-1.80,0.86) .. controls (-0.65,1.18) and (0.65,1.18) .. (1.80,0.86);
+    \draw[blue,thick,->] (1.80,0.86) .. controls (0.65,1.18) and (-0.65,1.18) .. (-1.80,0.86);
     \draw[blue,thick,->] (1.80,-0.86) .. controls (0.65,-1.18) and (-0.65,-1.18) .. (-1.80,-0.86);
     \node[blue,font=\small] at (1.95,0.36) {$B$};
     \node[font=\small] at (0,-1.58) {电流产生磁场};
@@ -33,7 +33,7 @@
     \foreach \y in {-0.35,0,0.35} {
       \draw[blue,very thick,->] (-1.98,\y) -- (1.98,\y);
     }
-    \draw[blue,very thick,->] (-1.95,0.92) .. controls (-0.70,1.32) and (0.70,1.32) .. (1.95,0.92);
+    \draw[blue,very thick,->] (1.95,0.92) .. controls (0.70,1.32) and (-0.70,1.32) .. (-1.95,0.92);
     \draw[blue,very thick,->] (1.95,-0.92) .. controls (0.70,-1.32) and (-0.70,-1.32) .. (-1.95,-0.92);
     \node[blue,font=\small] at (2.12,0.52) {$B$ 增强};
     \node[font=\small] at (0,-1.58) {铁芯磁化，磁场增强};

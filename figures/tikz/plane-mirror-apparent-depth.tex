@@ -17,8 +17,8 @@
     \fill[red] (O) circle (1.7pt) node[left,label] {物点 $O$};
     \fill[red!50] (I) circle (1.5pt) node[right,label] {虚像 $O'$};
 
-    \draw[ray] (O) -- (0,0.95) -- (-1.05,1.25);
-    \draw[ray] (O) -- (0,0.10) -- (-1.20,-0.42);
+    \draw[ray] (O) -- (0,0.95) -- (-1.20,1.23);
+    \draw[ray] (O) -- (0,0.10) -- (-1.20,-0.22);
     \draw[ext] (0,0.95) -- (I);
     \draw[ext] (0,0.10) -- (I);
 
@@ -37,26 +37,28 @@
     \node[label] at (-1.75,-1.45) {水};
 
     \coordinate (O) at (0,-1.20);
-    \coordinate (A) at (-0.78,0);
-    \coordinate (B) at (0.74,0);
-    \coordinate (Eye) at (1.85,1.08);
-    \coordinate (Op) at (0,-0.48);
+    \coordinate (A) at (0.81,0);
+    \coordinate (B) at (0.89,0);
+    \coordinate (EyeLow) at (1.75,1.02);
+    \coordinate (EyeHigh) at (1.93,1.02);
+    \coordinate (Eye) at (1.84,1.02);
+    \coordinate (Op) at (0,-0.88);
 
     \fill[red] (O) circle (1.7pt) node[below right,label] {$O$};
     \fill[red!50] (Op) circle (1.4pt) node[left,label] {虚像 $O'$};
     \node[label] at (Eye) {眼};
-    \draw[thick] (1.63,0.93) ellipse (0.17 and 0.10);
+    \draw[thick] (Eye) ellipse (0.20 and 0.12);
 
     \draw[blue,very thick] (O) -- (A);
-    \draw[ray] (A) -- (Eye);
+    \draw[ray] (A) -- (EyeLow);
     \draw[blue,very thick] (O) -- (B);
-    \draw[ray] (B) -- (Eye);
+    \draw[ray] (B) -- (EyeHigh);
     \draw[ext] (A) -- (Op);
     \draw[ext] (B) -- (Op);
 
     \draw[guide] (0,-1.55) -- (0,0.25);
-    \draw[<->,gray] (-0.52,0) -- (-0.52,-0.48);
-    \node[font=\scriptsize,gray,left] at (-0.52,-0.24) {视深};
+    \draw[<->,gray] (-0.52,0) -- (-0.52,-0.88);
+    \node[font=\scriptsize,gray,left] at (-0.52,-0.44) {视深};
     \draw[<->,gray] (0.52,0) -- (0.52,-1.20);
     \node[font=\scriptsize,gray,right] at (0.52,-0.88) {实深};
   \end{scope}

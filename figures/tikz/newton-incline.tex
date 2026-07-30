@@ -1,29 +1,46 @@
-% TikZ 图：斜面上牛顿第二定律（下滑时）
+% TikZ 图：斜面下滑时的真实受力与重力分解
 % Day 06：牛顿运动定律
-\begin{tikzpicture}[scale=0.92,>=Latex]
-  % 斜面：物体放在上表面，右下方为下滑方向。
-  \draw[thick] (0,0) -- (5,0) -- (0,2) -- cycle;
-  \draw[thick] (0,2) -- (5,0);
-  \draw (4.25,0) arc (180:158.2:0.75);
-  \node at (4.1,0.25) {$\theta$};
+\begin{tikzpicture}[scale=0.86,>=Latex,line cap=round,line join=round]
+  \def\ang{22}
 
-  \coordinate (P) at ($(0,2)!0.47!(5,0)$);
-  \coordinate (C) at ($(P)+(68.199:0.42)$);
+  % 左图：真实受力和加速度。
+  \begin{scope}
+    \draw[thick] (0,1.65) -- (4.15,0) -- (0,0) -- cycle;
+    \draw (3.28,0) arc[start angle=180,end angle=158,radius=0.62];
+    \node at (3.18,0.23) {$\theta$};
 
-  \begin{scope}[shift={(P)},rotate=-21.801]
-    \filldraw[fill=white,thick] (-0.6,0) rectangle (0.6,0.85);
-    \node at (0,0.43) {$m$};
+    \coordinate (P) at (1.95,0.87);
+    \coordinate (C) at ($(P)+(68:0.36)$);
+    \begin{scope}[shift={(P)},rotate=-22]
+      \draw[fill=white,thick] (-0.54,0) rectangle (0.54,0.76);
+      \node at (0.27,0.50) {$m$};
+    \end{scope}
+
+    \draw[->,very thick,blue] (C) -- ++(0,-1.18)
+      node[below right=1pt] {$mg$};
+    \draw[->,very thick,blue] (C) -- ++(68:1.04)
+      node[above left=1pt] {$N$};
+    \draw[->,very thick,red] (C) -- ++(158:1.08)
+      node[above left=1pt] {$f_k$};
+
+    % 加速度不是力，单独画在物块上方。
+    \draw[->,very thick,orange!85!black]
+      ($(C)+(68:0.73)+(158:0.10)$) -- ++(-22:1.20)
+      node[above right=1pt] {$a$};
   \end{scope}
 
-  % 重力分力，用虚线区分，避免误认为额外真实力。
-  \draw[->,thick,red,dashed] (C) -- ++(-21.801:1.25) node[below right] {$G\sin\theta$};
-  \draw[->,thick,blue,dashed] (C) -- ++(-111.801:0.75) node[pos=0.75,left] {$G\cos\theta$};
+  % 右图：只画重力的两个正交分量。
+  \begin{scope}[shift={(5.40,0)}]
+    \node[font=\small\bfseries] at (1.62,2.42) {重力分解};
+    \coordinate (Q) at (1.62,1.88);
 
-  % 真实受力：重力、支持力、摩擦力。
-  \draw[->,thick,blue] (C) -- ++(0,-1.15) node[right] {$G$};
-  \draw[->,thick,blue] (C) -- ++(68.199:1.1) node[above] {$N$};
-  \draw[->,thick,red] (C) -- ++(158.199:1.05) node[above] {$f_k$};
-
-  % 加速度方向。
-  \draw[->,ultra thick,red] ($(C)+(68.199:0.62)+(158.199:0.2)$) -- ++(-21.801:1.35) node[above right] {$a$};
+    \draw[dashed,gray] ($(Q)+(158:1.10)$) -- ($(Q)+(-22:1.50)$);
+    \draw[dashed,gray] ($(Q)+(68:0.80)$) -- ($(Q)+(-112:1.45)$);
+    \draw[->,very thick,black] (Q) -- ++(0,-1.62)
+      node[below right=1pt] {$mg$};
+    \draw[->,very thick,red] (Q) -- ++(-22:1.38)
+      node[right=4pt] {$mg\sin\theta$};
+    \draw[->,very thick,blue] (Q) -- ++(-112:1.22)
+      node[left=4pt] {$mg\cos\theta$};
+  \end{scope}
 \end{tikzpicture}

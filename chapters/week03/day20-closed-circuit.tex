@@ -19,12 +19,12 @@
 \end{enumerate}
 \section*{二、初高中衔接}
 
-初中物理中，电源常被近似看成恒定电压源（如“一节干电池 $1.5\ \mathrm{V}$”）。高中要进一步区分电动势和路端电压：空载时万用表读数常接近电动势；一旦接上负载，电流流过内阻，路端电压就会低于电动势。旧电池内阻较大，带负载时电压下降更明显。
+初中物理中，电源常被近似看成恒定电压源（如“一节干电池 $1.5\ \mathrm{V}$”）。高中要进一步区分电动势和路端电压：空载时万用表读数常接近电动势；一旦接上负载，电流流过内阻，路端电压就会低于电动势。旧电池的内阻通常较大，带负载时电压下降更明显。
 
 高中引入两个新概念：
 \begin{itemize}
-  \item \textbf{电动势 $E$：} 电源本身的特性（如干电池的电动势为 $1.5\ \mathrm{V}$）。
-  \item \textbf{内阻 $r$：} 电源内部的电阻（旧电池内阻增大，所以输出电压降低）。
+  \item \textbf{电动势 $E$：} 描述电源把其他形式的能转化为电能的本领（如一节干电池的电动势约为 $1.5\ \mathrm{V}$）。
+  \item \textbf{内阻 $r$：} 电源内部电压损失的等效描述。内阻会随温度、荷电状态和老化程度变化，题目通常把给定工作状态下的 $r$ 视为定值。
 \end{itemize}
 
 闭合电路欧姆定律揭示了：$E$ = 外电路电压 + 内电路电压。
@@ -86,6 +86,7 @@ E=IR+Ir=I(R+r),\qquad I=\frac{E}{R+r}.
 
 \begin{conceptbox}{路端电压与外电阻的关系}
 
+\textbf{以下变化规律均以电源的 $E$、$r$ 保持不变，电源处于放电状态为前提。}
 \begin{itemize}
   \item 外电阻 $R \uparrow$ $\to$ 电流 $I \downarrow$ $\to$ 内压 $Ir \downarrow$ $\to$ 路端电压 $U \uparrow$。
   \item 外电阻 $R \downarrow$ $\to$ 电流 $I \uparrow$ $\to$ 内压 $Ir \uparrow$ $\to$ 路端电压 $U \downarrow$。
@@ -109,9 +110,19 @@ P_{\text{出}} = UI
 P_{\text{出}} = I^2R = \left(\frac{E}{R+r}\right)^2 R
 \]
 
-\textbf{最大输出功率条件：}
-当 $R = r$ 时，输出功率最大：
+\textbf{最大输出功率条件：} 当 $E$、$r$ 不变且 $R>0$、$r>0$ 时，
 \[
+P_{\text{出}}
+=\frac{E^2R}{(R+r)^2}
+=\frac{E^2}{R+2r+\dfrac{r^2}{R}}.
+\]
+由基本不等式
+\[
+R+\frac{r^2}{R}\geq 2r
+\]
+可知分母的最小值为 $4r$，等号在 $R=r$ 时成立。因此
+\[
+\boxed{R=r},\qquad
 P_{\max} = \frac{E^2}{4r}
 \]
 
@@ -126,7 +137,7 @@ P_{\max} = \frac{E^2}{4r}
 \eta = \frac{P_{\text{出}}}{P_{\text{总}}} = \frac{I^2R}{I^2(R+r)} = \frac{R}{R+r}
 \]
 
-$R$ 越大，效率越高。但在最大输出功率时（$R = r$），效率仅为 $50\%$；因此 $R=r$ 只对应“输出功率最大”，不对应“效率最高”。
+$R$ 越大，效率越高。但当 $R\to\infty$ 时，$\eta\to 1$ 的同时 $I\to 0$、$P_{\text{出}}\to 0$。在最大输出功率时（$R = r$），效率仅为 $50\%$；因此“效率较高”和“输出功率较大”是两个不同的目标。
 
 \end{conceptbox}
 
@@ -139,7 +150,7 @@ $R$ 越大，效率越高。但在最大输出功率时（$R = r$），效率仅
   \item 先分清电源电动势 $E$、路端电压 $U$、内阻 $r$ 和外电阻 $R$。
   \item 判断研究的是整个闭合电路，还是只研究外电路某一支路。
   \item 电源内部也有能量损耗，闭合电路中总功率、输出功率和内耗功率要分开。
-  \item 动态电路先判断总电阻如何变，再依次判断总电流、路端电压和支路量。
+  \item 动态电路先确认 $E$、$r$ 是否保持不变，再判断总电阻如何变，依次判断总电流、路端电压和支路量。
   \item 最大功率问题先确认问的是输出功率还是效率；$R=r$ 只对应纯电阻外电路输出功率最大。
 \end{enumerate}
 \end{samepage}
@@ -174,7 +185,7 @@ $\eta = \dfrac{R}{R+r}$ & 电源效率 & 单电源纯电阻外电路 \\
 
 \subsection*{模型 1：外电阻变化引起的动态分析}
 
-$R \uparrow \to I \downarrow \to U \uparrow$。分析顺序：局部 $\to$ 整体 $\to$ 局部。
+在电源的 $E$、$r$ 保持不变时，$R \uparrow \to I \downarrow \to U \uparrow$。分析顺序是：先由局部变化判断外电路总电阻，再判断干路电流，最后回到所求支路，即“局部 $\to$ 整体 $\to$ 局部”。
 
 \begin{center}
 \input{figures/tikz/closed-circuit-dynamic}
@@ -188,6 +199,7 @@ $U = E - Ir$，$U$-$I$ 图像是一条斜率为 $-r$ 的直线。
 \begin{itemize}
   \item 纵轴截距：$E$（电动势，$I=0$ 时）。
   \item 斜率绝对值：$r$（内阻）。
+  \item 横轴截距：$I_{\text{短}}=\dfrac{E}{r}$（把直线外推到 $U=0$）。
 \end{itemize}
 
 \begin{center}
@@ -198,7 +210,7 @@ $U = E - Ir$，$U$-$I$ 图像是一条斜率为 $-r$ 的直线。
 
 \subsection*{模型 3：伏安法测 $E$ 和 $r$}
 
-实验原理：改变外电阻 $R$，测多组 $U$、$I$，作 $U$-$I$ 图，由截距和斜率求 $E$ 和 $r$。
+实验原理：改变外电阻 $R$，测多组 $U$、$I$，作 $U$-$I$ 图，由截距和斜率求 $E$ 和 $r$。图中先按理想电表处理：电压表内阻无限大、电流表内阻为零，此时电压表读路端电压，电流表读干路电流。
 
 \begin{center}
 \input{figures/tikz/source-measure-circuit}
@@ -216,6 +228,21 @@ $U = E - Ir$，$U$-$I$ 图像是一条斜率为 $-r$ 的直线。
 \[
 r=\frac{U_1-U_2}{I_2-I_1},\qquad E=U_1+I_1r
 \]
+
+\textbf{实际仪表的误差判断：} 图中若电压表内阻为有限值 $R_V$，电流表读数记为 $I_A$，则电压表还分走电流 $I_V=U/R_V$。电源中的总电流是
+\[
+I_{\text{总}}=I_A+\frac{U}{R_V},
+\]
+而不是 $I_A$。代入 $U=E-rI_{\text{总}}$，整理得
+\[
+U=\frac{ER_V}{R_V+r}-\frac{rR_V}{R_V+r}I_A.
+\]
+若仍把纵截距和斜率绝对值直接当作电动势、内阻，就会得到
+\[
+E_{\text{测}}=\frac{ER_V}{R_V+r}<E,\qquad
+r_{\text{测}}=\frac{rR_V}{R_V+r}<r.
+\]
+因此误差结论必须和具体接法对应；不能离开电路图孤立地背“偏大”或“偏小”。
 
 \section*{六、例题精讲}
 
@@ -240,19 +267,17 @@ r=\frac{U_1-U_2}{I_2-I_1},\qquad E=U_1+I_1r
 
 \begin{enumerate}
   \item $I = \dfrac{E}{R+r} = \dfrac{12}{5+1} = 2\ \mathrm{A}$
-  
+
   \item $U = IR = 2 \times 5 = 10\ \mathrm{V}$（或 $U = E - Ir = 12 - 2 \times 1 = 10\ \mathrm{V}$）
-  
+
   \item $U_{\text{内}} = Ir = 2 \times 1 = 2\ \mathrm{V}$
-  
+
   验证：$E = U + U_{\text{内}} = 10 + 2 = 12\ \mathrm{V}$ $\checkmark$
 \end{enumerate}
 
 \textbf{方法总结：} 在电源向外供电的普通闭合电路中，$E = U_{\text{外}} + U_{\text{内}}$。此时路端电压小于电动势，差值等于内阻上的电压降；若讨论给电池充电等反向过程，路端电压与电动势的关系需要重新按能量方向判断。
 
 \end{examplebox}
-
-\clearpage
 
 \begin{examplebox}{路端电压的变化}
 
@@ -280,11 +305,9 @@ I_2 = \frac{6}{1 + 0.5} = \frac{6}{1.5} = 4\ \mathrm{A},\qquad
 U_2 = 6 - 4 \times 0.5 = 4\ \mathrm{V}
 \]
 
-\textbf{方法总结：} 动态电源题先由外电阻判断电流，再看内电压和路端电压；外电阻越小，电流越大，路端电压越小。
+\textbf{方法总结：} 在 $E$、$r$ 不变时，动态电源题先由外电阻判断电流，再看内电压和路端电压；外电阻越小，电流越大，路端电压越小。
 
 \end{examplebox}
-
-\clearpage
 
 \begin{examplebox}{电源最大输出功率}
 
@@ -307,9 +330,9 @@ U_2 = 6 - 4 \times 0.5 = 4\ \mathrm{V}
 
 \begin{enumerate}
   \item $R = r = 2\ \Omega$ 时输出功率最大。
-  
+
   \item $P_{\max} = \dfrac{E^2}{4r} = \dfrac{10^2}{4 \times 2} = \dfrac{100}{8} = 12.5\ \mathrm{W}$
-  
+
   \item $\eta = \dfrac{R}{R+r} = \dfrac{2}{2+2} = 50\%$
 \end{enumerate}
 
@@ -324,45 +347,57 @@ U_2 = 6 - 4 \times 0.5 = 4\ \mathrm{V}
   \begin{center}
   \input{figures/tikz/training-closed-circuit-generic}
   \end{center}
-  
+
+  \item 电源 $E=6\ \mathrm V$、$r=1\ \Omega$ 保持不变。外电阻由 $2\ \Omega$ 增大到 $5\ \Omega$，分别求变化前后的电流、路端电压、输出功率和效率，并比较四个物理量的变化方向。
+
   \item 电源 $E = 6\ \mathrm{V}$，$r = 2\ \Omega$，当外电阻 $R$ 多大时电源输出功率最大？最大功率是多少？
   \begin{center}
   \input{figures/tikz/training-max-power-generic}
   \end{center}
-  
+
   \item 用伏安法测电源电动势和内阻，测得 $U_1 = 1.4\ \mathrm{V}$、$I_1 = 0.2\ \mathrm{A}$ 和 $U_2 = 1.2\ \mathrm{V}$、$I_2 = 0.4\ \mathrm{A}$。求 $E$ 和 $r$。
+
+  \item 在图~\ref{fig:source-measure-circuit}所示接法中，考虑电压表内阻有限而把电流表视为理想电表。判断由 $U$-$I_A$ 图拟合得到的 $E_{\text{测}}$、$r_{\text{测}}$ 与真实值相比偏大还是偏小。
 \end{enumerate}
 
-\section*{八、易错点}
-
-\begin{mistakebox}
-\begin{enumerate}
-  \item \textbf{混淆电动势和路端电压：} 先看电路是否闭合。电动势 $E$ 是电源本身的属性，路端电压 $U$ 是接入外电路后的实际电压；开路时 $U = E$，闭路有电流且内阻不为零时 $U = E-Ir < E$。
-  
-  \item \textbf{短路电流的计算忘记内阻：} 短路时先保留电源内阻，$R = 0$，$I = \dfrac{E}{r}$，不是 $\infty$。
-  
-  \item \textbf{动态分析中 $U$、$I$ 的变化方向判断错：} 不能只记变化箭头。先由 $I=\dfrac{E}{R+r}$ 判断总电流变化，再由 $U=E-Ir$ 判断路端电压变化；例如 $R\uparrow$ 时，$I\downarrow$，内电压 $Ir\downarrow$，所以 $U\uparrow$。
-  
-  \item \textbf{最大功率的条件写反：} 先区分输出功率和效率；输出功率最大条件是 $R = r$，不是 $R$ 越大越好。
-  
-  \item \textbf{实验测 $E$、$r$ 的误差分析：} 先问电压表测的是路端电压还是含表压降的电压，再判断 $E$、$r$ 的系统误差方向。
-\end{enumerate}
-\end{mistakebox}
-
-\newpage
-\section*{九、竞赛入门补充}
-
-\subsection*{1.\quad 闭合电路综合判断}
-
-\begin{learningbox}{三个容易混在一起的判断}
-\begin{enumerate}
-  \item \textbf{动态分析：} 先看外电路总电阻，再看 $I=\dfrac{E}{R_{\text{外}}+r}$，最后看 $U=E-Ir$ 和局部支路。
-  \item \textbf{功率与效率：} $R=r$ 时输出功率最大，但效率只有 $50\%$；实际电源和输电常追求高效率，即希望内阻损耗小。
-  \item \textbf{实验作图：} 多组 $U$、$I$ 作直线拟合，可以减小偶然误差；判断系统误差时，要问清楚电压表、电流表实际测量的是哪一段电路。
+\begin{learningbox}{变式训练参考结果}
+\begin{enumerate}[itemsep=0.45em,topsep=0.3em,parsep=0pt]
+  \item $I=E/(R+r)=1.0\ \mathrm A$，路端电压 $U=IR=8.0\ \mathrm V$，
+  内电压 $U_r=Ir=1.0\ \mathrm V$。
+  \item $R=2\ \Omega$ 时，$I_1=2.0\ \mathrm A$、$U_1=4.0\ \mathrm V$、
+  $P_1=8.0\ \mathrm W$、$\eta_1=2/3$；$R=5\ \Omega$ 时，
+  $I_2=1.0\ \mathrm A$、$U_2=5.0\ \mathrm V$、$P_2=5.0\ \mathrm W$、
+  $\eta_2=5/6$。外阻增大后，电流和输出功率减小，路端电压和效率增大。
+  \item 当 $R=r=2.0\ \Omega$ 时输出功率最大，
+  $P_{\max}=E^2/(4r)=4.5\ \mathrm W$。
+  \item 由 $U=E-Ir$，得
+  $r=(U_1-U_2)/(I_2-I_1)=1.0\ \Omega$，
+  $E=U_1+I_1r=1.6\ \mathrm V$。
+  \item 电压表分流使电源总电流大于 $I_A$。按正文推导，
+  $E_{\text{测}}<E$、$r_{\text{测}}<r$。
 \end{enumerate}
 \end{learningbox}
 
-\newpage
+\section*{八、竞赛入门补充}
+
+\subsection*{1.\quad 两个负载的输出功率相等}
+
+\begin{competitionbox}
+\textbf{问题：} 同一电源分别接纯电阻 $R_1$、$R_2$，若两次输出功率相等，两个负载之间有什么关系？
+
+由输出功率公式交叉相乘并整理：
+\[
+\begin{aligned}
+\frac{E^2R_1}{(R_1+r)^2}
+  &=\frac{E^2R_2}{(R_2+r)^2}\\
+  &\Longrightarrow (R_1-R_2)(r^2-R_1R_2)=0.
+\end{aligned}
+\]
+若 $R_1\ne R_2$，则 $\boxed{R_1R_2=r^2}$。这说明最大功率点 $R=r$
+两侧可以出现两个输出功率相同的负载：一个小于 $r$，另一个大于 $r$。
+二者输出功率虽然相同，但由 $\eta=R/(R+r)$ 可知，外阻较大的那一次效率更高。
+\end{competitionbox}
+
 \subsection*{2.\quad 含电容器的闭合电路}
 
 \begin{competitionbox}
@@ -389,14 +424,30 @@ I = \frac{E}{R_1 + R_2 + r} = \frac{10}{4 + 5 + 1} = 1\ \mathrm{A}
 \textbf{竞赛提示：} 含电容器的直流电路问题中，稳定时电容器支路视为断路，电容器电压等于与之并联部分的电压。
 \end{competitionbox}
 
+\section*{九、易错点}
+
+\begin{mistakebox}
+\begin{enumerate}
+  \item \textbf{混淆电动势和路端电压：} 先看电路是否闭合。电动势 $E$ 是电源本身的属性，路端电压 $U$ 是接入外电路后的实际电压；开路时 $U = E$，闭路有电流且内阻不为零时 $U = E-Ir < E$。
+
+  \item \textbf{短路电流的计算忘记内阻：} 短路时先保留电源内阻，$R = 0$，$I = \dfrac{E}{r}$，不是 $\infty$。
+
+  \item \textbf{动态分析中 $U$、$I$ 的变化方向判断错：} 先确认 $E$、$r$ 不变，再由 $I=\dfrac{E}{R+r}$ 判断总电流变化，最后由 $U=E-Ir$ 判断路端电压变化；例如 $R\uparrow$ 时，$I\downarrow$，内电压 $Ir\downarrow$，所以 $U\uparrow$。
+
+  \item \textbf{最大功率的条件写反：} 先区分输出功率和效率；输出功率最大条件是 $R = r$，不是 $R$ 越大越好。
+
+  \item \textbf{实验测 $E$、$r$ 的误差分析：} 先明确本题是否把电表视为理想。若非理想，先补画电压表内阻和电流表内阻，再判断电压表读的是哪一段电压、电流表读的是哪一路电流，最后才判断 $E$、$r$ 的系统误差方向。
+\end{enumerate}
+\end{mistakebox}
+
 \section*{十、今日小结}
 
 \begin{enumerate}
   \item 外电路可等效为纯电阻 $R$ 时，先画出内阻 $r$ 和外阻 $R$，再写闭合电路欧姆定律 $I = \dfrac{E}{R+r}$，$E = IR + Ir$。
-  \item 判断路端电压变化时，先看电流 $I$ 怎样变，再由 $U = E - Ir$ 判断；外电阻增大通常使 $I$ 减小、$U$ 增大。
+  \item 在 $E$、$r$ 不变且电源放电时，判断路端电压变化要先看电流 $I$ 怎样变，再由 $U = E - Ir$ 判断；外电阻增大使 $I$ 减小、$U$ 增大。
   \item 电源输出功率 $P_{\text{出}} = I^2R$，讨论最大值前先确认只有 $R$ 改变、$E,r$ 不变；$R = r$ 时最大，$P_{\max} = \dfrac{E^2}{4r}$。
-  \item 电源效率 $\eta = \dfrac{R}{R+r}$，要和最大输出功率分开判断；最大功率时效率仅 $50\%$。
-  \item 伏安法 $U$-$I$ 图先写成 $U=E-rI$，再读纵截距 $= E$、斜率 $= -r$。
+  \item 电源效率 $\eta = \dfrac{R}{R+r}$，要和最大输出功率分开判断；$R\to\infty$ 时效率趋近 $100\%$，但输出功率趋近于零。
+  \item 伏安法 $U$-$I$ 图先写成 $U=E-rI$，再读纵截距 $=E$、斜率 $=-r$、横轴截距 $=E/r$；非理想电表的误差必须结合具体接法判断。
 \end{enumerate}
 
 \textbf{一分钟复盘：} 画一个含内阻电源的闭合电路，分别标 $E$、$Ir$、$U$ 和外电阻 $R$；再说出 $R$ 增大时 $I$、$U$、效率怎样变，并用 $R$ 与 $r$ 的大小关系判断输出功率的变化。

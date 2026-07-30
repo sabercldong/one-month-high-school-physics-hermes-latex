@@ -3,15 +3,17 @@
 \begin{tikzpicture}[scale=0.8,>=Latex]
   % 两个正电荷
   \filldraw[red] (0,0) circle (4pt);
-  \node[above] at (0,0) {$+Q_1$};
+  \node[above=6pt] at (0,0) {$+Q_1$};
   \filldraw[red] (4,0) circle (4pt);
-  \node[above] at (4,0) {$+Q_2$};
+  \node[above=6pt] at (4,0) {$+Q_2$};
   % 距离
   \draw[<->] (0,-0.65) -- (4,-0.65);
   \node[below] at (2,-0.65) {$r$};
   % 斥力：同号电荷相互远离
-  \draw[->,thick,blue] (-0.2,0) -- (-1.4,0) node[midway,above] {$\vect{F}$};
-  \draw[->,thick,blue] (4.2,0) -- (5.4,0) node[midway,above] {$\vect{F}$};
+  \draw[->,thick,blue] (-0.2,0) -- (-1.55,0);
+  \node[blue,above] at (-1.18,0) {$\vect{F}_{21}$};
+  \draw[->,thick,blue] (4.2,0) -- (5.55,0);
+  \node[blue,above] at (5.18,0) {$\vect{F}_{12}$};
   % 公式
   \node at (2,-1.75) {$F = k\dfrac{|Q_1 Q_2|}{r^2}$};
 \end{tikzpicture}

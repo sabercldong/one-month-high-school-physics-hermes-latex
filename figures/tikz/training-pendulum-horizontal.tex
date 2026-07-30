@@ -1,0 +1,40 @@
+% TikZ 图：单摆从水平位置释放到最低点
+% Day 09：摆球质心下降高度等于摆长 l
+\begin{tikzpicture}[scale=0.90,>=Latex,line cap=round,line join=round]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (-2.40,0);
+  \coordinate (B) at (0,-2.40);
+
+  % 支架与支点
+  \draw[thick] (-0.62,0.52) -- (0.62,0.52);
+  \foreach \x in {-0.48,-0.24,0,0.24,0.48}
+    \draw[thin] (\x,0.52) -- ++(-0.18,0.18);
+  \draw[thick] (0,0.52) -- (O);
+  \fill (O) circle (2.3pt);
+  \node[right=5pt] at (O) {支点};
+
+  % 初、末两位置的摆线及圆弧轨迹
+  \draw[very thick] (O) -- (A);
+  \draw[very thick,gray!70!black] (O) -- (B);
+  \draw[dashed,orange!85!black,thick]
+    (A) arc[start angle=180,end angle=270,radius=2.40];
+  \node[orange!85!black] at (-1.72,-1.58) {圆弧轨迹};
+
+  % 摆球与状态标记
+  \fill (A) circle (3.2pt);
+  \fill (B) circle (3.2pt);
+  \node[above left=2pt] at (A) {初态：释放点};
+  \node[below left=3pt] at (B) {末态：最低点};
+  \node[above] at (-1.20,0) {$l$};
+  \node[right] at (0,-1.20) {$l$};
+
+  % 摆球质心的竖直高度差
+  \draw[dashed] (A) -- (-2.92,0);
+  \draw[dashed] (B) -- (-2.92,-2.40);
+  \draw[<->,thick] (-2.92,0) -- (-2.92,-2.40)
+    node[left,midway] {$h=l$};
+
+  % 最低点速度沿圆周切线
+  \draw[->,blue,very thick] (0.14,-2.40) -- (1.18,-2.40)
+    node[above,midway] {$v$};
+\end{tikzpicture}

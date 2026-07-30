@@ -1,16 +1,40 @@
-% TikZ 图：LC 振荡能量转化
+% TikZ 图：理想 LC 回路一个周期内的四个典型状态
 % Day 24：电磁振荡
-\begin{tikzpicture}[scale=0.9,>=Latex]
-  \foreach \x/\title/\cap in {0/电场能最大/电容器带电,3.4/磁场能最大/电流最大,6.8/电场能反向最大/极板反向带电}{
-    \draw[rounded corners=2pt] (\x,0) rectangle ++(2.2,1.6);
-    \draw[thick] (\x+0.55,0.35) -- (\x+0.55,1.25);
-    \draw[thick] (\x+0.85,0.35) -- (\x+0.85,1.25);
-    \draw[decorate,decoration={coil,aspect=0.45,segment length=4pt,amplitude=3pt}] (\x+1.25,0.80) -- (\x+1.85,0.80);
-    \node[font=\small] at (\x+1.1,1.9) {\title};
-    \node[font=\small] at (\x+1.1,-0.3) {\cap};
+\begin{tikzpicture}[scale=0.86,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.45,-2.20) rectangle (11.15,2.15);
+
+  \foreach \x/\top/\bottom in {
+    0/{电场能最大}/{q=+q_m,\ i=0},
+    2.85/{磁场能最大}/{q=0,\ i=+I_m},
+    5.70/{电场能最大}/{q=-q_m,\ i=0},
+    8.55/{磁场能最大}/{q=0,\ i=-I_m}
+  }{
+    \draw[rounded corners=3pt,fill=gray!5] (\x,0) rectangle ++(2.10,1.30);
+    \draw[thick] (\x+0.46,0.27) -- (\x+0.46,1.03);
+    \draw[thick] (\x+0.73,0.27) -- (\x+0.73,1.03);
+    \draw[thick,decorate,decoration={coil,aspect=0.45,segment length=4pt,amplitude=3pt}]
+      (\x+1.12,0.65) -- (\x+1.82,0.65);
+    \node[font=\scriptsize\bfseries] at (\x+1.05,1.62) {\top};
+    \node[font=\scriptsize] at (\x+1.05,-0.28) {$\bottom$};
   }
-  \draw[->,thick] (2.35,0.8) -- (3.15,0.8);
-  \draw[->,thick] (5.75,0.8) -- (6.55,0.8);
-  \node[align=center,font=\small] at (4.5,-0.85)
-    {$E_C=\dfrac12CU^2,\quad E_L=\dfrac12LI^2$};
+
+  % Charge and current cues.
+  \node[red,font=\scriptsize] at (0.45,0.95) {$+$};
+  \node[blue,font=\scriptsize] at (0.74,0.95) {$-$};
+  \draw[orange!85!black,->,thick] (3.30,0.18) -- (4.35,0.18)
+    node[midway,below,font=\scriptsize] {$i>0$};
+  \node[blue,font=\scriptsize] at (6.15,0.95) {$-$};
+  \node[red,font=\scriptsize] at (6.44,0.95) {$+$};
+  \draw[orange!85!black,<-,thick] (8.98,0.18) -- (10.03,0.18)
+    node[midway,below,font=\scriptsize] {$i<0$};
+
+  \draw[->,thick] (2.18,0.65) -- (2.72,0.65);
+  \draw[->,thick] (5.03,0.65) -- (5.57,0.65);
+  \draw[->,thick] (7.88,0.65) -- (8.42,0.65);
+  \draw[->,thick] (10.65,-0.72) .. controls (7.40,-1.18) and (3.20,-1.18) ..
+    (0.90,-0.72);
+  \node[font=\scriptsize,fill=white,inner sep=1.5pt] at (5.55,-1.03)
+    {继续演化，回到初态};
+  \node[font=\small] at (5.55,-1.78)
+    {$T_{\mathrm{LC}}=2\pi\sqrt{LC}$};
 \end{tikzpicture}

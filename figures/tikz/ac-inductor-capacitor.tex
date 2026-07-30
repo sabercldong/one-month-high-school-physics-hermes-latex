@@ -1,0 +1,39 @@
+% TikZ 图：电感、电容对不同频率交流的作用
+% Day 24：交变电流
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.45,-1.95) rectangle (10.45,2.15);
+
+  % Inductor.
+  \node[font=\small\bfseries] at (2.25,1.82) {电感：通低频，阻高频};
+  \draw[thick] (0.15,0.80) -- (0.95,0.80);
+  \draw[thick,decorate,decoration={coil,aspect=0.5,segment length=5pt,amplitude=4pt}]
+    (0.95,0.80) -- (2.55,0.80);
+  \draw[thick] (2.55,0.80) -- (3.20,0.80);
+  \node[font=\scriptsize] at (1.68,0.22) {自感作用阻碍电流变化};
+  \node[blue!70!black,font=\small] at (1.68,-0.48)
+    {$X_L=2\pi fL$};
+  \draw[->,thick] (3.55,-0.68) -- (4.72,-0.68) node[right,font=\scriptsize] {$f$};
+  \draw[->,thick] (3.55,-0.68) -- (3.55,0.58) node[above,font=\scriptsize] {$X_L$};
+  \draw[blue!70!black,very thick] (3.70,-0.54) -- (4.50,0.36);
+  \node[blue!70!black,font=\scriptsize] at (4.12,-1.22)
+    {$f\uparrow\Rightarrow X_L\uparrow$};
+
+  % Divider.
+  \draw[gray!55,dashed] (5.15,-1.55) -- (5.15,1.92);
+
+  % Capacitor.
+  \node[font=\small\bfseries] at (7.72,1.82) {电容：隔直流，通交流};
+  \draw[thick] (5.48,0.80) -- (6.48,0.80);
+  \draw[thick] (6.48,0.27) -- (6.48,1.33);
+  \draw[thick] (6.83,0.27) -- (6.83,1.33);
+  \draw[thick] (6.83,0.80) -- (7.65,0.80);
+  \node[font=\scriptsize] at (6.66,0.22) {极板反复充、放电};
+  \node[red!75!black,font=\small] at (6.66,-0.48)
+    {$X_C=\dfrac{1}{2\pi fC}$};
+  \draw[->,thick] (8.62,-0.68) -- (9.82,-0.68) node[right,font=\scriptsize] {$f$};
+  \draw[->,thick] (8.62,-0.68) -- (8.62,0.58) node[above,font=\scriptsize] {$X_C$};
+  \draw[red!75!black,very thick]
+    (8.76,0.40) .. controls (8.96,-0.18) and (9.34,-0.48) .. (9.64,-0.56);
+  \node[red!75!black,font=\scriptsize] at (9.22,-1.22)
+    {$f\uparrow\Rightarrow X_C\downarrow$};
+\end{tikzpicture}

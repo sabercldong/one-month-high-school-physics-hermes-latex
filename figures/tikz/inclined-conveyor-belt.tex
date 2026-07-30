@@ -1,0 +1,38 @@
+% TikZ 图：向下运行的倾斜传送带初始阶段
+% Day 07：连接体、斜面与摩擦综合
+\begin{tikzpicture}[scale=0.98,>=Latex,line cap=round,line join=round]
+  \def\ang{22}
+
+  % 带面及其运动方向。
+  \draw[thick] (0,0) -- (5.70,2.31);
+  \draw[thick] (0,-0.28) -- (5.70,2.03);
+  \foreach \x in {0.60,1.45,2.30,3.15,4.00}
+    \draw[->,blue,thick] (\x,{0.405*\x-0.14}) -- ++(202:0.48);
+
+  \draw[->,ultra thick,blue] (5.20,2.58) -- ++(202:1.15)
+    node[midway,above=4pt] {$v_{\text{带}}$};
+
+  % 物块下表面与带面贴合。
+  \coordinate (P) at (2.36,0.96);
+  \coordinate (C) at ($(P)+(112:0.36)$);
+  \begin{scope}[shift={(P)},rotate=22]
+    \draw[fill=white,thick] (-0.55,0) rectangle (0.55,0.72);
+    \node at (0.27,0.48) {$m$};
+  \end{scope}
+
+  % 初始阶段的三个真实力，均从物块中心出发。
+  \draw[->,very thick,red] (C) -- ++(202:1.12)
+    node[below left=1pt] {$f_k$};
+  \draw[->,very thick,blue] (C) -- ++(0,-1.28)
+    node[below right=1pt] {$mg$};
+  \draw[->,very thick,blue] (C) -- ++(112:1.02)
+    node[above left=1pt] {$N$};
+
+  % 倾角与阶段说明。
+  \draw[thin] (0,0) -- (1.25,0);
+  \draw (0.72,0) arc[start angle=0,end angle=22,radius=0.72];
+  \node at (0.98,0.17) {$\theta$};
+  \node[font=\footnotesize,align=center] at (3.15,-0.72)
+    {初始时物块相对带面向上滑\\
+     滑动摩擦力沿斜面向下};
+\end{tikzpicture}

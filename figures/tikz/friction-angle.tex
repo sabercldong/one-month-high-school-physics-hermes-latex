@@ -1,22 +1,41 @@
-% TikZ 图：摩擦临界角
-% Day 05：力、重力、弹力、摩擦力
-\begin{tikzpicture}[scale=0.86,>=Latex]
-  % 斜面
-  \draw[thick] (0,0) -- (5.2,0) -- (0,2.3) -- cycle;
-  \draw[thick] (0,2.3) -- (5.2,0);
-  \draw (4.35,0) arc (180:156.1:0.78);
-  \node at (4.12,0.28) {$\theta_c$};
+% Day 05：斜面临界角与摩擦角
+\begin{tikzpicture}[scale=0.82,>=Latex,line cap=round,line join=round]
+  % 左图：简单斜面达到临界状态。
+  \begin{scope}
+    \draw[thick] (0,0) -- (4.70,0) -- (0,2.08) -- cycle;
+    \draw (3.92,0) arc (180:156.1:0.70);
+    \node at (3.70,0.28) {$\theta_c$};
 
-  % 物体
-  \coordinate (P) at ($(0,2.3)!0.49!(5.2,0)$);
-  \coordinate (C) at ($(P)+(66.140:0.42)$);
-  \begin{scope}[shift={(P)},rotate=-23.860]
-    \filldraw[fill=white,thick] (-0.62,0) rectangle (0.62,0.82);
-    \node at (0,0.41) {$m$};
+    \coordinate (P) at ($(0,2.08)!0.49!(4.70,0)$);
+    \coordinate (C) at ($(P)+(66.1:0.40)$);
+    \begin{scope}[shift={(P)},rotate=-23.9]
+      \filldraw[fill=white,thick] (-0.58,0) rectangle (0.58,0.78);
+      \node at (0,0.39) {$m$};
+    \end{scope}
+
+    \draw[->,thick,blue] (C) -- ++(0,-1.42)
+      node[below right=1pt] {$mg$};
+    \draw[->,thick,blue] (C) -- ++(66.1:1.30)
+      node[above right=1pt] {$N$};
+    \draw[->,thick,red] (C) -- ++(156.1:0.58)
+      node[above left=1pt] {$f_{\max}$};
   \end{scope}
 
-  % 真实力
-  \draw[->,thick,blue] (C) -- ++(0,-1.35) node[below] {$mg$};
-  \draw[->,thick,blue] (C) -- ++(66.140:1.18) node[above] {$N$};
-  \draw[->,thick,red] (C) -- ++(156.140:1.23) node[pos=0.9,above left] {$f_{\max}$};
+  % 右图：接触合力与法线的夹角才是摩擦角。
+  \begin{scope}[shift={(5.65,0.18)}]
+    \node[font=\small\bfseries] at (1.25,2.54) {接触力合成};
+    \coordinate (O) at (0.70,0.35);
+    \draw[->,thick,blue] (O) -- ++(0,1.70)
+      node[above] {$N$};
+    \draw[->,thick,red] (O) -- ++(-0.74,0)
+      node[left] {$f_{\max}$};
+    \draw[->,very thick,orange!85!black] (O) -- ++(-0.74,1.70)
+      node[above left] {$R$};
+    \draw[dashed,gray] ($(O)+(0,1.70)$) -- ($(O)+(-0.74,1.70)$);
+    \draw[dashed,gray] ($(O)+(-0.74,0)$) -- ($(O)+(-0.74,1.70)$);
+    \draw (O) ++(90:0.58) arc[start angle=90,end angle=113.5,radius=0.58];
+    \node at ($(O)+(-0.17,0.78)$) {$\varphi$};
+    \node[font=\footnotesize,align=center] at (1.05,-0.35)
+      {$\tan\varphi=f_{\max}/N=\mu_s$\\简单斜面临界时 $\theta_c=\varphi$};
+  \end{scope}
 \end{tikzpicture}

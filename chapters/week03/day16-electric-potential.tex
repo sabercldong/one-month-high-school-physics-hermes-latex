@@ -11,7 +11,9 @@
 \begin{enumerate}
   \item 能用 $W_{AB} = -\Delta E_p$ 说明静电力做功与电势能变化的关系。
   \item 能说出电势 $\varphi = \dfrac{E_p}{q}$ 和电势差 $U_{AB} = \varphi_A - \varphi_B$ 的定义含义。
-  \item 能从匀强电场做功关系得到 $U = Ed$ 及 $E = \dfrac{U}{d}$，并说明 $d$ 是沿电场方向的距离。
+  \item 能从匀强电场做功关系得到
+  $U_{AB}=\vect E\cdot\overrightarrow{AB}=E\,AB\cos\theta$，并能正确使用
+  $U_{AB}=Ed$ 的有向投影形式。
   \item 能根据等势面的性质判断电场方向和静电力做功。
   \item 能用电势差计算电场力做的功：$W_{AB} = qU_{AB}$。
 \end{enumerate}
@@ -27,7 +29,7 @@
 重力势能 $mgh$ & 电势能 $E_p = q\varphi$ \\
 高度位置 $h$ & 电势 $\varphi$ \\
 高度差 $\Delta h$ & 电势差 $U$ \\
-重力做功 $mg\Delta h$ & 电场力做功 $qU$ \\
+重力做功 $mg(h_A-h_B)$ & 电场力做功 $qU_{AB}$ \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -40,7 +42,7 @@
 
 \begin{conceptbox}{静电力做功与电势能}
 
-\textbf{先看匀强静电场中的做功：} 设匀强静电场方向为 $x$ 轴正方向。电荷从 $A$ 到 $B$ 可以走任意曲线路径，把路径分成很多小段 $\Delta \vect{s}$。每一小段中，静电力 $\vect{F}=q\vect{E}$ 近似不变：
+\textbf{先看匀强静电场中的做功：} 设匀强静电场方向为 $x$ 轴正方向。电荷从 $A$ 到 $B$ 可以走任意曲线路径，把路径分成很多小段 $\Delta \vect{s}$。在匀强电场中，静电力 $\vect{F}=q\vect{E}$ 保持不变：
 \[
 \Delta W = \vect{F}\cdot \Delta \vect{s}=qE\Delta x
 \]
@@ -61,11 +63,11 @@ W_{AB}=\sum \Delta W=qE\sum \Delta x=qE(x_B-x_A)
 \boxed{W_{AB}=E_{pA}-E_{pB}=-\Delta E_p}
 \]
 
-这个关系不只适用于匀强电场。一般静电场中，可把路径分成很多足够短的小段，每段近似看成匀强电场，有
+这个关系也适用于一般静电场。这里先把“静电力做功与路径无关”作为静电场的基本性质：对点电荷形成的电场，可由后文的积分直接证明；多个静止点电荷形成的电场再由叠加原理推广。把路径分成微小段时，
 \[
 \mathrm{d}W=q\vect{E}\cdot\mathrm{d}\vect{s}
 \]
-把整条路径上的微小功相加，结果仍只由初末位置决定，因此可以推广定义电势能。更严格的非匀强电场证明放在本节“竞赛入门补充”中。
+只是计算每一小段做功的表达式，不能单独用“局部近似匀强”来证明总功已经与路径无关。基于这一静电场性质，才可在一般情形中定义电势能。
 
 \textbf{电势能：} 电荷在电场中某点具有的势能。
 \[
@@ -82,13 +84,15 @@ W_{AB} = -\Delta E_p = E_{pA} - E_{pB}
 
 \begin{conceptbox}{电势与电势差}
 
-\textbf{电势：}
+\textbf{电势：} 在不改变原电场分布的前提下，在某点放入电荷量
+$q\ne0$、且足够小的试探电荷。该试探电荷在此处的电势能与其电荷量之比为：
 \[
 \varphi = \frac{E_p}{q}
 \]
 
 \begin{itemize}
   \item 标量，单位：伏特（$\mathrm{V}$），$1\ \mathrm{V} = 1\ \mathrm{J/C}$。
+  \item 对同一电场中的同一点，$E_p/q$ 与所取试探电荷的电荷量和正负无关，因此电势描述的是电场本身的性质。
   \item 电势的高低与电场线的方向有关：沿电场线方向电势降低。
   \item 电势是相对的，需要选零电势参考点（通常选大地或无穷远）。
 \end{itemize}
@@ -105,24 +109,29 @@ U_{AB} = \varphi_A - \varphi_B
 
 \textbf{符号检查：} 先按下标写 $U_{AB}=\varphi_A-\varphi_B$，再乘电荷量 $q$ 判断做功正负；最后用 $W_{AB}=-\Delta E_p$ 判断电势能增减。负电荷不改变电势差的定义，只会改变 $qU_{AB}$ 的符号。
 
-\textbf{匀强电场中电势差与场强的关系：}
+\textbf{匀强电场中电势差与场强的关系：} 设 $\theta$ 为
+$\overrightarrow{AB}$ 与 $\vect E$ 的夹角，则
 \[
-\boxed{U = Ed}
+\boxed{U_{AB}=\vect E\cdot\overrightarrow{AB}
+=E\,AB\cos\theta}
 \]
-或
+定义 $d=AB\cos\theta$ 为 $\overrightarrow{AB}$ 沿电场方向的
+\textbf{有向投影}，便可写成
 \[
-\boxed{E = \frac{U}{d}}
+\boxed{U_{AB}=Ed}
 \]
 
 \begin{itemize}
-  \item $d$ 是沿电场线方向的距离（不是两点的直线距离）。
+  \item $d>0$ 表示从 $A$ 到 $B$ 的投影与电场同向，$d<0$ 表示反向。
+  \item 若题目中的 $d$ 只表示两等势面间的正距离，则应写
+  $|U_{AB}|=Ed$，从而 $E=\dfrac{|U_{AB}|}{d}$。
   \item 场强的单位：$\mathrm{V/m}$ 和 $\mathrm{N/C}$ 等价。
 \end{itemize}
 
 \begin{center}
 \input{figures/tikz/potential-diff}
 
-\figcaption{匀强电场中 $U_{AB} = Ed$（$d$ 为沿电场方向的距离）}\label{fig:potential-diff}
+\figcaption{匀强电场中 $U_{AB}=Ed$：图示情形中 $d>0$}\label{fig:potential-diff}
 \end{center}
 
 \end{conceptbox}
@@ -135,14 +144,16 @@ U_{AB} = \varphi_A - \varphi_B
 \begin{itemize}
   \item 等势面与电场线处处垂直。
   \item 沿等势面移动电荷，静电力不做功。
-  \item 等势面密集的地方场强大（与电场线疏密一致）。
+  \item 若相邻等势面取相同的电势差，等势面越密的地方场强越大（与电场线疏密的比较条件相同）。
   \item 不同等势面不相交。
 \end{itemize}
+
+\textbf{静电平衡导体：} 导体内部场强为零，导体是等势体，导体表面也是等势面；紧邻导体表面的电场方向与表面垂直。这里的“等势”不表示电势一定为零，其数值仍由零电势参考点决定。
 
 \begin{center}
 \input{figures/tikz/equipotential}
 
-\figcaption{点电荷的等势面：同心圆，与电场线垂直}\label{fig:equipotential}
+\figcaption{点电荷与静电平衡导体的等势特征：左图是点电荷三维等势球面的平面截线}\label{fig:equipotential}
 \end{center}
 
 \end{conceptbox}
@@ -155,7 +166,8 @@ U_{AB} = \varphi_A - \varphi_B
 \begin{enumerate}
   \item 先规定零电势点或只讨论电势差，避免把“电势”当成绝对量。
   \item 电场力做功先看电荷符号和位移方向，再判断电势能增减。
-  \item 匀强电场中用 $U=Ed$ 时，$d$ 是沿电场方向的投影距离。
+  \item 匀强电场中用 $U_{AB}=Ed$ 时，$d$ 是
+  $\overrightarrow{AB}$ 沿电场方向的有向投影。
   \item 点电荷电势是标量叠加，但电场强度仍是矢量叠加。
 \end{enumerate}
 \end{samepage}
@@ -168,7 +180,7 @@ U_{AB} = \varphi_A - \varphi_B
 $W_{AB} = qU_{AB}$ & 静电力做功 & 静电场 \\
 $\varphi = \dfrac{E_p}{q}$ & 电势定义 & 静电场 \\
 $U_{AB} = \varphi_A - \varphi_B$ & 电势差 & 静电场 \\
-$U = Ed$ & 场强与电势差 & 匀强静电场，$d$ 沿电场方向 \\
+$U_{AB}=E\,AB\cos\theta=Ed$ & 场强与电势差 & 匀强静电场，$d$ 为有向投影 \\
 沿电场线方向电势降低 & 电势变化规律 & 静电场 \\
 \bottomrule
 \end{tabular}
@@ -188,7 +200,9 @@ $U = Ed$ & 场强与电势差 & 匀强静电场，$d$ 沿电场方向 \\
 
 \subsection*{模型 1：匀强电场中的电势差}
 
-平行板间电势沿电场线方向均匀降低。$A$、$B$ 两点沿电场方向相距 $d$，则 $U_{AB} = Ed$。
+平行板间电势沿电场线方向均匀降低。若
+$d=\overrightarrow{AB}$ 沿电场方向的有向投影，则
+$U_{AB}=Ed$；若只给出正的几何间距，则使用 $|U_{AB}|=Ed$。
 
 \begin{center}
 \input{figures/tikz/uniform-field-potential-gradient}
@@ -196,7 +210,8 @@ $U = Ed$ & 场强与电势差 & 匀强静电场，$d$ 沿电场方向 \\
 \figcaption{匀强电场中的电势差：只看沿电场方向的投影距离}\label{fig:uniform-field-potential-gradient}
 \end{center}
 
-若 $A$、$B$ 连线不沿电场方向，不能直接把 $AB$ 代入 $U=Ed$，必须先取沿电场方向的投影。
+若 $A$、$B$ 连线不沿电场方向，不能直接把 $AB$ 当作
+$d$ 代入 $U_{AB}=Ed$，必须先求有向投影。
 
 \subsection*{模型 2：点电荷的电势}
 
@@ -206,10 +221,12 @@ $U = Ed$ & 场强与电势差 & 匀强静电场，$d$ 沿电场方向 \\
 \]
 正电荷周围电势为正，负电荷周围电势为负。
 
-\textbf{推导：} 以正点电荷为例，把正试探电荷 $q$ 从距 $Q$ 为 $r$ 的点移到无穷远，电场力做功为
+\textbf{推导：} 以正点电荷为例，把正试探电荷 $q$ 从距 $Q$ 为 $r$ 的点移到无穷远。积分号
+$\int$ 表示把连续路径上无数个微小功 $\mathrm dW$ 相加。用
+$\rho$ 表示积分过程中的径向位置，则电场力做功为
 \[
-W_{r\to\infty}=\int_r^\infty k\frac{Qq}{r^2}\,\mathrm{d}r
-=kQq\left[-\frac{1}{r}\right]_r^\infty
+W_{r\to\infty}=\int_r^\infty k\frac{Qq}{\rho^2}\,\mathrm{d}\rho
+=kQq\left[-\frac{1}{\rho}\right]_r^\infty
 =k\frac{Qq}{r}
 \]
 取无穷远处电势能为零，则 $W_{r\to\infty}=E_p(r)-E_p(\infty)=E_p(r)$，所以
@@ -225,33 +242,72 @@ E_p(r)=k\frac{Qq}{r},\qquad
 \figcaption{点电荷电势公式的推导：取无穷远为零电势点}\label{fig:point-charge-potential-derivation}
 \end{center}
 
+\textbf{多个点电荷的电势叠加：} 在同一零电势参考下，各点电荷在
+$P$ 点产生的电势作代数相加：
+\[
+\boxed{\varphi(P)=\sum_i k\frac{Q_i}{r_i}}
+\]
+其中 $Q_i$ 按正、负号代入，$r_i$ 是 $P$ 到第 $i$ 个点电荷的距离。电势是标量，因此不需要按方向分解；但场强仍须作矢量叠加。
+
+\begin{center}
+\input{figures/tikz/potential-superposition}
+
+\figcaption{多个点电荷的电势作标量叠加，正、负号随源电荷代入}\label{fig:potential-superposition}
+\end{center}
+
 \subsection*{模型 3：带电粒子在电场中的能量关系}
 
-只有静电力做功时，带电粒子的动能和电势能之和守恒：
+只有静电力做功时，由动能定理
+\[
+\Delta E_k=W_{AB}=qU_{AB}
+\]
+以及 $W_{AB}=-\Delta E_p$，可得
+\[
+\Delta(E_k+E_p)=0
+\]
+即带电粒子的动能和电势能之和守恒：
 \[
 \frac12 mv_1^2 + q\varphi_1 = \frac12 mv_2^2 + q\varphi_2
 \]
+写成初、末速度关系为
+\[
+\boxed{\frac12mv_B^2-\frac12mv_A^2=qU_{AB}}
+\]
+正电荷从高电势向低电势运动时，电势能减少、动能增加；负电荷则要结合 $qU_{AB}$ 的符号判断，不能只凭运动方向下结论。
 
+\begin{center}
+\input{figures/tikz/electric-potential-energy-conversion}
+
+\figcaption{正电荷在匀强电场中由高电势向低电势运动：电势能转化为动能}\label{fig:electric-potential-energy-conversion}
+\end{center}
+
+\textbf{电子伏特：} 一个元电荷通过 $1\ \mathrm V$ 的电势差时，能量变化的大小定义为
+\[
+1\ \mathrm{eV}=e\times1\ \mathrm V=1.602\times10^{-19}\ \mathrm J.
+\]
+$\mathrm{eV}$ 是能量单位，不是电压单位。
+
+\newpage
 \section*{六、例题精讲}
 
 \begin{examplebox}{电场力做功}
 
-\textbf{题意分析：} 在匀强电场中，将电荷 $q = +2 \times 10^{-9}\ \mathrm{C}$ 从 $A$ 点移到 $B$ 点，$A$、$B$ 沿电场方向相距 $d = 0.05\ \mathrm{m}$，电场强度 $E = 200\ \mathrm{N/C}$。求：
+\textbf{题意分析：} 在匀强电场中，$B$ 位于 $A$ 沿电场方向的一侧。将电荷 $q = +2 \times 10^{-9}\ \mathrm{C}$ 从 $A$ 点移到 $B$ 点，两点沿电场方向的距离为 $d = 0.05\ \mathrm{m}$，电场强度 $E = 200\ \mathrm{N/C}$。求：
 \begin{enumerate}
   \item $A$、$B$ 间的电势差。
   \item 电场力做的功。
   \item 若 $q$ 改为 $-2 \times 10^{-9}\ \mathrm{C}$，结果如何？
 \end{enumerate}
 
-\textbf{物理模型：} 匀强电场，$U = Ed$，$W = qU$。
+\textbf{物理模型：} 图示情形中 $d>0$，故 $U_{AB}=Ed$，再用 $W_{AB}=qU_{AB}$。
 
 \textbf{解题过程：}
 
 \begin{enumerate}
   \item $U_{AB} = Ed = 200 \times 0.05 = 10\ \mathrm{V}$
-  
+
   \item $W_{AB} = qU_{AB} = 2 \times 10^{-9} \times 10 = 2 \times 10^{-8}\ \mathrm{J}$
-  
+
   \item $q' = -2 \times 10^{-9}\ \mathrm{C}$：
   \[
   W_{AB}' = q'U_{AB} = -2 \times 10^{-9} \times 10 = -2 \times 10^{-8}\ \mathrm{J}
@@ -284,8 +340,6 @@ $U_{12} = \varphi_1 - \varphi_2 = 270 - 90 = 180\ \mathrm{V}$。
 
 \end{examplebox}
 
-\newpage
-
 \begin{examplebox}{静电力做功与路径无关}
 
 \textbf{题意分析：} 在匀强电场中，将 $q = +1 \times 10^{-8}\ \mathrm{C}$ 的电荷从 $A$ 沿直线移到 $B$，电场力做功 $W_1 = 3 \times 10^{-6}\ \mathrm{J}$。若从 $A$ 沿另一条路径（先向右再向上）移到 $B$，电场力做功 $W_2$ 是多少？$A$、$B$ 的电势差是多少？
@@ -304,36 +358,64 @@ U_{AB} = \frac{W_{AB}}{q} = \frac{3 \times 10^{-6}}{1 \times 10^{-8}} = 300\ \ma
 
 \end{examplebox}
 
+\begin{examplebox}{带电粒子经电势差加速}
+\textbf{题意分析：} 质子从静止出发，在真空中从高电势的 $A$ 点运动到低电势的 $B$ 点，$U_{AB}=500\ \mathrm V$。取
+$e=1.60\times10^{-19}\ \mathrm C$，
+$m_p=1.67\times10^{-27}\ \mathrm{kg}$，求质子到达 $B$ 点时的动能和速度。
+
+\textbf{物理模型：} 只有静电力做功，$\Delta E_k=qU_{AB}$。
+
+\textbf{解题过程：}
+\[
+E_{kB}=eU_{AB}=500\ \mathrm{eV}
+=8.00\times10^{-17}\ \mathrm J
+\]
+\[
+v_B=\sqrt{\frac{2eU_{AB}}{m_p}}
+\approx3.10\times10^5\ \mathrm{m/s}.
+\]
+
+\textbf{方法总结：} 求能量时可先用电子伏特表示，再按需要换算成焦耳；求速度时必须使用国际单位制。
+\end{examplebox}
+
 \section*{七、变式训练}
 
 \begin{enumerate}
   \item 在匀强电场中将 $q = -1 \times 10^{-8}\ \mathrm{C}$ 从 $A$ 移到 $B$，$U_{AB} = 50\ \mathrm{V}$。求电场力做功。$q$ 的电势能如何变化？
-  
+
   \item 点电荷 $Q = -4 \times 10^{-9}\ \mathrm{C}$，求距 $Q$ 为 $0.2\ \mathrm{m}$ 处的电势。
-  
+
   \item 匀强电场中，$A$、$B$ 相距 $0.1\ \mathrm{m}$，连线与电场方向夹角 $60^\circ$，$U_{AB} = 20\ \mathrm{V}$。求电场强度 $E$。
   \begin{center}
   \input{figures/tikz/training-uniform-field-ab-angle}
   \end{center}
+
+  \item 两个点电荷 $Q_1=+4.0\times10^{-9}\ \mathrm C$、
+  $Q_2=-2.0\times10^{-9}\ \mathrm C$。点 $P$ 到它们的距离分别为
+  $0.20\ \mathrm m$ 和 $0.10\ \mathrm m$，取无穷远为零电势点。求
+  $P$ 点电势，并判断能否由此断定 $P$ 点场强为零。
+
+  \item 孤立导体达到静电平衡。比较导体内部两点 $M,N$ 与表面一点
+  $S$ 的电势；将电荷 $q$ 沿导体表面从 $S$ 移到另一点，静电力做功是多少？
+
+  \item 正电荷 $q$ 从静止出发，只在静电力作用下由 $A$ 运动到
+  $B$，且 $U_{AB}>0$。写出末速度 $v_B$ 的表达式。
 \end{enumerate}
 
-\section*{八、易错点}
-
-\begin{mistakebox}
-\begin{enumerate}
-  \item \textbf{$U = Ed$ 中 $d$ 的含义：} 先把位移投影到电场方向。$d$ 是沿电场线方向的距离，不是两点间的直线距离。
-  
-  \item \textbf{电势的正负：} 电势是标量，有正负。取无穷远为零电势点时，正点电荷周围电势为正，负点电荷周围电势为负。电势的大小比较时，$+5\ \mathrm{V} > -10\ \mathrm{V}$。
-  
-  \item \textbf{静电力做功正负的判断：} 先规定 $U_{AB}$ 的方向，再代 $W_{AB}=qU_{AB}$；$q$ 和 $U_{AB}$ 同号则做正功。
-  
-  \item \textbf{零电势点的选取：} 比较电势值或代入 $E_p=q\varphi$ 时，要在同一零电势参考点下进行。若只求两点电势差，零点选择会相互抵消，但仍要保持符号约定一致。
-  
-  \item \textbf{混淆电势和电势能：} 先问这个量属于“场”还是“电荷在场中”。电势 $\varphi$ 属于电场，电势能 $E_p=q\varphi$ 属于电荷。
+\begin{learningbox}{变式训练参考结果}
+\begin{enumerate}[itemsep=0.45em,topsep=0.3em,parsep=0pt]
+  \item $W_{AB}=qU_{AB}=-5.0\times10^{-7}\ \mathrm J$；由
+  $\Delta E_p=-W_{AB}$，电势能增加 $5.0\times10^{-7}\ \mathrm J$。
+  \item 取无穷远处电势为零，$\varphi=kQ/r=-180\ \mathrm V$。
+  \item $U_{AB}=E\,AB\cos60^\circ$，故 $E=400\ \mathrm{V/m}$。
+  \item $\varphi_P=kQ_1/r_1+kQ_2/r_2=0$；电势为零只是标量代数和为零，不能据此断定矢量场强为零。
+  \item $\varphi_M=\varphi_N=\varphi_S$；沿表面移动时电势差为零，故静电力做功为零。
+  \item 由 $\frac12mv_B^2=qU_{AB}$，得
+  $v_B=\sqrt{\dfrac{2qU_{AB}}{m}}$。
 \end{enumerate}
-\end{mistakebox}
+\end{learningbox}
 
-\section*{九、竞赛入门补充}
+\section*{八、竞赛入门补充}
 
 下面把“静电力做功与路径无关”从匀强电场推广到非匀强电场。关键仍是投影思想：真正参与做功的是沿电场方向的位移分量，与电场垂直的分量不做功。
 
@@ -352,7 +434,7 @@ E=k\frac{|Q|}{r^2}
 \figcaption{非匀强点电荷电场：不同路径的静电力做功相同}\label{fig:nonuniform-field-path-proof}
 \end{center}
 
-沿任意路径移动电荷 $q$ 时，只有径向位移 $\mathrm{d}r$ 对做功有贡献，切向位移与电场垂直，不做功。若把径向向外取为正，点电荷电场的径向分量可写成
+沿任意路径移动电荷 $q$ 时，把微小位移 $\mathrm d\vect s$ 投影到径向，得到有向分量 $\mathrm dr$；与径向垂直的分量不参与做功。若把径向向外取为正，点电荷电场的径向分量可写成
 \[
 E_r=k\frac{Q}{r^2},
 \]
@@ -373,7 +455,7 @@ W_{AB}=\int_{r_A}^{r_B} k\frac{Qq}{r^2}\,\mathrm{d}r
 \begin{competitionbox}
 \textbf{匀强电场中电势的几何关系}
 
-在匀强电场中，沿任意方向电势均匀变化。这一性质是处理几何型电势问题的重要依据。
+在匀强电场中，沿任一固定直线方向，电势随位移在电场方向上的有向投影线性变化；若该方向与电场垂直，电势保持不变。这一性质是处理几何型电势问题的重要依据。
 
 \textbf{结论：} 在匀强电场中，如果 $A$、$B$、$C$ 是同一等势面上的三个点，则它们电势相等。两个等势点只能提示等势线经过这两点；结合匀强电场中等势线为直线的性质，或结合更多等势点，才能确定相应的等势线。电场方向总是垂直等势线，并从高电势指向低电势。
 
@@ -401,13 +483,32 @@ d=a
 \]
 所以电场强度大小为
 \[
-E=\frac{U_{AC}}{d}=\frac{8}{a}
+E=\frac{U_{AC}}{d}=\frac{8\ \mathrm V}{a}
 \]
+若 $a$ 用米作单位，则 $E=(8/a)\ \mathrm{V/m}$。
 
 方向：平行于 $AC$，由 $A$ 指向 $C$。
 
 \textbf{竞赛提示：} 在匀强电场中，“两点间的电势差 = 场强 × 沿电场方向的距离”——先用等势面判断电场方向，再计算大小。
 \end{competitionbox}
+
+\newpage
+\section*{九、易错点}
+
+\begin{mistakebox}
+\begin{enumerate}
+  \item \textbf{$U_{AB}=Ed$ 中 $d$ 的含义：} 先把
+  $\overrightarrow{AB}$ 投影到电场方向。$d$ 是有向投影，不是简单地把两点间距代入；若 $d$ 只表示正距离，应写 $|U_{AB}|=Ed$。
+
+  \item \textbf{电势的正负：} 电势是标量，有正负。取无穷远为零电势点时，正点电荷周围电势为正，负点电荷周围电势为负。电势的大小比较时，$+5\ \mathrm{V} > -10\ \mathrm{V}$。
+
+  \item \textbf{静电力做功正负的判断：} 先规定 $U_{AB}$ 的方向，再代 $W_{AB}=qU_{AB}$；$q$ 和 $U_{AB}$ 同号则做正功。
+
+  \item \textbf{零电势点的选取：} 比较电势值或代入 $E_p=q\varphi$ 时，要在同一零电势参考点下进行。若只求两点电势差，零点选择会相互抵消，但仍要保持符号约定一致。
+
+  \item \textbf{混淆电势和电势能：} 先问这个量属于“场”还是“电荷在场中”。电势 $\varphi$ 属于电场，电势能 $E_p=q\varphi$ 属于电荷。
+\end{enumerate}
+\end{mistakebox}
 
 \section*{十、今日小结}
 
@@ -416,8 +517,11 @@ E=\frac{U_{AC}}{d}=\frac{8}{a}
   \item 静电力做功等于电势能变化的负值：$W_{AB}=-\Delta E_p$。
   \item 电势 $\varphi = \dfrac{E_p}{q}$，电势差 $U_{AB} = \varphi_A - \varphi_B$。
   \item 沿电场线方向电势降低。
-  \item 匀强电场中 $U = Ed$，$E = \dfrac{U}{d}$。
+  \item 匀强电场中
+  $U_{AB}=E\,AB\cos\theta=Ed$；若 $d$ 是正距离，则
+  $E=\dfrac{|U_{AB}|}{d}$。
   \item 等势面与电场线垂直，沿等势面移动电荷时静电力不做功。
+  \item 多个点电荷的电势作标量代数叠加；只有静电力做功时，$E_k+E_p$ 守恒。
 \end{enumerate}
 
 \textbf{一分钟复盘：} 任选两点 $A,B$，先沿电场方向判断电势高低，再写出 $U_{AB}$、$W_{AB}=qU_{AB}$ 和 $\Delta E_p=-W_{AB}$；最后检查下标顺序和电荷正负有没有弄反。

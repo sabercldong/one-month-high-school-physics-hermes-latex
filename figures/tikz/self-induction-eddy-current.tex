@@ -15,15 +15,18 @@
   \begin{scope}[xshift=5.4cm]
     \node[font=\small] at (0,1.65) {涡流与电磁阻尼};
     \draw[thick,fill=gray!10] (-1.1,-1.0) rectangle (1.1,1.0);
-    \foreach \x in {-0.75,0,0.75}{
+    \fill[blue!5] (0,-1.0) rectangle (1.1,1.0);
+    \draw[blue!65!black,dashed,thick] (0,-1.16) -- (0,1.16);
+    \node[blue!65!black,font=\scriptsize] at (0.38,1.28) {磁场边界};
+    \foreach \x in {0.28,0.72}{
       \foreach \y in {-0.55,0.25}{
-        \node[font=\large] at (\x,\y) {$\times$};
+        \node[blue!65!black,font=\large] at (\x,\y) {$\times$};
       }
     }
-    \draw[red,thick,->] (-0.45,0.15) arc (140:-180:0.42);
-    \draw[red,thick,->] (0.55,-0.25) arc (-40:280:0.42);
+    \draw[red,thick,->] (0.78,0.02) arc (0:330:0.42);
+    \node[red,font=\scriptsize] at (0.43,-0.62) {涡流};
     \draw[->,very thick,orange!85!black] (-1.65,0) -- (-1.12,0);
-    \node[font=\scriptsize,orange!85!black] at (-1.60,0.34) {金属板运动};
+    \node[font=\scriptsize,orange!85!black] at (-1.58,0.34) {进入磁场};
     \draw[->,very thick,blue] (1.45,0) -- (0.95,0);
     \node[font=\scriptsize,blue,anchor=west] at (1.66,0.34) {阻尼力};
   \end{scope}

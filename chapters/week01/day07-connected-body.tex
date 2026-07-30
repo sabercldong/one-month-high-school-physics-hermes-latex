@@ -4,15 +4,16 @@
 本节是运动学和力学的第一次综合实战。连接体题先判断多个物体之间的约束，再决定用整体法求共同运动，还是用隔离法求内部作用力。斜面临界和传送带模型都要回到同一条主线：相对运动趋势决定摩擦方向，约束关系决定加速度关系。
 \end{learningbox}
 
-\textbf{本节读题路线：} 先判断多个物体是否有共同加速度，以及绳长、接触或相对运动给出什么约束；只求整体加速度先用整体法，要求张力或支持力再隔离。斜面临界题先看摩擦趋势，传送带题要按“未共速、共速、可能脱离”分阶段。
+\textbf{本节读题路线：} 先判断多个物体是否有共同加速度，以及绳长、接触或相对运动给出什么约束；只求整体加速度先用整体法，要求张力或支持力再隔离。斜面临界题先看摩擦趋势，传送带题要按“未共速、共速后能否维持共速”分阶段。
 
 \section*{一、学习目标}
 
-\begin{enumerate}
+\begin{enumerate}[itemsep=0.65em,topsep=0.4em,parsep=0pt]
   \item 能根据所求量选择整体法或隔离法，并写出对应的动力学方程。
   \item 会用整体法求连接体的加速度，用隔离法求内力（绳中张力）。
   \item 能推导斜面摩擦临界条件 $\tan\theta = \mu_s$，并说明它的应用边界。
-  \item 能按相对运动趋势判断水平传送带模型中摩擦力的方向变化。
+  \item 能按“未共速—共速瞬间—共速后”分析水平和倾斜传送带，并检查传送带长度是否足够。
+  \item 能从整根轻绳长度不变出发，建立不同运动方向之间的速度、加速度约束。
   \item 能综合运用受力分析、约束关系和牛顿定律解决多物体问题。
 \end{enumerate}
 
@@ -36,14 +37,14 @@
 
 \textbf{整体法：}
 \begin{itemize}
-  \item 适用范围：多个物体有相同的加速度（相对静止或一起运动）。
+  \item 适用范围：多个物体具有相同的加速度矢量（相对静止并一起平动）。
   \item 操作：把多个物体看作一个整体，只画整体受到的外力（不画内部物体之间的力）。
   \item 列方程：$F_{\text{合外}} = (m_1 + m_2 + \cdots) a$
 \end{itemize}
 
 \textbf{隔离法：}
 \begin{itemize}
-  \item 适用范围：需要求内部相互作用力（绳张力、支持力等）。
+  \item 适用范围：需要求系统内部物体间的相互作用力（如绳张力、物体间支持力）。
   \item 操作：从系统中分离出一个物体单独做受力分析，列出牛顿第二定律方程。
   \item 列方程：$F_{i,\text{合}} = m_i a$（共同运动时，$a$ 与整体法中的 $a$ 相同）
 \end{itemize}
@@ -68,7 +69,7 @@
 
 \begin{conceptbox}{摩擦临界问题}
 
-\textbf{临界条件：} 物体刚好要滑动（或刚好能静止）时，静摩擦力达到最大值。
+\textbf{临界条件：} 物体处于将要滑动的极限静止状态时，静摩擦力达到最大值。
 
 \textbf{斜面摩擦临界：} 对只受重力、支持力和静摩擦力的物块，若没有其他沿斜面方向的外力，刚好不下滑的条件为：
 \[
@@ -80,14 +81,14 @@ mg\sin\theta = f_{\max} = \mu_s mg\cos\theta
 
 \begin{itemize}
   \item $\theta < \arctan\mu_s$：若物块初始静止，则可保持静止（$f_s = mg\sin\theta < f_{\max}$）。
-  \item $\theta = \arctan\mu_s$：临界，刚好要下滑。
-  \item $\theta > \arctan\mu_s$：物块下滑（滑动摩擦力 $f_k = \mu_k mg\cos\theta$）。
+  \item $\theta = \arctan\mu_s$：物块可处于极限静止状态，此时 $f_s=f_{\max}$；倾角稍增或受到沿斜面向下的微小扰动后将滑动。
+  \item $\theta > \arctan\mu_s$：若由静止释放，物块将下滑（滑动摩擦力 $f_k = \mu_k mg\cos\theta$）。
 \end{itemize}
 
 \begin{center}
 \input{figures/tikz/critical-incline}
 
-\figcaption{斜面摩擦临界：$G\sin\theta = \mu_s N$ 时刚好要下滑}\label{fig:critical-incline}
+\figcaption{斜面摩擦临界：$G\sin\theta = \mu_s N$ 时物块处于极限静止状态}\label{fig:critical-incline}
 \end{center}
 
 \end{conceptbox}
@@ -106,7 +107,10 @@ mg\sin\theta = f_{\max} = \mu_s mg\cos\theta
 整体法的本质是先画一个“系统边界”。边界里面的物体合成一个整体，边界内部彼此之间的作用力会成对抵消；边界外的物体对系统的作用力才进入整体方程。
 
 \begin{center}
-\begin{tabular}{p{0.22\textwidth}p{0.34\textwidth}p{0.30\textwidth}}
+\begin{tabular}{
+  >{\raggedright\arraybackslash}p{0.22\textwidth}
+  >{\raggedright\arraybackslash}p{0.34\textwidth}
+  >{\raggedright\arraybackslash}p{0.30\textwidth}}
 \toprule
 先问什么 & 判断结果 & 对应做法 \\
 \midrule
@@ -157,20 +161,79 @@ mg\sin\theta = f_{\max} = \mu_s mg\cos\theta
 
 \subsection*{模型 2：斜面摩擦临界}
 
-上文已讲。核心是 $\tan\theta$ 与最大静摩擦因数 $\mu_s$ 的比较。
+这个模型必须先限定为：物块初始静止，只受重力、支持力和摩擦力，且没有其他沿斜面方向的外力。判断步骤为：
+\begin{enumerate}
+  \item 假设物块有沿斜面向下的运动趋势，静摩擦力沿斜面向上。
+  \item 先由 $N=mg\cos\theta$ 求最大静摩擦力 $f_{\max}=\mu_sN$。
+  \item 比较 $mg\sin\theta$ 与 $f_{\max}$：前者较小时可静止，相等时为极限静止，前者较大时物块下滑。
+\end{enumerate}
+只有在上述条件下，临界式才能化为 $\tan\theta=\mu_s$；有拉力、推力或其他约束时，应重新列沿斜面方向的平衡方程。
 
-\subsection*{模型 3：传送带模型}
+\subsection*{模型 3：水平传送带}
 
-物块轻放在水平传送带上：刚放上时物块速度为零，传送带速度为 $v$，物块相对传送带向左滑，受到向右的滑动摩擦力 $f_k = \mu_k mg$，做匀加速运动。若传送带足够长，且没有其他水平外力，当物块速度达到 $v$ 后，与传送带相对静止，摩擦力变为零。
+物块轻放在以 $v_{\text{带}}$ 匀速运动的水平传送带上。刚放上时
+$v_{\text{物}}=0$，物块相对带面向左滑，受到向右的滑动摩擦力
+$f_k=\mu_kmg$，做匀加速运动。若传送带足够长，且物块不受其他水平外力，当
+$v_{\text{物}}=v_{\text{带}}$ 后，物块与带面相对静止，此后保持匀速，摩擦力为零。
 
 \[
-\text{加速阶段：}\quad a = \mu_k g,\qquad v = \mu_k g t,\qquad x = \frac12 \mu_k g t^2
+\text{加速阶段：}\quad
+a=\mu_kg,\qquad
+v_{\text{物}}=\mu_kgt,\qquad
+x_{\text{物}}=\frac12\mu_kgt^2
 \]
+达到共速所需的时间和位移为
+\[
+t_1=\frac{v_{\text{带}}}{\mu_kg},
+\qquad
+x_1=\frac{v_{\text{带}}^2}{2\mu_kg}.
+\]
+若传送带有效长度小于 $x_1$，物块将在尚未共速时离开传送带。
 
 \begin{center}
 \input{figures/tikz/conveyor-belt}
 
 \figcaption{传送带：物块刚放上时受向右摩擦力加速}\label{fig:conveyor-belt}
+\end{center}
+
+\subsection*{模型 4：倾斜传送带}
+
+设长度为 $L$ 的传送带\textbf{沿斜面向下}以速度 $v_0$ 匀速运行，物块从斜面顶端由静止轻放；取\textbf{沿斜面向下为正}。这个模型必须分阶段：
+\begin{enumerate}
+  \item \textbf{未共速：} 物块相对带面向上滑，滑动摩擦力沿斜面向下，且重力沿斜面的分量也向下：
+\[
+mg\sin\theta+f_k=ma_1,\qquad
+f_k=\mu_kmg\cos\theta,
+\]
+故
+\[
+\boxed{a_1=g(\sin\theta+\mu_k\cos\theta)},\qquad
+t_1=\frac{v_0}{a_1},\qquad
+s_1=\frac{v_0^2}{2a_1}.
+\]
+只有当 $L\ge s_1$ 时，物块才能在离开传送带前达到共速；若
+$L<s_1$，应直接按第一阶段运动到斜面底端。
+  \item \textbf{刚共速：} 到 $t_1$ 时，物块速度恰为 $v_0$，但这只是相对速度暂时为零，\textbf{不能立刻断定摩擦力为零}。
+  \item \textbf{共速后：} 若要继续与传送带共速，沿斜面合力应为零，需要静摩擦力向上，大小为 $f_s=mg\sin\theta$。因此必须满足
+\[
+mg\sin\theta\leq\mu_smg\cos\theta
+\quad\Longleftrightarrow\quad
+\boxed{\tan\theta\leq\mu_s}.
+\]
+若满足，物块以后以 $v_0$ 匀速下滑，摩擦力是\textbf{向上}的静摩擦力；若 $\tan\theta>\mu_s$，静摩擦力不足以维持共速，物块又会相对带面向下滑，此后滑动摩擦力向上：
+\[
+mg\sin\theta-\mu_kmg\cos\theta=ma_2,\qquad
+\boxed{a_2=g(\sin\theta-\mu_k\cos\theta)}.
+\]
+通常有 $\mu_s\ge\mu_k$，此时由 $\tan\theta>\mu_s$ 可知 $a_2>0$；若题目把两个摩擦因数作为独立数据给出，应由上式单独判断 $a_2$ 的符号。
+\end{enumerate}
+
+\textbf{符号提醒：} 严格地说，能否维持共速应比较 $\tan\theta$ 与\textbf{静摩擦因数} $\mu_s$；一旦再次相对滑动，才改用动摩擦因数 $\mu_k$。高中许多题目只给一个摩擦因数 $\mu$，并近似取 $\mu_s=\mu_k=\mu$，这时才可直接比较 $\tan\theta$ 与 $\mu$。
+
+\begin{center}
+\input{figures/tikz/inclined-conveyor-belt}
+
+\figcaption{倾斜传送带初始阶段：带面向下运动，物块由静止释放，摩擦力沿斜面向下}\label{fig:inclined-conveyor-belt}
 \end{center}
 
 \section*{六、例题精讲}
@@ -189,21 +252,21 @@ mg\sin\theta = f_{\max} = \mu_s mg\cos\theta
 
 \begin{enumerate}
   \item 整体法：
-  
+
   总摩擦力 $f_{\text{总}} = \mu_k (m_A + m_B) g = 0.3 \times 6 \times 10 = 18\ \mathrm{N}$
-  
+
   \[
   F - f_{\text{总}} = (m_A + m_B) a,\qquad 30 - 18 = 6a,\qquad a = 2\ \mathrm{m/s^2}
   \]
-  
+
   \item 隔离 $B$（求张力 $T$）：
-  
+
   $B$ 受拉力 $T$（向右）和摩擦力 $f_B = \mu_k m_B g = 0.3 \times 2 \times 10 = 6\ \mathrm{N}$（向左）。
-  
+
   \[
   T - f_B = m_B a,\qquad T - 6 = 2 \times 2,\qquad T = 10\ \mathrm{N}
   \]
-  
+
   验证（隔离 $A$）：$F - T - f_A = m_A a$，$30 - 10 - 12 = 8 = 4 \times 2$，正确。
 \end{enumerate}
 
@@ -220,7 +283,7 @@ mg\sin\theta = f_{\max} = \mu_s mg\cos\theta
 
 \textbf{题意分析：} 质量为 $m$ 的物体放在倾角 $\theta = 30^\circ$ 的斜面上，$g = 10\ \mathrm{m/s^2}$。问：
 \begin{enumerate}
-  \item 若物体在斜面上刚好不下滑，求最大静摩擦因数 $\mu_s$。
+  \item 求物体保持静止所需静摩擦因数 $\mu_s$ 的最小值（临界值）。
   \item 若 $\mu_s = 0.4$，物体会下滑吗？
   \item 若物体匀速上滑，且 $m = 2\ \mathrm{kg}$、$\mu_k = 0.4$，求所需的沿斜面向上的力 $F$。
 \end{enumerate}
@@ -230,13 +293,13 @@ mg\sin\theta = f_{\max} = \mu_s mg\cos\theta
 \textbf{解题过程：}
 
 \begin{enumerate}
-  \item 临界条件 $\tan\theta = \mu_s$：
+  \item 极限静止时 $\tan\theta = \mu_{s,\min}$：
   \[
-  \mu_s = \tan 30^\circ = \frac{\sqrt{3}}{3} \approx 0.577
+  \mu_{s,\min} = \tan 30^\circ = \frac{\sqrt{3}}{3} \approx 0.577
   \]
-  
+
   \item $\mu_s = 0.4 < 0.577$，最大静摩擦力不够，物体会下滑。
-  
+
   \item 匀速上滑时，$a = 0$，滑动摩擦力沿斜面向下：
   \[
   F = mg\sin\theta + \mu_k mg\cos\theta
@@ -258,15 +321,21 @@ mg\sin\theta = f_{\max} = \mu_s mg\cos\theta
 
 \end{examplebox}
 
-\begin{examplebox}{传送带模型}
+\begin{examplebox}{传送带模型——速度图像求相对滑动}
 
-\textbf{题意分析：} 水平传送带以 $v = 4\ \mathrm{m/s}$ 匀速运行，将一质量为 $m = 2\ \mathrm{kg}$ 的物块轻放在传送带左端，$\mu_k = 0.4$，$g = 10\ \mathrm{m/s^2}$，传送带足够长。求：
+\textbf{题意分析：} 水平传送带以 $v_{\text{带}} = 4\ \mathrm{m/s}$ 匀速运行，将一质量为 $m = 2\ \mathrm{kg}$ 的物块轻放在传送带左端，$\mu_k = 0.4$，$g = 10\ \mathrm{m/s^2}$，传送带足够长。求：
 \begin{enumerate}
   \item 物块达到传送带速度所需时间和位移。
   \item 物块在传送带上留下的摩擦痕迹长度。
 \end{enumerate}
 
 \textbf{物理模型：} 传送带——物块先匀加速后匀速。
+
+\begin{center}
+\input{figures/tikz/example-conveyor-scratch}
+
+\figcaption{例题传送带：物块刚放上时相对带面向左滑}\label{fig:example-conveyor-scratch}
+\end{center}
 
 \textbf{解题过程：}
 
@@ -276,73 +345,96 @@ mg\sin\theta = f_{\max} = \mu_s mg\cos\theta
   a = \mu_k g = 0.4 \times 10 = 4\ \mathrm{m/s^2}
   \]
   \[
-  v = a t,\qquad t = \frac{v}{a} = \frac{4}{4} = 1\ \mathrm{s}
+  v_{\text{物}} = a t,\qquad
+  t_1 = \frac{v_{\text{带}}}{a} = \frac{4}{4} = 1\ \mathrm{s}
   \]
   \[
-  x_{\text{物}} = \frac12 a t^2 = \frac12 \times 4 \times 1^2 = 2\ \mathrm{m}
+  x_{\text{物}} = \frac12 a t_1^2 = \frac12 \times 4 \times 1^2 = 2\ \mathrm{m}
   \]
-  
+
   \item 把物块视为质点时，痕迹长度等于物块与传送带的相对位移：
   \[
-  x_{\text{带}} = v t = 4 \times 1 = 4\ \mathrm{m}
+  x_{\text{带}} = v_{\text{带}} t_1 = 4 \times 1 = 4\ \mathrm{m}
   \]
   \[
   \Delta x = x_{\text{带}} - x_{\text{物}} = 4 - 2 = 2\ \mathrm{m}
   \]
+
+  也可直接画 $v$-$t$ 图：带速为 $4\ \mathrm{m/s}$ 的水平线，物块速度从 $0$ 匀加速到 $4\ \mathrm{m/s}$。两图线间的面积等于相对位移：
+  \[
+  s_{\text{相对}}=\frac12\times 1\times4=2\ \mathrm{m}.
+  \]
+  \begin{center}
+  \input{figures/tikz/conveyor-vt-scratch}
+
+  \figcaption{$v$-$t$ 图中两条速度线之间的面积等于相对位移}\label{fig:conveyor-vt-scratch}
+  \end{center}
 \end{enumerate}
 
 \textbf{方法总结：}
-\begin{enumerate}
+\begin{enumerate}[itemsep=0.65em,topsep=0.4em,parsep=0pt]
   \item 传送带问题的核心是判断摩擦力方向（相对运动或相对运动趋势方向）。
   \item 物块刚放上时相对传送带向后滑，摩擦力向前——这是动力。
-  \item 摩擦痕迹长度 = 相对位移（即两者的位移差）。
+  \item 两条 $v$-$t$ 图线之间的面积也可求相对位移。\textbf{只有把物块视为质点、接触区域可忽略时}，带面上被单个接触点扫过的痕迹长度才等于相对位移；若物块底面有有限长度，题目所说“痕迹长度”还要结合接触区域的初末位置判断。
 \end{enumerate}
 
 \end{examplebox}
 
 \section*{七、变式训练}
 
-\begin{enumerate}
+\begin{enumerate}[itemsep=0.65em,topsep=0.4em,parsep=0pt]
   \item $m_A = 5\ \mathrm{kg}$、$m_B = 3\ \mathrm{kg}$ 用轻绳连接放在光滑水平面上，在 $A$ 上施加 $F = 24\ \mathrm{N}$。求加速度和绳中张力。
-  
+
   \item 质量为 $m = 3\ \mathrm{kg}$ 的物体放在倾角 $\theta = 37^\circ$（$\sin\theta = 0.6$，$\cos\theta = 0.8$）的斜面上，$\mu_s = 0.5$，若下滑则取 $\mu_k = 0.5$，$g = 10\ \mathrm{m/s^2}$。
-  \begin{enumerate}
+  \begin{enumerate}[itemsep=0.35em,topsep=0.25em,parsep=0pt]
     \item 物体是否下滑？
     \item 若下滑，加速度多大？若静止，摩擦力多大？
   \end{enumerate}
-  
-  \item 水平传送带长 $L = 10\ \mathrm{m}$，以 $v = 6\ \mathrm{m/s}$ 运行，$\mu_k = 0.3$，$g = 10\ \mathrm{m/s^2}$。物块从传送带左端轻放，能否到达右端？若能，需要多长时间？
+
+  \item 水平传送带长 $L = 10\ \mathrm{m}$，以
+  $v_{\text{带}} = 6\ \mathrm{m/s}$ 运行，$\mu_k = 0.3$，
+  $g = 10\ \mathrm{m/s^2}$。物块从传送带左端轻放。判断物块到达右端前是否已与传送带共速，并求到达右端所需时间及相对滑动距离。
   \begin{center}
   \input{figures/tikz/training-conveyor}
   \end{center}
 \end{enumerate}
 
-\section*{八、易错点}
+\begin{learningbox}{变式训练参考结果}
+\begin{enumerate}[itemsep=0.45em,topsep=0.3em,parsep=0pt]
+  \item 光滑水平连接体：
+  \[
+  a=\frac{F}{m_A+m_B}=3.0\ \mathrm{m/s^2},
+  \qquad
+  T=m_Ba=9.0\ \mathrm{N}.
+  \]
 
-\begin{mistakebox}
-\begin{enumerate}
-  \item \textbf{整体法漏了摩擦力：} 先把系统外力逐个圈出。粗糙表面上的外摩擦力要写进整体方程，绳张力这类内力不写。
-  
-  \item \textbf{隔离法选错对象：} 先选择未知力少、受力简单的物体隔离。水平连接体中常先隔离后面的物体求张力。
-  
-  \item \textbf{传送带问题中摩擦力方向判断错：} 先判断物块相对传送带的滑动或趋势。刚放上时常相对向后滑，摩擦力向前；共速后再重新判断。
-  
-  \item \textbf{把 $\tan\theta$ 与 $\mu_s$ 的比较当成通用口诀：} 这条比较只适用于物体静放在斜面上、沿斜面方向没有其他外力的情形。先假设物体将要下滑，把静摩擦力画成沿斜面向上；再由临界平衡写 $mg\sin\theta=f_{\max}=\mu_smg\cos\theta$，才得到 $\tan\theta=\mu_s$。有拉力、推力或其他约束时，应重新列沿斜面的平衡方程。
-  
-  \item \textbf{匀速上滑时把摩擦力方向画反：} 匀速上滑时物体相对斜面向上运动，摩擦力沿斜面向下（阻力），不是向上。
+  \item 斜面物块：$\tan37^\circ=0.75>\mu_s=0.5$，物块下滑。滑动摩擦力
+  $f_k=\mu_kmg\cos37^\circ=12\ \mathrm{N}$，加速度
+  \[
+  a=g(\sin37^\circ-\mu_k\cos37^\circ)
+   =2.0\ \mathrm{m/s^2}.
+  \]
 
-  \item \textbf{斜拉绳时直接写 $u=v$：} 先把物体速度投影到绳方向。只有速度沿绳时绳端速度才等于物体速度大小。
+  \item 水平传送带：$a=\mu_kg=3.0\ \mathrm{m/s^2}$，
+  $t_1=v_{\text{带}}/a=2.0\ \mathrm{s}$，
+  $x_1=\frac12at_1^2=6.0\ \mathrm{m}<L$，所以到达右端前已经共速。总时间
+  \[
+  t=t_1+\frac{L-x_1}{v_{\text{带}}}
+   =\frac83\ \mathrm{s},
+  \]
+  相对滑动距离为两条 $v$-$t$ 图线在 $0$ 到 $t_1$ 间的面积：
+  $s_{\text{相对}}=\frac12v_{\text{带}}t_1=6.0\ \mathrm{m}$。
 \end{enumerate}
-\end{mistakebox}
+\end{learningbox}
 
-\section*{九、竞赛入门补充}
+\section*{八、竞赛入门补充}
 
 \begin{competitionbox}
-\textbf{运动方向不同的连接体——通常分别隔离}
+\textbf{运动方向不同且含摩擦的连接体}
 
 如果连接体中各物体的加速度方向不同（例如跨滑轮连接、斜面上下滑连接），不能直接把所有质量相加写成一个方向上的整体方程，通常要分别隔离。
 
-\textbf{例题：} 质量 $m_A$ 和 $m_B$ 通过跨过定滑轮的轻绳连接，$A$ 在光滑水平面上，$B$ 竖直悬挂滑落。求加速度和绳中张力。
+\textbf{例题：} 质量 $m_A$ 和 $m_B$ 通过跨过光滑定滑轮的轻绳连接，$A$ 在粗糙水平面上，动摩擦因数为 $\mu_k$。系统已经运动，$B$ 竖直向下。求加速度和绳中张力。
 
 \begin{center}
 \input{figures/tikz/pulley-connected-dynamics}
@@ -350,26 +442,29 @@ mg\sin\theta = f_{\max} = \mu_s mg\cos\theta
 \figcaption{滑轮连接体：两物体加速度大小相同、方向不同}\label{fig:pulley-connected-dynamics}
 \end{center}
 
-\textbf{解：} 两物体加速度大小相同但方向不同，分别隔离：
+\textbf{解：} 轻绳不伸长，所以两物体加速度大小相同，但方向不同。分别隔离：
 \begin{itemize}
-  \item 对 $A$（水平方向）：$T = m_A a$
+  \item 对 $A$（向右为正）：$T-\mu_km_Ag=m_Aa$
   \item 对 $B$（竖直方向）：$m_B g - T = m_B a$
 \end{itemize}
 
-\newpage
-
 联立得：
 \[
-a = \frac{m_B}{m_A + m_B} g,\qquad T = \frac{m_A m_B}{m_A + m_B} g
+a=\frac{m_B-\mu_km_A}{m_A+m_B}g,
+\qquad
+T=\frac{(1+\mu_k)m_Am_B}{m_A+m_B}g.
 \]
 
-\textbf{竞赛提示：} 滑轮连接体中，绳中各处的张力大小相等（轻绳、光滑滑轮），这是解题的关键条件。
+\textbf{条件检查：} 上式按 $B$ 向下取正。题目已说明系统按该方向运动；若只说“由静止释放”，还应先用最大静摩擦力判断能否启动。轻绳、光滑滑轮保证绳中各处张力大小相等。
 \end{competitionbox}
 
 \begin{competitionbox}
-\textbf{速度约束：只看沿绳方向的分量}
+\textbf{速度约束：先写整根绳的长度关系}
 
-有些连接体题中，绳子不是沿物体运动方向拉动物体。此时应先确定变长或变短的是哪一段绳，再比较物体速度在绳方向上的分量：\textbf{哪一段绳长正在变化？物体速度在这段绳方向上的分量是多少？}
+有些连接体题中，绳子不是沿物体运动方向拉动物体。下图中，轻绳一端连接物块，穿过固定光滑小环后，另一端竖直向下运动。设斜绳段长为 $\ell$、竖直绳段长为 $y$，忽略小环处的定长部分，则
+\[
+L=\ell+y+\text{定长部分}.
+\]
 
 \begin{center}
 \input{figures/tikz/rope-velocity-projection}
@@ -377,23 +472,58 @@ a = \frac{m_B}{m_A + m_B} g,\qquad T = \frac{m_A m_B}{m_A + m_B} g
 \figcaption{斜拉绳的速度约束：绳长变化只由沿绳方向的速度分量决定}\label{fig:rope-velocity-projection}
 \end{center}
 
-如图，物体水平运动速度为 $v$，绳与速度方向夹角为 $\theta$，绳端收短速度为 $u$。瞬时绳长减少的快慢只等于物体速度在绳方向上的投影：
+在很短时间 $\Delta t$ 内，物块向右移动，斜绳段缩短量近似为
+$v\cos\theta\,\Delta t$；为保持整根绳长不变，竖直绳段必须增加同样的长度。若自由端向下速度为 $u$，则
 \[
-u = v\cos\theta
+u\Delta t=v\cos\theta\,\Delta t,
+\qquad
+\boxed{u=v\cos\theta}.
 \]
 
-\textbf{模型边界：} 若绳与物体速度方向相同，$\theta=0$，则 $u=v$；若绳与物体速度方向垂直，$\theta=90^\circ$，这一瞬间物体运动不改变绳长，$u=0$。这就是“斜拉看投影”的来源。
+用瞬时变化率也可写成
+\[
+-\frac{\mathrm d\ell}{\mathrm dt}
+=\frac{\mathrm dy}{\mathrm dt}
+=u=v\cos\theta.
+\]
 \end{competitionbox}
+
+\section*{九、易错点}
+
+\begin{mistakebox}
+\begin{enumerate}
+  \item \textbf{整体法漏了摩擦力：} 先把系统外力逐个圈出。粗糙表面上的外摩擦力要写进整体方程，绳张力这类内力不写。
+
+  \item \textbf{隔离法选错对象：} 先选择未知力少、受力简单的物体隔离。水平连接体中常先隔离后面的物体求张力。
+
+  \item \textbf{传送带问题中摩擦力方向判断错：} 先判断物块相对传送带的滑动或趋势。刚放上时常相对向后滑，摩擦力向前；共速后再重新判断。
+
+  \item \textbf{把 $\tan\theta$ 与 $\mu_s$ 的比较当成通用口诀：} 这条比较只适用于物体静放在斜面上、沿斜面方向没有其他外力的情形。先假设物体将要下滑，把静摩擦力画成沿斜面向上；再由临界平衡写 $mg\sin\theta=f_{\max}=\mu_smg\cos\theta$，才得到 $\tan\theta=\mu_s$。有拉力、推力或其他约束时，应重新列沿斜面的平衡方程。
+
+  \item \textbf{匀速上滑时把摩擦力方向画反：} 匀速上滑时物体相对斜面向上运动，摩擦力沿斜面向下（阻力），不是向上。
+
+  \item \textbf{斜拉绳时直接写速度相等：} 如下图，轻绳穿过固定光滑小环，斜绳段长为 $\ell$、竖直段长为 $y$。由
+  $L=\ell+y+\text{定长部分}$ 可知
+  $u=-\mathrm d\ell/\mathrm dt=v\cos\theta$，而不是
+  $u=v$。改变装置或增加绳段后，必须重新写整根绳的长度关系。
+\end{enumerate}
+
+\begin{center}
+\input{figures/tikz/rope-velocity-mistake}
+
+\figcaption{斜拉绳易错辨析：先看绳长变化，再比较速度分量}\label{fig:rope-velocity-mistake}
+\end{center}
+\end{mistakebox}
 
 \section*{十、今日小结}
 
-\begin{enumerate}
+\begin{enumerate}[nosep]
   \item 整体法：求共同加速度时用，只考虑系统外力。
   \item 隔离法：求内力时用，先整体求加速度再隔离。
-  \item 斜面临界：无其他沿斜面外力时，$\tan\theta = \mu_s$ 是刚好下滑的临界条件。
-  \item 传送带：物块刚放上时受滑动摩擦力加速；若无其他水平外力，共速后无摩擦。
+  \item 斜面临界：无其他沿斜面外力时，$\tan\theta = \mu_s$ 表示物块处于极限静止状态。
+  \item 传送带：先检查物块能否在离开带面前共速；水平带上共速后可无摩擦，斜带上共速后仍要检查静摩擦力能否平衡重力沿斜面的分量。
   \item 摩擦方向检查：先判断相对运动或相对运动趋势；摩擦力与相对运动（趋势）方向相反，不是简单与运动方向相反。
-  \item 斜拉绳的速度约束要看沿绳方向的分量，不能把物体速度直接等同于绳端速度。
+  \item 斜拉绳的速度约束要先写整根绳长关系，再看沿绳方向的速度分量；图示小环模型中 $u=v\cos\theta$。
 \end{enumerate}
 
-\textbf{一分钟复盘：} 看到连接体题，先判断“是否共同加速度、是否要求内力、绳长约束是哪一段”。这三问回答完，再决定整体法、隔离法或速度投影。
+\textbf{一分钟复盘：} 看到连接体题，先判断“是否共同加速度、是否要求内力、整根绳由哪些可变绳段组成”。这三问回答完，再决定整体法、隔离法或速度投影。

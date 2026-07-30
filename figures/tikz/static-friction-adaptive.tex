@@ -8,12 +8,15 @@
   \node[left] at (0,3.2) {$f_{\max}=\mu_s N$};
   \node[below] at (3.2,0) {临界};
 
+  \draw[thick,blue,->] (3.2,3.12) -- (3.2,2.43);
+  \fill[blue] (3.2,3.2) circle (1.5pt);
+  \fill[blue] (3.2,2.35) circle (1.5pt);
   \draw[thick,blue] (3.2,2.35) -- (5.0,2.35);
   \draw[dashed] (0,2.35) -- (3.2,2.35);
   \node[left] at (0,2.35) {$f_k=\mu_k N$};
 
   \node[blue,above left,fill=white,inner sep=1pt] at (2.35,2.55) {$f_s=F_{\text{外}}$};
-  \node[blue,above,fill=white,inner sep=1pt] at (4.1,2.35) {滑动摩擦};
+  \node[blue,font=\scriptsize] at (4.10,3.02) {开始滑动};
   \node[align=center] at (1.25,-0.72) {\small 静止阶段\\[-1pt]\small 按需要变化};
   \draw[->] (1.25,-0.34) -- (1.05,1.05);
   \node[align=center,fill=white,inner sep=1pt] at (4.15,1.35) {\small 滑动后\\[-1pt]\small 近似定值};

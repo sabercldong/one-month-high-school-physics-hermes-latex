@@ -1,14 +1,18 @@
-\begin{tikzpicture}[scale=0.72,>=Stealth]
-  \draw[->] (0,-1.8) -- (0,2.3) node[above] {$v$};
-  \draw[->] (0,0) -- (5.4,0) node[right] {$t$};
+\begin{tikzpicture}[scale=0.78,>=Stealth,line cap=round,line join=round]
+  \draw[->] (0,-2.05) -- (0,2.35) node[above] {$v/(\mathrm{m\,s^{-1}})$};
+  \draw[->] (0,0) -- (5.65,0) node[right] {$t/\mathrm{s}$};
   \fill[blue!10] (0,0) -- (0,1.6) -- (1.7,1.6) -- (3.4,0) -- cycle;
   \fill[red!10] (3.4,0) -- (5.1,-1.6) -- (5.1,0) -- cycle;
-  \draw[thick,blue] (0,1.6) -- (1.7,1.6) -- (3.4,0) -- (5.1,-1.6);
-  \draw[dashed] (1.7,0) -- (1.7,1.6) node[above] {$2$};
-  \draw[dashed] (3.4,0) -- (3.4,0.1) node[above right] {$4$};
-  \draw[dashed] (5.1,0) -- (5.1,-1.6) node[below] {$6$};
+  \draw[very thick,blue!75!black] (0,1.6) -- (1.7,1.6) -- (3.4,0) -- (5.1,-1.6);
+
+  \foreach \x/\lab in {1.7/2,3.4/4,5.1/6} {
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below] at (\x,-0.10) {$\lab$};
+  }
+  \draw[dashed,gray!75] (1.7,0) -- (1.7,1.6);
+  \draw[dashed,gray!75] (5.1,0) -- (5.1,-1.6);
   \node[left] at (0,1.6) {$4$};
   \node[left] at (0,-1.6) {$-4$};
-  \node[font=\small] at (1.15,0.55) {正面积};
-  \node[font=\small] at (4.35,-0.55) {负面积};
+  \node[font=\small,blue!70!black] at (1.25,0.62) {正位移};
+  \node[font=\small,red!70!black] at (4.48,-0.72) {负位移};
 \end{tikzpicture}

@@ -1,33 +1,43 @@
 % TikZ 图：回旋加速器模型
-\begin{tikzpicture}[scale=0.82,>=Latex,line cap=round,line join=round]
-  % Two D-shaped electrodes.
-  \fill[gray!10] (-0.18,0) -- (-0.18,2.25) arc (90:270:2.25) -- cycle;
-  \fill[gray!10] (0.18,0) -- (0.18,2.25) arc (90:-90:2.25) -- cycle;
-  \draw[thick] (-0.18,2.25) arc (90:270:2.25);
-  \draw[thick] (0.18,2.25) arc (90:-90:2.25);
-  \draw[thick] (-0.18,2.25) -- (-0.18,-2.25);
-  \draw[thick] (0.18,2.25) -- (0.18,-2.25);
-  \node[font=\small] at (-1.45,2.55) {D 形盒};
-  \node[font=\small] at (1.45,2.55) {D 形盒};
+% 图示正电荷、磁场垂直纸面向里
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-2.75,-3.25) rectangle (2.75,3.10);
 
-  % Magnetic field marks.
-  \foreach \x in {-1.65,-1.05,-0.55,0.55,1.05,1.65}{
-    \foreach \y in {-1.45,-0.55,0.35,1.25}{
-      \node[blue!70!black,font=\scriptsize] at (\x,\y) {$\odot$};
+  % 两个 D 形盒与窄缝
+  \fill[gray!10] (-0.16,2.20) -- (-0.16,-2.20)
+    arc (-90:-270:2.20) -- cycle;
+  \fill[gray!10] (0.16,2.20) -- (0.16,-2.20)
+    arc (-90:90:2.20) -- cycle;
+  \draw[thick] (-0.16,2.20) -- (-0.16,-2.20)
+    arc (-90:-270:2.20);
+  \draw[thick] (0.16,2.20) -- (0.16,-2.20)
+    arc (-90:90:2.20);
+  \node[font=\small] at (-1.35,2.52) {D 形盒};
+  \node[font=\small] at (1.35,2.52) {D 形盒};
+
+  % 磁场：垂直纸面向里
+  \foreach \x in {-1.65,-1.05,-0.52,0.52,1.05,1.65} {
+    \foreach \y in {-1.55,-0.78,0.78,1.55} {
+      \draw[blue!65!black,thick] (\x-0.06,\y-0.06) -- (\x+0.06,\y+0.06);
+      \draw[blue!65!black,thick] (\x-0.06,\y+0.06) -- (\x+0.06,\y-0.06);
     }
   }
-  \node[blue!70!black,font=\small] at (0,-2.78) {匀强磁场 $B$ 垂直纸面向外};
+  \node[blue!65!black,font=\small] at (0,-2.64)
+    {$B$ 垂直纸面向里};
 
-  % Alternating electric field in the gap.
-  \draw[->,red,very thick] (-0.42,0.55) -- (0.42,0.55);
-  \draw[->,red,very thick] (0.42,-0.55) -- (-0.42,-0.55);
+  % 一条连续的、半径逐次增大的轨迹
+  \draw[orange!90!black,very thick,->] (0,0) arc (-90:90:0.35);
+  \draw[orange!90!black,very thick,->] (0,0.70) arc (90:270:0.65);
+  \draw[orange!90!black,very thick,->] (0,-0.60) arc (-90:90:0.95);
+  \draw[orange!90!black,very thick,->] (0,1.30) arc (90:270:1.25);
+  \draw[orange!90!black,very thick,->] (0,-1.20) arc (-90:66:1.55);
+  \fill[red] (0,0) circle (2.3pt);
 
-  % Expanding circular arcs.
-  \draw[orange!85!black,very thick,->] (0.55,0) arc (0:180:0.55);
-  \draw[orange!85!black,very thick,->] (-0.95,0) arc (180:360:0.95);
-  \draw[orange!85!black,very thick,->] (1.35,0) arc (0:180:1.35);
-  \draw[orange!85!black,very thick,->] (-1.75,0) arc (180:360:1.75);
-  \draw[orange!85!black,very thick,->] (2.05,0) arc (0:104:2.05);
-  \fill[orange!85!black] (0,0) circle (0.06);
-  \node[font=\small,align=center] at (0,-3.25) {磁场负责转弯，电场在缝隙中做功增加动能};
+  % 只画一个电场方向示意，避免把两个时刻画在同一图中
+  \draw[->,red,very thick] (-0.48,1.82) -- (0.48,1.82);
+  \node[red,right,font=\small] at (0.50,1.82) {缝隙电场 $E$};
+  \node[font=\small] at (0,2.86)
+    {交变电场每隔 $T/2$ 反向一次};
+  \node[font=\small] at (0,-3.02)
+    {盒内磁场负责转弯，窄缝电场负责做功};
 \end{tikzpicture}

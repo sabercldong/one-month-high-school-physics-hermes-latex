@@ -1,50 +1,62 @@
-% TikZ 图：家庭电路与安全保护
+% TikZ 图：家庭电路、空气开关、漏电保护与保护接地
 % Day 24：交变电流、变压器与电磁应用
 \begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round,
   every node/.style={font=\small}]
+  \path[use as bounding box] (-0.55,-2.40) rectangle (10.70,2.35);
   \tikzset{
-    wire/.style={thick},
     live/.style={thick,red!80!black},
     neutral/.style={thick,blue!70!black},
     earth/.style={thick,green!45!black},
-    device/.style={draw,rounded corners=3pt,fill=gray!8,minimum width=1.35cm,minimum height=0.76cm},
-    protector/.style={draw,rounded corners=3pt,fill=orange!10,minimum width=1.55cm,minimum height=0.82cm}
+    box/.style={draw,rounded corners=3pt,fill=gray!8}
   }
 
-  \node[draw,rounded corners=3pt,fill=blue!6,minimum width=1.35cm,minimum height=1.15cm] (grid) at (0,0.70) {用户端};
-  \node[protector] (breaker) at (2.25,1.30) {空气开关};
-  \node[protector] (rcd) at (4.55,0.70) {漏电保护};
-  \node[device] (load) at (7.00,0.70) {用电器};
+  \node[box,minimum width=1.35cm,minimum height=1.45cm,align=center] (supply) at (0.35,0.55)
+    {家庭\\配电端};
+  \node[box,fill=orange!10,minimum width=1.45cm,minimum height=0.72cm]
+    (breaker) at (2.55,1.15) {空气开关};
 
-  \draw[live,->] (grid.east |- 0,1.30) -- (breaker.west);
-  \draw[live,->] (breaker.east) -- (rcd.west |- 0,1.30);
-  \draw[live,->] (rcd.east |- 0,1.30) -- (load.west |- 0,1.30);
+  % RCD encloses both live and neutral conductors.
+  \draw[rounded corners=4pt,fill=orange!7,thick] (4.15,-0.15) rectangle (6.35,1.78);
+  \node[font=\small\bfseries] at (5.25,1.52) {漏电保护器};
 
-  \draw[neutral,->] (load.west |- 0,0.10) -- (rcd.east |- 0,0.10);
-  \draw[neutral,->] (rcd.west |- 0,0.10) -- (grid.east |- 0,0.10);
+  \node[box,minimum width=1.45cm,minimum height=1.25cm] (load) at (8.05,0.55)
+    {用电器};
 
-  \node[red!80!black,above] at (1.10,1.30) {火线 $L$};
-  \node[blue!70!black,below] at (1.25,0.10) {零线 $N$};
+  % Live conductor: supply -> breaker -> RCD -> load.
+  \draw[live,->] (supply.east |- 0,1.15) -- (breaker.west);
+  \draw[live,->] (breaker.east) -- (4.15,1.05);
+  \draw[live,->] (4.15,1.05) -- (6.35,1.05);
+  \draw[live,->] (6.35,1.05) -- (load.west |- 0,1.05);
 
-  \draw[thick,fill=white] (6.35,-1.15) rectangle (7.65,-0.42);
-  \node at (7.00,-0.80) {金属外壳};
-  \draw[wire] (load.south) -- (7.00,-0.42);
-  \draw[earth,->] (7.00,-1.15) -- (7.00,-2.05);
-  \draw[earth] (6.55,-2.05) -- (7.45,-2.05);
-  \draw[earth] (6.70,-2.22) -- (7.30,-2.22);
-  \draw[earth] (6.86,-2.38) -- (7.14,-2.38);
-  \node[green!45!black,right] at (7.13,-1.70) {保护地线 $PE$};
+  % Neutral conductor: load -> RCD -> supply.
+  \draw[neutral,->] (load.west |- 0,0.25) -- (6.35,0.25);
+  \draw[neutral,->] (6.35,0.25) -- (4.15,0.25);
+  \draw[neutral,->] (4.15,0.25) -- (supply.east |- 0,0.25);
 
-  \draw[red!80!black,dashed,->] (6.55,0.28) -- (6.72,-0.42);
-  \draw[green!45!black,dashed,->] (6.72,-0.42) -- (7.00,-1.15);
+  \node[red!80!black,above] at (1.25,1.15) {火线 $L$};
+  \node[blue!70!black,below] at (1.25,0.25) {零线 $N$};
 
-  \node[font=\scriptsize,align=center] at (2.25,2.15) {总电流过大\\自动断开};
-  \draw[orange!80!black,->] (2.25,1.78) -- (2.25,1.54);
+  % Differential-current detector: both conductors pass through one ring.
+  \draw[orange!85!black,thick] (5.25,0.65) ellipse (0.42 and 0.58);
+  \node[font=\scriptsize,align=center] at (5.25,-0.63)
+    {检测两线电流差：$I_\Delta=|I_L-I_N|$};
 
-  \node[font=\scriptsize,align=center] at (4.55,-1.08)
-    {正常：$I_L=I_N$\\漏电：$I_L\ne I_N$};
-  \draw[orange!80!black,->] (4.55,-0.42) -- (4.55,0.22);
+  % Metal enclosure and protective earth.
+  \draw[thick,fill=white] (7.35,-1.30) rectangle (8.75,-0.68);
+  \node at (8.05,-0.99) {金属外壳};
+  \draw[thick] (load.south) -- (8.05,-0.68);
+  \draw[earth,->] (8.05,-1.30) -- (8.05,-2.05);
+  \draw[earth] (7.62,-2.05) -- (8.48,-2.05);
+  \draw[earth] (7.78,-2.22) -- (8.32,-2.22);
+  \draw[earth] (7.92,-2.38) -- (8.18,-2.38);
+  \node[green!45!black,anchor=west] at (8.25,-1.72) {保护地线 $PE$};
 
-  \node[font=\scriptsize,align=center] at (7.00,1.95)
-    {电能转化为光、热\\或机械能};
+  % Fault path.
+  \draw[red!80!black,dashed,->] (7.55,0.22) -- (7.65,-0.68);
+  \draw[green!45!black,dashed,->] (7.65,-0.68) -- (8.05,-1.30);
+  \node[font=\scriptsize,align=center] at (2.55,2.05)
+    {过载或短路\\自动断开};
+  \draw[orange!80!black,->] (2.55,1.72) -- (2.55,1.52);
+  \node[font=\scriptsize,align=left,anchor=west] at (8.95,0.55)
+    {正常：$I_L=I_N$\\漏电：$I_\Delta\ne0$};
 \end{tikzpicture}

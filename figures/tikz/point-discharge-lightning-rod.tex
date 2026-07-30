@@ -1,7 +1,7 @@
 % TikZ 图：尖端放电与避雷针
 % Day 15：电荷、电场与电场强度
 \begin{tikzpicture}[scale=0.95,>=Latex,line cap=round,line join=round]
-  \path[use as bounding box] (-4.4,-1.65) rectangle (4.4,2.4);
+  \path[use as bounding box] (-4.4,-1.65) rectangle (4.4,2.55);
 
   % Charged cloud.
   \draw[thick,gray!70] (-3.9,1.85)
@@ -22,13 +22,18 @@
   }
   \draw[fill=gray!12,thick] (1.3,-0.95) rectangle (2.75,0.25);
   \draw[fill=gray!18,thick] (1.18,0.25) -- (2.02,0.82) -- (2.88,0.25) -- cycle;
-  \node[font=\small] at (2.03,-0.35) {建筑};
+  \node[font=\small] at (1.62,-0.35) {建筑};
 
   % Lightning rod.
   \draw[very thick] (2.02,0.82) -- (2.02,1.65);
   \draw[fill=black] (2.02,1.65) -- (1.92,1.42) -- (2.12,1.42) -- cycle;
   \draw[very thick] (2.02,0.82) -- (2.02,-1.20);
-  \node[font=\scriptsize,right=2pt] at (2.05,-1.18) {接地};
+  \node[font=\scriptsize,anchor=east] (airterminal) at (1.45,1.62) {接闪器};
+  \draw[gray!70,->] (airterminal.east) -- (1.96,1.58);
+  \node[font=\scriptsize,anchor=west] (downlead) at (3.05,-0.12) {引下线};
+  \draw[gray!70,->] (downlead.west) -- (2.08,-0.12);
+  \node[font=\scriptsize,anchor=west] (grounding) at (2.65,-1.35) {接地装置};
+  \draw[gray!70,->] (grounding.west) -- (2.08,-1.16);
 
   % Dense positive charges near sharp tip.
   \foreach \x/\y in {1.86/1.47,1.95/1.56,2.05/1.56,2.17/1.47,2.02/1.33} {
@@ -36,11 +41,11 @@
   }
 
   % Field lines around the sharp point.
-  \foreach \a in {72,92,112,132} {
-    \draw[red!75!black,->,thick] (2.02,1.55) -- ++(\a:0.90);
+  \foreach \a in {60,90,120} {
+    \draw[red!75!black,->,thick] (2.02,1.58) -- ++(\a:0.62);
   }
-  \node[red!80!black,font=\small,align=center] at (3.45,1.88)
-    {尖端附近\\电场更强};
+  \node[red!80!black,font=\small,align=center,anchor=west] at (2.72,2.18)
+    {尖端附近场强大\\可能形成电晕};
 
   % Smooth conductor comparison.
   \draw[fill=gray!18,thick] (-2.10,-0.95) rectangle (-1.25,0.28);

@@ -1,20 +1,29 @@
-% TikZ 图：电磁波中电场和磁场的相互垂直振荡
+% TikZ 图：电磁波中 E、B 与传播方向两两垂直
 % Day 24：交变电流、变压器与电磁应用
-\begin{tikzpicture}[scale=0.88,>=Latex]
-  \draw[->,thick] (0,0) -- (6.6,0) node[right] {传播方向 $c$};
-  \draw[->,thick,blue] (0.6,-1.3) -- (0.6,1.4) node[above] {$E$};
-  \draw[->,thick,red] (0.25,0) -- (-0.55,-0.8) node[left] {$B$};
+\begin{tikzpicture}[scale=0.90,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-1.10,-2.00) rectangle (8.20,2.25);
 
-  \draw[blue,thick,samples=120,domain=0:6.0]
-    plot(\x,{0.9*sin(180*\x)});
-  \draw[red,thick,samples=120,domain=0:6.0]
-    plot(\x,{-0.55*sin(180*\x)-0.35});
+  % Three projected axes.
+  \draw[->,thick] (0,0) -- (7.35,0) node[right] {传播方向};
+  \draw[->,thick,blue] (0,0) -- (0,1.72) node[above] {$\vec E$};
+  \draw[->,thick,red!75!black] (0,0) -- (-0.82,-0.82)
+    node[below left] {$\vec B$};
 
-  \foreach \x in {0.5,1.5,2.5,3.5,4.5,5.5}{
-    \draw[blue!60,->] (\x,0) -- (\x,{0.9*sin(180*\x)});
-    \draw[red!60,->] (\x,0) -- ++(-0.35,{-0.35-0.55*sin(180*\x)});
+  % E wave in the x-y plane.
+  \draw[blue,very thick,samples=160,domain=0:6.75]
+    plot(\x,{1.02*sin(180*\x/1.50)});
+
+  % B wave along a projected z direction: displacement basis (-0.48,-0.48).
+  \draw[red!75!black,very thick,samples=160,domain=0:6.75]
+    plot({\x-0.48*sin(180*\x/1.50)},{-0.48*sin(180*\x/1.50)});
+
+  \foreach \x in {0.75,2.25,3.75,5.25,6.75}{
+    \draw[blue!65,->] (\x,0) -- (\x,{1.02*sin(180*\x/1.50)});
+    \draw[red!60!black,->] (\x,0) --
+      ({\x-0.48*sin(180*\x/1.50)},{-0.48*sin(180*\x/1.50)});
   }
 
-  \node[align=center,font=\small] at (3.35,-1.65)
-    {变化的电场和磁场相互激发，向外传播};
+  \node[font=\small,align=center] at (3.55,-1.62)
+    {$\vec E\perp\vec B$，且二者均垂直于传播方向；\\
+     电场和磁场同相振荡并向前传播};
 \end{tikzpicture}

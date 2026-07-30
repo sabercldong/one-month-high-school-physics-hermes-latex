@@ -1,0 +1,26 @@
+% TikZ 图：非正弦周期电流的有效值
+% Day 24：竞赛入门
+\begin{tikzpicture}[scale=0.92,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.65,-1.55) rectangle (7.20,2.20);
+  \draw[->,thick] (0,0) -- (6.65,0) node[right] {$t$};
+  \draw[->,thick] (0,-1.10) -- (0,1.75) node[above] {$i$};
+
+  \draw[blue,very thick]
+    (0,1.25) -- (2.05,1.25) -- (2.05,-0.72) -- (6.15,-0.72);
+  \draw[gray,dashed] (2.05,1.48) -- (2.05,-1.15);
+  \draw[gray,dashed] (6.15,0.18) -- (6.15,-1.15);
+
+  \node[left,font=\small] at (0,1.25) {$2I_0$};
+  \node[left,font=\small] at (0,-0.72) {$-I_0$};
+  \node[below,font=\small] at (2.05,-1.15) {$T/3$};
+  \node[below,font=\small] at (6.15,-1.15) {$T$};
+
+  \draw[orange!85!black,<->,thick] (0,1.68) -- (2.05,1.68)
+    node[midway,above,font=\small] {$\Delta t_1=T/3$};
+  \draw[orange!85!black,<->,thick] (2.05,-1.05) -- (6.15,-1.05)
+    node[midway,below=5pt,font=\small] {$\Delta t_2=2T/3$};
+
+  \node[font=\small,align=center] at (4.45,1.28)
+    {$I_{\mathrm{eff}}^2T
+      =\displaystyle\sum_k I_k^2\Delta t_k$};
+\end{tikzpicture}

@@ -5,9 +5,9 @@
   \coordinate (N) at (1.6,0);
 
   \filldraw[red] (P) circle (4pt);
-  \node[below] at (P) {$+Q$};
+  \node[below left=4pt,fill=white,inner sep=1pt] at (P) {$+Q$};
   \filldraw[blue] (N) circle (4pt);
-  \node[below] at (N) {$-Q$};
+  \node[below right=4pt,fill=white,inner sep=1pt] at (N) {$-Q$};
 
   \draw[->,thick] (-1.25,0) -- (1.25,0);
   \draw[->,thick] (-1.35,0.18) .. controls (-0.75,0.95) and (0.75,0.95) .. (1.35,0.18);
@@ -17,5 +17,5 @@
 
   \draw[dashed,gray] (0,-1.45) -- (0,1.45);
   \node[gray,above] at (0,1.45) {中垂线};
-  \node[font=\small] at (0,-1.75) {中垂线上合场强平行于两电荷连线};
+  \node[font=\small] at (0,-1.88) {中垂线上合场强平行于两电荷连线};
 \end{tikzpicture}

@@ -1,0 +1,30 @@
+% Day 06：选轴、真实受力与方程方向对应示意
+\begin{tikzpicture}[scale=0.82,>=Latex,line cap=round,line join=round]
+  \def\ang{21.8}
+
+  % 左侧画物体的真实受力。
+  \draw[thick] (0,0) -- (4.75,0) -- (0,1.90) -- cycle;
+  \coordinate (P) at (2.32,0.97);
+  \coordinate (C) at ($(P)+(68.2:0.33)$);
+  \begin{scope}[shift={(P)},rotate=-21.8]
+    \draw[fill=white,thick] (-0.48,0) rectangle (0.48,0.66);
+    \node at (0.24,0.45) {$m$};
+  \end{scope}
+
+  \draw[->,very thick,blue] (C) -- ++(0,-1.10)
+    node[below right=1pt] {$mg$};
+  \draw[->,very thick,blue] (C) -- ++(68.2:1.02)
+    node[above left=1pt] {$N$};
+  \draw[->,very thick,red] (C) -- ++(158.2:1.02)
+    node[above left=1pt] {$f_k$};
+  % 右侧单独给出坐标轴，避免坐标轴与力箭头叠在一起。
+  \begin{scope}[shift={(5.55,0.62)}]
+    \coordinate (O) at (0,0);
+    \node[font=\footnotesize,gray!80] at (0.30,1.42) {选定坐标轴};
+    \draw[->,thick,gray!80] (O) -- ++(-21.8:1.45)
+      node[below right] {$x$};
+    \draw[->,thick,gray!80] (O) -- ++(68.2:1.20)
+      node[above] {$y$};
+    \fill (O) circle (1.4pt);
+  \end{scope}
+\end{tikzpicture}

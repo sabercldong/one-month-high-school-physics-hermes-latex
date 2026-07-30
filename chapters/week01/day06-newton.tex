@@ -41,6 +41,8 @@
   \item 质量是惯性大小的量度——质量越大，惯性越大，运动状态越难改变。
 \end{itemize}
 
+\textbf{什么是惯性参考系：} 若在某一参考系中，\textbf{不受力或合力为零的物体保持静止或匀速直线运动}，就把这个参考系定义为惯性参考系。它不是靠单次实验“完全验证”出来的，而是看牛顿第一定律能否在其中近似成立。高中题目通常把地面、实验室或相对地面匀速直线运动的列车近似视为惯性系；明显加速、转弯或旋转的车厢、转盘等则是非惯性系。
+
 \textbf{伽利略的理想实验：} 斜面实验表明，如果没有摩擦力，小球将沿另一斜面上升到相同高度。若另一斜面倾角为零（水平），小球将一直运动下去——推翻了亚里士多德“力是维持运动的原因”的错误观点。
 
 \begin{center}
@@ -55,7 +57,7 @@
 
 \begin{conceptbox}{牛顿第二定律}
 
-\textbf{内容：} 物体的加速度与所受合力成正比，与质量成反比，加速度方向与合力方向相同。
+\textbf{内容：} 在研究过程中质量可视为不变时，物体的加速度与所受合力成正比，与质量成反比；加速度方向与合力方向相同。
 
 \[
 \boxed{F_{\text{合}} = ma}
@@ -68,6 +70,8 @@
   \item \textbf{瞬时性：} 在高中牛顿力学模型中，合力一旦改变，加速度立即随之改变（同时性）。
   \item \textbf{叠加性：} 各个力的作用可以按矢量叠加，最终由合力决定物体的加速度。
 \end{itemize}
+
+\textbf{惯性力的初步认识：} 在加速参考系中，物体会表现出“向后偏”等现象。为仍能把相对该参考系的运动写成类似牛顿第二定律的形式，可引入惯性力；它\textbf{不是物体间真实相互作用产生的力}。高中常规受力分析默认选地面等近似惯性系，因此不把惯性力画入受力图；只有题目明确要求在加速参考系中研究时才另行处理。
 
 \textbf{解题关键：} 用牛顿第二定律建立方程，把受力分析的结果代入。
 \[
@@ -106,7 +110,7 @@
   \item \textbf{同时：} 同生同灭，没有先后。
 \end{enumerate}
 
-\textbf{关键区别：} 作用力与反作用力（牛顿第三定律）$\neq$ 平衡力（牛顿第一定律）。
+\textbf{关键区别：} 作用力与反作用力（牛顿第三定律）$\neq$ 平衡力。平衡力作用在同一个物体上，矢量和为零；作用力与反作用力分别作用在两个物体上。
 
 \begin{center}
 \begin{tabular}{lll}
@@ -114,7 +118,8 @@
  & 作用力与反作用力 & 平衡力 \\
 \midrule
 对象 & 两个不同物体 & 同一个物体 \\
-性质 & 一定相同 & 可以不同 \\
+相互作用类型 & 同一种相互作用 & 可以不同 \\
+大小、方向 & 等大、反向 & 等大、反向、共线 \\
 时间 & 同生同灭 & 无此要求 \\
 效果 & 各自产生效果 & 合力为零 \\
 \bottomrule
@@ -165,6 +170,12 @@ N-mg\cos\theta=0.
 \textbf{判断标准：} 方程左边必须来自受力图中的真实力或真实力的分量；右边是同一方向的 $ma$。若某方向没有加速度，右边才写 $0$，不是因为“这个方向没有运动”就自动没有受力。
 \end{learningbox}
 
+\begin{center}
+\input{figures/tikz/newton-axis-equation-example}
+
+\figcaption{表中斜面示例：选轴、列真实力分量和写出对应加速度必须对应同一方向}\label{fig:newton-axis-equation-example}
+\end{center}
+
 \subsection*{核心公式}
 
 \[
@@ -172,7 +183,7 @@ N-mg\cos\theta=0.
 \]
 
 \begin{itemize}
-  \item 适用条件：宏观、低速（远小于光速）、惯性参考系。
+  \item 适用条件：宏观、低速（远小于光速）、惯性参考系，且研究过程中物体质量可视为不变。
   \item $F_{\text{合}}$ 是物体所受所有力的矢量和，不是某个力。
   \item $a$ 与 $F_{\text{合}}$ 瞬时对应。
 \end{itemize}
@@ -212,6 +223,14 @@ F - f_k = ma,\qquad N = mg,\qquad f_k=\mu_k N
 F\cos\theta - \mu_k (mg - F\sin\theta) = ma
 \]
 
+\begin{center}
+\input{figures/tikz/newton-horizontal-pull}
+\qquad
+\input{figures/tikz/newton-oblique-pull}
+
+\figcaption{水平面模型的两种受力：水平拉力时 $N=mg$；斜向上拉时先由竖直方向求 $N$}\label{fig:newton-horizontal-oblique-pull}
+\end{center}
+
 \subsection*{模型 2：斜面上的动力学}
 
 物体沿斜面\textbf{向下滑}（沿斜面向下为正方向）：
@@ -231,13 +250,15 @@ a_{\text{上滑}} = -\,(g\sin\theta + \mu_k g\cos\theta)
 \]
 （负号表示加速度沿斜面向下，大小为 $g\sin\theta + \mu_k g\cos\theta$）
 
+\textbf{阶段边界：} 上式只适用于物体仍在沿斜面向上滑动的阶段。速度减为零后，物体可能静止，也可能重新下滑；此时应重新判断相对运动趋势和摩擦力方向，不能继续沿用上滑阶段的方程。
+
 画斜面受力图时，先画真实力：重力、支持力、摩擦力。重力的两个分力只是列方程时的计算工具，不是额外多出来的力。
 
 \begin{center}
 \input{figures/tikz/newton-incline}
 
 \nopagebreak
-\figcaption{斜面上物体的受力与分解：实线为真实力，虚线为重力分力}\label{fig:newton-incline}
+\figcaption{斜面下滑模型：先画真实受力，再单独分解重力}\label{fig:newton-incline}
 \end{center}
 
 \subsection*{模型 3：连接体问题（基础）}
@@ -246,7 +267,18 @@ a_{\text{上滑}} = -\,(g\sin\theta + \mu_k g\cos\theta)
 \[
 F - f_{\text{总}} = (m_1 + m_2) a
 \]
-再用隔离法求绳中张力。
+\textbf{为什么整体法不写内力：} 严格地说，应把 $A$、$B$ 和质量可忽略的轻绳一并纳入系统，物体与绳之间的相互作用力才都属于系统内力。等价地，分别对 $A$、$B$ 列牛顿第二定律再相加时，理想轻绳各处张力大小相等，两个张力项方向相反，因而在总方程中抵消。
+
+\textbf{不要混淆力对：} “绳对 $A$ 的拉力”和“绳对 $B$ 的拉力”不是一对作用力与反作用力；它们各自的反作用力分别是“$A$ 对绳的力”和“$B$ 对绳的力”。
+
+再隔离其中一个物体求绳中张力。例如隔离后方物体 $B$，取运动方向为正：
+\[
+T-f_B=m_Ba,\qquad f_B=\mu_km_Bg,
+\]
+所以
+\[
+T=m_Ba+\mu_km_Bg.
+\]
 
 \begin{center}
 \input{figures/tikz/connected-body-newton}
@@ -261,7 +293,7 @@ F - f_{\text{总}} = (m_1 + m_2) a
 \begin{center}
 \input{figures/tikz/apparent-weight-elevator}
 
-\figcaption{升降机中的视重：支持力 $N$ 随竖直加速度改变}\label{fig:apparent-weight-elevator}
+\figcaption{升降机中的视重：箭头长度表示 $N$ 与 $mg$ 的大小关系}\label{fig:apparent-weight-elevator}
 \end{center}
 
 取竖直向上为正方向：
@@ -269,18 +301,19 @@ F - f_{\text{总}} = (m_1 + m_2) a
 N-mg=ma,\qquad N=m(g+a).
 \]
 
+该式默认人与秤始终接触，因此必须有 $N\ge 0$。若按接触模型算得 $N<0$，说明人与秤已经分离，实际支持力应取 $N=0$，人的加速度再由重力决定。
+
 \begin{itemize}
   \item 向上加速或向下减速：$a>0$，$N>mg$，表现为超重。
   \item 向下加速或向上减速：$a<0$，$N<mg$，表现为失重。
   \item 自由下落：$a=-g$，$N=0$，表现为完全失重。
 \end{itemize}
 
-\newpage
 \section*{六、例题精讲}
 
 \begin{examplebox}{水平面上的牛顿第二定律}
 
-\textbf{题意分析：} 一个 $m = 4\ \mathrm{kg}$ 的物体在水平面上，受水平拉力 $F = 20\ \mathrm{N}$，物体与地面间的动摩擦因数 $\mu_k = 0.3$，$g = 10\ \mathrm{m/s^2}$。求物体的加速度。
+\textbf{题意分析：} 一个 $m = 4\ \mathrm{kg}$ 的物体已经在水平面上向右滑动，受水平向右的拉力 $F = 20\ \mathrm{N}$，物体与地面间的动摩擦因数 $\mu_k = 0.3$，$g = 10\ \mathrm{m/s^2}$。求物体的加速度。
 
 \textbf{物理模型：} 水平面动力学，受拉力 $F$ 和滑动摩擦力 $f_k$。
 
@@ -310,6 +343,12 @@ a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
 
 \textbf{物理模型：} 斜面动力学 $\to$ 匀加速直线运动。
 
+\begin{center}
+\input{figures/tikz/example-newton-incline}
+
+\figcaption{例题斜面：沿斜面向下取正方向，摩擦力沿斜面向上}\label{fig:example-newton-incline}
+\end{center}
+
 \textbf{解题过程：}
 
 \begin{enumerate}
@@ -320,7 +359,7 @@ a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
   \[
   a = g(\sin\theta - \mu_k\cos\theta) = 10 \times (0.6 - 0.25 \times 0.8) = 10 \times 0.4 = 4\ \mathrm{m/s^2}
   \]
-  
+
   \item 由运动学公式（$v_0 = 0$）：
   \[
   L = \frac12 a t^2,\qquad 5 = \frac12 \times 4 \times t^2,\qquad t^2 = 2.5,\qquad t \approx 1.58\ \mathrm{s}
@@ -344,6 +383,12 @@ a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
 
 \textbf{物理模型：} 连接体，光滑无摩擦。
 
+\begin{center}
+\input{figures/tikz/example-newton-connected}
+
+\figcaption{例题连接体：整体受外力 $F$，隔离 $B$ 后只保留张力 $T$}\label{fig:example-newton-connected}
+\end{center}
+
 \textbf{解题过程：}
 
 \begin{enumerate}
@@ -351,14 +396,14 @@ a = \frac{F_{\text{合}}}{m} = \frac{8}{4} = 2\ \mathrm{m/s^2}
   \[
   F = (m_A + m_B) a,\qquad 10 = 5a,\qquad a = 2\ \mathrm{m/s^2}
   \]
-  
+
   \item 隔离 $B$（只分析 $B$ 受的力）：
-  
+
   $B$ 只受绳的拉力 $T$，由牛顿第二定律：
   \[
   T = m_B a = 2 \times 2 = 4\ \mathrm{N}
   \]
-  
+
   验证（隔离 $A$）：$F - T = m_A a$，$10 - 4 = 6 = 3 \times 2$，正确。
 \end{enumerate}
 
@@ -391,8 +436,8 @@ N=m(g+a)=60\times(10+2)=720\ \mathrm{N}.
 \section*{七、变式训练}
 
 \begin{enumerate}
-  \item 质量为 $m = 5\ \mathrm{kg}$ 的物体在水平面上，受水平拉力 $F = 25\ \mathrm{N}$，动摩擦因数 $\mu_k = 0.4$，$g = 10\ \mathrm{m/s^2}$。求加速度。
-  
+  \item 质量为 $m = 5\ \mathrm{kg}$ 的物体已经在水平面上向右滑动，受水平向右的拉力 $F = 25\ \mathrm{N}$，动摩擦因数 $\mu_k = 0.4$，$g = 10\ \mathrm{m/s^2}$。求加速度。
+
   \item 一个物体以 $v_0 = 10\ \mathrm{m/s}$ 的初速度沿倾角 $\theta = 30^\circ$ 的粗糙斜面向上滑行，动摩擦因数 $\mu_k = 0.2$，$g = 10\ \mathrm{m/s^2}$。求：
   \begin{center}
   \input{figures/tikz/training-incline-friction}
@@ -401,43 +446,50 @@ N=m(g+a)=60\times(10+2)=720\ \mathrm{N}.
     \item 物体上滑的加速度大小和方向。
     \item 物体上滑的最大距离。
   \end{enumerate}
-  
+
   \item 质量为 $50\ \mathrm{kg}$ 的人站在电梯中。若电梯以 $1.5\ \mathrm{m/s^2}$ 的加速度向下启动，取 $g=10\ \mathrm{m/s^2}$，求体重计示数对应的支持力。
   \begin{center}
-  \input{figures/tikz/apparent-weight-elevator}
+  \input{figures/tikz/training-elevator-down}
   \end{center}
 \end{enumerate}
 
-\section*{八、易错点}
+\begin{learningbox}{变式训练参考结果}
+\begin{enumerate}[itemsep=0.45em,topsep=0.3em,parsep=0pt]
+  \item 水平面滑动：
+  \[
+  a=\frac{F-\mu_kmg}{m}
+   =\frac{25-0.4\times5\times10}{5}
+   =1.0\ \mathrm{m/s^2},
+  \]
+  方向向右。
 
-\begin{mistakebox}
-\begin{enumerate}
-  \item \textbf{把 $F = ma$ 中的 $F$ 理解为某个力而不是合力：} 列式前先在选定方向上写出 $\sum F$，再令 $\sum F=ma$。物体在斜面上受重力、支持力、摩擦力，加速度 $a = g\sin\theta - \mu_k g\cos\theta$ 是由合力产生的，不是单由重力产生的。
-  
-  \item \textbf{混淆作用力与反作用力和平衡力：} 判断两力关系时先看受力物体：作用在同一物体上且合力为零，才可能是平衡力；作用在两个不同物体上，才可能是作用力与反作用力。受力分析只画外界对研究对象的力，不画研究对象对外界的力。
-  
-  \item \textbf{正交分解时坐标方向不对：} 先观察加速度和约束方向。常把一个轴取在加速度方向或斜面方向上，另一个轴取垂直约束面方向，方程更清楚。
-  
-  \item \textbf{牛顿第二定律的瞬时性：} 遇到“刚断开”“刚撤去”时，先重画瞬间受力图，再区分哪些力能突变、哪些力暂时不变；合力一变，加速度立即改变。
-  
-  \item \textbf{连接体问题中内力不等于外力：} 先用整体法求共同加速度，再隔离某一物体求张力；不要把绳中张力直接等同于外部拉力。
-  
-  \item \textbf{把超重理解成重力变大：} 先把体重计示数写成支持力 $N$，再在竖直方向列 $N-mg=ma$。超重、失重改变的是支持力或悬绳拉力等视重，重力 $mg$ 在近地范围内近似不变。
+  \item 斜面上滑阶段：
+  \[
+  a=g(\sin30^\circ+\mu_k\cos30^\circ)
+   \approx6.73\ \mathrm{m/s^2},
+  \]
+  方向沿斜面向下；上滑最大距离
+  \[
+  s_{\max}=\frac{v_0^2}{2a}\approx7.43\ \mathrm{m}.
+  \]
 
-  \item \textbf{有明显空气阻力时仍套自由落体：} 若阻力随速度增大，合力和加速度会随时间变化，不能直接用匀加速公式贯穿全过程。
+  \item 电梯向下加速：
+  \[
+  N=m(g-a)=50(10-1.5)=425\ \mathrm{N}.
+  \]
 \end{enumerate}
-\end{mistakebox}
+\end{learningbox}
 
-\section*{九、竞赛入门补充}
+\section*{八、竞赛入门补充}
 
 \begin{competitionbox}
 \textbf{牛顿第二定律的瞬时性问题}
 
 竞赛中常见“剪断绳子”、“撤去支持物”等瞬时变化问题。
 
-\textbf{关键：} 弹簧弹力不能突变（形变需要时间），而绳的拉力可以突变。
+\textbf{关键：} 弹簧弹力不能突变（形变需要时间），而理想轻绳的拉力可以突变。
 
-\textbf{例题：} $A$、$B$ 两球用轻弹簧连接，$A$ 球用细绳悬挂在天花板上，如图。
+\textbf{例题：} $A$、$B$ 两物块用轻弹簧连接，$A$ 用细绳悬挂在天花板上，如图。
 
 \begin{center}
 \input{figures/tikz/spring-instant}
@@ -445,9 +497,9 @@ N=m(g+a)=60\times(10+2)=720\ \mathrm{N}.
 \figcaption{剪断细绳瞬间：弹簧弹力 $T$ 保持不变，绳拉力 $F$ 立即消失}\label{fig:spring-instant}
 \end{center}
 
-剪断细绳的瞬间，$A$、$B$ 两球的加速度各是多少？
+剪断细绳的瞬间，$A$、$B$ 两物块的加速度各是多少？
 
-\textbf{解答：} 
+\textbf{解答：}
 \begin{itemize}
   \item 剪断前：$A$ 受重力 $m_A g$、弹簧拉力 $T$（向下）、绳拉力 $F$（向上），平衡 $F = m_A g + T$；$B$ 受重力 $m_B g$、弹簧拉力 $T$（向上），平衡 $T = m_B g$。
   \item 剪断瞬间：绳拉力 $F$ 立即消失，但弹簧形变未变，$T$ 保持不变（$T = m_B g$）。
@@ -507,8 +559,28 @@ v_t=\frac{mg}{k},
 \sum \vect{F}_{\text{真实}}+\vect{F}_{\text{惯}}=0.
 \]
 
-\textbf{模型边界：} 惯性力不是物体间真实相互作用力，没有反作用力对象。高中常规题优先在地面惯性系中分析；竞赛入门题中，加速车厢、转动圆盘和离心现象可以用惯性力作为辅助工具，但必须先说明参考系。
+\textbf{模型边界：} 上述 $\vect{F}_{\text{惯}}=-m\vect{a}_0$ 只针对相对惯性系做平动加速的参考系。惯性力不是物体间真实相互作用力，没有反作用力对象。高中常规题优先在地面惯性系中分析；转动参考系还可能涉及离心力、科里奥利力等，本节不直接套用上式。
 \end{competitionbox}
+
+\section*{九、易错点}
+
+\begin{mistakebox}
+\begin{enumerate}
+  \item \textbf{把 $F = ma$ 中的 $F$ 理解为某个力而不是合力：} 列式前先在选定方向上写出 $\sum F$，再令 $\sum F=ma$。物体在斜面上受重力、支持力、摩擦力，加速度 $a = g\sin\theta - \mu_k g\cos\theta$ 是由合力产生的，不是单由重力产生的。
+
+  \item \textbf{混淆作用力与反作用力和平衡力：} 判断两力关系时先看受力物体：作用在同一物体上且合力为零，才可能是平衡力；作用在两个不同物体上，才可能是作用力与反作用力。受力分析只画外界对研究对象的力，不画研究对象对外界的力。
+
+  \item \textbf{正交分解时坐标方向不对：} 先观察加速度和约束方向。常把一个轴取在加速度方向或斜面方向上，另一个轴取垂直约束面方向，方程更清楚。
+
+  \item \textbf{牛顿第二定律的瞬时性：} 遇到“刚断开”“刚撤去”时，先重画瞬间受力图，再区分哪些力能突变、哪些力暂时不变；合力一变，加速度立即改变。
+
+  \item \textbf{连接体问题中内力不等于外力：} 先用整体法求共同加速度，再隔离某一物体求张力；不要把绳中张力直接等同于外部拉力。
+
+  \item \textbf{把超重理解成重力变大：} 先把体重计示数写成支持力 $N$，再在竖直方向列 $N-mg=ma$。超重、失重改变的是支持力或悬绳拉力等视重，重力 $mg$ 在近地范围内近似不变。
+
+  \item \textbf{有明显空气阻力时仍套自由落体：} 若阻力随速度增大，合力和加速度会随时间变化，不能直接用匀加速公式贯穿全过程。
+\end{enumerate}
+\end{mistakebox}
 
 \section*{十、今日小结}
 

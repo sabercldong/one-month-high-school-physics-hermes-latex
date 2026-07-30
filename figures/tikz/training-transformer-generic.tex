@@ -1,15 +1,19 @@
-\begin{tikzpicture}[scale=0.85,>=Stealth]
-  \draw[thick] (0,0) -- (0.9,0);
-  \draw[thick] (3.1,0) -- (4.0,0);
-  \draw[thick] (1.45,-0.75) -- (1.45,0.75);
-  \draw[thick] (2.55,-0.75) -- (2.55,0.75);
-  \foreach \y in {-0.55,-0.33,-0.11,0.11,0.33,0.55}
-    \draw[blue] (1.0,\y) arc[start angle=90,end angle=270,radius=0.11];
-  \foreach \y in {-0.45,-0.15,0.15,0.45}
-    \draw[red] (2.9,\y) arc[start angle=90,end angle=270,radius=0.11];
-  \node[blue] at (0.55,0.42) {$U_1$};
-  \node[blue,font=\small] at (0.85,1.08) {$n_1=800$};
-  \node[red,font=\small] at (3.15,1.08) {$n_2=200$};
-  \node[red] at (3.55,0.42) {$U_2$};
-  \node at (2.0,-1.08) {$\dfrac{U_2}{U_1}=\dfrac{n_2}{n_1}$};
+% TikZ 图：变式训练中的理想变压器
+\begin{tikzpicture}[scale=0.84,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.45,-1.55) rectangle (6.85,1.75);
+  \draw[gray!45,line width=8pt,rounded corners=2pt]
+    (2.45,-0.90) rectangle (4.20,0.90);
+  \draw[blue,thick,decorate,decoration={coil,aspect=0.42,segment length=4.5pt,amplitude=3.5pt}]
+    (2.10,-0.60) -- (2.10,0.60);
+  \draw[red,thick,decorate,decoration={coil,aspect=0.42,segment length=6pt,amplitude=3.5pt}]
+    (4.55,-0.40) -- (4.55,0.40);
+  \draw[thick] (0.55,0.60) -- (2.10,0.60);
+  \draw[thick] (0.55,-0.60) -- (2.10,-0.60);
+  \draw[thick] (4.55,0.40) -- (5.85,0.40);
+  \draw[thick] (4.55,-0.40) -- (5.85,-0.40);
+  \node[blue,font=\small] at (1.25,1.12) {$n_1=800,\ U_1=220\ \mathrm V$};
+  \node[red,font=\small] at (5.10,1.12) {$n_2=200$};
+  \node[red,font=\small] at (6.18,0) {求 $U_2$};
+  \node[font=\small] at (3.32,-1.22)
+    {$\dfrac{U_2}{U_1}=\dfrac{n_2}{n_1}$};
 \end{tikzpicture}

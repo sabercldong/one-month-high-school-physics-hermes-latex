@@ -1,0 +1,21 @@
+% TikZ 图：多个点电荷电势的标量叠加
+\begin{tikzpicture}[scale=0.9,>=Latex,font=\small]
+  \coordinate (Qone) at (-2.15,0);
+  \coordinate (Qtwo) at (2.15,0);
+  \coordinate (P) at (0.45,1.85);
+
+  \filldraw[red] (Qone) circle (3.5pt);
+  \node[below=3pt] at (Qone) {$+Q_1$};
+  \filldraw[blue] (Qtwo) circle (3.5pt);
+  \node[below=3pt] at (Qtwo) {$Q_2<0$};
+  \filldraw (P) circle (2.3pt);
+  \node[above=2pt] at (P) {$P$};
+
+  \draw[dashed,gray] (Qone) -- (P)
+    node[midway,above left,fill=white,inner sep=1pt] {$r_1$};
+  \draw[dashed,gray] (Qtwo) -- (P)
+    node[midway,above right,fill=white,inner sep=1pt] {$r_2$};
+
+  \node at (0,-1.15)
+    {$\displaystyle \varphi(P)=k\frac{Q_1}{r_1}+k\frac{Q_2}{r_2}$};
+\end{tikzpicture}

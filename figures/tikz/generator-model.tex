@@ -1,16 +1,36 @@
-% TikZ 图：发电机模型
-% Day 23：电磁感应
-\begin{tikzpicture}[scale=0.9,>=Latex]
-  \draw[thick,fill=gray!12] (-2.8,-1.1) rectangle (-2.1,1.1);
-  \node at (-2.45,0) {$N$};
-  \draw[thick,fill=gray!12] (2.1,-1.1) rectangle (2.8,1.1);
-  \node at (2.45,0) {$S$};
-  \foreach \y in {-0.75,-0.25,0.25,0.75} {
-    \draw[->,blue,thick] (-2.0,\y) -- (2.0,\y);
+\begin{tikzpicture}[scale=0.92,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-3.45,-2.25) rectangle (3.45,2.35);
+
+  \draw[thick,fill=gray!12] (-3.15,-1.15) rectangle (-2.45,1.15);
+  \node at (-2.80,0) {$N$};
+  \draw[thick,fill=gray!12] (2.45,-1.15) rectangle (3.15,1.15);
+  \node at (2.80,0) {$S$};
+  \foreach \y in {-0.78,-0.26,0.26,0.78} {
+    \draw[->,blue,thick] (-2.35,\y) -- (2.35,\y);
   }
-  \draw[thick,rotate=18,fill=orange!12] (-0.85,-0.55) rectangle (0.85,0.55);
-  \draw[->,red,thick] (0,1.25) arc (90:430:0.5);
-  \node[red] at (0,1.85) {转动};
-  \draw[thick] (-0.9,-1.35) -- (-1.45,-1.75) -- (1.45,-1.75) -- (0.9,-1.35);
-  \node at (0,-2.15) {角度变化 $\Rightarrow$ 磁通量变化};
+  \node[blue,fill=white,inner sep=1pt] at (-1.82,1.02) {$\vec B$};
+
+  % A wire loop seen obliquely. Its vertical axis lies in the loop plane.
+  \coordinate (T) at (-0.12,1.25);
+  \coordinate (B) at (-0.12,-1.25);
+  \coordinate (LT) at (-1.05,0.82);
+  \coordinate (LB) at (-1.05,-0.82);
+  \coordinate (RT) at (0.82,0.66);
+  \coordinate (RB) at (0.82,-0.66);
+  \draw[very thick] (LT) -- (RT) -- (RB) -- (LB) -- cycle;
+  \draw[dashed,gray,thick] (T) -- (B);
+  \fill[gray] (T) circle (1.7pt);
+  \fill[gray] (B) circle (1.7pt);
+  \node[gray!70!black,font=\small,anchor=west] at (0.02,-1.35) {转轴};
+
+  \draw[->,orange!85!black,very thick] (-0.10,0) -- (1.15,0.72)
+    node[above right,font=\small] {$\vec S$};
+  \draw[orange!85!black,thick] (0.46,0) arc (0:30:0.56);
+  \node[orange!85!black,font=\small] at (0.70,0.19) {$\theta$};
+
+  \draw[->,red,thick] (0.46,1.43) arc (15:330:0.58 and 0.24);
+  \node[red,font=\small] at (0.48,1.86) {$\omega$};
+
+  \node[font=\small] at (0,-1.93)
+    {$\Phi=BS\cos\theta,\qquad \theta=\omega t$};
 \end{tikzpicture}

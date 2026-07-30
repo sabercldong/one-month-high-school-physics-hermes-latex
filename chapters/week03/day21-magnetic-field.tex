@@ -102,20 +102,31 @@
 \figcaption{直线电流的右手螺旋定则：拇指指电流方向，四指环绕方向为磁场方向}\label{fig:current-magnetic-field}
 \end{center}
 
-\textbf{方向规则要分清：} 对直线电流，拇指沿电流方向，四指环绕方向就是磁场方向；对环形电流和通电螺线管，四指沿电流环绕方向，拇指所指方向是中心轴线附近的磁场方向，也对应螺线管的 $N$ 极方向。
+\begin{center}
+\input{figures/tikz/loop-solenoid-field}
+
+\figcaption{环形电流与通电螺线管的右手螺旋定则：四指沿电流方向，拇指指向轴线上磁场方向}\label{fig:loop-solenoid-field}
+\end{center}
+
+\textbf{方向规则要分清：} 对直线电流，拇指沿电流方向，四指环绕方向就是磁场方向；对环形电流和通电螺线管，四指沿电流环绕方向，拇指所指方向是中心轴线附近的磁场方向，也对应螺线管的 $N$ 极方向。反过来，从某一端看，若线圈电流为逆时针，该端为 $N$ 极；若为顺时针，该端为 $S$ 极。
 
 \textbf{认知提醒：} 判断电流产生的磁场用右手；判断通电导线受安培力用左手。两种定则解决的问题不同，不要混用。
 
 \end{conceptbox}
 
-\begin{conceptbox}{磁介质、磁化与电磁铁}
+\begin{conceptbox}{磁畴、磁化与电磁铁}
 
-铁、钴、镍等材料容易被磁化，称为铁磁性材料。把软铁芯插入通电螺线管后，软铁芯被磁化，内部许多微小磁性区域的取向趋于一致，使螺线管的磁场明显增强，这就是电磁铁的基本原理。
+铁、钴、镍等材料容易被磁化，称为铁磁性材料。铁磁性材料内部可看成含有许多微小的磁性区域，这些区域称为\textbf{磁畴}。未磁化时，各磁畴的磁化方向较为杂乱，宏观磁性很弱；在外磁场作用下，较多磁畴趋向同一方向，材料便表现出较强磁性，这一过程称为\textbf{磁化}。
+
+把软铁芯插入通电螺线管后，软铁芯被磁化，使螺线管的磁场明显增强，这就是电磁铁的基本原理。
 
 \begin{center}
+\begin{minipage}{0.98\linewidth}
+\centering
 \input{figures/tikz/magnetic-material-electromagnet}
 
 \figcaption{电磁铁：通电螺线管插入软铁芯后，磁场被增强且可由电流控制}\label{fig:magnetic-material-electromagnet}
+\end{minipage}
 \end{center}
 
 \begin{itemize}
@@ -130,16 +141,18 @@
 
 \begin{conceptbox}{安培力}
 
-一段通电直导线放在磁场中会受到安培力。若导线长度为 $L$，电流为 $I$，磁感应强度为 $B$，电流方向与磁场方向夹角为 $\theta$，则
+一段通电直导线放在匀强磁场中会受到安培力。若磁场中的直导线长度为 $L$，电流为 $I$，磁感应强度为 $B$，电流方向与磁场方向夹角为 $\theta$，则
 \[
 \boxed{F = BIL\sin\theta}
 \]
 
 \begin{itemize}
   \item 当导线垂直于磁场时，$\theta = 90^\circ$，$F = BIL$。
-  \item 当导线平行于磁场时，$\theta = 0^\circ$，$F = 0$。
-  \item $L$ 指处在磁场中的有效导线长度。
+  \item 当导线平行或反平行于磁场时，$\theta = 0^\circ$ 或 $180^\circ$，均有 $F = 0$。
+  \item $L$ 指处在磁场中的直导线有效长度，不一定等于整根导线长度。
 \end{itemize}
+
+\textbf{适用边界：} 上式直接适用于匀强磁场中的通电直导线；若导线弯曲或磁场不均匀，应把导线分成许多足够短的小段，分别判断各段受力后再作矢量合成，不能把弯曲导线的弧长直接代入上式。
 
 \begin{center}
 \input{figures/tikz/ampere-force-angle}
@@ -178,10 +191,10 @@
 \toprule
 公式 & 物理意义 & 适用条件 \\
 \midrule
-$B=\dfrac{F}{IL}$ & 磁感应强度定义 & $I$ 与 $B$ 垂直 \\
+$B=\dfrac{F}{IL}$ & 磁感应强度定义 & 直导线、匀强场，且 $I\perp B$ \\
 $F=BIL$ & 安培力最大值 & 直导线垂直匀强磁场 \\
-$F=BIL\sin\theta$ & 安培力一般式 & 直导线、匀强磁场或局部近似匀强 \\
-$F=0$ & 无安培力 & 电流与磁场平行 \\
+$F=BIL\sin\theta$ & 安培力一般式 & 匀强磁场中的通电直导线 \\
+$F=0$ & 无安培力 & $\theta=0^\circ$ 或 $180^\circ$ \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -195,7 +208,7 @@ $F=0$ & 无安培力 & 电流与磁场平行 \\
 \end{enumerate}
 最后把安培力放回力学受力图中。若题目说导线平衡、悬浮、加速或沿导轨运动，后半段仍然是重力、弹力、摩擦力和牛顿定律的问题。
 
-\textbf{来源理解：} $B=\dfrac{F}{IL}$ 是用通电导线受力来定义磁场强弱的操作式，要求导线与磁场垂直；$F=BIL\sin\theta$ 则把“不垂直时只有垂直分量产生受力”的情况写进去。读题时先确认有效长度和夹角，再把安培力当作普通力放入力学方程。
+\textbf{来源理解：} $B=\dfrac{F}{IL}$ 是用通电导线受力来定义磁场强弱的操作式，要求直导线与匀强磁场垂直；$F=BIL\sin\theta$ 则把“不垂直时只有垂直于磁场的电流方向分量参与计算”的情况写进去。读题时先确认导线是否可看成直导线、所在区域是否可看成匀强磁场，再确认有效长度和夹角，最后把安培力作为一个真实力放入力学方程。
 \end{learningbox}
 
 \section*{五、典型模型}
@@ -212,15 +225,17 @@ $F=0$ & 无安培力 & 电流与磁场平行 \\
 \]
 若两个磁场方向相同，合磁场增强；方向相反，合磁场减弱；方向成角度，则按平行四边形法则合成。
 
+\textbf{图中条件：} 两根长直导线中的电流大小相等、方向相反，点 $P$ 到两导线距离相等。由右手螺旋定则，$P$ 点的 $\boldsymbol B_1$ 与 $\boldsymbol B_2$ 大小相等、方向关于竖直线对称，故合磁场沿竖直方向。
+
 \begin{center}
 \input{figures/tikz/magnetic-superposition}
 
-\figcaption{磁场叠加：磁感应强度是矢量，既有大小又有方向}\label{fig:magnetic-superposition}
+\figcaption{等大反向电流在对称点 $P$ 处的磁场叠加}\label{fig:magnetic-superposition}
 \end{center}
 
 \subsection*{模型 3：通电导线的受力平衡}
 
-通电导线在磁场中常和重力、弹力、拉力一起平衡。解题顺序：
+通电导线在磁场中常和重力、弹力、拉力一起平衡。为突出有效导线及其受力，以下示意图省略电源和其余供电导线，并忽略供电导线对研究对象的力。解题顺序：
 \[
 \text{定磁场方向} \to \text{定电流方向} \to \text{左手定则定安培力} \to \text{列平衡方程}
 \]
@@ -228,23 +243,31 @@ $F=0$ & 无安培力 & 电流与磁场平行 \\
 \begin{center}
 \input{figures/tikz/ampere-balance}
 
-\figcaption{水平导线在磁场中平衡：安培力可与重力平衡}\label{fig:ampere-balance}
+\figcaption{水平导线在磁场中平衡：安培力可与重力平衡，供电回路未画出}\label{fig:ampere-balance}
 \end{center}
 
 \subsection*{模型 4：通电导体棒在导轨上运动}
 
-导体棒中有电流，若处在磁场中，就受到安培力。安培力方向决定导体棒的加速度方向，是电动机模型的最简雏形。
+导体棒中有电流，若处在磁场中，就受到安培力。安培力方向决定导体棒的加速度方向，是电动机模型的最简雏形。图中只画出磁场中的有效导体棒，电源和其余回路导线均省略。
 
 \begin{center}
 \input{figures/tikz/rail-ampere-force}
 
-\figcaption{导体棒受安培力运动：磁场、电流、力三者两两垂直}\label{fig:rail-ampere-force}
+\figcaption{导体棒受安培力运动：磁场、电流、力三者两两垂直，完整供电回路未画出}\label{fig:rail-ampere-force}
 \end{center}
 
 \section*{六、例题精讲}
 
+\begin{examplebox}{电流磁场的方向与叠加}
+\textbf{题意分析：} 两根相互平行的长直导线垂直纸面放置，左侧导线电流垂直纸面向外，右侧导线电流垂直纸面向里，且电流大小相等。点 $P$ 位于两导线连线的垂直平分线上。判断两根导线在 $P$ 点产生的磁场方向，并确定合磁场方向。
+
+\textbf{解题过程：} 分别对两根导线使用右手螺旋定则。左侧电流向外，磁场沿逆时针方向环绕，在 $P$ 点指向左上方；右侧电流向里，磁场沿顺时针方向环绕，在 $P$ 点指向右上方。由于电流大小相等且 $P$ 到两导线距离相等，两个分磁场大小相等，水平方向分量抵消，竖直方向分量相加，所以合磁场竖直向上。
+
+\textbf{方法总结：} 多个电流共同产生磁场时，右手螺旋定则只负责判断每个分磁场方向；最后还要按平行四边形法则进行矢量合成。
+\end{examplebox}
+
 \begin{examplebox}{安培力大小与方向}
-\textbf{题意分析：} 长度 $L=0.20\ \mathrm{m}$ 的直导线垂直放入匀强磁场，磁感应强度 $B=0.50\ \mathrm{T}$，导线中电流 $I=3.0\ \mathrm{A}$。求导线所受安培力大小。
+\textbf{题意分析：} 长度 $L=0.20\ \mathrm{m}$ 的水平直导线垂直放入匀强磁场，磁感应强度 $B=0.50\ \mathrm{T}$、方向垂直纸面向里，导线中电流 $I=3.0\ \mathrm{A}$、方向水平向右。求导线所受安培力的大小和方向。
 
 \textbf{物理模型：} 直导线垂直匀强磁场，$F=BIL$。
 
@@ -256,6 +279,7 @@ $F=0$ & 无安培力 & 电流与磁场平行 \\
 \[
 F = BIL = 0.50 \times 3.0 \times 0.20 = 0.30\ \mathrm{N}
 \]
+由左手定则，安培力方向竖直向上。
 
 \textbf{方法总结：} 先判断夹角。若题中说“垂直放入”，可以直接用 $F=BIL$；若有夹角，必须乘 $\sin\theta$。
 \end{examplebox}
@@ -320,9 +344,56 @@ a=\frac{F_A}{m}=\frac{0.60}{0.060}=10\ \mathrm{m/s^2}.
   \input{figures/tikz/training-ampere-wire}
   \end{center}
   \item 通电螺线管中插入软铁芯后，磁场强弱如何变化？断电后为什么常选软铁制作电磁铁铁芯？
+  \item 从某一环形电流的正面观察，电流沿逆时针方向流动。环心处的磁场指向纸内还是纸外？这一面相当于 $N$ 极还是 $S$ 极？
+  \item 从通电螺线管左端观察，线圈中的电流沿顺时针方向流动。螺线管左端是什么磁极？管内磁场沿轴线指向左端还是右端？
 \end{enumerate}
 
-\section*{八、易错点}
+\begin{learningbox}{变式训练参考结果}
+\begin{enumerate}[itemsep=0.45em,topsep=0.3em,parsep=0pt]
+  \item $F=BIL=0.24\ \mathrm N$。
+  \item $F=BIL\sin30^\circ=0.12\ \mathrm N$。
+  \item 平衡时 $BIL=mg$，故 $B=0.50\ \mathrm T$；安培力方向竖直向上。
+  \item 由左手定则（或 $\boldsymbol F=I\boldsymbol L\times\boldsymbol B$）判断，安培力方向向下。
+  \item 插入软铁芯后磁场显著增强。软铁磁导率较大且剩磁较小，通电时易被磁化，断电后又较易退磁，因此适合作电磁铁铁芯。
+  \item 环心处磁场垂直纸面向外；从这一面看，磁感线从线圈穿出，因此这一面相当于 $N$ 极。
+  \item 左端为 $S$ 极；管内磁场由 $S$ 极指向 $N$ 极，即沿轴线指向右端。
+\end{enumerate}
+\end{learningbox}
+
+\section*{八、竞赛入门补充}
+
+\begin{competitionbox}
+\textbf{从安培力看电动机的基本思想}
+
+电动机的基本物理图像是：通电线圈在磁场中受到安培力产生的转矩。每一段载流导线受到的是沿导线分布的磁场力，通常用其合力表示。线圈两条相对的有效边中电流方向相反，所受安培力大小相等、方向相反，但作用线不重合，因而构成\textbf{力偶}：线圈所受合力可以为零，转矩却不为零。
+
+\begin{center}
+\input{figures/tikz/motor-coil-torque}
+
+\figcaption{通电线圈两侧的安培力构成力偶并产生转矩}\label{fig:motor-coil-torque}
+\end{center}
+
+\textbf{转矩的定量表达：} 设矩形线圈有 $N$ 匝，单匝面积为 $S$，电流为 $I$，线圈平面的法线与磁场方向夹角为 $\alpha$。两条有效边所受安培力形成力偶，可得
+\[
+\boxed{M=NBIS\sin\alpha}.
+\]
+当线圈平面与磁场垂直时，法线与 $\boldsymbol B$ 平行，$\alpha=0$，转矩为零；当线圈平面与磁场平行时，$\alpha=90^\circ$，转矩最大。这里的 $M$ 是转矩大小，单位为 $\mathrm{N\cdot m}$。
+
+\textbf{微观来源：} 安培力可以理解为载流导线中许多运动电荷所受磁场力的宏观合力。下一节学习洛伦兹力后，会把“单个运动电荷”和“整段电流”两个层次联系起来。
+
+\textbf{例：} $N=20$ 匝的矩形线圈面积 $S=6.0\times10^{-3}\ \mathrm{m^2}$，通有 $I=2.0\ \mathrm A$ 的电流，置于 $B=0.50\ \mathrm T$ 的匀强磁场中。若线圈法线与磁场夹角 $\alpha=30^\circ$，则
+\[
+M=NBIS\sin\alpha
+=20\times0.50\times2.0\times6.0\times10^{-3}\times\sin30^\circ
+=6.0\times10^{-2}\ \mathrm{N\cdot m}.
+\]
+
+\textbf{进一步理解：} 线圈转动时 $\alpha$ 不断变化，转矩也随之变化。真实电动机需要换向器或电子控制，使线圈越过转矩为零的位置后，电流适时换向，从而保持连续转动。
+\end{competitionbox}
+
+\textbf{拓展检查：} 上式中的 $\alpha$ 是\textbf{线圈平面法线}与磁场的夹角，不是线圈平面与磁场的夹角。若题目给出线圈平面与磁场夹角 $\beta$，则 $\alpha=90^\circ-\beta$，应写成 $M=NBIS\cos\beta$。
+
+\section*{九、易错点}
 
 \begin{mistakebox}
 \begin{enumerate}
@@ -335,39 +406,6 @@ a=\frac{F_A}{m}=\frac{0.60}{0.060}=10\ \mathrm{m/s^2}.
   \item \textbf{误以为铁芯本身产生电流：} 铁芯被磁化后增强螺线管磁场；判断电磁铁强弱时仍先看线圈电流和匝数。
 \end{enumerate}
 \end{mistakebox}
-
-\section*{九、竞赛入门补充}
-
-\begin{competitionbox}
-\textbf{从安培力看电动机的基本思想}
-
-电动机的本质是：通电线圈在磁场中受到安培力矩。单根导线只受一个力；线圈两侧电流方向相反，在磁场中一侧受力向里、另一侧受力向外，于是形成转动效果。
-
-\begin{center}
-\input{figures/tikz/motor-coil-torque}
-
-\figcaption{通电线圈在磁场中受力形成力矩：电能转化为机械能}\label{fig:motor-coil-torque}
-\end{center}
-
-\textbf{微观来源检查：} 竞赛入门阶段要能说明，安培力公式 $F=BIL$ 可以看成许多运动电荷受磁场力的宏观合力。磁场对“单个运动电荷”和“整段电流”的描述，对应同一物理相互作用的微观与宏观两个层次。
-
-\textbf{进一步理解：} 若线圈平面与磁场方向夹角变化，线圈所受力矩也会变化。真实电动机需要换向器或电子控制，让线圈持续受到同向转动效果。这也是从“安培力公式”走向“电动机模型”的关键一步。
-\end{competitionbox}
-
-\subsection*{补充训练：方向判断三步法}
-
-安培力方向题建议固定三步：
-\begin{enumerate}
-  \item 先把磁场方向画成箭头、叉号或点号；
-  \item 再把电流方向画在导线有效长度上；
-  \item 最后用左手定则确定安培力，并检查安培力是否同时垂直于 $I$ 和 $B$。
-\end{enumerate}
-
-\begin{enumerate}
-  \item 磁场向右，电流向上，安培力指向纸内还是纸外？
-  \item 磁场向里，电流向左，安培力向上还是向下？
-  \item 若导线与磁场平行，为什么无论电流多大，安培力都为零？
-\end{enumerate}
 
 \section*{十、今日小结}
 

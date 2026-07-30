@@ -1,0 +1,23 @@
+\begin{tikzpicture}[x=1cm,y=1cm,>=Stealth,line cap=round,line join=round]
+  \draw[->,thick] (-3.0,0) -- (3.25,0) node[right] {$x$};
+  \coordinate (A) at (-2.0,0);
+  \coordinate (O) at (0,0);
+  \coordinate (B) at (2.0,0);
+
+  \fill[red!80!black] (A) circle (0.075);
+  \fill[black] (O) circle (0.05);
+  \fill[blue!75!black] (B) circle (0.075);
+  \node[below=5pt,red!80!black] at (A) {$Q_1>0$};
+  \node[below=5pt] at (O) {$O$};
+  \node[below=5pt,blue!75!black] at (B) {$Q_2<0$};
+
+  \draw[->,very thick,red!80!black] (0,0.34) -- (1.05,0.34)
+    node[midway,above] {$\vect E_1$};
+  \draw[->,very thick,blue!75!black] (0,-0.34) -- (1.05,-0.34)
+    node[midway,below] {$\vect E_2$};
+  \draw[->,ultra thick,black] (0,0) -- (1.75,0)
+    node[near end,above] {$\vect E$};
+
+  \draw[<->,gray] (-2.0,0.83) -- (0,0.83) node[midway,above] {$0.10\ \mathrm m$};
+  \draw[<->,gray] (0,0.83) -- (2.0,0.83) node[midway,above] {$0.10\ \mathrm m$};
+\end{tikzpicture}

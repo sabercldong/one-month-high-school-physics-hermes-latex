@@ -10,16 +10,18 @@
   \draw[dashed] (O) -- (C);
   \draw[thick] (O) -- (P) node[midway,right=2pt] {$l$};
   \draw[dashed] (C) ellipse (1.45 and 0.32);
-  \draw[densely dashed] (C) -- (0,-3.05);
-  \draw[densely dashed] (P) -- (1.45,-3.05);
-  \draw[<->,thick] (0,-3.05) -- (1.45,-3.05)
-    node[midway,below=2pt] {$r=l\sin\theta$};
+  \draw[densely dashed] (C) -- (0,-3.32);
+  \draw[densely dashed] (P) -- (1.45,-3.32);
+  \draw[<->,thick] (0,-3.32) -- (1.45,-3.32)
+    node[midway,below=4pt,fill=white,inner sep=1pt] {$r=l\sin\theta$};
 
   \filldraw[red] (P) circle (3pt);
-  \node[right] at (P) {$m$};
-  \draw[->,thick,blue] (P) -- ($(P)!0.42!(O)$) node[pos=0.58,right=4pt] {$F_T$};
-  \draw[->,thick,red] (P) -- ++(0,-1.0) node[pos=0.82,right=6pt] {$mg$};
-  \draw[->,thick,blue] (P) -- ++(-1.05,0) node[pos=0.64,below=2pt] {$F_n$};
+  \node[right=4pt] at (P) {$m$};
+  % 实际受力只有拉力和重力；分量关系由右侧方程说明。
+  \draw[->,thick,blue] (P) -- ($(P)!0.48!(O)$)
+    node[pos=0.52,left=5pt,fill=white,inner sep=1pt] {$F_T$};
+  \draw[->,thick,red] (P) -- ++(0,-0.92)
+    node[pos=0.82,right=5pt,fill=white,inner sep=1pt] {$mg$};
 
   \draw (0,-0.45) arc[start angle=-90,end angle=-61.3,radius=0.45];
   \node at (0.28,-0.70) {$\theta$};

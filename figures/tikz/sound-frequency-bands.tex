@@ -1,4 +1,5 @@
 \begin{tikzpicture}[x=1cm,y=1cm,>=Stealth]
+  \node[font=\scriptsize,text=gray!70!black] at (0,1.72) {频段示意，横轴不按比例};
   \draw[->,thick] (-4.6,0) -- (4.9,0) node[right] {$f$};
   \foreach \x/\lab in {-3.2/{20\ \mathrm{Hz}}, 1.55/{2.0\times10^4\ \mathrm{Hz}}}{
     \draw[thick] (\x,0.16) -- (\x,-0.16);
@@ -22,5 +23,5 @@
   \node[font=\scriptsize,align=center] at (3.00,-0.88) {医学成像、测距\\清洗、无损检测};
 
   \node[font=\scriptsize,align=center] at (0,-1.72)
-    {同一介质中声速主要由介质决定；频率越高，波长通常越短};
+    {均匀介质、色散可忽略时：声速主要由介质决定，频率越高，波长越短};
 \end{tikzpicture}

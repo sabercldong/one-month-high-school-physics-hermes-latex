@@ -1,27 +1,38 @@
-% TikZ 图：追及问题的三种关键情景
-% Day 04：运动图像与追及相遇
-\begin{tikzpicture}[scale=0.82,>=Latex,line cap=round,line join=round,
+% TikZ 图：追及过程中距离增减与相对速度的关系
+\begin{tikzpicture}[scale=0.78,>=Latex,line cap=round,line join=round,
   every node/.style={font=\small}]
-  \foreach \x/\title in {0/后车较慢：距离增大,5.0/速度相等：距离取极值,10.0/后车较快：距离减小} {
-    \begin{scope}[shift={(\x,0)}]
-      \draw[gray!70] (0,0) -- (3.8,0);
-      \filldraw[fill=blue!12,draw=blue!70!black] (0.35,0.02) rectangle +(0.75,0.35);
-      \filldraw[fill=red!12,draw=red!70!black] (2.55,0.02) rectangle +(0.75,0.35);
-      \node[below] at (0.72,-0.08) {后车};
-      \node[below] at (2.92,-0.08) {前车};
-      \node[align=center] at (1.9,-0.92) {\title};
-    \end{scope}
+  % 三幅图表示依次发生的三个时刻；两车都向右运动。
+  \foreach \x in {0,5.1,10.2} {
+    \draw[gray!65] (\x,0) -- ++(4.2,0);
   }
-  % 速度箭头逐图单独画出，箭头长度表示相对大小，不代表比例尺。
-  \draw[->,blue!75!black,thick] (0.72,0.62) -- +(0.75,0) node[above] {$v_{\text{后}}$};
-  \draw[->,red!75!black,thick] (2.92,0.62) -- +(1.15,0) node[above] {$v_{\text{前}}$};
-  \draw[<->] (1.1,0.18) -- (2.55,0.18) node[midway,above] {$s$};
 
-  \draw[->,blue!75!black,thick] (5.72,0.62) -- +(0.95,0) node[above] {$v_{\text{后}}$};
-  \draw[->,red!75!black,thick] (7.92,0.62) -- +(0.95,0) node[above] {$v_{\text{前}}$};
-  \draw[<->] (6.1,0.18) -- (7.55,0.18) node[midway,above] {$s_{\max}$ 或 $s_{\min}$};
+  % 极值前：前车更快，距离增大。
+  \filldraw[fill=blue!12,draw=blue!70!black] (0.25,0.02) rectangle +(0.72,0.34);
+  \filldraw[fill=red!12,draw=red!70!black] (2.45,0.02) rectangle +(0.72,0.34);
+  \draw[->,blue!75!black,thick] (0.61,0.61) -- +(0.72,0)
+    node[above] {$v_{\text{后}}$};
+  \draw[->,red!75!black,thick] (2.81,0.61) -- +(1.12,0)
+    node[above] {$v_{\text{前}}$};
+  \draw[<->] (0.97,0.18) -- (2.45,0.18) node[midway,above] {$s_1$};
+  \node[align=center] at (2.1,-0.74) {极值前：$v_{\text{后}}<v_{\text{前}}$\\距离增大};
 
-  \draw[->,blue!75!black,thick] (10.72,0.62) -- +(1.2,0) node[above] {$v_{\text{后}}$};
-  \draw[->,red!75!black,thick] (12.92,0.62) -- +(0.72,0) node[above] {$v_{\text{前}}$};
-  \draw[<->] (11.1,0.18) -- (12.55,0.18) node[midway,above] {$s$};
+  % 候选时刻：速度相等，相对速度为零。
+  \filldraw[fill=blue!12,draw=blue!70!black] (5.65,0.02) rectangle +(0.72,0.34);
+  \filldraw[fill=red!12,draw=red!70!black] (8.15,0.02) rectangle +(0.72,0.34);
+  \draw[->,blue!75!black,thick] (6.01,0.61) -- +(0.94,0)
+    node[above] {$v_{\text{后}}$};
+  \draw[->,red!75!black,thick] (8.51,0.61) -- +(0.94,0)
+    node[above] {$v_{\text{前}}$};
+  \draw[<->] (6.37,0.18) -- (8.15,0.18) node[midway,above] {$s_*$};
+  \node[align=center] at (7.2,-0.74) {候选时刻：$v_{\text{后}}=v_{\text{前}}$\\需检查相对速度是否变号};
+
+  % 极值后：后车更快，距离减小。
+  \filldraw[fill=blue!12,draw=blue!70!black] (11.25,0.02) rectangle +(0.72,0.34);
+  \filldraw[fill=red!12,draw=red!70!black] (13.20,0.02) rectangle +(0.72,0.34);
+  \draw[->,blue!75!black,thick] (11.61,0.61) -- +(1.18,0)
+    node[above] {$v_{\text{后}}$};
+  \draw[->,red!75!black,thick] (13.56,0.61) -- +(0.72,0)
+    node[above] {$v_{\text{前}}$};
+  \draw[<->] (11.97,0.18) -- (13.20,0.18) node[midway,above] {$s_2$};
+  \node[align=center] at (12.3,-0.74) {极值后：$v_{\text{后}}>v_{\text{前}}$\\距离减小};
 \end{tikzpicture}

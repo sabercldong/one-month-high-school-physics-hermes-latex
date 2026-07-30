@@ -1,0 +1,42 @@
+\begin{tikzpicture}[scale=0.78,>=Stealth]
+  % Inner track / string
+  \begin{scope}[shift={(-4.2,0)}]
+    \node[font=\small\bfseries] at (0,2.70) {轻绳或内轨};
+    \draw[thick] (-1.25,0) arc[start angle=180,end angle=0,radius=1.25];
+    \filldraw[blue] (0,1.25) circle (2.5pt);
+    \draw[->,thick,red] (-0.10,1.22) -- (-0.10,0.35)
+      node[midway,left] {$mg$};
+    \draw[->,thick,orange] (0.12,1.22) -- (0.12,0.58)
+      node[midway,right] {$N$ 或 $T$};
+    \node[font=\scriptsize] at (0,-0.32) {$N,T\ge0$};
+    \node[font=\scriptsize] at (0,-0.70) {$v_{\text{上}}\ge\sqrt{gr}$};
+  \end{scope}
+
+  % Rod / double-sided track
+  \begin{scope}[shift={(0,0)}]
+    \node[font=\small\bfseries] at (0,2.70) {轻杆或双轨};
+    \draw[thick] (-1.25,0) arc[start angle=180,end angle=0,radius=1.25];
+    \fill (0,0) circle (1.5pt);
+    \draw[very thick] (0,0) -- (0,1.25);
+    \filldraw[blue] (0,1.25) circle (2.5pt);
+    \draw[->,thick,red] (-0.12,1.22) -- (-0.12,0.38)
+      node[midway,left] {$mg$};
+    \draw[<->,thick,orange] (0.18,0.48) -- (0.18,1.82)
+      node[pos=0.55,right] {$F_{\text{杆}}$};
+    \node[font=\scriptsize] at (0,-0.32) {$F_{\text{杆}}$ 可正可负};
+    \node[font=\scriptsize] at (0,-0.70) {无接触速率下限};
+  \end{scope}
+
+  % Outer convex bridge
+  \begin{scope}[shift={(4.2,0)}]
+    \node[font=\small\bfseries] at (0,2.70) {外侧拱桥};
+    \draw[very thick] (-1.55,0) arc[start angle=180,end angle=0,radius=1.55];
+    \draw[thick,fill=gray!10] (-0.33,1.55) rectangle (0.33,1.82);
+    \draw[->,thick,red] (-0.10,1.68) -- (-0.10,0.68)
+      node[midway,left] {$mg$};
+    \draw[->,thick,blue] (0.12,1.70) -- (0.12,2.42)
+      node[midway,right] {$N$};
+    \node[font=\scriptsize] at (0,-0.32) {$mg-N=m\dfrac{v^2}{r}$};
+    \node[font=\scriptsize] at (0,-0.70) {$v\le\sqrt{gr}$};
+  \end{scope}
+\end{tikzpicture}

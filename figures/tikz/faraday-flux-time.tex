@@ -1,14 +1,30 @@
-% TikZ 图：磁通量-时间图像
-% Day 23：电磁感应
-\begin{tikzpicture}[scale=0.9,>=Latex]
-  \path[use as bounding box] (-0.35,-0.65) rectangle (4.8,2.9);
-  \draw[->] (0,0) -- (4.4,0) node[right] {$t$};
-  \draw[->] (0,0) -- (0,2.65) node[above] {$\Phi$};
-  \draw[blue,very thick] (0.4,0.45) -- (1.7,2.1) -- (3.2,2.1) -- (4.0,0.85);
-  \draw[dashed] (1.7,2.1) -- (1.7,0);
-  \draw[dashed] (3.2,2.1) -- (3.2,0);
-  \node[blue,font=\small,align=center] at (0.85,2.35) {斜率大\\$E$ 大};
-  \node[blue,font=\small] at (2.45,2.42) {斜率为 $0$};
-  \node[blue,font=\small,align=center] at (4.25,2.15) {斜率为负\\方向改变};
-  \node[font=\small] at (2.15,-0.45) {$E=n\left|\Delta\Phi/\Delta t\right|$};
+\begin{tikzpicture}[scale=0.9,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.55,-0.75) rectangle (6.45,3.35);
+  \draw[->,thick] (0,0) -- (6.0,0) node[right] {$t$};
+  \draw[->,thick] (0,0) -- (0,3.0) node[above] {$\Phi$};
+
+  \draw[blue,very thick]
+    (0.45,0.38) .. controls (1.35,0.55) and (2.20,1.18) ..
+    (3.05,1.72) .. controls (4.15,2.42) and (5.05,2.58) .. (5.55,2.68);
+
+  \coordinate (Pone) at (1.15,0.67);
+  \coordinate (Ptwo) at (4.75,2.51);
+  \coordinate (P) at (3.05,1.72);
+  \fill (Pone) circle (1.7pt) node[below right,font=\small] {$P_1$};
+  \fill (Ptwo) circle (1.7pt) node[above left,font=\small] {$P_2$};
+  \fill[orange!85!black] (P) circle (1.9pt) node[below right,font=\small] {$P$};
+
+  \draw[dashed,gray] (Pone) -- (1.15,0);
+  \draw[dashed,gray] (Ptwo) -- (4.75,0);
+  \draw[dashed,red,thick] (Pone) -- (Ptwo);
+  \node[red,font=\small,fill=white,inner sep=1pt] at (2.55,1.02)
+    {割线斜率 $\dfrac{\Delta\Phi}{\Delta t}$};
+
+  \draw[orange!85!black,thick] (1.95,1.00) -- (4.12,2.36);
+  \node[orange!85!black,font=\small,fill=white,inner sep=1pt] at (4.42,1.94)
+    {切线斜率 $\dfrac{\mathrm d\Phi}{\mathrm dt}$};
+
+  \node[font=\small] at (3.0,-0.52)
+    {$\left|\overline{\mathcal E}\right|=N\left|\dfrac{\Delta\Phi}{\Delta t}\right|,
+      \quad |\mathcal E|=N\left|\dfrac{\mathrm d\Phi}{\mathrm dt}\right|$};
 \end{tikzpicture}

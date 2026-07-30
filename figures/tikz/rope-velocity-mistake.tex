@@ -1,0 +1,37 @@
+% Day 07：斜拉绳速度约束易错辨析
+\begin{tikzpicture}[scale=0.73,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.55,-0.92) rectangle (7.15,2.18);
+  \coordinate (P) at (0.38,0.18);
+  \coordinate (R) at (3.30,1.34);
+  \coordinate (C) at (3.30,-0.42);
+
+  % 合法的绳长约束装置：绳穿过固定小环。
+  \draw[thick] (-0.42,-0.28) -- (1.28,-0.28);
+  \draw[fill=white,thick] (-0.38,-0.02) rectangle (0.38,0.38);
+  \node at (0,0.18) {$m$};
+  \draw[thick] (3.62,-0.70) -- (3.62,1.82);
+  \draw[thick] (R) -- (3.62,1.34);
+  \draw[very thick] (P) -- (R) -- (C);
+  \draw[fill=white,thick] (R) circle (0.11);
+  \fill (C) circle (2pt);
+  \node[above right=1pt] at (R) {固定小环};
+
+  \draw[->,thick,blue] (-0.02,-0.60) -- (1.05,-0.60)
+    node[midway,above=2pt] {$v$};
+  \draw[->,thick,blue] (3.92,0.10) -- (3.92,-0.62)
+    node[midway,right] {$u$};
+  \draw[->,thick,orange] (P) -- ($(P)!0.34!(R)$);
+  \draw[dashed,gray] (P) -- ++(0.95,0);
+  \draw (0.72,0.18) arc[start angle=0,end angle=21.7,radius=0.34];
+  \node at (0.94,0.31) {$\theta$};
+
+  % 错误与正确关系分开放置。
+  \node[font=\footnotesize,red!80!black] at (5.70,1.32)
+    {错误：$u=v$};
+  \draw[red!80!black,very thick] (5.08,0.98) -- (6.32,1.66);
+  \draw[red!80!black,very thick] (5.08,1.66) -- (6.32,0.98);
+  \node[font=\footnotesize,green!50!black] at (5.70,0.28)
+    {正确：$u=v\cos\theta$};
+  \node[font=\footnotesize] at (1.95,-0.72)
+    {$L=\ell+y+\text{定长部分}$};
+\end{tikzpicture}

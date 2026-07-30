@@ -2,7 +2,7 @@
 % Day 14：机械波
 \begin{tikzpicture}[x=0.92cm,y=0.72cm,>=Latex]
   \tikzset{wall/.style={thick}}
-  \foreach \y/\n/\lab in {0/1/基频, -1.8/2/二倍频, -3.6/3/三倍频} {
+  \foreach \y/\n/\lab in {0/1/基频（第一次谐波）, -1.8/2/第二次谐波, -3.6/3/第三次谐波} {
     \draw[wall] (0,\y-0.75) -- (0,\y+0.75);
     \draw[wall] (6.2,\y-0.75) -- (6.2,\y+0.75);
     \draw[thick] (0,\y) -- (6.2,\y);

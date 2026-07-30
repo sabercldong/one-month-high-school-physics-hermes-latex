@@ -1,0 +1,24 @@
+% TikZ 图：平行板电容器中的带电液滴平衡
+\begin{tikzpicture}[scale=0.9,>=Latex]
+  \draw[thick] (-2.4,1.25) -- (2.4,1.25);
+  \draw[thick] (-2.4,-1.25) -- (2.4,-1.25);
+  \node[above] at (0,1.25) {$-$};
+  \node[below] at (0,-1.25) {$+$};
+
+  \foreach \x in {-1.8,-0.9,0.9,1.8} {
+    \draw[->,blue,thick] (\x,-0.95) -- (\x,0.95);
+  }
+  \node[blue] at (-2.05,0) {$\vect E$};
+
+  \filldraw[fill=red!18,draw=red!75!black,thick] (0,0) circle (0.14);
+  \node[right,red!75!black] at (0.18,0) {$q>0$};
+  \draw[->,very thick,red!75!black] (0,0.16) -- (0,0.92)
+    node[left,xshift=-2pt] {$F_{\text{电}}$};
+  \draw[->,very thick,black] (0,-0.16) -- (0,-0.92)
+    node[right] {$mg$};
+
+  \draw[<->] (2.75,1.25) -- (2.75,-1.25)
+    node[midway,right] {$d$};
+  \node[align=left,anchor=west] at (3.25,0)
+    {$qE=mg$\\[2pt]接电源时 $E=U/d$};
+\end{tikzpicture}

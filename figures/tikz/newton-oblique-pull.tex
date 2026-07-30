@@ -1,0 +1,13 @@
+% Day 06：斜向上拉的水平面动力学
+\begin{tikzpicture}[scale=0.64,>=Latex]
+  \draw[thick] (-0.25,0) -- (4.55,0);
+  \draw[fill=white,thick] (1.10,0) rectangle (2.35,0.72);
+  \node at (1.72,0.36) {$m$};
+  \draw[->,thick,red] (2.35,0.45) -- ++(28:1.35) node[above] {$F$};
+  \draw (2.77,0.45) arc[start angle=0,end angle=28,radius=0.42];
+  \node at (3.08,0.60) {$\theta$};
+  \draw[->,thick,blue] (1.10,0.36) -- (0.25,0.36) node[above] {$f_k$};
+  \draw[->,thick,blue] (1.72,0.72) -- (1.72,1.32) node[left] {$N$};
+  \draw[->,thick,blue] (1.72,0) -- (1.72,-0.78) node[right] {$mg$};
+  \node[font=\footnotesize] at (2.15,-1.18) {$N=mg-F\sin\theta$};
+\end{tikzpicture}

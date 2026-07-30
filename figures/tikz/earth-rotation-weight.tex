@@ -1,51 +1,52 @@
 % TikZ 图：考虑地球自转时的受力
 % Day 12：万有引力与天体运动
-\begin{tikzpicture}[scale=0.78,>=Latex]
+\begin{tikzpicture}[scale=0.78,>=Latex,line cap=round,line join=round]
   \tikzset{
     earth/.style={draw=blue!70,thick,fill=blue!5},
     grav/.style={->,red,thick},
-    normal/.style={->,orange,thick},
+    normal/.style={->,orange!85!black,thick},
+    friction/.style={->,purple,thick},
     centrip/.style={->,blue,thick},
     note/.style={font=\small,align=center}
   }
 
-  % 极地
-  \begin{scope}[xshift=-4.75cm]
+  % 极地：合力为零
+  \begin{scope}[xshift=-4.65cm]
     \coordinate (O) at (0,0);
     \coordinate (P) at (90:1.18);
     \draw[earth] (O) circle (1.18);
     \draw[dashed,gray] (0,-1.45) -- (0,1.45);
-    \node[above] at (0,1.62) {极地};
-    \filldraw[black] (O) circle (1.3pt);
-    \filldraw[red] (P) circle (2.2pt);
-    \draw[grav] (P) -- ++(270:0.66);
-    \draw[normal] (P) -- ++(90:0.54);
-    \node[red,left] at (-0.18,0.86) {$F_{\text{引}}$};
-    \node[orange,right] at (0.12,1.48) {$N$};
-    \node[note] at (0,-1.70) {极地：$\rho=0$};
+    \node[above] at (0,1.60) {极地};
+    \filldraw[black] (O) circle (1.2pt);
+    \filldraw[red] (P) circle (2.1pt);
+    \draw[grav] ($(P)+(-0.10,0)$) -- ++(270:0.72);
+    \draw[normal] ($(P)+(0.10,0)$) -- ++(90:0.72);
+    \node[red,left] at (-0.18,0.82) {$F_g$};
+    \node[orange!85!black,right] at (0.16,1.58) {$N$};
+    \node[note] at (0,-1.72) {$\rho=0,\quad N=F_g$};
   \end{scope}
 
-  % 赤道
+  % 赤道：两个共线力的合力指向自转轴
   \begin{scope}
     \coordinate (O) at (0,0);
     \coordinate (P) at (0:1.18);
     \draw[earth] (O) circle (1.18);
     \draw[dashed,gray] (0,-1.45) -- (0,1.45);
     \draw[dashed,gray] (-1.42,0) -- (1.42,0);
-    \node[above] at (0,1.62) {赤道};
-    \filldraw[black] (O) circle (1.3pt);
-    \filldraw[red] (P) circle (2.2pt);
-    \draw[grav] (P) -- ++(180:0.72);
-    \draw[normal] (P) -- ++(0:0.55);
-    \draw[centrip] ($(P)+(0,-0.30)$) -- ++(180:0.62);
-    \node[red] at (0.55,0.33) {$F_{\text{引}}$};
-    \node[orange] at (1.88,0.16) {$N$};
-    \node[blue] at (0.63,-0.67) {$a_c$};
-    \node[note] at (0,-1.70) {赤道：$\rho=R$};
+    \node[above] at (0,1.60) {赤道};
+    \filldraw[black] (O) circle (1.2pt);
+    \filldraw[red] (P) circle (2.1pt);
+    \draw[grav] ($(P)+(0,0.09)$) -- ++(180:0.78);
+    \draw[normal] ($(P)+(0,-0.09)$) -- ++(0:0.58);
+    \draw[centrip] ($(P)+(0,-0.42)$) -- ++(180:0.72);
+    \node[red,above] at (0.72,0.14) {$F_g$};
+    \node[orange!85!black,right] at (1.72,-0.09) {$N$};
+    \node[blue,below] at (0.78,-0.45) {$a_c$};
+    \node[note] at (0,-1.72) {$\rho=R,\quad F_g-N=m\omega^2R$};
   \end{scope}
 
-  % 任意纬度
-  \begin{scope}[xshift=4.75cm]
+  % 任意纬度：球形地球上还需要切向静摩擦力
+  \begin{scope}[xshift=4.65cm]
     \coordinate (O) at (0,0);
     \coordinate (P) at (38:1.18);
     \coordinate (H) at ({1.18*cos(38)},0);
@@ -54,16 +55,18 @@
     \draw[dashed,gray] (-1.42,0) -- (1.42,0);
     \draw[dashed,gray] (O) -- (P);
     \draw[dashed,gray] (P) -- (H);
-    \node[above] at (0,1.62) {纬度 $\varphi$};
-    \filldraw[black] (O) circle (1.3pt);
-    \filldraw[red] (P) circle (2.2pt);
-    \draw[grav] (P) -- ++(218:0.66);
-    \draw[normal] (P) -- ++(38:0.56);
-    \draw[centrip] ($(P)+(0,0.22)$) -- ++(180:0.66);
+    \node[above] at (0,1.60) {纬度 $\varphi$};
+    \filldraw[black] (O) circle (1.2pt);
+    \filldraw[red] (P) circle (2.1pt);
+    \draw[grav] (P) -- ++(218:0.72);
+    \draw[normal] (P) -- ++(38:0.62);
+    \draw[friction] (P) -- ++(128:0.48);
+    \draw[centrip] ($(P)+(0,-0.58)$) -- ++(180:0.76);
+    \node[red] at (0.20,0.68) {$F_g$};
+    \node[orange!85!black,right] at ($(P)+(38:0.64)$) {$N$};
+    \node[purple,above left] at ($(P)+(128:0.49)$) {$f$};
+    \node[blue,below] at (0.55,0.12) {$a_c$};
     \draw[<->,thin] (0,-1.38) -- ($(H)+(0,-1.38)$);
-    \node[red] at (0.43,0.45) {$F_{\text{引}}$};
-    \node[orange] at (1.62,1.18) {$N$};
-    \node[blue] at (0.50,1.20) {$a_c$};
-    \node[note] at (0,-1.73) {纬度 $\varphi$：$\rho=R\cos\varphi$};
+    \node[note] at (0,-1.72) {$\rho=R\cos\varphi$};
   \end{scope}
 \end{tikzpicture}

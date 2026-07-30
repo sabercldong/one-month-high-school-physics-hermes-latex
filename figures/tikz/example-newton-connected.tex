@@ -1,0 +1,13 @@
+% Day 06：例题光滑连接体
+\begin{tikzpicture}[scale=0.74,>=Latex]
+  \draw[thick] (-0.45,0) -- (5.45,0);
+  \draw[fill=white,thick] (0.30,0) rectangle (1.55,0.72);
+  \draw[fill=white,thick] (2.70,0) rectangle (3.95,0.72);
+  \draw[thick] (1.55,0.36) -- (2.70,0.36);
+  \node at (0.93,0.36) {$B$};
+  \node at (3.33,0.36) {$A$};
+  \draw[->,thick,red] (3.95,0.36) -- (5.0,0.36) node[above] {$F$};
+  \draw[->,thick,blue] (1.55,0.36) -- (2.58,0.36) node[above] {$T$};
+  \draw[->,ultra thick,blue] (1.18,1.28) -- (3.00,1.28) node[above] {$a$};
+  \node[font=\footnotesize] at (2.10,-0.48) {光滑水平面};
+\end{tikzpicture}

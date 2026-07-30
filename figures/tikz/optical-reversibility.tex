@@ -15,24 +15,24 @@
 
   \coordinate (A) at (-2.75,1.05);
   \coordinate (O) at (0,0);
-  \coordinate (B) at (2.75,-0.86);
+  \coordinate (B) at (1.10,-1.05);
 
   \draw[very thick,blue] (A) -- (O) -- (B);
   \draw[ray] (-1.72,0.66) -- (-1.22,0.47);
-  \draw[ray] (1.10,-0.34) -- (1.60,-0.50);
-  \draw[reverse] (1.72,-0.54) -- (1.22,-0.38);
+  \draw[ray] (0.35,-0.33) -- (0.70,-0.67);
+  \draw[reverse] (0.83,-0.79) -- (0.48,-0.46);
   \draw[reverse] (-1.10,0.42) -- (-1.60,0.61);
 
   \fill[red] (A) circle (1.5pt) node[above left,font=\small] {$A$};
   \fill[red] (B) circle (1.5pt) node[below right,font=\small] {$B$};
   \fill[black] (O) circle (1.2pt);
 
-  \draw[guide] (0.72,0) arc[start angle=0,end angle=159,radius=0.72];
-  \node[font=\scriptsize] at (-0.46,0.30) {$i$};
-  \draw[guide] (0.55,0) arc[start angle=0,end angle=-17,radius=0.55];
-  \node[font=\scriptsize] at (0.54,-0.16) {$r$};
+  \draw[guide] (90:0.72) arc[start angle=90,end angle=159,radius=0.72];
+  \node[font=\scriptsize] at (124:0.91) {$i$};
+  \draw[guide] (-90:0.55) arc[start angle=-90,end angle=-44,radius=0.55];
+  \node[font=\scriptsize] at (-67:0.76) {$r$};
 
   \node[font=\small,align=center,blue] at (-1.55,-1.62) {从 $A$ 到 $B$};
   \node[font=\small,align=center,orange!90!black] at (1.55,-1.62) {反向仍沿原路};
-  \node[font=\small,align=center] at (0,-2.13) {同一组介质中，光路可逆；作图时可从物点画向像点，也可反向检验};
+  \node[font=\small,align=center] at (0,-2.13) {同一组互易介质中，光路可逆；作图后可沿原路径反向检查};
 \end{tikzpicture}

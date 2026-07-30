@@ -1,0 +1,23 @@
+% TikZ 图：Day 01 单摆量纲分析变量
+\begin{tikzpicture}[scale=0.72,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  \coordinate (O) at (0,0);
+  \coordinate (B) at (-1.45,-2.55);
+
+  \draw[thick] (-1.15,0) -- (1.15,0);
+  \foreach \x in {-1.0,-0.7,...,1.0}
+    \draw[gray!65] (\x,0) -- ++(-0.18,0.18);
+  \fill (O) circle (1.5pt);
+
+  \draw[dashed,gray!75] (O) -- (0,-2.85);
+  \draw[very thick] (O) -- (B);
+  \filldraw[fill=white,thick] (B) circle (0.20);
+  \node[left=4pt] at (B) {$m$};
+
+  \draw[->,blue!75!black,thick] (B) -- ++(0,-0.92)
+    node[below] {$\vect g$};
+  \draw[<->] ($(O)+(-0.18,0.08)$) -- ($(B)+(-0.18,0.08)$)
+    node[midway,left=3pt] {$L$};
+  \draw (0,-0.55) arc[start angle=-90,end angle=-119.6,radius=0.55];
+  \node at (-0.34,-0.78) {$\theta_0$};
+\end{tikzpicture}

@@ -10,16 +10,16 @@
   \node[below,font=\small] at (2.4,-1.12) {负极板};
 
   % 电场线
-  \foreach \y in {-0.55,0,0.55} {
+  \foreach \y in {-0.55,0.55} {
     \draw[->,blue] (-2.1,\y) -- (2.1,\y);
   }
-  \node[blue,fill=white,inner sep=1pt] at (0,0.78) {$\vect{E}$};
+  \node[blue,fill=white,inner sep=1pt] at (0,0.82) {$\vect{E}$};
 
   % 正电粒子
   \filldraw[red] (-1.75,0) circle (2pt);
   \node[below left,red,fill=white,inner sep=1pt] at (-1.75,0) {$+q$};
-  \draw[->,thick,red] (-1.55,0.32) -- (1.55,0.32);
-  \node[above,red,fill=white,inner sep=1pt] at (1.55,0.32) {$v$};
+  \draw[->,thick,red] (-1.62,0) -- (-0.25,0);
+  \node[above,red,fill=white,inner sep=1pt] at (-0.92,0) {$\vect v$};
 
   \draw[<->] (-2.4,1.45) -- (2.4,1.45);
   \node[above,fill=white,inner sep=1pt] at (0,1.45) {加速电压 $U$};

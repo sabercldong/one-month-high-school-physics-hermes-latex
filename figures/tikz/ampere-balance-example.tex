@@ -1,15 +1,17 @@
 % TikZ 图：安培力平衡例题示意
 % Day 21：磁场与安培力
 \begin{tikzpicture}[scale=0.82,>=Latex]
-  \foreach \x in {-1.8,-1.1,-0.4,0.3,1.0,1.7} {
-    \foreach \y in {-0.7,0.75} {
-      \draw[blue,thick] (\x-0.08,\y-0.08) -- (\x+0.08,\y+0.08);
-      \draw[blue,thick] (\x-0.08,\y+0.08) -- (\x+0.08,\y-0.08);
-    }
+  \foreach \x in {-1.8,-1.1,1.0,1.7} {
+    \draw[blue,thick] (\x-0.08,0.67) -- (\x+0.08,0.83);
+    \draw[blue,thick] (\x-0.08,0.83) -- (\x+0.08,0.67);
+  }
+  \foreach \x in {-1.8,-1.1,1.7} {
+    \draw[blue,thick] (\x-0.08,-0.78) -- (\x+0.08,-0.62);
+    \draw[blue,thick] (\x-0.08,-0.62) -- (\x+0.08,-0.78);
   }
   \node[blue] at (2.35,0.82) {$B$ 向里};
   \draw[very thick,red,->] (-1.45,0) -- (1.45,0) node[right=2pt] {$I$};
   \draw[->,purple,very thick] (0,0) -- (0,1.08) node[above] {$F_A$};
-  \draw[->,black,thick] (0,0) -- (0,-0.82) node[right=4pt] {$mg$};
+  \draw[->,black,thick] (0,0) -- (0,-0.90) node[pos=0.72,right=4pt] {$mg$};
   \node[font=\small] at (0,-1.45) {悬浮条件：$F_A=mg$};
 \end{tikzpicture}

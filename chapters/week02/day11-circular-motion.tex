@@ -34,17 +34,24 @@
 
 \begin{conceptbox}{描述圆周运动的物理量}
 
-\textbf{线速度：}
+\textbf{线速度：} 瞬时线速度的大小定义为
 \[
-v = \frac{\Delta s}{\Delta t} = \frac{2\pi r}{T}
+v=\lim_{\Delta t\to0}\frac{\Delta s}{\Delta t}.
 \]
-方向沿圆周切线方向，时刻变化。
+方向沿圆周切线方向。对于匀速圆周运动，速率不变，转一周的路程为 $2\pi r$，所以
+\[
+v=\frac{2\pi r}{T}.
+\]
 
-\textbf{角速度：}
+\textbf{角速度：} 瞬时角速度的大小定义为
 \[
-\omega = \frac{\Delta\theta}{\Delta t} = \frac{2\pi}{T}
+\omega=\lim_{\Delta t\to0}\frac{\Delta\theta}{\Delta t}.
 \]
-单位 $\mathrm{rad/s}$，方向用右手螺旋定则判断（高中阶段只关注大小）。
+对于匀速圆周运动，转一周的角度为 $2\pi$，所以
+\[
+\omega=\frac{2\pi}{T}.
+\]
+单位为 $\mathrm{rad/s}$。角速度的矢量方向可用右手螺旋定则判断，本节计算主要使用其大小。
 
 \textbf{单位提醒：} 这里的角度 $\Delta\theta$ 必须用弧度。因为弧长关系 $\Delta s=r\Delta\theta$ 只有在 $\Delta\theta$ 用弧度时才直接成立。若题目给出 $30^\circ$、$60^\circ$ 等角度，代入角速度或弧长公式前要先换成弧度。
 
@@ -52,21 +59,22 @@ v = \frac{\Delta s}{\Delta t} = \frac{2\pi r}{T}
 \[
 T = \frac{1}{f},\qquad \omega = 2\pi f
 \]
+频率 $f$ 的单位为赫兹（$\mathrm{Hz}$），表示每秒完成圆周运动的圈数。
 
 \textbf{核心关系：}
 \[
 \boxed{v = \omega r}
 \]
 
-\textbf{简要推导：} 在很短时间 $\Delta t$ 内，质点转过角度 $\Delta\theta$，对应弧长
+\textbf{简要推导：} 在时间 $\Delta t$ 内，质点转过角度 $\Delta\theta$，对应弧长
 \[
 \Delta s=r\Delta\theta
 \]
-所以
+两边同除以 $\Delta t$，再令 $\Delta t\to0$，得到
 \[
-v=\frac{\Delta s}{\Delta t}
-=r\frac{\Delta\theta}{\Delta t}
-=r\omega
+v=\lim_{\Delta t\to0}\frac{\Delta s}{\Delta t}
+=r\lim_{\Delta t\to0}\frac{\Delta\theta}{\Delta t}
+=r\omega.
 \]
 即 $v=\omega r$。这个关系来自“同一段圆弧既可以用弧长描述，也可以用圆心角描述”。
 
@@ -84,26 +92,40 @@ v=\frac{\Delta s}{\Delta t}
 \boxed{a_n = \frac{v^2}{r} = \omega^2 r}
 \]
 
-\textbf{简要推导：} 匀速圆周运动中，速度大小不变，但速度方向在变。很短时间 $\Delta t$ 内，半径转过小角度 $\Delta\theta$，速度方向也转过同样的小角度。两个速度矢量大小都为 $v$，它们的变化量近似为
+\textbf{速度三角形推导：} 匀速圆周运动中，速度大小不变，但速度方向在变。质点从 $P_1$ 运动到 $P_2$ 时，半径转过 $\Delta\theta$，两处切线速度之间的夹角也为 $\Delta\theta$。把 $\vec v_1$、$\vec v_2$ 平移到同一起点，由
 \[
-\Delta v \approx v\Delta\theta
+\Delta\vec v=\vec v_2-\vec v_1
+\]
+可得一个等腰速度三角形。
+
+\begin{center}
+\input{figures/tikz/centripetal-acceleration-derivation}
+
+\figcaption{半径转角与速度转角相等；当 $\Delta\theta\to0$ 时，$\Delta\vec v$ 指向圆心}\label{fig:centripetal-acceleration-derivation}
+\end{center}
+
+由速度三角形，
+\[
+|\Delta\vec v|=2v\sin\frac{\Delta\theta}{2}.
 \]
 因此
 \[
-a_n=\lim_{\Delta t\to 0}\frac{\Delta v}{\Delta t}
-=v\lim_{\Delta t\to 0}\frac{\Delta\theta}{\Delta t}
-=v\omega
+a_n=\lim_{\Delta t\to0}\frac{|\Delta\vec v|}{\Delta t}
+=v\lim_{\Delta t\to0}
+\left(\frac{\sin(\Delta\theta/2)}{\Delta\theta/2}
+\frac{\Delta\theta}{\Delta t}\right)
+=v\omega.
 \]
 又因为 $v=\omega r$，所以
 \[
 a_n=v\omega=\frac{v^2}{r}=\omega^2r
 \]
-方向指向圆心，所以叫向心加速度。
+当 $\Delta t\to0$ 时，$\Delta\vec v$ 的方向趋于沿半径指向圆心，因此该加速度叫向心加速度。
 
 \begin{itemize}
   \item 方向：始终指向圆心，与速度方向垂直。
   \item 物理意义：描述速度方向变化的快慢（不改变速度大小）。
-  \item 即使是“匀速”圆周运动，也有加速度——因为速度方向不断变化，所以是\textbf{变加速曲线运动}。
+  \item 即使是“匀速”圆周运动，也有加速度。其加速度大小不变，但方向不断改变，因此加速度矢量并不恒定。
 \end{itemize}
 
 \end{conceptbox}
@@ -190,9 +212,39 @@ F_T\cos\theta = mg
 \figcaption{竖直圆周运动最高点和最低点的受力分析}\label{fig:vertical-circular}
 \end{center}
 
-\textbf{内侧轨道/轻绳模型的最高点：} $N + mg = m\dfrac{v^2}{r}$，临界条件 $v_{\min} = \sqrt{gr}$（$N=0$ 时）。若是轻杆或外侧拱桥模型，受力方向和临界条件需要重新分析。
+\textbf{内侧轨道模型的最高点：} $N + mg = m\dfrac{v^2}{r}$，临界条件 $v_{\min} = \sqrt{gr}$（$N=0$ 时）。若改为轻绳，式中的 $N$ 应改为绳的拉力 $T$；若是轻杆或外侧拱桥模型，受力方向和临界条件也需要重新分析。
 
-\textbf{最低点：} $N - mg = m\dfrac{v^2}{r}$。
+\textbf{最低点：} 内侧轨道为 $N - mg = m\dfrac{v^2}{r}$；轻绳模型则写 $T-mg=m\dfrac{v^2}{r}$。
+
+\textbf{从最高点到最低点还要结合能量：} 对光滑内轨或轻绳模型，设最高点、最低点速率分别为 $v_{\text{上}}$、$v_{\text{下}}$，由机械能守恒
+\[
+\frac12mv_{\text{下}}^2
+=\frac12mv_{\text{上}}^2+mg(2r),
+\qquad
+v_{\text{下}}^2=v_{\text{上}}^2+4gr.
+\]
+若物体恰好能完成整周运动，则最高点临界速率为
+$v_{\text{上,min}}=\sqrt{gr}$，相应的最低点最小速率为
+\[
+\boxed{v_{\text{下,min}}=\sqrt{5gr}}.
+\]
+不要把最高点的 $\sqrt{gr}$ 误当成最低点完成整周所需的速率。
+
+\textbf{不同约束不能共用同一个临界条件：}
+\begin{itemize}
+  \item \textbf{轻绳或单侧内轨：} 只能拉、不能推，或只能向圆心提供支持力，故最高点必须满足 $T\ge0$ 或 $N\ge0$。
+  \item \textbf{轻杆或双侧轨道：} 既能沿半径向内作用，也能沿半径向外作用，最高点没有 $v\ge\sqrt{gr}$ 这一接触临界；杆力方向应由带符号的径向方程判断。
+  \item \textbf{外侧拱桥：} 最高点有 $mg-N=m\dfrac{v^2}{r}$，保持接触要求 $N\ge0$，因此是 $v\le\sqrt{gr}$。
+\end{itemize}
+
+\begin{center}
+\begin{minipage}{0.94\textwidth}
+\centering
+\input{figures/tikz/vertical-circle-constraints}
+
+\figcaption{三类竖直圆周约束的最高点受力与临界条件不同}\label{fig:vertical-circle-constraints}
+\end{minipage}
+\end{center}
 
 \subsection*{模型 3：汽车转弯}
 
@@ -284,7 +336,7 @@ v=\omega r\approx3.40\times0.50=1.70\ \mathrm{m/s}.
   \[
   \omega_B = \frac{r_A}{r_B} \omega_A = \frac{20}{10} \times 10 = 20\ \mathrm{rad/s}
   \]
-  
+
   \item $v = \omega_A r_A = 10 \times 0.2 = 2\ \mathrm{m/s}$
 \end{enumerate}
 
@@ -333,7 +385,7 @@ v_{\max} = \sqrt{\mu_s g r} = \sqrt{0.4 \times 10 \times 50} = \sqrt{200} \appro
   \[
   mg = m\frac{v^2}{r},\qquad v_{\min} = \sqrt{gr} = \sqrt{10 \times 8} = \sqrt{80} \approx 8.94\ \mathrm{m/s}
   \]
-  
+
   \item $v = 12\ \mathrm{m/s} > v_{\min}$，安全：
   \[
   N + mg = m\frac{v^2}{r}
@@ -350,37 +402,36 @@ v_{\max} = \sqrt{\mu_s g r} = \sqrt{0.4 \times 10 \times 50} = \sqrt{200} \appro
 \section*{七、变式训练}
 
 \begin{enumerate}
-  \item 一个 $m = 0.5\ \mathrm{kg}$ 的小球用 $l = 1\ \mathrm{m}$ 的细绳系着做圆锥摆，绳与竖直方向夹角 $\theta = 30^\circ$，$g = 10\ \mathrm{m/s^2}$。求小球运动的角速度和线速度。
-  
+  \item 一个质量为 $m=0.20\ \mathrm{kg}$ 的小球用长 $l=0.80\ \mathrm{m}$ 的细绳系着做圆锥摆，绳与竖直方向夹角 $\theta=60^\circ$，$g=10\ \mathrm{m/s^2}$。求小球运动的周期和绳的拉力。
+
   \item 汽车以 $v = 15\ \mathrm{m/s}$ 通过半径 $r = 30\ \mathrm{m}$ 的水平弯道，路面与轮胎间最大静摩擦因数 $\mu_s = 0.6$。问汽车是否侧滑？
-  
+
   \item 质量为 $m$ 的小球在半径为 $r$ 的竖直光滑圆轨道内侧做圆周运动，在最高点速度为 $v$。求：
   \begin{center}
   \input{figures/tikz/training-vertical-circle}
   \end{center}
   \begin{enumerate}
-    \item 轨道对小球的支持力大小。
+    \item 轨道对小球的支持力大小，并写出保持接触对 $v$ 的要求。
     \item 若 $v = \sqrt{2gr}$，求最高点支持力大小。
   \end{enumerate}
 \end{enumerate}
 
-\section*{八、易错点}
-
-\begin{mistakebox}
-\begin{enumerate}
-  \item \textbf{误以为向心力是“真实力”：} 受力分析先只画真实力。向心力是这些真实力沿半径方向的合效果，不单独画。
-  
-  \item \textbf{认为匀速圆周运动是匀速运动：} 先在圆周上任选两个不同位置，各画一支沿切线的速度矢量。比较两矢量可见速率相同而方向不同，因此速度发生变化，仍有指向圆心的加速度；这里的“匀速”只指速率不变。
-  
-  \item \textbf{竖直圆周中漏了重力：} 先在最高点、最低点分别重画受力图。重力始终存在，不要只写支持力或拉力。
-  
-  \item \textbf{混淆传动方式：} 先判断接触传动还是同轴转动。皮带传动线速度相等，同轴转动角速度相等。
-  
-  \item \textbf{汽车转弯误用滑动摩擦力：} 汽车正常转弯时是静摩擦力提供向心力，不是滑动摩擦力。临界打滑前可用 $f_{\max}=\mu_s mg$。
+\begin{learningbox}{变式训练参考结果}
+\begin{enumerate}[itemsep=0.45em,topsep=0.3em,parsep=0pt]
+  \item 由 $T_{\text{绳}}\cos\theta=mg$ 得
+  $T_{\text{绳}}=4.0\ \mathrm N$；又由
+  $\omega^2=g/(l\cos\theta)$ 得 $\omega=5.0\ \mathrm{rad/s}$，故周期
+  $T=2\pi/\omega=2\pi/5\ \mathrm s$。
+  \item 所需向心加速度为 $v^2/r=7.5\ \mathrm{m/s^2}$，大于静摩擦力所能提供的最大值
+  $\mu_sg=6.0\ \mathrm{m/s^2}$，汽车会侧滑。对应的最大安全速度为
+  $\sqrt{\mu_sgr}=6\sqrt5\ \mathrm{m/s}<15\ \mathrm{m/s}$。
+  \item 最高点有 $mg+N=mv^2/r$，故
+  $N=m(v^2/r-g)$；保持接触要求 $N\geqslant0$，即
+  $v\geqslant\sqrt{gr}$。当 $v=\sqrt{2gr}$ 时，$N=mg$。
 \end{enumerate}
-\end{mistakebox}
+\end{learningbox}
 
-\section*{九、竞赛入门补充}
+\section*{八、竞赛入门补充}
 
 \begin{competitionbox}
 \textbf{非匀速圆周运动：法向与切向分解}
@@ -398,10 +449,11 @@ v_{\max} = \sqrt{\mu_s g r} = \sqrt{0.4 \times 10 \times 50} = \sqrt{200} \appro
   \[
   a_n=\frac{v^2}{r}
   \]
-  \item \textbf{切向（沿切线）：} 描述速度大小变化，大小为
+  \item \textbf{切向（沿切线）：} 选定切向正方向后，切向加速度分量为
   \[
-  a_t=\frac{\Delta v_{\text{大小}}}{\Delta t}
+  a_t=\frac{\mathrm dv}{\mathrm dt},
   \]
+  其大小为 $\left|a_t\right|$。速率增大时 $\vec a_t$ 与 $\vec v$ 同向，速率减小时二者反向。图~\ref{fig:nonuniform-circular} 画的是速率增大的情形。
 \end{itemize}
 
 总加速度：
@@ -417,21 +469,58 @@ a = \sqrt{a_n^2 + a_t^2}
 
 \textbf{竖直圆周中的关键认识：}
 \begin{itemize}
-  \item 在最高点和最低点，重力沿半径方向，没有切向分量，所以瞬时 $a_t=0$。
+  \item 若轨道光滑且约束力沿半径方向，在最高点和最低点，重力也沿半径方向，因此瞬时 $a_t=0$。
   \item 在其他位置，重力通常有切向分量，会改变速率，因此运动一般不是匀速圆周运动。
-  \item 解题时不要把“合力一定指向圆心”当成通用结论；只有匀速圆周运动才是合力完全指向圆心。
+  \item 解题时不要把“合力始终指向圆心”当成通用结论；只有匀速圆周运动才在整个过程中满足合力完全指向圆心。
 \end{itemize}
 
-\textbf{例题：} 小球在竖直圆轨道最低点速度为 $v$，求该点的向心加速度和总加速度方向。
+\textbf{一般位置模型：} 质量为 $m$ 的小球在半径为 $r$ 的光滑竖直圆轨道内侧运动。设最低点速度为 $v_0$，小球从最低点沿轨道上升，所在位置的半径与竖直向下方向夹角为 $\varphi$。
 
-\textbf{解：} 最低点处，切线方向水平，重力竖直向下，沿切线方向没有分量，所以 $a_t=0$。总加速度全部为向心加速度：
+\begin{center}
+\input{figures/tikz/vertical-circle-general-angle}
+\end{center}
+
+\textbf{第一步，能量决定当地速率：} 小球相对最低点升高
+$h=r(1-\cos\varphi)$，所以
 \[
-a=a_n=\frac{v^2}{r}
+\frac12mv_0^2
+=\frac12mv^2+mgr(1-\cos\varphi),
 \]
-方向竖直向上，指向圆心。
+\[
+v^2=v_0^2-2gr(1-\cos\varphi).
+\]
 
-\textbf{竞赛提示：} 遇到圆周运动综合题，第一步不是直接套 $F=mv^2/r$，而是先建立“法向—切向”坐标。法向列向心方程，切向判断速度大小如何变化。这样才能处理竖直圆周、变速转弯、带摩擦圆轨道等更复杂模型。
+\textbf{第二步，径向方程决定支持力：} 取指向圆心为径向正方向，重力的径向分量为 $-mg\cos\varphi$，故
+\[
+N-mg\cos\varphi=m\frac{v^2}{r},
+\qquad
+N=m\frac{v^2}{r}+mg\cos\varphi.
+\]
+
+\textbf{第三步，切向分量决定速率变化：} 取小球上升方向为切向正方向，
+\[
+a_t=-g\sin\varphi.
+\]
+负号表示小球上升过程中切向加速度与速度方向相反，速率减小。把 $\varphi=0$、$\pi$ 分别代入，就能自动得到最低点和最高点的径向方程；再检查 $N\ge0$，即可判断小球是否仍与单侧内轨接触。
+
+\textbf{竞赛提示：} 遇到圆周运动综合题，应依次完成“能量求当地速率—径向方程求约束力—切向方程判断速率变化—检查接触条件”。这套顺序可以处理竖直圆周、变速转弯和带摩擦圆轨道等更复杂模型。
 \end{competitionbox}
+
+\section*{九、易错点}
+
+\begin{mistakebox}
+\begin{enumerate}
+  \item \textbf{误以为向心力是“真实力”：} 受力分析先只画真实力。向心力是这些真实力沿半径方向的合效果，不单独画。
+
+  \item \textbf{认为匀速圆周运动是匀速运动：} 先在圆周上任选两个不同位置，各画一支沿切线的速度矢量。比较两矢量可见速率相同而方向不同，因此速度发生变化，仍有指向圆心的加速度；这里的“匀速”只指速率不变。
+
+  \item \textbf{竖直圆周中漏了重力：} 先在最高点、最低点分别重画受力图。重力始终存在，不要只写支持力或拉力。
+
+  \item \textbf{混淆传动方式：} 先判断接触传动还是同轴转动。皮带传动线速度相等，同轴转动角速度相等。
+
+  \item \textbf{汽车转弯误用滑动摩擦力：} 汽车正常转弯时是静摩擦力提供向心力，不是滑动摩擦力。临界打滑前可用 $f_{\max}=\mu_s mg$。
+\end{enumerate}
+\end{mistakebox}
 
 \section*{十、今日小结}
 

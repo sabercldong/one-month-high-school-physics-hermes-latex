@@ -11,9 +11,9 @@
   \filldraw[black] (4,0) circle (2pt);
   \node[below=7pt] at (4,-1.0) {$B$};
   \draw[->,thin] (4,0) -- (4.71,-0.71) node[midway,above right=-1pt] {$r_B$};
-  % 皮带（上下各一条线）
-  \draw[thick] (0,1.5) -- (4,1.0);
-  \draw[thick] (0,-1.5) -- (4,-1.0);
+  % 两圆半径不同时，皮带边必须画成两圆的外公切线。
+  \draw[thick] (0.1875,1.4882) -- (4.1250,0.9922);
+  \draw[thick] (0.1875,-1.4882) -- (4.1250,-0.9922);
   % 角速度标注
   \draw[->,thick,red] (0,0) ++(30:0.6) arc (30:120:0.6);
   \node[red] at (0,0.9) {$\omega_A$};

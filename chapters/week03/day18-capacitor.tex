@@ -1,7 +1,7 @@
 \daytitle{18}{电容器与电场能量入门}
 
 \begin{learningbox}{本节导读}
-电容器是储存电荷和电场能量的元件。本节学习电容的定义、平行板电容器的公式、电容器的充放电，以及在电路中的两种典型连接方式。这些是电磁学实验和高考电磁综合题的基础。
+电容器是储存电荷和电场能量的元件。本节学习电容的定义、平行板电容器的公式、电容器的充放电，以及接通或断开电源时的动态变化，并初步认识电容器的串、并联。这些是电磁学实验和高考电磁综合题的基础。
 \end{learningbox}
 
 \textbf{本节读题路线：} 先判断电容器是接着电源还是已经断开，这一步决定优先固定 $U$ 还是 $Q$；理想电源保持接通时电压 $U$ 常不变，充电后断开且无漏电、无外接导通回路时电荷量 $Q$ 才近似不变。再由 $C$、$Q$、$U$、$E$ 的关系逐步推出变化，不要把决定式和定义式混用。
@@ -13,11 +13,12 @@
   \item 能说明平行板电容器决定式 $C = \dfrac{\varepsilon_r S}{4\pi k d}$ 中面积、距离和介质的作用。
   \item 能判断电容器充放电过程中 $Q$、$U$、$E$ 的变化。
   \item 能分析电容器在电路中的两种典型情形（电源接通/断开）。
-  \item 能用图像或能量观点说明电容器储存的电场能量 $E = \dfrac12 CU^2$。
+  \item 能用图像或能量观点说明电容器储存的电场能量 $E_C = \dfrac12 CU^2$。
+  \item 能根据“并联同压、串联同荷”的条件计算简单电容器组合。
 \end{enumerate}
 \section*{二、初高中衔接}
 
-初中阶段只定性接触过“电容器能储存电荷”——这是一个定性概念。
+从生活中的相机闪光灯、电源适配器和触摸屏出发，我们容易形成“电容器能够储存电荷”的初步认识。高中物理要进一步回答：怎样量度这种本领，它由哪些结构因素决定，又怎样储存和释放能量。
 
 高中要把电容器量化：
 \begin{itemize}
@@ -31,6 +32,8 @@
 \section*{三、核心概念}
 
 \begin{conceptbox}{电容}
+
+\textbf{电容器的结构：} 两个彼此绝缘、相互靠近的导体可以组成电容器。这两个导体叫作电容器的两个极板；平行板电容器只是最常见、最便于建立模型的一种。
 
 \textbf{定义：} 电容器单个极板所带电荷量的大小 $Q$ 与两极板间电势差 $U$ 的比值。
 \[
@@ -79,8 +82,6 @@ C=\frac{Q}{U}=\frac{\varepsilon_r S}{4\pi k d}.
 
 \end{conceptbox}
 
-\clearpage
-
 \begin{conceptbox}{电容器的充放电}
 
 \begin{center}
@@ -98,9 +99,9 @@ C=\frac{Q}{U}=\frac{\varepsilon_r S}{4\pi k d}.
 
 \textbf{放电过程：}
 \begin{itemize}
-  \item 用导线连接两极板，电荷中和。
+  \item 让两极板通过电阻或具有电阻的实际回路连通，异种电荷逐步中和。
   \item $Q$ 减少，$U$ 减少，$E$ 减少。
-  \item 放电电流从大到小，最后为零。
+  \item 对电阻一定的放电回路，放电电流的绝对值从大到小，最后趋于零。
 \end{itemize}
 
 \begin{center}
@@ -109,10 +110,15 @@ C=\frac{Q}{U}=\frac{\varepsilon_r S}{4\pi k d}.
 \figcaption{电容器充放电的 $i$-$t$ 图像：图线与时间轴围成的面积表示电荷量变化}\label{fig:capacitor-current-time}
 \end{center}
 
-\textbf{面积意义：} 电流定义为单位时间通过导体横截面的电荷量，即 $i=\dfrac{\Delta Q}{\Delta t}$。因此在 $i$-$t$ 图像中，图线与时间轴围成的面积表示电荷量变化：
+\textbf{面积意义：} 在很短的时间 $\Delta t$ 内，若电流近似不变，则通过导体横截面的电荷量为
+\[
+\Delta Q\approx i\,\Delta t,
+\]
+它对应 $i$-$t$ 图像中一个窄矩形的面积。把整个过程分成许多很短的时间段并将这些小面积相加，极限情况下得到
 \[
 \Delta Q=\int i\,dt.
 \]
+这里的积分号 $\int$ 可以理解为“把无数个微小面积相加”；高中阶段主要掌握图像面积的物理意义，不要求用高等数学计算复杂积分。
 充电时面积等于电容器增加的电荷量；若把充电方向规定为正方向，放电电流为负，放电图像的有向面积为 $-Q_0$，面积的绝对值表示放出的电荷量。
 
 \end{conceptbox}
@@ -134,14 +140,14 @@ C=\frac{Q}{U}=\frac{\varepsilon_r S}{4\pi k d}.
 
 \textbf{情况 2：电容器充电后与电源断开}
 \begin{itemize}
-  \item $Q$ 不变（电荷无处可去）。
+  \item 若没有漏电和外接导通回路，极板电荷量 $Q$ 近似不变。
   \item $d \uparrow \Rightarrow C \downarrow \Rightarrow U \uparrow \Rightarrow E$ 不变（$E = \dfrac{U}{d} \propto \dfrac{Q}{S}$）。
   \item $S \uparrow \Rightarrow C \uparrow \Rightarrow U \downarrow \Rightarrow E \downarrow$。
 \end{itemize}
 
 \textbf{关键结论：} 在上述理想平行板模型中，$E = \dfrac{U}{d} = \dfrac{4\pi k Q}{\varepsilon_r S}$。$Q$ 不变时，板间中部的匀强场强与 $d$ 无关，只与 $Q$、$S$ 和介质有关。
 
-\textbf{插入电介质的特殊判断：} 若 $S$、$d$ 不变，只把空气换成相对介电常数 $\varepsilon_r>1$ 的电介质，则
+\textbf{插入电介质的特殊判断：} 若 $S$、$d$ 不变，并用相对介电常数 $\varepsilon_r>1$ 的均匀电介质完全充满板间空间，则
 \[
 C'=\varepsilon_r C.
 \]
@@ -162,7 +168,7 @@ C'=\varepsilon_r C.
 
 \begin{conceptbox}{电容器的电场能量}
 
-电容器充电过程中，电源做功将电荷从一极板搬运到另一极板，能量以电场能的形式储存在电容器中。
+电容器充电过程中，电源通过外电路使两极板分别积累等量异种电荷，电容器的电场能逐步增加。$E_C$ 表示最终储存在电容器电场中的能量，不应和“电源总共做了多少功”不加区分地画等号。
 
 \begin{center}
 \input{figures/tikz/capacitor-energy-area}
@@ -170,9 +176,38 @@ C'=\varepsilon_r C.
 \figcaption{电容器能量来源：$U$ 随 $Q$ 线性增大，面积表示储存的电场能}\label{fig:capacitor-energy-area}
 \end{center}
 
+\textbf{面积为什么表示电场能：} 设充电过程中某一时刻极板电荷量为 $q$，瞬时电压为
 \[
-\boxed{E_C = \frac12 CU^2 = \frac12 QU = \frac{Q^2}{2C}}
+u=\frac{q}{C}.
 \]
+再向极板搬运一小份电荷 $dq$ 时，克服电场力所做的功为
+\[
+dW=u\,dq.
+\]
+把电荷量从 $0$ 增加到最终的 $Q$，储存的电场能等于所有微小功之和：
+\[
+E_C=\int_0^Q u\,dq
+=\int_0^Q\frac{q}{C}\,dq
+=\frac{Q^2}{2C}
+=\frac12QU
+=\frac12CU^2.
+\]
+这正是图~\ref{fig:capacitor-energy-area} 中直线下三角形的面积。因此
+\[
+\boxed{E_C = \frac12 CU^2 = \frac12 QU = \frac{Q^2}{2C}}.
+\]
+
+\textbf{恒压充电的能量去向：} 若电容器通过电阻由电压恒为 $U$ 的理想电源充电，最终 $Q=CU$。电源做功为
+\[
+W_{\text{源}}=UQ=CU^2,
+\]
+其中
+\[
+E_C=\frac12CU^2,
+\qquad
+Q_{\text{热}}=W_{\text{源}}-E_C=\frac12CU^2.
+\]
+也就是说，这种普通 $RC$ 充电过程中，一半能量储存在电场中，另一半转化为电阻热；这个比例与电阻大小无关。若采用缓慢改变电源电压等方式充电，能量分配会不同，所以能量题必须先说明充电过程。
 
 \begin{itemize}
   \item 这个公式和弹簧的弹性势能 $\frac12 kx^2$ 形式上相似。
@@ -222,7 +257,7 @@ $E_C = \dfrac12 CU^2$ & 电场能量 & 线性电容器模型 \\
 \[
 E_C=\frac12 CU^2=\frac12 QU=\frac{Q^2}{2C}.
 \]
-接电源时电源会参与能量转化，断电源时通常只在电容器和外力之间转化，二者不要混在一起。
+接电源时电源会参与能量转化；断开电源并缓慢移动极板、且没有漏电和耗散时，能量主要在电场能和外力做功之间转化；若断电后接入电阻放电，还要计入焦耳热。不同过程不能混在一起。
 \end{learningbox}
 
 \section*{五、典型模型}
@@ -241,14 +276,29 @@ d,\ S,\ \varepsilon_r \quad\Longrightarrow\quad C
 
 \subsection*{模型 2：电容器与力学综合}
 
-带电粒子在平行板电容器间的运动（结合 Day 17 的偏转知识）。改变电容器参数会影响粒子的偏转位移。
+平行板电容器先建立电场，带电粒子或带电小球再在这个电场中受力。分析时不要把“电容器怎样决定场”和“物体怎样运动”混写在一个步骤中。
+
+\begin{center}
+\input{figures/tikz/capacitor-droplet-equilibrium}
+
+\figcaption{带电液滴在板间静止：先由电容器求场强，再列受力平衡}\label{fig:capacitor-droplet-equilibrium}
+\end{center}
 
 \textbf{建模接口：} 先由电容器状态确定板间场强，再把它交给力学模型：
 \[
 \text{接电源： } E=\frac{U}{d},\qquad
-\text{断电源： } E=\frac{4\pi kQ}{\varepsilon_r S}.
+\text{断电源： } E=\frac{4\pi kQ_C}{\varepsilon_r S},
 \]
-然后用 $a=\dfrac{qE}{m}$ 判断带电粒子的加速度方向和大小。这一步把问题分成两层：电容器先决定“场从哪里来”，粒子运动再决定“受力后怎样运动”。
+其中 $Q_C$ 表示电容器单个极板所带电荷量的大小，$q$ 表示研究对象的带符号电荷量。然后用
+\[
+\vect F_{\text{电}}=q\vect E,\qquad
+\sum\vect F=m\vect a
+\]
+判断物体的受力和运动。例如图~\ref{fig:capacitor-droplet-equilibrium} 中正电液滴静止时，
+\[
+qE=mg.
+\]
+若电容器接着电源，则平衡条件为 $qU/d=mg$。这一步把问题分成两层：电容器先决定“场从哪里来”，力学规律再决定“物体怎样运动”。
 
 \subsection*{模型 3：电容器的串并联}
 
@@ -267,7 +317,7 @@ Q_{\text{总}}=Q_1+Q_2=C_1U+C_2U=(C_1+C_2)U.
 \boxed{C_{\text{总}}=C_1+C_2}.
 \]
 
-\textbf{串联推导：} 串联时中间连接的极板总电荷不能凭空产生或消失，稳定后每个电容器所带电荷量大小相同，记为 $Q$。总电压等于两个电容器电压之和：
+\textbf{串联推导：} 若串联前中间连接导体不带净电荷，且中间节点没有其他支路，充电过程中该导体的净电荷始终为零，因此相邻两极板出现等量异种电荷。稳定后每个电容器所带电荷量大小相同，记为 $Q$。总电压等于两个电容器电压之和：
 \[
 U=U_1+U_2=\frac{Q}{C_1}+\frac{Q}{C_2}
 =Q\left(\frac{1}{C_1}+\frac{1}{C_2}\right).
@@ -277,7 +327,7 @@ U=U_1+U_2=\frac{Q}{C_1}+\frac{Q}{C_2}
 \boxed{\frac{1}{C_{\text{总}}}=\frac{1}{C_1}+\frac{1}{C_2}}.
 \]
 
-\textbf{理解方式：} 电容器并联相当于增大正对面积，电容变大；电容器串联相当于增大等效板间距，电容变小。
+\textbf{理解方式：} 对面积和介质相同的理想平行板电容器，并联可类比为增大正对面积，串联可类比为增大等效板间距。这个类比帮助记忆，普遍计算仍应使用串、并联关系式。
 
 \pagebreak[3]
 \section*{六、例题精讲}
@@ -340,45 +390,117 @@ $E = \dfrac{U}{d} = \dfrac{4\pi k Q}{\varepsilon_r S}$，在理想平行板模�
 
 \end{examplebox}
 
+\begin{examplebox}{串联电容器的电荷量与分压}
+
+\textbf{题意分析：} 两个初始不带电的电容器 $C_1=2.0\ \mu\mathrm F$、$C_2=3.0\ \mu\mathrm F$ 串联后接到 $U=12\ \mathrm V$ 的直流电源两端。求稳定后两电容器的电荷量及各自电压。
+
+\begin{center}
+\input{figures/tikz/capacitor-series-example}
+\end{center}
+
+\textbf{物理模型：} 中间节点无其他支路且初始不带净电荷，故串联同荷。
+
+\textbf{解题过程：}
+\[
+C_{\text{总}}=\frac{C_1C_2}{C_1+C_2}
+=\frac{2.0\times3.0}{2.0+3.0}\ \mu\mathrm F
+=1.2\ \mu\mathrm F,
+\]
+\[
+Q=C_{\text{总}}U=1.2\ \mu\mathrm F\times12\ \mathrm V
+=14.4\ \mu\mathrm C.
+\]
+于是
+\[
+U_1=\frac{Q}{C_1}=7.2\ \mathrm V,\qquad
+U_2=\frac{Q}{C_2}=4.8\ \mathrm V.
+\]
+检验：$U_1+U_2=12\ \mathrm V$。
+
+\textbf{方法总结：} 串联电容器先求等效电容和公共电荷量，再分别用 $U_i=Q/C_i$ 求分压；电容越小，分得的电压越大。
+
+\end{examplebox}
+
+\begin{examplebox}{$i$-$t$ 面积与电场能}
+
+\textbf{题意分析：} 一个初始不带电、容量为 $C=2.0\ \mu\mathrm F$ 的电容器充电时，电流在 $2.0\ \mathrm{ms}$ 内由 $4.0\ \mathrm{mA}$ 线性减小到零。求充入的电荷量、最终电压和电场能。
+
+\begin{center}
+\input{figures/tikz/capacitor-it-area-example}
+\end{center}
+
+\textbf{解题过程：} 图线下方为三角形，故
+\[
+Q=\frac12 i_0t_0
+=\frac12\times4.0\times10^{-3}\times2.0\times10^{-3}
+=4.0\times10^{-6}\ \mathrm C.
+\]
+\[
+U=\frac{Q}{C}
+=\frac{4.0\ \mu\mathrm C}{2.0\ \mu\mathrm F}
+=2.0\ \mathrm V,
+\]
+\[
+E_C=\frac12CU^2
+=\frac12\times2.0\times10^{-6}\times(2.0)^2
+=4.0\times10^{-6}\ \mathrm J.
+\]
+
+\textbf{方法总结：} 先用 $i$-$t$ 图像面积求电荷量，再由 $Q=CU$ 和能量公式继续计算；横、纵坐标的毫秒和毫安必须先换成国际单位。
+
+\end{examplebox}
+
 \section*{七、变式训练}
 
 \begin{enumerate}
-  \item 平行板电容器 $S = 0.01\ \mathrm{m^2}$，$d = 2\ \mathrm{mm}$，接入 $U = 100\ \mathrm{V}$ 的电源。求电容 $C$、电荷量 $Q$ 和板间场强 $E$。
-  
+  \item 空气平行板电容器（空气近似按真空处理）$S = 0.01\ \mathrm{m^2}$，$d = 2\ \mathrm{mm}$，接入 $U = 100\ \mathrm{V}$ 的电源。求电容 $C$、电荷量 $Q$ 和板间场强 $E$。
+
   \item 上题中若将极板间距增大到 $4\ \mathrm{mm}$（电源仍接通），求 $C$、$Q$、$E$ 的变化。
   \begin{center}
   \input{figures/tikz/training-capacitor-change}
   \end{center}
-  
+
   \item 电容器充电后断开电源，将极板正对面积减为一半，问 $C$、$U$、$E$ 如何变化？
 
   \item 平行板电容器充电后断开电源，保持 $S$、$d$ 不变，在两板间插入相对介电常数 $\varepsilon_r=4$ 的电介质。判断 $C$、$U$、$E$ 如何变化。
+
+  \item 两个初始不带电的电容器 $C_1=3.0\ \mu\mathrm F$、$C_2=6.0\ \mu\mathrm F$ 串联后接在 $18\ \mathrm V$ 电源两端。求稳定后的公共电荷量以及 $U_1$、$U_2$。
+
+  \item 一个 $C=3.0\ \mu\mathrm F$ 的电容器从不带电状态开始充电，电流在 $4.0\ \mathrm{ms}$ 内由 $6.0\ \mathrm{mA}$ 线性减小到零。求最终电荷量、电压和电场能。
 \end{enumerate}
 
-\section*{八、易错点}
-
-\begin{mistakebox}
-\begin{enumerate}
-  \item \textbf{电容 $C$ 由 $Q$、$U$ 决定还是由电容器本身决定：} 先区分量度式和决定式。$C=\dfrac{Q}{U}$ 用来量度电容，结构确定时 $C$ 由极板面积、间距和介质决定。
-  
-  \item \textbf{动态分析中分不清 $U$ 不变还是 $Q$ 不变：} 第一步先看电容器是否仍接电源：理想电源保持接通且电压恒定时 $U$ 不变；充电后与电源断开、又没有漏电或外接导通回路时，极板所带电荷量 $Q$ 才近似不变。
-  
-  \item \textbf{误以为 $E = \dfrac{U}{d}$ 在所有情况下都与 $d$ 有关：} 对充电后断开电源、漏电可忽略的理想平行板电容器，若只改变板间距而保持极板电荷量 $Q$ 不变，则 $E$ 与 $d$ 无关——因为 $U$ 和 $d$ 成比例变化抵消了。
-  
-  \item \textbf{单位换算错误：} $1\ \mu\mathrm{F} = 10^{-6}\ \mathrm{F}$，$1\ \mathrm{pF} = 10^{-12}\ \mathrm{F}$。计算前先统一单位。
-  
-  \item \textbf{忽略介电常数 $\varepsilon_r$：} 插入电介质（$\varepsilon_r > 1$）会使电容增大。真空或空气中 $\varepsilon_r \approx 1$。
-
-  \item \textbf{插入介质后忘记不变量：} 先写 $C$ 变大，再按接电源或断电源判断 $U$、$Q$、$E$ 如何连锁变化。
+\begin{learningbox}{变式训练参考结果}
+\begin{enumerate}[itemsep=0.45em,topsep=0.3em,parsep=0pt]
+  \item 近似按真空（空气）电容器计算：
+  $C=\varepsilon_0S/d\approx4.43\times10^{-11}\ \mathrm F$，
+  $Q=CU\approx4.43\times10^{-9}\ \mathrm C$，
+  $E=U/d=5.0\times10^4\ \mathrm{V/m}$。
+  \item 电源仍接通，$U$ 不变。板间距加倍后，$C$、$Q$、$E$ 均变为原来的一半。
+  \item 断开电源后 $Q$ 不变。正对面积减半时，$C$ 减半，$U$ 加倍，$E$ 加倍。
+  \item 插入电介质后 $C'=4C$；因 $Q$ 不变，故 $U'=U/4$、$E'=E/4$。
+  \item $C_{\text{总}}=2.0\ \mu\mathrm F$，公共电荷量
+  $Q=C_{\text{总}}U=36\ \mu\mathrm C$；
+  $U_1=12\ \mathrm V$，$U_2=6.0\ \mathrm V$。
+  \item $Q=\frac12i_0t_0=12\ \mu\mathrm C$，
+  $U=Q/C=4.0\ \mathrm V$，
+  $E_C=\frac12CU^2=24\ \mu\mathrm J$。
 \end{enumerate}
-\end{mistakebox}
+\end{learningbox}
 
-\section*{九、竞赛入门补充}
+\section*{八、竞赛入门补充}
 
 \begin{competitionbox}
 \textbf{电容器的能量与电场力的功}
 
-电容器储存的能量 $E_C = \dfrac12 CU^2$。如果电容器极板在力的作用下移动，要先分清做功对象：电场力做功 $W_{\text{电场}} = -\Delta E_C$，外力缓慢拉开极板时做功 $W_{\text{外}} = \Delta E_C$。
+电容器储存的能量 $E_C = \dfrac12 CU^2$。如果电容器极板在力的作用下移动，要先判断电容器是否仍接电源。下面只讨论\textbf{电容器已与电源断开、极板电荷量 $Q$ 不变、无漏电且极板缓慢移动}的情形。此时动能变化可以忽略，电场力做功
+\[
+W_{\text{电场}}=-\Delta E_C,
+\]
+外力缓慢拉开极板时做功
+\[
+W_{\text{外}}=\Delta E_C.
+\]
+若电容器仍接恒压电源，电源会交换能量，不能直接使用上述等式。
 
 \textbf{例题：} 平行板电容器充电后（$Q$ 不变），极板间的作用力 $F$ 是多少？
 
@@ -395,6 +517,26 @@ F_{\text{引}} = \left|\frac{dE_C}{dd}\right| = \frac{2\pi k Q^2}{\varepsilon_r 
 \textbf{竞赛提示：} 处理电容器极板受力问题时，用虚功原理（能量法）比直接用 $F = QE$ 更可靠——因为某一极板受力只来自另一极板产生的电场，不能把两板间的合场强直接代入。
 \end{competitionbox}
 
+\section*{九、易错点}
+
+\begin{mistakebox}
+\begin{enumerate}
+  \item \textbf{电容 $C$ 由 $Q$、$U$ 决定还是由电容器本身决定：} 先区分量度式和决定式。$C=\dfrac{Q}{U}$ 用来量度电容，结构确定时 $C$ 由极板面积、间距和介质决定。
+
+  \item \textbf{动态分析中分不清 $U$ 不变还是 $Q$ 不变：} 第一步先看电容器是否仍接电源：理想电源保持接通且电压恒定时 $U$ 不变；充电后与电源断开、又没有漏电或外接导通回路时，极板所带电荷量 $Q$ 才近似不变。
+
+  \item \textbf{误以为 $E = \dfrac{U}{d}$ 在所有情况下都与 $d$ 有关：} 对充电后断开电源、漏电可忽略的理想平行板电容器，若只改变板间距而保持极板电荷量 $Q$ 不变，则 $E$ 与 $d$ 无关——因为 $U$ 和 $d$ 成比例变化抵消了。
+
+  \item \textbf{单位换算错误：} $1\ \mu\mathrm{F} = 10^{-6}\ \mathrm{F}$，$1\ \mathrm{pF} = 10^{-12}\ \mathrm{F}$。计算前先统一单位。
+
+  \item \textbf{忽略介电常数 $\varepsilon_r$：} 插入电介质（$\varepsilon_r > 1$）会使电容增大。真空或空气中 $\varepsilon_r \approx 1$。
+
+  \item \textbf{插入介质后忘记不变量：} 先写 $C$ 变大，再按接电源或断电源判断 $U$、$Q$、$E$ 如何连锁变化。
+
+  \item \textbf{把电容器能量变化直接等同于电源做功：} 先说明充电或极板移动的具体过程。恒压电源经电阻充电时，电源做功为 $CU^2$，最终电场能只有 $\frac12CU^2$；极板运动时还要判断电源是否参与。
+\end{enumerate}
+\end{mistakebox}
+
 \section*{十、今日小结}
 
 \begin{enumerate}
@@ -403,7 +545,8 @@ F_{\text{引}} = \left|\frac{dE_C}{dd}\right| = \frac{2\pi k Q^2}{\varepsilon_r 
   \item 插入电介质使 $\varepsilon_r$ 增大，从而使 $C$ 增大；再按不变量判断 $Q$、$U$、$E$。
   \item 理想平行板电容器断电后 $Q$ 不变；忽略边缘效应时，板间中部场强 $E$ 与 $d$ 无关。
   \item 电容器储存电场能量 $E_C = \dfrac12 CU^2$。
-  \item 电容器串并联计算方法与电阻相反。
+  \item $i$-$t$ 图像的有向面积表示电荷量变化；能量可由 $U$-$Q$ 图像面积理解。
+  \item 电容器并联同压；在中间节点初始不带净电荷且无其他支路时，串联电容器同荷。
 \end{enumerate}
 
 \textbf{一分钟复盘：} 做电容器动态题前，先写下“不变量”：接电源看 $U$，断电源看 $Q$。再画一条变量链：板距或面积变化 $\to C$ 变化 $\to Q/U$ 变化 $\to E$ 与能量变化；每一步都标出使用的公式。

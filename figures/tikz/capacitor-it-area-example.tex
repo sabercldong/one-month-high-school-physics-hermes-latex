@@ -1,0 +1,12 @@
+% TikZ 图：线性变化充电电流的面积
+\begin{tikzpicture}[x=1.15cm,y=0.75cm,>=Latex]
+  \draw[->] (-0.15,0) -- (4.1,0) node[right] {$t$};
+  \draw[->] (0,-0.15) -- (0,3.8) node[above] {$i$};
+  \fill[blue!14] (0,0) -- (0,3.2) -- (3.2,0) -- cycle;
+  \draw[very thick,blue] (0,3.2) -- (3.2,0);
+  \draw[dashed] (3.2,0) -- (3.2,-0.08);
+  \node[left] at (0,3.2) {$4.0\ \mathrm{mA}$};
+  \node[below] at (3.2,0) {$2.0\ \mathrm{ms}$};
+  \node[align=center,font=\small] at (1.05,0.75)
+    {$Q=\dfrac12i_0t_0$\\（三角形面积）};
+\end{tikzpicture}

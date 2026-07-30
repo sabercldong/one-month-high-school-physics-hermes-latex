@@ -1,15 +1,54 @@
-% TikZ 图：斜入磁场的螺旋运动
+% TikZ 图：斜入磁场的立体螺旋运动
 % Day 22：洛伦兹力
-\begin{tikzpicture}[scale=0.9,>=Latex]
-  \foreach \x in {-2.2,-1.2,-0.2,0.8,1.8,2.8} {
-    \draw[->,blue] (\x,-1.4) -- (\x,1.35);
-  }
-  \node[blue] at (3.2,1.1) {$B$};
-  \draw[->,black,thick] (-2.5,0) -- (3.2,0) node[right] {沿磁场方向};
-  \draw[red,thick,domain=-2.2:2.4,samples=120,->]
-    plot ({\x},{0.55*sin(360*\x)});
-  \draw[->,orange,thick] (-2.2,0) -- (-1.35,0.75) node[above] {$v$};
-  \draw[->,orange] (-2.2,0) -- (-1.35,0) node[midway,below] {$v_\parallel$};
-  \draw[->,orange] (-1.35,0) -- (-1.35,0.75) node[midway,right] {$v_\perp$};
-  \node at (0,-1.85) {圆周运动 + 匀速直线运动 = 螺旋线};
+\begin{tikzpicture}[
+  scale=0.9,
+  >=Latex,
+  line cap=round,
+  line join=round,
+  x={(1cm,0cm)},
+  y={(0cm,1cm)},
+  z={(0.34cm,0.20cm)}
+]
+  \path[use as bounding box] (-3.65,-1.85) rectangle (3.85,1.80);
+
+  % 左侧：入射速度分解
+  \begin{scope}[shift={(-3.15,0)}]
+    \coordinate (P) at (0,0);
+    \fill[red] (P) circle (2pt);
+    \draw[->,orange!90!black,very thick] (P) -- (1.05,0.82);
+    \node[orange!90!black,above] at (0.72,0.60) {$v$};
+    \draw[->,orange!90!black,thick] (P) -- (1.05,0);
+    \node[orange!90!black,below] at (0.55,0) {$v_\parallel$};
+    \draw[->,orange!90!black,thick] (1.05,0) -- (1.05,0.82);
+    \node[orange!90!black,right] at (1.05,0.42) {$v_\perp$};
+  \end{scope}
+
+  % 右侧：沿磁场方向推进的立体螺旋线
+  \draw[->,blue!70!black,very thick]
+    (-1.45,0,0) -- (3.15,0,0)
+    node[right] {$B$};
+  \node[blue!70!black,above] at (1.05,0.72,0)
+    {螺旋轴线 $\parallel B$};
+
+  % 起、末截面帮助读者看出轨迹绕轴旋转
+  \draw[gray!55,thin,domain=0:360,samples=80,variable=\t]
+    plot ({-1.25},{0.52*cos(\t)},{0.52*sin(\t)});
+  \draw[gray!55,thin,domain=0:360,samples=80,variable=\t]
+    plot ({2.49},{0.52*cos(\t)},{0.52*sin(\t)});
+
+  \draw[red,very thick,->,domain=0:720,samples=220,variable=\t]
+    plot ({-1.25+0.0052*\t},{0.52*cos(\t)},{0.52*sin(\t)});
+
+  % 半径与螺距
+  \draw[->,orange!90!black,thick]
+    (0.62,0,0) -- (0.62,0.52,0)
+    node[midway,left] {$r$};
+  \draw[<->,purple,thick]
+    (-0.32,-0.85,0) -- (1.55,-0.85,0)
+    node[midway,below] {$h=v_\parallel T$};
+  \draw[gray,dashed] (-0.32,-0.72,0) -- (-0.32,0.52,0);
+  \draw[gray,dashed] (1.55,-0.72,0) -- (1.55,0.52,0);
+
+  \node[font=\small] at (0,-1.55)
+    {沿磁场方向匀速前进 $+$ 垂直磁场方向圆周运动 $=$ 螺旋运动};
 \end{tikzpicture}

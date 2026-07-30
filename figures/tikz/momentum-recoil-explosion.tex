@@ -1,0 +1,25 @@
+\begin{tikzpicture}[scale=0.88,>=Stealth]
+  % Initial state
+  \node[font=\small\bfseries] at (-2.3,1.15) {初态};
+  \draw[rounded corners=2pt,thick,fill=gray!12] (-3.15,0.15) rectangle (-1.45,0.85);
+  \draw[dashed] (-2.30,0.15) -- (-2.30,0.85);
+  \node at (-2.72,0.50) {$m_1$};
+  \node at (-1.88,0.50) {$m_2$};
+  \node[font=\small] at (-2.30,-0.15) {$p_0=0$};
+
+  \draw[->,thick] (-0.95,0.50) -- (-0.25,0.50);
+
+  % Final state
+  \node[font=\small\bfseries] at (2.15,1.15) {末态};
+  \draw[rounded corners=2pt,thick,fill=red!10] (0.65,0.15) rectangle (1.45,0.85);
+  \draw[rounded corners=2pt,thick,fill=blue!10] (2.85,0.15) rectangle (3.65,0.85);
+  \node at (1.05,0.50) {$m_1$};
+  \node at (3.25,0.50) {$m_2$};
+  \draw[->,very thick,red] (0.65,0.98) -- (-0.25,0.98)
+    node[midway,above] {$v_1$};
+  \draw[->,very thick,blue] (3.65,0.98) -- (4.55,0.98)
+    node[midway,above] {$v_2$};
+  \draw[<->,thin] (1.48,0.50) -- (2.82,0.50)
+    node[midway,above,fill=white,inner sep=1pt,font=\small] {内能释放};
+  \node[font=\small] at (2.15,-0.15) {$m_1v_1+m_2v_2=0$};
+\end{tikzpicture}

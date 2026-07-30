@@ -1,0 +1,29 @@
+% TikZ 图：两物体追及的 x-t 图
+\begin{tikzpicture}[scale=0.9,>=Latex,line cap=round,line join=round]
+  \draw[->] (-0.25,0) -- (6.15,0) node[right] {$t$};
+  \draw[->] (0,-0.25) -- (0,5.05) node[above] {$x$};
+  \node[below left] at (0,0) {$O$};
+
+  % 前车初始位置较大、速度较小；后车初始位置较小、速度较大。
+  \draw[very thick,red!75!black] (0,1.6) -- (5.6,3.84)
+    node[right] {前车};
+  \draw[very thick,blue!75!black] (0,0.4) -- (5.6,4.88)
+    node[right] {后车};
+
+  % t_1 时刻，两条图线的纵向间隔就是两车距离。
+  \coordinate (RearOne) at (1.6,1.68);
+  \coordinate (FrontOne) at (1.6,2.24);
+  \draw[dashed,gray!80] (1.6,0) -- (FrontOne);
+  \draw[<->,thick] (RearOne) -- (FrontOne)
+    node[midway,left,xshift=-2pt] {$s(t_1)$};
+  \node[below] at (1.6,0) {$t_1$};
+
+  % 两图线交点表示位置相同。
+  \coordinate (Meet) at (3,2.8);
+  \fill (Meet) circle (1.8pt);
+  \draw[dashed,gray!80] (3,0) -- (Meet);
+  \node[below] at (3,0) {$t_{\text{相}}$};
+  \node[above left] at (Meet) {$P$};
+  \node[align=left,anchor=west] at (3.28,2.62)
+    {\small 交点：$x_{\text{前}}=x_{\text{后}}$\\[-1pt]\small 两车相遇};
+\end{tikzpicture}

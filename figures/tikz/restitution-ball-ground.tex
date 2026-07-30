@@ -1,0 +1,22 @@
+\begin{tikzpicture}[scale=0.78,>=Stealth]
+  \draw[thick] (-2.15,0) -- (2.15,0);
+  \foreach \x in {-2.0,-1.7,...,2.0}
+    \draw[thin] (\x,0) -- ++(-0.18,-0.16);
+
+  \draw[dashed] (-0.95,0.05) -- (-0.95,2.65);
+  \filldraw[fill=blue!12,draw=blue!70!black,thick] (-0.95,2.35) circle (0.16);
+  \draw[->,very thick,blue] (-0.68,2.25) -- (-0.68,1.25)
+    node[midway,right] {$v_1=\sqrt{2gh_1}$};
+  \draw[<->,thin] (-1.55,0.08) -- (-1.55,2.35)
+    node[midway,left] {$h_1$};
+
+  \draw[dashed] (0.95,0.05) -- (0.95,1.95);
+  \filldraw[fill=red!12,draw=red!70!black,thick] (0.95,1.65) circle (0.16);
+  \draw[->,very thick,red] (1.22,0.48) -- (1.22,1.48)
+    node[midway,right] {$|v_1'|=\sqrt{2gh_2}$};
+  \draw[<->,thin] (0.35,0.08) -- (0.35,1.65)
+    node[midway,left] {$h_2$};
+
+  \node[font=\small] at (-0.95,2.92) {碰前下落};
+  \node[font=\small] at (0.95,2.20) {碰后上升};
+\end{tikzpicture}

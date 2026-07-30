@@ -1,27 +1,35 @@
-% TikZ 图：位移合成示例（东300m北400m）
-% Day 02：质点、参考系、位移与速度
-% 使用：\input{figures/tikz/displacement-composition.tex}
-\begin{tikzpicture}[scale=0.8,>=Latex]
-  % 坐标
-  \draw[->] (-0.5,0) -- (5,0) node[right] {东};
-  \draw[->] (0,-0.5) -- (0,5) node[above] {北};
-  % A点
-  \filldraw[black] (0,0) circle (2pt) node[below left] {$A$};
-  % B点（东300→scale 0.8, 300→3）
-  \filldraw[black] (3,0) circle (2pt) node[below right] {$B$};
-  % C点（北400→4）
-  \filldraw[black] (3,4) circle (2pt) node[above right] {$C$};
+\begin{tikzpicture}[scale=0.78,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (3,0);
+  \coordinate (C) at (3,4);
   \coordinate (D) at (0,4);
-  % AB
-  \draw[->,thick] (0,0) -- (3,0) node[midway,below] {$300\ \mathrm{m}$};
-  % BC
-  \draw[->,thick] (3,0) -- (3,4) node[midway,right] {$400\ \mathrm{m}$};
-  % 平行四边形辅助线：把第二个位移平移到 A 点
-  \draw[->,thick,blue] (0,0) -- (D) node[midway,left] {$400\ \mathrm{m}$};
-  \draw[dashed] (D) -- (3,4);
-  % AC（位移）
-  \draw[->,ultra thick,red] (0,0) -- (3,4) node[midway,above left] {$500\ \mathrm{m}$};
-  % 角度
-  \draw (0.8,0) arc (0:53:0.8);
-  \node[above right] at (0.8,0.3) {$\theta$};
+
+  % Actual two-stage motion.
+  \draw[->,very thick,blue!75!black] (A) -- (B)
+    node[midway,below=3pt] {$300\ \mathrm{m}$};
+  \draw[->,very thick,red!75!black] (B) -- (C)
+    node[midway,right=3pt] {$400\ \mathrm{m}$};
+
+  % Translated copies complete the parallelogram.
+  \draw[->,dashed,red!70!black] (A) -- (D)
+    node[midway,left=3pt] {$400\ \mathrm{m}$};
+  \draw[->,dashed,blue!70!black] (D) -- (C);
+
+  % Resultant displacement.
+  \draw[->,ultra thick,orange!90!black] (A) -- (C)
+    node[midway,above left=2pt] {$500\ \mathrm{m}$};
+
+  \fill (A) circle (1.6pt) node[below left] {$A$};
+  \fill (B) circle (1.6pt) node[below right] {$B$};
+  \fill (C) circle (1.6pt) node[above right] {$C$};
+
+  \draw (0.72,0) arc[start angle=0,end angle=53,radius=0.72];
+  \node at (0.78,0.43) {$\theta$};
+
+  % Direction key is separated from the displacement arrows.
+  \begin{scope}[shift={(-1.05,-0.72)}]
+    \draw[->] (0,0) -- (0.75,0) node[right] {东};
+    \draw[->] (0,0) -- (0,0.75) node[above] {北};
+  \end{scope}
 \end{tikzpicture}

@@ -1,0 +1,23 @@
+% Day 06：例题斜面受力图
+\begin{tikzpicture}[scale=0.76,>=Latex,line cap=round,line join=round]
+  \def\ang{24.1}
+  \draw[thick] (0,0) -- (4.80,0) -- (0,2.15) -- cycle;
+  \coordinate (P) at (2.25,1.14);
+  \coordinate (C) at ($(P)+(65.9:0.29)$);
+  \begin{scope}[shift={(P)},rotate=-24.1]
+    \draw[fill=white,thick] (-0.50,0) rectangle (0.50,0.64);
+    \node at (0.25,0.43) {$m$};
+  \end{scope}
+
+  \draw[->,very thick,blue] (C) -- ++(0,-1.14)
+    node[below right=1pt] {$mg$};
+  \draw[->,very thick,blue] (C) -- ++(65.9:0.92)
+    node[above left=1pt] {$N$};
+  \draw[->,very thick,red] (C) -- ++(155.9:0.98)
+    node[above left=1pt] {$f_k$};
+
+  % 正方向和加速度放在物块上方，避免穿过质量标记。
+  \draw[->,very thick,orange!85!black]
+    ($(C)+(65.9:0.66)+(155.9:0.10)$) -- ++(-24.1:1.20)
+    node[above right=1pt] {$a$};
+\end{tikzpicture}

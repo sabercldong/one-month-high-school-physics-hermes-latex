@@ -1,17 +1,20 @@
-% TikZ 图：简谐运动的 x-t 图像（正弦曲线）
+% TikZ 图：简谐运动的 x-t 图像（从正向最大位移开始）
 % Day 13：机械振动
 \begin{tikzpicture}[scale=1,>=Latex]
   \draw[->] (-0.3,0) -- (6.5,0) node[right] {$t$};
   \draw[->] (0,-1.8) -- (0,1.8) node[above] {$x$};
   \node[below left] at (0,0) {$O$};
-  % 正弦曲线
-  \draw[very thick,red,smooth] (0,0) sin (1.5,1.5) cos (3,0) sin (4.5,-1.5) cos (6,0);
+  % 余弦曲线：t=0 时 x=A，初相位为零
+  \draw[very thick,red,smooth]
+    (0,1.5) cos (1.5,0) sin (3,-1.5) cos (4.5,0) sin (6,1.5);
   % 振幅标注
-  \draw[dashed] (0,1.5) -- (1.5,1.5);
-  \draw[<->] (0.35,0) -- (0.35,1.5) node[midway,right] {$A$};
+  \draw[dashed,gray] (0,1.5) -- (6,1.5);
+  \draw[dashed,gray] (0,-1.5) -- (3,-1.5);
+  \node[left] at (0,1.5) {$A$};
+  \node[left] at (0,-1.5) {$-A$};
   % 周期标注：从同相位点到下一个同相位点
-  \draw[<->] (0,-1.0) -- (6,-1.0);
-  \node[below] at (3,-1.0) {$T$};
+  \draw[<->] (0,-1.88) -- (6,-1.88);
+  \node[below] at (3,-1.88) {$T$};
   % 公式
-  \node at (3,-2.2) {$x = A\cos(\omega t + \varphi_0)$};
+  \node at (3,-2.45) {$t=0:\ x=A,\quad \varphi_0=0$};
 \end{tikzpicture}

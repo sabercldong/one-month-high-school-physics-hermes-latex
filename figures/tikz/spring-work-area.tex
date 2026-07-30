@@ -1,20 +1,27 @@
-% TikZ 图：弹簧外力做功的 F-x 面积
+% TikZ 图：弹簧弹力从 x_1 到 x_2 做功的有向面积
 % Day 08：功和动能定理
-\begin{tikzpicture}[scale=0.9,>=Latex]
-  \draw[->,thick] (0,0) -- (5,0) node[right] {$x$};
-  \draw[->,thick] (0,0) -- (0,3.2) node[above] {$F_{\text{外}}$};
+\begin{tikzpicture}[x=0.86cm,y=0.86cm,>=Latex]
+  \draw[->,thick] (-3.65,0) -- (4.35,0) node[right] {$x$};
+  \draw[->,thick] (0,-3.05) -- (0,3.05) node[above] {$F_{\text{弹}}$};
 
-  \coordinate (O) at (0,0);
-  \coordinate (A) at (4,0);
-  \coordinate (B) at (4,2.4);
+  \coordinate (Xone) at (-2.25,0);
+  \coordinate (Xtwo) at (2.80,0);
+  \coordinate (Pone) at (-2.25,1.69);
+  \coordinate (Ptwo) at (2.80,-2.10);
 
-  \fill[gray!18] (O) -- (A) -- (B) -- cycle;
-  \draw[thick] (O) -- (B) node[pos=0.65,above left] {$F=kx$};
-  \draw[dashed] (B) -- (A);
-  \draw[dashed] (B) -- (0,2.4);
+  \fill[blue!16] (Xone) -- (Pone) -- (0,0) -- cycle;
+  \fill[orange!20] (0,0) -- (Ptwo) -- (Xtwo) -- cycle;
+  \draw[very thick] (-3.25,2.44) -- (3.65,-2.74)
+    node[pos=0.87,below right] {$F_{\text{弹}}=-kx$};
 
-  \node[below] at (A) {$x$};
-  \node[left] at (0,2.4) {$kx$};
-  \node at (2.55,0.85) {$W_{\text{外}}=\frac12 kx^2$};
-  \node[below left] at (O) {$O$};
+  \draw[dashed] (Pone) -- (Xone);
+  \draw[dashed] (Ptwo) -- (Xtwo);
+  \node[below] at (Xone) {$x_1$};
+  \node[above] at (Xtwo) {$x_2$};
+  \node[below left] at (0,0) {$O$};
+  \node[blue!70!black,align=center] at (-1.30,0.58) {正面积};
+  \node[orange!80!black,align=center] at (1.58,-0.78) {负面积};
+  \node[align=center] at (0,-3.55)
+    {$\displaystyle W_{\text{弹}}
+      =\frac12kx_1^2-\frac12kx_2^2$};
 \end{tikzpicture}

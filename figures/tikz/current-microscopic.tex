@@ -8,7 +8,7 @@
   \fill[orange!18] (4.45,0) rectangle (6.8,1.55);
   \draw[dashed,orange!80!black,thick] (4.45,0) -- (4.45,1.55);
   \draw[<->,thick] (4.45,-0.35) -- (6.8,-0.35);
-  \node[below] at (5.62,-0.35) {$v\Delta t$};
+  \node[below] at (5.62,-0.35) {$v_{\mathrm d}\Delta t$};
 
   \foreach \x/\y in {0.55/0.35,1.25/1.05,1.9/0.55,2.55/1.18,3.2/0.35,3.85/0.96,4.75/0.42,5.25/1.10,5.85/0.72,6.35/1.25} {
     \fill[red] (\x,\y) circle (1.9pt);
@@ -19,5 +19,5 @@
   \node[above] at (3.4,2.05) {约定电流方向};
   \node[red] at (3.4,1.78) {正载流子等效运动};
   \node[align=left,font=\small] at (3.2,-1.05)
-    {在 $\Delta t$ 内能穿过截面 $S$ 的载流子，\\来自长度为 $v\Delta t$ 的薄片，体积 $Sv\Delta t$。};
+    {在 $\Delta t$ 内能穿过截面 $S$ 的载流子，\\来自截面上游长度为 $v_{\mathrm d}\Delta t$ 的一段，体积 $Sv_{\mathrm d}\Delta t$。};
 \end{tikzpicture}

@@ -9,15 +9,15 @@
   \filldraw[blue] (0,2.5) circle (3pt);
   \node[above] at (0,2.8) {最高点};
   \draw[->,thick,blue] (0,2.5) -- (1.05,2.5) node[above right] {$v$};
-  \draw[->,thick,red] (0,2.5) -- (0,1.32)
+  \draw[->,thick,red] (-0.13,2.5) -- (-0.13,1.32)
     node[pos=0.78,left=2pt,fill=white,inner sep=1pt] {$mg$};
-  \draw[->,thick,orange] (0,2.40) -- (0,1.72)
+  \draw[->,thick,orange] (0.13,2.5) -- (0.13,1.72)
     node[pos=0.25,right=2pt,fill=white,inner sep=1pt] {$N$};
 
   % 最低点：支持力向上，重力向下
   \filldraw[blue] (0,-2.5) circle (3pt);
   \node[below right] at (0.22,-2.82) {最低点};
-  \draw[->,thick,blue] (0,-2.5) -- (1.05,-2.5) node[above right] {$v$};
+  \draw[->,thick,blue] (0,-2.5) -- (-1.05,-2.5) node[above left] {$v$};
   \draw[->,thick,red] (0,-2.5) -- (0,-3.34)
     node[pos=0.72,left=2pt,fill=white,inner sep=1pt] {$mg$};
   \draw[->,thick,orange] (0,-2.40) -- (0,-1.46)

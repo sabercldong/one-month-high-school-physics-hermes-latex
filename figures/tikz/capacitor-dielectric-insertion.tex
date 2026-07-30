@@ -5,9 +5,6 @@
     \draw[thick] (-4.35,-0.80) -- (-2.15,-0.80);
     \node[above] at (-3.25,0.80) {$+$};
     \node[below] at (-3.25,-0.80) {$-$};
-    \foreach \x in {-4.0,-3.45,-2.9,-2.35}{
-      \draw[->,blue,thick] (\x,0.55) -- (\x,-0.55);
-    }
     \draw[<->] (-1.85,0.80) -- (-1.85,-0.80) node[midway,right] {$d$};
     \node[font=\scriptsize,align=center] at (-3.25,-1.35) {$C_0=\dfrac{S}{4\pi kd}$\\空气近似 $\varepsilon_r=1$};
   \end{scope}
@@ -16,19 +13,17 @@
     \node[font=\small\bfseries] at (2.05,1.42) {插入电介质};
     \draw[thick] (0.65,0.80) -- (2.85,0.80);
     \draw[thick] (0.65,-0.80) -- (2.85,-0.80);
-    \fill[green!16] (1.05,-0.72) rectangle (2.45,0.72);
-    \draw[green!45!black,thick] (1.05,-0.72) rectangle (2.45,0.72);
-    \node[font=\scriptsize,green!35!black] at (1.75,0.0) {介质};
+    \fill[green!16] (0.65,-0.72) rectangle (2.85,0.72);
+    \draw[green!45!black,thick] (0.65,-0.72) rectangle (2.85,0.72);
+    \node[font=\scriptsize,green!35!black,align=center] at (1.75,0.0)
+      {均匀介质\\完全充满板间};
     \node[above] at (1.75,0.80) {$+$};
     \node[below] at (1.75,-0.80) {$-$};
-    \foreach \x in {0.95,1.55,2.15,2.75}{
-      \draw[->,blue,thick] (\x,0.55) -- (\x,-0.55);
-    }
     \draw[->,very thick,orange!85!black] (-0.15,0) -- (0.55,0)
       node[midway,above,font=\scriptsize] {插入};
     \node[font=\scriptsize,align=center] at (1.75,-1.35) {$C=\varepsilon_r C_0$\\$\varepsilon_r>1$，电容增大};
   \end{scope}
 
   \node[font=\scriptsize,align=center] at (-0.55,-2.25)
-    {介质使同样结构的电容增大；后续变化仍先看电源是否连接};
+    {介质完全充满板间时 $C=\varepsilon_r C_0$；后续变化仍先看电源是否连接};
 \end{tikzpicture}

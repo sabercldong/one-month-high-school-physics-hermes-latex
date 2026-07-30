@@ -2,7 +2,8 @@
 % Day 19：恒定电流
 \begin{tikzpicture}[scale=0.92,>=Latex]
   \tikzset{wire/.style={thick}}
-  \draw[wire] (0,0) -- (0,1.4) -- (1.2,1.4);
+  \draw[wire] (0,0) -- (0,0.30);
+  \draw[wire] (0,0.68) -- (0,1.4) -- (1.2,1.4);
   \draw[wire] (2.5,1.4) -- (4.2,1.4) -- (4.2,0) -- (0,0);
   \draw[wire] (1.2,1.75) rectangle (2.5,1.05);
   \node at (1.85,1.4) {电动机};
@@ -16,7 +17,7 @@
   \node[draw,rounded corners=2pt,align=center,minimum width=1.0cm] (split) at (6.35,1.4) {能量\\分流};
   \draw[->,thick] (4.85,1.4) -- (split.west);
   \node[font=\small,above,anchor=east] at (5.55,2.02) {$P_{\text{电}}=UI$};
-  \draw[->,blue,thick] (split.east) -- (8.25,2.18) node[right] {$P_{\text{机}}$};
+  \draw[->,blue,thick] (split.east) -- (8.25,2.18) node[right] {$P_{\text{转}}$};
   \draw[->,orange!85!black,thick] (split.east) -- (8.25,0.62) node[right] {$P_{\text{热}}=I^2R$};
-  \node[font=\small] at (6.15,-0.20) {$UI=I^2R+P_{\text{机}}$};
+  \node[font=\small] at (6.15,-0.20) {$UI=I^2R+P_{\text{转}}$};
 \end{tikzpicture}

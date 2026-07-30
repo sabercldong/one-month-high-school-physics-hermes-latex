@@ -1,0 +1,22 @@
+% TikZ 图：一维运动中速度变化量与加速度方向
+% Day 03：加速度
+\begin{tikzpicture}[scale=0.92,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  \draw[->,thick] (-0.4,0) -- (8.2,0) node[right] {规定的正方向};
+
+  \fill (0.4,0) circle (1.6pt);
+  \draw[->,very thick,blue!75!black] (0.4,0.35) -- (3.15,0.35)
+    node[midway,above] {$\boldsymbol v_0$};
+  \draw[->,very thick,red!75!black] (0.4,-0.35) -- (5.15,-0.35)
+    node[midway,below] {$\boldsymbol v$};
+
+  \draw[dashed,black!55] (3.15,0.35) -- (3.15,1.25);
+  \draw[dashed,black!55] (5.15,-0.35) -- (5.15,1.25);
+  \draw[->,very thick,orange!85!black] (3.15,1.10) -- (5.15,1.10)
+    node[midway,above] {$\Delta\boldsymbol v=\boldsymbol v-\boldsymbol v_0$};
+
+  \draw[->,very thick,orange!85!black] (6.15,0.25) -- (7.75,0.25)
+    node[midway,above] {$\boldsymbol a$};
+  \node[align=center,black!75] at (5.3,-1.05)
+    {$\Delta\boldsymbol v$ 与 $\boldsymbol a$ 同向；\\它们不由 $\boldsymbol v$ 的大小直接决定};
+\end{tikzpicture}

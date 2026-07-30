@@ -1,0 +1,49 @@
+% TikZ 图：多副线圈理想变压器
+% Day 24：竞赛入门
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.55,-2.05) rectangle (9.55,2.15);
+
+  % Closed magnetic core.
+  \draw[gray!45,line width=9pt,rounded corners=2pt]
+    (2.55,-1.25) rectangle (5.15,1.25);
+  \draw[orange!80!black,->,thick] (3.25,1.25) -- (4.45,1.25)
+    node[midway,above,font=\small] {$\Phi(t)$};
+
+  % Primary and two secondary windings.
+  \draw[blue,thick,decorate,decoration={coil,aspect=0.42,segment length=5pt,amplitude=4pt}]
+    (2.15,-0.82) -- (2.15,0.82);
+  \draw[red,thick,decorate,decoration={coil,aspect=0.42,segment length=5pt,amplitude=4pt}]
+    (5.55,0.10) -- (5.55,0.95);
+  \draw[red!65!black,thick,decorate,decoration={coil,aspect=0.42,segment length=5pt,amplitude=4pt}]
+    (5.55,-0.95) -- (5.55,-0.10);
+
+  % Primary source.
+  \draw[thick] (0.65,0.82) -- (2.15,0.82);
+  \draw[thick] (0.65,-0.82) -- (2.15,-0.82);
+  \draw[thick] (0.65,0.82) -- (0.65,0.32);
+  \draw[thick] (0.65,-0.32) -- (0.65,-0.82);
+  \draw[thick] (0.65,0) circle (0.32);
+  \node[font=\scriptsize] at (0.65,0) {$\sim$};
+  \node[blue,font=\small] at (1.40,1.25) {$U_1,n_1$};
+
+  % Upper load.
+  \draw[thick] (5.55,0.95) -- (7.10,0.95);
+  \draw[thick] (5.55,0.10) -- (7.10,0.10);
+  \node[draw,minimum width=1.15cm,minimum height=0.65cm,font=\small] (Rtwo) at (7.65,0.52) {$R_2$};
+  \draw[thick] (7.10,0.95) -- (Rtwo.north west);
+  \draw[thick] (7.10,0.10) -- (Rtwo.south west);
+  \node[red,font=\small,anchor=west] at (8.35,0.72) {$U_2,I_2$};
+  \node[red,font=\small,anchor=west] at (8.35,0.28) {$n_2$};
+
+  % Lower load.
+  \draw[thick] (5.55,-0.10) -- (7.10,-0.10);
+  \draw[thick] (5.55,-0.95) -- (7.10,-0.95);
+  \node[draw,minimum width=1.15cm,minimum height=0.65cm,font=\small] (Rthree) at (7.65,-0.52) {$R_3$};
+  \draw[thick] (7.10,-0.10) -- (Rthree.north west);
+  \draw[thick] (7.10,-0.95) -- (Rthree.south west);
+  \node[red!65!black,font=\small,anchor=west] at (8.35,-0.32) {$U_3,I_3$};
+  \node[red!65!black,font=\small,anchor=west] at (8.35,-0.76) {$n_3$};
+
+  \node[font=\small] at (3.85,-1.72)
+    {$P_1=P_2+P_3$};
+\end{tikzpicture}

@@ -21,9 +21,12 @@
   \node[above] at (3.60,0.35) {$R_3=4\ \Omega$};
   \draw[thick] (C) -- (D);
 
-  \draw[thick] (D) -- (7,-1.8) -- (-1.2,-1.8) -- (-1.2,0) -- (A);
+  \draw[thick] (D) -- (7,-1.8) -- (-0.25,-1.8);
+  \draw[thick] (-0.65,-1.8) -- (-1.2,-1.8) -- (-1.2,0) -- (A);
   \draw[thick] (-0.65,-2.1) -- (-0.65,-1.5);
   \draw[thick] (-0.25,-2.0) -- (-0.25,-1.6);
+  \node[above left] at (-0.65,-1.50) {$+$};
+  \node[above right] at (-0.25,-1.60) {$-$};
   \node[below] at (-0.45,-2.15) {$12\ \mathrm{V}$};
 
   \fill (A) circle (1.5pt) node[left] {$a$};

@@ -1,20 +1,22 @@
 % TikZ 图：先加速后偏转模型
-% Day 17：带电粒子在电场中的运动
-\begin{tikzpicture}[scale=0.78,>=Latex]
-  % 加速区
-  \draw[thick] (-3.2,1.0) -- (-3.2,-1.0);
-  \draw[thick] (-1.6,1.0) -- (-1.6,-1.0);
+\begin{tikzpicture}[scale=0.78,>=Latex,font=\small]
+  % 加速区：两电极均留有小孔
+  \foreach \x in {-3.2,-1.6} {
+    \draw[thick] (\x,1.0) -- (\x,0.17);
+    \draw[thick] (\x,-0.17) -- (\x,-1.0);
+  }
   \node[above] at (-3.2,1.04) {$+$};
   \node[above] at (-1.6,1.04) {$-$};
-  \foreach \y in {-0.45,0,0.45} {
+  \foreach \y in {-0.48,0.48} {
     \draw[->,blue] (-3.0,\y) -- (-1.8,\y);
   }
   \draw[<->] (-3.2,1.32) -- (-1.6,1.32);
   \node[above,blue,fill=white,inner sep=1pt] at (-2.4,1.32) {$U_1$};
-  \node[below left,red,fill=white,inner sep=1pt] at (-3.6,0) {$+q$};
-  \draw[red,thick,dashed] (-3.6,0) -- (-1.62,0);
-  \draw[-{Stealth[length=5pt,width=6pt]},red,line width=1.05pt] (-1.35,0) -- (-0.35,0);
-  \node[red,fill=white,inner sep=1pt] at (-0.82,0.28) {$v_0$};
+  \filldraw[red] (-3.60,0) circle (2pt);
+  \node[below left,red] at (-3.60,0) {$+q$};
+  \draw[red,thick,dashed] (-3.45,0) -- (-1.62,0);
+  \draw[->,red,thick] (-1.40,0) -- (-0.48,0);
+  \node[red,above] at (-0.94,0) {$\vect v_0$};
 
   % 偏转区
   \draw[thick] (-0.2,1.2) -- (3.0,1.2);
@@ -26,16 +28,20 @@
   }
   \draw[<->] (-0.2,1.55) -- (3.0,1.55);
   \node[above,fill=white,inner sep=1pt] at (1.4,1.55) {$L$};
-  \draw[<->] (3.35,1.2) -- (3.35,-1.2);
-  \node[right,fill=white,inner sep=1pt] at (3.35,0) {$d$};
-  \node[blue,fill=white,inner sep=1pt] at (0.15,-1.48) {$U_2$};
+  \draw[<->] (3.30,1.2) -- (3.30,-1.2);
+  \node[right] at (3.30,0.48) {$d$};
+  \node[blue] at (0.18,-1.48) {$U_2$};
 
-  \draw[red,thick,dashed,domain=0.25:3.3,samples=80]
+  % 抛物线只画到出口；出口速度沿切线
+  \draw[red,thick,dashed,domain=-0.2:3.0,samples=80]
     plot (\x,{-0.10*(\x+0.2)*(\x+0.2)});
-  \draw[dashed,gray] (3.3,0) -- (3.3,-1.23);
-  \draw[<->] (4.0,0) -- (4.0,-1.23);
-  \node[right,fill=white,inner sep=1pt] at (4.0,-0.62) {$y$};
+  \coordinate (P) at (3.0,-1.024);
+  \filldraw[red] (P) circle (2pt);
+  \draw[->,red,thick] (P) -- (3.62,-1.42);
 
-  \node[font=\small,fill=white,inner sep=1pt] at (-2.4,-1.48) {加速区};
-  \node[font=\small,fill=white,inner sep=1pt] at (2.15,-1.82) {偏转区};
+  \draw[dashed,gray] (3.0,0) -- (P);
+  \draw[<->] (3.83,0) -- (3.83,-1.024);
+  \node[right] at (3.83,-0.52) {$|y|$};
+  \node at (-2.4,-1.42) {加速区};
+  \node at (1.75,-1.72) {偏转区};
 \end{tikzpicture}

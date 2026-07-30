@@ -1,20 +1,42 @@
-% TikZ 图：理想变压器模型
+% TikZ 图：理想变压器的闭合铁芯与原、副线圈
 % Day 24：变压器
-\begin{tikzpicture}[scale=0.88,>=Latex]
-  \draw[fill=gray!16,draw=gray!60] (2.6,-1.7) rectangle (3.5,1.7);
-  \foreach \y in {-1.1,-0.55,0,0.55,1.1}{
-    \draw[blue,thick] (2.6,\y) .. controls (2.0,\y+0.25) and (2.0,\y-0.25) .. (2.6,\y-0.02);
-    \draw[red,thick] (3.5,\y) .. controls (4.1,\y+0.25) and (4.1,\y-0.25) .. (3.5,\y-0.02);
-  }
-  \draw[->,blue,thick] (0.5,0.55) -- (1.75,0.55) node[midway,above] {$U_1$};
-  \draw[->,blue,thick] (1.75,-0.55) -- (0.5,-0.55) node[midway,below] {$I_1$};
-  \draw[->,red,thick] (4.35,0.55) -- (5.75,0.55) node[midway,above] {$U_2$};
-  \draw[->,red,thick] (5.75,-0.55) -- (4.35,-0.55) node[midway,below] {$I_2$};
-  \node[blue] at (1.55,1.55) {$n_1$};
-  \node[red] at (4.55,1.55) {$n_2$};
-  \node at (3.05,-2.05) {铁芯中磁通量周期性变化};
-  \node[align=left,font=\small] at (8.0,0.45)
-    {理想变压器：\\[2pt]
-     $\dfrac{U_2}{U_1}=\dfrac{n_2}{n_1}$\\[4pt]
-     $U_1I_1\approx U_2I_2$};
+\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-0.60,-2.10) rectangle (10.10,2.25);
+
+  % Closed core and shared alternating flux.
+  \draw[gray!45,line width=10pt,rounded corners=2pt]
+    (2.65,-1.30) rectangle (5.35,1.30);
+  \draw[orange!85!black,->,thick] (3.35,1.30) -- (4.65,1.30)
+    node[midway,above,font=\small] {$\Phi(t)$};
+  \node[font=\small] at (4.00,-1.78) {闭合铁芯形成共同磁路};
+
+  % Windings.
+  \draw[blue,thick,decorate,decoration={coil,aspect=0.42,segment length=5pt,amplitude=4pt}]
+    (2.20,-0.90) -- (2.20,0.90);
+  \draw[red,thick,decorate,decoration={coil,aspect=0.42,segment length=5pt,amplitude=4pt}]
+    (5.80,-0.65) -- (5.80,0.65);
+
+  % Primary terminals and voltage reference.
+  \draw[thick] (0.55,0.90) -- (2.20,0.90);
+  \draw[thick] (0.55,-0.90) -- (2.20,-0.90);
+  \fill (0.55,0.90) circle (1.5pt);
+  \fill (0.55,-0.90) circle (1.5pt);
+  \draw[blue,<->,thick] (0.20,-0.82) -- (0.20,0.82)
+    node[midway,left] {$U_1$};
+  \node[blue,font=\small] at (1.42,1.33) {原线圈 $n_1$};
+
+  % Secondary terminals and voltage reference.
+  \draw[thick] (5.80,0.65) -- (7.30,0.65);
+  \draw[thick] (5.80,-0.65) -- (7.30,-0.65);
+  \fill (7.30,0.65) circle (1.5pt);
+  \fill (7.30,-0.65) circle (1.5pt);
+  \draw[red,<->,thick] (7.65,-0.57) -- (7.65,0.57)
+    node[midway,right] {$U_2$};
+  \node[red,font=\small] at (6.55,1.08) {副线圈 $n_2$};
+
+  % Relations.
+  \node[align=left,font=\small] at (9.05,0.35)
+    {理想模型：\\[3pt]
+     $\dfrac{U_2}{U_1}=\dfrac{n_2}{n_1}$\\[5pt]
+     $P_1=P_2$};
 \end{tikzpicture}

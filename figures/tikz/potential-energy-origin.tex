@@ -1,0 +1,23 @@
+% TikZ 图：重力势能与弹性势能的来源
+% Day 09：由保守力做功定义势能变化
+\begin{tikzpicture}[scale=0.82,>=Latex]
+  % 左图：重力势能
+  \draw[->,thick] (0,0) -- (0,3.15) node[above] {$h$};
+  \fill (0,0.50) circle (2.1pt) node[right=2pt] {$B(h_2)$};
+  \fill (0,2.50) circle (2.1pt) node[right=2pt] {$A(h_1)$};
+  \draw[->,blue,thick] (0.42,2.32) -- (0.42,1.55) node[right=2pt,midway] {$mg$};
+  \draw[<->,thick] (-0.55,0.50) -- (-0.55,2.50)
+    node[left,midway] {$h_1-h_2$};
+  \node[font=\small] at (1.85,3.00) {重力：看高度差};
+
+  % 分隔线与右图：弹性势能
+  \draw[gray!65] (4.25,0.10) -- (4.25,3.10);
+  \draw[->,thick] (5.00,0.30) -- (8.40,0.30) node[right] {$x$};
+  \draw[->,thick] (5.00,0.30) -- (5.00,3.10) node[above] {$F$};
+  \draw[thick,red] (5.00,0.30) -- (7.85,2.65) node[above right] {$F=kx$};
+  \fill[red!18] (5.00,0.30) -- (7.85,0.30) -- (7.85,2.65) -- cycle;
+  \draw[dashed] (7.85,0.30) -- (7.85,2.65);
+  \node[below] at (7.85,0.30) {$x$};
+  \node[align=center] at (6.40,1.10) {面积\\$\frac12kx^2$};
+  \node[align=center] at (6.75,-0.72) {$W_{\text{弹}}=-\frac12kx^2$，\\$\Delta E_{p\text{弹}}=\frac12kx^2$};
+\end{tikzpicture}

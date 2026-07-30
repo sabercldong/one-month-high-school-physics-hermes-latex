@@ -4,16 +4,16 @@
   \draw[->] (-0.2,0) -- (5.6,0) node[right] {$I$};
   \draw[->] (0,-0.2) -- (0,3.7) node[above] {$U$};
   \node[below left] at (0,0) {$O$};
-  \draw[very thick,blue] (0,3.15) -- (5.0,0.70);
+  \draw[very thick,blue] (0,3.15) -- (5.0,0);
   \node[left] at (0,3.15) {$E$};
-  \node[below] at (5.0,0) {$I_{\text{短}}$};
-  \draw[dashed] (5.0,0) -- (5.0,0.70);
+  \fill[blue] (5.0,0) circle (1.5pt);
+  \node[below] at (5.0,0) {$I_{\text{短}}=E/r$};
 
-  \foreach \x/\y in {0.75/2.78,1.50/2.43,2.20/2.05,2.95/1.72,3.65/1.34,4.35/0.98}{
+  \foreach \x/\y in {0.75/2.70,1.50/2.18,2.20/1.80,2.95/1.25,3.65/0.89,4.35/0.36}{
     \fill[red] (\x,\y) circle (1.7pt);
   }
-  \draw[thick,<->] (2.15,2.65) -- (3.15,2.16);
+  \draw[thick,<->] (2.15,2.55) -- (3.15,1.92);
   \node[font=\small,align=center] at (3.85,3.35)
     {用拟合直线读\\截距 $E$ 和斜率 $-r$};
-  \node[font=\small] at (3.95,1.65) {斜率 $=-r$};
+  \node[font=\small] at (3.80,1.42) {斜率 $=-r$};
 \end{tikzpicture}

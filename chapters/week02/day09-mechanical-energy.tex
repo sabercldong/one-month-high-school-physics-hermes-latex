@@ -9,8 +9,8 @@
 \section*{一、学习目标}
 
 \begin{enumerate}
-  \item 能说明重力势能 $E_p = mgh$ 与参考平面有关，并解释重力做功与路径无关。
-  \item 能用弹簧弹力随形变量变化说明 $E_p = \frac12 kx^2$ 的来源。
+  \item 能说明重力势能 $E_{pG} = mgh$ 与参考平面有关，并从重力做功推得其变化量。
+  \item 能利用弹簧的 $F$-$x$ 图面积说明 $E_{p\text{弹}} = \frac12 kx^2$ 的来源。
   \item 能判断机械能守恒条件：除重力、弹簧弹力外，其他力对系统做功为零。
   \item 会先分段检查做功情况和系统边界，再用机械能守恒定律解决多过程问题。
   \item 能用功能关系处理机械能不守恒过程：其他力做功等于系统机械能变化量。
@@ -23,8 +23,8 @@
 高中把这两个量定量化：
 \begin{itemize}
   \item $E_k = \frac12 mv^2$（动能）——Day 08 已学。
-  \item $E_p = mgh$（重力势能）——本节学习。
-  \item $E_p = \frac12 kx^2$（弹性势能）——本节学习。
+  \item $E_{pG} = mgh$（重力势能）——本节学习。
+  \item $E_{p\text{弹}} = \frac12 kx^2$（弹性势能）——本节学习。
 \end{itemize}
 
 更关键的是，高中要判断\textbf{什么时候机械能守恒、什么时候不守恒}，以及不守恒时能量去哪了。
@@ -36,18 +36,18 @@
 \begin{conceptbox}{重力势能}
 
 \[
-\boxed{E_p = mgh}
+\boxed{E_{pG} = mgh}
 \]
 
 \begin{itemize}
   \item $h$ 是物体相对参考平面的高度。
   \item 重力势能是相对的——参考平面不同，数值不同。
-  \item 重力势能的变化与参考面选择无关——若 $\Delta h=h_2-h_1$，则 $\Delta E_p = mg\Delta h$。
+  \item 重力势能的变化与参考面选择无关——若 $\Delta h=h_2-h_1$，则 $\Delta E_{pG} = mg\Delta h$。
 \end{itemize}
 
 \textbf{重力做功与重力势能的关系：}
 \[
-W_G = -\Delta E_p = -(E_{p2} - E_{p1}) = E_{p1} - E_{p2}
+W_G = -\Delta E_{pG} = -(E_{pG2} - E_{pG1}) = E_{pG1} - E_{pG2}
 \]
 
 \begin{itemize}
@@ -56,21 +56,38 @@ W_G = -\Delta E_p = -(E_{p2} - E_{p1}) = E_{p1} - E_{p2}
   \item 重力做功与路径无关，只与初末高度差有关。
 \end{itemize}
 
+\textbf{这个公式从哪里来：} 物体从高度 $h_1$ 到 $h_2$，无论走直线、斜面还是曲线，重力做功都只由竖直高度差决定：
+\[
+W_G=mg(h_1-h_2).
+\]
+定义重力势能变化 $\Delta E_{pG}=-W_G$，便得 $\Delta E_{pG}=mg(h_2-h_1)$。把参考平面取为 $h=0$ 且 $E_{pG}=0$，就有 $E_{pG}=mgh$。
+
 \end{conceptbox}
 
 \begin{conceptbox}{弹性势能}
 
 \[
-\boxed{E_p = \frac12 k x^2}
+\boxed{E_{p\text{弹}} = \frac12 k x^2}
 \]
 
 \begin{itemize}
   \item $k$：劲度系数（$\mathrm{N/m}$）。
   \item $x$：形变量（伸长或压缩的长度）。
-  \item 弹簧弹力做功等于弹性势能变化的负值：$W_{\text{弹}} = -\Delta E_p$。
+  \item 弹簧弹力做功等于弹性势能变化的负值：$W_{\text{弹}} = -\Delta E_{p\text{弹}}$。
 \end{itemize}
 
-\textbf{零点提醒：} 若把原长位置取为弹性势能零点，则弹性势能 $E_p=\frac12kx^2$ 非负。弹簧被压缩和拉长相同距离时，弹性势能相同。
+\textbf{由变力功得到公式：} 在弹性限度内，弹簧弹力大小 $F=kx$。从原长缓慢形变到 $x$ 时，弹簧弹力做功的大小等于 $F$-$x$ 图下三角形面积 $\frac12kx^2$，方向与形变相反，所以
+\[
+W_{\text{弹}}=-\frac12kx^2,\qquad \Delta E_{p\text{弹}}=-W_{\text{弹}}=\frac12kx^2.
+\]
+
+\textbf{零点提醒：} 若把原长位置取为弹性势能零点，则弹性势能 $E_{p\text{弹}}=\frac12kx^2$ 非负。弹簧被压缩和拉长相同距离时，弹性势能相同。
+
+\begin{center}
+\input{figures/tikz/potential-energy-origin}
+
+\figcaption{势能的来源：由重力或弹簧弹力做功定义势能变化}\label{fig:potential-energy-origin}
+\end{center}
 
 \end{conceptbox}
 
@@ -78,10 +95,12 @@ W_G = -\Delta E_p = -(E_{p2} - E_{p1}) = E_{p1} - E_{p2}
 
 \textbf{机械能：} 动能、重力势能、弹性势能的总和。实际列式时，只写入题目中需要计入的势能项。
 \[
-E = E_k + E_p = \frac12 mv^2 + mgh + \frac12 kx^2
+E = E_k + E_{pG} + E_{p\text{弹}} = \frac12 mv^2 + mgh + \frac12 kx^2
 \]
 
-\textbf{守恒条件检查：} 把研究对象选成一个系统后，先逐个判断外力和非保守内力是否做功。\textbf{除重力、弹簧弹力外的其他力对系统做功为零}时，系统机械能守恒：
+\textbf{先定系统：} 写 $mgh$ 时，要把地球--物体间的重力相互作用作为势能项计入；写 $\frac12kx^2$ 时，要把弹簧--物体间的弹力相互作用作为势能项计入。通常可把“物体、地球、弹簧（若有）”作为一个系统。若只研究单个物体，应优先用动能定理，不能把势能当成物体自身单独拥有的能量。
+
+\textbf{守恒条件检查：} 在上述系统约定下，先逐个判断除重力、弹簧弹力以外的力是否做功。\textbf{这些其他力对系统做功的代数和为零}时，系统机械能守恒：
 \begin{itemize}
   \item “没有摩擦力”只是常见判断捷径——物体在固定粗糙面上滑动时，摩擦力做负功，机械能不守恒；静摩擦力也可做正功，如传送带使物体机械能增加。
   \item “有外力”本身 \textbf{不等于} 机械能不守恒——关键是看这个外力是否做功。例如用手托着物体匀速上升，手对物体做正功，机械能不守恒；但若外力始终与位移垂直（如光滑面上的向心力），不做功，机械能仍守恒。
@@ -138,7 +157,7 @@ E = E_k + E_p = \frac12 mv^2 + mgh + \frac12 kx^2
 
 \textbf{常见模型：}
 \begin{itemize}
-  \item 粗糙斜面下滑：$mgh - \mu mg\cos\theta \cdot s = \frac12 mv^2$（动能定理）
+  \item 粗糙斜面由静止下滑：$mgh - \mu mg\cos\theta \cdot s = \frac12 mv^2$（动能定理）
   \item 或从功能关系看：$-\mu mg\cos\theta \cdot s = \Delta E_{\text{机}}$（机械能减少）
 \end{itemize}
 
@@ -177,8 +196,8 @@ E = E_k + E_p = \frac12 mv^2 + mgh + \frac12 kx^2
 \toprule
 公式 & 意义 & 适用条件 \\
 \midrule
-$E_p = mgh$ & 重力势能 & $h$ 相对参考平面 \\
-$E_p = \frac12 kx^2$ & 弹性势能 & 弹性限度内 \\
+$E_{pG} = mgh$ & 重力势能 & $h$ 相对参考平面 \\
+$E_{p\text{弹}} = \frac12 kx^2$ & 弹性势能 & 弹性限度内 \\
 $E_1 = E_2$ & 机械能守恒 & 除重力、弹簧弹力外其他力对系统总功为零 \\
 $W_{\text{其他}} = \Delta E_{\text{机}}$ & 功能关系 & 选定系统，其他力总功 \\
 \bottomrule
@@ -196,7 +215,7 @@ $W_{\text{其他}} = \Delta E_{\text{机}}$ & 功能关系 & 选定系统，其�
 
 \subsection*{模型 2：弹簧-物体系统}
 
-把物体与弹簧作为研究系统，并把重力势能、弹性势能都计入机械能；若无摩擦等耗散力做功，则机械能守恒。
+把物体、地球和弹簧作为研究系统（或等效地，将重力势能、弹性势能都列入系统能量）；若无摩擦等耗散力做功，则机械能守恒。
 \[
 \frac12 mv^2 + mgh + \frac12 kx^2 = \text{常量}
 \]
@@ -210,11 +229,15 @@ $W_{\text{其他}} = \Delta E_{\text{机}}$ & 功能关系 & 选定系统，其�
 
 \subsection*{模型 3：粗糙斜面（功能关系）}
 
-物体沿粗糙斜面下滑，摩擦力做负功，机械能减少：
+物体\textbf{由静止}沿粗糙斜面下滑。垂直斜面方向没有运动，故 $N=mg\cos\theta$，滑动摩擦力大小 $f=\mu N=\mu mg\cos\theta$；它做负功，机械能减少：
 \[
 mgh - \mu mg\cos\theta \cdot s = \frac12 mv^2
 \]
-其中 $s$ 是沿斜面的位移，$h$ 是竖直下降高度。机械能减少量等于克服摩擦力所做的功。
+其中 $s$ 是沿斜面的位移，$h$ 是竖直下降高度。若初速不为零，应写成
+\[
+\frac12mv_1^2+mgh-\mu mg\cos\theta\cdot s=\frac12mv_2^2.
+\]
+机械能减少量等于克服摩擦力所做的功。
 
 \begin{center}
 \input{figures/tikz/rough-incline-energy}
@@ -252,7 +275,7 @@ v = \sqrt{gl}
 
 \textbf{方法总结：}
 \begin{enumerate}
-  \item 机械能守恒的关键是选好参考平面（通常选最低点或最容易算的位置）。
+  \item 先检查除重力外其他力是否做功，确认机械能守恒；再选参考平面使势能计算方便，通常选最低点或最容易算的位置。
   \item 摆球问题中高度差通过几何关系求出。
 \end{enumerate}
 
@@ -262,7 +285,7 @@ v = \sqrt{gl}
 
 \textbf{题意分析：} 劲度系数 $k = 100\ \mathrm{N/m}$ 的轻弹簧竖直放置，下端固定。在弹簧上端放一个 $m = 0.5\ \mathrm{kg}$ 的物体（不拴接），从原长位置由静止释放，$g = 10\ \mathrm{m/s^2}$。求弹簧的最大压缩量。
 
-\textbf{物理模型：} 物体+弹簧系统，重力势能与弹性势能都计入机械能；无摩擦等耗散力做功，机械能守恒。
+\textbf{物理模型：} 物体、弹簧和地球组成系统，重力势能与弹性势能都计入机械能；无摩擦等耗散力做功，机械能守恒。
 
 \begin{center}
 \input{figures/tikz/spring-compression-energy}
@@ -293,7 +316,7 @@ x = \frac{2mg}{k} = \frac{2 \times 0.5 \times 10}{100} = 0.1\ \mathrm{m} = 10\ \
 \textbf{方法总结：}
 \begin{enumerate}
   \item 弹簧问题中重力势能和弹性势能都要考虑。
-  \item 写重力势能前先选零势能面和正方向；若以原长位置为零势能面，物体下降 $x$ 时 $h=-x$，所以 $E_p=-mgx$。
+  \item 写重力势能前先选零势能面和正方向；若以原长位置为零势能面，物体下降 $x$ 时 $h=-x$，所以 $E_{pG}=-mgx$。
 \end{enumerate}
 
 \end{examplebox}
@@ -336,36 +359,30 @@ v^2 = 28.8,\qquad v \approx 5.37\ \mathrm{m/s}
 \section*{七、变式训练}
 
 \begin{enumerate}
-  \item 质量为 $m = 0.2\ \mathrm{kg}$ 的小球从 $h = 0.8\ \mathrm{m}$ 高处自由下落到竖直放置的弹簧上，弹簧劲度系数 $k = 100\ \mathrm{N/m}$。求弹簧的最大压缩量。
-  
+  \item 质量为 $m = 0.2\ \mathrm{kg}$ 的小球从弹簧原长上方 $h = 0.8\ \mathrm{m}$ 处由静止释放，弹簧竖直放置、下端固定且上端正对小球，劲度系数 $k = 100\ \mathrm{N/m}$。求弹簧的最大压缩量。
+
   \item 一个物体从光滑斜面顶端由静止滑下，斜面高 $h = 1.8\ \mathrm{m}$，底端接粗糙水平面，$\mu = 0.3$，$g = 10\ \mathrm{m/s^2}$。求物体在水平面上滑行的距离。
   \begin{center}
   \input{figures/tikz/training-incline-horizontal-energy}
   \end{center}
-  
+
   \item 质量为 $m$ 的小球用长为 $l$ 的细绳悬挂，将小球拉到水平位置由静止释放。求小球经过最低点时绳子的拉力。（提示：最低点时 $T - mg = m\frac{v^2}{l}$。）
   \begin{center}
-  \input{figures/tikz/energy-conservation}
+  \input{figures/tikz/training-pendulum-horizontal}
   \end{center}
 \end{enumerate}
 
-\section*{八、易错点}
-
-\begin{mistakebox}
-\begin{enumerate}
-  \item \textbf{误以为只要物体运动就机械能守恒：} 判断条件不是“运动”，而是“对所选物体或系统，除重力、弹簧弹力外其他力所做总功是否为零”。在固定粗糙面上滑动时，滑动摩擦力做负功，物体机械能减少；静摩擦力也可能转移机械能，必须先选清研究对象。
-  
-  \item \textbf{重力势能的参考平面选错：} 同一个能量方程中必须使用同一参考平面。若分阶段重新选择参考平面，需要重新写清每一阶段的能量零点，不能把不同零点下的势能直接相加。
-  
-  \item \textbf{忽略弹性势能：} 先看系统中是否有弹簧或弹性形变；若有，分别标出初末形变量 $x_1,x_2$，把 $\frac12kx_1^2$、$\frac12kx_2^2$ 写进两端机械能。不要只在末态随手补一个 $\frac12kx^2$。
-  
-  \item \textbf{把动能的 $v^2$ 写成 $v$：} 写动能公式后先做量纲检查，$E_k = \frac12 mv^2$，不是 $\frac12 mv$。
-  
-  \item \textbf{机械能守恒方程中符号写反：} 先写完整两态方程 $E_{k1}+E_{pG1}+E_{p\text{弹}1}=E_{k2}+E_{pG2}+E_{p\text{弹}2}$，再代入高度和形变量。若先移项再想符号，最容易把重力势能或弹性势能写反。
+\begin{learningbox}{变式训练参考结果}
+\begin{enumerate}[itemsep=0.45em,topsep=0.3em,parsep=0pt]
+  \item 以弹簧原长处为重力势能零点，最大压缩时
+  $mg(h+x)=\frac12kx^2$，解得 $x=0.20\ \mathrm m$。
+  \item $mgh=\mu mgx$，故 $x=h/\mu=6.0\ \mathrm m$。
+  \item 从水平位置到最低点，$\frac12mv^2=mgl$，故 $v^2=2gl$；再由
+  $T-mg=mv^2/l$，得 $T=3mg$。
 \end{enumerate}
-\end{mistakebox}
+\end{learningbox}
 
-\section*{九、竞赛入门补充}
+\section*{八、竞赛入门补充}
 
 \begin{competitionbox}
 \textbf{系统的机械能守恒}
@@ -393,13 +410,29 @@ v = \sqrt{\frac{2 m_B g h}{m_A + m_B}}
 \textbf{竞赛提示：} 连接体问题中，如果绳、杆、滑轮可视为理想，且除重力和弹簧弹力外其他力对系统做功为零，优先用系统机械能守恒，通常比逐个物体列牛顿方程更直接。理想绳、杆的张力常在系统内部传递能量，不把它误当作弹性势能项。
 \end{competitionbox}
 
+\section*{九、易错点}
+
+\begin{mistakebox}
+\begin{enumerate}
+  \item \textbf{未说明系统就直接写势能：} 写 $mgh$ 和 $\frac12kx^2$ 前，先说明已把相应的重力、弹力相互作用作为势能项计入系统。判断条件不是“物体在运动”，而是“除重力、弹簧弹力外其他力对该系统做功的代数和是否为零”。在固定粗糙面上滑动时，滑动摩擦力做负功，机械能减少；静摩擦力也可能转移机械能，必须先选清研究对象。
+
+  \item \textbf{重力势能的参考平面选错：} 同一个能量方程中必须使用同一参考平面。若分阶段重新选择参考平面，需要重新写清每一阶段的能量零点，不能把不同零点下的势能直接相加。
+
+  \item \textbf{忽略弹性势能：} 先看系统中是否有弹簧或弹性形变；若有，分别标出初末形变量 $x_1,x_2$，把 $\frac12kx_1^2$、$\frac12kx_2^2$ 写进两端机械能。不要只在末态随手补一个 $\frac12kx^2$。
+
+  \item \textbf{把动能的 $v^2$ 写成 $v$：} 写动能公式后先做量纲检查，$E_k = \frac12 mv^2$，不是 $\frac12 mv$。
+
+  \item \textbf{机械能守恒方程中符号写反：} 先写完整两态方程 $E_{k1}+E_{pG1}+E_{p\text{弹}1}=E_{k2}+E_{pG2}+E_{p\text{弹}2}$，再代入高度和形变量。若先移项再想符号，最容易把重力势能或弹性势能写反。
+\end{enumerate}
+\end{mistakebox}
+
 \section*{十、今日小结}
 \enlargethispage{2\baselineskip}
 
 \begin{enumerate}
-  \item 重力势能 $E_p = mgh$，弹性势能 $E_p = \frac12 kx^2$。
-  \item 机械能守恒条件：除重力、弹簧弹力外，其他力对系统做的总功为零。
-  \item 机械能守恒方程：$E_{k1} + E_{p1} = E_{k2} + E_{p2}$。
+  \item 重力势能 $E_{pG} = mgh$，弹性势能 $E_{p\text{弹}} = \frac12 kx^2$。
+  \item 机械能守恒条件：先把势能对应的相互作用计入系统；除重力、弹簧弹力外，其他力对系统做的总功为零。
+  \item 机械能守恒方程：$E_{k1}+E_{pG1}+E_{p\text{弹}1}=E_{k2}+E_{pG2}+E_{p\text{弹}2}$，没有的项可省略。
   \item 功能关系：$W_{\text{其他}} = \Delta E_{\text{机}}$，其中 $W_{\text{其他}}$ 是其他力对所选系统做的总功。
   \item 系统机械能守恒：连接体问题中优先考虑。
 \end{enumerate}

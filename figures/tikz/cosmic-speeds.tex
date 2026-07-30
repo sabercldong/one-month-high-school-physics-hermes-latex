@@ -1,22 +1,35 @@
-% TikZ 图：三个宇宙速度
+% TikZ 图：三个宇宙速度的两个空间尺度
 % Day 12：万有引力与天体运动
-\begin{tikzpicture}[scale=0.76,>=Latex]
-  \coordinate (O) at (0,0);
-  \filldraw[blue!25,draw=blue!70] (O) circle (0.65);
-  \node at (O) {地球};
+\begin{tikzpicture}[scale=0.75,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  % 地球尺度：第一、第二宇宙速度
+  \begin{scope}[xshift=-3.55cm]
+    \coordinate (E) at (0,0);
+    \filldraw[blue!22,draw=blue!70,thick] (E) circle (0.62);
+    \node at (E) {地球};
+    \draw[dashed,gray] (E) circle (1.38);
+    \draw[->,blue,very thick] (15:1.38) arc (15:105:1.38);
+    \node[blue,align=center] at (-0.35,2.05) {$v_1$：近地环绕};
+    \draw[->,orange!90!black,very thick]
+      (35:0.63) .. controls (1.35,1.35) and (2.25,1.45) .. (2.90,0.80);
+    \node[orange!90!black,align=center] at (2.15,1.55) {$v_2$：逃离地球};
+    \node[font=\normalsize] at (0,-2.05) {地球尺度};
+  \end{scope}
 
-  \draw[dashed,gray] (O) circle (1.55);
-  \draw[->,blue,very thick] (20:1.55) arc (20:100:1.55);
-  \node[blue,align=center] at (0.15,2.15) {$v_1$\\环绕};
-
-  \draw[->,orange,very thick] (0.45,0.45) .. controls (2.0,1.9) and (3.3,2.0) .. (4.1,1.15);
-  \node[orange,align=center] at (3.35,2.35) {$v_2$\\脱离地球};
-
-  \draw[->,red,very thick] (0.65,-0.10) .. controls (2.1,-1.1) and (3.8,-1.05) .. (5.2,-0.15);
-  \node[red,align=center] at (4.55,-1.45) {$v_3$\\脱离太阳系};
-
-  \node[align=left,font=\small] at (7.15,0.55)
-    {$v_1\approx 7.9\,\mathrm{km/s}$\\[4pt]
-     $v_2\approx 11.2\,\mathrm{km/s}$\\[4pt]
-     $v_3\approx 16.7\,\mathrm{km/s}$};
+  % 太阳系尺度：第三宇宙速度
+  \begin{scope}[xshift=3.65cm]
+    \coordinate (S) at (0,0);
+    \coordinate (E) at (2.25,0);
+    \filldraw[yellow!60!orange,draw=orange!80!black,thick] (S) circle (0.55);
+    \node at (S) {太阳};
+    \draw[dashed,gray] (S) circle (2.25);
+    \filldraw[blue!55,draw=blue!80!black] (E) circle (0.13);
+    \node[below=4pt] at (E) {地球};
+    \draw[->,red,very thick]
+      ($(E)+(0.05,0.10)$) .. controls (2.30,0.95) and (3.05,1.65) .. (3.70,2.20);
+    \node[red,align=left] at (3.30,2.72) {$v_3$：沿公转方向发射\\最终逃离太阳系};
+    \draw[->,gray!75,thick] (125:2.25) arc (125:72:2.25);
+    \node[gray!75] at (-0.05,2.67) {$v_{\mathrm E}$：地球公转方向};
+    \node[font=\normalsize] at (0,-2.78) {太阳系尺度};
+  \end{scope}
 \end{tikzpicture}

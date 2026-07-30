@@ -1,0 +1,18 @@
+% TikZ 图：带电粒子运动的三段模型总览
+\begin{tikzpicture}[scale=0.82,>=Latex,font=\small]
+  \node[draw,minimum width=3.0cm,minimum height=1.35cm,align=center] (a) at (-4.4,0)
+    {\textbf{加速区}\\[2pt]
+     $qU_{AB}=\Delta E_k$\\
+     求入射速度 $v_0$};
+  \node[draw,minimum width=3.2cm,minimum height=1.35cm,align=center] (b) at (0,0)
+    {\textbf{偏转区}\\[2pt]
+     $x=v_0t,\quad y=\frac12a_yt^2$\\
+     检查 $|y|<d/2$};
+  \node[draw,minimum width=3.0cm,minimum height=1.35cm,align=center] (c) at (4.4,0)
+    {\textbf{无场区}\\[2pt]
+     $\vect v=\text{常量}$\\
+     沿出口切线直线运动};
+
+  \draw[->,thick] (a.east) -- (b.west);
+  \draw[->,thick] (b.east) -- (c.west);
+\end{tikzpicture}

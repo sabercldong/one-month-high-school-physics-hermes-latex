@@ -9,7 +9,7 @@
 \section*{一、学习目标}
 
 \begin{enumerate}
-  \item 能用 $a = \dfrac{\Delta v}{\Delta t}$ 说明速度变化快慢和方向。
+  \item 能区分平均加速度与瞬时加速度，并用 $\bar a = \dfrac{\Delta v}{\Delta t}$ 说明速度变化快慢和方向。
   \item 能在 $v$-$t$ 图上读出加速度和位移。
   \item 能从 $v$-$t$ 图像推出匀变速直线运动公式，并说出适用条件。
   \item 能区分加速和减速（$a$ 与 $v$ 同号/异号）。
@@ -34,19 +34,31 @@
 
 \begin{conceptbox}{加速度}
 
-\textbf{定义：} 加速度是速度变化量与发生这一变化所用时间的比值。若把初始时刻记为 $0$、末时刻记为 $t$，则
+\textbf{平均加速度：} 在一段时间内，速度变化量与这段时间的比值叫作平均加速度。若把初始时刻记为 $0$、末时刻记为 $t$，则
 \[
-a = \frac{\Delta v}{\Delta t} = \frac{v - v_0}{t}
+\bar a = \frac{\Delta v}{\Delta t} = \frac{v - v_0}{t}.
 \]
+
+\textbf{瞬时加速度：} 平均加速度只能描述一段时间内速度变化的平均快慢。让时间间隔不断缩短并趋近于零，平均加速度的极限就是某一时刻的瞬时加速度：
+\[
+a=\lim_{\Delta t\to0}\frac{\Delta v}{\Delta t}.
+\]
+本节主要研究匀变速直线运动，此时加速度恒定，任意时间段内的平均加速度都等于瞬时加速度，后文统一记为 $a$。
 
 \begin{itemize}
   \item \textbf{单位：} $\mathrm{m/s^2}$（米每二次方秒）。
   \item \textbf{矢量性：} $a$ 的方向与 $\Delta v$ 相同，与 $v$ 没有直接关系。
 \end{itemize}
 
+\begin{center}
+\input{figures/tikz/acceleration-vector-change}
+
+\figcaption{一维运动中，速度变化量 $\Delta\boldsymbol v=\boldsymbol v-\boldsymbol v_0$ 的方向就是加速度方向}\label{fig:acceleration-vector-change}
+\end{center}
+
 \textbf{直观理解：} 先规定正方向。若 $a = +2\ \mathrm{m/s^2}$，表示每过 $1\ \mathrm{s}$，速度在正方向上的分量增加 $2\ \mathrm{m/s}$；若 $a = -2\ \mathrm{m/s^2}$，表示速度在正方向上的分量每秒减少 $2\ \mathrm{m/s}$。单位 $\mathrm{m/s^2}$ 可以读作“每秒速度改变多少米每秒”。
 
-\textbf{怎么判断加速还是减速？}
+\textbf{怎么判断加速还是减速？} 对一维运动，在 $v\neq0$ 的时刻可比较 $a$ 与 $v$ 的符号：
 \begin{center}
 \begin{tabular}{ll}
 \toprule
@@ -61,9 +73,9 @@ $a = 0$ & 匀速或静止 \\
 
 \textbf{三个常见错觉：}
 \begin{enumerate}
-  \item $a$ 大 $\neq$ $v$ 大。火箭点火时 $a$ 极大但 $v\approx 0$。
+  \item $a$ 大 $\neq$ $v$ 大。火箭刚开始加速时，$a$ 可以较大而 $v\approx 0$。
   \item $a$ 减小 $\neq$ 速度大小减小。当 $a$ 与 $v$ 同向时，速度大小仍在增加，只是增加得慢了。
-  \item $v=0$ $\neq$ $a=0$。竖直上抛最高点 $v=0$，但 $a=g\neq 0$。
+  \item $v=0$ $\neq$ $a=0$。竖直上抛最高点 $v=0$，但加速度仍竖直向下，大小为 $g$。
 \end{enumerate}
 
 \end{conceptbox}
@@ -80,9 +92,13 @@ $a = 0$ & 匀速或静止 \\
 
 \subsection*{为什么 $v$-$t$ 图的有向面积等于位移？}
 
-先看匀速这种基本情况：如果物体以速度 $v$ 匀速运动了时间 $t$，位移 $x = vt$。在 $v$-$t$ 图上，这是一条水平线，与 $t$ 轴围成一个矩形，矩形面积正好是 $v \times t = x$。
+先看匀速这种基本情况：如果物体以速度 $v$ 匀速运动了时间 $\Delta t$，位移 $\Delta x=v\Delta t$。在 $v$-$t$ 图上，这是一条水平线，与 $t$ 轴围成一个矩形，矩形面积正好是 $v\Delta t=\Delta x$。
 
-如果速度在变化呢？把时间 $t$ 切成很多极短的小段 $\Delta t$，在每个 $\Delta t$ 内速度近似不变（匀速），位移 $\approx v_i \Delta t$（小矩形面积）。把所有小矩形面积加起来，总和 $\approx \sum v_i \Delta t = x$。当 $\Delta t \to 0$ 时，这些小矩形的总面积就等于 $v$-$t$ 图线与 $t$ 轴围成的面积。
+如果速度在变化呢？把研究时间切成很多极短的小段 $\Delta t_i$，在第 $i$ 个小段内选一个代表速度 $v_i$，则该段位移近似为 $\Delta x_i\approx v_i\Delta t_i$，对应一个小矩形的有向面积。这里并不是说物体在小段内真的做匀速运动，而是用代表速度作近似。把所有小矩形面积相加，
+\[
+\Delta x\approx\sum_i v_i\Delta t_i.
+\]
+当各小段宽度都趋近于零时，近似值趋于准确，矩形的有向面积总和就是 $v$-$t$ 图线与时间轴围成的有向面积。
 
 \begin{center}
 \input{figures/tikz/vt-area-displacement}
@@ -90,7 +106,7 @@ $a = 0$ & 匀速或静止 \\
 \figcaption{把一段变速运动切成很多短时间段：每个窄矩形的面积近似等于该短时间内的位移，全部相加得到总位移}\label{fig:vt-area-displacement}
 \end{center}
 
-所以结论是：\textbf{$v$-$t$ 图线与时间轴围成的有向面积等于位移}。在 $t$ 轴上方的面积取正，在 $t$ 轴下方的面积取负；这个结论对能用 $v$-$t$ 图描述的一维运动成立，不限于匀变速。
+所以结论是：\textbf{$v$-$t$ 图线与时间轴围成的有向面积等于相应时间内的位移 $\Delta x$}。在 $t$ 轴上方的面积取正，在 $t$ 轴下方的面积取负；这个结论对能用 $v$-$t$ 图描述的一维运动成立，不限于匀变速。
 
 \subsection*{从 $v$-$t$ 图推导三大公式}
 
@@ -102,7 +118,7 @@ $a = 0$ & 匀速或静止 \\
 \figcaption{匀变速直线运动的 $v$-$t$ 图像：斜率 $=a$，图线下的有向梯形面积 $=$ 位移}\label{fig:vt-graph}
 \end{center}
 
-图中可以读出两个核心关系：
+图中可以读出两个核心关系。以下为简化书写，用 $x$ 表示所研究时间段内的位移 $\Delta x$：
 
 \begin{enumerate}
   \item \textbf{斜率与加速度：} 对任意一维运动，$v$-$t$ 图在一小段时间内的割线斜率表示平均加速度；曲线在某点的切线斜率表示该时刻的加速度。匀变速直线运动的图线是直线，斜率处处相同，因此
@@ -136,7 +152,7 @@ $a = 0$ & 匀速或静止 \\
 \[
 \boxed{\bar v=\frac{v_0+v}{2}},\qquad x=\bar v t
 \]
-它来自同一幅 $v$-$t$ 图的梯形面积：平均速度等于“同一时间内具有相同位移的匀速运动速度”。只适用于同一段\textbf{匀变速直线运动}，不要与 Day 02 的定义式 $\bar v=\Delta x/\Delta t$ 混淆；后者对任意一段运动都成立。
+它来自同一幅 $v$-$t$ 图的梯形面积。平均速度的定义始终是 $\bar v=\Delta x/\Delta t$；对于同一段\textbf{匀变速直线运动}，由这个定义还能推出特殊关系 $\bar v=(v_0+v)/2$。前者适用于任意一段运动，后者不能脱离匀变速条件使用。
 
 \textbf{2. 位移公式：}
 \[
@@ -157,7 +173,7 @@ $a = 0$ & 匀速或静止 \\
   \item 用途：已知 $v_0, v, a$ 求 $x$，或已知 $v_0, v, x$ 求 $a$。
 \end{itemize}
 
-\textbf{完整推导（了解，不需要背）：} 这段推导的目的，是看到速位公式来自前两个公式的消元；做题时重点是会判断何时选用它，而不是背推导步骤。
+\textbf{完整推导（了解，不需要背）：} 这段推导的目的，是看到速位公式来自前两个公式的消元；做题时重点是会判断何时选用它，而不是背推导步骤。下面先讨论 $a\neq0$ 的情形：
 \[
 v = v_0 + at \quad\Rightarrow\quad t = \frac{v - v_0}{a}
 \]
@@ -250,7 +266,7 @@ v = gt,\qquad h = \frac12 gt^2,\qquad v^2 = 2gh
 \begin{center}
 \input{figures/tikz/freefall-proportion}
 
-\figcaption{自由落体中第 $1,2,3\ \mathrm{s}$ 内的位移之比为 $1:3:5$}\label{fig:freefall-proportion}
+\figcaption{自由落体中连续三个相等时间段内的位移之比为 $1:3:5$；图中的时刻线与是否落地无关}\label{fig:freefall-proportion}
 \end{center}
 
 若从静止开始做加速度为 $a$ 的匀加速直线运动，并把每段相等时间记为 $T$，则第 $nT$ 末的总位移为
@@ -261,16 +277,16 @@ x_n=\frac12a(nT)^2\ \Longrightarrow\ x_1:x_2:x_3:\cdots=1:4:9:\cdots .
 \[
 \Delta x_1:\Delta x_2:\Delta x_3:\cdots=1:3:5:\cdots .
 \]
-这两组比例都要求\textbf{初速度为零、加速度恒定、时间间隔相等}；自由落体只是其中 $a=g$ 的一个例子。
+这两组比例都要求\textbf{初速度为零、加速度恒定、时间间隔相等}；自由落体只是其中加速度大小为 $g$ 的一个例子。
 
 \subsection*{模型 4：竖直上抛}
 
-竖直上抛是自由落体的“反向版本”，仍属于竖直方向的匀变速直线运动。忽略空气阻力时，小球离手后只受重力，加速度始终竖直向下，大小为 $g$。即使上升到最高点，速度瞬时为零，加速度也仍然是 $g$，不会在最高点“停住一会儿”。
+竖直上抛与自由落体都属于只受重力的竖直运动，但二者的初始条件不同：自由落体从静止开始，竖直上抛具有竖直向上的初速度。忽略空气阻力时，小球离手后只受重力，加速度始终竖直向下，大小为 $g$。即使上升到最高点，速度瞬时为零，加速度仍竖直向下，不会在最高点“停住一会儿”。
 
 \begin{center}
 \input{figures/tikz/vertical-throw-motion}
 
-\figcaption{竖直上抛：最高点速度为零，但加速度仍为重力加速度}\label{fig:vertical-throw-motion}
+\figcaption{竖直上抛：最高点速度为零，但加速度仍竖直向下，大小为 $g$}\label{fig:vertical-throw-motion}
 \end{center}
 
 若取竖直向上为正方向，则
@@ -298,11 +314,12 @@ H=\frac{v_0^2}{2g}.
 \figcaption{平抛运动：不计空气阻力时，水平方向不受力，竖直方向只受重力}\label{fig:projectile-motion}
 \end{center}
 
+\textbf{坐标约定：} 以抛出点为原点，取水平向右为 $x$ 轴正方向、竖直向下为 $y$ 轴正方向，则
 \[
 x=v_0t,\qquad y=\frac12gt^2,\qquad v_y=gt.
 \]
 
-\textbf{使用顺序：} 先由竖直方向求时间，再由水平方向求水平位移。不要把平抛轨迹当成斜向匀速运动。
+\textbf{常见使用顺序：} 在“已知抛出高度，求落地时间和水平射程”这类题中，通常先由竖直方向求时间，再由水平方向求水平位移；若题目给出的条件不同，应选择条件最充分的方向先列式。不要把平抛轨迹当成斜向匀速运动。
 
 \subsection*{模型 6：斜抛运动（平抛的推广）}
 
@@ -319,7 +336,7 @@ v_{0x}=v_0\cos\theta,\qquad v_{0y}=v_0\sin\theta.
 \figcaption{斜抛运动：先把初速度分解，再分别研究水平和竖直方向}\label{fig:oblique-projectile-motion}
 \end{center}
 
-不计空气阻力，取竖直向上为正方向：
+不计空气阻力，以抛出点为原点，取水平向右、竖直向上为正方向：
 \[
 x=v_0\cos\theta\, t,\qquad
 y=v_0\sin\theta\, t-\frac12gt^2,\qquad
@@ -357,12 +374,12 @@ H=\frac{(v_0\sin\theta)^2}{2g}.
   \[
   v = v_0 + at = 0 + 2 \times 3 = 6\ \mathrm{m/s}
   \]
-  
+
   \item 由位移公式：
   \[
   x = v_0 t + \frac12 a t^2 = 0 + \frac12 \times 2 \times 3^2 = 9\ \mathrm{m}
   \]
-  
+
   也可以用平均速度公式验证：$\bar{v} = \frac{v_0+v}{2} = \frac{0+6}{2} = 3\ \mathrm{m/s}$，$x = \bar{v} t = 3 \times 3 = 9\ \mathrm{m}$。
 \end{enumerate}
 
@@ -394,12 +411,12 @@ t_{\text{停}} = \frac{0 - v_0}{a} = \frac{0 - 20}{-5} = 4\ \mathrm{s}
   \[
   v_3 = v_0 + a t = 20 + (-5) \times 3 = 5\ \mathrm{m/s}
   \]
-  
+
   \item $5\ \mathrm{s} > 4\ \mathrm{s}$，车早已停下，用 $t_{\text{停}}$ 计算：
   \[
   x = v_0 t_{\text{停}} + \frac12 a t_{\text{停}}^2 = 20 \times 4 + \frac12 \times (-5) \times 4^2 = 80 - 40 = 40\ \mathrm{m}
   \]
-  
+
   验证（速位公式）：
   \[
   v^2 - v_0^2 = 2ax,\qquad 0 - 20^2 = 2 \times (-5) \times x,\qquad x = \frac{400}{10} = 40\ \mathrm{m}
@@ -423,24 +440,24 @@ t_{\text{停}} = \frac{0 - v_0}{a} = \frac{0 - 20}{-5} = 4\ \mathrm{s}
   \item 最后 $1\ \mathrm{s}$ 内的位移。
 \end{enumerate}
 
-\textbf{物理模型：} 自由落体，$v_0 = 0$，$a = g = 10\ \mathrm{m/s^2}$。
+\textbf{物理模型：} 自由落体，$v_0=0$，加速度竖直向下，大小为 $g=10\ \mathrm{m/s^2}$。
 
 \textbf{解题过程：}
 
-取竖直向下为正方向，则 $a=+g=+10\ \mathrm{m/s^2}$，下落位移 $h=+80\ \mathrm{m}$。
+取竖直向下为正方向，则加速度分量 $a_y=+g=+10\ \mathrm{m/s^2}$，下落位移 $h=+80\ \mathrm{m}$。
 
 \begin{enumerate}
   \item 由位移公式 $h = \frac12 g t^2$：
   \[
   80 = \frac12 \times 10 \times t^2,\qquad t^2 = 16,\qquad t = 4\ \mathrm{s}
   \]
-  
+
   \item 由速度公式 $v = gt$：
   \[
   v = 10 \times 4 = 40\ \mathrm{m/s}
   \]
   也可以用速位公式：$v = \sqrt{2gh} = \sqrt{2 \times 10 \times 80} = 40\ \mathrm{m/s}$。
-  
+
   \item 最后 $1\ \mathrm{s}$ 的位移 $=$ 总位移 $-$ 前 $3\ \mathrm{s}$ 位移：
   \[
   h_4 = 80\ \mathrm{m},\qquad h_3 = \frac12 \times 10 \times 3^2 = 45\ \mathrm{m}
@@ -476,91 +493,152 @@ x=v_0t=6\times2=12\ \mathrm{m}.
 \textbf{方法总结：} 平抛题先看竖直方向，因为高度决定飞行时间；再用水平方向的匀速运动求射程。
 \end{examplebox}
 
+\begingroup
+\raggedbottom
 \section*{七、变式训练}
 
 \begin{enumerate}
   \item 一物体以 $v_0 = 4\ \mathrm{m/s}$ 的初速度做匀加速直线运动，$a = 2\ \mathrm{m/s^2}$。求 $5\ \mathrm{s}$ 末的速度和 $5\ \mathrm{s}$ 内的位移。
-  
+
   \item 一辆汽车以 $v_0 = 30\ \mathrm{m/s}$ 行驶，司机发现前方 $50\ \mathrm{m}$ 处有障碍物后紧急刹车，刹车加速度 $a = -6\ \mathrm{m/s^2}$。问汽车是否会发生碰撞？
   \begin{center}
   \input{figures/tikz/training-braking-obstacle}
   \end{center}
-  
+
   \item 一个物体从 $125\ \mathrm{m}$ 高处自由下落，$g = 10\ \mathrm{m/s^2}$。求：
   \begin{enumerate}
     \item 落地时间和落地速度。
     \item 下落过程中最后 $2\ \mathrm{s}$ 内的位移。
   \end{enumerate}
 
+  \begin{samepage}
   \item 小球以 $v_0=20\ \mathrm{m/s}$ 竖直上抛，忽略空气阻力，取 $g=10\ \mathrm{m/s^2}$。求上升到最高点所需时间和最大高度，并说明最高点的加速度方向。
   \begin{center}
   \input{figures/tikz/vertical-throw-motion}
   \end{center}
-  
+  \end{samepage}
+
+  \begin{samepage}
   \item 小球以 $8\ \mathrm{m/s}$ 的水平速度从 $45\ \mathrm{m}$ 高处抛出，取 $g=10\ \mathrm{m/s^2}$。求落地时间和水平位移。
   \begin{center}
   \input{figures/tikz/projectile-motion}
   \end{center}
+  \end{samepage}
 
+  \begin{samepage}
   \item 小球从水平地面以 $v_0=20\ \mathrm{m/s}$、与水平面成 $30^\circ$ 角斜向上抛出，忽略空气阻力，取 $g=10\ \mathrm{m/s^2}$。求飞行时间、最大高度和水平射程。
   \begin{center}
   \input{figures/tikz/oblique-projectile-motion}
   \end{center}
+  \end{samepage}
 \end{enumerate}
 
-\section*{八、易错点}
+\begin{samepage}
+\begin{learningbox}{变式训练参考结果}
+\begin{enumerate}
+  \item $v=14\ \mathrm{m/s}$，$x=45\ \mathrm{m}$。
+  \item 停车距离 $x_{\text{停}}=75\ \mathrm{m}>50\ \mathrm{m}$，会发生碰撞；到达障碍物位置时的速度大小为 $10\sqrt3\ \mathrm{m/s}$。
+  \item $t=5\ \mathrm{s}$，落地速度大小为 $50\ \mathrm{m/s}$；最后 $2\ \mathrm{s}$ 内下落 $80\ \mathrm{m}$。
+  \item $t_{\text{上}}=2\ \mathrm{s}$，$H=20\ \mathrm{m}$；最高点加速度仍竖直向下。
+  \item $t=3\ \mathrm{s}$，水平位移 $x=24\ \mathrm{m}$。
+  \item $T=2\ \mathrm{s}$，$H=5\ \mathrm{m}$，$R=20\sqrt3\ \mathrm{m}$。
+\end{enumerate}
+\end{learningbox}
+\end{samepage}
+\endgroup
+
+\section*{八、竞赛入门补充}
+
+\nopagebreak
+\begin{competitionbox}
+\textbf{等时间与等位移的两类比例}
+
+设物体从静止开始做加速度大小为 $a>0$ 的匀加速直线运动。先把一般式推出来，再决定是否用比例，可以避免把结论套到初速度不为零的情形。
+
+\textbf{1. 相等时间间隔：} 第 $nT$ 末的总位移为
+\[
+x_n=\frac12a(nT)^2.
+\]
+因此前 $T,2T,3T,\ldots$ 内的总位移之比为
+\[
+1:4:9:\cdots:n^2,
+\]
+第 $n$ 个时间间隔内的位移
+\[
+s_n=x_n-x_{n-1}
+   =\frac12aT^2(2n-1),
+\]
+所以连续相等时间内的位移之比为 $1:3:5:\cdots$。
+
+\textbf{2. 相等位移间隔：} 若每段位移都为 $s$，到达第 $n$ 个分点时
+\[
+ns=\frac12at_n^2
+\quad\Longrightarrow\quad
+t_n=\sqrt{\frac{2ns}{a}}.
+\]
+通过第 $n$ 段所用时间为
+\[
+\Delta t_n=t_n-t_{n-1}
+=\sqrt{\frac{2s}{a}}\bigl(\sqrt n-\sqrt{n-1}\bigr),
+\]
+故连续相等位移所用时间之比为
+\[
+1:(\sqrt2-1):(\sqrt3-\sqrt2):\cdots .
+\]
+
+\textbf{例：} 若通过第一段位移 $s$ 用时 $2\ \mathrm{s}$，则通过第二段相等位移所用时间为
+\[
+\Delta t_2=2(\sqrt2-1)\ \mathrm{s}.
+\]
+
+\textbf{纸带联系：} 设纸带上连续相等时间 $T$ 内的位移依次为 $s_1,s_2,\ldots$，则
+\[
+s_{n+1}-s_n=aT^2.
+\]
+这就是实验中用逐差法求加速度的基础。平抛运动的竖直方向也满足初速度为零的匀加速规律，因此可用这些比例判断连续相等时间内竖直位移的变化。
+\end{competitionbox}
+
+\section*{九、易错点}
 
 \begin{mistakebox}
 \begin{enumerate}
   \item \textbf{刹车不先求停车时间：} 先由 $0=v_0+at$ 求停车时间，再比较题目给的时间；若已经停下，后面不能继续套匀减速公式。
-  
+
   \item \textbf{混淆 $a$ 的方向：} 先规定正方向，再看速度变化量 $\Delta v$。加速度方向由 $\Delta v$ 决定，与当前速度方向不一定相同。
-  
+
   \item \textbf{“$a$ 减小 = 速度大小减小”：} 判断速度大小变化时先看 $a$ 与 $v$ 是否同向。若同向，速度大小增大；若反向，速度大小减小；$a$ 的大小只决定“变化快慢”，不能单独决定速度大小是增是减。
-  
-  \item \textbf{自由落体和上抛中 $g$ 的符号误用：} $g$ 方向始终向下。取向下为正则 $g=+10$，取向上为正则 $g=-10$。正方向一旦选定，全程保持一致。
+
+  \item \textbf{自由落体和上抛中 $g$ 的符号误用：} 约定 $g>0$ 表示重力加速度的大小。若取竖直向下为正，则加速度分量 $a_y=+g$；若取竖直向上为正，则 $a_y=-g$。正方向一旦选定，全程保持一致。
 
   \item \textbf{误以为竖直上抛最高点加速度为零：} 最高点只是速度瞬时为零，物体仍受重力，加速度仍向下。
-  
+
   \item \textbf{平抛运动把速度方向当成位移方向：} 先画水平、竖直两个方向，再分别写 $x=v_0t$、$y=\frac12gt^2$。速度方向由 $v_x,v_y$ 合成，位移方向由 $x,y$ 合成，不能用斜线长度直接套匀速公式。
 
   \item \textbf{斜抛运动不分解初速度：} 斜抛题的第一步是把 $v_0$ 分解成 $v_0\cos\theta$ 和 $v_0\sin\theta$，不能把 $v_0$ 整体直接代入水平或竖直方向公式。
-  
+
   \item \textbf{选错公式：} 先列已知量和未知量，再选不含多余未知量的公式。例如已知 $v_0, a, t$ 且要求 $x$，就选 $x = v_0 t + \frac12 at^2$。
 \end{enumerate}
 \end{mistakebox}
 
 \pagebreak[3]
-\section*{九、竞赛入门补充}
-
-\nopagebreak
-\begin{competitionbox}
-\textbf{初速度为零的匀加速比例关系}
-
-选择填空时用比例法可以省去大量计算。
-
-\begin{itemize}
-  \item $1T$ 内、$2T$ 内、$3T$ 内$\cdots$ 位移比 $\rightarrow 1:4:9:\cdots$
-  \item 第 $1T$ 内、第 $2T$ 内、第 $3T$ 内$\cdots$ 位移比 $\rightarrow 1:3:5:\cdots$
-  \item 连续相等位移所用时间比 $\rightarrow 1:(\sqrt{2}-1):(\sqrt{3}-\sqrt{2}):\cdots$
-\end{itemize}
-
-\textbf{补充提示：} 在处理打点计时器纸带时，相邻相等时间内的位移差 $\Delta s = aT^2$ 是一个常用工具。这个公式在高中实验专题中会重点讲，这里先了解即可。
-
-\textbf{模型提醒：} 平抛运动的竖直方向正是初速度为零的匀加速运动，因此上面的比例关系也可用于判断连续相等时间内竖直下落位移的变化。
-\end{competitionbox}
-
-\enlargethispage{-3\baselineskip}
 \section*{十、今日小结}
 
 \begin{enumerate}
-  \item 加速度 $a = \dfrac{\Delta v}{\Delta t}$，描述速度变化的快慢，是矢量。
-  \item $a$ 与 $v$ 同号 $\to$ 加速，异号 $\to$ 减速，$a=0 \to$ 匀速。
+  \item 平均加速度 $\bar a=\dfrac{\Delta v}{\Delta t}$ 描述一段时间内速度变化的平均快慢；瞬时加速度是 $\Delta t\to0$ 时的极限，二者都是矢量。
+  \item 对一维运动且 $v\neq0$ 时，$a$ 与 $v$ 同号 $\to$ 加速，异号 $\to$ 减速；$a=0 \to$ 匀速或静止。
   \item $v$-$t$ 图中，割线斜率表示平均加速度、切线斜率表示瞬时加速度；匀变速时二者相同。图线与时间轴围成的有向面积表示位移。
   \item 三大公式：$v = v_0 + at$，$x = v_0 t + \frac12 a t^2$，$v^2 - v_0^2 = 2ax$。
   \item 使用公式前先定正方向，再给 $v_0$、$v$、$a$、$x$ 带上正负号。
-  \item 刹车问题先求停车时间，自由落体是 $v_0=0$、$a=g$ 的特例；竖直上抛最高点 $v=0$ 但 $a\neq0$。
+  \item 刹车问题先求停车时间；自由落体是 $v_0=0$、加速度竖直向下且大小为 $g$ 的特例；竖直上抛最高点 $v=0$ 但 $a\neq0$。
   \item 平抛和斜抛都用运动分解：水平方向匀速，竖直方向匀变速；同高斜抛的射程公式有明确适用条件。
 \end{enumerate}
 
 \textbf{一分钟复盘：} 看到匀变速题，先列出“正方向、已知量、未知量、不需要哪个量”。这四项明确后，再选择不含多余未知量的公式。
+
+\begin{learningbox}{复盘三问}
+\begin{enumerate}
+  \item 给出两个时刻的速度，能否先写出 $\Delta v$，再判断平均加速度的方向？
+  \item 面对一幅一般的 $v$-$t$ 图，能否分别说明割线斜率、切线斜率和有向面积的物理意义？
+  \item 处理自由落体、竖直上抛或平抛时，能否先写明坐标原点和正方向，再决定加速度分量的正负？
+\end{enumerate}
+\end{learningbox}

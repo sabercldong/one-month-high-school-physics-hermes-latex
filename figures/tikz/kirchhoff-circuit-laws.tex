@@ -33,27 +33,29 @@
   \begin{scope}[xshift=5.6cm]
     \node[font=\bfseries] at (2.45,2.05) {回路电压守恒};
 
-    \draw[wire] (0,0) -- (0,1.15) -- (1.0,1.15);
+    \draw[wire] (0,-0.58) -- (0,1.15) -- (1.0,1.15);
     \draw[res] (1.0,0.85) rectangle (2.0,1.45);
     \node at (1.5,1.15) {$R_1$};
     \draw[wire] (2.0,1.15) -- (3.1,1.15);
     \draw[res] (3.1,0.85) rectangle (4.1,1.45);
     \node at (3.6,1.15) {$R_2$};
-    \draw[wire] (4.1,1.15) -- (5.0,1.15) -- (5.0,-1.05) -- (0,-1.05) -- (0,-0.25);
+    \draw[wire] (4.1,1.15) -- (5.0,1.15) -- (5.0,-1.05) -- (0,-1.05) -- (0,-0.82);
 
     % 电源
-    \draw[wire] (0,-0.25) -- (0,-0.58);
-    \draw[thick] (-0.28,-0.58) -- (0.28,-0.58);
-    \draw[thick] (-0.45,-0.82) -- (0.45,-0.82);
-    \draw[wire] (0,-0.82) -- (0,-1.05);
-    \node[left] at (-0.45,-0.70) {$E$};
-    \node[note,anchor=west] at (0.48,-0.43) {升高电势};
+    \draw[thick] (-0.45,-0.58) -- (0.45,-0.58);
+    \draw[thick] (-0.28,-0.82) -- (0.28,-0.82);
+    \node[left] at (-0.55,-0.70) {$U_{\mathrm s}$};
+    \node[right] at (0.48,-0.58) {$+$};
+    \node[right] at (0.31,-0.82) {$-$};
+    \node[note,anchor=west] at (0.92,-0.70) {跨过电源：电势升高};
 
+    \draw[current] (0.38,1.58) -- (0.92,1.58);
+    \node[red,above] at (0.65,1.58) {$I$};
     \draw[volt] (1.0,0.63) -- (2.0,0.63);
     \node[blue,below] at (1.5,0.58) {$U_1$};
     \draw[volt] (3.1,0.63) -- (4.1,0.63);
     \node[blue,below] at (3.6,0.58) {$U_2$};
 
-    \node[note,align=center] at (2.55,-1.70) {绕一圈回到原点\\[2pt]$E=U_1+U_2$};
+    \node[note,align=center] at (2.55,-1.70) {沿电流绕行一周\\[2pt]$U_{\mathrm s}=U_1+U_2$};
   \end{scope}
 \end{tikzpicture}

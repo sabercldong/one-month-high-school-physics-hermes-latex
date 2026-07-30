@@ -1,14 +1,36 @@
-% TikZ 图：输电损耗比较例题
+% TikZ 图：不同输电电压下的压降、损耗和效率比较
 % Day 24：交变电流
 \begin{tikzpicture}[scale=0.82,>=Latex,line cap=round,line join=round]
-  \path[use as bounding box] (-0.35,-1.60) rectangle (8.15,1.30);
-  \node[draw,rounded corners=2pt,fill=blue!7,minimum width=1.10cm,minimum height=0.65cm] (s1) at (0.55,0.70) {电源};
-  \node[draw,rounded corners=2pt,fill=red!7,minimum width=1.10cm,minimum height=0.65cm] (u1) at (7.15,0.70) {用户};
-  \draw[->,thick] (s1) -- (u1) node[midway,above] {$U=1.0\ \mathrm{kV},\ I=100\ \mathrm{A}$};
-  \node[font=\small,orange] at (3.85,0.25) {$P_{\text{损}}=40\ \mathrm{kW}$};
+  \path[use as bounding box] (-0.45,-2.15) rectangle (10.35,2.25);
 
-  \node[draw,rounded corners=2pt,fill=blue!7,minimum width=1.10cm,minimum height=0.65cm] (s2) at (0.55,-0.80) {电源};
-  \node[draw,rounded corners=2pt,fill=red!7,minimum width=1.10cm,minimum height=0.65cm] (u2) at (7.15,-0.80) {用户};
-  \draw[->,thick] (s2) -- (u2) node[midway,above] {$U=10\ \mathrm{kV},\ I=10\ \mathrm{A}$};
-  \node[font=\small,orange] at (3.85,-1.25) {$P_{\text{损}}=0.40\ \mathrm{kW}$};
+  \node[draw,rounded corners=2pt,fill=blue!7,minimum width=1.25cm,minimum height=0.68cm]
+    (s1) at (0.65,0.85) {输入端};
+  \node[draw,rounded corners=2pt,fill=red!7,minimum width=1.25cm,minimum height=0.68cm]
+    (u1) at (9.05,0.85) {接收端};
+  \draw[->,thick] (s1) -- (u1);
+  \node[font=\small] at (5.00,1.35)
+    {$U=1.0\ \mathrm{kV},\quad I=100\ \mathrm A$};
+  \node[font=\small,orange!85!black] at (3.35,0.25)
+    {$U_{\text{损}}=400\ \mathrm V$};
+  \node[font=\small,orange!85!black] at (6.45,0.25)
+    {$P_{\text{损}}=40\ \mathrm{kW}$};
+  \node[font=\small,red!75!black] at (8.65,-0.15)
+    {$P_{\text{收}}=60\ \mathrm{kW},\ \eta=60\%$};
+
+  \node[draw,rounded corners=2pt,fill=blue!7,minimum width=1.25cm,minimum height=0.68cm]
+    (s2) at (0.65,-0.95) {输入端};
+  \node[draw,rounded corners=2pt,fill=red!7,minimum width=1.25cm,minimum height=0.68cm]
+    (u2) at (9.05,-0.95) {接收端};
+  \draw[->,thick] (s2) -- (u2);
+  \node[font=\small] at (5.00,-0.45)
+    {$U=10\ \mathrm{kV},\quad I=10\ \mathrm A$};
+  \node[font=\small,orange!85!black] at (3.35,-1.48)
+    {$U_{\text{损}}=40\ \mathrm V$};
+  \node[font=\small,orange!85!black] at (6.45,-1.48)
+    {$P_{\text{损}}=0.40\ \mathrm{kW}$};
+  \node[font=\small,red!75!black] at (8.65,-1.92)
+    {$P_{\text{收}}=99.6\ \mathrm{kW},\ \eta=99.6\%$};
+
+  \node[font=\small] at (5.15,2.00)
+    {$P_{\text{入}}=100\ \mathrm{kW},\quad R_{\text{线}}=4.0\ \Omega$};
 \end{tikzpicture}

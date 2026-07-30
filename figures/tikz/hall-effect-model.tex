@@ -1,23 +1,34 @@
-\begin{tikzpicture}[scale=0.95,>=Stealth]
-  \draw[rounded corners=4pt,thick,fill=blue!4] (-2.4,-0.85) rectangle (2.4,0.85);
-  \draw[->,very thick,red] (-2.95,0) -- (-2.42,0);
-  \draw[->,very thick,red] (2.42,0) -- (2.95,0);
-  \node[font=\small,red] at (0,-1.25) {正载流子等效：$v_d$ 与 $I$ 同向};
+% TikZ 图：霍尔效应的正载流子等效模型
+\begin{tikzpicture}[scale=0.94,>=Stealth,line cap=round]
+  \path[use as bounding box] (-3.35,-1.95) rectangle (3.55,1.95);
 
-  \foreach \x in {-1.7,-0.9,-0.1,0.7,1.5}{
-    \node[font=\small,blue] at (\x,0.42) {$+$};
-    \node[font=\small,blue] at (\x,-0.42) {$-$};
+  \draw[rounded corners=3pt,thick,fill=blue!4]
+    (-2.40,-0.88) rectangle (2.40,0.88);
+  \foreach \x in {-1.75,-0.95,-0.15,0.65,1.45} {
+    \node[font=\small,blue!70!black] at (\x,0.55) {$+$};
+    \node[font=\small,blue!70!black] at (\x,-0.55) {$-$};
   }
-  \draw[<->,thick,blue] (2.75,-0.78) -- (2.75,0.78);
-  \node[font=\small,blue,right] at (2.75,0) {$U_H$};
 
-  \foreach \x in {-1.8,-1.2,-0.6,0,0.6,1.2,1.8}{
-    \node[font=\large] at (\x,1.32) {$\times$};
-    \node[font=\large] at (\x,-1.70) {$\times$};
+  \draw[->,very thick,red] (-2.95,0) -- (2.95,0);
+  \node[red,above,font=\small] at (1.88,0) {$v_d,\ I$};
+  \node[red,font=\small] at (0,-1.30)
+    {正载流子等效：$v_d$ 与约定电流 $I$ 同向};
+
+  \draw[->,orange!85!black,very thick] (-1.32,0) -- (-1.32,0.75);
+  \node[orange!85!black,left,font=\small] at (-1.32,0.38) {$F_L$};
+  \draw[->,purple,very thick] (0.30,0.52) -- (0.30,-0.52);
+  \node[purple,right,font=\small] at (0.30,0) {$E_H$};
+
+  \draw[<->,thick,gray] (-2.72,-0.84) -- (-2.72,0.84);
+  \node[gray,left] at (-2.72,0) {$d$};
+  \draw[<->,thick,blue!70!black] (2.78,-0.80) -- (2.78,0.80);
+  \node[blue!70!black,right,font=\small] at (2.78,0) {$U_H$};
+  \node[blue!70!black] at (3.18,0.64) {$+$};
+  \node[blue!70!black] at (3.18,-0.64) {$-$};
+
+  \foreach \x in {-1.80,-0.90,0,0.90,1.80} {
+    \node[font=\large] at (\x,1.34) {$\times$};
+    \node[font=\large] at (\x,-1.76) {$\times$};
   }
-  \node[font=\small] at (0,1.70) {$B$ 垂直纸面向里};
-  \draw[->,orange!85!black,very thick] (-0.35,0) -- (-0.35,0.55);
-  \node[font=\small,orange!85!black,left] at (-0.35,0.32) {$F_L$};
-  \draw[->,purple,thick] (0.35,0.42) -- (0.35,-0.42);
-  \node[font=\small,purple,right] at (0.35,0) {$E_H$};
+  \node[font=\small] at (0,1.72) {$B$ 垂直纸面向里};
 \end{tikzpicture}
