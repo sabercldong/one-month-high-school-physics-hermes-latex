@@ -2,7 +2,7 @@
 % Day 27：近代物理与原子物理入门
 \begin{tikzpicture}[>=Latex,scale=0.92,every node/.style={font=\scriptsize}]
   \draw[->,thick] (0,0) -- (7.1,0) node[right] {波长 $\lambda$};
-  \draw[->,thick] (0,0) -- (0,3.95) node[above] {辐射强度};
+  \draw[->,thick] (0,0) -- (0,3.95) node[above] {光谱辐射强度};
 
   \draw[thick,blue!70!black,smooth]
     plot coordinates {(0.25,0.04) (0.7,0.38) (1.25,1.20) (1.95,2.05) (2.75,1.55) (3.65,0.90) (4.75,0.43) (6.2,0.14)};
@@ -17,8 +17,9 @@
   \draw[->,orange!85!black,thick] (2.05,3.45) -- (1.50,3.45);
   \node[orange!85!black,align=center] at (2.95,3.45) {升温};
 
-  \draw[gray!70,dashed,thick] (0.18,0.20) .. controls (0.55,1.0) and (0.72,2.3) .. (0.86,3.62);
-  \node[gray!70!black,align=center] at (1.35,3.70) {经典连续图像\\短波端失效};
+  \draw[gray!70,dashed,thick]
+    (3.60,3.75) .. controls (3.95,2.55) and (4.50,0.65) .. (5.85,0.18);
+  \node[gray!70!black,align=center] at (6.15,1.55) {经典理论\\短波端发散};
 
   \node[draw,rounded corners=2pt,fill=yellow!12,align=center,inner sep=4pt] at (4.55,0.75)
     {普朗克：能量交换\\按 $E=h\nu$ 一份一份进行};

@@ -6,7 +6,7 @@
   }
 
   \begin{scope}
-    \node[font=\small] at (0,1.42) {模拟刻度：读数要估读到最小分度后一位};
+    \node[font=\small] at (0,1.42) {模拟刻度：先认最小分度，再按仪器规则估读};
     \draw[thick] (-3.4,0) -- (3.4,0);
     \foreach \x in {-3,-2,...,3}{
       \draw[tick] (\x,0.18) -- (\x,-0.18);
@@ -17,8 +17,8 @@
     }
     \draw[red,very thick,->] (1.35,1.00) -- (1.35,0.15);
     \node[font=\small,red] at (1.35,1.20) {读数约 $1.4$};
-    \draw[<->,blue] (0.85,-0.82) -- (1.85,-0.82);
-    \node[font=\scriptsize,blue] at (1.35,-1.10) {估计范围};
+    \draw[<->,blue] (1.0,-0.82) -- (1.5,-0.82);
+    \node[font=\scriptsize,blue] at (1.25,-1.10) {最小分度 $0.5$};
   \end{scope}
 
   \begin{scope}[xshift=0cm,yshift=-2.85cm]

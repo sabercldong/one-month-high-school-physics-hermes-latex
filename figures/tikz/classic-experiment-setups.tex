@@ -26,7 +26,7 @@
     \draw[->,thick] (0.35,0.75) -- (0.35,3.0) node[above] {$I$};
     \draw[->,thick] (0.35,0.75) -- (3.35,0.75) node[right] {$U$};
     \draw[red,very thick] plot[smooth] coordinates {(0.35,0.75) (0.9,1.45) (1.55,1.95) (2.25,2.28) (3.0,2.48)};
-    \node[red,align=left,font=\tiny,anchor=west] at (1.65,2.63) {斜率变小\\电阻变大};
+    \node[red,align=left,font=\tiny,anchor=west] at (1.65,2.63) {曲线变缓\\$U/I$ 增大};
 
     \draw[thick] (3.65,1.05) rectangle (5.0,2.35);
     \draw[thick] (3.85,1.70) circle (0.28);
@@ -38,16 +38,19 @@
 
   \begin{scope}[xshift=12.0cm]
     \node[font=\small\bfseries] at (2.45,3.35) {玻璃折射率};
-    \fill[blue!6] (1.1,0.95) rectangle (3.8,2.7);
-    \draw[thick] (1.1,0.95) rectangle (3.8,2.7);
-    \draw[dashed] (2.45,0.65) -- (2.45,3.0);
-    \draw[blue,very thick,->] (0.4,2.95) -- (2.45,1.95);
-    \draw[blue,very thick,->] (2.45,1.95) -- (3.65,1.25);
-    \draw[blue,very thick,->] (3.65,1.25) -- (4.75,0.75);
-    \draw[thin] (1.75,2.28) arc[start angle=155,end angle=90,radius=0.75];
-    \draw[thin] (2.72,1.78) arc[start angle=-35,end angle=-90,radius=0.45];
-    \node at (2.0,2.55) {$i$};
-    \node at (2.82,1.28) {$r$};
+    \fill[blue!6] (0.95,0.85) rectangle (3.95,2.35);
+    \draw[thick] (0.95,0.85) rectangle (3.95,2.35);
+    \coordinate (P) at (2.35,2.35);
+    \coordinate (Q) at (2.95,0.85);
+    \draw[dashed] (2.35,1.45) -- (2.35,3.15);
+    \draw[dashed] (2.95,0.55) -- (2.95,1.15);
+    \draw[blue,very thick,->] (1.15,3.18) -- (P);
+    \draw[blue,very thick,->] (P) -- (Q);
+    \draw[blue,very thick,->] (Q) -- (3.78,0.10);
+    \draw[thin] (P) ++(90:0.64) arc[start angle=90,end angle=145,radius=0.64];
+    \draw[thin] (P) ++(-90:0.53) arc[start angle=-90,end angle=-68,radius=0.53];
+    \node at (2.02,2.96) {$i$};
+    \node at (2.60,1.67) {$r$};
     \node[align=center] at (2.55,0.30) {画法线，量角度\\$n=\sin i/\sin r$};
   \end{scope}
 \end{tikzpicture}

@@ -21,9 +21,10 @@
   \node[font=\small] at (7.35,-0.55) {$I_2=U_2/R_{\text{负载}}$};
 
   \draw[->,thick] (turns) -- (voltage);
-  \draw[->,thick] (voltage) -- (load);
   \draw[->,thick] (load) -- (current);
+  \draw[->,thick] (voltage.north) to[bend left=18] (current.north);
 
   \node[purple,font=\small,align=center] at (4.15,-1.35)
-    {理想情况下 $U_1I_1\approx U_2I_2$，\\负载功率需求会反馈到原线圈};
+    {纯电阻负载、理想变压器中 $U_1I_1=U_2I_2$，\\
+     副边电压与负载共同决定电流，负载功率需求会反馈到原线圈};
 \end{tikzpicture}

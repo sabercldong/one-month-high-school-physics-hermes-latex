@@ -1,18 +1,19 @@
-% TikZ 图：综合题分段建模
-% Day 29：模型复盘
 \begin{tikzpicture}[scale=0.88,>=Latex]
-  \draw[thick] (0,0) -- (8.5,0);
-  \draw[fill=blue!10] (0.6,0) rectangle (2.2,0.35);
-  \draw[fill=red!10] (3.1,0) rectangle (4.7,0.35);
-  \draw[fill=green!12] (5.6,0) rectangle (7.4,0.35);
-  \draw[->,thick] (1.4,0.6) -- (1.4,0.1);
-  \draw[->,thick] (3.9,0.6) -- (3.9,0.1);
-  \draw[->,thick] (6.5,0.6) -- (6.5,0.1);
-  \node at (1.4,1.0) {阶段 1};
-  \node at (3.9,1.0) {阶段 2};
-  \node at (6.5,1.0) {阶段 3};
-  \node[font=\small,align=center] at (1.4,-0.55) {牛顿定律};
-  \node[font=\small,align=center] at (3.9,-0.55) {能量/功能};
-  \node[font=\small,align=center] at (6.5,-0.55) {动量/圆周};
-  \node[font=\small] at (4.3,-1.25) {综合题常常不是一个模型从头用到尾，而是按过程切段。};
+  \tikzset{
+    stage/.style={draw,rounded corners=3pt,thick,align=center,
+      text width=2.35cm,minimum height=1.10cm,font=\small}
+  }
+  \node[stage,fill=blue!9] (motion) at (0,0)
+    {\textbf{运动}\\导体棒以 $v$ 切割磁感线};
+  \node[stage,fill=orange!10] (induction) at (3.15,0)
+    {\textbf{感应}\\$\mathcal E=BLv$};
+  \node[stage,fill=green!10] (circuit) at (6.30,0)
+    {\textbf{电路}\\$I=\mathcal E/R$};
+  \node[stage,fill=purple!8] (force) at (9.45,0)
+    {\textbf{受力}\\$F_A=BIL$};
+  \draw[->,thick] (motion) -- (induction) node[midway,above,font=\scriptsize] {$v$};
+  \draw[->,thick] (induction) -- (circuit) node[midway,above,font=\scriptsize] {$\mathcal E$};
+  \draw[->,thick] (circuit) -- (force) node[midway,above,font=\scriptsize] {$I$};
+  \draw[->,thick,dashed] (force.south) to[bend left=18]
+    node[midway,below,font=\scriptsize] {改变运动状态} (motion.south);
 \end{tikzpicture}

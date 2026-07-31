@@ -1,19 +1,22 @@
-% TikZ 图：解题方法选择树
-% Day 29：模型复盘
 \begin{tikzpicture}[scale=0.84,>=Latex]
   \tikzset{
-    choice/.style={draw,rounded corners=2pt,fill=blue!8,font=\small,align=center,text width=2.45cm,minimum height=0.62cm},
-    method/.style={draw,rounded corners=2pt,fill=red!8,font=\small,align=center,text width=2.45cm,minimum height=0.62cm}
+    choice/.style={draw,rounded corners=2pt,fill=blue!8,font=\small,
+      align=center,text width=2.55cm,minimum height=0.70cm},
+    check/.style={draw,rounded corners=2pt,fill=orange!10,font=\small,
+      align=center,text width=8.00cm,minimum height=0.82cm},
+    method/.style={draw,rounded corners=2pt,fill=green!10,font=\small,
+      align=center,text width=6.40cm,minimum height=0.82cm}
   }
-  \node[draw,rounded corners=2pt,fill=gray!10,font=\small,minimum height=0.62cm] (q) at (0,0) {题目问什么？};
-  \node[choice] (motion) at (-3.65,-1.45) {时间/位移/速度};
-  \node[choice] (force) at (0,-1.45) {加速度/受力};
-  \node[choice] (energy) at (3.65,-1.45) {速度/高度/距离};
-  \node[method] (m1) at (-3.65,-2.75) {运动学\\或图像法};
-  \node[method] (m2) at (0,-2.75) {牛顿\\第二定律};
-  \node[method] (m3) at (3.65,-2.75) {能量\\或动量};
-  \foreach \a in {motion,force,energy}{\draw[->,thick] (q) -- (\a);}
-  \draw[->,thick] (motion) -- (m1);
-  \draw[->,thick] (force) -- (m2);
-  \draw[->,thick] (energy) -- (m3);
+  \node[draw,rounded corners=2pt,fill=gray!10,font=\small,
+    minimum width=2.50cm,minimum height=0.68cm] (q) at (0,0) {先看目标量与过程};
+  \node[choice] (motion) at (-3.60,-1.15) {时间、位移、速度};
+  \node[choice] (force) at (0,-1.15) {加速度、受力};
+  \node[choice] (state) at (3.60,-1.15) {始末状态、碰撞};
+  \node[check] (conditions) at (0,-2.35)
+    {\textbf{检查适用条件}\\加速度是否恒定、受力做功与外力冲量、过程约束};
+  \node[method] (result) at (0,-3.55)
+    {\textbf{确定方法}\\运动学、牛顿定律、能量或动量};
+  \foreach \a in {motion,force,state}{\draw[->,thick] (q) -- (\a);}
+  \foreach \a in {motion,force,state}{\draw[->,thick] (\a) -- (conditions);}
+  \draw[->,thick] (conditions) -- (result);
 \end{tikzpicture}

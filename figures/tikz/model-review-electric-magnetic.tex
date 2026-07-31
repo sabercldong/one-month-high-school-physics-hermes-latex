@@ -4,12 +4,18 @@
   \path[use as bounding box] (-0.35,-0.95) rectangle (8.10,1.75);
   \draw[thick] (0.30,-0.45) -- (0.30,1.05);
   \draw[thick] (2.05,-0.45) -- (2.05,1.05);
+  \node[above] at (0.30,1.05) {$+$};
+  \node[above] at (2.05,1.05) {$-$};
   \node[above] at (1.18,1.05) {$U$};
   \foreach \y in {-0.18,0.25,0.68}{
     \draw[->,blue,thick] (0.58,\y) -- (1.72,\y);
   }
-  \node[red] at (-0.08,0.25) {$+q$};
-  \draw[->,red,thick,dashed] (0.18,0.25) -- (2.38,0.25);
+  % Place the initially slow positive charge inside the accelerating gap.
+  % Putting it outside the positive plate would leave it outside the
+  % idealized uniform field shown here.
+  \fill[red] (0.58,0.25) circle (1.8pt);
+  \node[red,below] at (0.58,0.20) {$+q$};
+  \draw[->,red,thick,dashed] (0.72,0.25) -- (2.38,0.25);
   \draw[thick] (2.55,-0.55) rectangle (7.55,1.30);
   \foreach \x in {3.0,3.7,4.4,5.1,5.8,6.5,7.2}{
     \foreach \y in {-0.25,0.25,0.75,1.15}{

@@ -12,7 +12,7 @@
     \draw (1.82,1.58) -- (3.05,1.58) -- (3.05,0.72);
     \draw (1.62,1.58) circle (0.20) node {$V$};
     \node[font=\small] at (1.75,2.52) {电流表内接};
-    \node[font=\scriptsize] at (1.75,-0.28) {$V$ 跨 $A+R_x$};
+    \node[font=\scriptsize] at (1.75,-0.28) {$V$ 跨 $A+R_x$，$R_{\text{测}}>R_x$};
   \end{scope}
   \begin{scope}[xshift=5.05cm]
     \draw (0.15,0) rectangle (3.35,2.25);
@@ -25,6 +25,6 @@
     \draw (1.95,1.58) -- (2.15,1.58) -- (2.15,1.02);
     \draw (1.80,1.58) circle (0.20) node {$V$};
     \node[font=\small] at (1.75,2.52) {电流表外接};
-    \node[font=\scriptsize] at (1.75,-0.28) {$V$ 只跨 $R_x$};
+    \node[font=\scriptsize] at (1.75,-0.28) {$A$ 读两支路总电流，$R_{\text{测}}<R_x$};
   \end{scope}
 \end{tikzpicture}

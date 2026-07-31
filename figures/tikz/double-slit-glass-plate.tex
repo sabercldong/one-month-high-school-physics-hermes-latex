@@ -1,0 +1,41 @@
+\begin{tikzpicture}[scale=0.92,>=Stealth]
+  \tikzset{
+    ray/.style={thick,blue},
+    dim/.style={<->,gray!80},
+    label/.style={font=\small}
+  }
+
+  \draw[very thick] (-2.35,-1.35) -- (-2.35,-0.30);
+  \draw[very thick] (-2.35,0.30) -- (-2.35,1.35);
+  \coordinate (S1) at (-2.35,0.30);
+  \coordinate (S2) at (-2.35,-0.30);
+  \fill[red] (S1) circle (1.6pt) node[left,label] {$S_1$};
+  \fill[red] (S2) circle (1.6pt) node[left,label] {$S_2$};
+  \node[font=\scriptsize] at (-2.35,-1.62) {双缝};
+
+  \fill[cyan!18,draw=cyan!60!black,thick] (-1.82,0.08) rectangle (-1.40,0.62);
+  \node[font=\scriptsize,cyan!50!black] at (-1.61,0.87) {薄片 $n,t$};
+
+  \draw[very thick] (3.10,-1.45) -- (3.10,1.45);
+  \node[font=\scriptsize] at (3.10,-1.68) {屏};
+  \coordinate (O) at (3.10,0);
+  \coordinate (Op) at (3.10,0.60);
+  \fill (O) circle (1.3pt) node[below left,font=\scriptsize] {$O$};
+  \fill[red] (Op) circle (1.6pt) node[above left,font=\scriptsize] {$O'$};
+
+  \draw[gray,dashed,thick] (S1) -- (O);
+  \draw[gray,dashed,thick] (S2) -- (O);
+  \draw[blue,very thick,->] (S1) -- (Op);
+  \draw[blue,very thick,->] (S2) -- (Op);
+  \draw[red,<->,thick] (2.72,0) -- (2.72,0.60)
+    node[midway,left,font=\scriptsize] {$\Delta x$};
+
+  \draw[dim] (-2.72,-0.30) -- (-2.72,0.30)
+    node[midway,left,font=\scriptsize] {$d$};
+  \draw[dim] (-2.35,-1.12) -- (3.10,-1.12)
+    node[midway,fill=white,inner sep=1pt,font=\scriptsize] {$L$};
+  \node[font=\scriptsize] at (0.15,1.26)
+    {覆片光路增加光程 $(n-1)t$};
+  \node[font=\scriptsize,red!75!black] at (2.48,0.94)
+    {向 $S_1$ 侧};
+\end{tikzpicture}

@@ -3,6 +3,11 @@
 \begin{tikzpicture}[scale=0.9,>=Latex]
   \draw[thick] (-2.2,1.0) -- (2.6,1.0);
   \draw[thick] (-2.2,-1.0) -- (2.6,-1.0);
+  % 左端通过电阻闭合，导体棒运动时回路中才会产生感应电流。
+  \draw[thick] (-2.2,1.0) -- (-2.2,0.32);
+  \draw[thick,fill=white] (-2.42,0.32) rectangle (-1.98,-0.32);
+  \node[font=\small] at (-2.20,0) {$R$};
+  \draw[thick] (-2.2,-0.32) -- (-2.2,-1.0);
   \draw[very thick,red] (0,-1.0) -- (0,1.0);
   \foreach \x in {-1.7,-0.9,-0.1,0.7,1.5,2.3} {
     \foreach \y in {-0.55,0.25} {
@@ -13,6 +18,8 @@
   \draw[->,red,thick] (0,0.35) -- (1.1,0.35) node[right] {$v$};
   \draw[->,purple,thick] (0,-0.15) -- (1.1,-0.15) node[right] {$F$};
   \draw[->,orange,thick] (0,-0.55) -- (-1.0,-0.55) node[left] {$F_A$};
+  \draw[->,blue!70!black,thick] (0,0.62) -- (0,0.93)
+    node[right,font=\small] {$I$};
   \node[blue] at (2.95,0.85) {$B$ 向里};
   \node[font=\small,align=center] at (0,-1.65)
     {$v$ 增大 $\Rightarrow \mathcal E$ 增大

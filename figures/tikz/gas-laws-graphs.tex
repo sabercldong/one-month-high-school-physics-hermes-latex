@@ -4,19 +4,19 @@
   \begin{scope}
     \draw[->,thick] (0,0) -- (2.4,0) node[right] {$V$};
     \draw[->,thick] (0,0) -- (0,2.2) node[above] {$p$};
-    \draw[blue,thick,samples=60,domain=0.35:2.25] plot(\x,{0.75/\x+0.2});
+    \draw[blue,thick,samples=60,domain=0.38:2.25] plot(\x,{0.82/\x});
     \node at (1.2,-0.55) {等温：$pV=C$};
   \end{scope}
   \begin{scope}[xshift=3.5cm]
     \draw[->,thick] (0,0) -- (2.4,0) node[right] {$T$};
     \draw[->,thick] (0,0) -- (0,2.2) node[above] {$V$};
-    \draw[red,thick] (0.25,0.25) -- (2.1,1.85);
+    \draw[red,thick] (0,0) -- (2.1,1.85);
     \node at (1.2,-0.55) {等压：$\dfrac{V}{T}=C$};
   \end{scope}
   \begin{scope}[xshift=7.0cm]
     \draw[->,thick] (0,0) -- (2.4,0) node[right] {$T$};
     \draw[->,thick] (0,0) -- (0,2.2) node[above] {$p$};
-    \draw[green!55!black,thick] (0.25,0.25) -- (2.1,1.85);
+    \draw[green!55!black,thick] (0,0) -- (2.1,1.85);
     \node at (1.2,-0.55) {等容：$\dfrac{p}{T}=C$};
   \end{scope}
 \end{tikzpicture}

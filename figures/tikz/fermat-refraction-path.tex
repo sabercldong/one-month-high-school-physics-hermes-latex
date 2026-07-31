@@ -1,0 +1,41 @@
+\begin{tikzpicture}[scale=0.92,>=Stealth]
+  \tikzset{
+    ray/.style={very thick,blue,->},
+    guide/.style={gray,dashed},
+    dim/.style={<->,gray!80},
+    label/.style={font=\small}
+  }
+
+  \fill[blue!4] (-0.45,0) rectangle (6.45,2.35);
+  \fill[cyan!9] (-0.45,-2.10) rectangle (6.45,0);
+  \draw[thick] (-0.45,0) -- (6.45,0);
+  \node[label] at (4.90,1.95) {介质 1，光速 $v_1$};
+  \node[label] at (1.15,-1.78) {介质 2，光速 $v_2$};
+
+  \coordinate (A) at (0.40,1.55);
+  \coordinate (P) at (2.65,0);
+  \coordinate (B) at (5.75,-1.35);
+  \fill[red] (A) circle (1.7pt) node[above left,label] {$A$};
+  \fill[red] (P) circle (1.7pt) node[below left,label] {$P$};
+  \fill[red] (B) circle (1.7pt) node[above right,label] {$B$};
+
+  \draw[ray] (A) -- (P);
+  \draw[ray] (P) -- (B);
+  \draw[guide] (P) -- ++(0,1.15);
+  \draw[guide] (P) -- ++(0,-1.05);
+  \draw (P) ++(90:0.46) arc[start angle=90,end angle=145,radius=0.46];
+  \draw (P) ++(-90:0.43) arc[start angle=-90,end angle=-24,radius=0.43];
+  \node[font=\scriptsize] at (2.24,0.63) {$i$};
+  \node[font=\scriptsize] at (2.88,-0.58) {$r$};
+
+  \draw[guide] (A) -- (0.40,0);
+  \draw[guide] (B) -- (5.75,0);
+  \draw[dim] (0.08,0) -- (0.08,1.55)
+    node[midway,left,font=\scriptsize] {$h_1$};
+  \draw[dim] (6.10,0) -- (6.10,-1.35)
+    node[midway,right,font=\scriptsize] {$h_2$};
+  \draw[dim] (0.40,0.32) -- (2.65,0.32)
+    node[midway,above,font=\scriptsize] {$x$};
+  \draw[dim] (2.65,0.32) -- (5.75,0.32)
+    node[midway,above,font=\scriptsize] {$L-x$};
+\end{tikzpicture}

@@ -4,18 +4,20 @@
   \path[use as bounding box] (-0.35,-1.05) rectangle (7.10,1.65);
   \draw[->,blue,thick] (0,0.35) -- (1.55,0.35)
     node[midway,above] {电子束};
-  \draw[thick] (2.00,-0.65) -- (2.00,1.35);
-  \foreach \y in {-0.35,0.35,1.05}{
-    \draw[fill=white] (2.00,\y) circle (0.08);
+  \draw[thick,rounded corners=2pt,fill=gray!6] (1.72,-0.65) rectangle (2.72,1.35);
+  \foreach \x in {1.92,2.22,2.52}{
+    \foreach \y in {-0.35,0.00,0.35,0.70,1.05}{
+      \fill[gray!70] (\x,\y) circle (1.2pt);
+    }
   }
-  \node[font=\small] at (2.00,-0.92) {晶体};
-  \draw[red,thick] (2.15,0.35) .. controls (3.10,1.10) and (4.00,1.18) .. (5.15,0.92);
-  \draw[red,thick] (2.15,0.35) .. controls (3.10,-0.40) and (4.00,-0.48) .. (5.15,-0.22);
-  \draw[red,thick] (2.15,0.35) -- (5.15,0.35);
+  \node[font=\small] at (2.22,-0.92) {周期性晶格};
+  \draw[red,thick] (2.74,0.35) .. controls (3.35,1.10) and (4.10,1.18) .. (5.15,0.92);
+  \draw[red,thick] (2.74,0.35) .. controls (3.35,-0.40) and (4.10,-0.48) .. (5.15,-0.22);
+  \draw[red,thick] (2.74,0.35) -- (5.15,0.35);
   \draw[thick] (5.45,-0.75) -- (5.45,1.45);
   \foreach \y in {-0.22,0.35,0.92}{
     \fill[red] (5.45,\y) circle (1.8pt);
   }
   \node[font=\small,align=center] at (6.20,0.35) {衍射\\亮斑};
-  \node[font=\small] at (3.50,-0.85) {$\lambda=\dfrac{h}{p}$};
+  \node[font=\small] at (4.15,-0.85) {$\lambda=\dfrac{h}{p}$};
 \end{tikzpicture}

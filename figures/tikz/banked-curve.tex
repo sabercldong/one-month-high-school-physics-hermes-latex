@@ -21,8 +21,10 @@
   \draw[->,very thick,red] (0,0.18) -- (-1.70,0.18);
   \node[font=\small,red,fill=white,inner sep=1pt] at (-1.96,0.58) {指向圆心};
 
+  % 以支持力箭头为对角线补出分量矩形；水平辅助线只连回受力点，
+  % 避免把“指向圆心”的方向箭头误看成 $N\sin\theta$ 的实际长度。
   \draw[dashed,blue!60] (-0.34,1.95) -- (-0.34,0.18);
-  \draw[dashed,blue!60] (-0.34,0.18) -- (-1.70,0.18);
+  \draw[dashed,blue!60] (-0.34,0.18) -- (0,0.18);
   \node[font=\scriptsize,blue,fill=white,inner sep=1pt] at (-0.58,1.08) {$N\cos\theta$};
-  \node[font=\scriptsize,red,fill=white,inner sep=1pt] at (-1.10,-0.20) {$N\sin\theta$};
+  \node[font=\scriptsize,red,fill=white,inner sep=1pt] at (-0.36,-0.08) {$N\sin\theta$};
 \end{tikzpicture}

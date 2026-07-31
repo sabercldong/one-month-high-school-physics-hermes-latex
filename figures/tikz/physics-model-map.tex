@@ -1,17 +1,23 @@
-% TikZ 图：高中物理模型地图
-% Day 29：模型复盘
-\begin{tikzpicture}[scale=0.84,>=Latex]
-  \node[draw,rounded corners=3pt,fill=gray!12] (core) at (0,0) {物理模型};
-  \foreach \name/\ang/\text in {
-    kin/90/运动学,
-    force/40/受力与牛顿,
-    energy/-10/能量,
-    momentum/-60/动量,
-    field/-115/场与电路,
-    em/180/电磁感应}{
-    \node[draw,rounded corners=2pt,fill=blue!7] (\name) at (\ang:3.0) {\text};
-    \draw[->] (core) -- (\name);
+\begin{tikzpicture}[scale=0.86,>=Latex]
+  \tikzset{
+    group/.style={draw,rounded corners=3pt,thick,align=center,
+      text width=3.45cm,minimum height=1.20cm,font=\small},
+    link/.style={->,thick}
   }
-  \node[font=\small,align=center] at (0,-3.7)
-    {先识别对象和过程，再选择模型；模型不是公式表，而是解题视角。};
+  \node[draw,rounded corners=4pt,thick,fill=gray!12,
+    align=center,minimum width=2.55cm,minimum height=1.05cm] (core) at (0,0)
+    {\textbf{对象、过程、约束}\\决定模型};
+  \node[group,fill=blue!8] (motion) at (-4.05,1.45)
+    {\textbf{运动与受力}\\运动学、牛顿定律、圆周运动};
+  \node[group,fill=green!10] (conserve) at (4.05,1.45)
+    {\textbf{相互作用与守恒}\\能量、动量};
+  \node[group,fill=orange!10] (field) at (-4.05,-1.45)
+    {\textbf{场与电路}\\电场、磁场、电路、电磁感应};
+  \node[group,fill=purple!8] (late) at (4.05,-1.45)
+    {\textbf{其他模型语言}\\光学、热学、近代物理、实验};
+  \foreach \target in {motion,conserve,field,late}{
+    \draw[link] (core) -- (\target);
+  }
+  \node[font=\small,align=center] at (0,-2.65)
+    {目标量提示候选模型，适用条件完成筛选。};
 \end{tikzpicture}

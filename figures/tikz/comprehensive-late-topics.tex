@@ -2,7 +2,7 @@
 \begin{tikzpicture}[scale=0.92,>=Latex]
   \tikzset{
     box/.style={draw,rounded corners=3pt,thick,fill=gray!6,
-      minimum width=3.05cm,minimum height=2.35cm,
+      minimum width=3.05cm,minimum height=2.65cm,
       text width=2.62cm,align=center,font=\small},
     title/.style={font=\bfseries},
     ray/.style={->,thick,blue},
@@ -13,10 +13,11 @@
   \node[box] (opt) at (0,0) {};
   \node[title] at (0,0.82) {光学};
   \draw[thick] (-1.05,0.18) -- (1.05,0.18);
+  \draw[dashed,gray] (-0.20,-0.62) -- (-0.20,0.92);
   \draw[ray] (-1.05,-0.45) -- (-0.20,0.18);
   \draw[ray] (-0.20,0.18) -- (0.82,0.66);
-  \draw[dashed,blue] (-0.20,0.18) -- (0.82,-0.30);
-  \node[note] at (0,-0.87) {先画光路\\再判反射、折射或全反射};
+  \draw[ray,dashed] (-0.20,0.18) -- (0.82,-0.30);
+  \node[note] at (0,-1.03) {先画光路\\再判反射、折射或全反射};
 
   \node[box] (therm) at (4.0,0) {};
   \node[title] at (4.0,0.82) {热学};
@@ -24,7 +25,8 @@
   \draw[->,thick] (3.0,-0.55) -- (4.95,-0.55) node[below] {$V$};
   \draw[very thick,orange] (3.18,-0.35) -- (4.55,0.38);
   \fill[orange!20] (3.18,-0.55) -- (3.18,-0.35) -- (4.55,0.38) -- (4.55,-0.55) -- cycle;
-  \node[note] at (4.0,-0.87) {区分状态量和过程量\\面积对应气体做功};
+  \node[note] at (4.0,-1.03)
+    {准静态 $p$-$V$ 图\\有向面积对应体积功};
 
   \node[box] (modern) at (8.0,0) {};
   \node[title] at (8.0,0.82) {近代物理};
@@ -33,5 +35,5 @@
   \draw[level] (7.15,-0.48) -- (8.85,-0.48) node[right] {$E_1$};
   \draw[->,red,thick] (7.58,0.30) -- (7.58,-0.42);
   \node[red,font=\scriptsize] at (7.15,-0.05) {$h\nu$};
-  \node[note] at (8.0,-0.87) {先看能量量子化\\再用守恒关系};
+  \node[note] at (8.0,-1.03) {先看能量量子化\\再用守恒关系};
 \end{tikzpicture}
