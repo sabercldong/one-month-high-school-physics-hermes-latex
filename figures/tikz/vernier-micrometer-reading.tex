@@ -5,27 +5,34 @@
     \node[font=\small\bfseries] at (2.55,3.18) {游标卡尺};
 
     \draw[thick,fill=gray!8] (0,2.15) rectangle (5.1,2.55);
-    \foreach \i in {0,...,12}{
-      \pgfmathsetmacro{\x}{0.25+0.38*\i}
-      \draw[thick] (\x,2.15) -- (\x,2.48);
+    % Main-scale spacing represents 1 mm.
+    \foreach \i in {0,...,11}{
+      \pgfmathsetmacro{\x}{0.25+0.42*\i}
+      \draw[thick] (\x,2.15) -- (\x,2.43);
     }
-    \node[above] at (0.25,2.55) {$12$};
-    \node[above] at (2.15,2.55) {$13$};
-    \node[above] at (4.05,2.55) {$14$};
-    \node[right] at (5.1,2.55) {主尺/mm};
+    \foreach \i/\lab in {0/12,5/12.5,10/13}{
+      \pgfmathsetmacro{\x}{0.25+0.42*\i}
+      \draw[very thick] (\x,2.15) -- (\x,2.52);
+      \node[above] at (\x,2.55) {$\lab$};
+    }
+    \node[anchor=east] at (5.05,2.88) {主尺/cm};
 
-    \draw[thick,fill=blue!6] (0.72,1.25) rectangle (4.05,1.72);
+    % Ten vernier divisions span nine main-scale divisions:
+    % 0.378*10 = 0.42*9.  The seventh vernier line therefore
+    % aligns exactly with the eighth visible main-scale tick.
+    \draw[thick,fill=blue!6] (0.82,1.25) rectangle (4.90,1.72);
     \foreach \i in {0,...,10}{
-      \pgfmathsetmacro{\x}{0.88+0.30*\i}
+      \pgfmathsetmacro{\x}{0.964+0.378*\i}
       \draw[thick] (\x,1.72) -- (\x,1.38);
     }
-    \node[left] at (0.72,1.48) {游标};
-    \draw[red,very thick] (2.98,1.12) -- (2.98,2.65);
-    \node[red,below] at (3.35,1.02) {第 $n$ 格对齐};
+    \node[left] at (0.82,1.48) {10 分度游标};
+    \draw[red,very thick] (3.61,1.12) -- (3.61,2.65);
+    \node[red,below] at (3.61,1.02) {第 $7$ 格对齐};
 
-    \draw[orange,thick,<->] (0.25,0.78) -- (0.88,0.78);
-    \node[orange,below] at (0.56,0.70) {主尺读数};
-    \node[align=center] at (2.55,0.05) {读数 $=$ 主尺读数 $+$ 对齐格数 $\times$ 精度};
+    \draw[orange,thick] (0.67,1.18) -- (0.67,2.12);
+    \node[orange,anchor=east] at (0.61,0.98) {主尺读数 $12.1$};
+    \node[align=center] at (2.55,0.05)
+      {图示读数 $=12.1\ \mathrm{cm}+7\times0.01\ \mathrm{cm}=12.17\ \mathrm{cm}$};
   \end{scope}
 
   \begin{scope}[xshift=7.4cm]
@@ -33,22 +40,22 @@
 
     \draw[thick,fill=gray!8] (0,1.75) rectangle (3.1,2.35);
     \draw[thick] (0.2,2.05) -- (4.75,2.05);
-    \foreach \i in {0,...,6}{
-      \pgfmathsetmacro{\x}{0.35+0.38*\i}
+    \foreach \i in {0,...,5}{
+      \pgfmathsetmacro{\x}{0.35+0.48*\i}
       \draw[thick] (\x,1.75) -- (\x,2.32);
     }
     \node[above] at (0.35,2.35) {$5$};
-    \node[above] at (1.49,2.35) {$6$};
-    \node[above] at (2.63,2.35) {$7$};
-    \node[left] at (0,2.35) {固定刻度};
+    \node[above] at (1.31,2.35) {$6$};
+    \node[above] at (2.27,2.35) {$7$};
+    \node at (1.55,2.78) {固定刻度/mm};
 
     \draw[thick,fill=blue!6] (3.1,1.35) rectangle (4.75,2.75);
     \foreach \j in {0,...,6}{
-      \pgfmathsetmacro{\y}{1.45+0.18*\j}
+      \pgfmathsetmacro{\y}{1.51+0.18*\j}
       \draw[thick] (3.1,\y) -- (3.48,\y);
     }
     \draw[red,very thick] (3.0,2.05) -- (4.85,2.05);
-    \node[red,right] at (4.85,2.18) {对齐刻度};
+    \node[red,right] at (4.85,2.18) {基准线};
     \node[below] at (3.95,1.22) {可动刻度};
 
     \node[align=center] at (2.5,0.25) {读数 $=$ 固定刻度\\$+$ 可动刻度 $\times 0.01\ \mathrm{mm}$};

@@ -10,23 +10,28 @@
     8.55/{磁场能最大}/{q=0,\ i=-I_m}
   }{
     \draw[rounded corners=3pt,fill=gray!5] (\x,0) rectangle ++(2.10,1.30);
-    \draw[thick] (\x+0.46,0.27) -- (\x+0.46,1.03);
-    \draw[thick] (\x+0.73,0.27) -- (\x+0.73,1.03);
+    % Closed LC loop: capacitor in the left branch, inductor in the right.
+    \draw[thick] (\x+0.50,0.98) -- (\x+1.60,0.98) -- (\x+1.60,0.82);
     \draw[thick,decorate,decoration={coil,aspect=0.45,segment length=4pt,amplitude=3pt}]
-      (\x+1.12,0.65) -- (\x+1.82,0.65);
+      (\x+1.60,0.82) -- (\x+1.60,0.48);
+    \draw[thick] (\x+1.60,0.48) -- (\x+1.60,0.32) -- (\x+0.50,0.32);
+    \draw[thick] (\x+0.50,0.98) -- (\x+0.50,0.76);
+    \draw[thick] (\x+0.36,0.76) -- (\x+0.64,0.76);
+    \draw[thick] (\x+0.36,0.54) -- (\x+0.64,0.54);
+    \draw[thick] (\x+0.50,0.54) -- (\x+0.50,0.32);
     \node[font=\scriptsize\bfseries] at (\x+1.05,1.62) {\top};
     \node[font=\scriptsize] at (\x+1.05,-0.28) {$\bottom$};
   }
 
   % Charge and current cues.
-  \node[red,font=\scriptsize] at (0.45,0.95) {$+$};
-  \node[blue,font=\scriptsize] at (0.74,0.95) {$-$};
-  \draw[orange!85!black,->,thick] (3.30,0.18) -- (4.35,0.18)
-    node[midway,below,font=\scriptsize] {$i>0$};
-  \node[blue,font=\scriptsize] at (6.15,0.95) {$-$};
-  \node[red,font=\scriptsize] at (6.44,0.95) {$+$};
-  \draw[orange!85!black,<-,thick] (8.98,0.18) -- (10.03,0.18)
-    node[midway,below,font=\scriptsize] {$i<0$};
+  \node[red,font=\scriptsize] at (0.24,0.76) {$+$};
+  \node[blue,font=\scriptsize] at (0.24,0.54) {$-$};
+  \draw[orange!85!black,->,thick] (3.48,0.98) -- (4.18,0.98)
+    node[midway,above,font=\scriptsize] {$i>0$};
+  \node[blue,font=\scriptsize] at (5.94,0.76) {$-$};
+  \node[red,font=\scriptsize] at (5.94,0.54) {$+$};
+  \draw[orange!85!black,->,thick] (10.18,0.98) -- (9.48,0.98)
+    node[midway,above,font=\scriptsize] {$i<0$};
 
   \draw[->,thick] (2.18,0.65) -- (2.72,0.65);
   \draw[->,thick] (5.03,0.65) -- (5.57,0.65);

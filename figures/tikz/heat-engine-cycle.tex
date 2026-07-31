@@ -3,10 +3,16 @@
 \begin{tikzpicture}[scale=0.9,>=Latex]
   \draw[->,thick] (0,0) -- (4.5,0) node[right] {$V$};
   \draw[->,thick] (0,0) -- (0,3.2) node[above] {$p$};
-  \draw[fill=orange!16,draw=red,thick] (1.0,1.0) .. controls (1.5,2.5) and (3.0,2.6) .. (3.55,1.75)
+  \path[fill=orange!16] (1.0,1.0)
+    .. controls (1.5,2.5) and (3.0,2.6) .. (3.55,1.75)
+    .. controls (3.15,0.75) and (1.55,0.55) .. cycle;
+  % Draw both branches with arrowheads so the clockwise direction is explicit.
+  \draw[->,red,very thick] (1.0,1.0)
+    .. controls (1.5,2.5) and (3.0,2.6) .. (3.55,1.75);
+  \draw[->,red,very thick] (3.55,1.75)
     .. controls (3.15,0.75) and (1.55,0.55) .. (1.0,1.0);
-  \draw[->,red,thick] (2.7,2.35) -- (3.05,2.1);
-  \node at (2.25,1.45) {$W_{\text{循环}}$};
+  \node[align=center] at (2.25,1.45)
+    {顺时针\\[-1pt]$W_{\text{循环}}>0$};
   \node[font=\small,align=left] at (6.55,1.65)
     {热机从高温热源吸热 $Q_1$，\\向低温热源放热 $Q_2$，\\对外输出功 $W=Q_1-Q_2$。\\[3pt]
      $\eta=\dfrac{W}{Q_1}$};

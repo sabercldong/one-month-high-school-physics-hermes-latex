@@ -19,10 +19,9 @@
 
   \begin{scope}[xshift=5.3cm]
     \node[font=\small] at (0,1.75) {偏振};
-    \draw[thick] (-1.25,-1.10) rectangle (-0.75,1.10);
-    \foreach \y in {-0.75,-0.45,...,0.75}{
-      \draw[gray] (-1.20,\y) -- (-0.80,\y+0.25);
-    }
+    \draw[thick,fill=gray!6] (-1.25,-1.10) rectangle (-0.75,1.10);
+    \draw[purple!80!black,<->,very thick] (-1.0,-0.78) -- (-1.0,0.78);
+    \node[purple!80!black,right,font=\scriptsize] at (-0.72,0.78) {透振轴};
     \node[font=\scriptsize] at (-1.0,-1.38) {偏振片};
     \draw[->,blue,thick] (-3.0,0) -- (-1.35,0);
     \foreach \ang in {0,30,60,90,120,150}{

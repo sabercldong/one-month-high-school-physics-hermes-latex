@@ -15,17 +15,24 @@
   % idealized uniform field shown here.
   \fill[red] (0.58,0.25) circle (1.8pt);
   \node[red,below] at (0.58,0.20) {$+q$};
-  \draw[->,red,thick,dashed] (0.72,0.25) -- (2.38,0.25);
+  \draw[->,red,thick,dashed] (0.72,0.25) -- (2.65,0.25);
+  \node[red,font=\scriptsize,above] at (2.25,0.25) {$v_0$};
   \draw[thick] (2.55,-0.55) rectangle (7.55,1.30);
   \foreach \x in {3.0,3.7,4.4,5.1,5.8,6.5,7.2}{
-    \foreach \y in {-0.25,0.25,0.75,1.15}{
+    \foreach \y in {-0.25,0.58,1.15}{
       \node[blue] at (\x,\y) {$\times$};
     }
   }
-  \draw[red,thick,->] (2.65,0.25) arc[start angle=180,end angle=55,radius=1.10];
-  \draw[dashed] (3.75,0.25) circle (1.10);
-  \draw[<->,orange,thick] (3.75,0.25) -- (3.12,1.15)
-    node[midway,right] {$r$};
+  % For +q moving right in a field into the page, the center lies directly
+  % above the entry point.  The red trajectory and radius share this center.
+  \coordinate (P) at (2.65,0.25);
+  \coordinate (C) at (2.65,0.95);
+  \draw[red,very thick,->] (P) arc[start angle=-90,end angle=0,radius=0.70];
+  \fill (C) circle (1.3pt);
+  \node[font=\scriptsize,anchor=east] at (2.54,0.98) {$C$};
+  \draw[orange!85!black,thick] (P) -- (C);
+  \node[orange!85!black,font=\scriptsize,anchor=east] at (2.54,0.60) {$r$};
   \node[font=\small] at (1.18,1.48) {电场加速};
   \node[font=\small] at (5.25,1.48) {磁场偏转};
+  \node[blue,font=\scriptsize] at (6.40,-0.30) {$\vec B$ 垂直纸面向里};
 \end{tikzpicture}

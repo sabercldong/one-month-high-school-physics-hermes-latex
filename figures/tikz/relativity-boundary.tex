@@ -1,11 +1,12 @@
 % TikZ 图：经典物理与相对论适用边界
 % Day 27：近代物理
 \begin{tikzpicture}[>=Latex,scale=0.9,every node/.style={font=\small}]
-  \draw[->,thick] (0,0) -- (8.4,0) node[right] {$v$};
+  % The speed axis ends at c; do not suggest a massive-particle region v>c.
+  \draw[->,thick] (0,0) -- (7.05,0) node[right] {$v$};
   \draw[thick] (0,0.10) -- (0,-0.10) node[below] {$0$};
-  \draw[thick] (6.9,0.10) -- (6.9,-0.10) node[below] {$c$};
+  \draw[thick] (6.82,0.10) -- (6.82,-0.10) node[below] {$c$};
   \draw[blue,very thick] (0.25,0) -- (3.7,0);
-  \draw[orange,very thick] (3.7,0) -- (6.75,0);
+  \draw[orange,very thick] (3.7,0) -- (6.68,0);
   \node[blue,align=center] at (1.95,0.65) {低速范围\\$v\ll c$};
   \node[orange,align=center] at (5.25,0.72) {高速范围\\$v$ 接近 $c$};
   \node[align=center,font=\scriptsize] at (1.85,-0.78) {牛顿力学近似很好\\$E_k\approx \frac12mv^2$};
