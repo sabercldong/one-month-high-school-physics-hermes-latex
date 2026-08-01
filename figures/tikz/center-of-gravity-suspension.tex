@@ -1,57 +1,64 @@
 % Day 05：悬挂法找二维平面薄板的重心
-\begin{tikzpicture}[scale=0.88,>=Latex,line cap=round,line join=round,
+\begin{tikzpicture}[scale=1.0,>=Latex,line cap=round,line join=round,
   every node/.style={font=\small}]
 
-  % 同一薄板从孔 A 悬挂：把 A-C 连线转到竖直方向。
-  \begin{scope}[shift={(-2.55,0.45)},rotate=-60.5]
+  % 从孔 A 悬挂：旋转后 A、重心 C 位于同一条竖直线上。
+  \begin{scope}[shift={(-2.65,0.48)},rotate=-61.19]
     \coordinate (Cone) at (0,0);
-    \coordinate (Aone) at (-0.92,0.52);
+    \coordinate (Aone) at (-1.00,0.55);
     \filldraw[fill=gray!12,draw=black!75,thick]
       (-1.10,-0.65) -- (0.90,-0.55) -- (1.20,0.40) --
       (0.20,1.00) -- (-1.00,0.55) -- cycle;
     \fill (Aone) circle (1.5pt);
   \end{scope}
-  \draw[thick] ($(Aone)+(-0.22,0.16)$) -- ($(Aone)+(0.22,0.16)$);
+  \draw[thick] ($(Aone)+(-0.24,0.15)$) -- ($(Aone)+(0.24,0.15)$);
   \draw[dashed,gray!70] (Aone) -- ($(Aone)+(0,-2.05)$);
-  \draw[->,blue!75!black,thick] (Cone) -- ++(0,-0.72)
-    node[right] {$G$};
-  \node[above left] at (Aone) {$A$};
-  \node[font=\footnotesize] at (-2.55,-1.20) {从孔 $A$ 悬挂};
+  \draw[->,blue!75!black,thick] (Cone) -- ++(0,-0.70)
+    node[right=1pt] {$G$};
+  \node[above left=1pt] at (Aone) {$A$};
+  \node[font=\footnotesize] at (-2.65,-1.20) {从孔 $A$ 悬挂};
 
-  % 同一薄板从孔 B 悬挂：薄板转到另一稳定姿态。
-  \begin{scope}[shift={(2.55,0.45)},rotate=121.4]
+  % 从孔 B 悬挂：换孔后薄板转到另一稳定姿态。
+  \begin{scope}[shift={(2.65,0.48)},rotate=71.565]
     \coordinate (Ctwo) at (0,0);
-    \coordinate (Btwo) at (0.90,-0.55);
+    \coordinate (Btwo) at (1.20,0.40);
     \filldraw[fill=gray!12,draw=black!75,thick]
       (-1.10,-0.65) -- (0.90,-0.55) -- (1.20,0.40) --
       (0.20,1.00) -- (-1.00,0.55) -- cycle;
     \fill (Btwo) circle (1.5pt);
   \end{scope}
-  \draw[thick] ($(Btwo)+(-0.22,0.16)$) -- ($(Btwo)+(0.22,0.16)$);
+  \draw[thick] ($(Btwo)+(-0.24,0.15)$) -- ($(Btwo)+(0.24,0.15)$);
   \draw[dashed,gray!70] (Btwo) -- ($(Btwo)+(0,-2.05)$);
-  \draw[->,blue!75!black,thick] (Ctwo) -- ++(0,-0.72)
-    node[right] {$G$};
-  \node[above right] at (Btwo) {$B$};
-  \node[font=\footnotesize] at (2.55,-1.20) {从孔 $B$ 悬挂};
+  \draw[->,blue!75!black,thick] (Ctwo) -- ++(0,-0.70)
+    node[right=1pt] {$G$};
+  \node[above right=1pt] at (Btwo) {$B$};
+  \node[font=\footnotesize] at (2.65,-1.20) {从孔 $B$ 悬挂};
 
-  \node[gray!75,font=\footnotesize] at (0,-1.58)
-    {稳定时：重心在悬挂点正下方};
+  \node[black!78,font=\footnotesize] at (0,-1.55)
+    {每次稳定后，重心都在悬挂点的正下方};
 
-  % 把两次铅垂线转印到薄板自身，交点就是同一个重心。
-  \begin{scope}[shift={(0,-3.35)}]
+  % 将两次悬挂所得的铅垂线转画到同一薄板上。
+  \begin{scope}[shift={(0,-3.20)}]
     \coordinate (C) at (0,0);
-    \coordinate (A) at (-0.92,0.52);
-    \coordinate (B) at (0.90,-0.55);
+    \coordinate (A) at (-1.00,0.55);
+    \coordinate (B) at (1.20,0.40);
     \filldraw[fill=gray!12,draw=black!75,thick]
       (-1.10,-0.65) -- (0.90,-0.55) -- (1.20,0.40) --
       (0.20,1.00) -- (-1.00,0.55) -- cycle;
-    \fill (A) circle (1.3pt);
-    \fill (B) circle (1.3pt);
-    \draw[dashed,red!75!black,thick] (A) -- (1.08,-0.61);
-    \draw[dashed,red!75!black,thick] (B) -- (-1.00,0.61);
+    \fill (A) circle (1.3pt) node[above left=1pt] {$A$};
+    \fill (B) circle (1.3pt) node[above right=1pt] {$B$};
+    \draw[dashed,red!75!black,thick]
+      ($(A)!-0.12!(C)$) -- ($(A)!1.48!(C)$);
+    \draw[dashed,blue!70!black,thick]
+      ($(B)!-0.10!(C)$) -- ($(B)!1.42!(C)$);
     \filldraw[fill=red!85!black,draw=red!85!black] (C) circle (2.2pt);
-    \node[red!75!black,below=2pt] at (C) {重心};
+    \draw[red!75!black] (C) -- (1.48,0)
+      node[right=2pt] {重心};
+    \node[red!75!black,font=\footnotesize,anchor=east] at (-1.22,-0.22)
+      {第 1 次铅垂线};
+    \node[blue!70!black,font=\footnotesize,anchor=west] at (1.25,-0.38)
+      {第 2 次铅垂线};
   \end{scope}
-  \node[align=center,font=\footnotesize] at (0,-4.45)
-    {把两次铅垂线画回同一薄板，\\交点即为重心};
+  \node[align=center,font=\footnotesize] at (0,-4.28)
+    {把两次铅垂线转画到同一薄板上，交点即为重心};
 \end{tikzpicture}

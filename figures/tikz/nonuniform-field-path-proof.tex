@@ -1,46 +1,66 @@
 % TikZ 图：点电荷电场中任意路径微元的径向投影
-\begin{tikzpicture}[scale=0.88,>=Latex,font=\small]
+\begin{tikzpicture}[scale=0.84,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  % 左侧：两条端点相同的路径以及实线路径上的局部微元。
   \coordinate (Q) at (0,0);
-  \coordinate (A) at (1.05,0.82);
-  \coordinate (B) at (4.25,-0.72);
-  \coordinate (S) at (2.12,1.22);
-  \coordinate (T) at (2.46,1.04);
-  \coordinate (R) at (2.30,1.33);
+  \coordinate (A) at (1.05,1.15);
+  \coordinate (P) at (2.05,1.52);
+  \coordinate (Pp) at (2.42,1.59);
+  \coordinate (B) at (4.35,-0.62);
 
-  \filldraw[red] (Q) circle (3.6pt);
-  \node[below left=1pt] at (Q) {$+Q$};
-  \filldraw (A) circle (2pt) node[above left] {$A$};
-  \filldraw (B) circle (2pt) node[right] {$B$};
+  \filldraw[fill=red!85,draw=red!85] (Q) circle (3.3pt);
+  \node[below left=2pt] at (Q) {$+Q$};
+  \fill (A) circle (1.8pt) node[above left] {$A$};
+  \fill (B) circle (1.8pt) node[right] {$B$};
 
   \draw[thick]
-    (A) .. controls (1.45,1.24) and (1.80,1.30) .. (S)
-    .. controls (2.23,1.18) and (2.34,1.10) .. (T)
-    .. controls (3.15,0.55) and (3.75,-0.20) .. (B);
+    (A) .. controls (1.35,1.43) and (1.70,1.52) .. (P)
+    .. controls (2.16,1.56) and (2.30,1.59) .. (Pp)
+    .. controls (3.15,1.18) and (3.72,0.12) .. (B);
   \draw[thick,dashed]
-    (A) .. controls (1.35,-0.10) and (2.90,-1.25) .. (B);
+    (A) .. controls (1.36,0.10) and (2.85,-1.22) .. (B);
 
-  \draw[dashed,gray] (Q) -- (A);
-  \draw[dashed,gray] (Q) -- (B);
-  \draw[dashed,gray] (Q) -- (2.95,1.70);
-  \node[left] at (0.52,0.39) {$r_A$};
-  \node[below] at (2.15,-0.36) {$r_B$};
+  \draw[dashed,gray!75] (Q) -- (A);
+  \draw[dashed,gray!75] (Q) -- (B);
+  \draw[dashed,gray!75] (Q) -- (P);
+  \node[left] at (0.53,0.54) {$r_A$};
+  \node[below] at (2.20,-0.31) {$r_B$};
 
-  % 被截取的路径微元及其径向投影
-  \draw[orange!85!black,very thick,->] (S) -- (T);
-  \node[orange!85!black,fill=white,inner sep=1pt,below right=1pt] at (2.28,1.13)
-    {$\mathrm d\vect s$};
-  \draw[orange!85!black,very thick,->] (S) -- (R);
-  \node[orange!85!black,fill=white,inner sep=1pt,above left=1pt] at (2.22,1.30)
-    {$\mathrm dr$};
-  \draw[dashed,gray] (T) -- (R);
-  \draw[gray] (2.30,1.28) -- (2.25,1.25) -- (2.29,1.20);
+  % 被选中的微小路径段确实位于实线路径上。
+  \draw[orange!90!black,very thick,->] (P) -- (Pp);
+  \fill[orange!90!black] (P) circle (1.6pt);
+  \node[orange!90!black,above left=1pt] at (P) {$P$};
+  \draw[->,blue!75!black,thick] (P) -- (2.94,2.18);
+  \node[blue!75!black,above=1pt] at (2.82,2.08) {$\vect E(P)$};
 
-  % 局部电场沿径向
-  \draw[->,blue,thick] (S) -- (2.90,1.67);
-  \node[blue,fill=white,inner sep=1pt,above] at (2.72,1.55) {$\vect E$};
+  \node[gray!75,font=\footnotesize] at (2.35,-1.03)
+    {实线、虚线均从 $A$ 到 $B$};
 
-  \node[align=left] at (5.35,0.92)
-    {$\mathrm dW=q\vect E\cdot\mathrm d\vect s$\\[1pt]
-     $\phantom{\mathrm dW}=qE_r\,\mathrm dr$};
-  \node[gray] at (3.10,-1.10) {实线、虚线路径的端点相同};
+  % 右侧：把 P 附近旋转放大，只保留投影关系。
+  \draw[gray!70,rounded corners=2pt] (5.15,-0.72) rectangle (10.62,2.50);
+  \node[anchor=west,font=\footnotesize] at (5.42,2.20)
+    {放大 $P$ 附近（径向已转为水平）};
+  \draw[densely dashed,gray!65] (P) -- (5.15,-0.08);
+  \draw[densely dashed,gray!65] (Pp) -- (5.15,1.72);
+
+  \coordinate (S) at (5.88,0.30);
+  \coordinate (T) at (8.60,1.46);
+  \coordinate (H) at (8.60,0.30);
+
+  \draw[->,blue!65,thick] (5.68,1.93) -- (9.66,1.93)
+    node[right,blue!75!black] {$\vect E$ 方向};
+  \draw[orange!90!black,very thick,->] (S) -- (T)
+    node[midway,above left=1pt] {$\mathrm d\vect s$};
+  \draw[orange!90!black,very thick,->] (S) -- (H)
+    node[midway,below=1pt] {$\mathrm dr$};
+  \draw[dashed,gray!80] (T) -- (H);
+  \draw[gray!80] (H) ++(-0.17,0) -- ++(0,0.17) -- ++(0.17,0);
+  \fill[orange!90!black] (S) circle (1.7pt);
+  \fill[orange!90!black] (T) circle (1.7pt);
+  \node[below left=1pt] at (S) {$P$};
+  \node[above right=1pt] at (T) {$P'$};
+  \draw (6.48,0.30) arc[start angle=0,end angle=23.1,radius=0.60];
+  \node at (6.57,0.52) {$\alpha$};
+  \node[anchor=west] at (6.35,-0.48)
+    {$\mathrm dr=\mathrm ds\cos\alpha$};
 \end{tikzpicture}

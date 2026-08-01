@@ -1,54 +1,56 @@
 % TikZ 图：质谱仪原理
 % Day 22：洛伦兹力
-\begin{tikzpicture}[scale=0.82,>=Latex,line cap=round,line join=round]
-  \path[use as bounding box] (-5.10,-1.75) rectangle (3.45,3.55);
+\begin{tikzpicture}[scale=0.96,>=Latex,line cap=round,line join=round]
+  \path[use as bounding box] (-6.55,-1.85) rectangle (4.70,3.95);
 
-  % 速度选择器：E 与 B_1 正交
-  \draw[thick] (-4.75,1.15) -- (-1.05,1.15);
-  \draw[thick] (-4.75,-1.15) -- (-1.05,-1.15);
-  \node at (-4.52,1.42) {$+$};
-  \node at (-4.52,-1.42) {$-$};
-  \foreach \x in {-4.15,-3.35,-2.55,-1.75} {
-    \draw[->,blue,thick] (\x,0.88) -- (\x,-0.88);
-  }
-  \node[blue,font=\small] at (-1.42,0.84) {$E$ 向下};
-  \foreach \x in {-3.82,-3.02,-2.22,-1.42} {
+  % 速度选择器：E 向下、B_1 向里，正离子沿水平方向通过。
+  \draw[thick] (-6.15,1.15) -- (-1.82,1.15);
+  \draw[thick] (-6.15,-1.15) -- (-1.82,-1.15);
+  \node at (-5.92,1.43) {$+$};
+  \node at (-5.92,-1.43) {$-$};
+  \foreach \x in {-5.55,-4.65,-3.75,-2.85}
+    \draw[->,blue,thick] (\x,0.90) -- (\x,-0.90);
+  \foreach \x in {-5.20,-4.30,-3.40,-2.50} {
     \foreach \y in {-0.48,0.48} {
       \draw[gray,thick] (\x-0.055,\y-0.055) -- (\x+0.055,\y+0.055);
       \draw[gray,thick] (\x-0.055,\y+0.055) -- (\x+0.055,\y-0.055);
     }
   }
-  \node[gray,font=\small] at (-4.18,0.76) {$B_1$ 向里};
-  \node[font=\small] at (-2.90,-1.62) {速度选择器：$v=E/B_1$};
+  \node[blue,font=\small,anchor=east] at (-1.95,0.82)
+    {$\vect E\downarrow$};
+  \node[gray!70!black,font=\small] at (-4.70,0.78)
+    {$\vect B_1$ 向里};
+  \node[font=\small] at (-4.05,-1.62) {速度选择器：$v=E/B_1$};
 
-  \fill[red] (-4.65,0) circle (2.2pt);
-  \node[red,above left] at (-4.65,0) {$+q$};
-  \draw[->,red,very thick] (-4.58,0) -- (-0.58,0);
-  \node[red,below] at (-2.00,0) {$v$};
+  \coordinate (S) at (-0.75,0);
+  \fill[red] (-5.95,0) circle (2.2pt);
+  \node[red,above left] at (-5.95,0) {$+q$};
+  \draw[->,red,very thick] (-5.88,0) -- (S);
+  \node[red,below] at (-3.00,0) {$v$};
 
-  % 分析磁场与探测器
-  \draw[thick,fill=blue!4] (-0.55,-0.20) rectangle (3.20,3.20);
-  \foreach \x in {0.05,0.75,1.45,2.15,2.85} {
-    \foreach \y in {0.35,1.00,1.65,2.30,2.95} {
+  % 分析磁场：同速、同电荷时，质量越大，轨道半径越大。
+  \draw[thick,fill=blue!4] (-0.75,-0.20) rectangle (4.45,3.55);
+  \foreach \x in {-0.15,0.75,1.65,2.55,3.45,4.15} {
+    \foreach \y in {0.35,1.05,1.75,2.45,3.15} {
       \draw[gray] (\x-0.05,\y-0.05) -- (\x+0.05,\y+0.05);
       \draw[gray] (\x-0.05,\y+0.05) -- (\x+0.05,\y-0.05);
     }
   }
-  \node[blue!70!black,font=\small] at (2.42,2.90)
-    {分析磁场 $B_2$ 向里};
+  \node[blue!70!black,font=\small] at (3.22,3.22)
+    {分析磁场 $\vect B_2$ 向里};
 
-  \coordinate (S) at (-0.55,0);
-  \draw[red,very thick,->] (S) arc (-90:90:0.78);
-  \draw[orange!90!black,very thick,->] (S) arc (-90:90:1.28);
-  \node[red,font=\small] at (0.30,0.80) {$m_1$};
-  \node[orange!90!black,font=\small] at (0.86,1.76) {$m_2>m_1$};
+  \draw[red,very thick,->] (S) arc (-90:90:0.90);
+  \draw[orange!90!black,very thick,->] (S) arc (-90:90:1.50);
+  \node[red,font=\small] at (0.22,0.94) {$m_1$};
+  \node[orange!90!black,font=\small] at (0.90,2.00) {$m_2>m_1$};
 
-  \draw[very thick] (-0.55,0.20) -- (-0.55,2.85);
-  \node[font=\small] at (-0.55,3.04) {位置探测器};
-  \fill[red] (-0.55,1.56) circle (2pt);
-  \fill[orange!90!black] (-0.55,2.56) circle (2pt);
-  \draw[->,red,thin] (-1.75,1.56) -- (-0.67,1.56);
-  \node[red,left,font=\small] at (-1.75,1.56) {$x_1=2r_1$};
-  \draw[->,orange!90!black,thin] (-1.75,2.56) -- (-0.67,2.56);
-  \node[orange!90!black,left,font=\small] at (-1.75,2.56) {$x_2=2r_2$};
+  % 落点探测器与直径关系 x=2r。
+  \draw[very thick] (-0.75,0.15) -- (-0.75,3.38);
+  \node[font=\small] at (-0.75,3.72) {位置探测器};
+  \fill[red] (-0.75,1.80) circle (2.2pt);
+  \fill[orange!90!black] (-0.75,3.00) circle (2.2pt);
+  \draw[<->,red,thick] (-1.10,0.06) -- (-1.10,1.80)
+    node[midway,left=2pt,font=\small,rotate=90] {$x_1=2r_1$};
+  \draw[<->,orange!90!black,thick] (-1.58,0.06) -- (-1.58,3.00)
+    node[midway,left=2pt,font=\small,rotate=90] {$x_2=2r_2$};
 \end{tikzpicture}

@@ -1,21 +1,32 @@
 % TikZ 图：v-t 图面积由小矩形累加为位移
 % Day 03：加速度
-\begin{tikzpicture}[scale=0.86,>=Latex,line cap=round,line join=round,
+\begin{tikzpicture}[scale=0.84,>=Latex,line cap=round,line join=round,
   every node/.style={font=\small}]
-  \draw[->] (-0.25,0) -- (6.0,0) node[right] {$t$};
-  \draw[->] (0,-0.25) -- (0,3.8) node[above] {$v$};
+  \draw[->] (-0.25,0) -- (6.15,0) node[right] {$t$};
+  \draw[->] (0,-0.25) -- (0,4.05) node[above] {$v$};
   \node[below left] at (0,0) {$O$};
 
-  % 用窄矩形近似曲线下的面积。
-  \foreach \x/\h in {0.15/0.42,0.75/0.72,1.35/1.05,1.95/1.38,2.55/1.72,3.15/2.08,3.75/2.46,4.35/2.85,4.95/3.25} {
-    \fill[blue!12] (\x,0) rectangle +(0.58,\h);
-    \draw[blue!45] (\x,0) rectangle +(0.58,\h);
+  % 十个等宽且首尾相接的小矩形，高度取各小区间中点处的速度。
+  \foreach \i in {0,...,9} {
+    \pgfmathsetmacro{\xl}{0.25+0.52*\i}
+    \pgfmathsetmacro{\xr}{\xl+0.52}
+    \pgfmathsetmacro{\xm}{\xl+0.26}
+    \pgfmathsetmacro{\h}{0.40+0.32*\xm+0.04*\xm*\xm}
+    \fill[blue!12] (\xl,0) rectangle (\xr,\h);
+    \draw[blue!45,line width=0.45pt] (\xl,0) rectangle (\xr,\h);
   }
-  \draw[very thick,red!75!black,domain=0:5.55,samples=80]
-    plot(\x,{0.28+0.34*\x+0.035*\x*\x});
-  \draw[<->,black!65] (4.98,-0.55) -- (5.56,-0.55)
-    node[midway,below] {$\Delta t$};
-  \node[blue!70!black,align=center] at (1.35,2.85) {每个小矩形面积\\$\approx v_i\Delta t$};
-  \node[red!75!black,above left] at (4.8,3.1) {$v(t)$};
-  \node[align=center] at (3.0,-1.15) {全部小矩形面积相加 $\longrightarrow$ 总位移 $\Delta x$};
+
+  \draw[very thick,red!75!black,domain=0.25:5.45,samples=100]
+    plot(\x,{0.40+0.32*\x+0.04*\x*\x});
+  \node[red!75!black,above left] at (5.22,3.18) {$v(t)$};
+
+  % 单独标出一个小区间，强调宽、高和面积的对应关系。
+  \draw[<->,black!70] (4.41,-0.48) -- (4.93,-0.48)
+    node[midway,below=1pt] {$\Delta t$};
+  \draw[dashed,blue!55] (4.67,0) -- (4.67,2.77);
+  \fill[red!75!black] (4.67,2.77) circle (1.5pt);
+  \node[anchor=west,blue!70!black,align=left] at (0.42,3.52)
+    {每个小矩形面积\\$\Delta x_i\approx v_i\Delta t$};
+  \node[align=center] at (3.02,-1.12)
+    {全部小矩形的有向面积相加 $\longrightarrow$ 总位移 $\Delta x$};
 \end{tikzpicture}

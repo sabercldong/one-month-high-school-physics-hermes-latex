@@ -1,6 +1,6 @@
 % TikZ 图：粗糙斜面的功能关系
 % Day 09：机械能守恒与功能关系
-\begin{tikzpicture}[scale=0.95,>=Latex]
+\begin{tikzpicture}[scale=1.05,>=Latex,line cap=round,line join=round]
   \coordinate (A) at (0,0);
   \coordinate (B) at (5,0);
   \coordinate (C) at (5,2.6);
@@ -8,18 +8,27 @@
   \draw[thick] (A) -- (B) -- (C) -- cycle;
 
   \coordinate (P) at (2.0,1.04);
+  \coordinate (M) at ($(P)+(117.5:0.18)$);
   \begin{scope}[shift={(P)},rotate=27.5]
-    \draw[thick] (-0.45,0) rectangle (0.45,0.35);
+    \draw[thick,fill=white] (-0.45,0) rectangle (0.45,0.35);
+    \node at (0,0.18) {$m$};
   \end{scope}
-  \draw[->,thick,blue] (P) -- ++(0,-1.05) node[below] {$mg$};
-  \draw[->,thick,teal!70!black] (P) -- ++(117.5:1.00) node[above left] {$N$};
-  \draw[->,thick,red] (P) -- ++(27.5:1.15) node[above] {$f$};
-  \draw[->,thick] (P) -- ++(207.5:1.05) node[left] {$v$};
+  \fill (M) circle (1.1pt);
+  \draw[->,thick,blue] (M) -- ++(0,-1.05)
+    node[below right=1pt] {$mg$};
+  \draw[->,thick,teal!70!black] (M) -- ++(117.5:1.00)
+    node[above left] {$N$};
+  \draw[->,thick,red] (M) -- ++(27.5:1.15)
+    node[above=2pt] {$f_k$};
+  \draw[->,thick] (M) -- ++(207.5:1.05)
+    node[below left=1pt] {$v$};
 
-  \node[right] at (5.18,1.30) {$h$};
+  \draw[<->,gray!75] (5.30,0) -- (5.30,2.60)
+    node[midway,right] {$h$};
   \node[rotate=27.5,above] at (2.65,1.37) {$s$};
   \draw (0.70,0) arc (0:27.5:0.70);
   \node at (0.92,0.22) {$\theta$};
 
-  \node at (2.65,-0.65) {$N=mg\cos\theta,\quad mgh-\mu mg\cos\theta\cdot s=\frac12mv^2$};
+  \node at (2.65,-0.68)
+    {$N=mg\cos\theta,\quad mgh-\mu_kmg\cos\theta\cdot s=\frac12mv^2$};
 \end{tikzpicture}

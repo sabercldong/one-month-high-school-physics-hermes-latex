@@ -1,7 +1,6 @@
 % TikZ 图：定滑轮连接体动力学
 % Day 07：连接体、斜面与摩擦综合
 \begin{tikzpicture}[scale=0.92,>=Latex]
-  \path[use as bounding box] (-0.4,-2.95) rectangle (4.85,1.20);
   \coordinate (O) at (3.0,0);
   \def\r{0.34}
 
@@ -33,7 +32,8 @@
     node[midway,below] {$f_k$};
   \draw[->,thick,blue] (0.95,0.83) -- (1.78,0.83) node[right] {$a$};
   \draw[->,thick,red] (3.37,-0.84) -- (3.37,-0.22) node[midway,left] {$T$};
-  \draw[->,thick,blue] (3.37,-1.65) -- (3.37,-2.30) node[midway,left] {$m_Bg$};
+  \draw[->,thick,blue] (3.37,-1.25) -- (3.37,-2.30)
+    node[pos=0.72,left] {$m_Bg$};
   \draw[->,thick,blue] (4.08,-1.18) -- (4.08,-1.88) node[midway,right] {$a$};
 
   \node[font=\footnotesize,align=center] at (1.85,-2.62)

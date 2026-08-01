@@ -1,5 +1,4 @@
 \begin{tikzpicture}[scale=0.9,>=Latex,line cap=round,line join=round]
-  \path[use as bounding box] (-0.55,-0.75) rectangle (6.45,3.35);
   \draw[->,thick] (0,0) -- (6.0,0) node[right] {$t$};
   \draw[->,thick] (0,0) -- (0,3.0) node[above] {$\Phi$};
 
@@ -12,16 +11,22 @@
   \coordinate (P) at (3.05,1.72);
   \fill (Pone) circle (1.7pt) node[below right,font=\small] {$P_1$};
   \fill (Ptwo) circle (1.7pt) node[above left,font=\small] {$P_2$};
-  \fill[orange!85!black] (P) circle (1.9pt) node[below right,font=\small] {$P$};
+  \fill[orange!85!black] (P) circle (1.9pt)
+    node[above left=2pt,font=\small] {$P$};
 
   \draw[dashed,gray] (Pone) -- (1.15,0);
   \draw[dashed,gray] (Ptwo) -- (4.75,0);
   \draw[dashed,red,thick] (Pone) -- (Ptwo);
-  \node[red,font=\small,fill=white,inner sep=1pt] at (2.55,1.02)
-    {割线斜率 $\dfrac{\Delta\Phi}{\Delta t}$};
 
   \draw[orange!85!black,thick] (1.95,1.00) -- (4.12,2.36);
-  \node[orange!85!black,font=\small,fill=white,inner sep=1pt] at (4.42,1.94)
+
+  % 用右侧独立图例说明两种斜率，不遮挡曲线、割线、切线和点 P。
+  \draw[gray!55,rounded corners=2pt] (6.28,1.08) rectangle (9.62,3.18);
+  \draw[dashed,red,thick] (6.55,2.72) -- (7.18,2.72);
+  \node[red,font=\small,anchor=west] at (7.30,2.72)
+    {割线斜率 $\dfrac{\Delta\Phi}{\Delta t}$};
+  \draw[orange!85!black,thick] (6.55,1.58) -- (7.18,1.58);
+  \node[orange!85!black,font=\small,anchor=west] at (7.30,1.58)
     {切线斜率 $\dfrac{\mathrm d\Phi}{\mathrm dt}$};
 
   \node[font=\small] at (3.0,-0.52)

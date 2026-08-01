@@ -1,10 +1,9 @@
 % TikZ 图：热力学第一定律例题能量流
 % Day 26：热学基础
 \begin{tikzpicture}[scale=0.86,>=Latex,line cap=round,line join=round]
-  \path[use as bounding box] (-0.45,-1.05) rectangle (6.60,1.38);
-  \node[draw,rounded corners=2pt,fill=blue!6,minimum width=2.10cm,minimum height=1.00cm] (gas) at (3.05,0.10) {气体系统};
-  \draw[->,red,thick] (0.35,0.10) -- (gas.west) node[midway,above] {$Q=+500\ \mathrm{J}$};
-  \draw[->,blue,thick] (gas.east) -- (5.90,0.10) node[midway,above] {$W=+200\ \mathrm{J}$};
-  \node[font=\small,align=center] at (3.05,-0.78)
+  \node[draw,rounded corners=2pt,fill=blue!6,minimum width=2.10cm,minimum height=1.00cm] (gas) at (3.05,0.35) {气体系统};
+  \draw[->,red,thick] (0.35,0.35) -- (gas.west) node[midway,above] {$Q=+500\ \mathrm{J}$};
+  \draw[->,blue,thick] (gas.east) -- (5.90,0.35) node[midway,above] {$W=+200\ \mathrm{J}$};
+  \node[font=\small,align=center] at (3.05,-0.68)
     {能量核算：吸热进来，对外做功出去\\$\Delta U=Q-W$};
 \end{tikzpicture}

@@ -1,30 +1,36 @@
-\begin{tikzpicture}[scale=0.95,>=Stealth]
-  \coordinate (A) at (-3.0,-0.55);
-  \coordinate (B) at (2.9,0.55);
+\begin{tikzpicture}[scale=1.12,>=Stealth,line cap=round,line join=round]
+  \coordinate (A) at (-3.0,-0.92);
+  \coordinate (B) at (2.9,0.92);
   \draw[very thick] (A) -- (B);
-  \draw[thick] (-3.0,-0.95) -- (2.9,0.15);
-  \draw[dashed] (-2.7,-0.55) -- (2.6,-0.55);
-  \draw[->] (-1.8,-0.55) arc (0:10.6:1.05);
-  \node[font=\small] at (-0.72,-0.33) {$\theta$};
+  \draw[thick] (-3.0,-1.28) -- (2.9,0.56);
+  \draw[dashed] (-2.7,-0.92) -- (2.6,-0.92);
+  \draw[->] (-1.80,-0.92) arc (0:17.3:1.05);
+  \node[font=\small] at (-0.72,-0.61) {$\theta$};
 
-  \begin{scope}[shift={(0,0)},rotate=10.6]
+  \begin{scope}[shift={(0,0)},rotate=17.3]
     \draw[thick,fill=gray!12] (-0.42,0) rectangle (0.42,0.35);
     \draw[thick] (-0.34,0) circle (0.07);
     \draw[thick] (0.34,0) circle (0.07);
     \node[font=\scriptsize] at (0,0.20) {车};
   \end{scope}
 
-  \draw[->,very thick,blue] (0,0.18) -- (-0.34,1.95);
-  \node[font=\small,blue] at (-0.60,1.94) {$N$};
-  \draw[->,very thick] (0,0.18) -- (0,-1.35);
-  \node[font=\small,right] at (0,-1.17) {$mg$};
-  \draw[->,very thick,red] (0,0.18) -- (-1.70,0.18);
-  \node[font=\small,red,fill=white,inner sep=1pt] at (-1.96,0.58) {指向圆心};
+  \coordinate (C) at (0,0.18);
+  \coordinate (Ntip) at (-0.62,2.08);
+  \coordinate (Vtip) at (0,2.08);
+  \coordinate (Htip) at (-0.62,0.18);
 
-  % 以支持力箭头为对角线补出分量矩形；水平辅助线只连回受力点，
-  % 避免把“指向圆心”的方向箭头误看成 $N\sin\theta$ 的实际长度。
-  \draw[dashed,blue!60] (-0.34,1.95) -- (-0.34,0.18);
-  \draw[dashed,blue!60] (-0.34,0.18) -- (0,0.18);
-  \node[font=\scriptsize,blue,fill=white,inner sep=1pt] at (-0.58,1.08) {$N\cos\theta$};
-  \node[font=\scriptsize,red,fill=white,inner sep=1pt] at (-0.36,-0.08) {$N\sin\theta$};
+  \draw[->,very thick,blue] (C) -- (Ntip);
+  \node[font=\small,blue,above left=1pt] at (Ntip) {$N$};
+  \draw[->,very thick] (C) -- (0,-1.35);
+  \node[font=\small,right] at (0,-1.17) {$mg$};
+
+  % 用同一比例画出支持力的两个分量，避免把辅助方向误看成第三个力。
+  \draw[->,blue!70!black,thick,dashed] (C) -- (Vtip)
+    node[midway,right=3pt,font=\scriptsize] {$N\cos\theta$};
+  \draw[->,red!80!black,thick,dashed] (C) -- (Htip);
+  \node[red!80!black,font=\scriptsize] at (-1.00,0.86)
+    {$N\sin\theta$};
+  \draw[dashed,gray!70] (Vtip) -- (Ntip) -- (Htip);
+  \draw[->,densely dashed,gray!75] ($(Htip)+(-0.05,0)$) -- (-1.72,0.18);
+  \node[font=\scriptsize,gray!70!black] at (-1.55,0.48) {圆心方向};
 \end{tikzpicture}

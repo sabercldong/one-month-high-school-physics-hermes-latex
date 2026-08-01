@@ -1,7 +1,9 @@
 % TikZ 图：两车同时制动时的分段相对速度 u-t 图
-\begin{tikzpicture}[scale=0.8,>=Latex,line cap=round,line join=round]
-  \draw[->] (-0.25,0) -- (6.85,0) node[right] {$t/\mathrm{s}$};
-  \draw[->] (0,-0.2) -- (0,3.55) node[above] {$u/(\mathrm{m\,s^{-1}})$};
+\begin{tikzpicture}[scale=0.8,>=Latex,line cap=round,line join=round,
+  every node/.style={font=\small}]
+  \draw[->] (-0.25,0) -- (6.90,0) node[right] {$t/\mathrm{s}$};
+  \draw[->] (0,-0.2) -- (0,3.62)
+    node[above] {$u/(\mathrm{m\,s^{-1}})$};
   \node[below left] at (0,0) {$O$};
 
   \fill[orange!18] (0,0) -- (0,1.5) -- (3,3) -- (3,0) -- cycle;
@@ -16,8 +18,11 @@
   \node[left] at (0,3) {$12$};
   \node[below] at (3,0) {$3$};
   \node[below] at (6,0) {$6$};
-  \node[above] at (3,3) {前车停车};
-  \node[anchor=north] at (6,-0.42) {后车停车};
+  \fill (3,3) circle (1.6pt);
+  \fill (6,0) circle (1.6pt);
+  \node[above right=2pt] at (3,3) {前车在 $3\ \mathrm{s}$ 时停车};
+  \node[anchor=north east] at (6.35,-0.32)
+    {后车在 $6\ \mathrm{s}$ 时停车};
   \node[orange!80!black] at (1.55,0.78) {$\Delta x_1$};
   \node[blue!70!black] at (4.15,0.82) {$\Delta x_2$};
 \end{tikzpicture}

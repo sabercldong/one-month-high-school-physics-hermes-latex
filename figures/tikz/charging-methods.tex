@@ -1,72 +1,80 @@
-\begin{tikzpicture}[x=1cm,y=1cm,scale=0.92,transform shape,
-  >=Stealth,line cap=round,line join=round]
-  \path[use as bounding box] (-5.0,-2.25) rectangle (5.0,2.05);
+\begin{tikzpicture}[x=1cm,y=1cm,>=Stealth,line cap=round,line join=round]
+  \path[use as bounding box] (-7.25,-2.95) rectangle (7.25,2.34);
 
-  % 摩擦起电：明确画出电子的净转移方向。
-  \begin{scope}[shift={(-2.55,0.65)}]
-    \node[font=\small\bfseries] at (0,1.28) {摩擦起电};
-    \draw[rounded corners=3pt,thick,fill=blue!8] (-1.38,-0.28) rectangle (-0.28,0.30);
-    \draw[rounded corners=3pt,thick,fill=orange!12] (0.28,-0.28) rectangle (1.38,0.30);
-    \foreach \x in {-1.08,-0.78,-0.48}{\node[blue!75!black] at (\x,0.02) {$-$};}
-    \foreach \x in {0.48,0.78,1.08}{\node[red!80!black] at (\x,0.02) {$+$};}
-    \draw[->,very thick,blue!75!black] (0.78,0.48) -- (-0.78,0.48);
-    \node[font=\scriptsize,above,blue!75!black] at (0,0.48) {电子净转移};
-    \node[font=\scriptsize,align=center] at (0,-0.77)
-      {一个物体得到电子，另一个失去电子};
+  % 摩擦起电：只强调电子发生净转移，不把正电荷画成在物体间迁移。
+  \begin{scope}[shift={(-3.65,0.68)}]
+    \node[font=\small\bfseries] at (0,1.38) {摩擦起电};
+    \draw[rounded corners=3pt,thick,fill=blue!8]
+      (-1.85,-0.28) rectangle (-0.38,0.34);
+    \draw[rounded corners=3pt,thick,fill=orange!12]
+      (0.38,-0.28) rectangle (1.85,0.34);
+    \foreach \x in {-1.52,-1.12,-0.72}
+      \node[blue!75!black] at (\x,0.03) {$-$};
+    \foreach \x in {0.72,1.12,1.52}
+      \node[red!80!black] at (\x,0.03) {$+$};
+    \draw[->,very thick,blue!75!black] (1.35,0.58) -- (-1.35,0.58);
+    \node[font=\footnotesize,above,blue!75!black] at (0,0.58)
+      {电子净转移};
+    \node[font=\footnotesize,align=center] at (0,-0.72)
+      {得到电子的一方带负电\\失去电子的一方带正电};
   \end{scope}
 
-  % 接触起电：相同导体接触后同种电荷重新分配。
-  \begin{scope}[shift={(2.55,0.65)}]
-    \node[font=\small\bfseries] at (0,1.28) {接触起电};
-    \draw[thick,fill=blue!8] (-1.45,0.02) circle (0.31);
-    \draw[thick,fill=gray!8] (-0.67,0.02) circle (0.31);
-    \node[blue!75!black] at (-1.45,0.02) {$-$};
-    \draw[->,thick] (-0.25,0.02) -- (0.34,0.02);
-    \node[font=\scriptsize,above] at (0.05,0.06) {接触后};
-    \draw[thick,fill=blue!8] (0.78,0.02) circle (0.31);
-    \draw[thick,fill=blue!8] (1.48,0.02) circle (0.31);
-    \node[blue!75!black] at (0.78,0.02) {$-$};
-    \node[blue!75!black] at (1.48,0.02) {$-$};
-    \node[font=\scriptsize,align=center] at (0,-0.77)
-      {相同导体接触后，电荷重新分配};
+  % 接触起电：以两个相同金属球为例，接触后同种电荷重新分配。
+  \begin{scope}[shift={(3.65,0.68)}]
+    \node[font=\small\bfseries] at (0,1.38) {接触起电};
+    \draw[thick,fill=blue!8] (-1.72,0.03) circle (0.34);
+    \draw[thick,fill=gray!8] (-0.80,0.03) circle (0.34);
+    \node[blue!75!black] at (-1.72,0.03) {$-$};
+    \node[font=\scriptsize] at (-0.80,0.03) {中性};
+    \draw[->,thick] (-0.28,0.03) -- (0.38,0.03);
+    \node[font=\footnotesize,above] at (0.05,0.08) {接触后};
+    \draw[thick,fill=blue!8] (0.98,0.03) circle (0.34);
+    \draw[thick,fill=blue!8] (1.80,0.03) circle (0.34);
+    \node[blue!75!black] at (0.98,0.03) {$-$};
+    \node[blue!75!black] at (1.80,0.03) {$-$};
+    \node[font=\footnotesize,align=center] at (0,-0.72)
+      {相同导体接触后\\电荷在两导体间重新分配};
   \end{scope}
 
-  % 感应起电：靠近、接地、先断地、再移走场源。
-  \node[font=\small\bfseries] at (0,-0.43) {感应起电（以正电荷靠近为例）};
+  % 感应起电：保持正带电体靠近，接地后先断开地线，再移走场源。
+  \node[font=\small\bfseries] at (0,-0.92)
+    {感应起电（以正带电体靠近金属导体为例）};
 
-  \begin{scope}[shift={(-3.65,-1.27)}]
-    \node[red!80!black] at (-0.58,0.02) {$+$};
-    \draw[thick,rounded corners=6pt,fill=gray!8] (-0.18,-0.27) rectangle (0.82,0.31);
-    \node[blue!75!black] at (0.02,0.02) {$-$};
-    \node[red!80!black] at (0.62,0.02) {$+$};
-    \node[font=\scriptsize] at (0.10,-0.62) {1.\ 靠近};
-  \end{scope}
+  \foreach \x in {-5.45,-1.82,1.82} {
+    \node[red!80!black] at ({\x-0.86},-1.65) {$+$};
+    \draw[thick,fill=gray!7,rounded corners=5pt]
+      ({\x-0.30},-1.93) rectangle ({\x+1.20},-1.37);
+  }
 
-  \begin{scope}[shift={(-1.25,-1.27)}]
-    \node[red!80!black] at (-0.58,0.02) {$+$};
-    \draw[thick,rounded corners=6pt,fill=gray!8] (-0.18,-0.27) rectangle (0.82,0.31);
-    \node[blue!75!black] at (0.05,0.02) {$-$};
-    \node[blue!75!black] at (0.42,0.02) {$-$};
-    \draw[thick] (0.72,-0.27) -- (0.72,-0.56);
-    \draw[thick] (0.48,-0.56) -- (0.96,-0.56);
-    \draw[thick] (0.55,-0.65) -- (0.89,-0.65);
-    \draw[thick] (0.63,-0.74) -- (0.81,-0.74);
-    \draw[->,blue!75!black,thick] (0.72,-0.70) -- (0.72,-0.34);
-    \node[font=\scriptsize] at (0.10,-0.92) {2.\ 接地};
-  \end{scope}
+  % 1. 靠近：导体内电荷分离，但净电荷仍为零。
+  \node[blue!75!black] at (-5.55,-1.65) {$-$};
+  \node[red!80!black] at (-4.55,-1.65) {$+$};
+  \node[font=\footnotesize] at (-5.05,-2.70) {1.\ 靠近，电荷分离};
 
-  \begin{scope}[shift={(1.20,-1.27)}]
-    \node[red!80!black] at (-0.58,0.02) {$+$};
-    \draw[thick,rounded corners=6pt,fill=blue!5] (-0.18,-0.27) rectangle (0.82,0.31);
-    \node[blue!75!black] at (0.02,0.02) {$-$};
-    \node[blue!75!black] at (0.34,0.02) {$-$};
-    \node[font=\scriptsize] at (0.10,-0.62) {3.\ 先断地};
-  \end{scope}
+  % 2. 接地：电子由大地进入导体。
+  \node[blue!75!black] at (-1.95,-1.65) {$-$};
+  \node[blue!75!black] at (-1.40,-1.65) {$-$};
+  \draw[thick] (-0.72,-1.93) -- (-0.72,-2.13);
+  \draw[thick] (-1.02,-2.13) -- (-0.42,-2.13);
+  \draw[thick] (-0.94,-2.23) -- (-0.50,-2.23);
+  \draw[thick] (-0.84,-2.33) -- (-0.60,-2.33);
+  \draw[->,blue!75!black,thick] (-0.72,-2.29) -- (-0.72,-1.96);
+  \node[font=\footnotesize] at (-1.25,-2.70) {2.\ 接地，电子流入};
 
-  \begin{scope}[shift={(3.65,-1.27)}]
-    \draw[thick,rounded corners=6pt,fill=blue!5] (-0.50,-0.27) rectangle (0.72,0.31);
-    \foreach \x in {-0.28,0.10,0.48}{\node[blue!75!black] at (\x,0.02) {$-$};}
-    \draw[->,thick] (-1.10,0.02) -- (-0.68,0.02);
-    \node[font=\scriptsize] at (0.10,-0.62) {4.\ 移走场源};
-  \end{scope}
+  % 3. 先断开地线：导体保留净负电荷。
+  \node[blue!75!black] at (1.65,-1.65) {$-$};
+  \node[blue!75!black] at (2.20,-1.65) {$-$};
+  \node[font=\footnotesize] at (2.05,-2.70) {3.\ 保持场源，先断地};
+
+  % 4. 再移走场源：负电荷在导体表面重新分布。
+  \draw[thick,fill=blue!5,rounded corners=5pt]
+    (5.00,-1.93) rectangle (6.60,-1.37);
+  \foreach \x in {5.30,5.80,6.30}
+    \node[blue!75!black] at (\x,-1.65) {$-$};
+  \node[red!80!black] at (4.35,-1.65) {$+$};
+  \draw[->,thick,red!75!black] (4.22,-1.65) -- (3.55,-1.65);
+  \node[font=\footnotesize] at (5.80,-2.70) {4.\ 再移走场源};
+
+  \draw[->,gray!70,thick] (-3.30,-1.23) -- ++(0.58,0);
+  \draw[->,gray!70,thick] (0,-1.23) -- ++(0.58,0);
 \end{tikzpicture}

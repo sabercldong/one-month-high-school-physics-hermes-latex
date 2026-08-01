@@ -1,33 +1,43 @@
 % TikZ 图：离开偏转电场后的无场区运动
 % Day 17：带电粒子在电场中的运动
-\begin{tikzpicture}[scale=0.74,>=Latex]
-  \draw[thick] (0,1.15) -- (3.0,1.15);
-  \draw[thick] (0,-1.15) -- (3.0,-1.15);
-  \node[above] at (-0.15,1.15) {$+$};
-  \node[below] at (-0.15,-1.15) {$-$};
-  \foreach \x in {0.45,1.15,1.85,2.55} {
-    \draw[->,blue] (\x,0.95) -- (\x,-0.95);
-  }
-  \draw[red,thick,dashed,domain=0:3,samples=70] plot (\x,{-0.075*\x*\x});
-  \coordinate (P) at (3,-0.675);
-  \filldraw[red] (P) circle (1.8pt);
-  \coordinate (S) at (5.8,-1.935);
-  \draw[red,thick,dashed] (4.08,-1.16) -- (S);
-  \draw[-{Stealth[length=5pt,width=6pt]},red,line width=1.05pt,shorten <=2pt] (P) -- (4.08,-1.16);
-  \node[above right,red,fill=white,inner sep=1pt] at (4.08,-1.02) {$v$};
-  \draw[dashed,gray] (3,0) -- (P);
-  \draw[dashed,gray] (5.8,0) -- (S);
-  \draw[<->] (3.65,0) -- (3.65,-0.675);
-  \node[right,fill=white,inner sep=1pt] at (3.72,-0.34) {$y_1$};
-  \draw[dashed,gray] (3,-0.675) -- (5.8,-0.675);
-  \draw[<->] (5.35,-0.675) -- (5.35,-1.935);
-  \node[left,fill=white,inner sep=1pt] at (5.35,-1.30) {$y_2$};
-  \draw[<->] (6.25,0) -- (6.25,-1.95);
-  \node[right,fill=white,inner sep=1pt] at (6.25,-0.98) {$Y$};
-  \draw[<->] (3,-2.08) -- (5.8,-2.08);
-  \node[below,fill=white,inner sep=1pt] at (4.4,-2.08) {$s$};
-  \draw[thick] (5.8,1.1) -- (5.8,-2.2);
-  \node[right,fill=white,inner sep=1pt] at (5.8,1.0) {屏};
-  \node[font=\small,fill=white,inner sep=1pt] at (1.5,1.55) {有场区};
-  \node[font=\small,fill=white,inner sep=1pt] at (4.4,0.55) {无场区};
+\begin{tikzpicture}[scale=0.96,>=Latex,line cap=round,line join=round]
+  % 偏转极板和匀强电场。
+  \draw[thick] (0,1.30) -- (4.50,1.30);
+  \draw[thick] (0,-1.30) -- (4.50,-1.30);
+  \node[above] at (-0.18,1.30) {$+$};
+  \node[below] at (-0.18,-1.30) {$-$};
+  \foreach \x in {0.65,1.45,2.25,3.05,3.85}
+    \draw[->,blue,thick] (\x,1.05) -- (\x,-1.05);
+
+  % 极板内为抛物线；离开后沿出口切线作匀速直线运动。
+  \draw[red,very thick,domain=0:4.5,samples=80]
+    plot (\x,{-0.045*\x*\x});
+  \coordinate (P) at (4.50,-0.911);
+  \coordinate (S) at (8.00,-2.329);
+  \draw[red,very thick] (P) -- (S);
+  \filldraw[red] (P) circle (2.1pt);
+  \filldraw[red] (S) circle (2.1pt);
+
+  % 出射速度严格沿轨迹切线。
+  \draw[-{Stealth[length=6pt,width=7pt]},red,very thick]
+    (P) -- (5.58,-1.348);
+  \node[red,above right=1pt] at (5.34,-1.18) {$\vect v$};
+
+  % 三段竖直位移和无场区水平距离。
+  \draw[dashed,gray!75] (4.50,0) -- (P);
+  \draw[<->,thick] (4.82,0) -- (4.82,-0.911)
+    node[midway,right=3pt] {$y_1$};
+  \draw[dashed,gray!75] (P) -- (8.00,-0.911);
+  \draw[<->,thick] (7.58,-0.911) -- (7.58,-2.329)
+    node[midway,left=3pt] {$y_2$};
+  \draw[dashed,gray!75] (8.00,0) -- (S);
+  \draw[<->,thick] (8.42,0) -- (8.42,-2.329)
+    node[midway,right=3pt] {$Y$};
+  \draw[<->,thick] (4.50,-2.68) -- (8.00,-2.68)
+    node[midway,below=3pt] {$s$};
+
+  \draw[thick] (8.00,1.18) -- (8.00,-2.55);
+  \node[right=3pt] at (8.00,0.95) {荧光屏};
+  \node[font=\small] at (2.25,1.64) {偏转电场区};
+  \node[font=\small] at (6.25,0.62) {无场区};
 \end{tikzpicture}

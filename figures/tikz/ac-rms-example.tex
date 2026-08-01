@@ -1,7 +1,6 @@
 % TikZ 图：交流电最大值与有效值例题
 % Day 24：交变电流
 \begin{tikzpicture}[scale=0.78,>=Latex,line cap=round,line join=round]
-  \path[use as bounding box] (-0.55,-1.55) rectangle (6.65,1.80);
   \draw[->,thick] (0,0) -- (6.30,0) node[right] {$t$};
   \draw[->,thick] (0,-1.30) -- (0,1.55) node[above] {$u$};
   \draw[blue,thick,samples=120,domain=0:6.0] plot(\x,{1.10*sin(60*\x)});
